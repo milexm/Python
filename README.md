@@ -1,2 +1,2 @@
 # Python
-Learning and language and annotations
+Learning and the language. Create technical notes.
