@@ -5,14 +5,16 @@ last update: 10/09/2022
 
 # Python cheatsheet  
 
-- [Basic file operations](#basic-file-operations)
-  - [Read an existing file](#read-an-existing-file)
-  - [Create a new file and overwrite existing content](#create-a-new-file-and-overwrite-existing-content)
-  - [Append text to an existing file without overwriting](#append-text-to-an-existing-file-without-overwriting)
-  - [Both append and read a file](#both-append-and-read-a-file)
-- [References](#references)
+- [Python cheatsheet](#python-cheatsheet)
+  - [Basic file operations](#basic-file-operations)
+    - [Read an existing file](#read-an-existing-file)
+    - [Create a new file and overwrite existing content](#create-a-new-file-and-overwrite-existing-content)
+    - [Append text to an existing file without overwriting](#append-text-to-an-existing-file-without-overwriting)
+    - [Both append and read a file](#both-append-and-read-a-file)
+  - [References](#references)
 
 ## Basic file operations
+
 
 ### Read an existing file
 
