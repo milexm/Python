@@ -16,8 +16,29 @@ To individually find the version number you can grep on this output. For example
 pip freeze | findstr botbuilder-dialogs
 ```
 
+## \_\_init__
 
-## \_\_init__.py
+There are two aspects when it comes to `__init__`:
+
+1. **Object initialization** when a class is instantiated. This is done through the method `__init__()`,
+2. **Paackage initialization**. This is done via the module `__init__.py`.
+
+
+### \_\_init__()
+
+When you create a new object of a class, Python automatically calls the `__init__()` method to initialize the object’s attributes.
+
+Unlike regular methods, the `__init__()` method has two underscores `__` on each side. Therefore, the `__init__()` is often called **dunder** init. The name comes abbreviation of the double underscores init.
+
+The double underscores at both sides of the __init__() method indicate that Python will use the method internally. In other words, you should not explicitly call this method.
+
+Since Python will automatically call the __init__() method immediately after creating a new object, you can use the __init__() method to initialize the object’s attributes.
+
+The following defines the Person class with the __init__() method:
+
+
+
+### \_\_init__.py
 
 > [!NOTE] Improve, see [Python Class Constructors: Control Your Object Instantiation](https://realpython.com/python-class-constructor/) and [Package Initialization](https://realpython.com/lessons/package-initialization/). See also [search __init__](https://realpython.com/search?q=__init__)
 
