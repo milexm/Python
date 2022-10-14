@@ -1,44 +1,37 @@
-# FAQs
+# Glossary
+
+<p style="font-size:1.5em;">
+<a href="#a" >A</a> <a href="#b">B</a> <a href="#c" >C</a> <a href="#d">D</a> <a href="#e" >E</a> <a href="#f">F</a> <a href="#g" >G</a> <a href="#h">H</a> <a href="#i" >I</a> <a href="#j">J</a> <a href="#k" >K</a> <a href="#l">L</a> <a href="#m" >M</a> <a href="#n">N</a> <a href="#o" >O</a> <a href="#p">P</a> <a href="#q" >Q</a> <a href="#r">R</a> <a href="#s" >S</a> <a href="#t">T</a> <a href="#u" >U</a> <a href="#v">V</a> <a href="#w" >W</a> <a href="#x">X</a> <a href="#y" >Y</a> <a href="#z">Z</a>  
+</p>
+
+<hr style="border-top: 2px dashed blue"/>
 
 
+## I ##
 
-
-## How to check version of python modules?
-
-When you install Python, you also get the Python package manager **pip**. You can use pip to get the versions of python modules. If you want to list all installed Python modules with their version numbers, use the following command:
-
-```cmd
-$ pip freeze
-```
-To individually find the version number you can grep on this output. For example, in windows, you can use **findstr** instead of grep. For example:
-
-```cmd
-pip freeze | findstr botbuilder-dialogs
-```
-
-## \_\_init__
+### \_\_init__
 
 There are two aspects when it comes to `__init__`:
 
-1. **Object initialization** when a class is instantiated. This is done through the method `__init__()`,
-2. **Paackage initialization**. This is done via the module `__init__.py`.
+1. **Object initialization** when a class is instantiated. This is done by the method `__init__()`,
+2. **Paackage initialization**. This is done by the module `__init__.py`.
 
 
-### \_\_init__()
+#### Object initialization \_\_init__()
 
 When you create a new object of a class, Python automatically calls the `__init__()` method to initialize the object’s attributes.
 
 Unlike regular methods, the `__init__()` method has two underscores `__` on each side. Therefore, the `__init__()` is often called **dunder** init. The name comes abbreviation of the double underscores init.
 
-The double underscores at both sides of the __init__() method indicate that Python will use the method internally. In other words, you should not explicitly call this method.
+The double underscores at both sides of the __init__() method indicate that Python will use the method internally. In other words, **you should not call this method explicitly**.
 
-Since Python will automatically call the __init__() method immediately after creating a new object, you can use the __init__() method to initialize the object’s attributes.
+Since Python will automatically call the __init__() method immediately after creating a new object, you can use the __init__() method to **initialize the object**.
 
 The following defines the Person class with the __init__() method:
 
 
 
-### \_\_init__.py
+#### Package initialization \_\_init__.py
 
 > [!NOTE] Improve, see [Python Class Constructors: Control Your Object Instantiation](https://realpython.com/python-class-constructor/) and [Package Initialization](https://realpython.com/lessons/package-initialization/). See also [search __init__](https://realpython.com/search?q=__init__)
 
@@ -74,13 +67,25 @@ for the package or set the `__all__` variable, described later.
 See [What does if \_\_name__ == "\_\_main__" do in Python?](https://realpython.com/if-name-main-python/)
 
 
-## requirements.txt
+## R ##
+
+### Requirements - Use of the requirements.txt file
 
 
 
+## V ##
 
+### Version - Check version of python modules
 
-## References
+When you install Python, you also get the Python package manager **pip**. You can use pip to get the versions of python modules. If you want to list all installed Python modules with their version numbers, use the following command:
 
-- [Questions and Answers](https://www.tutorialspoint.com/How-to-check-version-of-python-modules)
-- [Installing Packages from Multiple Servers from One or More Requirements File](https://stackoverflow.com/questions/29289695/installing-packages-from-multiple-servers-from-one-or-more-requirements-file)
+```cmd
+$ pip freeze
+```
+To individually find the version number you can grep on this output. For example, in windows, you can use **findstr** instead of grep. For example:
+
+```cmd
+pip freeze | findstr botbuilder-dialogs
+```
+See also [Questions and Answers](https://www.tutorialspoint.com/How-to-check-version-of-python-modules).
+
