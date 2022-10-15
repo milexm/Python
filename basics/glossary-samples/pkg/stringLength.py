@@ -1,5 +1,5 @@
 """
-Simple mdule to show the use of `__init__.py in packages. 
+Simple module to show the use of `__init__.py in packages. 
 """
 
 # Return length of a string. 
