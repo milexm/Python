@@ -52,15 +52,18 @@ When you create an instance of the Person class, Python performs two things:
 
 > [!NOTE] The `__init__` method doesn’t create the object but only initializes the object. Hence, the `__init__()` is not a constructor.
 
+If `__init__` has parameters other than the `self`, you need to pass the corresponding arguments when creating a new object like the example above. 
 
-Fore more information, see  [Python Class Constructors: Control Your Object Instantiation](https://realpython.com/python-class-constructor/).
+Fore more information, see [Python Class Constructors: Control Your Object Instantiation](https://realpython.com/python-class-constructor/) and [Python `__init__`](https://www.pythontutorial.net/python-oop/python-__init__/). See also [search __init__](https://realpython.com/search?q=__init__).
 
 #### Package initialization \_\_init__.py
 
-> [!NOTE] Improve, see [Python Class Constructors: Control Your Object Instantiation](https://realpython.com/python-class-constructor/) and [Package Initialization](https://realpython.com/lessons/package-initialization/). See also [search __init__](https://realpython.com/search?q=__init__)
+If a file named `__init__.py` is present in a **package directory**, it is invoked when the package or a module in the package is imported. You can use this to execute package initialization code, for example for the initialization of package-level data.
+
+For more information, see [Package Initialization](https://realpython.com/lessons/package-initialization/). 
 
 
-From [What is __init__.py ?](https://pythontips.com/2013/07/28/what-is-__init__-py/).
+[What is __init__.py ?](https://pythontips.com/2013/07/28/what-is-__init__-py/).
 
 Files name `__init__.py` are used to mark directories on disk as **Python package directories**. If you have these files:
 
