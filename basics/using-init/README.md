@@ -1,6 +1,7 @@
 ---
-last update: 10/10/22
+last update: 10/15/22
 ---
 
-# Python
-Learn the language. Create technical notes.
+# Glossary realted semples
+
+Examples supporting glossary definitiions. 

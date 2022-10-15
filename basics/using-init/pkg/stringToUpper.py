@@ -2,6 +2,6 @@
 Simple mdule to show the use of `__init__.py in packages. 
 """
 
-# Return lowercase string.
+# Return uppercase string.
 def stringToUpper(inStr):
-    return inStr.lower()
+    return inStr.upper()
