@@ -58,12 +58,17 @@ Fore more information, see [Python Class Constructors: Control Your Object Insta
 
 #### Package initialization \_\_init__.py
 
-If a file named `__init__.py` is present in a **package directory**, it is invoked when the package or a module in the package is imported. You can use this to execute package initialization code, for example for the initialization of package-level data.
+Creating a package with `__init__.py` is all about making it easier to develop larger Python projects using packages. A package is an organized collection of python modules. See also the official documentation [Modules](https://docs.python.org/3/tutorial/modules.html#packages). 
 
-For more information, see [Package Initialization](https://realpython.com/lessons/package-initialization/). 
+`__init__.py` provides a mechanism to group separate python modules into a single importable package.
+
+> [!NOTE] A module is a file containing Python definitions and statements. The file name is the module name with the suffix .py appended.
+
+If a file named `__init__.py` is present in a **package directory**, it is invoked when the package or a files in the package is imported. You can use `__init__.py` to execute package initialization code, for example for the initialization of package-level data.
+
+For more information, see [How to create a Python Package with `__init__.py`](https://timothybramlett.com/How_to_create_a_Python_Package_with___init__py.html). 
 
 
-[What is __init__.py ?](https://pythontips.com/2013/07/28/what-is-__init__-py/).
 
 Files name `__init__.py` are used to mark directories on disk as **Python package directories**. If you have these files:
 
