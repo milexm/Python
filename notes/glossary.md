@@ -29,7 +29,31 @@ Since Python will automatically call the __init__() method immediately after cre
 
 The following defines the Person class with the __init__() method:
 
+```python
 
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+
+if __name__ == '__main__':
+    person = Person('John', 25)
+    print(f"I'm {person.name}. I'm {person.age} years old.")
+
+```
+
+For the use of Python’s `if __name__ == "__main__"` idion, see [__main__](#__main__---use-of-the--if-__name__--__main__-idiom) idiom. 
+
+When you create an instance of the Person class, Python performs two things:
+
+1. It creates a new instance of the Person class by setting the object’s namespace such as `__dict__` attribute to empty ({}).
+1. It calls the `__init__` method to initialize the attributes of the newly created object.
+
+> [!NOTE] The `__init__` method doesn’t create the object but only initializes the object. Hence, the `__init__()` is not a constructor.
+
+
+Fore more information, see  [Python Class Constructors: Control Your Object Instantiation](https://realpython.com/python-class-constructor/).
 
 #### Package initialization \_\_init__.py
 
@@ -55,16 +79,22 @@ The `__init__.py` file is usually empty, but can be used to export selected port
 For mor information, see [Packages](http://docs.python.org/tutorial/modules.html#packages) in the official documentation.
 
 
-The `__init__.py` files are required to make Python treat the
-directories as containing packages; this is done to prevent
-directories with a common name, such as string, from
-unintentionally hiding valid modules that occur later on the
-module search path. In the simplest case,`__init__.py` can just
-be an empty file, but it can also execute initialization code
-for the package or set the `__all__` variable, described later.
+The `__init__.py` files are required to make Python treat the directories as
+containing packages; this is done to prevent directories with a common name,
+such as string, from unintentionally hiding valid modules that occur later on
+the module search path. In the simplest case,`__init__.py` can just be an empty
+file, but it can also execute initialization code for the package or set the
+`__all__` variable, described later.
 
-## \_\_main__
-See [What does if \_\_name__ == "\_\_main__" do in Python?](https://realpython.com/if-name-main-python/)
+
+## M ##
+
+### \_\_main__ - Use of the  `if __name__ == "__main__"` idiom
+
+
+
+
+Fore more information, see [What does if \_\_name__ == "\_\_main__" do in Python?](https://realpython.com/if-name-main-python/).
 
 
 ## R ##
