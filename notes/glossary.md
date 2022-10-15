@@ -58,41 +58,18 @@ Fore more information, see [Python Class Constructors: Control Your Object Insta
 
 #### Package initialization \_\_init__.py
 
-Creating a package with `__init__.py` is all about making it easier to develop larger Python projects using packages. A package is an organized collection of python modules. See also the official documentation [Packages](https://docs.python.org/3/tutorial/modules.html#packages). 
+Creating a package with `__init__.py` is all about making it easier to develop larger Python projects using packages. A package is an organized collection of python modules. See also the official documentation [Modules](https://docs.python.org/3/tutorial/modules.html#) and [Packages](https://docs.python.org/3/tutorial/modules.html#packages). 
 
-`__init__.py` provides a mechanism to group separate python modules into a single importable package.
+`__init__.py` provides a mechanism to group separate Python modules into a single importable package.
 
-> [!NOTE] A module is a file containing Python definitions and statements. The file name is the module name with the suffix .py appended.
+> [!NOTE] A module is a file containing Python definitions and statements. The file name is the module name with the suffix .py appended. See [Modules](https://docs.python.org/3/tutorial/modules.html#). 
 
-If a file named `__init__.py` is present in a **package directory**, it is invoked when the package or a files in the package is imported. You can use `__init__.py` to execute package initialization code, for example for the initialization of package-level data.
-
-For more information, see [How to create a Python Package with `__init__.py`](https://timothybramlett.com/How_to_create_a_Python_Package_with___init__py.html). 
-
-
-
-Files name `__init__.py` are used to mark directories on disk as **Python package directories**. If you have these files:
-
-- `mydir/classes/__init__.py`
-- `midir/classes/module.py`
-
-and if `mydir` is on your path, you can import the code in `module.py` using this statement:
-
-- `import classes.module` or
-- `from classes import module`
-
-If you remove the `__init__.py` file, Python will no longer look for sub-modules inside that directory, so attempts to import the module will fail.
+If a file named `__init__.py` is present in a **package directory**, it is invoked when the package or a module in the package is imported. You can use `__init__.py` to execute package initialization code, for example for the initialization of package-level data.
 
 The `__init__.py` file is usually empty, but can be used to export selected portions of the package under more convenient name, hold convenience functions, etc. Given the example above, the contents of the init module can be accessed as `import classes`.
 
-For mor information, see [Packages](http://docs.python.org/tutorial/modules.html#packages) in the official documentation.
-
-
-The `__init__.py` files are required to make Python treat the directories as
-containing packages; this is done to prevent directories with a common name,
-such as string, from unintentionally hiding valid modules that occur later on
-the module search path. In the simplest case,`__init__.py` can just be an empty
-file, but it can also execute initialization code for the package or set the
-`__all__` variable, described later.
+For more information, see [How to create a Python Package with `__init__.py`](https://timothybramlett.com/How_to_create_a_Python_Package_with___init__py.html). 
+ 
 
 
 ## M ##
