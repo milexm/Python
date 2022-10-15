@@ -58,7 +58,7 @@ Fore more information, see [Python Class Constructors: Control Your Object Insta
 
 #### Package initialization \_\_init__.py
 
-Creating a package with `__init__.py` is all about making it easier to develop larger Python projects using packages. A package is an organized collection of python modules. See also the official documentation [Modules](https://docs.python.org/3/tutorial/modules.html#packages). 
+Creating a package with `__init__.py` is all about making it easier to develop larger Python projects using packages. A package is an organized collection of python modules. See also the official documentation [Packages](https://docs.python.org/3/tutorial/modules.html#packages). 
 
 `__init__.py` provides a mechanism to group separate python modules into a single importable package.
 
