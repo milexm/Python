@@ -68,7 +68,7 @@ python modules. See also the official documentation
 single importable package.
 
 > [!NOTE] A module is a file containing Python definitions and statements. The
-> file name is the module name with the suffix .py appended. See
+> file name is the module name with the suffix `.py` appended. See
 > [Modules](https://docs.python.org/3/tutorial/modules.html#). 
 
 If a file named `__init__.py` is present in a **package directory**, it is
@@ -76,16 +76,11 @@ invoked when the package or a module in the package is imported. You can use
 `__init__.py` to execute package initialization code, for example for the
 initialization of package-level data.
 
-The `__init__.py` file is usually empty, but can be used to export selected
+The `__init__.py` file is usually empty, but it can be used to export selected
 portions of the package under more convenient name, hold convenience functions,
-etc. Given the example above, the contents of the init module can be accessed as
-`import classes`.
-
-For more information, see [How to create a Python Package with
-`__init__.py`](https://timothybramlett.com/How_to_create_a_Python_Package_with___init__py.html). 
+etc.
  
-See also the use of `__init.py__()` in the example
-[use-pkg.py](../basics/glossary-samples/use-pkg.py).
+See the examples [About `__init()__.py` and packages in Python](../basics/glossary-samples/package-init/README.md).
 
 ## M ##
 
@@ -93,8 +88,9 @@ See also the use of `__init.py__()` in the example
 
 
 
+See the examples [About `if __name__ == "__main__"` idiom in Python](../basics/glossary-samples/name-main-idiom/README.md).
 
-Fore more information, see [What does if \_\_name__ == "\_\_main__" do in Python?](https://realpython.com/if-name-main-python/).
+
 
 
 ## R ##
