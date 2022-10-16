@@ -137,6 +137,14 @@ To better understand what that means, see the small practical example [namemain.
     >>> namemain <class 'str'>
     ```
 
+> [!NOTE] You can import any file that contains Python code as a module, and Python will run the code in your file during import. The name of the module will usually be the filename without the file extension for Python files (.py).
+
+In conclusion the value of `__name__` will have one of two values depending on where it lives:
+
+1. In the top-level code environment, the value of `__name__` is `"__main__"`.
+1. In an imported module, the value of `__name__` is the module’s name as a string.
+
+
 See the examples [About `if __name__ == "__main__"` idiom in Python](../basics/glossary-samples/name-main-idiom/README.md).
 
 
