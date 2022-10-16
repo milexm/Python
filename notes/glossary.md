@@ -80,7 +80,7 @@ The `__init__.py` file is usually empty, but it can be used to export selected
 portions of the package under more convenient name, hold convenience functions,
 etc.
  
-See the examples [About `__init()__.py` and packages in Python](../basics/glossary-samples/package-init/README.md).
+See the examples [About `__init()__.py` and packages in Python](../basics/glossary-samples/package-init/README.md). In particular, if you refer to the [use-pkg.py](../basics/glossary-samples/package-init/use-pkg.py) module, you will see that the imports defined in [__intit__.py](../basics/glossary-samples/package-init/pkg/__init__.py), allow the use of functions from  different modules in the directory **pkg** as they belonged to one package only, without the need to import each module one by one.
 
 
 ## M ##
