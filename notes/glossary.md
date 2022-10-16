@@ -123,13 +123,19 @@ Python sets the global `__name__` of a module equal to `"__main__"` if the Pytho
 To better understand what that means, see the small practical example [namemain.py](..\basics\glossary-samples\name-main-idiom\namemain.py). You will see the following:
 
 - If you execute this module as the top level code the idiom `if __name__ == "__main__"` evaluates to true and the indented code is executed, as in this example:
+
+    ```cmd
     > python namemain.py
         __main__ <class 'str'>
         namamain.py is running as top leval code.
+    ```
 - If you include this module, instead, the idiom evaluates to false and the indented code is not executed as in this example:
+
+    ```cmd
     > python
     >>> import namemain
     >>> namemain <class 'str'>
+    ```
 
 See the examples [About `if __name__ == "__main__"` idiom in Python](../basics/glossary-samples/name-main-idiom/README.md).
 
