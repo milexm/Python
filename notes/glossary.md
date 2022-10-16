@@ -82,11 +82,54 @@ etc.
  
 See the examples [About `__init()__.py` and packages in Python](../basics/glossary-samples/package-init/README.md).
 
+
 ## M ##
 
 ### \_\_main__ - Use of the  `if __name__ == "__main__"` idiom
 
+The `if __name__ == "__main__"` idiom allows to execute certain code only when Python program is run as the **main** executable or script, but not when it is imported as a module. You can think of the conditional block that you open with `if __name__ == "__main__"` as a way to store code that should only run when your program is the main executable (executed as a script).
 
+Consider the module [echo.py](../basics/glossary-samples/name-main-idiom/echo.py), this is what happens: 
+- If you execute this module as the top level code the idiom evaluates to `true` and the indented code is executed, as in this example:
+    ```cmd
+    > python echo.py
+    > Yell something at a mountain: hello world
+    rld
+    ld
+    d
+    .
+    ```
+- If you include this module, instead, the idiom evaluates to false and the indented code is not executed, as in this example:
+
+    ```cmd
+    > python
+    >>> from echo import echo
+    >>> echo("not top level code")            
+    'ode\nde\ne\n.'
+    ```
+#### How does the name-main idiom work?
+
+At its core, the idiom is a conditional statement that checks whether the value of the variable __name__ is equal to the string "__main__":
+
+- If the `__name__ == "__main__"` expression is `True`, then the indented code following the conditional statement executes.
+- If the `__name__ == "__main__"` expression is `False`, then Python skips the indented code.
+
+But when is `__name__` equal to the string `"__main__"`? 
+
+Python sets the global `__name__` of a module equal to `"__main__"` if the Python interpreter runs the code in the **top-level code environment**:
+
+> [!NOTE] **Top-level code** is the **first user-specified Python module that starts running**. It’s *top-level* because it imports all other modules that the program needs. 
+
+To better understand what that means, see the small practical example [namemain.py](..\basics\glossary-samples\name-main-idiom\namemain.py). You will see the following:
+
+- If you execute this module as the top level code the idiom `if __name__ == "__main__"` evaluates to true and the indented code is executed, as in this example:
+    > python namemain.py
+        __main__ <class 'str'>
+        namamain.py is running as top leval code.
+- If you include this module, instead, the idiom evaluates to false and the indented code is not executed as in this example:
+    > python
+    >>> import namemain
+    >>> namemain <class 'str'>
 
 See the examples [About `if __name__ == "__main__"` idiom in Python](../basics/glossary-samples/name-main-idiom/README.md).
 
