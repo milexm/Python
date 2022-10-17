@@ -3,19 +3,20 @@ author: michael
 last update: 10/06/2022
 ---
 
+  
 # Python notes
 
-- [1. Basic file operations](#1-basic-file-operations)
-- [2. References](#2-references)
+- [Basic file operations](#basic-file-operations)
+- [References](#references)
   
-## 1. Basic file operations
+## Basic file operations
 
 
 
 See [File operations](python-cheatsheet.md#basic-file-operations)
 
 
-## 2. References
+## References
 
 |Link <img width=200\>|Description|
 |-------------|----------|
