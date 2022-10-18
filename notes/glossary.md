@@ -58,46 +58,96 @@ Fore more information, see [Python Class Constructors: Control Your Object Insta
 
 #### Package initialization \_\_init__.py
 
-If a file named `__init__.py` is present in a **package directory**, it is invoked when the package or a module in the package is imported. You can use this to execute package initialization code, for example for the initialization of package-level data.
+Creating a package with `__init__.py` is all about making it easier to develop
+larger Python projects using packages. A package is an organized collection of
+python modules. See also the official documentation
+[Modules](https://docs.python.org/3/tutorial/modules.html#) and
+[Packages](https://docs.python.org/3/tutorial/modules.html#packages). 
 
-For more information, see [Package Initialization](https://realpython.com/lessons/package-initialization/). 
+`__init__.py` provides a mechanism to group separate Python modules into a
+single importable package.
 
+> [!NOTE] A module is a file containing Python definitions and statements. The
+> file name is the module name with the suffix `.py` appended. See
+> [Modules](https://docs.python.org/3/tutorial/modules.html#). 
 
-[What is __init__.py ?](https://pythontips.com/2013/07/28/what-is-__init__-py/).
+If a file named `__init__.py` is present in a **package directory**, it is
+invoked when the package or a module in the package is imported. You can use
+`__init__.py` to execute package initialization code, for example for the
+initialization of package-level data.
 
-Files name `__init__.py` are used to mark directories on disk as **Python package directories**. If you have these files:
-
-- `mydir/classes/__init__.py`
-- `midir/classes/module.py`
-
-and if `mydir` is on your path, you can import the code in `module.py` using this statement:
-
-- `import classes.module` or
-- `from classes import module`
-
-If you remove the `__init__.py` file, Python will no longer look for sub-modules inside that directory, so attempts to import the module will fail.
-
-The `__init__.py` file is usually empty, but can be used to export selected portions of the package under more convenient name, hold convenience functions, etc. Given the example above, the contents of the init module can be accessed as `import classes`.
-
-For mor information, see [Packages](http://docs.python.org/tutorial/modules.html#packages) in the official documentation.
-
-
-The `__init__.py` files are required to make Python treat the directories as
-containing packages; this is done to prevent directories with a common name,
-such as string, from unintentionally hiding valid modules that occur later on
-the module search path. In the simplest case,`__init__.py` can just be an empty
-file, but it can also execute initialization code for the package or set the
-`__all__` variable, described later.
+The `__init__.py` file is usually empty, but it can be used to export selected
+portions of the package under more convenient name, hold convenience functions,
+etc.
+ 
+See the examples [About `__init()__.py` and packages in Python](../basics/glossary-samples/package-init/README.md). In particular, if you refer to the [use-pkg.py](../basics/glossary-samples/package-init/use-pkg.py) module, you will see that the imports defined in [__intit__.py](../basics/glossary-samples/package-init/pkg/__init__.py), allow the use of functions from  different modules in the directory **pkg** as they belonged to one package only, without the need to import each module one by one.
 
 
 ## M ##
 
 ### \_\_main__ - Use of the  `if __name__ == "__main__"` idiom
 
+The `if __name__ == "__main__"` idiom allows to execute certain code only when Python program is run as the **main** executable or script, but not when it is imported as a module. You can think of the conditional block that you open with `if __name__ == "__main__"` as a way to store code that should only run when your program is the main executable (executed as a script).
+
+Consider the module [echo.py](../basics/glossary-samples/name-main-idiom/echo.py), this is what happens: 
+- If you execute this module as the top level code the idiom evaluates to `true` and the indented code is executed, as in this example:
+    ```cmd
+    > python echo.py
+    > Yell something at a mountain: hello world
+    rld
+    ld
+    d
+    .
+    ```
+- If you include this module, instead, the idiom evaluates to false and the indented code is not executed, as in this example:
+
+    ```cmd
+    > python
+    >>> from echo import echo
+    >>> echo("not top level code")            
+    'ode\nde\ne\n.'
+    ```
+#### How does the name-main idiom work?
+
+At its core, the idiom is a conditional statement that checks whether the value of the variable __name__ is equal to the string "__main__":
+
+- If the `__name__ == "__main__"` expression is `True`, then the indented code following the conditional statement executes.
+- If the `__name__ == "__main__"` expression is `False`, then Python skips the indented code.
+
+But when is `__name__` equal to the string `"__main__"`? 
+
+Python sets the global `__name__` of a module equal to `"__main__"` if the Python interpreter runs the code in the **top-level code environment**:
+
+> [!NOTE] **Top-level code** is the **first user-specified Python module that starts running**. It’s *top-level* because it imports all other modules that the program needs. 
+
+To better understand what that means, see the small practical example [namemain.py](..\basics\glossary-samples\name-main-idiom\namemain.py). You will see the following:
+
+- If you execute this module as the top level code the idiom `if __name__ == "__main__"` evaluates to true and the indented code is executed, as in this example:
+
+    ```cmd
+    > python namemain.py
+        __main__ <class 'str'>
+        namamain.py is running as top leval code.
+    ```
+- If you include this module, instead, the idiom evaluates to false and the indented code is not executed as in this example:
+
+    ```cmd
+    > python
+    >>> import namemain
+    >>> namemain <class 'str'>
+    ```
+
+> [!NOTE] You can import any file that contains Python code as a module, and Python will run the code in your file during import. The name of the module will usually be the filename without the file extension for Python files (.py).
+
+In conclusion the value of `__name__` will have one of two values depending on where it lives:
+
+1. In the top-level code environment, the value of `__name__` is `"__main__"`.
+1. In an imported module, the value of `__name__` is the module’s name as a string.
 
 
+See the examples [About `if __name__ == "__main__"` idiom in Python](../basics/glossary-samples/name-main-idiom/README.md).
 
-Fore more information, see [What does if \_\_name__ == "\_\_main__" do in Python?](https://realpython.com/if-name-main-python/).
+
 
 
 ## R ##
