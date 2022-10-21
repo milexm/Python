@@ -8,7 +8,6 @@ import sys
 Append the path to the packages location.
 This is important to direct the interpreter where to find the packages.
 """
-# sys.path.append('\\Users\\v-mimiele\\aWork\\GitHub\\Python\\code_examples\\packages')
 
 sys.path.append('./code_examples/packages')
 
