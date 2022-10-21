@@ -2,7 +2,7 @@
 last update: 10/21/22
 ---
 
-# ![python-icon](media/icons/python-icon.svg) Exanples API documentation
+# ![python-icon](../media/icons/python-icon.svg) Exanples API documentation
 
 This Code examples API documentation is created automatically form the
 **docstrings** contained in the code.  
