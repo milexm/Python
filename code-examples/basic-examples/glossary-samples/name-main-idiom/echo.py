@@ -1,18 +1,15 @@
 """
-File name: echp.py.
-It shows the behavior of the if __name__ == "__main__" idiom and executes the relevant code. 
-1) If you execute this module as the top level code the idiom evaluates to true and the indented code is executed, as in this example:
-> python echo.py
-> Yell something at a mountain: hello world
-rld
-ld
-d
-.
-2) If you include this module, instead, the idiom evaluates to false and the indented code is not executed, as in this example:
-> python
->>> from echo import echo
->>> echo("not top level code")            
-'ode\nde\ne\n.'
+It shows the behavior of the if __name__ == "__main__" idiom.
+
+
+1) If you execute this module as the top level code the idiom evaluates to true and the indented code is executed.
+2) If you include this module, instead, the idiom evaluates to false and the indented code is not executed.
+
+Functions:
+
+echo 
+
+
 """
 
 

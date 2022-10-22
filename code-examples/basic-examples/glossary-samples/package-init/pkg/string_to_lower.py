@@ -2,6 +2,6 @@
 Simple module to show the use of `__init__.py in packages. 
 """
 
-# Return lowercase string.
 def stringToLower(inStr):
+    """ Make lowercase string."""
     return inStr.lower()
