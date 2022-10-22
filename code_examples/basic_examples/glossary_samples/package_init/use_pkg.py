@@ -1,7 +1,15 @@
 """
-Simple example to show the use of `__init__.py in packages. 
-author: 
+Show how the use of `__init__.py in packages. 
 """
+
+import sys
+  
+""" 
+Append the path to the packages location.
+This is important to direct the interpreter where to find the packages.
+"""
+
+sys.path.append('./code_examples/packages')
 
 import pkg
 
@@ -12,4 +20,3 @@ some_string = "Hello, Universe!"
 print("Lower case: " + pkg.stringToLower(some_string))
 print("Upper case: " + pkg.stringToUpper(some_string))
 print("String length: " + str(pkg.stringLength(some_string)))
-

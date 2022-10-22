@@ -1,6 +1,7 @@
 {
     "python.pythonPath": "C:\\Users\\consultant\\.venvs\\py39labenv\\Scripts\\python.exe",
     "python.analysis.extraPaths": [
-        "./utilities"
+        "./code_examples/packages",
+        "./code_examples/utilities"
     ]
 }
