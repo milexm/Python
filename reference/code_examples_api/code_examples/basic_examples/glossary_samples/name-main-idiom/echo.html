@@ -5,9 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
 <title>code_examples.basic_examples.glossary_samples.name-main-idiom.echo API documentation</title>
-<meta name="description" content="File name: echp.py.
-It shows the behavior of the if __name__ == &#34;__main__&#34; idiom and executes the relevant code.
-1) If you execute this module as the …" />
+<meta name="description" content="It shows the behavior of the if __name__ == &#34;__main__&#34; idiom …" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -24,45 +22,27 @@ It shows the behavior of the if __name__ == &#34;__main__&#34; idiom and execute
 <h1 class="title">Module <code>code_examples.basic_examples.glossary_samples.name-main-idiom.echo</code></h1>
 </header>
 <section id="section-intro">
-<p>File name: echp.py.
-It shows the behavior of the if <strong>name</strong> == "<strong>main</strong>" idiom and executes the relevant code.
-1) If you execute this module as the top level code the idiom evaluates to true and the indented code is executed, as in this example:</p>
-<blockquote>
-<p>python echo.py
-Yell something at a mountain: hello world
-rld
-ld
-d
-.
-2) If you include this module, instead, the idiom evaluates to false and the indented code is not executed, as in this example:
-python</p>
-</blockquote>
-<pre><code class="language-python-repl">&gt;&gt;&gt; from echo import echo
-&gt;&gt;&gt; echo(&quot;not top level code&quot;)            
-'ode
-de
-e
-.'
-</code></pre>
+<p>It shows the behavior of the if <strong>name</strong> == "<strong>main</strong>" idiom.</p>
+<p>1) If you execute this module as the top level code the idiom evaluates to true and the indented code is executed.
+2) If you include this module, instead, the idiom evaluates to false and the indented code is not executed.</p>
+<p>Functions:</p>
+<p>echo</p>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">&#34;&#34;&#34;
-File name: echp.py.
-It shows the behavior of the if __name__ == &#34;__main__&#34; idiom and executes the relevant code. 
-1) If you execute this module as the top level code the idiom evaluates to true and the indented code is executed, as in this example:
-&gt; python echo.py
-&gt; Yell something at a mountain: hello world
-rld
-ld
-d
-.
-2) If you include this module, instead, the idiom evaluates to false and the indented code is not executed, as in this example:
-&gt; python
-&gt;&gt;&gt; from echo import echo
-&gt;&gt;&gt; echo(&#34;not top level code&#34;)            
-&#39;ode\nde\ne\n.&#39;
+It shows the behavior of the if __name__ == &#34;__main__&#34; idiom.
+
+
+1) If you execute this module as the top level code the idiom evaluates to true and the indented code is executed.
+2) If you include this module, instead, the idiom evaluates to false and the indented code is not executed.
+
+Functions:
+
+echo 
+
+
 &#34;&#34;&#34;
 
 
