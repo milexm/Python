@@ -4,16 +4,18 @@ It contains the :func::main method for the package.
 
 # Append path to the utlilities folder to access the related modules
 import sys
-sys.path.append('./utilities') 
+sys.path.append('./code_examples/utilities') 
+
 
 from mymath.fibo import fiboTriangle
 from mymath.mynumpy import plotting
 
-from number import numbers
-import strings
-import tuples
-import lists
-from displayMenu import displayMenu
+from code_examples.language_types.number import numbers
+
+from code_examples.language_types import strings
+from code_examples.language_types import tuples
+from code_examples.language_types import lists
+from code_examples.language_types.displayMenu import displayMenu
 
 
 __author__ = "Michael"
