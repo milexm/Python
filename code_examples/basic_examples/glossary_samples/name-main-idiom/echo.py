@@ -20,8 +20,8 @@ def echo(text: str, repetitions: int = 3) -> str:
     repetitions: int
         The number of echoes. 
 
-    Return
-    =======
+    Returns
+    -------
     echoed_text : str
         The text echoed.
 
