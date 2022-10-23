@@ -23,10 +23,8 @@
 </header>
 <section id="section-intro">
 <p>It shows the behavior of the if <strong>name</strong> == "<strong>main</strong>" idiom.</p>
-<p>1) If you execute this module as the top level code the idiom evaluates to true and the indented code is executed.
-2) If you include this module, instead, the idiom evaluates to false and the indented code is not executed.</p>
-<p>Functions:</p>
-<p>echo</p>
+<p>If you execute this module as the top level code the idiom evaluates to true and the indented code is executed.</p>
+<p>If you include this module, instead, the idiom evaluates to false and the indented code is not executed.</p>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -35,29 +33,48 @@
 It shows the behavior of the if __name__ == &#34;__main__&#34; idiom.
 
 
-1) If you execute this module as the top level code the idiom evaluates to true and the indented code is executed.
-2) If you include this module, instead, the idiom evaluates to false and the indented code is not executed.
+If you execute this module as the top level code the idiom evaluates to true and the indented code is executed.
 
-Functions:
-
-echo 
-
+If you include this module, instead, the idiom evaluates to false and the indented code is not executed.
 
 &#34;&#34;&#34;
 
 
 def echo(text: str, repetitions: int = 3) -&gt; str:
-    &#34;&#34;&#34;Imitate a real-world echo.&#34;&#34;&#34;
+    &#34;&#34;&#34;Imitate a real-world echo.
+    
+    Parameters
+    ----------
+    text : str
+        The text to echo. 
+    
+    repetitions: int
+        The number of echoes. 
+
+    Return
+    =======
+    echoed_text : str
+        The text echoed.
+
+    &#34;&#34;&#34;
     echoed_text = &#34;&#34;
     for i in range(repetitions, 0, -1):
         echoed_text += f&#34;{text[-i:]}\n&#34;
     return f&#34;{echoed_text.lower()}.&#34;
 
 
-if __name__ == &#34;__main__&#34;:
-    # Executes only if this module runs as a top level code.  
+def main():
+    &#34;&#34;&#34; Executes only if this module runs as a top level code. 
+    
+        It is called when  __name__ == &#34;__main__&#34;
+    &#34;&#34;&#34;
+    
     text = input(&#34;Yell something at a mountain: &#34;)
-    print(echo(text))</code></pre>
+    print(echo(text))
+
+if __name__ == &#34;__main__&#34;:
+    main()
+   </code></pre>
 </details>
 </section>
 <section>
@@ -71,17 +88,65 @@ if __name__ == &#34;__main__&#34;:
 <span>def <span class="ident">echo</span></span>(<span>text: str, repetitions: int = 3) ‑> str</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Imitate a real-world echo.</p></div>
+<div class="desc"><p>Imitate a real-world echo.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>text</code></strong> :&ensp;<code>str</code></dt>
+<dd>The text to echo.</dd>
+<dt><strong><code>repetitions</code></strong> :&ensp;<code>int</code></dt>
+<dd>The number of echoes.</dd>
+<dt><strong><code>Return</code></strong></dt>
+<dd>&nbsp;</dd>
+<dt>=======</dt>
+<dt><strong><code>echoed_text</code></strong> :&ensp;<code>str</code></dt>
+<dd>The text echoed.</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def echo(text: str, repetitions: int = 3) -&gt; str:
-    &#34;&#34;&#34;Imitate a real-world echo.&#34;&#34;&#34;
+    &#34;&#34;&#34;Imitate a real-world echo.
+    
+    Parameters
+    ----------
+    text : str
+        The text to echo. 
+    
+    repetitions: int
+        The number of echoes. 
+
+    Return
+    =======
+    echoed_text : str
+        The text echoed.
+
+    &#34;&#34;&#34;
     echoed_text = &#34;&#34;
     for i in range(repetitions, 0, -1):
         echoed_text += f&#34;{text[-i:]}\n&#34;
     return f&#34;{echoed_text.lower()}.&#34;</code></pre>
+</details>
+</dd>
+<dt id="code_examples.basic_examples.glossary_samples.name-main-idiom.echo.main"><code class="name flex">
+<span>def <span class="ident">main</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Executes only if this module runs as a top level code. </p>
+<p>It is called when
+<strong>name</strong> == "<strong>main</strong>"</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def main():
+    &#34;&#34;&#34; Executes only if this module runs as a top level code. 
+    
+        It is called when  __name__ == &#34;__main__&#34;
+    &#34;&#34;&#34;
+    
+    text = input(&#34;Yell something at a mountain: &#34;)
+    print(echo(text))</code></pre>
 </details>
 </dd>
 </dl>
@@ -103,6 +168,7 @@ if __name__ == &#34;__main__&#34;:
 <li><h3><a href="#header-functions">Functions</a></h3>
 <ul class="">
 <li><code><a title="code_examples.basic_examples.glossary_samples.name-main-idiom.echo.echo" href="#code_examples.basic_examples.glossary_samples.name-main-idiom.echo.echo">echo</a></code></li>
+<li><code><a title="code_examples.basic_examples.glossary_samples.name-main-idiom.echo.main" href="#code_examples.basic_examples.glossary_samples.name-main-idiom.echo.main">main</a></code></li>
 </ul>
 </li>
 </ul>
