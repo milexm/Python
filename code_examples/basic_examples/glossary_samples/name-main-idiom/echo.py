@@ -1,5 +1,5 @@
 """
-It shows the behavior of the if __name__ == "__main__" idiom.
+It shows the behavior of the <i>if __name__ == "__main__"</i> idiom.
 
 
 If you execute this module as the top level code the idiom evaluates to true and the indented code is executed.
