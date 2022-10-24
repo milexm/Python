@@ -1,5 +1,7 @@
 ---
-last update: 10/18/22
+last update: 10/15/22
 ---
 
-# Basic code examples
+# Glossary realted semples
+
+Examples supporting glossary definitiions. 
