@@ -5,13 +5,12 @@ last update: 10/09/2022
 
 # Python cheatsheet  
 
-- [Python cheatsheet](#python-cheatsheet)
-  - [Basic file operations](#basic-file-operations)
-    - [Read an existing file](#read-an-existing-file)
-    - [Create a new file and overwrite existing content](#create-a-new-file-and-overwrite-existing-content)
-    - [Append text to an existing file without overwriting](#append-text-to-an-existing-file-without-overwriting)
-    - [Both append and read a file](#both-append-and-read-a-file)
-  - [References](#references)
+- [Basic file operations](#basic-file-operations)
+  - [Read an existing file](#read-an-existing-file)
+  - [Create a new file and overwrite existing content](#create-a-new-file-and-overwrite-existing-content)
+  - [Append text to an existing file without overwriting](#append-text-to-an-existing-file-without-overwriting)
+  - [Both append and read a file](#both-append-and-read-a-file)
+- [References](#references)
 
 ## Basic file operations
 
@@ -49,3 +48,4 @@ with open("file.txt", "a+") as file:
 
 ## References
 - [Practical python projects](https://practicalpython.yasoob.me/toc.html)
+- [PEP 8 – Style Guide for Python Code](https://peps.python.org/pep-0008/)
