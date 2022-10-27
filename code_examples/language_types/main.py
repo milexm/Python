@@ -8,16 +8,16 @@ import sys
 sys.path.append('./code_examples/packages') 
 
 import mymath
+import mytypes 
 
 from mymath.fibo import fiboTriangle
 from mymath.mynumpy import plotting
 
-import language_types 
-import language_types.strings
-import language_types.tuples
-import language_types.lists
-from language_types.displayMenu import displayMenu
-from language_types.number import numbers
+import mytypes.strings
+import mytypes.tuples
+import mytypes.lists
+from mytypes.displayMenu import displayMenu
+from mytypes.number import numbers
 
 
 __author__ = "Michael"
