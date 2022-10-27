@@ -3,7 +3,7 @@ Module name: number.py
 Integers, floating point numbers and complex numbers falls under Python 
 numbers category. They are defined as int, float and complex class in Python.
 """
-from code_examples.language_types.displayMenu import inputNumber
+from displayMenu import inputNumber
 
 
 class numbers:

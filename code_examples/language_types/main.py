@@ -1,21 +1,22 @@
-""" Exercise Python basic syntax.
-It contains the :func::main method for the package.  
+""" 
+Exercise Python basic syntax.
+
 """
 
-# Append path to the utlilities folder to access the related modules
+# Append path to the packages folder to access the related modules
 import sys
-sys.path.append('./code_examples/utilities') 
+sys.path.append('./code_examples/packages') 
 
+import mymath
 
 from mymath.fibo import fiboTriangle
 from mymath.mynumpy import plotting
 
-from code_examples.language_types.number import numbers
-
-from code_examples.language_types import strings
-from code_examples.language_types import tuples
-from code_examples.language_types import lists
-from code_examples.language_types.displayMenu import displayMenu
+import strings
+import tuples
+import lists
+from displayMenu import displayMenu
+from number import numbers
 
 
 __author__ = "Michael"

@@ -8,7 +8,7 @@ import sys
   
 """ 
 Append the path to the packages location.
-This is important to allow the interpreter where to find the packages.
+This is important to allow the interpreter to find the packages.
 """
 sys.path.append('./code_examples/packages')
 

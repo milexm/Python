@@ -15,8 +15,8 @@ from the directory: `<user path>\<python project>`:
 ```
 
 > [!NOTE] This README file is the landing page of the API reference
-documentation because it is included by the
-[code_examples/__init__.py](./__init__.py). This is why:
+documentation because it is included by the `code_examples/__init__.py` This is
+why:
 >
 > The landing page for the documentation is the project's top-level
 `<modulename>/__init__.py` file that in our case is `code_examples/__init__.py`
