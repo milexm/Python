@@ -14,6 +14,10 @@ from mymath.mynumpy import plotting
 
 from mytypes.lists import mylist
 
+from mytypes.strings import mystring 
+
+from mytypes.tuples import createTuples 
+
 from mytypes.number import numbers
 
 
@@ -33,18 +37,21 @@ menuItems = ["Basic types", "Strings", "Lists", "Dictionary",
 
 class types:
 
-    """ Starts the program.
+    """ 
+    Execercises Python types. 
+    
+    Remarks
+    -------
+    This class contains the main nethod i.e., the program entry point. 
 
-        :remarks:: 
+    The static main method displays the menu to allow user's selection.
+    and processes the user's imput.  
 
-        This is the program entry point.
-        This class only :meth::main static method displays the menu to allow user's selection.
-        Processes the user's imput.  
+    Use
+    ---    
 
-        .. admonition:: Example
-
-        To start in a terminal window enter >python .\\main.py
-        For example (learn-python) PS C:\\Users\\<user name>\\aLearning\\PythonExamples\\language-types> python .\\main.py
+    In a terminal window enter >python \<user path\>./language_types/main.py
+  
     """
 
     @staticmethod
@@ -71,17 +78,18 @@ class types:
             elif choice == 2:
                 print("\n*** String Operations ***")
                 print("\n---Get a string---")
-                strings.useString()
+                astring = mystring()
+                astring.useString()
                 print("\n---Get a substring---")
-                strings.subString()
+                astring.subString()
                 print("\n---Strip white spaces---")
-                strings.stripWhiteSpaces()
+                astring.stripWhiteSpaces()
                 print("\n---Lower case string---")
-                strings.lowerString()
+                astring.lowerString()
                 print("\n---Upper case string---")
-                strings.upperString()
+                astring.upperString()
                 print("\n---Split string---")
-                strings.splitString()
+                astring.splitString()
             elif choice == 3:
                 print("\n *** List Operations ***")
                 print("\n---Index lists---")
@@ -99,7 +107,7 @@ class types:
             elif choice == 5:
                 print("\n*** Tuple Operations ***")
                 print("\n---Create tuples ---")
-                tuples.createTuples()
+                createTuples()
             elif choice == 6:
                 print("\n*** Plot Operations ***")
                 plotting()

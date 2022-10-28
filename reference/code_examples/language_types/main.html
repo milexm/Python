@@ -43,6 +43,10 @@ from mymath.mynumpy import plotting
 
 from mytypes.lists import mylist
 
+from mytypes.strings import mystring 
+
+from mytypes.tuples import createTuples 
+
 from mytypes.number import numbers
 
 
@@ -62,18 +66,21 @@ menuItems = [&#34;Basic types&#34;, &#34;Strings&#34;, &#34;Lists&#34;, &#34;Dic
 
 class types:
 
-    &#34;&#34;&#34; Starts the program.
+    &#34;&#34;&#34; 
+    Execercises Python types. 
+    
+    Remarks
+    -------
+    This class contains the main nethod i.e., the program entry point. 
 
-        :remarks:: 
+    The static main method displays the menu to allow user&#39;s selection.
+    and processes the user&#39;s imput.  
 
-        This is the program entry point.
-        This class only :meth::main static method displays the menu to allow user&#39;s selection.
-        Processes the user&#39;s imput.  
+    Use
+    ---    
 
-        .. admonition:: Example
-
-        To start in a terminal window enter &gt;python .\\main.py
-        For example (learn-python) PS C:\\Users\\&lt;user name&gt;\\aLearning\\PythonExamples\\language-types&gt; python .\\main.py
+    In a terminal window enter &gt;python &lt;user path&gt;./language_types/main.py
+  
     &#34;&#34;&#34;
 
     @staticmethod
@@ -100,17 +107,18 @@ class types:
             elif choice == 2:
                 print(&#34;\n*** String Operations ***&#34;)
                 print(&#34;\n---Get a string---&#34;)
-                strings.useString()
+                astring = mystring()
+                astring.useString()
                 print(&#34;\n---Get a substring---&#34;)
-                strings.subString()
+                astring.subString()
                 print(&#34;\n---Strip white spaces---&#34;)
-                strings.stripWhiteSpaces()
+                astring.stripWhiteSpaces()
                 print(&#34;\n---Lower case string---&#34;)
-                strings.lowerString()
+                astring.lowerString()
                 print(&#34;\n---Upper case string---&#34;)
-                strings.upperString()
+                astring.upperString()
                 print(&#34;\n---Split string---&#34;)
-                strings.splitString()
+                astring.splitString()
             elif choice == 3:
                 print(&#34;\n *** List Operations ***&#34;)
                 print(&#34;\n---Index lists---&#34;)
@@ -128,7 +136,7 @@ class types:
             elif choice == 5:
                 print(&#34;\n*** Tuple Operations ***&#34;)
                 print(&#34;\n---Create tuples ---&#34;)
-                tuples.createTuples()
+                createTuples()
             elif choice == 6:
                 print(&#34;\n*** Plot Operations ***&#34;)
                 plotting()
@@ -158,35 +166,35 @@ if __name__ == &#39;__main__&#39;:
 <span>class <span class="ident">types</span></span>
 </code></dt>
 <dd>
-<div class="desc"><p>Starts the program.</p>
-<p>:remarks:: </p>
-<p>This is the program entry point.
-This class only :meth::main static method displays the menu to allow user's selection.
-Processes the user's imput.
+<div class="desc"><p>Execercises Python types. </p>
+<h2 id="remarks">Remarks</h2>
+<p>This class contains the main nethod i.e., the program entry point. </p>
+<p>The static main method displays the menu to allow user's selection.
+and processes the user's imput.
 </p>
-<div class="admonition admonition">
-<p class="admonition-title">Example</p>
-</div>
-<p>To start in a terminal window enter &gt;python .\main.py
-For example (learn-python) PS C:\Users\<user name>\aLearning\PythonExamples\language-types&gt; python .\main.py</p></div>
+<h2 id="use">Use</h2>
+<p>In a terminal window enter &gt;python <user path>./language_types/main.py</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">class types:
 
-    &#34;&#34;&#34; Starts the program.
+    &#34;&#34;&#34; 
+    Execercises Python types. 
+    
+    Remarks
+    -------
+    This class contains the main nethod i.e., the program entry point. 
 
-        :remarks:: 
+    The static main method displays the menu to allow user&#39;s selection.
+    and processes the user&#39;s imput.  
 
-        This is the program entry point.
-        This class only :meth::main static method displays the menu to allow user&#39;s selection.
-        Processes the user&#39;s imput.  
+    Use
+    ---    
 
-        .. admonition:: Example
-
-        To start in a terminal window enter &gt;python .\\main.py
-        For example (learn-python) PS C:\\Users\\&lt;user name&gt;\\aLearning\\PythonExamples\\language-types&gt; python .\\main.py
+    In a terminal window enter &gt;python &lt;user path&gt;./language_types/main.py
+  
     &#34;&#34;&#34;
 
     @staticmethod
@@ -213,17 +221,18 @@ For example (learn-python) PS C:\Users\<user name>\aLearning\PythonExamples\lang
             elif choice == 2:
                 print(&#34;\n*** String Operations ***&#34;)
                 print(&#34;\n---Get a string---&#34;)
-                strings.useString()
+                astring = mystring()
+                astring.useString()
                 print(&#34;\n---Get a substring---&#34;)
-                strings.subString()
+                astring.subString()
                 print(&#34;\n---Strip white spaces---&#34;)
-                strings.stripWhiteSpaces()
+                astring.stripWhiteSpaces()
                 print(&#34;\n---Lower case string---&#34;)
-                strings.lowerString()
+                astring.lowerString()
                 print(&#34;\n---Upper case string---&#34;)
-                strings.upperString()
+                astring.upperString()
                 print(&#34;\n---Split string---&#34;)
-                strings.splitString()
+                astring.splitString()
             elif choice == 3:
                 print(&#34;\n *** List Operations ***&#34;)
                 print(&#34;\n---Index lists---&#34;)
@@ -241,7 +250,7 @@ For example (learn-python) PS C:\Users\<user name>\aLearning\PythonExamples\lang
             elif choice == 5:
                 print(&#34;\n*** Tuple Operations ***&#34;)
                 print(&#34;\n---Create tuples ---&#34;)
-                tuples.createTuples()
+                createTuples()
             elif choice == 6:
                 print(&#34;\n*** Plot Operations ***&#34;)
                 plotting()
@@ -289,17 +298,18 @@ def main():
         elif choice == 2:
             print(&#34;\n*** String Operations ***&#34;)
             print(&#34;\n---Get a string---&#34;)
-            strings.useString()
+            astring = mystring()
+            astring.useString()
             print(&#34;\n---Get a substring---&#34;)
-            strings.subString()
+            astring.subString()
             print(&#34;\n---Strip white spaces---&#34;)
-            strings.stripWhiteSpaces()
+            astring.stripWhiteSpaces()
             print(&#34;\n---Lower case string---&#34;)
-            strings.lowerString()
+            astring.lowerString()
             print(&#34;\n---Upper case string---&#34;)
-            strings.upperString()
+            astring.upperString()
             print(&#34;\n---Split string---&#34;)
-            strings.splitString()
+            astring.splitString()
         elif choice == 3:
             print(&#34;\n *** List Operations ***&#34;)
             print(&#34;\n---Index lists---&#34;)
@@ -317,7 +327,7 @@ def main():
         elif choice == 5:
             print(&#34;\n*** Tuple Operations ***&#34;)
             print(&#34;\n---Create tuples ---&#34;)
-            tuples.createTuples()
+            createTuples()
         elif choice == 6:
             print(&#34;\n*** Plot Operations ***&#34;)
             plotting()

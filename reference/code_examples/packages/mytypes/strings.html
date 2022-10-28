@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
 <title>code_examples.packages.mytypes.strings API documentation</title>
-<meta name="description" content="Created on Sun Dec 30 17:29:33 2018 …" />
+<meta name="description" content="Shows how to use string." />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -22,50 +22,47 @@
 <h1 class="title">Module <code>code_examples.packages.mytypes.strings</code></h1>
 </header>
 <section id="section-intro">
-<p>Created on Sun Dec 30 17:29:33 2018</p>
-<p>@author: Michael</p>
+<p>Shows how to use string.</p>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-&#34;&#34;&#34;
-Created on Sun Dec 30 17:29:33 2018
+<pre><code class="python">&#34;&#34;&#34; 
+Shows how to use string.
+&#34;&#34;&#34; 
 
-@author: Michael
-&#34;&#34;&#34;
+class mystring:
 
-def useString():
-    astring = &#34;\&#34;Hello World!\&#34;&#34;
-    message = &#39;{0} {1}&#39;.format(&#39;This is a string: &#39;, astring)
-    print(message)
-    
-def subString():
-    astring = &#34;\&#34;Hello World!\&#34;&#34;
-    message = &#39;{0} {1}&#39;.format(&#39;This is a substring: &#39;, astring[2:10])
-    print(message)
+    def useString(self):
+        astring = &#34;\&#34;Hello World!\&#34;&#34;
+        message = &#39;{0} {1}&#39;.format(&#39;This is a string: &#39;, astring)
+        print(message)
+        
+    def subString(self):
+        astring = &#34;\&#34;Hello World!\&#34;&#34;
+        message = &#39;{0} {1}&#39;.format(&#39;This is a substring: &#39;, astring[2:10])
+        print(message)
 
-def stripWhiteSpaces():
-    astring = &#34;\&#34;  Hello World!  \&#34;&#34;
-    message = &#39;{0} {1}&#39;.format(&#39;This is a string without white spaces: &#39;, 
-               astring.strip(&#39; &#39;))
-    print(message)
-    
-def lowerString():
-    astring = &#34;\&#34;Hello World!\&#34;&#34;
-    message = &#39;{0} {1}&#39;.format(&#39;Lower case string: &#39;, astring.lower())
-    print(message)
-    
-def upperString():
-    astring = &#34;\&#34;Hello World!\&#34;&#34;
-    message = &#39;{0} {1}&#39;.format(&#39;Upper case string: &#39;, astring.upper())
-    print(message)
-    
-def splitString():
-    astring = &#34;\&#34;Hello, World!\&#34;&#34;
-    message = &#39;{0} {1}&#39;.format(&#39;Split string: &#39;, astring.split(&#39;,&#39;))
-    print(message)    </code></pre>
+    def stripWhiteSpaces(self):
+        astring = &#34;\&#34;  Hello World!  \&#34;&#34;
+        message = &#39;{0} {1}&#39;.format(&#39;This is a string without white spaces: &#39;, 
+                astring.strip(&#39; &#39;))
+        print(message)
+        
+    def lowerString(self):
+        astring = &#34;\&#34;Hello World!\&#34;&#34;
+        message = &#39;{0} {1}&#39;.format(&#39;Lower case string: &#39;, astring.lower())
+        print(message)
+        
+    def upperString(self):
+        astring = &#34;\&#34;Hello World!\&#34;&#34;
+        message = &#39;{0} {1}&#39;.format(&#39;Upper case string: &#39;, astring.upper())
+        print(message)
+        
+    def splitString(self):
+        astring = &#34;\&#34;Hello, World!\&#34;&#34;
+        message = &#39;{0} {1}&#39;.format(&#39;Split string: &#39;, astring.split(&#39;,&#39;))
+        print(message)    </code></pre>
 </details>
 </section>
 <section>
@@ -73,10 +70,12 @@ def splitString():
 <section>
 </section>
 <section>
-<h2 class="section-title" id="header-functions">Functions</h2>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
 <dl>
-<dt id="code_examples.packages.mytypes.strings.lowerString"><code class="name flex">
-<span>def <span class="ident">lowerString</span></span>(<span>)</span>
+<dt id="code_examples.packages.mytypes.strings.mystring"><code class="flex name class">
+<span>class <span class="ident">mystring</span></span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -84,14 +83,58 @@ def splitString():
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def lowerString():
+<pre><code class="python">class mystring:
+
+    def useString(self):
+        astring = &#34;\&#34;Hello World!\&#34;&#34;
+        message = &#39;{0} {1}&#39;.format(&#39;This is a string: &#39;, astring)
+        print(message)
+        
+    def subString(self):
+        astring = &#34;\&#34;Hello World!\&#34;&#34;
+        message = &#39;{0} {1}&#39;.format(&#39;This is a substring: &#39;, astring[2:10])
+        print(message)
+
+    def stripWhiteSpaces(self):
+        astring = &#34;\&#34;  Hello World!  \&#34;&#34;
+        message = &#39;{0} {1}&#39;.format(&#39;This is a string without white spaces: &#39;, 
+                astring.strip(&#39; &#39;))
+        print(message)
+        
+    def lowerString(self):
+        astring = &#34;\&#34;Hello World!\&#34;&#34;
+        message = &#39;{0} {1}&#39;.format(&#39;Lower case string: &#39;, astring.lower())
+        print(message)
+        
+    def upperString(self):
+        astring = &#34;\&#34;Hello World!\&#34;&#34;
+        message = &#39;{0} {1}&#39;.format(&#39;Upper case string: &#39;, astring.upper())
+        print(message)
+        
+    def splitString(self):
+        astring = &#34;\&#34;Hello, World!\&#34;&#34;
+        message = &#39;{0} {1}&#39;.format(&#39;Split string: &#39;, astring.split(&#39;,&#39;))
+        print(message)    </code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="code_examples.packages.mytypes.strings.mystring.lowerString"><code class="name flex">
+<span>def <span class="ident">lowerString</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def lowerString(self):
     astring = &#34;\&#34;Hello World!\&#34;&#34;
     message = &#39;{0} {1}&#39;.format(&#39;Lower case string: &#39;, astring.lower())
     print(message)</code></pre>
 </details>
 </dd>
-<dt id="code_examples.packages.mytypes.strings.splitString"><code class="name flex">
-<span>def <span class="ident">splitString</span></span>(<span>)</span>
+<dt id="code_examples.packages.mytypes.strings.mystring.splitString"><code class="name flex">
+<span>def <span class="ident">splitString</span></span>(<span>self)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -99,14 +142,14 @@ def splitString():
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def splitString():
+<pre><code class="python">def splitString(self):
     astring = &#34;\&#34;Hello, World!\&#34;&#34;
     message = &#39;{0} {1}&#39;.format(&#39;Split string: &#39;, astring.split(&#39;,&#39;))
     print(message)    </code></pre>
 </details>
 </dd>
-<dt id="code_examples.packages.mytypes.strings.stripWhiteSpaces"><code class="name flex">
-<span>def <span class="ident">stripWhiteSpaces</span></span>(<span>)</span>
+<dt id="code_examples.packages.mytypes.strings.mystring.stripWhiteSpaces"><code class="name flex">
+<span>def <span class="ident">stripWhiteSpaces</span></span>(<span>self)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -114,15 +157,15 @@ def splitString():
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def stripWhiteSpaces():
+<pre><code class="python">def stripWhiteSpaces(self):
     astring = &#34;\&#34;  Hello World!  \&#34;&#34;
     message = &#39;{0} {1}&#39;.format(&#39;This is a string without white spaces: &#39;, 
-               astring.strip(&#39; &#39;))
+            astring.strip(&#39; &#39;))
     print(message)</code></pre>
 </details>
 </dd>
-<dt id="code_examples.packages.mytypes.strings.subString"><code class="name flex">
-<span>def <span class="ident">subString</span></span>(<span>)</span>
+<dt id="code_examples.packages.mytypes.strings.mystring.subString"><code class="name flex">
+<span>def <span class="ident">subString</span></span>(<span>self)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -130,14 +173,14 @@ def splitString():
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def subString():
+<pre><code class="python">def subString(self):
     astring = &#34;\&#34;Hello World!\&#34;&#34;
     message = &#39;{0} {1}&#39;.format(&#39;This is a substring: &#39;, astring[2:10])
     print(message)</code></pre>
 </details>
 </dd>
-<dt id="code_examples.packages.mytypes.strings.upperString"><code class="name flex">
-<span>def <span class="ident">upperString</span></span>(<span>)</span>
+<dt id="code_examples.packages.mytypes.strings.mystring.upperString"><code class="name flex">
+<span>def <span class="ident">upperString</span></span>(<span>self)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -145,14 +188,14 @@ def splitString():
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def upperString():
+<pre><code class="python">def upperString(self):
     astring = &#34;\&#34;Hello World!\&#34;&#34;
     message = &#39;{0} {1}&#39;.format(&#39;Upper case string: &#39;, astring.upper())
     print(message)</code></pre>
 </details>
 </dd>
-<dt id="code_examples.packages.mytypes.strings.useString"><code class="name flex">
-<span>def <span class="ident">useString</span></span>(<span>)</span>
+<dt id="code_examples.packages.mytypes.strings.mystring.useString"><code class="name flex">
+<span>def <span class="ident">useString</span></span>(<span>self)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -160,15 +203,15 @@ def splitString():
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def useString():
+<pre><code class="python">def useString(self):
     astring = &#34;\&#34;Hello World!\&#34;&#34;
     message = &#39;{0} {1}&#39;.format(&#39;This is a string: &#39;, astring)
     print(message)</code></pre>
 </details>
 </dd>
 </dl>
-</section>
-<section>
+</dd>
+</dl>
 </section>
 </article>
 <nav id="sidebar">
@@ -182,14 +225,19 @@ def splitString():
 <li><code><a title="code_examples.packages.mytypes" href="index.html">code_examples.packages.mytypes</a></code></li>
 </ul>
 </li>
-<li><h3><a href="#header-functions">Functions</a></h3>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="code_examples.packages.mytypes.strings.mystring" href="#code_examples.packages.mytypes.strings.mystring">mystring</a></code></h4>
 <ul class="two-column">
-<li><code><a title="code_examples.packages.mytypes.strings.lowerString" href="#code_examples.packages.mytypes.strings.lowerString">lowerString</a></code></li>
-<li><code><a title="code_examples.packages.mytypes.strings.splitString" href="#code_examples.packages.mytypes.strings.splitString">splitString</a></code></li>
-<li><code><a title="code_examples.packages.mytypes.strings.stripWhiteSpaces" href="#code_examples.packages.mytypes.strings.stripWhiteSpaces">stripWhiteSpaces</a></code></li>
-<li><code><a title="code_examples.packages.mytypes.strings.subString" href="#code_examples.packages.mytypes.strings.subString">subString</a></code></li>
-<li><code><a title="code_examples.packages.mytypes.strings.upperString" href="#code_examples.packages.mytypes.strings.upperString">upperString</a></code></li>
-<li><code><a title="code_examples.packages.mytypes.strings.useString" href="#code_examples.packages.mytypes.strings.useString">useString</a></code></li>
+<li><code><a title="code_examples.packages.mytypes.strings.mystring.lowerString" href="#code_examples.packages.mytypes.strings.mystring.lowerString">lowerString</a></code></li>
+<li><code><a title="code_examples.packages.mytypes.strings.mystring.splitString" href="#code_examples.packages.mytypes.strings.mystring.splitString">splitString</a></code></li>
+<li><code><a title="code_examples.packages.mytypes.strings.mystring.stripWhiteSpaces" href="#code_examples.packages.mytypes.strings.mystring.stripWhiteSpaces">stripWhiteSpaces</a></code></li>
+<li><code><a title="code_examples.packages.mytypes.strings.mystring.subString" href="#code_examples.packages.mytypes.strings.mystring.subString">subString</a></code></li>
+<li><code><a title="code_examples.packages.mytypes.strings.mystring.upperString" href="#code_examples.packages.mytypes.strings.mystring.upperString">upperString</a></code></li>
+<li><code><a title="code_examples.packages.mytypes.strings.mystring.useString" href="#code_examples.packages.mytypes.strings.mystring.useString">useString</a></code></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
