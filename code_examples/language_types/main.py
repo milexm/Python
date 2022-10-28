@@ -50,7 +50,7 @@ class types:
     Use
     ---    
 
-    In a terminal window enter >python \<user path\>./language_types/main.py
+    In a terminal window enter: python [user path]./language_types/main.py
   
     """
 

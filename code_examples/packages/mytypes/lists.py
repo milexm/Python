@@ -8,7 +8,7 @@ A list can be written as a list of comma-separated values (items) between square
 Lists might contain items of different types, but usually the all have 
 the same type.
 For more information, see
-[Python List](http://https://www.programiz.com/python-programming/list/)
+[Python List](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range/)
 
 """
 
