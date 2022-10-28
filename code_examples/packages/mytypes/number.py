@@ -3,11 +3,11 @@ Module name: number.py
 Integers, floating point numbers and complex numbers falls under Python 
 numbers category. They are defined as int, float and complex class in Python.
 """
-import displayMenu as dm
+
 
 class numbers:
 
-    def inputNumber(prompt):
+    def inputNumber(self, prompt):
         # Prompts user to imput a number.
         # Usage num = imputNumber(prompt).
         # It runs until the user input a number.
@@ -32,7 +32,7 @@ class numbers:
         
     def addNumbers():
         print("*** Adding Numbers ***")
-        num1 = dm.inputNumber('Enter first number: ')
-        num2 = dm.inputNumber('Enter second number: ')
+        num1 = self.inputNumber('Enter first number: ')
+        num2 = self.inputNumber('Enter second number: ')
         print(num1 + num2)
         return

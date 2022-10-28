@@ -7,18 +7,18 @@ Exercise Python basic syntax.
 import sys
 sys.path.append('./code_examples/packages') 
 
-import mymath
-import mytypes 
 
 from mymath.fibo import fiboTriangle
 from mymath.mynumpy import plotting
 
-import mytypes.strings
-import mytypes.tuples
-import mytypes.lists
-from mytypes.displayMenu import displayMenu
+
+from mytypes.lists import mylist
+
 from mytypes.number import numbers
 
+
+
+from utilities.displayMenu import displayMenu
 
 __author__ = "Michael"
 __copyright__ = "2020 acloudysky"
@@ -85,13 +85,14 @@ class types:
             elif choice == 3:
                 print("\n *** List Operations ***")
                 print("\n---Index lists---")
-                lists.listIndex()
+                alist = mylist()
+                alist.listIndex()
                 print("\n---Slice lists---")
-                lists.listSlice()
+                alist.listSlice()
                 print("\n---Change lists---")
-                lists.listChange()
+                alist.listChange()
                 print("\n---Add lists---")
-                lists.listAdd()
+                alist.listAdd()
             elif choice == 4:
                 print("\n*** Dictionary Operations ***")
                 fiboTriangle(5)

@@ -5,8 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
 <title>code_examples.language_types.main API documentation</title>
-<meta name="description" content="Exercise Python basic syntax.
-It contains the :func::main method for the package." />
+<meta name="description" content="Exercise Python basic syntax." />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -23,31 +22,32 @@ It contains the :func::main method for the package." />
 <h1 class="title">Module <code>code_examples.language_types.main</code></h1>
 </header>
 <section id="section-intro">
-<p>Exercise Python basic syntax.
-It contains the :func::main method for the package.</p>
+<p>Exercise Python basic syntax.</p>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">&#34;&#34;&#34; Exercise Python basic syntax.
-It contains the :func::main method for the package.  
+<pre><code class="python">&#34;&#34;&#34; 
+Exercise Python basic syntax.
+
 &#34;&#34;&#34;
 
-# Append path to the utlilities folder to access the related modules
+# Append path to the packages folder to access the related modules
 import sys
-sys.path.append(&#39;./code_examples/utilities&#39;) 
+sys.path.append(&#39;./code_examples/packages&#39;) 
 
 
 from mymath.fibo import fiboTriangle
 from mymath.mynumpy import plotting
 
-from code_examples.language_types.number import numbers
 
-from code_examples.language_types import strings
-from code_examples.language_types import tuples
-from code_examples.language_types import lists
-from code_examples.language_types.displayMenu import displayMenu
+from mytypes.lists import mylist
 
+from mytypes.number import numbers
+
+
+
+from utilities.displayMenu import displayMenu
 
 __author__ = &#34;Michael&#34;
 __copyright__ = &#34;2020 acloudysky&#34;
@@ -114,13 +114,14 @@ class types:
             elif choice == 3:
                 print(&#34;\n *** List Operations ***&#34;)
                 print(&#34;\n---Index lists---&#34;)
-                lists.listIndex()
+                alist = mylist()
+                alist.listIndex()
                 print(&#34;\n---Slice lists---&#34;)
-                lists.listSlice()
+                alist.listSlice()
                 print(&#34;\n---Change lists---&#34;)
-                lists.listChange()
+                alist.listChange()
                 print(&#34;\n---Add lists---&#34;)
-                lists.listAdd()
+                alist.listAdd()
             elif choice == 4:
                 print(&#34;\n*** Dictionary Operations ***&#34;)
                 fiboTriangle(5)
@@ -226,13 +227,14 @@ For example (learn-python) PS C:\Users\<user name>\aLearning\PythonExamples\lang
             elif choice == 3:
                 print(&#34;\n *** List Operations ***&#34;)
                 print(&#34;\n---Index lists---&#34;)
-                lists.listIndex()
+                alist = mylist()
+                alist.listIndex()
                 print(&#34;\n---Slice lists---&#34;)
-                lists.listSlice()
+                alist.listSlice()
                 print(&#34;\n---Change lists---&#34;)
-                lists.listChange()
+                alist.listChange()
                 print(&#34;\n---Add lists---&#34;)
-                lists.listAdd()
+                alist.listAdd()
             elif choice == 4:
                 print(&#34;\n*** Dictionary Operations ***&#34;)
                 fiboTriangle(5)
@@ -301,13 +303,14 @@ def main():
         elif choice == 3:
             print(&#34;\n *** List Operations ***&#34;)
             print(&#34;\n---Index lists---&#34;)
-            lists.listIndex()
+            alist = mylist()
+            alist.listIndex()
             print(&#34;\n---Slice lists---&#34;)
-            lists.listSlice()
+            alist.listSlice()
             print(&#34;\n---Change lists---&#34;)
-            lists.listChange()
+            alist.listChange()
             print(&#34;\n---Add lists---&#34;)
-            lists.listAdd()
+            alist.listAdd()
         elif choice == 4:
             print(&#34;\n*** Dictionary Operations ***&#34;)
             fiboTriangle(5)
