@@ -40,6 +40,6 @@ def displayMenu(options, display):
     if (display == False):
         choice = 0
         while not(np.any(choice == np.arange(len(options))+1)):
-            choice = inputNumber("\n Make a selection: ")
+            choice = inputNumber("\n Make a selection; 7 to display menu: ")
 
         return choice

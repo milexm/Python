@@ -26,18 +26,38 @@ last update: 10/25/22
 <section id="section-intro">
 <hr>
 <h2 id="last-update-102522">last update: 10/25/22</h2>
-<h1 id="code-examples-api"><img alt="python-icon" src="../../media/icons/python-icon.svg"> Code examples API</h1>
-<p>The code examples API documentation is created automatically from the <strong>docstrings</strong> contained in the code.
+<h1 id="api-reference-documentation"><img alt="python-icon" src="../../media/icons/python-icon.svg"> API reference documentation</h1>
+<p>The examples API reference documentation is created automatically from the
+<strong>docstrings</strong> contained in the code.
 </p>
-<p>The following is the command used to generate the API documentation, executed from the directory: <code>&lt;user path&gt;\&lt;python project&gt;</code>:</p>
+<p>The following is the command used to generate the API documentation, executed
+from the directory: <code>&lt;user path&gt;\&lt;python project&gt;</code>:</p>
 <pre><code class="language-cmd">    pdoc --f --html .\code_examples --output .\reference\
 </code></pre>
+<blockquote>
+<p>[!NOTE] This README file is the landing page of the API reference
+documentation because it is included by the <code>code_examples/__init__.py</code> This is
+why:</p>
+<p>The landing page for the documentation is the project's top-level
+<code>&lt;modulename&gt;/__init__.py</code> file that in our case is <code>code_examples/__init__.py</code>
+.
+Adding a module-level docstring here is a great way to introduce users to
+the project.</p>
+</blockquote>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">&#34;&#34;&#34;
 .. include:: ./README.md
+&#34;&#34;&#34;
+
+&#34;&#34;&#34;
+The landing page for your documentation is your project&#39;s top-level
+&lt;modulename&gt;/__init__.py file. Adding a module-level docstring here is a great
+way to introduce users to your project. For example, the documentation you are
+reading right now is sourced from pdoc/__init__.py. You can also include your
+title page from a Markdown file.
 &#34;&#34;&#34;</code></pre>
 </details>
 </section>
@@ -58,12 +78,12 @@ last update: 10/25/22
 </dd>
 <dt><code class="name"><a title="code_examples.packages" href="packages/index.html">code_examples.packages</a></code></dt>
 <dd>
-<div class="desc"><p>This is to have a directory that contains packages.
+<div class="desc"><p>Directory that contains packages.
 It allows to direct the interpreter to locate the package via its path.</p></div>
 </dd>
 <dt><code class="name"><a title="code_examples.utilities" href="utilities/index.html">code_examples.utilities</a></code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>utilities package</p></div>
 </dd>
 </dl>
 </section>
@@ -79,7 +99,7 @@ It allows to direct the interpreter to locate the package via its path.</p></div
 <div class="toc">
 <ul>
 <li><a href="#last-update-102522">last update: 10/25/22</a></li>
-<li><a href="#code-examples-api">Code examples API</a></li>
+<li><a href="#api-reference-documentation">API reference documentation</a></li>
 </ul>
 </div>
 <ul id="index">

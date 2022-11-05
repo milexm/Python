@@ -1,22 +1,28 @@
-""" Exercise Python basic syntax.
-It contains the :func::main method for the package.  
+""" 
+Exercise Python basic syntax.
+
 """
 
-# Append path to the utlilities folder to access the related modules
+# Append path to the packages folder to access the related modules
 import sys
-sys.path.append('./code_examples/utilities') 
+sys.path.append('./code_examples/packages') 
 
 
 from mymath.fibo import fiboTriangle
 from mymath.mynumpy import plotting
 
-from code_examples.language_types.number import numbers
 
-from code_examples.language_types import strings
-from code_examples.language_types import tuples
-from code_examples.language_types import lists
-from code_examples.language_types.displayMenu import displayMenu
+from mytypes.lists import mylist
 
+from mytypes.strings import mystring 
+
+from mytypes.tuples import createTuples 
+
+from mytypes.number import numbers
+
+
+
+from utilities.displayMenu import displayMenu
 
 __author__ = "Michael"
 __copyright__ = "2020 acloudysky"
@@ -31,18 +37,21 @@ menuItems = ["Basic types", "Strings", "Lists", "Dictionary",
 
 class types:
 
-    """ Starts the program.
+    """ 
+    Execercises Python types. 
+    
+    Remarks
+    -------
+    This class contains the main nethod i.e., the program entry point. 
 
-        :remarks:: 
+    The static main method displays the menu to allow user's selection.
+    and processes the user's imput.  
 
-        This is the program entry point.
-        This class only :meth::main static method displays the menu to allow user's selection.
-        Processes the user's imput.  
+    Use
+    ---    
 
-        .. admonition:: Example
-
-        To start in a terminal window enter >python .\\main.py
-        For example (learn-python) PS C:\\Users\\<user name>\\aLearning\\PythonExamples\\language-types> python .\\main.py
+    In a terminal window enter: python [user path]./language_types/main.py
+  
     """
 
     @staticmethod
@@ -69,34 +78,36 @@ class types:
             elif choice == 2:
                 print("\n*** String Operations ***")
                 print("\n---Get a string---")
-                strings.useString()
+                astring = mystring()
+                astring.useString()
                 print("\n---Get a substring---")
-                strings.subString()
+                astring.subString()
                 print("\n---Strip white spaces---")
-                strings.stripWhiteSpaces()
+                astring.stripWhiteSpaces()
                 print("\n---Lower case string---")
-                strings.lowerString()
+                astring.lowerString()
                 print("\n---Upper case string---")
-                strings.upperString()
+                astring.upperString()
                 print("\n---Split string---")
-                strings.splitString()
+                astring.splitString()
             elif choice == 3:
                 print("\n *** List Operations ***")
                 print("\n---Index lists---")
-                lists.listIndex()
+                alist = mylist()
+                alist.listIndex()
                 print("\n---Slice lists---")
-                lists.listSlice()
+                alist.listSlice()
                 print("\n---Change lists---")
-                lists.listChange()
+                alist.listChange()
                 print("\n---Add lists---")
-                lists.listAdd()
+                alist.listAdd()
             elif choice == 4:
                 print("\n*** Dictionary Operations ***")
                 fiboTriangle(5)
             elif choice == 5:
                 print("\n*** Tuple Operations ***")
                 print("\n---Create tuples ---")
-                tuples.createTuples()
+                createTuples()
             elif choice == 6:
                 print("\n*** Plot Operations ***")
                 plotting()

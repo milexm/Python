@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
-<title>code_examples.basic_examples API documentation</title>
+<title>code_examples.utilities.displayMenu API documentation</title>
 <meta name="description" content="" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
@@ -19,34 +19,132 @@
 <main>
 <article id="content">
 <header>
-<h1 class="title">Namespace <code>code_examples.basic_examples</code></h1>
+<h1 class="title">Module <code>code_examples.utilities.displayMenu</code></h1>
 </header>
 <section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import numpy as np
+
+def inputNumber(prompt):
+        # Prompts user to imput a number.
+        # Usage num = imputNumber(prompt).
+        # It runs until the user input a number.
+        while True:
+            try:
+                num = float(input(prompt))
+                break
+            except ValueError:
+                pass
+
+        return num
+
+def displayMenu(options, display):
+    # Display a menu of options the user cna choose from. It returns the 
+    # number of the option chosen.
+    # Usage: choice = displayMenu(options)
+    # Input  options Array of strings
+    # Output choice Integer
+
+
+    # Display menu
+    if (display == True):
+        for i in range(len(options)):
+            # print(&#34;{:d}-&gt;{:s}  &#34;.format(i+1, options[i]), end=&#39; &#39;)
+            
+            if ((i+1)%3!=0):
+                # Calculate the blank space to add to the right of a mneu
+                # item for allignment. 
+                right_padding = &#34; &#34;*(16-len(options[i]))
+                # Display 3 menu items on the aame line 
+                print(&#34;{:d}.{:s}&#34;.format(i+1, options[i] + right_padding), 
+                      end=&#39; &#39;)
+            else:
+                print(&#34;{:d}.{:s}  &#34;.format(i+1, options[i]))
+            
+    # Get a valid menu choice
+    if (display == False):
+        choice = 0
+        while not(np.any(choice == np.arange(len(options))+1)):
+            choice = inputNumber(&#34;\n Make a selection; 7 to display menu: &#34;)
+
+        return choice</code></pre>
+</details>
 </section>
 <section>
-<h2 class="section-title" id="header-submodules">Sub-modules</h2>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
-<dt><code class="name"><a title="code_examples.basic_examples.name_main_idiom" href="name_main_idiom/index.html">code_examples.basic_examples.name_main_idiom</a></code></dt>
+<dt id="code_examples.utilities.displayMenu.displayMenu"><code class="name flex">
+<span>def <span class="ident">displayMenu</span></span>(<span>options, display)</span>
+</code></dt>
 <dd>
 <div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def displayMenu(options, display):
+    # Display a menu of options the user cna choose from. It returns the 
+    # number of the option chosen.
+    # Usage: choice = displayMenu(options)
+    # Input  options Array of strings
+    # Output choice Integer
+
+
+    # Display menu
+    if (display == True):
+        for i in range(len(options)):
+            # print(&#34;{:d}-&gt;{:s}  &#34;.format(i+1, options[i]), end=&#39; &#39;)
+            
+            if ((i+1)%3!=0):
+                # Calculate the blank space to add to the right of a mneu
+                # item for allignment. 
+                right_padding = &#34; &#34;*(16-len(options[i]))
+                # Display 3 menu items on the aame line 
+                print(&#34;{:d}.{:s}&#34;.format(i+1, options[i] + right_padding), 
+                      end=&#39; &#39;)
+            else:
+                print(&#34;{:d}.{:s}  &#34;.format(i+1, options[i]))
+            
+    # Get a valid menu choice
+    if (display == False):
+        choice = 0
+        while not(np.any(choice == np.arange(len(options))+1)):
+            choice = inputNumber(&#34;\n Make a selection; 7 to display menu: &#34;)
+
+        return choice</code></pre>
+</details>
 </dd>
-<dt><code class="name"><a title="code_examples.basic_examples.numpy-package" href="numpy-package.html">code_examples.basic_examples.numpy-package</a></code></dt>
-<dd>
-<div class="desc"><p>Demonstrates how to import the mumpy package …</p></div>
-</dd>
-<dt><code class="name"><a title="code_examples.basic_examples.package_init" href="package_init/index.html">code_examples.basic_examples.package_init</a></code></dt>
+<dt id="code_examples.utilities.displayMenu.inputNumber"><code class="name flex">
+<span>def <span class="ident">inputNumber</span></span>(<span>prompt)</span>
+</code></dt>
 <dd>
 <div class="desc"></div>
-</dd>
-<dt><code class="name"><a title="code_examples.basic_examples.test-packages" href="test-packages.html">code_examples.basic_examples.test-packages</a></code></dt>
-<dd>
-<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def inputNumber(prompt):
+        # Prompts user to imput a number.
+        # Usage num = imputNumber(prompt).
+        # It runs until the user input a number.
+        while True:
+            try:
+                num = float(input(prompt))
+                break
+            except ValueError:
+                pass
+
+        return num</code></pre>
+</details>
 </dd>
 </dl>
-</section>
-<section>
-</section>
-<section>
 </section>
 <section>
 </section>
@@ -59,15 +157,13 @@
 <ul id="index">
 <li><h3>Super-module</h3>
 <ul>
-<li><code><a title="code_examples" href="../index.html">code_examples</a></code></li>
+<li><code><a title="code_examples.utilities" href="index.html">code_examples.utilities</a></code></li>
 </ul>
 </li>
-<li><h3><a href="#header-submodules">Sub-modules</a></h3>
-<ul>
-<li><code><a title="code_examples.basic_examples.name_main_idiom" href="name_main_idiom/index.html">code_examples.basic_examples.name_main_idiom</a></code></li>
-<li><code><a title="code_examples.basic_examples.numpy-package" href="numpy-package.html">code_examples.basic_examples.numpy-package</a></code></li>
-<li><code><a title="code_examples.basic_examples.package_init" href="package_init/index.html">code_examples.basic_examples.package_init</a></code></li>
-<li><code><a title="code_examples.basic_examples.test-packages" href="test-packages.html">code_examples.basic_examples.test-packages</a></code></li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="code_examples.utilities.displayMenu.displayMenu" href="#code_examples.utilities.displayMenu.displayMenu">displayMenu</a></code></li>
+<li><code><a title="code_examples.utilities.displayMenu.inputNumber" href="#code_examples.utilities.displayMenu.inputNumber">inputNumber</a></code></li>
 </ul>
 </li>
 </ul>
