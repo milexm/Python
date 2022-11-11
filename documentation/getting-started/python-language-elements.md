@@ -42,19 +42,34 @@ In addition to built-in functions, a large number of **pre-defined functions** a
 
 > [!NOTE] To use th built-in modules in your code, you must `import` them.
 
-To display a list of all available modules, use the following command in the Python console:
+- To display a list of all available modules, use the following command in the Python console:
 
 ```cmd
     >>> help('modules') 
 ```
-To get the documentation for a particular module, for example the `enum` module, execute this command: 
+- To get the documentation for a particular module, for example the `enum` module, execute this command: 
 
 ```cmd
     >>> help('enum') 
 ```
 
+- To get the path of the modules, you can execute the following commands:
+
+```cmd
+    >>> import sys
+    >>> sys.path 
+```
+
+ - To get the path of a specific module, you can execute a commands similar to the following:
+
+```cmd
+    >>> import os
+    >>> print(os.__file__) 
+```
+
 ## References
+-  [Python examples W3 Schools](https://www.w3schools.com/python/python_examples.asp)
 -  [Learn Python Programming](https://www.tutorialsteacher.com/python)
 -  [Python standard library](https://docs.python.org/3/library/index.html)
-   -  [Built-in
-Functions](https://docs.python.org/3/library/functions.html)
+   -  [Built-in-Functions](https://docs.python.org/3/library/functions.html)
+
