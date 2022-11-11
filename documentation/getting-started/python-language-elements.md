@@ -60,7 +60,7 @@ In addition to built-in functions, a large number of **pre-defined functions** a
     >>> sys.path 
 ```
 
- To get the path of a specific module, you can execute a commands similar to the following:
+ - To get the path of a specific module, you can execute a commands similar to the following:
 
 ```cmd
     >>> import os
@@ -72,3 +72,4 @@ In addition to built-in functions, a large number of **pre-defined functions** a
 -  [Learn Python Programming](https://www.tutorialsteacher.com/python)
 -  [Python standard library](https://docs.python.org/3/library/index.html)
    -  [Built-in-Functions](https://docs.python.org/3/library/functions.html)
+
