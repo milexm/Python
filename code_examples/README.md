@@ -22,3 +22,9 @@ why:
 `<modulename>/__init__.py` file that in our case is `code_examples/__init__.py`
 > .  Adding a module-level docstring here is a great way to introduce users to
 > the project. 
+
+
+## References
+- [The Python Mega Course Build 10 Real World Applications](https://github.com/JayabharathP/The-Python-Mega-Course-Build-10-Real-World-Applications-#readme) - Github sample repo
+  - [The Python Mega Course: Learn Python in 40 Days with 18 Apps](https://www.udemy.com/course/the-python-mega-course/) - Udemy class
+- [Practice Python with 100 Python Exercises](https://www.udemy.com/course/python-video-workbook/) - Udemy class
