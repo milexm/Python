@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
 <title>code_examples.basic_examples.name_main_idiom.echo API documentation</title>
-<meta name="description" content="It shows the behavior of the &lt;i&gt;if __name__ == &#34;__main__&#34;&lt;/i&gt; idiom …" />
+<meta name="description" content="This example (module) shows the behavior of the &lt;i&gt;if __name__ == &#34;__main__&#34;&lt;/i&gt; idiom …" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -22,20 +22,19 @@
 <h1 class="title">Module <code>code_examples.basic_examples.name_main_idiom.echo</code></h1>
 </header>
 <section id="section-intro">
-<p>It shows the behavior of the <i>if <strong>name</strong> == "<strong>main</strong>"</i> idiom.</p>
-<p>If you execute this module as the top level code the idiom evaluates to true and the indented code is executed.</p>
-<p>If you include this module, instead, the idiom evaluates to false and the indented code is not executed.</p>
+<p>This example (module) shows the behavior of the <i>if <strong>name</strong> == "<strong>main</strong>"</i> idiom.</p>
+<p>If you execute this module as the top level code, for example by executing it directly from the command line, the idiom evaluates to true and the indented code is executed, that is the <code><a title="code_examples.basic_examples.name_main_idiom.echo.main" href="#code_examples.basic_examples.name_main_idiom.echo.main">main()</a></code> function is called.</p>
+<p>If you include this module, instead, the idiom evaluates to false and the indented code is not executed, that is the <code><a title="code_examples.basic_examples.name_main_idiom.echo.main" href="#code_examples.basic_examples.name_main_idiom.echo.main">main()</a></code> function is not called.</p>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">&#34;&#34;&#34;
-It shows the behavior of the &lt;i&gt;if __name__ == &#34;__main__&#34;&lt;/i&gt; idiom.
+This example (module) shows the behavior of the &lt;i&gt;if __name__ == &#34;__main__&#34;&lt;/i&gt; idiom.
 
+If you execute this module as the top level code, for example by executing it directly from the command line, the idiom evaluates to true and the indented code is executed, that is the `main()` function is called.
 
-If you execute this module as the top level code the idiom evaluates to true and the indented code is executed.
-
-If you include this module, instead, the idiom evaluates to false and the indented code is not executed.
+If you include this module, instead, the idiom evaluates to false and the indented code is not executed, that is the `main()` function is not called.
 
 &#34;&#34;&#34;
 

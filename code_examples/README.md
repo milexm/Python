@@ -1,5 +1,5 @@
 ---
-last update: 10/25/22
+last update: 11/15/22
 ---
 
 # ![python-icon](../../media/icons/python-icon.svg) API reference documentation
@@ -11,7 +11,7 @@ The following is the command used to generate the API documentation, executed
 from the directory: `<user path>\<python project>`:
 
 ```cmd
-    pdoc --f --html .\code_examples --output .\reference\
+    pdoc --force --html .\code_examples --output .\reference\
 ```
 
 > [!NOTE] This README file is the landing page of the API reference

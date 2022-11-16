@@ -1,5 +1,9 @@
-import os
-import time
+""""
+Shows how to use modules, WIP.
+"""
+
+import os # import os package
+import time # import time module
 
 while True:
     if os.path.exists("files/vegetables.txt"):
@@ -7,6 +11,7 @@ while True:
             print(file.read()) 
     else:
         print("file does not exist")
-    time.sleep(10)
+        break
+    # time.sleep(10)
 
     
