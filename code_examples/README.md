@@ -29,3 +29,5 @@ why:
   - [The Python Mega Course: Learn Python in 40 Days with 18 Apps](https://www.udemy.com/course/the-python-mega-course/) - Udemy class
 - [Practice Python with 100 Python Exercises](https://www.udemy.com/course/python-video-workbook/) - Udemy class
 - [Tech Tip: Really Simple HTTP Server with Python](https://www.linuxjournal.com/content/tech-tip-really-simple-http-server-python)
+- [Python Classes and Objects](https://www.w3schools.com/python/python_classes.asp) - W3 Schools
+  
