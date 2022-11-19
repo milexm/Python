@@ -25,6 +25,3 @@ def issue_type_error():
     # The following statement mixes string and integer types. 
     print(a + b)
 
-if __name__ == '__main__':
-    type_error()
-
