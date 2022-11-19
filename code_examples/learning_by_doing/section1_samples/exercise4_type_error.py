@@ -11,25 +11,20 @@ def type_error():
     -------
 
     Python can be of has different types. In this example, the value assigned to `a`  is of string type (i.e., text) while the value of `b` is an integer (i.e., whole number),
-    You cannot add strings with integers. You gete the following error:
-    TypeError: can only concatenate str (not "int") to str
-    
-    Therefore, you need to convert the string to an integer using the `int()` so the addition operation's built-in function is possible.
 
+    You cannot add strings with integers, otherwise you get the following error:
+    `TypeError: can only concatenate str (not "int") to str`.
     
-    """
-    a = "1"
-    b = 2
+    Therefore, you need to convert the string to an integer using the `int()` built-in function. The correct statement is `print(int(a) + b)`.
 
     """
-    The following statement generates this error: 
-    TypeError: can only concatenate str (not "int") to str.
-    Therefore, you need to convert the string to an integer using the `int()` built-in function.
-    The correct statement is `print(int(a) + b)`.
-    """
+    a = "1" # This is a string.
+    b = 2 # This is an integer. 
+
+    
+    # The following statement mixes string and integer types. 
     print(a + b)
-    # The correct statement is print(int(a) + b)
-
 
 if __name__ == '__main__':
     type_error()
+

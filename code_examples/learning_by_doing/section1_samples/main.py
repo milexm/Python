@@ -1,13 +1,18 @@
 """ 
-Execute samples that shows basic Python syntax.
-
+Executes samples that show the use of basic Python syntax.
 Adapted from [How to create a menu for a python console application?](https://computinglearner.com/how-to-create-a-menu-for-a-python-console-application/)
-
 """
+import sys
+  
+""" 
+Append the path to the modules location.
+This is important to allow pdoc to find the modules. 
+"""
+sys.path.append('./code_examples/learning_by_doing/section1_samples')
 
 from exercise4_type_error import type_error 
 
-" Define the menu dictionary. "
+# Define the menu dictionary. 
 menu_options = {
     1: 'Issue type error message',
     2: 'Option 2',
@@ -15,8 +20,8 @@ menu_options = {
     4: 'Exit',
 }
 
-" Print the menu. "
 def print_menu():
+    " Prints the menu. "
     for key in menu_options.keys():
         print (key, '--', menu_options[key] )
 
@@ -29,7 +34,7 @@ def option3():
 def main():
     """
     Displays menu and processes user's input.
-    It calls the proper method based on the user's selection.
+    It calls the proper function based on the user's selection.
     """
     while(True):
         print_menu()
