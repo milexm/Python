@@ -10,7 +10,7 @@ This is important to allow pdoc to find the modules.
 """
 sys.path.append('./code_examples/learning_by_doing/section1_samples')
 
-from exercise4_type_error import issue_type_error 
+from type_error import issue_type_error 
 from sequence_indexing import get_sequence_item
 
 # Define the menu dictionary. 
