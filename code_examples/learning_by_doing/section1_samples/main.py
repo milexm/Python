@@ -22,7 +22,7 @@ menu_options = {
 }
 
 def print_menu():
-    " Prints the menu. "
+    " Display the menu. "
     for key in menu_options.keys():
         print (key, '--', menu_options[key] )
 
