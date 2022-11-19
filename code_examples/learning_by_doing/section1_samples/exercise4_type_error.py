@@ -3,7 +3,7 @@ Shows an example of type error.
 
 """
 
-def type_error():
+def issue_type_error():
     """ 
     Issues a TypeError message,
     
