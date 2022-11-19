@@ -1,10 +1,7 @@
 """ 
 Executes samples that show the use of basic Python syntax.
-
 Adapted from [How to create a menu for a python console application?](https://computinglearner.com/how-to-create-a-menu-for-a-python-console-application/)
-
 """
-
 import sys
   
 """ 
@@ -12,7 +9,6 @@ Append the path to the modules location.
 This is important to allow pdoc to find the modules. 
 """
 sys.path.append('./code_examples/learning_by_doing/section1_samples')
-
 
 from exercise4_type_error import issue_type_error 
 from sequence_indexing import get_sequence_item
@@ -24,7 +20,6 @@ menu_options = {
     3: 'Option 3',
     4: 'Exit',
 }
-
 
 def print_menu():
     " Prints the menu. "
