@@ -14,12 +14,13 @@ This is important to allow pdoc to find the modules.
 sys.path.append('./code_examples/learning_by_doing/section1_samples')
 
 
-from exercise4_type_error import type_error 
+from exercise4_type_error import issue_type_error 
+from sequence_indexing import get_sequence_item
 
 # Define the menu dictionary. 
 menu_options = {
-    1: 'Issue type error message',
-    2: 'Option 2',
+    1: 'Issue type error',
+    2: 'Index a sequence',
     3: 'Option 3',
     4: 'Exit',
 }
@@ -50,9 +51,10 @@ def main():
             print('Wrong input. Please enter a number ...')
         #Check what choice was entered and act accordingly
         if option == 1:
-            type_error()
+            issue_type_error()
         elif option == 2:
-            option2()
+            get_sequence_item(2)
+        
         elif option == 3:
             option3()
         elif option == 4:
