@@ -43,9 +43,7 @@ sys.path.append(&#39;./code_examples/learning_by_doing/section1_samples&#39;)
 
 from type_error import issue_type_error 
 from sequence_indexing import get_sequence_item
-
 from sequence_slicing import get_sequence_range_items
-
 
 # Define the menu dictionary. 
 menu_options = {
@@ -57,9 +55,7 @@ menu_options = {
 
 def print_menu():
     &#34; Display the menu. &#34;
-
     print(&#34;*** Menu ***&#34;)
-
     for key in menu_options.keys():
         print (key, &#39;--&#39;, menu_options[key] )
 
@@ -86,8 +82,6 @@ def main():
             issue_type_error()
         elif option == 2:
             get_sequence_item(2)
-
-
         elif option == 3:
             get_sequence_range_items(3, 5)
         elif option == 4:
@@ -134,8 +128,6 @@ It calls the proper function based on the user's selection.</p></div>
             issue_type_error()
         elif option == 2:
             get_sequence_item(2)
-
-
         elif option == 3:
             get_sequence_range_items(3, 5)
         elif option == 4:
@@ -182,9 +174,7 @@ It calls the proper function based on the user's selection.</p></div>
 </summary>
 <pre><code class="python">def print_menu():
     &#34; Display the menu. &#34;
-
     print(&#34;*** Menu ***&#34;)
-
     for key in menu_options.keys():
         print (key, &#39;--&#39;, menu_options[key] )</code></pre>
 </details>
