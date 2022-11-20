@@ -7,9 +7,8 @@ def get_sequence_item(index):
     """
     Displays the item of a sequence at the specified index. 
 
-    Remarks:
+    Remarks
     -------
-
     Every item of a list is referenced with an index number starting from zero and increasing by one. 
 
     """

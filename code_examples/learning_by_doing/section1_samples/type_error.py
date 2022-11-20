@@ -7,7 +7,7 @@ def issue_type_error():
     """ 
     Issues a TypeError message,
     
-    Remarks:
+    Remarks
     -------
 
     Python can be of has different types. In this example, the value assigned to `a`  is of string type (i.e., text) while the value of `b` is an integer (i.e., whole number),
