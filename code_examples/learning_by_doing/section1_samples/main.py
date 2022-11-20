@@ -12,17 +12,19 @@ sys.path.append('./code_examples/learning_by_doing/section1_samples')
 
 from type_error import issue_type_error 
 from sequence_indexing import get_sequence_item
+from sequence_slicing import get_sequence_range_items
 
 # Define the menu dictionary. 
 menu_options = {
     1: 'Issue type error',
     2: 'Index a sequence',
-    3: 'Option 3',
-    4: 'Exit',
+    3: 'Slice a sequence',
+    4: 'Exit'
 }
 
 def print_menu():
-    " Prints the menu. "
+    " Display the menu. "
+    print("*** Menu ***")
     for key in menu_options.keys():
         print (key, '--', menu_options[key] )
 
@@ -49,9 +51,8 @@ def main():
             issue_type_error()
         elif option == 2:
             get_sequence_item(2)
-        
         elif option == 3:
-            option3()
+            get_sequence_range_items(3, 5)
         elif option == 4:
             print('Goodbye')
             exit()

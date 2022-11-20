@@ -2,7 +2,7 @@
 last update: 11/16/22
 ---
 
-# ![python-icon](../media/icons/python-icon.svg) API reference documentation
+# ![python-icon](../../media/icons/python-icon.svg) API reference documentation
 
 The examples API reference documentation is created automatically from the
 **docstrings** contained in the code.  

@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
-<title>code_examples.learning_by_doing.section1_samples API documentation</title>
-<meta name="description" content="" />
+<title>code_examples.learning_by_doing.section1_samples.sequence_slicing API documentation</title>
+<meta name="description" content="Example of sequence slicing." />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -19,35 +19,112 @@
 <main>
 <article id="content">
 <header>
-<h1 class="title">Namespace <code>code_examples.learning_by_doing.section1_samples</code></h1>
+<h1 class="title">Module <code>code_examples.learning_by_doing.section1_samples.sequence_slicing</code></h1>
 </header>
 <section id="section-intro">
+<p>Example of sequence slicing.</p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">&#34;&#34;&#34; 
+Example of sequence slicing. 
+
+&#34;&#34;&#34;
+
+def get_sequence_range_items(lower_bound: int, upper_bound: int):
+    &#34;&#34;&#34;
+    Displays the items of a sequence at the specified range. 
+
+    Parameters
+    ----------
+    lower_bound : int 
+        The index of the first element in the range
+    upper_bound : int 
+        The index of the last element in the range    
+
+    Remarks
+    -------
+    The sequence slicing syntax is upper-bound exclusive. For example, if you
+    want to include the element whose index is 5, you need to pass 6 as the upper bound.
+
+    &#34;&#34;&#34;
+    
+    &#34; Define a sequence. &#34;
+    letters = [&#34;a&#34;, &#34;b&#34;, &#34;c&#34;, &#34;d&#34;, &#34;e&#34;, &#34;f&#34;, &#34;g&#34;, &#34;h&#34;, &#34;i&#34;, &#34;j&#34;]
+    
+    &#34; Display the elements in the requested range. &#34;
+    try:
+        item = letters[lower_bound]
+        print(&#34;The item at index &#34; + str(lower_bound) + &#34; is &#34; + item + &#34;\n&#34;)
+        item = letters[upper_bound]
+        print(&#34;The item at index &#34; + str(upper_bound) + &#34; is &#34; + item + &#34;\n&#34;)
+        range_items = str(letters[lower_bound:upper_bound+1])
+        print(&#34;The items in the specified range are &#34; + range_items + &#34;\n&#34;)
+    except IndexError:
+        print(&#34;List index is out of range.\n&#34;)</code></pre>
+</details>
 </section>
 <section>
-<h2 class="section-title" id="header-submodules">Sub-modules</h2>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
-<dt><code class="name"><a title="code_examples.learning_by_doing.section1_samples.main" href="main.html">code_examples.learning_by_doing.section1_samples.main</a></code></dt>
+<dt id="code_examples.learning_by_doing.section1_samples.sequence_slicing.get_sequence_range_items"><code class="name flex">
+<span>def <span class="ident">get_sequence_range_items</span></span>(<span>lower_bound: int, upper_bound: int)</span>
+</code></dt>
 <dd>
-<div class="desc"><p>Executes samples that show the use of basic Python syntax.
-Adapted from [How to create a menu for a python console …</p></div>
-</dd>
-<dt><code class="name"><a title="code_examples.learning_by_doing.section1_samples.sequence_indexing" href="sequence_indexing.html">code_examples.learning_by_doing.section1_samples.sequence_indexing</a></code></dt>
-<dd>
-<div class="desc"><p>Example of sequence indexing.</p></div>
-</dd>
-<dt><code class="name"><a title="code_examples.learning_by_doing.section1_samples.sequence_slicing" href="sequence_slicing.html">code_examples.learning_by_doing.section1_samples.sequence_slicing</a></code></dt>
-<dd>
-<div class="desc"><p>Example of sequence slicing.</p></div>
-</dd>
-<dt><code class="name"><a title="code_examples.learning_by_doing.section1_samples.type_error" href="type_error.html">code_examples.learning_by_doing.section1_samples.type_error</a></code></dt>
-<dd>
-<div class="desc"><p>Shows an example of type error.</p></div>
+<div class="desc"><p>Displays the items of a sequence at the specified range. </p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>lower_bound</code></strong> :&ensp;<code>int </code></dt>
+<dd>The index of the first element in the range</dd>
+<dt><strong><code>upper_bound</code></strong> :&ensp;<code>int </code></dt>
+<dd>The index of the last element in the range</dd>
+</dl>
+<h2 id="remarks">Remarks</h2>
+<p>The sequence slicing syntax is upper-bound exclusive. For example, if you
+want to include the element whose index is 5, you need to pass 6 as the upper bound.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_sequence_range_items(lower_bound: int, upper_bound: int):
+    &#34;&#34;&#34;
+    Displays the items of a sequence at the specified range. 
+
+    Parameters
+    ----------
+    lower_bound : int 
+        The index of the first element in the range
+    upper_bound : int 
+        The index of the last element in the range    
+
+    Remarks
+    -------
+    The sequence slicing syntax is upper-bound exclusive. For example, if you
+    want to include the element whose index is 5, you need to pass 6 as the upper bound.
+
+    &#34;&#34;&#34;
+    
+    &#34; Define a sequence. &#34;
+    letters = [&#34;a&#34;, &#34;b&#34;, &#34;c&#34;, &#34;d&#34;, &#34;e&#34;, &#34;f&#34;, &#34;g&#34;, &#34;h&#34;, &#34;i&#34;, &#34;j&#34;]
+    
+    &#34; Display the elements in the requested range. &#34;
+    try:
+        item = letters[lower_bound]
+        print(&#34;The item at index &#34; + str(lower_bound) + &#34; is &#34; + item + &#34;\n&#34;)
+        item = letters[upper_bound]
+        print(&#34;The item at index &#34; + str(upper_bound) + &#34; is &#34; + item + &#34;\n&#34;)
+        range_items = str(letters[lower_bound:upper_bound+1])
+        print(&#34;The items in the specified range are &#34; + range_items + &#34;\n&#34;)
+    except IndexError:
+        print(&#34;List index is out of range.\n&#34;)</code></pre>
+</details>
 </dd>
 </dl>
-</section>
-<section>
-</section>
-<section>
 </section>
 <section>
 </section>
@@ -60,15 +137,12 @@ Adapted from [How to create a menu for a python console …</p></div>
 <ul id="index">
 <li><h3>Super-module</h3>
 <ul>
-<li><code><a title="code_examples.learning_by_doing" href="../index.html">code_examples.learning_by_doing</a></code></li>
+<li><code><a title="code_examples.learning_by_doing.section1_samples" href="index.html">code_examples.learning_by_doing.section1_samples</a></code></li>
 </ul>
 </li>
-<li><h3><a href="#header-submodules">Sub-modules</a></h3>
-<ul>
-<li><code><a title="code_examples.learning_by_doing.section1_samples.main" href="main.html">code_examples.learning_by_doing.section1_samples.main</a></code></li>
-<li><code><a title="code_examples.learning_by_doing.section1_samples.sequence_indexing" href="sequence_indexing.html">code_examples.learning_by_doing.section1_samples.sequence_indexing</a></code></li>
-<li><code><a title="code_examples.learning_by_doing.section1_samples.sequence_slicing" href="sequence_slicing.html">code_examples.learning_by_doing.section1_samples.sequence_slicing</a></code></li>
-<li><code><a title="code_examples.learning_by_doing.section1_samples.type_error" href="type_error.html">code_examples.learning_by_doing.section1_samples.type_error</a></code></li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="code_examples.learning_by_doing.section1_samples.sequence_slicing.get_sequence_range_items" href="#code_examples.learning_by_doing.section1_samples.sequence_slicing.get_sequence_range_items">get_sequence_range_items</a></code></li>
 </ul>
 </li>
 </ul>
