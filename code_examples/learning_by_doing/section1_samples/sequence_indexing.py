@@ -9,7 +9,6 @@ def get_sequence_item(index):
 
     Remarks
     -------
-
     Every item of a list is referenced with an index number starting from zero and increasing by one. 
 
     """
