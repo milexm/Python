@@ -8,7 +8,7 @@ import sys
 Append the path to the modules location.
 This is important to allow pdoc to find the modules. 
 """
-sys.path.append('./code_examples/learning_by_doing/section_one_samples')
+sys.path.append('./code_examples/learning_by_doing/section1_samples')
 
 from type_error import issue_type_error 
 from sequence_indexing import get_sequence_item
