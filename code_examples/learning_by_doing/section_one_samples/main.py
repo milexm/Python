@@ -17,9 +17,11 @@ from sequence_slicing import get_sequence_range_items
 # Define the menu dictionary. 
 menu_options = {
     1: 'Issue type error',
-    2: 'Index a sequence',
-    3: 'Slice a sequence',
-    4: 'Exit'
+    2: 'Index a sequence (use positive index}',
+    3: 'Index a sequence (use negative index}',
+    4: 'Slice a sequence',
+   
+    5: 'Exit'
 }
 
 def print_menu():
@@ -27,12 +29,6 @@ def print_menu():
     print("*** Menu ***")
     for key in menu_options.keys():
         print (key, '--', menu_options[key] )
-
-def option2():
-     print('Handle option \'Option 2\'')
-
-def option3():
-     print('Handle option \'Option 3\'')
 
 def main():
     """
@@ -52,8 +48,10 @@ def main():
         elif option == 2:
             get_sequence_item(2)
         elif option == 3:
-            get_sequence_range_items(3, 5)
+            get_sequence_item(-2)
         elif option == 4:
+            get_sequence_range_items(3, 5)
+        elif option == 5:
             print('Goodbye')
             exit()
         else:
