@@ -48,9 +48,11 @@ from sequence_slicing import get_sequence_range_items
 # Define the menu dictionary. 
 menu_options = {
     1: &#39;Issue type error&#39;,
-    2: &#39;Index a sequence&#39;,
-    3: &#39;Slice a sequence&#39;,
-    4: &#39;Exit&#39;
+    2: &#39;Index a sequence (use positive index}&#39;,
+    3: &#39;Index a sequence (use negative index}&#39;,
+    4: &#39;Slice a sequence&#39;,
+   
+    5: &#39;Exit&#39;
 }
 
 def print_menu():
@@ -58,12 +60,6 @@ def print_menu():
     print(&#34;*** Menu ***&#34;)
     for key in menu_options.keys():
         print (key, &#39;--&#39;, menu_options[key] )
-
-def option2():
-     print(&#39;Handle option \&#39;Option 2\&#39;&#39;)
-
-def option3():
-     print(&#39;Handle option \&#39;Option 3\&#39;&#39;)
 
 def main():
     &#34;&#34;&#34;
@@ -83,8 +79,10 @@ def main():
         elif option == 2:
             get_sequence_item(2)
         elif option == 3:
-            get_sequence_range_items(3, 5)
+            get_sequence_item(-2)
         elif option == 4:
+            get_sequence_range_items(3, 5)
+        elif option == 5:
             print(&#39;Goodbye&#39;)
             exit()
         else:
@@ -129,38 +127,14 @@ It calls the proper function based on the user's selection.</p></div>
         elif option == 2:
             get_sequence_item(2)
         elif option == 3:
-            get_sequence_range_items(3, 5)
+            get_sequence_item(-2)
         elif option == 4:
+            get_sequence_range_items(3, 5)
+        elif option == 5:
             print(&#39;Goodbye&#39;)
             exit()
         else:
             print(&#39;Invalid option. Please enter a number between 1 and 4.&#39;)</code></pre>
-</details>
-</dd>
-<dt id="code_examples.learning_by_doing.section_one_samples.main.option2"><code class="name flex">
-<span>def <span class="ident">option2</span></span>(<span>)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def option2():
-     print(&#39;Handle option \&#39;Option 2\&#39;&#39;)</code></pre>
-</details>
-</dd>
-<dt id="code_examples.learning_by_doing.section_one_samples.main.option3"><code class="name flex">
-<span>def <span class="ident">option3</span></span>(<span>)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def option3():
-     print(&#39;Handle option \&#39;Option 3\&#39;&#39;)</code></pre>
 </details>
 </dd>
 <dt id="code_examples.learning_by_doing.section_one_samples.main.print_menu"><code class="name flex">
@@ -198,8 +172,6 @@ It calls the proper function based on the user's selection.</p></div>
 <li><h3><a href="#header-functions">Functions</a></h3>
 <ul class="">
 <li><code><a title="code_examples.learning_by_doing.section_one_samples.main.main" href="#code_examples.learning_by_doing.section_one_samples.main.main">main</a></code></li>
-<li><code><a title="code_examples.learning_by_doing.section_one_samples.main.option2" href="#code_examples.learning_by_doing.section_one_samples.main.option2">option2</a></code></li>
-<li><code><a title="code_examples.learning_by_doing.section_one_samples.main.option3" href="#code_examples.learning_by_doing.section_one_samples.main.option3">option3</a></code></li>
 <li><code><a title="code_examples.learning_by_doing.section_one_samples.main.print_menu" href="#code_examples.learning_by_doing.section_one_samples.main.print_menu">print_menu</a></code></li>
 </ul>
 </li>
