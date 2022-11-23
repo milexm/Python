@@ -9,7 +9,12 @@ def get_sequence_item(index):
 
     Remarks
     -------
-    Every item of a list is referenced with an index number starting from zero and increasing by one. 
+    Every item of a list is referenced with an index number starting from zero
+    and increasing by one. 
+
+    Besides the left-to-right positive indexing that starts from zero,
+    sequence data types such as lists also have a second indexing system that
+    starts from -1 and decreases by one from right-to-left. 
 
     """
     
