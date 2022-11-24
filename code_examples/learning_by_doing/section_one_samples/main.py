@@ -1,6 +1,7 @@
 """ 
-Executes samples that show the use of basic Python syntax.
-Adapted from [How to create a menu for a python console application?](https://computinglearner.com/how-to-create-a-menu-for-a-python-console-application/)
+Executes samples that show the use of basic Python syntax. Adapted from [How to
+create a menu for a python console
+application?](https://computinglearner.com/how-to-create-a-menu-for-a-python-console-application/)
 """
 import sys
   
@@ -12,16 +13,16 @@ sys.path.append('./code_examples/learning_by_doing/section_one_samples')
 
 from type_error import issue_type_error 
 from sequence_indexing import get_sequence_item
-from sequence_slicing import get_sequence_range_items
+from sequence_slicing import get_sequence_range_items, get_sequence_negative_range_items
 
 # Define the menu dictionary. 
 menu_options = {
     1: 'Issue type error',
     2: 'Index a sequence (use positive index}',
     3: 'Index a sequence (use negative index}',
-    4: 'Slice a sequence',
-   
-    5: 'Exit'
+    4: 'Slice a sequence (use positive index}',
+    5: 'Slice a sequence (use negativ index}',
+    6: 'Exit'
 }
 
 def print_menu():
@@ -52,10 +53,12 @@ def main():
         elif option == 4:
             get_sequence_range_items(3, 5)
         elif option == 5:
+            get_sequence_negative_range_items(-3, -1)
+        elif option == 6:
             print('Goodbye')
             exit()
         else:
-            print('Invalid option. Please enter a number between 1 and 4.')
+            print('Invalid option. Please enter a number between 1 and 5.')
 
 if __name__=='__main__':
    main()
