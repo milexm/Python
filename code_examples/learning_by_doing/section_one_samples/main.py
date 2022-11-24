@@ -23,6 +23,7 @@ menu_options = {
     4: 'Slice a sequence (use positive index}',
     5: 'Slice a sequence (use negativ index}',
     6: 'Exit'
+
 }
 
 def print_menu():
@@ -55,6 +56,7 @@ def main():
         elif option == 5:
             get_sequence_negative_range_items(-3, -1)
         elif option == 6:
+
             print('Goodbye')
             exit()
         else:
