@@ -41,7 +41,7 @@ def inputNumber(prompt):
 
         return num
 
-def displayMenu(options, display):
+def displayMenu(options:list, display:bool):
     # Display a menu of options the user cna choose from. It returns the 
     # number of the option chosen.
     # Usage: choice = displayMenu(options)
@@ -51,6 +51,7 @@ def displayMenu(options, display):
 
     # Display menu
     if (display == True):
+        print(&#34;\n*** Menu ***&#34;)
         for i in range(len(options)):
             # print(&#34;{:d}-&gt;{:s}  &#34;.format(i+1, options[i]), end=&#39; &#39;)
             
@@ -68,8 +69,7 @@ def displayMenu(options, display):
     if (display == False):
         choice = 0
         while not(np.any(choice == np.arange(len(options))+1)):
-            choice = inputNumber(&#34;\n Make a selection; 7 to display menu: &#34;)
-
+            choice = inputNumber(&#34;\nMake a selection; &#34; + str(len(options)) +  &#34; to quit: &#34;)
         return choice</code></pre>
 </details>
 </section>
@@ -81,7 +81,7 @@ def displayMenu(options, display):
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
 <dt id="code_examples.packages.utilities.displayMenu.displayMenu"><code class="name flex">
-<span>def <span class="ident">displayMenu</span></span>(<span>options, display)</span>
+<span>def <span class="ident">displayMenu</span></span>(<span>options: list, display: bool)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -89,7 +89,7 @@ def displayMenu(options, display):
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def displayMenu(options, display):
+<pre><code class="python">def displayMenu(options:list, display:bool):
     # Display a menu of options the user cna choose from. It returns the 
     # number of the option chosen.
     # Usage: choice = displayMenu(options)
@@ -99,6 +99,7 @@ def displayMenu(options, display):
 
     # Display menu
     if (display == True):
+        print(&#34;\n*** Menu ***&#34;)
         for i in range(len(options)):
             # print(&#34;{:d}-&gt;{:s}  &#34;.format(i+1, options[i]), end=&#39; &#39;)
             
@@ -116,8 +117,7 @@ def displayMenu(options, display):
     if (display == False):
         choice = 0
         while not(np.any(choice == np.arange(len(options))+1)):
-            choice = inputNumber(&#34;\n Make a selection; 7 to display menu: &#34;)
-
+            choice = inputNumber(&#34;\nMake a selection; &#34; + str(len(options)) +  &#34; to quit: &#34;)
         return choice</code></pre>
 </details>
 </dd>
