@@ -13,7 +13,8 @@ sys.path.append('./code_examples/learning_by_doing/section_one_samples')
 
 from type_error import issue_type_error 
 from sequence_indexing import get_sequence_item
-from sequence_slicing import get_sequence_range_items, get_sequence_negative_range_items
+from sequence_slicing import get_sequence_range_items
+from sequence_slicing import get_sequence_negative_range_items
 
 # Define the menu dictionary. 
 menu_options = {

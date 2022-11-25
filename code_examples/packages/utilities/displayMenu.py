@@ -13,7 +13,7 @@ def inputNumber(prompt):
 
         return num
 
-def displayMenu(options, display):
+def displayMenu(options:list, display:bool):
     # Display a menu of options the user cna choose from. It returns the 
     # number of the option chosen.
     # Usage: choice = displayMenu(options)
@@ -23,6 +23,7 @@ def displayMenu(options, display):
 
     # Display menu
     if (display == True):
+        print("\n*** Menu ***")
         for i in range(len(options)):
             # print("{:d}->{:s}  ".format(i+1, options[i]), end=' ')
             
@@ -40,6 +41,5 @@ def displayMenu(options, display):
     if (display == False):
         choice = 0
         while not(np.any(choice == np.arange(len(options))+1)):
-            choice = inputNumber("\n Make a selection; 7 to display menu: ")
-
+            choice = inputNumber("\nMake a selection; " + str(len(options)) +  " to quit: ")
         return choice
