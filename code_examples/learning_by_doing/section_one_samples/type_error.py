@@ -2,6 +2,7 @@
 Shows an example of type error.
 
 """
+import sys
 
 def issue_type_error():
     """ 
@@ -21,7 +22,10 @@ def issue_type_error():
     a = "1" # This is a string.
     b = 2 # This is an integer. 
 
-    
-    # The following statement mixes string and integer types. 
-    print(a + b)
-
+    try:
+        # The following statement mixes string and integer types. 
+        print(a + b)
+    # except TypeError as error:
+    #    print(f"{type(error).__name__} was raised: {error}") 
+    except Exception as error:
+        print(f"{type(error).__name__} was raised: {error}") 
