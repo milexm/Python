@@ -6,9 +6,14 @@ Example of sequence oprations.
 " Define a sequence. "
 letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
 
-def get_sequence_item(index):
+def get_sequence_item(index:int):
     """
     Display the item of a sequence at the specified index. 
+
+    Parameters
+    ----------
+    index : int 
+        The index of the element to display.
 
     Remarks
     -------
@@ -25,10 +30,8 @@ def get_sequence_item(index):
     try:
         item = letters[index]
         print("The item at index " + str(index) + " is " + item + "\n")
-    except IndexError:
-        print("List index " + str(index) + " is out of range" + "\n")
-    except:
-        print("Something went wrong")
+    except Exception as error:
+        print(f"{type(error).__name__} was raised: {index} {error}") 
 
 def get_sequence_range_items(lower_bound: int, upper_bound: int):
     """
@@ -37,9 +40,9 @@ def get_sequence_range_items(lower_bound: int, upper_bound: int):
     Parameters
     ----------
     lower_bound : int 
-        The index of the first element in the range
+        The index of the first element in the range.
     upper_bound : int 
-        The index of the last element in the range    
+        The index of the last element in the range.
 
     Remarks
     -------
@@ -50,14 +53,10 @@ def get_sequence_range_items(lower_bound: int, upper_bound: int):
     
     " Display the elements in the requested range. "
     try:
-        item = letters[lower_bound]
-        print("The item at index " + str(lower_bound) + " is " + item + "\n")
-        item = letters[upper_bound]
-        print("The item at index " + str(upper_bound) + " is " + item + "\n")
         range_items = str(letters[lower_bound:upper_bound+1])
         print("The items in the specified range are " + range_items + "\n")
-    except IndexError:
-        print("List index is out of range.\n")
+    except Exception as error:
+        print(f"{type(error).__name__} was raised: {error}") 
 
 
 def get_sequence_negative_range_items(lower_bound: int, upper_bound: int):
@@ -67,9 +66,9 @@ def get_sequence_negative_range_items(lower_bound: int, upper_bound: int):
     Parameters
     ----------
     lower_bound : int 
-        The index of the first element in the range
+        The index of the first element in the range.
     upper_bound : int 
-        The index of the last element in the range    
+        The index of the last element in the range.    
 
     Remarks
     -------
@@ -80,11 +79,7 @@ def get_sequence_negative_range_items(lower_bound: int, upper_bound: int):
     
     " Display the elements in the requested range. "
     try:
-        item = letters[lower_bound]
-        print("The item at index " + str(lower_bound) + " is " + item + "\n")
-        item = letters[upper_bound]
-        print("The item at index " + str(upper_bound) + " is " + item + "\n")
         range_items = str(letters[lower_bound:upper_bound])
         print("The items in the specified range are " + range_items + "\n")
-    except IndexError:
-        print("List index is out of range.\n")
+    except Exception as error:
+        print(f"{type(error).__name__} was raised: {error}") 
