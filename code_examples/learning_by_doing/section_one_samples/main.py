@@ -11,8 +11,8 @@ sys.path.append('./code_examples/learning_by_doing/section_one_samples')
 import numpy as np
 
 from type_error import issue_type_error 
-from sequence import get_sequence_item, get_sequence_range_items,get_sequence_negative_range_items
-
+from sequence import get_sequence_item, get_sequence_range_items
+from sequence import get_sequence_negative_range_items, get_sequence_range_items_in_steps
 
 # Define the menu item list.  
 menuItems = ["Issue type error", "Index a sequence", "Slice a sequence","Quit"]
@@ -104,6 +104,7 @@ class menu:
                 print("\n*** Slice a sequence ***")
                 get_sequence_range_items(3, 5)
                 get_sequence_negative_range_items(-3, -1)
+                get_sequence_range_items_in_steps(1, 10, 2)
                 dummy = displayMenu(self, menuItems, True)
 
             elif choice == len(menuItems):

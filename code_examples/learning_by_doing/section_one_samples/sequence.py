@@ -35,7 +35,7 @@ def get_sequence_item(index:int):
 
 def get_sequence_range_items(lower_bound: int, upper_bound: int):
     """
-    Displays the items of a sequence at the specified range. 
+    Displays the items of a sequence in the specified range. 
 
     Parameters
     ----------
@@ -61,7 +61,7 @@ def get_sequence_range_items(lower_bound: int, upper_bound: int):
 
 def get_sequence_negative_range_items(lower_bound: int, upper_bound: int):
     """
-    Displays the items of a sequence at the specified range. 
+    Displays the items of a sequence in the specified range. 
 
     Parameters
     ----------
@@ -80,6 +80,37 @@ def get_sequence_negative_range_items(lower_bound: int, upper_bound: int):
     " Display the elements in the requested range. "
     try:
         range_items = str(letters[lower_bound:upper_bound])
+        print("The items in the specified range are " + range_items + "\n")
+    except Exception as error:
+        print(f"{type(error).__name__} was raised: {error}") 
+
+def get_sequence_range_items_in_steps(lower_bound: int, upper_bound: int, step: int):
+    """
+    Displays the items of a sequence in the specified range, using the specified
+    s6tep. 
+    
+    Parameters
+    ----------
+    lower_bound : int 
+        The index of the first element in the range.
+    upper_bound : int 
+        The index of the last element in the range.    
+    step : int 
+        The step to use when returning the elements. For example, if the step is
+        2 every other item in the range is
+        returned.
+
+    Remarks
+    -------
+    The complete syntax of list slicing is [start:end:step] . When you don't
+    pass a step, Python assumes the step is 1. [:]  itself means to get
+    everything from start to end. So, [::2]  means get everything from start to
+    end at a step of two.
+    """
+    
+    " Display the elements in the requested range with the specified step."
+    try:
+        range_items = str(letters[lower_bound:upper_bound:step])
         print("The items in the specified range are " + range_items + "\n")
     except Exception as error:
         print(f"{type(error).__name__} was raised: {error}") 

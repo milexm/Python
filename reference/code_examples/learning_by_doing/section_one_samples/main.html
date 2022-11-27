@@ -5,8 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
 <title>code_examples.learning_by_doing.section_one_samples.main API documentation</title>
-<meta name="description" content="Executes samples that show the use of basic Python syntax.
-Adapted from [How to create a menu for a python console …" />
+<meta name="description" content="Exercise section one samples." />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -23,73 +22,128 @@ Adapted from [How to create a menu for a python console …" />
 <h1 class="title">Module <code>code_examples.learning_by_doing.section_one_samples.main</code></h1>
 </header>
 <section id="section-intro">
-<p>Executes samples that show the use of basic Python syntax.
-Adapted from <a href="https://computinglearner.com/how-to-create-a-menu-for-a-python-console-application/">How to create a menu for a python console application?</a></p>
+<p>Exercise section one samples.</p>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">&#34;&#34;&#34; 
-Executes samples that show the use of basic Python syntax.
-Adapted from [How to create a menu for a python console application?](https://computinglearner.com/how-to-create-a-menu-for-a-python-console-application/)
+Exercise section one samples.
+
 &#34;&#34;&#34;
+
+# Append the path to the modules location.
+# This is important to allow pdoc to find the modules. 
 import sys
-  
-&#34;&#34;&#34; 
-Append the path to the modules location.
-This is important to allow pdoc to find the modules. 
-&#34;&#34;&#34;
 sys.path.append(&#39;./code_examples/learning_by_doing/section_one_samples&#39;)
 
+import numpy as np
+
 from type_error import issue_type_error 
-from sequence_indexing import get_sequence_item
-from sequence_slicing import get_sequence_range_items
+from sequence import get_sequence_item, get_sequence_range_items
+from sequence import get_sequence_negative_range_items, get_sequence_range_items_in_steps
 
-# Define the menu dictionary. 
-menu_options = {
-    1: &#39;Issue type error&#39;,
-    2: &#39;Index a sequence (use positive index}&#39;,
-    3: &#39;Index a sequence (use negative index}&#39;,
-    4: &#39;Slice a sequence&#39;,
-   
-    5: &#39;Exit&#39;
-}
+# Define the menu item list.  
+menuItems = [&#34;Issue type error&#34;, &#34;Index a sequence&#34;, &#34;Slice a sequence&#34;,&#34;Quit&#34;]
 
-def print_menu():
-    &#34; Display the menu. &#34;
-    print(&#34;*** Menu ***&#34;)
-    for key in menu_options.keys():
-        print (key, &#39;--&#39;, menu_options[key] )
 
-def main():
+def inputNumber(self, prompt):
+        # Prompts user to imput a number.
+        # Usage num = imputNumber(prompt).
+        # It runs until the user input a number.
+        while True:
+            try:
+                num = float(input(prompt))
+                break
+            except ValueError:
+                pass
+
+        return num
+
+def displayMenu(self, options:list, display:bool):
+    # Display a menu of options the user cna choose from. It returns the 
+    # number of the option chosen.
+    # Usage: choice = displayMenu(options)
+    # Input  options Array of strings
+    # Output choice Integer
+
+
+    # Display menu
+    if (display == True):
+        print(&#34;\n*** Menu ***&#34;)
+        for i in range(len(options)):
+            # print(&#34;{:d}-&gt;{:s}  &#34;.format(i+1, options[i]), end=&#39; &#39;)
+            
+            if ((i+1)%3!=0):
+                # Calculate the blank space to add to the right of a mneu
+                # item for allignment. 
+                right_padding = &#34; &#34;*(16-len(options[i]))
+                # Display 3 menu items on the aame line 
+                print(&#34;{:d}.{:s}&#34;.format(i+1, options[i] + right_padding), 
+                      end=&#39; &#39;)
+            else:
+                print(&#34;{:d}.{:s}  &#34;.format(i+1, options[i]))
+            
+    # Get a valid menu choice
+    if (display == False):
+        choice = 0
+        while not(np.any(choice == np.arange(len(options))+1)):
+            choice = inputNumber(self, &#34;\nMake a selection; &#34; + str(len(options)) +  &#34; to quit: &#34;)
+        return choice
+
+class menu:
+
+    &#34;&#34;&#34; 
+    Execercises section one types. 
+    
+    Remarks
+    -------
+    This class main nethod displays the menu to allow the user&#39;s selection.
+    It thrn processes the user&#39;s imput by calling the propeer fucntion. 
+
+    Use
+    ---    
+
+    In a terminal window enter: python [user path]./sectin_one_samples/main.py
+  
     &#34;&#34;&#34;
-    Displays menu and processes user&#39;s input.
-    It calls the proper function based on the user&#39;s selection.
-    &#34;&#34;&#34;
-    while(True):
-        print_menu()
-        option = &#39;&#39;
-        try:
-            option = int(input(&#39;Enter your choice: &#39;))
-        except:
-            print(&#39;Wrong input. Please enter a number ...&#39;)
-        #Check what choice was entered and act accordingly
-        if option == 1:
-            issue_type_error()
-        elif option == 2:
-            get_sequence_item(2)
-        elif option == 3:
-            get_sequence_item(-2)
-        elif option == 4:
-            get_sequence_range_items(3, 5)
-        elif option == 5:
-            print(&#39;Goodbye&#39;)
-            exit()
-        else:
-            print(&#39;Invalid option. Please enter a number between 1 and 4.&#39;)
+    def main(self):
+        &#34;&#34;&#34;
+            Display menu and process user&#39;s input.
+            Call the proper method based on the user&#39;s selection.
+        &#34;&#34;&#34;
+       
+        # Display the menu but ignore the user&#39;s choice.
+        dummy = displayMenu(self, menuItems, True)
 
-if __name__==&#39;__main__&#39;:
-   main()</code></pre>
+        while True:
+            # Get the user&#39;s choice and do not display the menu.
+            choice = displayMenu(self, menuItems, False)
+
+            if choice == 1:
+                print(&#34;\n**** Type error ****&#34;)
+                issue_type_error()
+                dummy = displayMenu(self, menuItems, True)
+            elif choice == 2:
+                print(&#34;\n*** Index a sequence ***&#34;)
+                get_sequence_item(2)
+                get_sequence_item(-2)
+                dummy = displayMenu(self, menuItems, True)
+            elif choice == 3:
+                print(&#34;\n*** Slice a sequence ***&#34;)
+                get_sequence_range_items(3, 5)
+                get_sequence_negative_range_items(-3, -1)
+                get_sequence_range_items_in_steps(1, 10, 2)
+                dummy = displayMenu(self, menuItems, True)
+
+            elif choice == len(menuItems):
+                break
+
+if __name__ == &#39;__main__&#39;:
+    # Instantiate the class.
+    amenu = menu()
+    # Call the main method.
+    amenu.main()</code></pre>
 </details>
 </section>
 <section>
@@ -99,63 +153,185 @@ if __name__==&#39;__main__&#39;:
 <section>
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
-<dt id="code_examples.learning_by_doing.section_one_samples.main.main"><code class="name flex">
-<span>def <span class="ident">main</span></span>(<span>)</span>
+<dt id="code_examples.learning_by_doing.section_one_samples.main.displayMenu"><code class="name flex">
+<span>def <span class="ident">displayMenu</span></span>(<span>self, options: list, display: bool)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Displays menu and processes user's input.
-It calls the proper function based on the user's selection.</p></div>
+<div class="desc"></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def main():
-    &#34;&#34;&#34;
-    Displays menu and processes user&#39;s input.
-    It calls the proper function based on the user&#39;s selection.
-    &#34;&#34;&#34;
-    while(True):
-        print_menu()
-        option = &#39;&#39;
-        try:
-            option = int(input(&#39;Enter your choice: &#39;))
-        except:
-            print(&#39;Wrong input. Please enter a number ...&#39;)
-        #Check what choice was entered and act accordingly
-        if option == 1:
-            issue_type_error()
-        elif option == 2:
-            get_sequence_item(2)
-        elif option == 3:
-            get_sequence_item(-2)
-        elif option == 4:
-            get_sequence_range_items(3, 5)
-        elif option == 5:
-            print(&#39;Goodbye&#39;)
-            exit()
-        else:
-            print(&#39;Invalid option. Please enter a number between 1 and 4.&#39;)</code></pre>
+<pre><code class="python">def displayMenu(self, options:list, display:bool):
+    # Display a menu of options the user cna choose from. It returns the 
+    # number of the option chosen.
+    # Usage: choice = displayMenu(options)
+    # Input  options Array of strings
+    # Output choice Integer
+
+
+    # Display menu
+    if (display == True):
+        print(&#34;\n*** Menu ***&#34;)
+        for i in range(len(options)):
+            # print(&#34;{:d}-&gt;{:s}  &#34;.format(i+1, options[i]), end=&#39; &#39;)
+            
+            if ((i+1)%3!=0):
+                # Calculate the blank space to add to the right of a mneu
+                # item for allignment. 
+                right_padding = &#34; &#34;*(16-len(options[i]))
+                # Display 3 menu items on the aame line 
+                print(&#34;{:d}.{:s}&#34;.format(i+1, options[i] + right_padding), 
+                      end=&#39; &#39;)
+            else:
+                print(&#34;{:d}.{:s}  &#34;.format(i+1, options[i]))
+            
+    # Get a valid menu choice
+    if (display == False):
+        choice = 0
+        while not(np.any(choice == np.arange(len(options))+1)):
+            choice = inputNumber(self, &#34;\nMake a selection; &#34; + str(len(options)) +  &#34; to quit: &#34;)
+        return choice</code></pre>
 </details>
 </dd>
-<dt id="code_examples.learning_by_doing.section_one_samples.main.print_menu"><code class="name flex">
-<span>def <span class="ident">print_menu</span></span>(<span>)</span>
+<dt id="code_examples.learning_by_doing.section_one_samples.main.inputNumber"><code class="name flex">
+<span>def <span class="ident">inputNumber</span></span>(<span>self, prompt)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Display the menu.</p></div>
+<div class="desc"></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def print_menu():
-    &#34; Display the menu. &#34;
-    print(&#34;*** Menu ***&#34;)
-    for key in menu_options.keys():
-        print (key, &#39;--&#39;, menu_options[key] )</code></pre>
+<pre><code class="python">def inputNumber(self, prompt):
+        # Prompts user to imput a number.
+        # Usage num = imputNumber(prompt).
+        # It runs until the user input a number.
+        while True:
+            try:
+                num = float(input(prompt))
+                break
+            except ValueError:
+                pass
+
+        return num</code></pre>
 </details>
 </dd>
 </dl>
 </section>
 <section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="code_examples.learning_by_doing.section_one_samples.main.menu"><code class="flex name class">
+<span>class <span class="ident">menu</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Execercises section one types. </p>
+<h2 id="remarks">Remarks</h2>
+<p>This class main nethod displays the menu to allow the user's selection.
+It thrn processes the user's imput by calling the propeer fucntion. </p>
+<h2 id="use">Use</h2>
+<p>In a terminal window enter: python [user path]./sectin_one_samples/main.py</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class menu:
+
+    &#34;&#34;&#34; 
+    Execercises section one types. 
+    
+    Remarks
+    -------
+    This class main nethod displays the menu to allow the user&#39;s selection.
+    It thrn processes the user&#39;s imput by calling the propeer fucntion. 
+
+    Use
+    ---    
+
+    In a terminal window enter: python [user path]./sectin_one_samples/main.py
+  
+    &#34;&#34;&#34;
+    def main(self):
+        &#34;&#34;&#34;
+            Display menu and process user&#39;s input.
+            Call the proper method based on the user&#39;s selection.
+        &#34;&#34;&#34;
+       
+        # Display the menu but ignore the user&#39;s choice.
+        dummy = displayMenu(self, menuItems, True)
+
+        while True:
+            # Get the user&#39;s choice and do not display the menu.
+            choice = displayMenu(self, menuItems, False)
+
+            if choice == 1:
+                print(&#34;\n**** Type error ****&#34;)
+                issue_type_error()
+                dummy = displayMenu(self, menuItems, True)
+            elif choice == 2:
+                print(&#34;\n*** Index a sequence ***&#34;)
+                get_sequence_item(2)
+                get_sequence_item(-2)
+                dummy = displayMenu(self, menuItems, True)
+            elif choice == 3:
+                print(&#34;\n*** Slice a sequence ***&#34;)
+                get_sequence_range_items(3, 5)
+                get_sequence_negative_range_items(-3, -1)
+                get_sequence_range_items_in_steps(1, 10, 2)
+                dummy = displayMenu(self, menuItems, True)
+
+            elif choice == len(menuItems):
+                break</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="code_examples.learning_by_doing.section_one_samples.main.menu.main"><code class="name flex">
+<span>def <span class="ident">main</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Display menu and process user's input.
+Call the proper method based on the user's selection.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def main(self):
+    &#34;&#34;&#34;
+        Display menu and process user&#39;s input.
+        Call the proper method based on the user&#39;s selection.
+    &#34;&#34;&#34;
+   
+    # Display the menu but ignore the user&#39;s choice.
+    dummy = displayMenu(self, menuItems, True)
+
+    while True:
+        # Get the user&#39;s choice and do not display the menu.
+        choice = displayMenu(self, menuItems, False)
+
+        if choice == 1:
+            print(&#34;\n**** Type error ****&#34;)
+            issue_type_error()
+            dummy = displayMenu(self, menuItems, True)
+        elif choice == 2:
+            print(&#34;\n*** Index a sequence ***&#34;)
+            get_sequence_item(2)
+            get_sequence_item(-2)
+            dummy = displayMenu(self, menuItems, True)
+        elif choice == 3:
+            print(&#34;\n*** Slice a sequence ***&#34;)
+            get_sequence_range_items(3, 5)
+            get_sequence_negative_range_items(-3, -1)
+            get_sequence_range_items_in_steps(1, 10, 2)
+            dummy = displayMenu(self, menuItems, True)
+
+        elif choice == len(menuItems):
+            break</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
 </section>
 </article>
 <nav id="sidebar">
@@ -171,8 +347,18 @@ It calls the proper function based on the user's selection.</p></div>
 </li>
 <li><h3><a href="#header-functions">Functions</a></h3>
 <ul class="">
-<li><code><a title="code_examples.learning_by_doing.section_one_samples.main.main" href="#code_examples.learning_by_doing.section_one_samples.main.main">main</a></code></li>
-<li><code><a title="code_examples.learning_by_doing.section_one_samples.main.print_menu" href="#code_examples.learning_by_doing.section_one_samples.main.print_menu">print_menu</a></code></li>
+<li><code><a title="code_examples.learning_by_doing.section_one_samples.main.displayMenu" href="#code_examples.learning_by_doing.section_one_samples.main.displayMenu">displayMenu</a></code></li>
+<li><code><a title="code_examples.learning_by_doing.section_one_samples.main.inputNumber" href="#code_examples.learning_by_doing.section_one_samples.main.inputNumber">inputNumber</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="code_examples.learning_by_doing.section_one_samples.main.menu" href="#code_examples.learning_by_doing.section_one_samples.main.menu">menu</a></code></h4>
+<ul class="">
+<li><code><a title="code_examples.learning_by_doing.section_one_samples.main.menu.main" href="#code_examples.learning_by_doing.section_one_samples.main.menu.main">main</a></code></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

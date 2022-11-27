@@ -35,9 +35,14 @@ Example of sequence oprations.
 &#34; Define a sequence. &#34;
 letters = [&#34;a&#34;, &#34;b&#34;, &#34;c&#34;, &#34;d&#34;, &#34;e&#34;, &#34;f&#34;, &#34;g&#34;, &#34;h&#34;, &#34;i&#34;, &#34;j&#34;]
 
-def get_sequence_item(index):
+def get_sequence_item(index:int):
     &#34;&#34;&#34;
     Display the item of a sequence at the specified index. 
+
+    Parameters
+    ----------
+    index : int 
+        The index of the element to display.
 
     Remarks
     -------
@@ -54,21 +59,19 @@ def get_sequence_item(index):
     try:
         item = letters[index]
         print(&#34;The item at index &#34; + str(index) + &#34; is &#34; + item + &#34;\n&#34;)
-    except IndexError:
-        print(&#34;List index &#34; + str(index) + &#34; is out of range&#34; + &#34;\n&#34;)
-    except:
-        print(&#34;Something went wrong&#34;)
+    except Exception as error:
+        print(f&#34;{type(error).__name__} was raised: {index} {error}&#34;) 
 
 def get_sequence_range_items(lower_bound: int, upper_bound: int):
     &#34;&#34;&#34;
-    Displays the items of a sequence at the specified range. 
+    Displays the items of a sequence in the specified range. 
 
     Parameters
     ----------
     lower_bound : int 
-        The index of the first element in the range
+        The index of the first element in the range.
     upper_bound : int 
-        The index of the last element in the range    
+        The index of the last element in the range.
 
     Remarks
     -------
@@ -79,26 +82,22 @@ def get_sequence_range_items(lower_bound: int, upper_bound: int):
     
     &#34; Display the elements in the requested range. &#34;
     try:
-        item = letters[lower_bound]
-        print(&#34;The item at index &#34; + str(lower_bound) + &#34; is &#34; + item + &#34;\n&#34;)
-        item = letters[upper_bound]
-        print(&#34;The item at index &#34; + str(upper_bound) + &#34; is &#34; + item + &#34;\n&#34;)
         range_items = str(letters[lower_bound:upper_bound+1])
         print(&#34;The items in the specified range are &#34; + range_items + &#34;\n&#34;)
-    except IndexError:
-        print(&#34;List index is out of range.\n&#34;)
+    except Exception as error:
+        print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
 
 
 def get_sequence_negative_range_items(lower_bound: int, upper_bound: int):
     &#34;&#34;&#34;
-    Displays the items of a sequence at the specified range. 
+    Displays the items of a sequence in the specified range. 
 
     Parameters
     ----------
     lower_bound : int 
-        The index of the first element in the range
+        The index of the first element in the range.
     upper_bound : int 
-        The index of the last element in the range    
+        The index of the last element in the range.    
 
     Remarks
     -------
@@ -109,14 +108,41 @@ def get_sequence_negative_range_items(lower_bound: int, upper_bound: int):
     
     &#34; Display the elements in the requested range. &#34;
     try:
-        item = letters[lower_bound]
-        print(&#34;The item at index &#34; + str(lower_bound) + &#34; is &#34; + item + &#34;\n&#34;)
-        item = letters[upper_bound]
-        print(&#34;The item at index &#34; + str(upper_bound) + &#34; is &#34; + item + &#34;\n&#34;)
         range_items = str(letters[lower_bound:upper_bound])
         print(&#34;The items in the specified range are &#34; + range_items + &#34;\n&#34;)
-    except IndexError:
-        print(&#34;List index is out of range.\n&#34;)</code></pre>
+    except Exception as error:
+        print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
+
+def get_sequence_range_items_in_steps(lower_bound: int, upper_bound: int, step: int):
+    &#34;&#34;&#34;
+    Displays the items of a sequence in the specified range, using the specified
+    s6tep. 
+    
+    Parameters
+    ----------
+    lower_bound : int 
+        The index of the first element in the range.
+    upper_bound : int 
+        The index of the last element in the range.    
+    step : int 
+        The step to use when returning the elements. For example, if the step is
+        2 every other item in the range is
+        returned.
+
+    Remarks
+    -------
+    The complete syntax of list slicing is [start:end:step] . When you don&#39;t
+    pass a step, Python assumes the step is 1. [:]  itself means to get
+    everything from start to end. So, [::2]  means get everything from start to
+    end at a step of two.
+    &#34;&#34;&#34;
+    
+    &#34; Display the elements in the requested range with the specified step.&#34;
+    try:
+        range_items = str(letters[lower_bound:upper_bound:step])
+        print(&#34;The items in the specified range are &#34; + range_items + &#34;\n&#34;)
+    except Exception as error:
+        print(f&#34;{type(error).__name__} was raised: {error}&#34;) </code></pre>
 </details>
 </section>
 <section>
@@ -127,10 +153,15 @@ def get_sequence_negative_range_items(lower_bound: int, upper_bound: int):
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
 <dt id="code_examples.learning_by_doing.section_one_samples.sequence.get_sequence_item"><code class="name flex">
-<span>def <span class="ident">get_sequence_item</span></span>(<span>index)</span>
+<span>def <span class="ident">get_sequence_item</span></span>(<span>index: int)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Display the item of a sequence at the specified index. </p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>index</code></strong> :&ensp;<code>int </code></dt>
+<dd>The index of the element to display.</dd>
+</dl>
 <h2 id="remarks">Remarks</h2>
 <p>Every item of a list is referenced with an index number starting from zero
 and increasing by one. </p>
@@ -141,9 +172,14 @@ starts from -1 and decreases by one from right-to-left.</p></div>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_sequence_item(index):
+<pre><code class="python">def get_sequence_item(index:int):
     &#34;&#34;&#34;
     Display the item of a sequence at the specified index. 
+
+    Parameters
+    ----------
+    index : int 
+        The index of the element to display.
 
     Remarks
     -------
@@ -160,23 +196,21 @@ starts from -1 and decreases by one from right-to-left.</p></div>
     try:
         item = letters[index]
         print(&#34;The item at index &#34; + str(index) + &#34; is &#34; + item + &#34;\n&#34;)
-    except IndexError:
-        print(&#34;List index &#34; + str(index) + &#34; is out of range&#34; + &#34;\n&#34;)
-    except:
-        print(&#34;Something went wrong&#34;)</code></pre>
+    except Exception as error:
+        print(f&#34;{type(error).__name__} was raised: {index} {error}&#34;) </code></pre>
 </details>
 </dd>
 <dt id="code_examples.learning_by_doing.section_one_samples.sequence.get_sequence_negative_range_items"><code class="name flex">
 <span>def <span class="ident">get_sequence_negative_range_items</span></span>(<span>lower_bound: int, upper_bound: int)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Displays the items of a sequence at the specified range. </p>
+<div class="desc"><p>Displays the items of a sequence in the specified range. </p>
 <h2 id="parameters">Parameters</h2>
 <dl>
 <dt><strong><code>lower_bound</code></strong> :&ensp;<code>int </code></dt>
-<dd>The index of the first element in the range</dd>
+<dd>The index of the first element in the range.</dd>
 <dt><strong><code>upper_bound</code></strong> :&ensp;<code>int </code></dt>
-<dd>The index of the last element in the range</dd>
+<dd>The index of the last element in the range.</dd>
 </dl>
 <h2 id="remarks">Remarks</h2>
 <p>The sequence slicing syntax is upper-bound exclusive. For example, if you
@@ -187,14 +221,14 @@ want to include the element whose index is 5, you need to pass 6 as the upper bo
 </summary>
 <pre><code class="python">def get_sequence_negative_range_items(lower_bound: int, upper_bound: int):
     &#34;&#34;&#34;
-    Displays the items of a sequence at the specified range. 
+    Displays the items of a sequence in the specified range. 
 
     Parameters
     ----------
     lower_bound : int 
-        The index of the first element in the range
+        The index of the first element in the range.
     upper_bound : int 
-        The index of the last element in the range    
+        The index of the last element in the range.    
 
     Remarks
     -------
@@ -205,27 +239,23 @@ want to include the element whose index is 5, you need to pass 6 as the upper bo
     
     &#34; Display the elements in the requested range. &#34;
     try:
-        item = letters[lower_bound]
-        print(&#34;The item at index &#34; + str(lower_bound) + &#34; is &#34; + item + &#34;\n&#34;)
-        item = letters[upper_bound]
-        print(&#34;The item at index &#34; + str(upper_bound) + &#34; is &#34; + item + &#34;\n&#34;)
         range_items = str(letters[lower_bound:upper_bound])
         print(&#34;The items in the specified range are &#34; + range_items + &#34;\n&#34;)
-    except IndexError:
-        print(&#34;List index is out of range.\n&#34;)</code></pre>
+    except Exception as error:
+        print(f&#34;{type(error).__name__} was raised: {error}&#34;) </code></pre>
 </details>
 </dd>
 <dt id="code_examples.learning_by_doing.section_one_samples.sequence.get_sequence_range_items"><code class="name flex">
 <span>def <span class="ident">get_sequence_range_items</span></span>(<span>lower_bound: int, upper_bound: int)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Displays the items of a sequence at the specified range. </p>
+<div class="desc"><p>Displays the items of a sequence in the specified range. </p>
 <h2 id="parameters">Parameters</h2>
 <dl>
 <dt><strong><code>lower_bound</code></strong> :&ensp;<code>int </code></dt>
-<dd>The index of the first element in the range</dd>
+<dd>The index of the first element in the range.</dd>
 <dt><strong><code>upper_bound</code></strong> :&ensp;<code>int </code></dt>
-<dd>The index of the last element in the range</dd>
+<dd>The index of the last element in the range.</dd>
 </dl>
 <h2 id="remarks">Remarks</h2>
 <p>The sequence slicing syntax is upper-bound exclusive. For example, if you
@@ -236,14 +266,14 @@ want to include the element whose index is 5, you need to pass 6 as the upper bo
 </summary>
 <pre><code class="python">def get_sequence_range_items(lower_bound: int, upper_bound: int):
     &#34;&#34;&#34;
-    Displays the items of a sequence at the specified range. 
+    Displays the items of a sequence in the specified range. 
 
     Parameters
     ----------
     lower_bound : int 
-        The index of the first element in the range
+        The index of the first element in the range.
     upper_bound : int 
-        The index of the last element in the range    
+        The index of the last element in the range.
 
     Remarks
     -------
@@ -254,14 +284,70 @@ want to include the element whose index is 5, you need to pass 6 as the upper bo
     
     &#34; Display the elements in the requested range. &#34;
     try:
-        item = letters[lower_bound]
-        print(&#34;The item at index &#34; + str(lower_bound) + &#34; is &#34; + item + &#34;\n&#34;)
-        item = letters[upper_bound]
-        print(&#34;The item at index &#34; + str(upper_bound) + &#34; is &#34; + item + &#34;\n&#34;)
         range_items = str(letters[lower_bound:upper_bound+1])
         print(&#34;The items in the specified range are &#34; + range_items + &#34;\n&#34;)
-    except IndexError:
-        print(&#34;List index is out of range.\n&#34;)</code></pre>
+    except Exception as error:
+        print(f&#34;{type(error).__name__} was raised: {error}&#34;) </code></pre>
+</details>
+</dd>
+<dt id="code_examples.learning_by_doing.section_one_samples.sequence.get_sequence_range_items_in_steps"><code class="name flex">
+<span>def <span class="ident">get_sequence_range_items_in_steps</span></span>(<span>lower_bound: int, upper_bound: int, step: int)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Displays the items of a sequence in the specified range, using the specified
+s6tep. </p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>lower_bound</code></strong> :&ensp;<code>int </code></dt>
+<dd>The index of the first element in the range.</dd>
+<dt><strong><code>upper_bound</code></strong> :&ensp;<code>int </code></dt>
+<dd>The index of the last element in the range.</dd>
+<dt><strong><code>step</code></strong> :&ensp;<code>int </code></dt>
+<dd>The step to use when returning the elements. For example, if the step is
+2 every other item in the range is
+returned.</dd>
+</dl>
+<h2 id="remarks">Remarks</h2>
+<p>The complete syntax of list slicing is [start:end:step] . When you don't
+pass a step, Python assumes the step is 1. [:]
+itself means to get
+everything from start to end. So, [::2]
+means get everything from start to
+end at a step of two.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_sequence_range_items_in_steps(lower_bound: int, upper_bound: int, step: int):
+    &#34;&#34;&#34;
+    Displays the items of a sequence in the specified range, using the specified
+    s6tep. 
+    
+    Parameters
+    ----------
+    lower_bound : int 
+        The index of the first element in the range.
+    upper_bound : int 
+        The index of the last element in the range.    
+    step : int 
+        The step to use when returning the elements. For example, if the step is
+        2 every other item in the range is
+        returned.
+
+    Remarks
+    -------
+    The complete syntax of list slicing is [start:end:step] . When you don&#39;t
+    pass a step, Python assumes the step is 1. [:]  itself means to get
+    everything from start to end. So, [::2]  means get everything from start to
+    end at a step of two.
+    &#34;&#34;&#34;
+    
+    &#34; Display the elements in the requested range with the specified step.&#34;
+    try:
+        range_items = str(letters[lower_bound:upper_bound:step])
+        print(&#34;The items in the specified range are &#34; + range_items + &#34;\n&#34;)
+    except Exception as error:
+        print(f&#34;{type(error).__name__} was raised: {error}&#34;) </code></pre>
 </details>
 </dd>
 </dl>
@@ -285,6 +371,7 @@ want to include the element whose index is 5, you need to pass 6 as the upper bo
 <li><code><a title="code_examples.learning_by_doing.section_one_samples.sequence.get_sequence_item" href="#code_examples.learning_by_doing.section_one_samples.sequence.get_sequence_item">get_sequence_item</a></code></li>
 <li><code><a title="code_examples.learning_by_doing.section_one_samples.sequence.get_sequence_negative_range_items" href="#code_examples.learning_by_doing.section_one_samples.sequence.get_sequence_negative_range_items">get_sequence_negative_range_items</a></code></li>
 <li><code><a title="code_examples.learning_by_doing.section_one_samples.sequence.get_sequence_range_items" href="#code_examples.learning_by_doing.section_one_samples.sequence.get_sequence_range_items">get_sequence_range_items</a></code></li>
+<li><code><a title="code_examples.learning_by_doing.section_one_samples.sequence.get_sequence_range_items_in_steps" href="#code_examples.learning_by_doing.section_one_samples.sequence.get_sequence_range_items_in_steps">get_sequence_range_items_in_steps</a></code></li>
 </ul>
 </li>
 </ul>
