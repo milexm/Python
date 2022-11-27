@@ -1,14 +1,14 @@
 """ 
-Example of sequence oprations. 
+Example of list oprations. 
 
 """
 
-" Define a sequence. "
+" Define a list. "
 letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
 
-def get_sequence_item(index:int):
+def get_list_item(index:int):
     """
-    Display the item of a sequence at the specified index. 
+    Display the item of a list at the specified index. 
 
     Parameters
     ----------
@@ -21,7 +21,7 @@ def get_sequence_item(index:int):
     and increasing by one. 
 
     Besides the left-to-right positive indexing that starts from zero,
-    sequence data types such as lists also have a second indexing system that
+    list data types such as lists also have a second indexing system that
     starts from -1 and decreases by one from right-to-left. 
 
     """
@@ -33,9 +33,9 @@ def get_sequence_item(index:int):
     except Exception as error:
         print(f"{type(error).__name__} was raised: {index} {error}") 
 
-def get_sequence_range_items(lower_bound: int, upper_bound: int):
+def get_list_range_items(lower_bound: int, upper_bound: int):
     """
-    Displays the items of a sequence in the specified range. 
+    Displays the items of a list in the specified range. 
 
     Parameters
     ----------
@@ -46,7 +46,7 @@ def get_sequence_range_items(lower_bound: int, upper_bound: int):
 
     Remarks
     -------
-    The sequence slicing syntax is upper-bound exclusive. For example, if you
+    The list slicing syntax is upper-bound exclusive. For example, if you
     want to include the element whose index is 5, you need to pass 6 as the upper bound.
 
     """
@@ -59,9 +59,9 @@ def get_sequence_range_items(lower_bound: int, upper_bound: int):
         print(f"{type(error).__name__} was raised: {error}") 
 
 
-def get_sequence_negative_range_items(lower_bound: int, upper_bound: int):
+def get_list_negative_range_items(lower_bound: int, upper_bound: int):
     """
-    Displays the items of a sequence in the specified range. 
+    Displays the items of a list in the specified range. 
 
     Parameters
     ----------
@@ -72,7 +72,7 @@ def get_sequence_negative_range_items(lower_bound: int, upper_bound: int):
 
     Remarks
     -------
-    The sequence slicing syntax is upper-bound exclusive. For example, if you
+    The list slicing syntax is upper-bound exclusive. For example, if you
     want to include the element whose index is 5, you need to pass 6 as the upper bound.
 
     """
@@ -84,9 +84,9 @@ def get_sequence_negative_range_items(lower_bound: int, upper_bound: int):
     except Exception as error:
         print(f"{type(error).__name__} was raised: {error}") 
 
-def get_sequence_range_items_in_steps(lower_bound: int, upper_bound: int, step: int):
+def get_list_range_items_in_steps(lower_bound: int, upper_bound: int, step: int):
     """
-    Displays the items of a sequence in the specified range, using the specified
+    Displays the items of a list in the specified range, using the specified
     s6tep. 
     
     Parameters
