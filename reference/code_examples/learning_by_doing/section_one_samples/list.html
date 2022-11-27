@@ -55,10 +55,10 @@ def get_list_item(index:int):
 
     &#34;&#34;&#34;
     
-    &#34; Display the requested item. &#34;
+    # Display the requested item. 
     try:
         item = letters[index]
-        print(&#34;The item at index &#34; + str(index) + &#34; is &#34; + item + &#34;\n&#34;)
+        print(f&#34;The item at index {index} is: {item}\n&#34;) 
     except Exception as error:
         print(f&#34;{type(error).__name__} was raised: {index} {error}&#34;) 
 
@@ -80,10 +80,10 @@ def get_list_range_items(lower_bound: int, upper_bound: int):
 
     &#34;&#34;&#34;
     
-    &#34; Display the elements in the requested range. &#34;
+    # Display the elements in the requested range. 
     try:
         range_items = str(letters[lower_bound:upper_bound+1])
-        print(&#34;The items in the specified range are &#34; + range_items + &#34;\n&#34;)
+        print(f&#34;The items in the specified range are: {range_items}\n&#34;) 
     except Exception as error:
         print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
 
@@ -106,17 +106,17 @@ def get_list_negative_range_items(lower_bound: int, upper_bound: int):
 
     &#34;&#34;&#34;
     
-    &#34; Display the elements in the requested range. &#34;
+    # Display the elements in the requested range. 
     try:
         range_items = str(letters[lower_bound:upper_bound])
-        print(&#34;The items in the specified range are &#34; + range_items + &#34;\n&#34;)
+        print(f&#34;The items in the specified range are: {range_items}\n&#34;) 
     except Exception as error:
         print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
 
 def get_list_range_items_in_steps(lower_bound: int, upper_bound: int, step: int):
     &#34;&#34;&#34;
     Displays the items of a list in the specified range, using the specified
-    s6tep. 
+    step. 
     
     Parameters
     ----------
@@ -137,12 +137,40 @@ def get_list_range_items_in_steps(lower_bound: int, upper_bound: int, step: int)
     end at a step of two.
     &#34;&#34;&#34;
     
-    &#34; Display the elements in the requested range with the specified step.&#34;
+    # Display the elements in the requested range with the specified step.
     try:
         range_items = str(letters[lower_bound:upper_bound:step])
-        print(&#34;The items in the specified range are &#34; + range_items + &#34;\n&#34;)
+        print(f&#34;The items in the specified range are: {range_items}\n&#34;) 
     except Exception as error:
-        print(f&#34;{type(error).__name__} was raised: {error}&#34;) </code></pre>
+        print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
+
+def create_number_list(first_number: int, last_number: int):
+    &#34;&#34;&#34;
+    Create a list of numbers in the specified number range. 
+
+    Parameters
+    ----------
+    first_number : int 
+        The value of the first number in the list.
+    last_number : int 
+        The value of the last number in the list.    
+
+    Remarks
+    -------
+    This examples uses the Python built-in function `range()` that generates a range of integers. However, `range()` creates a Python range object. To get the list object, the example uses the `list()` function to convert the range object into a list object.
+
+    &#34;&#34;&#34;
+    
+    try:
+        # Get the range object. 
+        my_range = range(first_number, last_number)
+        # Get the related list.
+        my_list = list(my_range)
+        print(f&#34;The list from {first_number} and {last_number} is: {my_list}\n&#34;) 
+    except Exception as error:
+        # Display the error.
+        print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
+    </code></pre>
 </details>
 </section>
 <section>
@@ -152,6 +180,52 @@ def get_list_range_items_in_steps(lower_bound: int, upper_bound: int, step: int)
 <section>
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
+<dt id="code_examples.learning_by_doing.section_one_samples.list.create_number_list"><code class="name flex">
+<span>def <span class="ident">create_number_list</span></span>(<span>first_number: int, last_number: int)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a list of numbers in the specified number range. </p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>first_number</code></strong> :&ensp;<code>int </code></dt>
+<dd>The value of the first number in the list.</dd>
+<dt><strong><code>last_number</code></strong> :&ensp;<code>int </code></dt>
+<dd>The value of the last number in the list.</dd>
+</dl>
+<h2 id="remarks">Remarks</h2>
+<p>This examples uses the Python built-in function <code>range()</code> that generates a range of integers. However, <code>range()</code> creates a Python range object. To get the list object, the example uses the <code>list()</code> function to convert the range object into a list object.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_number_list(first_number: int, last_number: int):
+    &#34;&#34;&#34;
+    Create a list of numbers in the specified number range. 
+
+    Parameters
+    ----------
+    first_number : int 
+        The value of the first number in the list.
+    last_number : int 
+        The value of the last number in the list.    
+
+    Remarks
+    -------
+    This examples uses the Python built-in function `range()` that generates a range of integers. However, `range()` creates a Python range object. To get the list object, the example uses the `list()` function to convert the range object into a list object.
+
+    &#34;&#34;&#34;
+    
+    try:
+        # Get the range object. 
+        my_range = range(first_number, last_number)
+        # Get the related list.
+        my_list = list(my_range)
+        print(f&#34;The list from {first_number} and {last_number} is: {my_list}\n&#34;) 
+    except Exception as error:
+        # Display the error.
+        print(f&#34;{type(error).__name__} was raised: {error}&#34;) </code></pre>
+</details>
+</dd>
 <dt id="code_examples.learning_by_doing.section_one_samples.list.get_list_item"><code class="name flex">
 <span>def <span class="ident">get_list_item</span></span>(<span>index: int)</span>
 </code></dt>
@@ -192,10 +266,10 @@ starts from -1 and decreases by one from right-to-left.</p></div>
 
     &#34;&#34;&#34;
     
-    &#34; Display the requested item. &#34;
+    # Display the requested item. 
     try:
         item = letters[index]
-        print(&#34;The item at index &#34; + str(index) + &#34; is &#34; + item + &#34;\n&#34;)
+        print(f&#34;The item at index {index} is: {item}\n&#34;) 
     except Exception as error:
         print(f&#34;{type(error).__name__} was raised: {index} {error}&#34;) </code></pre>
 </details>
@@ -237,10 +311,10 @@ want to include the element whose index is 5, you need to pass 6 as the upper bo
 
     &#34;&#34;&#34;
     
-    &#34; Display the elements in the requested range. &#34;
+    # Display the elements in the requested range. 
     try:
         range_items = str(letters[lower_bound:upper_bound])
-        print(&#34;The items in the specified range are &#34; + range_items + &#34;\n&#34;)
+        print(f&#34;The items in the specified range are: {range_items}\n&#34;) 
     except Exception as error:
         print(f&#34;{type(error).__name__} was raised: {error}&#34;) </code></pre>
 </details>
@@ -282,10 +356,10 @@ want to include the element whose index is 5, you need to pass 6 as the upper bo
 
     &#34;&#34;&#34;
     
-    &#34; Display the elements in the requested range. &#34;
+    # Display the elements in the requested range. 
     try:
         range_items = str(letters[lower_bound:upper_bound+1])
-        print(&#34;The items in the specified range are &#34; + range_items + &#34;\n&#34;)
+        print(f&#34;The items in the specified range are: {range_items}\n&#34;) 
     except Exception as error:
         print(f&#34;{type(error).__name__} was raised: {error}&#34;) </code></pre>
 </details>
@@ -295,7 +369,7 @@ want to include the element whose index is 5, you need to pass 6 as the upper bo
 </code></dt>
 <dd>
 <div class="desc"><p>Displays the items of a list in the specified range, using the specified
-s6tep. </p>
+step. </p>
 <h2 id="parameters">Parameters</h2>
 <dl>
 <dt><strong><code>lower_bound</code></strong> :&ensp;<code>int </code></dt>
@@ -321,7 +395,7 @@ end at a step of two.</p></div>
 <pre><code class="python">def get_list_range_items_in_steps(lower_bound: int, upper_bound: int, step: int):
     &#34;&#34;&#34;
     Displays the items of a list in the specified range, using the specified
-    s6tep. 
+    step. 
     
     Parameters
     ----------
@@ -342,10 +416,10 @@ end at a step of two.</p></div>
     end at a step of two.
     &#34;&#34;&#34;
     
-    &#34; Display the elements in the requested range with the specified step.&#34;
+    # Display the elements in the requested range with the specified step.
     try:
         range_items = str(letters[lower_bound:upper_bound:step])
-        print(&#34;The items in the specified range are &#34; + range_items + &#34;\n&#34;)
+        print(f&#34;The items in the specified range are: {range_items}\n&#34;) 
     except Exception as error:
         print(f&#34;{type(error).__name__} was raised: {error}&#34;) </code></pre>
 </details>
@@ -368,6 +442,7 @@ end at a step of two.</p></div>
 </li>
 <li><h3><a href="#header-functions">Functions</a></h3>
 <ul class="">
+<li><code><a title="code_examples.learning_by_doing.section_one_samples.list.create_number_list" href="#code_examples.learning_by_doing.section_one_samples.list.create_number_list">create_number_list</a></code></li>
 <li><code><a title="code_examples.learning_by_doing.section_one_samples.list.get_list_item" href="#code_examples.learning_by_doing.section_one_samples.list.get_list_item">get_list_item</a></code></li>
 <li><code><a title="code_examples.learning_by_doing.section_one_samples.list.get_list_negative_range_items" href="#code_examples.learning_by_doing.section_one_samples.list.get_list_negative_range_items">get_list_negative_range_items</a></code></li>
 <li><code><a title="code_examples.learning_by_doing.section_one_samples.list.get_list_range_items" href="#code_examples.learning_by_doing.section_one_samples.list.get_list_range_items">get_list_range_items</a></code></li>
