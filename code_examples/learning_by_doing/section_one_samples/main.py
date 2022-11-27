@@ -11,11 +11,11 @@ sys.path.append('./code_examples/learning_by_doing/section_one_samples')
 import numpy as np
 
 from type_error import issue_type_error 
-from list import get_list_item, get_list_range_items
+from list import get_list_item, get_list_range_items, create_number_list
 from list import get_list_negative_range_items, get_list_range_items_in_steps
 
 # Define the menu item list.  
-menuItems = ["Issue type error", "Index a list", "Slice a list","Quit"]
+menuItems = ["Issue type error", "Index a list", "Slice a list", "Create a list", "Quit"]
 
 
 def inputNumber(self, prompt):
@@ -46,14 +46,15 @@ def displayMenu(self, options:list, display:bool):
             # print("{:d}->{:s}  ".format(i+1, options[i]), end=' ')
             
             if ((i+1)%3!=0):
-                # Calculate the blank space to add to the right of a mneu
+                # Calculate the blank space to add to the right of a menu
                 # item for allignment. 
-                right_padding = " "*(16-len(options[i]))
-                # Display 3 menu items on the aame line 
+                right_padding = ""*(16-len(options[i]))
+                # right_padding = ""*(16-len(options[i]))
+                # Display 3 menu items on the same line 
                 print("{:d}.{:s}".format(i+1, options[i] + right_padding), 
                       end=' ')
             else:
-                print("{:d}.{:s}  ".format(i+1, options[i]))
+                print("{:d}.{:s}".format(i+1, options[i]))
             
     # Get a valid menu choice
     if (display == False):
@@ -105,6 +106,10 @@ class menu:
                 get_list_range_items(3, 5)
                 get_list_negative_range_items(-3, -1)
                 get_list_range_items_in_steps(1, 10, 2)
+                dummy = displayMenu(self, menuItems, True)
+            elif choice == 4:
+                print("\n*** Create a list of numbers ***")
+                create_number_list(1, 20)
                 dummy = displayMenu(self, menuItems, True)
 
             elif choice == len(menuItems):

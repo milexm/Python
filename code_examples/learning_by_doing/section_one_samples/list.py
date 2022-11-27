@@ -26,10 +26,10 @@ def get_list_item(index:int):
 
     """
     
-    " Display the requested item. "
+    # Display the requested item. 
     try:
         item = letters[index]
-        print("The item at index " + str(index) + " is " + item + "\n")
+        print(f"The item at index {index} is: {item}\n") 
     except Exception as error:
         print(f"{type(error).__name__} was raised: {index} {error}") 
 
@@ -51,10 +51,10 @@ def get_list_range_items(lower_bound: int, upper_bound: int):
 
     """
     
-    " Display the elements in the requested range. "
+    # Display the elements in the requested range. 
     try:
         range_items = str(letters[lower_bound:upper_bound+1])
-        print("The items in the specified range are " + range_items + "\n")
+        print(f"The items in the specified range are: {range_items}\n") 
     except Exception as error:
         print(f"{type(error).__name__} was raised: {error}") 
 
@@ -77,17 +77,17 @@ def get_list_negative_range_items(lower_bound: int, upper_bound: int):
 
     """
     
-    " Display the elements in the requested range. "
+    # Display the elements in the requested range. 
     try:
         range_items = str(letters[lower_bound:upper_bound])
-        print("The items in the specified range are " + range_items + "\n")
+        print(f"The items in the specified range are: {range_items}\n") 
     except Exception as error:
         print(f"{type(error).__name__} was raised: {error}") 
 
 def get_list_range_items_in_steps(lower_bound: int, upper_bound: int, step: int):
     """
     Displays the items of a list in the specified range, using the specified
-    s6tep. 
+    step. 
     
     Parameters
     ----------
@@ -108,9 +108,37 @@ def get_list_range_items_in_steps(lower_bound: int, upper_bound: int, step: int)
     end at a step of two.
     """
     
-    " Display the elements in the requested range with the specified step."
+    # Display the elements in the requested range with the specified step.
     try:
         range_items = str(letters[lower_bound:upper_bound:step])
-        print("The items in the specified range are " + range_items + "\n")
+        print(f"The items in the specified range are: {range_items}\n") 
     except Exception as error:
         print(f"{type(error).__name__} was raised: {error}") 
+
+def create_number_list(first_number: int, last_number: int):
+    """
+    Create a list of numbers in the specified number range. 
+
+    Parameters
+    ----------
+    first_number : int 
+        The value of the first number in the list.
+    last_number : int 
+        The value of the last number in the list.    
+
+    Remarks
+    -------
+    This examples uses the Python built-in function `range()` that generates a range of integers. However, `range()` creates a Python range object. To get the list object, the example uses the `list()` function to convert the range object into a list object.
+
+    """
+    
+    try:
+        # Get the range object. 
+        my_range = range(first_number, last_number)
+        # Get the related list.
+        my_list = list(my_range)
+        print(f"The list from {first_number} and {last_number} is: {my_list}\n") 
+    except Exception as error:
+        # Display the error.
+        print(f"{type(error).__name__} was raised: {error}") 
+    
