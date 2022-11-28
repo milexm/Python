@@ -128,7 +128,9 @@ def create_number_list(first_number: int, last_number: int):
 
     Remarks
     -------
-    This example uses the Python built-in function `range()` that generates a range of integers. However, `range()` creates a Python range object. To get the list object, the example uses the `list()` function to convert the range object into a list object.
+    This example uses the Python built-in function `range()` that generates a range of integers. 
+    However, `range()` creates a Python range object. To get the list object, the example uses 
+    the `list()` function to convert the range object into a list object.
 
     """
     
@@ -190,5 +192,4 @@ def create_string_list_in_range(arange: range):
     except Exception as error:
         # Display the error.
         print(f"{type(error).__name__} was raised: {error}") 
-       
-        
+      
