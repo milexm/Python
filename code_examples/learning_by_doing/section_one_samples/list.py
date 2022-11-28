@@ -155,8 +155,10 @@ def create_number_list_in_range(arange: range):
     
     Remarks
     -------
-    This example accepts a Python range object, as a parameter. To get the list object, the example uses the Pythonthe list comprehension construct to convert the range object into a list object.
-    For more information, see [list comprehension](https://realpython.com/list-comprehension-python/). 
+    This example accepts a Python range object, as a parameter. To get the list
+    object, the example uses the Pythonthe list comprehension construct to
+    convert the range object into a list object.  For more information, see
+    [list comprehension](https://realpython.com/list-comprehension-python/). 
 
     """
     
@@ -179,9 +181,14 @@ def create_string_list_in_range(arange: range):
     
     Remarks
     -------
-    This example accepts a Python range object, as a parameter. To get the list object, the example uses the Python built-in function 'map()` to transform each mumber in the iteratable object `arange` in a string and then appliese the function `list()` to convert the output into a list object containing strings. 
+    This example accepts a Python range object, as a parameter. To get the list
+    object, the example uses the Python built-in function 'map()` to transform
+    each mumber in the iteratable object `arange` in a string and then appliese
+    the function `list()` to convert the output into a list object containing
+    strings. 
 
-    For more information, see [map function](https://www.w3schools.com/python/ref_func_map.asp).
+    For more information, see [map
+    function](https://www.w3schools.com/python/ref_func_map.asp).
     """
     
     try:

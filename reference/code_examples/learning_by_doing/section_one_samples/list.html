@@ -157,10 +157,11 @@ def create_number_list(first_number: int, last_number: int):
 
     Remarks
     -------
-
-    This examples uses the Python built-in function `range()` that generates a range of integers. 
+    This example uses the Python built-in function `range()` that generates a range of integers. 
     However, `range()` creates a Python range object. To get the list object, the example uses 
     the `list()` function to convert the range object into a list object.
+
+    &#34;&#34;&#34;
     
     try:
         # Get the range object. 
@@ -171,7 +172,63 @@ def create_number_list(first_number: int, last_number: int):
     except Exception as error:
         # Display the error.
         print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
-    </code></pre>
+    
+def create_number_list_in_range(arange: range):
+    &#34;&#34;&#34;
+    Create a list of numbers in the specified range. 
+
+    Parameters
+    ----------
+    arange : range
+        The range to create the number list.
+    
+    Remarks
+    -------
+    This example accepts a Python range object, as a parameter. To get the list
+    object, the example uses the Pythonthe list comprehension construct to
+    convert the range object into a list object.  For more information, see
+    [list comprehension](https://realpython.com/list-comprehension-python/). 
+
+    &#34;&#34;&#34;
+    
+    try:
+        # Create a list of numbers in the specified range. 
+        my_list = [10 * n for n in arange]
+        print(f&#34;The list in the {arange} is: {my_list}\n&#34;) 
+    except Exception as error:
+        # Display the error.
+        print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
+       
+def create_string_list_in_range(arange: range):
+    &#34;&#34;&#34;
+    Create a list of strings in the specified range. 
+
+    Parameters
+    ----------
+    arange : range
+        The range to create the number list.
+    
+    Remarks
+    -------
+    This example accepts a Python range object, as a parameter. To get the list
+    object, the example uses the Python built-in function &#39;map()` to transform
+    each mumber in the iteratable object `arange` in a string and then appliese
+    the function `list()` to convert the output into a list object containing
+    strings. 
+
+    For more information, see [map
+    function](https://www.w3schools.com/python/ref_func_map.asp).
+    &#34;&#34;&#34;
+    
+    try:
+        # Create a list of numbers in the specified range. 
+        my_list = list(map(str, arange))
+        # my_list = [str(10 * n) for n in arange]
+        print(f&#34;The list in the {arange} is: {my_list}\n&#34;) 
+    except Exception as error:
+        # Display the error.
+        print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
+      </code></pre>
 </details>
 </section>
 <section>
@@ -194,11 +251,9 @@ def create_number_list(first_number: int, last_number: int):
 <dd>The value of the last number in the list.</dd>
 </dl>
 <h2 id="remarks">Remarks</h2>
-
-<p>This examples uses the Python built-in function <code>range()</code> that generates a range of integers. 
-However, <code>range()</code> creates a Python range object. To get the list object, 
-the example uses the <code>list()</code> function to convert the range object into a list object.</p></div>
-
+<p>This example uses the Python built-in function <code>range()</code> that generates a range of integers.
+However, <code>range()</code> creates a Python range object. To get the list object, the example uses
+the <code>list()</code> function to convert the range object into a list object.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -216,9 +271,11 @@ the example uses the <code>list()</code> function to convert the range object in
 
     Remarks
     -------
-    This examples uses the Python built-in function `range()` that generates a range of integers. 
+    This example uses the Python built-in function `range()` that generates a range of integers. 
     However, `range()` creates a Python range object. To get the list object, the example uses 
     the `list()` function to convert the range object into a list object.
+
+    &#34;&#34;&#34;
     
     try:
         # Get the range object. 
@@ -226,6 +283,106 @@ the example uses the <code>list()</code> function to convert the range object in
         # Get the related list.
         my_list = list(my_range)
         print(f&#34;The list from {first_number} and {last_number} is: {my_list}\n&#34;) 
+    except Exception as error:
+        # Display the error.
+        print(f&#34;{type(error).__name__} was raised: {error}&#34;) </code></pre>
+</details>
+</dd>
+<dt id="code_examples.learning_by_doing.section_one_samples.list.create_number_list_in_range"><code class="name flex">
+<span>def <span class="ident">create_number_list_in_range</span></span>(<span>arange: range)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a list of numbers in the specified range. </p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>arange</code></strong> :&ensp;<code>range</code></dt>
+<dd>The range to create the number list.</dd>
+</dl>
+<h2 id="remarks">Remarks</h2>
+<p>This example accepts a Python range object, as a parameter. To get the list
+object, the example uses the Pythonthe list comprehension construct to
+convert the range object into a list object.
+For more information, see
+<a href="https://realpython.com/list-comprehension-python/">list comprehension</a>.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_number_list_in_range(arange: range):
+    &#34;&#34;&#34;
+    Create a list of numbers in the specified range. 
+
+    Parameters
+    ----------
+    arange : range
+        The range to create the number list.
+    
+    Remarks
+    -------
+    This example accepts a Python range object, as a parameter. To get the list
+    object, the example uses the Pythonthe list comprehension construct to
+    convert the range object into a list object.  For more information, see
+    [list comprehension](https://realpython.com/list-comprehension-python/). 
+
+    &#34;&#34;&#34;
+    
+    try:
+        # Create a list of numbers in the specified range. 
+        my_list = [10 * n for n in arange]
+        print(f&#34;The list in the {arange} is: {my_list}\n&#34;) 
+    except Exception as error:
+        # Display the error.
+        print(f&#34;{type(error).__name__} was raised: {error}&#34;) </code></pre>
+</details>
+</dd>
+<dt id="code_examples.learning_by_doing.section_one_samples.list.create_string_list_in_range"><code class="name flex">
+<span>def <span class="ident">create_string_list_in_range</span></span>(<span>arange: range)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a list of strings in the specified range. </p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>arange</code></strong> :&ensp;<code>range</code></dt>
+<dd>The range to create the number list.</dd>
+</dl>
+<h2 id="remarks">Remarks</h2>
+<p>This example accepts a Python range object, as a parameter. To get the list
+object, the example uses the Python built-in function 'map()` to transform
+each mumber in the iteratable object <code>arange</code> in a string and then appliese
+the function <code>list()</code> to convert the output into a list object containing
+strings. </p>
+<p>For more information, see <a href="https://www.w3schools.com/python/ref_func_map.asp">map
+function</a>.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_string_list_in_range(arange: range):
+    &#34;&#34;&#34;
+    Create a list of strings in the specified range. 
+
+    Parameters
+    ----------
+    arange : range
+        The range to create the number list.
+    
+    Remarks
+    -------
+    This example accepts a Python range object, as a parameter. To get the list
+    object, the example uses the Python built-in function &#39;map()` to transform
+    each mumber in the iteratable object `arange` in a string and then appliese
+    the function `list()` to convert the output into a list object containing
+    strings. 
+
+    For more information, see [map
+    function](https://www.w3schools.com/python/ref_func_map.asp).
+    &#34;&#34;&#34;
+    
+    try:
+        # Create a list of numbers in the specified range. 
+        my_list = list(map(str, arange))
+        # my_list = [str(10 * n) for n in arange]
+        print(f&#34;The list in the {arange} is: {my_list}\n&#34;) 
     except Exception as error:
         # Display the error.
         print(f&#34;{type(error).__name__} was raised: {error}&#34;) </code></pre>
@@ -448,6 +605,8 @@ end at a step of two.</p></div>
 <li><h3><a href="#header-functions">Functions</a></h3>
 <ul class="">
 <li><code><a title="code_examples.learning_by_doing.section_one_samples.list.create_number_list" href="#code_examples.learning_by_doing.section_one_samples.list.create_number_list">create_number_list</a></code></li>
+<li><code><a title="code_examples.learning_by_doing.section_one_samples.list.create_number_list_in_range" href="#code_examples.learning_by_doing.section_one_samples.list.create_number_list_in_range">create_number_list_in_range</a></code></li>
+<li><code><a title="code_examples.learning_by_doing.section_one_samples.list.create_string_list_in_range" href="#code_examples.learning_by_doing.section_one_samples.list.create_string_list_in_range">create_string_list_in_range</a></code></li>
 <li><code><a title="code_examples.learning_by_doing.section_one_samples.list.get_list_item" href="#code_examples.learning_by_doing.section_one_samples.list.get_list_item">get_list_item</a></code></li>
 <li><code><a title="code_examples.learning_by_doing.section_one_samples.list.get_list_negative_range_items" href="#code_examples.learning_by_doing.section_one_samples.list.get_list_negative_range_items">get_list_negative_range_items</a></code></li>
 <li><code><a title="code_examples.learning_by_doing.section_one_samples.list.get_list_range_items" href="#code_examples.learning_by_doing.section_one_samples.list.get_list_range_items">get_list_range_items</a></code></li>
