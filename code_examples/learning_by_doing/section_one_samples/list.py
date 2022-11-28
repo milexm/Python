@@ -128,7 +128,7 @@ def create_number_list(first_number: int, last_number: int):
 
     Remarks
     -------
-    This examples uses the Python built-in function `range()` that generates a range of integers. However, `range()` creates a Python range object. To get the list object, the example uses the `list()` function to convert the range object into a list object.
+    This example uses the Python built-in function `range()` that generates a range of integers. However, `range()` creates a Python range object. To get the list object, the example uses the `list()` function to convert the range object into a list object.
 
     """
     
@@ -142,3 +142,53 @@ def create_number_list(first_number: int, last_number: int):
         # Display the error.
         print(f"{type(error).__name__} was raised: {error}") 
     
+def create_number_list_in_range(arange: range):
+    """
+    Create a list of numbers in the specified range. 
+
+    Parameters
+    ----------
+    arange : range
+        The range to create the number list.
+    
+    Remarks
+    -------
+    This example accepts a Python range object, as a parameter. To get the list object, the example uses the Pythonthe list comprehension construct to convert the range object into a list object.
+    For more information, see [list comprehension](https://realpython.com/list-comprehension-python/). 
+
+    """
+    
+    try:
+        # Create a list of numbers in the specified range. 
+        my_list = [10 * n for n in arange]
+        print(f"The list in the {arange} is: {my_list}\n") 
+    except Exception as error:
+        # Display the error.
+        print(f"{type(error).__name__} was raised: {error}") 
+       
+def create_string_list_in_range(arange: range):
+    """
+    Create a list of strings in the specified range. 
+
+    Parameters
+    ----------
+    arange : range
+        The range to create the number list.
+    
+    Remarks
+    -------
+    This example accepts a Python range object, as a parameter. To get the list object, the example uses the Python built-in function 'map()` to transform each mumber in the iteratable object `arange` in a string and then appliese the function `list()` to convert the output into a list object containing strings. 
+
+    For more information, see [map function](https://www.w3schools.com/python/ref_func_map.asp).
+    """
+    
+    try:
+        # Create a list of numbers in the specified range. 
+        my_list = list(map(str, arange))
+        # my_list = [str(10 * n) for n in arange]
+        print(f"The list in the {arange} is: {my_list}\n") 
+    except Exception as error:
+        # Display the error.
+        print(f"{type(error).__name__} was raised: {error}") 
+       
+        

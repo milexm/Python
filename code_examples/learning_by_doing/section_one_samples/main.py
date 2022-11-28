@@ -11,11 +11,13 @@ sys.path.append('./code_examples/learning_by_doing/section_one_samples')
 import numpy as np
 
 from type_error import issue_type_error 
-from list import get_list_item, get_list_range_items, create_number_list
+from list import get_list_item, get_list_range_items
 from list import get_list_negative_range_items, get_list_range_items_in_steps
+from list import create_number_list, create_number_list_in_range, create_string_list_in_range
+
 
 # Define the menu item list.  
-menuItems = ["Issue type error", "Index a list", "Slice a list", "Create a list", "Quit"]
+menuItems = ["Issue type error", "Index a list", "Slice a list", "Create a list", "Create a list in a range", "Create a string list in a range", "Quit"]
 
 
 def inputNumber(self, prompt):
@@ -109,9 +111,16 @@ class menu:
                 dummy = displayMenu(self, menuItems, True)
             elif choice == 4:
                 print("\n*** Create a list of numbers ***")
-                create_number_list(1, 20)
+                create_number_list(1, 21)
                 dummy = displayMenu(self, menuItems, True)
-
+            elif choice == 5:
+                print("\n*** Create a list of numbers in a range ***")
+                create_number_list_in_range(range(1, 21))
+                dummy = displayMenu(self, menuItems, True)
+            elif choice == 6:
+                print("\n*** Create a list of strings in a range ***")
+                create_string_list_in_range(range(1, 21))
+                dummy = displayMenu(self, menuItems, True)
             elif choice == len(menuItems):
                 break
 
