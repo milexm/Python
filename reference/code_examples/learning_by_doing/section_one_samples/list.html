@@ -31,9 +31,13 @@
 Example of list oprations. 
 
 &#34;&#34;&#34;
+from typing import OrderedDict
 
-&#34; Define a list. &#34;
+# Define a list.
 letters = [&#34;a&#34;, &#34;b&#34;, &#34;c&#34;, &#34;d&#34;, &#34;e&#34;, &#34;f&#34;, &#34;g&#34;, &#34;h&#34;, &#34;i&#34;, &#34;j&#34;]
+
+# Define a list with duplicated elements.
+letters_duplicated = [&#34;a&#34;, &#34;b&#34;, &#34;b&#34;, &#34;d&#34;, &#34;d&#34;, &#34;f&#34;, &#34;g&#34;, &#34;h&#34;, &#34;h&#34;, &#34;j&#34;, &#34;j&#34;]
 
 def get_list_item(index:int):
     &#34;&#34;&#34;
@@ -157,14 +161,12 @@ def create_number_list(first_number: int, last_number: int):
 
     Remarks
     -------
-
     This example uses the Python built-in function `range()` that generates a range of integers. 
+
     However, `range()` creates a Python range object. To get the list object, the example uses 
     the `list()` function to convert the range object into a list object.
 
-    This examples uses the Python built-in function `range()` that generates a range of integers. 
-    However, `range()` creates a Python range object. To get the list object, the example uses 
-    the `list()` function to convert the range object into a list object.
+    &#34;&#34;&#34;
     
     try:
         # Get the range object. 
@@ -231,7 +233,40 @@ def create_string_list_in_range(arange: range):
     except Exception as error:
         # Display the error.
         print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
-      </code></pre>
+
+def remove_duplicated_list_elements():
+    &#34;&#34;&#34;
+    Remove duplicated elments in a lists.  
+
+    Parameters
+    ----------
+    arange : range
+        The range to create the number list.
+    
+    Remarks
+    -------
+    To remove deplicated elements in a list, you can use one of the following
+    approaches:
+    1. Use the  `set` function to convert the list to a set that would remove all duplicates because `set` objects cannot contain duplicates. 
+    Then use the `list` function to convert the set back to a list. The drawback here is that the original order of the items is lost.
+
+    For more information, see [set
+    function](https://www.w3schools.com/python/ref_func_set.asp).
+    &#34;&#34;&#34;
+
+    try:
+        # Method 1: using set.  
+        my_set = set(letters_duplicated)
+        my_list = list(my_set)
+        print(f&#34;Using set function. The unordered list is: {my_list}\n&#34;) 
+
+        my_dictionary = OrderedDict.fromkeys(letters_duplicated)
+        my_list = list(my_dictionary)
+        print(f&#34;Using OrderedDict.fromkeys function. The ordered list is: {my_list}\n&#34;) 
+    except Exception as error:
+        # Display the error.
+        print(f&#34;{type(error).__name__} was raised: {error}&#34;) </code></pre>
+
 </details>
 </section>
 <section>
@@ -254,11 +289,9 @@ def create_string_list_in_range(arange: range):
 <dd>The value of the last number in the list.</dd>
 </dl>
 <h2 id="remarks">Remarks</h2>
-
 <p>This example uses the Python built-in function <code>range()</code> that generates a range of integers.
 However, <code>range()</code> creates a Python range object. To get the list object, the example uses
 the <code>list()</code> function to convert the range object into a list object.</p></div>
-=======
 
 <details class="source">
 <summary>
@@ -592,6 +625,63 @@ end at a step of two.</p></div>
         print(f&#34;{type(error).__name__} was raised: {error}&#34;) </code></pre>
 </details>
 </dd>
+<dt id="code_examples.learning_by_doing.section_one_samples.list.remove_duplicated_list_elements"><code class="name flex">
+<span>def <span class="ident">remove_duplicated_list_elements</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Remove duplicated elments in a lists.
+</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>arange</code></strong> :&ensp;<code>range</code></dt>
+<dd>The range to create the number list.</dd>
+</dl>
+<h2 id="remarks">Remarks</h2>
+<p>To remove deplicated elements in a list, you can use one of the following
+approaches:
+1. Use the
+<code>set</code> function to convert the list to a set that would remove all duplicates because <code>set</code> objects cannot contain duplicates.
+Then use the <code>list</code> function to convert the set back to a list. The drawback here is that the original order of the items is lost.</p>
+<p>For more information, see <a href="https://www.w3schools.com/python/ref_func_set.asp">set
+function</a>.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def remove_duplicated_list_elements():
+    &#34;&#34;&#34;
+    Remove duplicated elments in a lists.  
+
+    Parameters
+    ----------
+    arange : range
+        The range to create the number list.
+    
+    Remarks
+    -------
+    To remove deplicated elements in a list, you can use one of the following
+    approaches:
+    1. Use the  `set` function to convert the list to a set that would remove all duplicates because `set` objects cannot contain duplicates. 
+    Then use the `list` function to convert the set back to a list. The drawback here is that the original order of the items is lost.
+
+    For more information, see [set
+    function](https://www.w3schools.com/python/ref_func_set.asp).
+    &#34;&#34;&#34;
+
+    try:
+        # Method 1: using set.  
+        my_set = set(letters_duplicated)
+        my_list = list(my_set)
+        print(f&#34;Using set function. The unordered list is: {my_list}\n&#34;) 
+
+        my_dictionary = OrderedDict.fromkeys(letters_duplicated)
+        my_list = list(my_dictionary)
+        print(f&#34;Using OrderedDict.fromkeys function. The ordered list is: {my_list}\n&#34;) 
+    except Exception as error:
+        # Display the error.
+        print(f&#34;{type(error).__name__} was raised: {error}&#34;) </code></pre>
+</details>
+</dd>
 </dl>
 </section>
 <section>
@@ -617,6 +707,7 @@ end at a step of two.</p></div>
 <li><code><a title="code_examples.learning_by_doing.section_one_samples.list.get_list_negative_range_items" href="#code_examples.learning_by_doing.section_one_samples.list.get_list_negative_range_items">get_list_negative_range_items</a></code></li>
 <li><code><a title="code_examples.learning_by_doing.section_one_samples.list.get_list_range_items" href="#code_examples.learning_by_doing.section_one_samples.list.get_list_range_items">get_list_range_items</a></code></li>
 <li><code><a title="code_examples.learning_by_doing.section_one_samples.list.get_list_range_items_in_steps" href="#code_examples.learning_by_doing.section_one_samples.list.get_list_range_items_in_steps">get_list_range_items_in_steps</a></code></li>
+<li><code><a title="code_examples.learning_by_doing.section_one_samples.list.remove_duplicated_list_elements" href="#code_examples.learning_by_doing.section_one_samples.list.remove_duplicated_list_elements">remove_duplicated_list_elements</a></code></li>
 </ul>
 </li>
 </ul>
