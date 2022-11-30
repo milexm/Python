@@ -13,12 +13,13 @@ import numpy as np
 from type_error import issue_type_error 
 from list import get_list_item, get_list_range_items, create_number_list
 from list import get_list_negative_range_items, get_list_range_items_in_steps
-from list import create_number_list, create_number_list_in_range, create_string_list_in_range
+from list import create_number_list, create_number_list_in_range, create_string_list_in_range, remove_duplicated_list_elements
 
 
 # Define the menu item list.  
 
-menuItems = ["Issue type error", "Index a list", "Slice a list", "Create a list", "Create a list in a range", "Create a string list in a range", "Quit"]
+menuItems = ["Issue type error", "Index a list", "Slice a list", "Create a list", "Create a list in a range", "Create a string list in a range", 
+"Remove duplicated list elments", "Quit"]
 
 def inputNumber(self, prompt):
         # Prompts user to imput a number.
@@ -120,6 +121,10 @@ class menu:
             elif choice == 6:
                 print("\n*** Create a list of strings in a range ***")
                 create_string_list_in_range(range(1, 21))
+                dummy = displayMenu(self, menuItems, True)
+            elif choice == 7:
+                print("\n*** Remove duplicated list elements ***")
+                remove_duplicated_list_elements()
                 dummy = displayMenu(self, menuItems, True)
             elif choice == len(menuItems):
                 break

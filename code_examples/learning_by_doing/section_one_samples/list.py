@@ -2,9 +2,13 @@
 Example of list oprations. 
 
 """
+from typing import OrderedDict
 
-" Define a list. "
+# Define a list.
 letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
+
+# Define a list with duplicated elements.
+letters_duplicated = ["a", "b", "b", "d", "d", "f", "g", "h", "h", "j", "j"]
 
 def get_list_item(index:int):
     """
@@ -200,3 +204,37 @@ def create_string_list_in_range(arange: range):
         # Display the error.
         print(f"{type(error).__name__} was raised: {error}") 
       
+
+def remove_duplicated_list_elements():
+    """
+    Remove duplicated elments in a lists.  
+
+    Parameters
+    ----------
+    arange : range
+        The range to create the number list.
+    
+    Remarks
+    -------
+    To remove deplicated elements in a list, you can use one of the following
+    approaches:
+    1. Use the  `set` function to convert the list to a set that would remove all duplicates because `set` objects cannot contain duplicates. 
+    Then use the `list` function to convert the set back to a list. The drawback here is that the original order of the items is lost.
+
+    For more information, see [set
+    function](https://www.w3schools.com/python/ref_func_set.asp).
+    """
+
+    try:
+        # Method 1: using set.  
+        my_set = set(letters_duplicated)
+        my_list = list(my_set)
+        print(f"Using set function. The unordered list is: {my_list}\n") 
+
+        my_dictionary = OrderedDict.fromkeys(letters_duplicated)
+        my_list = list(my_dictionary)
+        print(f"Using OrderedDict.fromkeys function. The ordered list is: {my_list}\n") 
+    except Exception as error:
+        # Display the error.
+        print(f"{type(error).__name__} was raised: {error}") 
+
