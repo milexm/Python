@@ -217,9 +217,10 @@ def remove_duplicated_list_elements():
     Remarks
     -------
     To remove deplicated elements in a list, you can use one of the following
-    approaches:
-    1. Use the  `set` function to convert the list to a set that would remove all duplicates because `set` objects cannot contain duplicates. 
-    Then use the `list` function to convert the set back to a list. The drawback here is that the original order of the items is lost.
+    approaches: 1. Use the  `set` function to convert the list to a set that
+    would remove all duplicates because `set` objects cannot contain duplicates.
+    Then use the `list` function to convert the set back to a list. The drawback
+    here is that the original order of the items is lost.
 
     For more information, see [set
     function](https://www.w3schools.com/python/ref_func_set.asp).
