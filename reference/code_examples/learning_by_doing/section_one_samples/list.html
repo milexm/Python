@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
 <title>code_examples.learning_by_doing.section_one_samples.list API documentation</title>
-<meta name="description" content="Example of list oprations." />
+<meta name="description" content="Collection of examples shwing the use of list operations." />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -22,15 +22,16 @@
 <h1 class="title">Module <code>code_examples.learning_by_doing.section_one_samples.list</code></h1>
 </header>
 <section id="section-intro">
-<p>Example of list oprations.</p>
+<p>Collection of examples shwing the use of list operations.</p>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">&#34;&#34;&#34; 
-Example of list oprations. 
+Collection of examples shwing the use of list operations. 
 
 &#34;&#34;&#34;
+
 from typing import OrderedDict
 
 # Define a list.
@@ -163,6 +164,10 @@ def create_number_list(first_number: int, last_number: int):
     -------
     This example uses the Python built-in function `range()` that generates a range of integers. 
 
+    However, `range()` creates a Python range object. To get the list object, the example uses 
+    the `list()` function to convert the range object into a list object.
+
+
     &#34;&#34;&#34;
     
     try:
@@ -230,6 +235,7 @@ def create_string_list_in_range(arange: range):
     except Exception as error:
         # Display the error.
         print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
+      
 
 def remove_duplicated_list_elements():
     &#34;&#34;&#34;
@@ -243,12 +249,10 @@ def remove_duplicated_list_elements():
     Remarks
     -------
     To remove deplicated elements in a list, you can use one of the following
-
     approaches: 1. Use the  `set` function to convert the list to a set that
     would remove all duplicates because `set` objects cannot contain duplicates.
     Then use the `list` function to convert the set back to a list. The drawback
     here is that the original order of the items is lost.
-
 
     For more information, see [set
     function](https://www.w3schools.com/python/ref_func_set.asp).
@@ -258,15 +262,14 @@ def remove_duplicated_list_elements():
         # Method 1: using set.  
         my_set = set(letters_duplicated)
         my_list = list(my_set)
-        print(f&#34;Using set function. The unordered list is: {my_list}\n&#34;) 
+        print(f&#34;Using set function. The unordered list is: {my_list}&#34;) 
 
         my_dictionary = OrderedDict.fromkeys(letters_duplicated)
         my_list = list(my_dictionary)
-        print(f&#34;Using OrderedDict.fromkeys function. The ordered list is: {my_list}\n&#34;) 
+        print(f&#34;Using OrderedDict.fromkeys function. The ordered list is: {my_list}&#34;) 
     except Exception as error:
         # Display the error.
         print(f&#34;{type(error).__name__} was raised: {error}&#34;) </code></pre>
-
 </details>
 </section>
 <section>
@@ -292,7 +295,6 @@ def remove_duplicated_list_elements():
 <p>This example uses the Python built-in function <code>range()</code> that generates a range of integers.
 However, <code>range()</code> creates a Python range object. To get the list object, the example uses
 the <code>list()</code> function to convert the range object into a list object.</p></div>
-
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -667,6 +669,7 @@ function</a>.</p></div>
     would remove all duplicates because `set` objects cannot contain duplicates.
     Then use the `list` function to convert the set back to a list. The drawback
     here is that the original order of the items is lost.
+
     For more information, see [set
     function](https://www.w3schools.com/python/ref_func_set.asp).
     &#34;&#34;&#34;
@@ -675,11 +678,11 @@ function</a>.</p></div>
         # Method 1: using set.  
         my_set = set(letters_duplicated)
         my_list = list(my_set)
-        print(f&#34;Using set function. The unordered list is: {my_list}\n&#34;) 
+        print(f&#34;Using set function. The unordered list is: {my_list}&#34;) 
 
         my_dictionary = OrderedDict.fromkeys(letters_duplicated)
         my_list = list(my_dictionary)
-        print(f&#34;Using OrderedDict.fromkeys function. The ordered list is: {my_list}\n&#34;) 
+        print(f&#34;Using OrderedDict.fromkeys function. The ordered list is: {my_list}&#34;) 
     except Exception as error:
         # Display the error.
         print(f&#34;{type(error).__name__} was raised: {error}&#34;) </code></pre>

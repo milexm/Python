@@ -1,7 +1,8 @@
 """ 
-Example of list oprations. 
+Collection of examples shwing the use of list operations. 
 
 """
+
 from typing import OrderedDict
 
 # Define a list.
@@ -230,11 +231,11 @@ def remove_duplicated_list_elements():
         # Method 1: using set.  
         my_set = set(letters_duplicated)
         my_list = list(my_set)
-        print(f"Using set function. The unordered list is: {my_list}\n") 
+        print(f"Using set function. The unordered list is: {my_list}") 
 
         my_dictionary = OrderedDict.fromkeys(letters_duplicated)
         my_list = list(my_dictionary)
-        print(f"Using OrderedDict.fromkeys function. The ordered list is: {my_list}\n") 
+        print(f"Using OrderedDict.fromkeys function. The ordered list is: {my_list}") 
     except Exception as error:
         # Display the error.
         print(f"{type(error).__name__} was raised: {error}") 
