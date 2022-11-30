@@ -42,12 +42,13 @@ import numpy as np
 from type_error import issue_type_error 
 from list import get_list_item, get_list_range_items, create_number_list
 from list import get_list_negative_range_items, get_list_range_items_in_steps
-from list import create_number_list, create_number_list_in_range, create_string_list_in_range
+from list import create_number_list, create_number_list_in_range, create_string_list_in_range, remove_duplicated_list_elements
 
 
 # Define the menu item list.  
 
-menuItems = [&#34;Issue type error&#34;, &#34;Index a list&#34;, &#34;Slice a list&#34;, &#34;Create a list&#34;, &#34;Create a list in a range&#34;, &#34;Create a string list in a range&#34;, &#34;Quit&#34;]
+menuItems = [&#34;Issue type error&#34;, &#34;Index a list&#34;, &#34;Slice a list&#34;, &#34;Create a list&#34;, &#34;Create a list in a range&#34;, &#34;Create a string list in a range&#34;, 
+&#34;Remove duplicated list elments&#34;, &#34;Quit&#34;]
 
 def inputNumber(self, prompt):
         # Prompts user to imput a number.
@@ -149,6 +150,10 @@ class menu:
             elif choice == 6:
                 print(&#34;\n*** Create a list of strings in a range ***&#34;)
                 create_string_list_in_range(range(1, 21))
+                dummy = displayMenu(self, menuItems, True)
+            elif choice == 7:
+                print(&#34;\n*** Remove duplicated list elements ***&#34;)
+                remove_duplicated_list_elements()
                 dummy = displayMenu(self, menuItems, True)
             elif choice == len(menuItems):
                 break
@@ -307,6 +312,10 @@ It thrn processes the user's imput by calling the propeer fucntion. </p>
                 print(&#34;\n*** Create a list of strings in a range ***&#34;)
                 create_string_list_in_range(range(1, 21))
                 dummy = displayMenu(self, menuItems, True)
+            elif choice == 7:
+                print(&#34;\n*** Remove duplicated list elements ***&#34;)
+                remove_duplicated_list_elements()
+                dummy = displayMenu(self, menuItems, True)
             elif choice == len(menuItems):
                 break</code></pre>
 </details>
@@ -361,6 +370,10 @@ Call the proper method based on the user's selection.</p></div>
         elif choice == 6:
             print(&#34;\n*** Create a list of strings in a range ***&#34;)
             create_string_list_in_range(range(1, 21))
+            dummy = displayMenu(self, menuItems, True)
+        elif choice == 7:
+            print(&#34;\n*** Remove duplicated list elements ***&#34;)
+            remove_duplicated_list_elements()
             dummy = displayMenu(self, menuItems, True)
         elif choice == len(menuItems):
             break</code></pre>
