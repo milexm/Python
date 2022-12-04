@@ -1,6 +1,5 @@
 """ 
 Collection of examples showing the use of dictionary operations. 
-
 """
 
 def create_simple_dictionary(key1: str, value1: int, key2: str, value2: int):
