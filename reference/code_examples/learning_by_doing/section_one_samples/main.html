@@ -44,12 +44,14 @@ from list import get_list_item, get_list_range_items, create_number_list
 from list import get_list_negative_range_items, get_list_range_items_in_steps
 from list import create_number_list, create_number_list_in_range, create_string_list_in_range, remove_duplicated_list_elements
 
-from dictionary import create_simple_dictionary
+
+from dictionary import create_simple_dictionary, get_dictionary_element_value
 
 # Define the menu item list.  
-
 menuItems = [&#34;Issue type error&#34;, &#34;Index a list&#34;, &#34;Slice a list&#34;, &#34;Create a list&#34;, &#34;Create a list in a range&#34;, &#34;Create a string list in a range&#34;, 
-&#34;Remove duplicated list elments&#34;, &#34;Create a simple dicionary&#34;,&#34;Quit&#34;]
+&#34;Remove duplicated list elments&#34;, &#34;Create a simple dictionary&#34;,
+&#34;Get dictionary element value&#34;, &#34;Quit&#34;]
+
 
 def inputNumber(self, prompt):
         # Prompts user to imput a number.
@@ -159,6 +161,11 @@ class menu:
             elif choice == 8:
                 print(&#34;\n*** Create a simple dictionary ***&#34;)
                 create_simple_dictionary(&#34;a&#34;, 1, &#34;b&#34;, 2)
+                dummy = displayMenu(self, menuItems, True)
+            elif choice == 9:
+                print(&#34;\n*** Get dictionary element ***&#34;)
+                d = dict(a=1, b=2)
+                get_dictionary_element_value(d, &#34;a&#34;)
                 dummy = displayMenu(self, menuItems, True)
             elif choice == len(menuItems):
                 break
@@ -325,6 +332,11 @@ It thrn processes the user's imput by calling the propeer fucntion. </p>
                 print(&#34;\n*** Create a simple dictionary ***&#34;)
                 create_simple_dictionary(&#34;a&#34;, 1, &#34;b&#34;, 2)
                 dummy = displayMenu(self, menuItems, True)
+            elif choice == 9:
+                print(&#34;\n*** Get dictionary element ***&#34;)
+                d = dict(a=1, b=2)
+                get_dictionary_element_value(d, &#34;a&#34;)
+                dummy = displayMenu(self, menuItems, True)
             elif choice == len(menuItems):
                 break</code></pre>
 </details>
@@ -387,6 +399,11 @@ Call the proper method based on the user's selection.</p></div>
         elif choice == 8:
             print(&#34;\n*** Create a simple dictionary ***&#34;)
             create_simple_dictionary(&#34;a&#34;, 1, &#34;b&#34;, 2)
+            dummy = displayMenu(self, menuItems, True)
+        elif choice == 9:
+            print(&#34;\n*** Get dictionary element ***&#34;)
+            d = dict(a=1, b=2)
+            get_dictionary_element_value(d, &#34;a&#34;)
             dummy = displayMenu(self, menuItems, True)
         elif choice == len(menuItems):
             break</code></pre>
