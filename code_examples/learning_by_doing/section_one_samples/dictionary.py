@@ -1,6 +1,5 @@
 """ 
-Collection of examples shwing the use of dictionary operations. 
-
+Collection of examples showing the use of dictionary operations. 
 """
 
 def create_simple_dictionary(key1: str, value1: int, key2: str, value2: int):
@@ -39,6 +38,31 @@ def create_simple_dictionary(key1: str, value1: int, key2: str, value2: int):
         # Create dictionary using the dict function. 
         my_dict = dict(a=value1, b=value2)
         print(f"Using the dict function. The dictionary is: {my_dict}") 
+    except Exception as error:
+        # Display the error.
+        print(f"{type(error).__name__} was raised: {error}") 
+
+def get_dictionary_element_value(d: dict, key: str):
+    """
+    Get the value of a dictionary element with the specified key.
+
+    Parameters
+    ----------
+
+    d : dict
+        The dictionary to search.
+    key : str 
+        The key of the element whose value must the obtained. 
+
+    Remarks
+    -------
+    To access the value of a dictionary element you must use the related key.
+    """
+    
+    try:
+        # Get the value of the elenent with the specified key.
+        element_value = d[key]
+        print(f"The value of the dictionary element with key {key} is: {element_value}") 
     except Exception as error:
         # Display the error.
         print(f"{type(error).__name__} was raised: {error}") 
