@@ -1,6 +1,8 @@
 {
     "python.pythonPath": "C:\\Users\\consultant\\.venvs\\py39labenv\\Scripts\\python.exe",
     "python.analysis.extraPaths": [
-        "./code_examples/packages"
+        "./code_examples/packages",
+        "./code_examples/learning_by_doing/section_one_samples",
+        "./code_examples/language_elements/lists"
     ]
 }
