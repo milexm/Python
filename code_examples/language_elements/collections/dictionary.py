@@ -1,5 +1,22 @@
 """ 
-Collection of examples showing the use of dictionary operations. 
+Examples showing the use of dictionary. 
+
+
+Remarks
+-------
+
+Another useful data type built into Python is the dictionary. Unlike sequences,
+which are indexed by a range of numbers, dictionaries are indexed by keys, which
+can be any immutable type; strings and numbers can always be keys.  Tuples can
+be used as keys if they contain only strings, numbers, or tuples; if a tuple
+contains any mutable object either directly or indirectly, it cannot be used as
+a key. You can’t use lists as keys, since lists can be modified in place using
+index assignments, slice assignments, or methods like append() and extend().
+
+For more information, see
+[Dictinaries](https://docs.python.org/3/tutorial/datastructures.html?highlight=dictionary#dictionaries).
+
+
 """
 
 def create_simple_dictionary(key1: str, value1: int, key2: str, value2: int):

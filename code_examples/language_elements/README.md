@@ -30,4 +30,13 @@ retention of meaning, and, it could mean an increase in efficiency or security.
 > Set items are unchangeable, but you can remove and/or add items whenever you like.
 > As of Python version 3.7, dictionaries are ordered. In Python 3.6 and earlier, dictionaries are unordered.
 
+### Examples 
+
+The following are collections related examples.
+
+|Module                                      |Notes                                 |  
+|--------------------------------------------|--------------------------------------|
+| [list.py](collections/list.py)             |Examples showing the use of list      | 
+| [dictionary.py](collections/dictionary.py) |Examples showing the use of dicitonary| 
+|                                            |                                      |
 

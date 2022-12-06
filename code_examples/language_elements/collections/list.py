@@ -1,5 +1,14 @@
 """ 
-Collection of examples showing list operations. 
+Examples showing the use of list. 
+
+Remarks
+-------
+
+A list can be written as a list of comma-separated values (items) between square brackets.
+Lists might contain items of different types, but usually the all have 
+the same type.
+For more information, see
+[List](https://docs.python.org/3/library/stdtypes.html#lists).
 
 """
 
@@ -240,53 +249,132 @@ def remove_duplicated_list_elements():
         # Display the error.
         print(f"{type(error).__name__} was raised: {error}") 
 
+def index_list():
+    """ 
+    Perform basic index operations. 
+    """
 
-def listIndexing():
-        """ Perform basic index operations. """
+    # Define a list.
+    my_list = ['p', 'r', 'o', 'b', 'e']
+    print(f"The list is: {my_list}") 
 
-        # Define a list.
-        my_list = ['p', 'r', 'o', 'b', 'e']
-        print(f"The list is: {my_list}") 
+    # At index 0 is : p
+    print("At index 0 is : " + my_list[0])
 
-        # At index 0 is : p
-        print("At index 0 is : " + my_list[0])
+    # At index 2 is : o
+    print("At index 2 is : " + my_list[2])
 
-        # At index 2 is : o
-        print("At index 2 is : " + my_list[2])
+    # At index 4 is : e
+    print("At index 4 is : " + my_list[4])
 
-        # At index 4 is : e
-        print("At index 4 is : " + my_list[4])
+    # Error!
+    # List indices must be integers or slices, not float
+    try:
+        element = my_list[4.0]
+    except Exception as error:
+        # Display the error.
+        print(f"{type(error).__name__} was raised: {error}") 
 
-        # Error!
-        # List indices must be integers or slices, not float
-        try:
-            element = my_list[4.0]
-        except Exception as error:
-            # Display the error.
-            print(f"{type(error).__name__} was raised: {error}") 
+    # Negative indexing
+    # The index -1 refers to the last element
+    # The index -5 refers to the first element (in this example)
 
-        # Negative indexing
-        # The index -1 refers to the last element
-        # The index -5 refers to the first element (in this example)
+    # At index -1 is : e
+    print("At index -1 is : " + my_list[-1])
 
-        # At index -1 is : e
-        print("At index -1 is : " + my_list[-1])
+    # At index -5 is : p
+    print("At index -5 is : " + my_list[-5])
 
-        # At index -5 is : p
-        print("At index -5 is : " + my_list[-5])
+    # Create nested list
+    n_list = ["Happy", [2, 0, 1, 5]]
 
-        # Create nested list
-        n_list = ["Happy", [2, 0, 1, 5]]
+    print(f"The nested list is: {n_list}") 
 
-        print(f"The nested list is: {n_list}") 
+    # Nested indexing
 
-        # Nested indexing
+    # In the nested list at index 0,1 is : a
+    print("In the nested list at index 0, 1 is : " + n_list[0][1])
 
-        # In the nested list at index 0,1 is : a
-        print("In the nested list at index 0, 1 is : " + n_list[0][1])
+    # In the nested list at index 1,3 is : 5
+    print("In the nested list at index 1,3 is : " + str((n_list[1][3])))
 
-        # In the nested list at index 1,3 is : 5
-        print("In the nested list at index 1,3 is : " + str((n_list[1][3])))
+def change_list_element():
+    """ 
+    Change element in a list.
+    
+    Remarks
+    -------
+    
+    Lists are mutable objects, meaning that their elements can be changed programmatically at run time,  unlike a string or a tuple.
 
-       
+    """ 
+
+    # Define a list
+    my_list = [2, 4, 6, 8]
+    print(f"The list is: {my_list}") 
+
+    # Change the first item
+    my_list[0] = 1
+    result = '{0} {1}'.format('Changed first item: ', str(my_list[:]))
+    print(result)
+
+    # Change 2nd to 4th items
+    my_list[1:4] = [3, 5, 7]
+    result = '{0} {1}'.format('Changed 2nd to 4th items: ', str(my_list[:]))
+    print(result)
+
+def add_list_element():
+    """ 
+    Add element to a list. 
+    """
+
+    # Define a list
+    my_list = [1, 3, 5]
+    print(f"The list is: {my_list}") 
+
+
+    # Add an element to the list
+    my_list.append(7)
+    result = '{0} {1}'.format('Added one item to the list: ', str(my_list[:]))
+    print(result)
+
+    # Add several elements to the list
+    my_list.extend([9, 11, 13])
+    result = '{0} {1}'.format('Added several elements to the list: ', 
+            str(my_list[:]))
+    print(result)       
+
+def slice_list():
+    """ 
+    Perform list slicing.
+    
+    Remarks
+    -------
+
+    Slicing can be best visualized by considering
+    the index to be between the elements as shown below.
+
+    0___1___2___3___4___5___6___7___8___9
+    |P  |R  |O  |G  |R  |A  |M  |I  |Z  |
+    -9 -8  -7  -6  -5  -4  -3  -2  -1
+    
+    So if we want to access a range, we need two index
+    that will slice that portion from the list.
+    
+    """
+
+    # Define the list. 
+    my_list = ['p', 'r', 'o', 'g', 'r', 'a', 'm', 'i', 'z']
+    print(f"The list is: {my_list}") 
+
+    # Select elements 3rd to 5th
+    print("Select 3rd to 5th element: " +  str(my_list[2:5]))
+
+    # Select elements beginning to 4th
+    print("Select 1st to 4th element: " + str(my_list[:-5]))
+
+    # Select elements 6th to end
+    print("Select 6th to end element: " + str(my_list[5:]))
+
+
 
