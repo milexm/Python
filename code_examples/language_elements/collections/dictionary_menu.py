@@ -7,10 +7,10 @@ Executes the samples from the dictionary group.
 # This is important to allow pdoc to find the modules. 
 import sys
 
-sys.path.append('./code_examples/language_elements')
-
+sys.path.append('./code_examples/language_elements/')
 from create_menu import createMenu
 
+sys.path.append('./code_examples/language_elements/collections')
 from dictionary import create_simple_dictionary, get_dictionary_element_value
 
 # Define the menu item list.  
