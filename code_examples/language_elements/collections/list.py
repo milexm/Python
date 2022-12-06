@@ -240,3 +240,53 @@ def remove_duplicated_list_elements():
         # Display the error.
         print(f"{type(error).__name__} was raised: {error}") 
 
+
+def listIndexing():
+        """ Perform basic index operations. """
+
+        # Define a list.
+        my_list = ['p', 'r', 'o', 'b', 'e']
+        print(f"The list is: {my_list}") 
+
+        # At index 0 is : p
+        print("At index 0 is : " + my_list[0])
+
+        # At index 2 is : o
+        print("At index 2 is : " + my_list[2])
+
+        # At index 4 is : e
+        print("At index 4 is : " + my_list[4])
+
+        # Error!
+        # List indices must be integers or slices, not float
+        try:
+            element = my_list[4.0]
+        except Exception as error:
+            # Display the error.
+            print(f"{type(error).__name__} was raised: {error}") 
+
+        # Negative indexing
+        # The index -1 refers to the last element
+        # The index -5 refers to the first element (in this example)
+
+        # At index -1 is : e
+        print("At index -1 is : " + my_list[-1])
+
+        # At index -5 is : p
+        print("At index -5 is : " + my_list[-5])
+
+        # Create nested list
+        n_list = ["Happy", [2, 0, 1, 5]]
+
+        print(f"The nested list is: {n_list}") 
+
+        # Nested indexing
+
+        # In the nested list at index 0,1 is : a
+        print("In the nested list at index 0, 1 is : " + n_list[0][1])
+
+        # In the nested list at index 1,3 is : 5
+        print("In the nested list at index 1,3 is : " + str((n_list[1][3])))
+
+       
+

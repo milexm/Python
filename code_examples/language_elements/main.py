@@ -6,7 +6,7 @@ Allows the user to select a sample group.
 # Append the path to the modules location.
 # This is important to allow pdoc to find the modules. 
 import sys
-sys.path.append('./code_examples/language_elements/lists')
+sys.path.append('./code_examples/language_elements/collections')
 
 from create_menu import createMenu  
 from list_menu import listMenu
