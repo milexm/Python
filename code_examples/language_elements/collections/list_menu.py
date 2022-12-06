@@ -15,13 +15,14 @@ from type_error import issue_type_error
 from list import get_list_item, get_list_range_items, create_number_list
 from list import get_list_negative_range_items, get_list_range_items_in_steps
 from list import create_number_list, create_number_list_in_range, create_string_list_in_range, remove_duplicated_list_elements
+from list import listIndexing
 
 from dictionary import create_simple_dictionary, get_dictionary_element_value
 
 # Define the menu item list.  
 menuItems = ["Issue type error", "Index a list", "Slice a list", "Create a list", "Create a list in a range", "Create a string list in a range", 
-"Remove duplicated list elments", "Create a simple dictionary",
-"Get dictionary element value", "Quit"]
+"Remove duplicated list elments", "Perform list indexing",
+"Create a simple dictionary", "Get dictionary element value", "Quit"]
 
 class listMenu:
 
@@ -86,6 +87,10 @@ class listMenu:
             elif choice == 7:
                 print("\n*** Remove duplicated list elements ***")
                 remove_duplicated_list_elements()
+                dummy = dsm.displayMenu(menuItems, True)
+            elif choice == 8:
+                print("\n*** List indexing ***")
+                listIndexing()
                 dummy = dsm.displayMenu(menuItems, True)
             elif choice == 8:
                 print("\n*** Create a simple dictionary ***")
