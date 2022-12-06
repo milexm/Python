@@ -10,10 +10,11 @@ sys.path.append('./code_examples/language_elements/collections')
 
 from create_menu import createMenu  
 from list_menu import listMenu
+from dictionary_menu import dictionaryMenu
 
 
 # Define the menu item list.  
-menuItems = ["Lists", "Quit"]
+menuItems = ["Lists", "Dictionaries","Quit"]
 
 
 class groupMenu:
@@ -53,6 +54,14 @@ class groupMenu:
                 # Dispkay the list samples selection menu.
                 amenu.listSelectionMenu()
                 dummy = dsm.displayMenu(menuItems, True)
+
+            if choice == 2:
+                # Instantiate the dictionaryMenu class.
+                amenu = dictionaryMenu()
+                # Display the dictionary samples selection menu. 
+                amenu.dictSelectionMenu()
+                dummy = dsm.displayMenu(menuItems, True)
+
             elif choice == len(menuItems):
                 break
 

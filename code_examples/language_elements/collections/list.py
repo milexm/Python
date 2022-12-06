@@ -1,5 +1,5 @@
 """ 
-Collection of examples shwing the use of list operations. 
+Collection of examples showing list operations. 
 
 """
 
