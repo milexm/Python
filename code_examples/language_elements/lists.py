@@ -402,7 +402,6 @@ class list_samples:
         print(f"Select 3rd to 5th element: {my_list[5:]}")
 
 
-
 ##### ****** Selection Menu ****** #####
 
 class list_menu:

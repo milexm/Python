@@ -9,6 +9,7 @@ import sys
 sys.path.append('./code_examples/language_elements')
 from create_menu import create_menu  
 from lists import list_menu
+from dictionaries import dictionary_menu
 
 sys.path.append('./code_examples/language_elements/collections')
 from dictionary_menu import dictionaryMenu
@@ -39,28 +40,28 @@ class group_menu:
         """
 
         # Instantiate the group menu class. 
-        dsm = create_menu("Group Menu")
+        group_menu = create_menu("Group Menu")
 
         # Display the menu but ignore the user's choice.
-        dummy = dsm.display_menu(menuItems, True)
+        dummy = group_menu.display_menu(menuItems, True)
 
         while True:
             # Get the user's choice and do not display the menu.
-            choice = dsm.display_menu(menuItems, False)
+            choice = group_menu.display_menu(menuItems, False)
 
             if choice == 1:
                 # Instantiate the listMenu class.
                 amenu = list_menu()
                 # Dispkay the list samples selection menu.
                 amenu.list_selection_menu()
-                dummy = dsm.display_menu(menuItems, True)
+                dummy = group_menu.display_menu(menuItems, True)
 
             if choice == 2:
                 # Instantiate the dictionaryMenu class.
-                amenu = dictionaryMenu()
+                amenu = dictionary_menu()
                 # Display the dictionary samples selection menu. 
-                amenu.dictSelectionMenu()
-                dummy = dsm.display_menu(menuItems, True)
+                amenu.dict_selection_menu()
+                dummy = group_menu.display_menu(menuItems, True)
 
             elif choice == len(menuItems):
                 break
