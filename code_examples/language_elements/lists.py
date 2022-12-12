@@ -1,5 +1,5 @@
 """ 
-Executes the samples from the list group. 
+Execute list samples from the list group. 
 
 """
 

@@ -8,9 +8,9 @@ Allow the user to select a sample group.
 import sys
 sys.path.append('./code_examples/language_elements')
 from create_menu import create_menu  
+from lists import list_menu
 
 sys.path.append('./code_examples/language_elements/collections')
-from lists import list_menu
 from dictionary_menu import dictionaryMenu
 
 
