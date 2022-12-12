@@ -13,7 +13,7 @@ Python programming language contains four collection data types in the
 1. **List** is a collection which is **ordered** and **changeable**. Allows **duplicate members**.
 1. **Tuple** is a collection which is **ordered** and **unchangeable**. Allows **duplicate members**.
 1. **Set** is a collection which is **unordered**, **unchangeable**, and **unindexed**. **No duplicate members**.
-1. Dictionary is a collection which is **ordered** and **changeable**. **No duplicate members**.
+1. **Dictionary** is a collection which is **ordered** and **changeable**. **No duplicate members**.
 
     |Collection|Ordered|Changeable|Duplicates|Indexed|
     |----------|-------|----------|----------|-------|

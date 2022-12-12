@@ -8,13 +8,13 @@ Executes the samples from the dictionary group.
 import sys
 
 sys.path.append('./code_examples/language_elements/')
-from create_menu import createMenu
+from create_menu import create_menu
 
 sys.path.append('./code_examples/language_elements/collections')
-from dictionary import create_simple_dictionary, get_dictionary_element_value
+from dictionary import create_simple_dictionary, get_dictionary_element_value, print_dictionary_formatted, filter_dictionary, get_value_multilevel_dictionary, iterate_dictionary
 
 # Define the menu item list.  
-menuItems = ["Create a simple dictionary", "Get dictionary element value", "Quit"]
+menuItems = ["Create a simple dictionary", "Get dictionary element value", "Print formatted dictionary", "Filter dictionary", "Get value in a multilevel dictionary", "Iterate through a dictionary", "Quit"]
 
 class dictionaryMenu:
 
@@ -40,7 +40,7 @@ class dictionaryMenu:
         """
        
         # Instantiate the list menu class. 
-        dsm = createMenu("Dictionary Menu")
+        dsm = create_menu("Dictionary Menu")
         
         # Display the menu but ignore the user's choice.
         dummy = dsm.displayMenu(menuItems, True)
@@ -58,6 +58,21 @@ class dictionaryMenu:
                 d = dict(a=1, b=2)
                 get_dictionary_element_value(d, "a")
                 dummy = dsm.displayMenu(menuItems, True)
-            
+            elif choice == 3:
+                print("\n*** Print fornatted dictionary ***")
+                print_dictionary_formatted()
+                dummy = dsm.displayMenu(menuItems, True)
+            elif choice == 4:
+                print("\n*** Filter dictionary ***")
+                filter_dictionary(3)
+                dummy = dsm.displayMenu(menuItems, True)
+            elif choice == 5:
+                print("\n*** Get value in a multilevel dictionary ***")
+                get_value_multilevel_dictionary("b", 3)
+                dummy = dsm.displayMenu(menuItems, True)
+            elif choice == 6:
+                print("\n*** Iterate through a dictionary ***")
+                iterate_dictionary()
+                dummy = dsm.displayMenu(menuItems, True)
             elif choice == len(menuItems):
                 break

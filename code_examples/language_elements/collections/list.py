@@ -355,7 +355,9 @@ def slice_list():
     the index to be between the elements as shown below.
 
     0___1___2___3___4___5___6___7___8___9
+
     |P  |R  |O  |G  |R  |A  |M  |I  |Z  |
+    
     -9 -8  -7  -6  -5  -4  -3  -2  -1
     
     So if we want to access a range, we need two index

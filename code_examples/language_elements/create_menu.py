@@ -4,7 +4,7 @@ Define a menu class.
 """
 import numpy as np
 
-class createMenu:
+class create_menu:
     """ 
     Defines a menu class 
 
@@ -17,7 +17,7 @@ class createMenu:
     def __init__(self, name:str):
         self.menu_name = name
    
-    def inputNumber(self, prompt):
+    def input_number(self, prompt):
         """ 
         Prompts user to imput a number.
         Usage num = imputNumber(prompt).
@@ -32,7 +32,7 @@ class createMenu:
 
         return num
 
-    def displayMenu(self, options:list, display:bool):
+    def display_menu(self, options:list, display:bool):
         """ 
         Displays a menu of options the user can choose from. It returns the 
         number of the option chosen.
@@ -76,6 +76,6 @@ class createMenu:
         if (display == False):
             choice = 0
             while not(np.any(choice == np.arange(len(options))+1)):
-                choice = self.inputNumber("\nMake allowed selection number; " + str(len(options)) +  " to quit: ")
+                choice = self.input_number("\nMake allowed selection number; " + str(len(options)) +  " to quit: ")
             return choice
 

@@ -9,7 +9,7 @@ import sys
 
 sys.path.append('./code_examples/language_elements')
 
-from create_menu import createMenu
+from create_menu import create_menu
 
 from type_error import issue_type_error 
 from list import get_list_item, get_list_range_items, create_number_list
@@ -48,7 +48,7 @@ class listMenu:
         """
        
         # Instantiate the list menu class. 
-        dsm = createMenu("List Menu")
+        dsm = create_menu("List Menu")
         
         # Display the menu but ignore the user's choice.
         dummy = dsm.displayMenu(menuItems, True)
