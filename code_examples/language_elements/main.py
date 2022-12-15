@@ -11,9 +11,6 @@ from create_menu import create_menu
 from lists import list_menu
 from dictionaries import dictionary_menu
 
-sys.path.append('./code_examples/language_elements/collections')
-from dictionary_menu import dictionaryMenu
-
 
 # Define the menu item list.  
 menuItems = ["Lists", "Dictionaries","Quit"]

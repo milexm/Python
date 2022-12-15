@@ -366,7 +366,6 @@ class list_samples:
                 str(my_list[:]))
         print(result)       
 
-
     def slice_list(self):
         """ 
         Perform list slicing.
@@ -401,6 +400,77 @@ class list_samples:
         # Select elements from the 6th to the end.
         print(f"Select 3rd to 5th element: {my_list[5:]}")
 
+    def apply_list_methods(self):
+        """ 
+        Apply most common list methods.
+        
+        Remarks
+        -------
+
+        For more info, see [more on lists](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#more-on-lists).
+
+        """
+
+        try:
+            
+            # Define a list
+            fruits = ['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana']
+            print("The list is:")
+            print(fruits)
+
+            print(f"Apple element count: {fruits.count('apple')}")
+            
+            print(f"Tangerine element count: {fruits.count('tangerine')}")
+        
+            print(f"Banana element index: {fruits.index('banana')}")
+            
+            print(f"Find next banana element starting at position 4: {fruits.index('banana', 4)}")
+
+            
+            print("\"fruits.reverse()\" reverses the elements of the list in place.")
+            fruits.reverse()
+            print(fruits)
+            
+            print("\"fruits.append('grape')\" append grape to the list.")
+            fruits.append('grape')
+            print(fruits)
+
+            fruits.sort()
+            print(f"Sorted list: {fruits}")
+
+            element = fruits.pop()
+            print(f"Pop last element from the list: {element}")
+
+        except Exception as error:
+            print(f"{type(error).__name__} was raised: {index} {error}") 
+
+    def  use_list_as_stack(self):
+        """ 
+        Use a list as a stack (LIFO). 
+        
+        Remarks
+        -------
+
+        The list methods make it very easy to use a list as a stack, where the last element added is the first element retrieved (“last-in, first-out” LIFO). To add an item to the top of the stack, use `append()`. To retrieve an item from the top of the stack, use `pop()` without an explicit index.
+
+        For more info, see [using lists as LIFO stack](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#using-lists-as-stacks).
+        
+        """
+
+        try:
+
+            stack = [3, 4, 5]
+            print(f"The stack is: {stack}")
+            stack.append(6)
+            print(f"Append an element to the stack: {stack}")
+            stack.append(7)
+            print(f"Append another element to the stack: {stack}")
+            print(f"Pop an element from the stack: {stack.pop()}")
+            print(f"Pop another element from the stack: {stack.pop()}")
+            print(f"Final stack: {stack}")
+
+        except Exception as error:
+            print(f"{type(error).__name__} was raised: {index} {error}") 
 
 ##### ****** Selection Menu ****** #####
 
@@ -430,7 +500,7 @@ class list_menu:
         # Define the entries of the list samples menu. 
         self.menu_items = ["Index a list", "Slice a list", "Create a list", "Create a list in a range", "Create a string list in a range", 
         "Remove duplicated list elments", "Perform list indexing",
-        "Change list elements", "Add element to a list", "Slice a list", "Quit"]
+        "Change list elements", "Add element to a list", "Slice a list", "Apply list methods", "Use a list as a stack", "Quit"]
     
 
     def list_selection_menu(self):
@@ -495,6 +565,14 @@ class list_menu:
             elif choice == 10:
                 print("\n*** Slice a list ***")
                 listsamples.slice_list()
+                dummy = listmenu.display_menu(self.menu_items, True)
+            elif choice == 11:
+                print("\n*** Apply list methods ***")
+                listsamples.apply_list_methods()
+                dummy = listmenu.display_menu(self.menu_items, True)
+            elif choice == 12:
+                print("\n*** Use a list as a stack ***")
+                listsamples.use_list_as_stack()
                 dummy = listmenu.display_menu(self.menu_items, True)
             elif choice == len(self.menu_items):
                 break
