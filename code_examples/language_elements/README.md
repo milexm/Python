@@ -36,7 +36,11 @@ The following are collections related examples.
 
 |Module                                      |Notes                                 |  
 |--------------------------------------------|--------------------------------------|
-| [list.py](collections/list.py)             |Examples showing the use of list      | 
-| [dictionary.py](collections/dictionary.py) |Examples showing the use of dicitonary| 
+| [lists.py](lists.py)                       |Examples showing the use of list      | 
+| [dictionaries.py](dictionaries.py)         |Examples showing the use of dicitonary| 
 |                                            |                                      |
 
+## References
+
+- [Python 3.11.1 documentation](https://docs.python.org/3/)
+  - [The Python Standard Library](https://docs.python.org/3/library/index.html#the-python-standard-library)
