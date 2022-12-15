@@ -375,6 +375,8 @@ class list_samples:
 
         Slicing can be best visualized by considering
         the index to be between the elements as shown below.
+        
+        ![list_slicing](..media/list_slicing.png)
 
         0___1___2___3___4___5___6___7___8___9
 
