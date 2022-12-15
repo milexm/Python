@@ -331,40 +331,42 @@ class list_samples:
 
         """ 
 
-        # Define a list
-        my_list = [2, 4, 6, 8]
-        print(f"The list is: {my_list}") 
+        try: 
+            # Define a list
+            my_list = [2, 4, 6, 8]
+            print(f"The list is: {my_list}") 
 
-        # Change the first item
-        my_list[0] = 1
-        result = '{0} {1}'.format('Changed first item: ', str(my_list[:]))
-        print(result)
+            # Change the first item
+            my_list[0] = 1
+            print(f"Change first item of the list: {my_list}")
 
-        # Change 2nd to 4th items
-        my_list[1:4] = [3, 5, 7]
-        result = '{0} {1}'.format('Changed 2nd to 4th items: ', str(my_list[:]))
-        print(result)
+            # Change 2nd to 4th items
+            my_list[1:4] = [3, 5, 7]
+            print(f"Change 2nd to 4th items: {my_list}")
+ 
+        except Exception as error:
+            print(f"{type(error).__name__} was raised: {error}")        
 
     def add_list_element(self):
         """ 
         Add element to a list. 
         """
 
-        # Define a list
-        my_list = [1, 3, 5]
-        print(f"The list is: {my_list}") 
+        try:
+            # Define a list
+            my_list = [1, 3, 5]
+            print(f"The list is: {my_list}") 
 
+            # Add an element to the list
+            my_list.append(7)
+            print(f"Added one item to the list: {my_list[:]}")
+            
+            # Add several elements to the list
+            my_list.extend([9, 11, 13])
+            print(f"Added several elements to the list: {my_list[:]}")   
 
-        # Add an element to the list
-        my_list.append(7)
-        result = '{0} {1}'.format('Added one item to the list: ', str(my_list[:]))
-        print(result)
-
-        # Add several elements to the list
-        my_list.extend([9, 11, 13])
-        result = '{0} {1}'.format('Added several elements to the list: ', 
-                str(my_list[:]))
-        print(result)       
+        except Exception as error:
+            print(f"{type(error).__name__} was raised: {error}") 
 
     def slice_list(self):
         """ 
@@ -376,31 +378,31 @@ class list_samples:
         Slicing can be best visualized by considering
         the index to be between the elements as shown below.
         
-        ![list_slicing](..media/list_slicing.png)
-
-        0___1___2___3___4___5___6___7___8___9
-
-        |P  |R  |O  |G  |R  |A  |M  |I  |Z  |
-        
-        -9 -8  -7  -6  -5  -4  -3  -2  -1
+        ![list_slicing](../../media/list_slicing.png)
         
         So if we want to access a range, we need two index
         that will slice that portion from the list.
         
         """
 
-        # Define the list. 
-        my_list = ['p', 'r', 'o', 'g', 'r', 'a', 'm', 'i', 'z']
-        print(f"The list is: {my_list}") 
+        try:
 
-        # Select elements 3rd to 5th.
-        print(f"Select 3rd to 5th element: {my_list[2:5]}")
+            # Define the list. 
+            my_list = ['p', 'r', 'o', 'g', 'r', 'a', 'm', 'i', 'z']
+            print(f"The list is: {my_list}") 
 
-        # Select elements beginning at the 4th.
-        print(f"SSelect 1st to 4th element: {my_list[:-5]}")
+            # Select elements 3rd to 5th.
+            print(f"Select 3rd to 5th element: {my_list[2:5]}")
 
-        # Select elements from the 6th to the end.
-        print(f"Select 3rd to 5th element: {my_list[5:]}")
+            # Select elements beginning at the 4th.
+            print(f"SSelect 1st to 4th element: {my_list[:-5]}")
+
+            # Select elements from the 6th to the end.
+            print(f"Select 3rd to 5th element: {my_list[5:]}")
+
+        except Exception as error:
+            print(f"{type(error).__name__} was raised: {error}") 
+
 
     def apply_list_methods(self):
         """ 
@@ -444,7 +446,7 @@ class list_samples:
             print(f"Pop last element from the list: {element}")
 
         except Exception as error:
-            print(f"{type(error).__name__} was raised: {index} {error}") 
+            print(f"{type(error).__name__} was raised: {error}") 
 
     def  use_list_as_stack(self):
         """ 
@@ -472,7 +474,7 @@ class list_samples:
             print(f"Final stack: {stack}")
 
         except Exception as error:
-            print(f"{type(error).__name__} was raised: {index} {error}") 
+            print(f"{type(error).__name__} was raised: {error}") 
 
 ##### ****** Selection Menu ****** #####
 
@@ -561,7 +563,7 @@ class list_menu:
                 listsamples.change_list_element()
                 dummy = listmenu.display_menu(self.menu_items, True)
             elif choice == 9:
-                print("\n*** Add element to a list ***")
+                print("\n*** Add elements to a list ***")
                 listsamples.add_list_element()
                 dummy = listmenu.display_menu(self.menu_items, True)
             elif choice == 10:
