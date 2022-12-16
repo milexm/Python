@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
-<title>code_examples API documentation</title>
+<title>code_examples.builtin_types API documentation</title>
 <meta name="description" content="---
 last update: 11/22/22
 --- …" />
@@ -21,37 +21,108 @@ last update: 11/22/22
 <main>
 <article id="content">
 <header>
-<h1 class="title">Package <code>code_examples</code></h1>
+<h1 class="title">Module <code>code_examples.builtin_types</code></h1>
 </header>
 <section id="section-intro">
 <hr>
 <h2 id="last-update-112222">last update: 11/22/22</h2>
-<h1 id="api-reference-documentation"><img alt="python-icon" src="../media/icons/python-icon.svg"> API reference documentation</h1>
-<p>The examples API reference documentation is created automatically from the
-<strong>docstrings</strong> contained in the code.
-</p>
-<p>The following is the command used to generate the API documentation, executed
-from the directory: <code>&lt;user path&gt;\&lt;python project&gt;</code>:</p>
-<pre><code class="language-cmd">    pdoc --force --html .\code_examples --output .\reference\
-</code></pre>
+<h1 id="language-builtin-types"><img alt="python-icon" src="../../media/icons/python-icon.svg"> Language builtin types</h1>
+<p>The <strong>examples</strong> in this folder show the use of Python builtin types and their meaning. </p>
+<h2 id="sequences">Sequences</h2>
+<p>Python programming language contains four collection data types in the </p>
+<ol>
+<li><strong>List</strong> is <strong>ordered</strong> and <strong>changeable</strong> and allows <strong>duplicate members</strong>.
+For more information, see
+<a href="https://docs.python.org/3/library/stdtypes.html#lists">lists</a> and <a href="https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#more-on-lists">more on
+lists</a>.</li>
+<li><strong>Tuple</strong> is <strong>ordered</strong> and <strong>unchangeable</strong> and allows <strong>duplicate
+members</strong>.</li>
+<li><strong>Set</strong> is <strong>unordered</strong>, <strong>unchangeable</strong>, and <strong>unindexed</strong>. It <strong>does not
+allow duplicate members</strong>.</li>
+<li>
+<p><strong>Dictionary</strong> is <strong>ordered</strong> and <strong>changeable</strong>. It <strong>does not allow
+duplicate members</strong>. </p>
+<table>
+<thead>
+<tr>
+<th>Collection</th>
+<th>Ordered</th>
+<th>Changeable</th>
+<th>Duplicates</th>
+<th>Indexed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>List</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Tuple</td>
+<td>Yes</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Set</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Dictionary</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<p>When choosing a collection type, it is useful to understand the properties of
+that type.
+Choosing the right type for a particular data set could mean
+retention of meaning, and, it could mean an increase in efficiency or security.</p>
 <blockquote>
-<p>[!NOTE] This README file is the landing page of the API reference
-documentation because it is included by the <code>code_examples/__init__.py</code> This is
-why:</p>
-<p>The landing page for the documentation is the project's top-level
-<code>&lt;modulename&gt;/__init__.py</code> file that in our case is <code>code_examples/__init__.py</code>
-.
-Adding a module-level docstring here is a great way to introduce users to
-the project. </p>
+<p>[!NOTE] Set items are unchangeable, but you can remove and/or add items
+whenever you like.
+As of Python version 3.7, dictionaries are ordered. In
+Python 3.6 and earlier, dictionaries are unordered.</p>
 </blockquote>
+<h3 id="examples">Examples</h3>
+<p>The following are collections related examples.</p>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="lists.py">lists.py</a></td>
+<td>Examples showing the use of list</td>
+</tr>
+<tr>
+<td><a href="dictionaries.py">dictionaries.py</a></td>
+<td>Examples showing the use of dicitonary</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="https://docs.python.org/3/">Python 3.11.1 documentation</a></li>
-<li><a href="https://github.com/JayabharathP/The-Python-Mega-Course-Build-10-Real-World-Applications-#readme">The Python Mega Course Build 10 Real World Applications</a> - Github sample repo</li>
-<li><a href="https://www.udemy.com/course/the-python-mega-course/">The Python Mega Course: Learn Python in 40 Days with 18 Apps</a> - Udemy class</li>
-<li><a href="https://www.udemy.com/course/python-video-workbook/">Practice Python with 100 Python Exercises</a> - Udemy class</li>
-<li><a href="https://www.linuxjournal.com/content/tech-tip-really-simple-http-server-python">Tech Tip: Really Simple HTTP Server with Python</a></li>
-<li><a href="https://www.w3schools.com/python/python_classes.asp">Python Classes and Objects</a> - W3 Schools</li>
+<li><a href="https://docs.python.org/3/library/index.html#the-python-standard-library">The Python Standard Library</a></li>
 </ul>
 <details class="source">
 <summary>
@@ -73,32 +144,29 @@ title page from a Markdown file.
 <section>
 <h2 class="section-title" id="header-submodules">Sub-modules</h2>
 <dl>
-<dt><code class="name"><a title="code_examples.basic_examples" href="basic_examples/index.html">code_examples.basic_examples</a></code></dt>
+<dt><code class="name"><a title="code_examples.builtin_types.collections" href="collections/index.html">code_examples.builtin_types.collections</a></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
-<dt><code class="name"><a title="code_examples.builtin_types" href="builtin_types/index.html">code_examples.builtin_types</a></code></dt>
+<dt><code class="name"><a title="code_examples.builtin_types.create_menu" href="create_menu.html">code_examples.builtin_types.create_menu</a></code></dt>
 <dd>
-<div class="desc"><hr>
-<p>last update: 11/22/22
-&mdash; …</p></div>
+<div class="desc"><p>Define a menu class.</p></div>
 </dd>
-<dt><code class="name"><a title="code_examples.docstring" href="docstring/index.html">code_examples.docstring</a></code></dt>
+<dt><code class="name"><a title="code_examples.builtin_types.dictionaries" href="dictionaries.html">code_examples.builtin_types.dictionaries</a></code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Execute samples from the dictionary group.</p></div>
 </dd>
-<dt><code class="name"><a title="code_examples.language_types" href="language_types/index.html">code_examples.language_types</a></code></dt>
+<dt><code class="name"><a title="code_examples.builtin_types.lists" href="lists.html">code_examples.builtin_types.lists</a></code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Execute list samples from the list group …</p></div>
 </dd>
-<dt><code class="name"><a title="code_examples.learning_by_doing" href="learning_by_doing/index.html">code_examples.learning_by_doing</a></code></dt>
+<dt><code class="name"><a title="code_examples.builtin_types.main" href="main.html">code_examples.builtin_types.main</a></code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Allow the user to select a sample group.</p></div>
 </dd>
-<dt><code class="name"><a title="code_examples.packages" href="packages/index.html">code_examples.packages</a></code></dt>
+<dt><code class="name"><a title="code_examples.builtin_types.type_error" href="type_error.html">code_examples.builtin_types.type_error</a></code></dt>
 <dd>
-<div class="desc"><p>Directory that contains packages.
-It allows to direct the interpreter to locate the package via its path.</p></div>
+<div class="desc"><p>Shows an example of type error.</p></div>
 </dd>
 </dl>
 </section>
@@ -114,21 +182,30 @@ It allows to direct the interpreter to locate the package via its path.</p></div
 <div class="toc">
 <ul>
 <li><a href="#last-update-112222">last update: 11/22/22</a></li>
-<li><a href="#api-reference-documentation">API reference documentation</a><ul>
+<li><a href="#language-builtin-types">Language builtin types</a><ul>
+<li><a href="#sequences">Sequences</a><ul>
+<li><a href="#examples">Examples</a></li>
+</ul>
+</li>
 <li><a href="#references">References</a></li>
 </ul>
 </li>
 </ul>
 </div>
 <ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="code_examples" href="../index.html">code_examples</a></code></li>
+</ul>
+</li>
 <li><h3><a href="#header-submodules">Sub-modules</a></h3>
 <ul>
-<li><code><a title="code_examples.basic_examples" href="basic_examples/index.html">code_examples.basic_examples</a></code></li>
-<li><code><a title="code_examples.builtin_types" href="builtin_types/index.html">code_examples.builtin_types</a></code></li>
-<li><code><a title="code_examples.docstring" href="docstring/index.html">code_examples.docstring</a></code></li>
-<li><code><a title="code_examples.language_types" href="language_types/index.html">code_examples.language_types</a></code></li>
-<li><code><a title="code_examples.learning_by_doing" href="learning_by_doing/index.html">code_examples.learning_by_doing</a></code></li>
-<li><code><a title="code_examples.packages" href="packages/index.html">code_examples.packages</a></code></li>
+<li><code><a title="code_examples.builtin_types.collections" href="collections/index.html">code_examples.builtin_types.collections</a></code></li>
+<li><code><a title="code_examples.builtin_types.create_menu" href="create_menu.html">code_examples.builtin_types.create_menu</a></code></li>
+<li><code><a title="code_examples.builtin_types.dictionaries" href="dictionaries.html">code_examples.builtin_types.dictionaries</a></code></li>
+<li><code><a title="code_examples.builtin_types.lists" href="lists.html">code_examples.builtin_types.lists</a></code></li>
+<li><code><a title="code_examples.builtin_types.main" href="main.html">code_examples.builtin_types.main</a></code></li>
+<li><code><a title="code_examples.builtin_types.type_error" href="type_error.html">code_examples.builtin_types.type_error</a></code></li>
 </ul>
 </li>
 </ul>

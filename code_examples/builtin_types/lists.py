@@ -1,6 +1,13 @@
 """ 
 Execute list samples from the list group. 
 
+Lists are mutable sequences, typically used to store collections of homogeneous
+items (where the precise degree of similarity will vary by application).
+
+For more information, see
+[lists](https://docs.python.org/3/library/stdtypes.html#lists) and [more on
+lists](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#more-on-lists).
+
 """
 
 from typing import OrderedDict
@@ -10,7 +17,7 @@ from pprint import pprint
 # This is important to allow pdoc to find the modules. 
 import sys
 
-sys.path.append('./code_examples/language_elements')
+sys.path.append('./code_examples/builtin_types')
 
 from create_menu import create_menu
 
@@ -457,7 +464,7 @@ class list_samples:
 
         The list methods make it very easy to use a list as a stack, where the last element added is the first element retrieved (“last-in, first-out” LIFO). To add an item to the top of the stack, use `append()`. To retrieve an item from the top of the stack, use `pop()` without an explicit index.
 
-        For more info, see [using lists as LIFO stack](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#using-lists-as-stacks).
+        For more info, see [using lists as a stack](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#using-lists-as-stacks).
         
         """
 
@@ -475,6 +482,37 @@ class list_samples:
 
         except Exception as error:
             print(f"{type(error).__name__} was raised: {error}") 
+
+    def  use_list_as_queue(self):
+        """ 
+        Use a list as a queue (FIFO). 
+        
+        Remarks
+        -------
+
+        The list methods make it very easy to use a list as a queue, where the first element added is the first element retrieved (“first-in, first-out” FIFO). However, lists are not efficient for this purpose. While appends and pops from the end of list are fast, doing inserts or pops from the beginning of a list is slow (because all of the other elements have to be shifted by one).
+
+        For more info, see [using lists as a queue](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#using-lists-as-queues).
+        
+        """
+        from collections import deque
+
+        try:
+            queue = deque(["Eric", "John", "Michael"])
+            print(f"The queue is: {queue}")
+            queue.append("Terry")          
+            print(f"Terry arrives: {queue}")
+            queue.append("Graham")          
+            print(f"Graham arrives: {queue}")
+            left = queue.popleft()  
+            print(f"{left} the first to arrive now leaves.")
+            left = queue.popleft()  
+            print(f"{left} the second to arrive now leaves.")
+            queue = deque(['Michael', 'Terry', 'Graham'])
+            print(f"Remaining queue in order of arrival: {queue}")
+        except Exception as error:
+            print(f"{type(error).__name__} was raised: {error}") 
+
 
 ##### ****** Selection Menu ****** #####
 
@@ -504,7 +542,7 @@ class list_menu:
         # Define the entries of the list samples menu. 
         self.menu_items = ["Index a list", "Slice a list", "Create a list", "Create a list in a range", "Create a string list in a range", 
         "Remove duplicated list elments", "Perform list indexing",
-        "Change list elements", "Add element to a list", "Slice a list", "Apply list methods", "Use a list as a stack", "Quit"]
+        "Change list elements", "Add element to a list", "Slice a list", "Apply list methods", "Use a list as a stack", "Use a list as a queue", "Quit"]
     
 
     def list_selection_menu(self):
@@ -577,6 +615,10 @@ class list_menu:
             elif choice == 12:
                 print("\n*** Use a list as a stack ***")
                 listsamples.use_list_as_stack()
+                dummy = listmenu.display_menu(self.menu_items, True)
+            elif choice == 13:
+                print("\n*** Use a list as a queue ***")
+                listsamples.use_list_as_queue()
                 dummy = listmenu.display_menu(self.menu_items, True)
             elif choice == len(self.menu_items):
                 break

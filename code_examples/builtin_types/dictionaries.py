@@ -9,7 +9,7 @@ from pprint import pprint
 # This is important to allow pdoc to find the modules. 
 import sys
 
-sys.path.append('./code_examples/language_elements')
+sys.path.append('./code_examples/builtin_types')
 
 from create_menu import create_menu
 
