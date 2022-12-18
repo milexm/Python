@@ -5,7 +5,7 @@ Exercise Python basic syntax.
 
 # Append path to the packages folder to access the related modules
 import sys
-sys.path.append('./code_examples/packages') 
+sys.path.append('./code/packages') 
 
 
 from mymath.fibo import fiboTriangle

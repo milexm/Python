@@ -6,7 +6,7 @@ Allow the user to select a sample group.
 # Append the path to the modules location.
 # This is important to allow pdoc to find the modules. 
 import sys
-sys.path.append('./code_examples/builtin_types')
+sys.path.append('./code/builtin_types')
 from create_menu import create_menu  
 from lists import list_menu
 from dictionaries import dictionary_menu

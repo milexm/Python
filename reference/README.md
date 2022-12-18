@@ -10,5 +10,5 @@ This Code examples API documentation is created automatically form the
 This is an example of the command used to generate the API documentation executed from the directory: `\Users\<user name>\aWork\GitHub\Python>`:
 
 ```cmd
-    pdoc --html .\code_examples --output .\reference\code_examples_api
+    pdoc --html .\code --output .\reference\
 ```

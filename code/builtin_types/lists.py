@@ -17,7 +17,7 @@ from pprint import pprint
 # find the modules. 
 import sys
 
-sys.path.append('./code_examples/builtin_types')
+sys.path.append('./code/builtin_types')
 
 from create_menu import create_menu
 
