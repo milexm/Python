@@ -47,8 +47,8 @@ lists](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehe
 from typing import OrderedDict
 from pprint import pprint
 
-# Append the path to the modules location.
-# This is important to allow pdoc to find the modules. 
+# Append the path to the modules location.  This is important to allow pdoc to
+# find the modules. 
 import sys
 
 sys.path.append(&#39;./code_examples/builtin_types&#39;)
@@ -62,10 +62,9 @@ class list_samples:
     Remarks
     -------
 
-    A list can be written as a sequence of comma-separated values (items) between square brackets.
-    Lists might contain items of different types, but usually they are all
-    of the same type.
-    For more information, see
+    A list can be written as a sequence of comma-separated values (items)
+    between square brackets.  Lists might contain items of different types, but
+    usually they are all of the same type.  For more information, see
     [List](https://docs.python.org/3/library/stdtypes.html#lists).
 
     &#34;&#34;&#34;
@@ -93,7 +92,8 @@ class list_samples:
         Remarks
         -------
         The list slicing syntax is upper-bound exclusive. For example, if you
-        want to include the element whose index is 5, you need to pass 6 as the upper bound.
+        want to include the element whose index is 5, you need to pass 6 as the
+        upper bound.
 
         &#34;&#34;&#34;
         
@@ -119,7 +119,8 @@ class list_samples:
         Remarks
         -------
         The list slicing syntax is upper-bound exclusive. For example, if you
-        want to include the element whose index is 5, you need to pass 6 as the upper bound.
+        want to include the element whose index is 5, you need to pass 6 as the
+        upper bound.
 
         &#34;&#34;&#34;
         
@@ -143,16 +144,15 @@ class list_samples:
         upper_bound : int 
             The index of the last element in the range.    
         step : int 
-            The step to use when returning the elements. For example, if the step is
-            2 every other item in the range is
-            returned.
+            The step to use when returning the elements. For example, if the
+            step is 2 every other item in the range is returned.
 
         Remarks
         -------
         The complete syntax of list slicing is [start:end:step] . When you don&#39;t
         pass a step, Python assumes the step is 1. [:]  itself means to get
-        everything from start to end. So, [::2]  means get everything from start to
-        end at a step of two.
+        everything from start to end. So, [::2]  means get everything from start
+        to end at a step of two.
         &#34;&#34;&#34;
         
         # Display the elements in the requested range with the specified step.
@@ -175,9 +175,10 @@ class list_samples:
 
         Remarks
         -------
-        This example uses the Python built-in function `range()` that generates a range of integers. 
-        However, `range()` creates a Python range object. To get the list object, the example uses 
-        the `list()` function to convert the range object into a list object.
+        This example uses the Python built-in function `range()` that generates
+        a range of integers.  However, `range()` creates a Python range object.
+        To get the list object, the example uses the `list()` function to
+        convert the range object into a list object.
 
         &#34;&#34;&#34;
         
@@ -203,10 +204,11 @@ class list_samples:
         
         Remarks
         -------
-        This example accepts a Python range object, as a parameter. To get the list
-        object, the example uses the Pythonthe list comprehension construct to
-        convert the range object into a list object.  For more information, see
-        [list comprehension](https://realpython.com/list-comprehension-python/). 
+        This example accepts a Python range object, as a parameter. To get the
+        list object, the example uses the Pythonthe list comprehension construct
+        to convert the range object into a list object.  For more information,
+        see [list
+        comprehension](https://realpython.com/list-comprehension-python/). 
 
         &#34;&#34;&#34;
         
@@ -230,11 +232,11 @@ class list_samples:
         
         Remarks
         -------
-        This example accepts a Python range object, as a parameter. To get the list
-        object, the example uses the Python built-in function &#39;map()` to transform
-        each mumber in the iteratable object `arange` in a string and then appliese
-        the function `list()` to convert the output into a list object containing
-        strings. 
+        This example accepts a Python range object, as a parameter. To get the
+        list object, the example uses the Python built-in function &#39;map()` to
+        transform each mumber in the iteratable object `arange` in a string and
+        then appliese the function `list()` to convert the output into a list
+        object containing strings. 
 
         For more information, see [map
         function](https://www.w3schools.com/python/ref_func_map.asp).
@@ -262,11 +264,12 @@ class list_samples:
         
         Remarks
         -------
-        To remove deplicated elements in a list, you can use one of the following
-        approaches: 1. Use the  `set` function to convert the list to a set that
-        would remove all duplicates because `set` objects cannot contain duplicates.
-        Then use the `list` function to convert the set back to a list. The drawback
-        here is that the original order of the items is lost.
+        To remove deplicated elements in a list, you can use one of the
+        following approaches: 1. Use the  `set` function to convert the list to
+        a set that would remove all duplicates because `set` objects cannot
+        contain duplicates.  Then use the `list` function to convert the set
+        back to a list. The drawback here is that the original order of the
+        items is lost.
 
         For more information, see [set
         function](https://www.w3schools.com/python/ref_func_set.asp).
@@ -303,17 +306,15 @@ class list_samples:
         # At index 4 is : e
         print(&#34;At index 4 is : &#34; + my_list[4])
 
-        # Error!
-        # List indices must be integers or slices, not float
+        # Error!  List indices must be integers or slices, not float
         try:
             element = my_list[4.0]
         except Exception as error:
             # Display the error.
             print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
 
-        # Negative indexing
-        # The index -1 refers to the last element
-        # The index -5 refers to the first element (in this example)
+        # Negative indexing The index -1 refers to the last element The index -5
+        # refers to the first element (in this example)
 
         # At index -1 is : e
         print(&#34;At index -1 is : &#34; + my_list[-1])
@@ -345,11 +346,12 @@ class list_samples:
 
         Remarks
         -------
-        Every item of a list is referenced with an index number starting from zero and increasing by one. 
+        Every item of a list is referenced with an index number starting from
+        zero and increasing by one. 
 
-        Besides the left-to-right positive indexing that starts from zero,
-        list data types such as lists also have a second indexing system that
-        starts from -1 and decreases by one from right-to-left. 
+        Besides the left-to-right positive indexing that starts from zero, list
+        data types such as lists also have a second indexing system that starts
+        from -1 and decreases by one from right-to-left. 
 
         &#34;&#34;&#34;
         
@@ -368,7 +370,8 @@ class list_samples:
         Remarks
         -------
         
-        Lists are mutable objects, meaning that their elements can be changed programmatically at run time,  unlike a string or a tuple.
+        Lists are mutable objects, meaning that their elements can be changed
+        programmatically at run time,  unlike a string or a tuple.
 
         &#34;&#34;&#34; 
 
@@ -416,13 +419,13 @@ class list_samples:
         Remarks
         -------
 
-        Slicing can be best visualized by considering
-        the index to be between the elements as shown below.
+        Slicing can be best visualized by considering the index to be between
+        the elements as shown below.
         
         ![list_slicing](../../media/list_slicing.png)
         
-        So if we want to access a range, we need two index
-        that will slice that portion from the list.
+        So if we want to access a range, we need two index that will slice that
+        portion from the list.
         
         &#34;&#34;&#34;
 
@@ -452,7 +455,8 @@ class list_samples:
         Remarks
         -------
 
-        For more info, see [more on lists](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#more-on-lists).
+        For more info, see [more on
+        lists](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#more-on-lists).
 
         &#34;&#34;&#34;
 
@@ -496,9 +500,14 @@ class list_samples:
         Remarks
         -------
 
-        The list methods make it very easy to use a list as a stack, where the last element added is the first element retrieved (“last-in, first-out” LIFO). To add an item to the top of the stack, use `append()`. To retrieve an item from the top of the stack, use `pop()` without an explicit index.
+        The list methods make it very easy to use a list as a stack, where the
+        last element added is the first element retrieved (“last-in, first-out”
+        LIFO). To add an item to the top of the stack, use `append()`. To
+        retrieve an item from the top of the stack, use `pop()` without an
+        explicit index.
 
-        For more info, see [using lists as a stack](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#using-lists-as-stacks).
+        For more info, see [using lists as a
+        stack](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#using-lists-as-stacks).
         
         &#34;&#34;&#34;
 
@@ -524,9 +533,15 @@ class list_samples:
         Remarks
         -------
 
-        The list methods make it very easy to use a list as a queue, where the first element added is the first element retrieved (“first-in, first-out” FIFO). However, lists are not efficient for this purpose. While appends and pops from the end of list are fast, doing inserts or pops from the beginning of a list is slow (because all of the other elements have to be shifted by one).
+        The list methods make it very easy to use a list as a queue, where the
+        first element added is the first element retrieved (“first-in,
+        first-out” FIFO). However, lists are not efficient for this purpose.
+        While appends and pops from the end of list are fast, doing inserts or
+        pops from the beginning of a list is slow (because all of the other
+        elements have to be shifted by one).
 
-        For more info, see [using lists as a queue](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#using-lists-as-queues).
+        For more info, see [using lists as a
+        queue](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#using-lists-as-queues).
         
         &#34;&#34;&#34;
         from collections import deque
@@ -557,16 +572,16 @@ class list_menu:
     
     Remarks
     -------
-    This class main nethod displays the menu to allow the user to select the sample to execute. 
-    It also instantiates the local `list_samples` class to execute the list
-    samples as selected by the user. 
+    This class main nethod displays the menu to allow the user to select the
+    sample to execute.  It also instantiates the local `list_samples` class to
+    execute the list samples as selected by the user. 
     
     Use
     ---    
 
-    From the main function perform the following steps:
-    `amenu = list_menu()` # Instantiate the listMenu class.
-    `amenu.list_selection_menu()` # Dispkay the list samples selection menu.
+    From the main function perform the following steps: `amenu = list_menu()` #
+    Instantiate the listMenu class.  `amenu.list_selection_menu()` # Dispkay the
+    list samples selection menu.
   
     &#34;&#34;&#34;
 
@@ -581,8 +596,8 @@ class list_menu:
 
     def list_selection_menu(self):
         &#34;&#34;&#34;
-            Display menu and process user&#39;s input.
-            Call the proper method based on the user&#39;s selection.
+            Display menu and process user&#39;s input.  Call the proper method based
+            on the user&#39;s selection.
         &#34;&#34;&#34;
        
         # Instantiate the list menu class. 
@@ -674,13 +689,15 @@ class list_menu:
 <div class="desc"><p>Executes the samples in the list group
 </p>
 <h2 id="remarks">Remarks</h2>
-<p>This class main nethod displays the menu to allow the user to select the sample to execute.
-It also instantiates the local <code><a title="code_examples.builtin_types.lists.list_samples" href="#code_examples.builtin_types.lists.list_samples">list_samples</a></code> class to execute the list
-samples as selected by the user. </p>
+<p>This class main nethod displays the menu to allow the user to select the
+sample to execute.
+It also instantiates the local <code><a title="code_examples.builtin_types.lists.list_samples" href="#code_examples.builtin_types.lists.list_samples">list_samples</a></code> class to
+execute the list samples as selected by the user. </p>
 <h2 id="use">Use</h2>
-<p>From the main function perform the following steps:
-<code>amenu = list_menu()</code> # Instantiate the listMenu class.
-<code>amenu.list_selection_menu()</code> # Dispkay the list samples selection menu.</p>
+<p>From the main function perform the following steps: <code>amenu = list_menu()</code> #
+Instantiate the listMenu class.
+<code>amenu.list_selection_menu()</code> # Dispkay the
+list samples selection menu.</p>
 <p>Initialize the class <code><a title="code_examples.builtin_types.lists.list_menu" href="#code_examples.builtin_types.lists.list_menu">list_menu</a></code> instance.</p></div>
 <details class="source">
 <summary>
@@ -693,16 +710,16 @@ samples as selected by the user. </p>
     
     Remarks
     -------
-    This class main nethod displays the menu to allow the user to select the sample to execute. 
-    It also instantiates the local `list_samples` class to execute the list
-    samples as selected by the user. 
+    This class main nethod displays the menu to allow the user to select the
+    sample to execute.  It also instantiates the local `list_samples` class to
+    execute the list samples as selected by the user. 
     
     Use
     ---    
 
-    From the main function perform the following steps:
-    `amenu = list_menu()` # Instantiate the listMenu class.
-    `amenu.list_selection_menu()` # Dispkay the list samples selection menu.
+    From the main function perform the following steps: `amenu = list_menu()` #
+    Instantiate the listMenu class.  `amenu.list_selection_menu()` # Dispkay the
+    list samples selection menu.
   
     &#34;&#34;&#34;
 
@@ -717,8 +734,8 @@ samples as selected by the user. </p>
 
     def list_selection_menu(self):
         &#34;&#34;&#34;
-            Display menu and process user&#39;s input.
-            Call the proper method based on the user&#39;s selection.
+            Display menu and process user&#39;s input.  Call the proper method based
+            on the user&#39;s selection.
         &#34;&#34;&#34;
        
         # Instantiate the list menu class. 
@@ -800,15 +817,16 @@ samples as selected by the user. </p>
 </code></dt>
 <dd>
 <div class="desc"><p>Display menu and process user's input.
-Call the proper method based on the user's selection.</p></div>
+Call the proper method based
+on the user's selection.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def list_selection_menu(self):
     &#34;&#34;&#34;
-        Display menu and process user&#39;s input.
-        Call the proper method based on the user&#39;s selection.
+        Display menu and process user&#39;s input.  Call the proper method based
+        on the user&#39;s selection.
     &#34;&#34;&#34;
    
     # Instantiate the list menu class. 
@@ -892,9 +910,10 @@ Call the proper method based on the user's selection.</p></div>
 <dd>
 <div class="desc"><p>Examples showing the use of lists. </p>
 <h2 id="remarks">Remarks</h2>
-<p>A list can be written as a sequence of comma-separated values (items) between square brackets.
-Lists might contain items of different types, but usually they are all
-of the same type.
+<p>A list can be written as a sequence of comma-separated values (items)
+between square brackets.
+Lists might contain items of different types, but
+usually they are all of the same type.
 For more information, see
 <a href="https://docs.python.org/3/library/stdtypes.html#lists">List</a>.</p>
 <p>Initialize the class <code><a title="code_examples.builtin_types.lists.list_samples" href="#code_examples.builtin_types.lists.list_samples">list_samples</a></code> instance.</p></div>
@@ -909,10 +928,9 @@ For more information, see
     Remarks
     -------
 
-    A list can be written as a sequence of comma-separated values (items) between square brackets.
-    Lists might contain items of different types, but usually they are all
-    of the same type.
-    For more information, see
+    A list can be written as a sequence of comma-separated values (items)
+    between square brackets.  Lists might contain items of different types, but
+    usually they are all of the same type.  For more information, see
     [List](https://docs.python.org/3/library/stdtypes.html#lists).
 
     &#34;&#34;&#34;
@@ -940,7 +958,8 @@ For more information, see
         Remarks
         -------
         The list slicing syntax is upper-bound exclusive. For example, if you
-        want to include the element whose index is 5, you need to pass 6 as the upper bound.
+        want to include the element whose index is 5, you need to pass 6 as the
+        upper bound.
 
         &#34;&#34;&#34;
         
@@ -966,7 +985,8 @@ For more information, see
         Remarks
         -------
         The list slicing syntax is upper-bound exclusive. For example, if you
-        want to include the element whose index is 5, you need to pass 6 as the upper bound.
+        want to include the element whose index is 5, you need to pass 6 as the
+        upper bound.
 
         &#34;&#34;&#34;
         
@@ -990,16 +1010,15 @@ For more information, see
         upper_bound : int 
             The index of the last element in the range.    
         step : int 
-            The step to use when returning the elements. For example, if the step is
-            2 every other item in the range is
-            returned.
+            The step to use when returning the elements. For example, if the
+            step is 2 every other item in the range is returned.
 
         Remarks
         -------
         The complete syntax of list slicing is [start:end:step] . When you don&#39;t
         pass a step, Python assumes the step is 1. [:]  itself means to get
-        everything from start to end. So, [::2]  means get everything from start to
-        end at a step of two.
+        everything from start to end. So, [::2]  means get everything from start
+        to end at a step of two.
         &#34;&#34;&#34;
         
         # Display the elements in the requested range with the specified step.
@@ -1022,9 +1041,10 @@ For more information, see
 
         Remarks
         -------
-        This example uses the Python built-in function `range()` that generates a range of integers. 
-        However, `range()` creates a Python range object. To get the list object, the example uses 
-        the `list()` function to convert the range object into a list object.
+        This example uses the Python built-in function `range()` that generates
+        a range of integers.  However, `range()` creates a Python range object.
+        To get the list object, the example uses the `list()` function to
+        convert the range object into a list object.
 
         &#34;&#34;&#34;
         
@@ -1050,10 +1070,11 @@ For more information, see
         
         Remarks
         -------
-        This example accepts a Python range object, as a parameter. To get the list
-        object, the example uses the Pythonthe list comprehension construct to
-        convert the range object into a list object.  For more information, see
-        [list comprehension](https://realpython.com/list-comprehension-python/). 
+        This example accepts a Python range object, as a parameter. To get the
+        list object, the example uses the Pythonthe list comprehension construct
+        to convert the range object into a list object.  For more information,
+        see [list
+        comprehension](https://realpython.com/list-comprehension-python/). 
 
         &#34;&#34;&#34;
         
@@ -1077,11 +1098,11 @@ For more information, see
         
         Remarks
         -------
-        This example accepts a Python range object, as a parameter. To get the list
-        object, the example uses the Python built-in function &#39;map()` to transform
-        each mumber in the iteratable object `arange` in a string and then appliese
-        the function `list()` to convert the output into a list object containing
-        strings. 
+        This example accepts a Python range object, as a parameter. To get the
+        list object, the example uses the Python built-in function &#39;map()` to
+        transform each mumber in the iteratable object `arange` in a string and
+        then appliese the function `list()` to convert the output into a list
+        object containing strings. 
 
         For more information, see [map
         function](https://www.w3schools.com/python/ref_func_map.asp).
@@ -1109,11 +1130,12 @@ For more information, see
         
         Remarks
         -------
-        To remove deplicated elements in a list, you can use one of the following
-        approaches: 1. Use the  `set` function to convert the list to a set that
-        would remove all duplicates because `set` objects cannot contain duplicates.
-        Then use the `list` function to convert the set back to a list. The drawback
-        here is that the original order of the items is lost.
+        To remove deplicated elements in a list, you can use one of the
+        following approaches: 1. Use the  `set` function to convert the list to
+        a set that would remove all duplicates because `set` objects cannot
+        contain duplicates.  Then use the `list` function to convert the set
+        back to a list. The drawback here is that the original order of the
+        items is lost.
 
         For more information, see [set
         function](https://www.w3schools.com/python/ref_func_set.asp).
@@ -1150,17 +1172,15 @@ For more information, see
         # At index 4 is : e
         print(&#34;At index 4 is : &#34; + my_list[4])
 
-        # Error!
-        # List indices must be integers or slices, not float
+        # Error!  List indices must be integers or slices, not float
         try:
             element = my_list[4.0]
         except Exception as error:
             # Display the error.
             print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
 
-        # Negative indexing
-        # The index -1 refers to the last element
-        # The index -5 refers to the first element (in this example)
+        # Negative indexing The index -1 refers to the last element The index -5
+        # refers to the first element (in this example)
 
         # At index -1 is : e
         print(&#34;At index -1 is : &#34; + my_list[-1])
@@ -1192,11 +1212,12 @@ For more information, see
 
         Remarks
         -------
-        Every item of a list is referenced with an index number starting from zero and increasing by one. 
+        Every item of a list is referenced with an index number starting from
+        zero and increasing by one. 
 
-        Besides the left-to-right positive indexing that starts from zero,
-        list data types such as lists also have a second indexing system that
-        starts from -1 and decreases by one from right-to-left. 
+        Besides the left-to-right positive indexing that starts from zero, list
+        data types such as lists also have a second indexing system that starts
+        from -1 and decreases by one from right-to-left. 
 
         &#34;&#34;&#34;
         
@@ -1215,7 +1236,8 @@ For more information, see
         Remarks
         -------
         
-        Lists are mutable objects, meaning that their elements can be changed programmatically at run time,  unlike a string or a tuple.
+        Lists are mutable objects, meaning that their elements can be changed
+        programmatically at run time,  unlike a string or a tuple.
 
         &#34;&#34;&#34; 
 
@@ -1263,13 +1285,13 @@ For more information, see
         Remarks
         -------
 
-        Slicing can be best visualized by considering
-        the index to be between the elements as shown below.
+        Slicing can be best visualized by considering the index to be between
+        the elements as shown below.
         
         ![list_slicing](../../media/list_slicing.png)
         
-        So if we want to access a range, we need two index
-        that will slice that portion from the list.
+        So if we want to access a range, we need two index that will slice that
+        portion from the list.
         
         &#34;&#34;&#34;
 
@@ -1299,7 +1321,8 @@ For more information, see
         Remarks
         -------
 
-        For more info, see [more on lists](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#more-on-lists).
+        For more info, see [more on
+        lists](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#more-on-lists).
 
         &#34;&#34;&#34;
 
@@ -1343,9 +1366,14 @@ For more information, see
         Remarks
         -------
 
-        The list methods make it very easy to use a list as a stack, where the last element added is the first element retrieved (“last-in, first-out” LIFO). To add an item to the top of the stack, use `append()`. To retrieve an item from the top of the stack, use `pop()` without an explicit index.
+        The list methods make it very easy to use a list as a stack, where the
+        last element added is the first element retrieved (“last-in, first-out”
+        LIFO). To add an item to the top of the stack, use `append()`. To
+        retrieve an item from the top of the stack, use `pop()` without an
+        explicit index.
 
-        For more info, see [using lists as a stack](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#using-lists-as-stacks).
+        For more info, see [using lists as a
+        stack](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#using-lists-as-stacks).
         
         &#34;&#34;&#34;
 
@@ -1371,9 +1399,15 @@ For more information, see
         Remarks
         -------
 
-        The list methods make it very easy to use a list as a queue, where the first element added is the first element retrieved (“first-in, first-out” FIFO). However, lists are not efficient for this purpose. While appends and pops from the end of list are fast, doing inserts or pops from the beginning of a list is slow (because all of the other elements have to be shifted by one).
+        The list methods make it very easy to use a list as a queue, where the
+        first element added is the first element retrieved (“first-in,
+        first-out” FIFO). However, lists are not efficient for this purpose.
+        While appends and pops from the end of list are fast, doing inserts or
+        pops from the beginning of a list is slow (because all of the other
+        elements have to be shifted by one).
 
-        For more info, see [using lists as a queue](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#using-lists-as-queues).
+        For more info, see [using lists as a
+        queue](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#using-lists-as-queues).
         
         &#34;&#34;&#34;
         from collections import deque
@@ -1433,7 +1467,8 @@ For more information, see
 <dd>
 <div class="desc"><p>Apply most common list methods.</p>
 <h2 id="remarks">Remarks</h2>
-<p>For more info, see <a href="https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#more-on-lists">more on lists</a>.</p></div>
+<p>For more info, see <a href="https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#more-on-lists">more on
+lists</a>.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -1445,7 +1480,8 @@ For more information, see
     Remarks
     -------
 
-    For more info, see [more on lists](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#more-on-lists).
+    For more info, see [more on
+    lists](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#more-on-lists).
 
     &#34;&#34;&#34;
 
@@ -1489,7 +1525,8 @@ For more information, see
 <dd>
 <div class="desc"><p>Change element in a list.</p>
 <h2 id="remarks">Remarks</h2>
-<p>Lists are mutable objects, meaning that their elements can be changed programmatically at run time,
+<p>Lists are mutable objects, meaning that their elements can be changed
+programmatically at run time,
 unlike a string or a tuple.</p></div>
 <details class="source">
 <summary>
@@ -1502,7 +1539,8 @@ unlike a string or a tuple.</p></div>
     Remarks
     -------
     
-    Lists are mutable objects, meaning that their elements can be changed programmatically at run time,  unlike a string or a tuple.
+    Lists are mutable objects, meaning that their elements can be changed
+    programmatically at run time,  unlike a string or a tuple.
 
     &#34;&#34;&#34; 
 
@@ -1536,9 +1574,11 @@ unlike a string or a tuple.</p></div>
 <dd>The value of the last number in the list.</dd>
 </dl>
 <h2 id="remarks">Remarks</h2>
-<p>This example uses the Python built-in function <code>range()</code> that generates a range of integers.
-However, <code>range()</code> creates a Python range object. To get the list object, the example uses
-the <code>list()</code> function to convert the range object into a list object.</p></div>
+<p>This example uses the Python built-in function <code>range()</code> that generates
+a range of integers.
+However, <code>range()</code> creates a Python range object.
+To get the list object, the example uses the <code>list()</code> function to
+convert the range object into a list object.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -1556,9 +1596,10 @@ the <code>list()</code> function to convert the range object into a list object.
 
     Remarks
     -------
-    This example uses the Python built-in function `range()` that generates a range of integers. 
-    However, `range()` creates a Python range object. To get the list object, the example uses 
-    the `list()` function to convert the range object into a list object.
+    This example uses the Python built-in function `range()` that generates
+    a range of integers.  However, `range()` creates a Python range object.
+    To get the list object, the example uses the `list()` function to
+    convert the range object into a list object.
 
     &#34;&#34;&#34;
     
@@ -1585,11 +1626,12 @@ the <code>list()</code> function to convert the range object into a list object.
 <dd>The range to create the number list.</dd>
 </dl>
 <h2 id="remarks">Remarks</h2>
-<p>This example accepts a Python range object, as a parameter. To get the list
-object, the example uses the Pythonthe list comprehension construct to
-convert the range object into a list object.
-For more information, see
-<a href="https://realpython.com/list-comprehension-python/">list comprehension</a>.</p></div>
+<p>This example accepts a Python range object, as a parameter. To get the
+list object, the example uses the Pythonthe list comprehension construct
+to convert the range object into a list object.
+For more information,
+see <a href="https://realpython.com/list-comprehension-python/">list
+comprehension</a>.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -1605,10 +1647,11 @@ For more information, see
     
     Remarks
     -------
-    This example accepts a Python range object, as a parameter. To get the list
-    object, the example uses the Pythonthe list comprehension construct to
-    convert the range object into a list object.  For more information, see
-    [list comprehension](https://realpython.com/list-comprehension-python/). 
+    This example accepts a Python range object, as a parameter. To get the
+    list object, the example uses the Pythonthe list comprehension construct
+    to convert the range object into a list object.  For more information,
+    see [list
+    comprehension](https://realpython.com/list-comprehension-python/). 
 
     &#34;&#34;&#34;
     
@@ -1633,11 +1676,11 @@ For more information, see
 <dd>The range to create the number list.</dd>
 </dl>
 <h2 id="remarks">Remarks</h2>
-<p>This example accepts a Python range object, as a parameter. To get the list
-object, the example uses the Python built-in function 'map()` to transform
-each mumber in the iteratable object <code>arange</code> in a string and then appliese
-the function <code>list()</code> to convert the output into a list object containing
-strings. </p>
+<p>This example accepts a Python range object, as a parameter. To get the
+list object, the example uses the Python built-in function 'map()` to
+transform each mumber in the iteratable object <code>arange</code> in a string and
+then appliese the function <code>list()</code> to convert the output into a list
+object containing strings. </p>
 <p>For more information, see <a href="https://www.w3schools.com/python/ref_func_map.asp">map
 function</a>.</p></div>
 <details class="source">
@@ -1655,11 +1698,11 @@ function</a>.</p></div>
     
     Remarks
     -------
-    This example accepts a Python range object, as a parameter. To get the list
-    object, the example uses the Python built-in function &#39;map()` to transform
-    each mumber in the iteratable object `arange` in a string and then appliese
-    the function `list()` to convert the output into a list object containing
-    strings. 
+    This example accepts a Python range object, as a parameter. To get the
+    list object, the example uses the Python built-in function &#39;map()` to
+    transform each mumber in the iteratable object `arange` in a string and
+    then appliese the function `list()` to convert the output into a list
+    object containing strings. 
 
     For more information, see [map
     function](https://www.w3schools.com/python/ref_func_map.asp).
@@ -1687,10 +1730,11 @@ function</a>.</p></div>
 <dd>The index of the element to display.</dd>
 </dl>
 <h2 id="remarks">Remarks</h2>
-<p>Every item of a list is referenced with an index number starting from zero and increasing by one. </p>
-<p>Besides the left-to-right positive indexing that starts from zero,
-list data types such as lists also have a second indexing system that
-starts from -1 and decreases by one from right-to-left.</p></div>
+<p>Every item of a list is referenced with an index number starting from
+zero and increasing by one. </p>
+<p>Besides the left-to-right positive indexing that starts from zero, list
+data types such as lists also have a second indexing system that starts
+from -1 and decreases by one from right-to-left.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -1706,11 +1750,12 @@ starts from -1 and decreases by one from right-to-left.</p></div>
 
     Remarks
     -------
-    Every item of a list is referenced with an index number starting from zero and increasing by one. 
+    Every item of a list is referenced with an index number starting from
+    zero and increasing by one. 
 
-    Besides the left-to-right positive indexing that starts from zero,
-    list data types such as lists also have a second indexing system that
-    starts from -1 and decreases by one from right-to-left. 
+    Besides the left-to-right positive indexing that starts from zero, list
+    data types such as lists also have a second indexing system that starts
+    from -1 and decreases by one from right-to-left. 
 
     &#34;&#34;&#34;
     
@@ -1736,7 +1781,8 @@ starts from -1 and decreases by one from right-to-left.</p></div>
 </dl>
 <h2 id="remarks">Remarks</h2>
 <p>The list slicing syntax is upper-bound exclusive. For example, if you
-want to include the element whose index is 5, you need to pass 6 as the upper bound.</p></div>
+want to include the element whose index is 5, you need to pass 6 as the
+upper bound.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -1755,7 +1801,8 @@ want to include the element whose index is 5, you need to pass 6 as the upper bo
     Remarks
     -------
     The list slicing syntax is upper-bound exclusive. For example, if you
-    want to include the element whose index is 5, you need to pass 6 as the upper bound.
+    want to include the element whose index is 5, you need to pass 6 as the
+    upper bound.
 
     &#34;&#34;&#34;
     
@@ -1781,7 +1828,8 @@ want to include the element whose index is 5, you need to pass 6 as the upper bo
 </dl>
 <h2 id="remarks">Remarks</h2>
 <p>The list slicing syntax is upper-bound exclusive. For example, if you
-want to include the element whose index is 5, you need to pass 6 as the upper bound.</p></div>
+want to include the element whose index is 5, you need to pass 6 as the
+upper bound.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -1800,7 +1848,8 @@ want to include the element whose index is 5, you need to pass 6 as the upper bo
     Remarks
     -------
     The list slicing syntax is upper-bound exclusive. For example, if you
-    want to include the element whose index is 5, you need to pass 6 as the upper bound.
+    want to include the element whose index is 5, you need to pass 6 as the
+    upper bound.
 
     &#34;&#34;&#34;
     
@@ -1825,17 +1874,16 @@ step. </p>
 <dt><strong><code>upper_bound</code></strong> :&ensp;<code>int </code></dt>
 <dd>The index of the last element in the range.</dd>
 <dt><strong><code>step</code></strong> :&ensp;<code>int </code></dt>
-<dd>The step to use when returning the elements. For example, if the step is
-2 every other item in the range is
-returned.</dd>
+<dd>The step to use when returning the elements. For example, if the
+step is 2 every other item in the range is returned.</dd>
 </dl>
 <h2 id="remarks">Remarks</h2>
 <p>The complete syntax of list slicing is [start:end:step] . When you don't
 pass a step, Python assumes the step is 1. [:]
 itself means to get
 everything from start to end. So, [::2]
-means get everything from start to
-end at a step of two.</p></div>
+means get everything from start
+to end at a step of two.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -1853,16 +1901,15 @@ upper_bound: int, step: int):
     upper_bound : int 
         The index of the last element in the range.    
     step : int 
-        The step to use when returning the elements. For example, if the step is
-        2 every other item in the range is
-        returned.
+        The step to use when returning the elements. For example, if the
+        step is 2 every other item in the range is returned.
 
     Remarks
     -------
     The complete syntax of list slicing is [start:end:step] . When you don&#39;t
     pass a step, Python assumes the step is 1. [:]  itself means to get
-    everything from start to end. So, [::2]  means get everything from start to
-    end at a step of two.
+    everything from start to end. So, [::2]  means get everything from start
+    to end at a step of two.
     &#34;&#34;&#34;
     
     # Display the elements in the requested range with the specified step.
@@ -1900,17 +1947,15 @@ upper_bound: int, step: int):
     # At index 4 is : e
     print(&#34;At index 4 is : &#34; + my_list[4])
 
-    # Error!
-    # List indices must be integers or slices, not float
+    # Error!  List indices must be integers or slices, not float
     try:
         element = my_list[4.0]
     except Exception as error:
         # Display the error.
         print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
 
-    # Negative indexing
-    # The index -1 refers to the last element
-    # The index -5 refers to the first element (in this example)
+    # Negative indexing The index -1 refers to the last element The index -5
+    # refers to the first element (in this example)
 
     # At index -1 is : e
     print(&#34;At index -1 is : &#34; + my_list[-1])
@@ -1944,12 +1989,14 @@ upper_bound: int, step: int):
 <dd>The range to create the number list.</dd>
 </dl>
 <h2 id="remarks">Remarks</h2>
-<p>To remove deplicated elements in a list, you can use one of the following
-approaches: 1. Use the
-<code>set</code> function to convert the list to a set that
-would remove all duplicates because <code>set</code> objects cannot contain duplicates.
-Then use the <code>list</code> function to convert the set back to a list. The drawback
-here is that the original order of the items is lost.</p>
+<p>To remove deplicated elements in a list, you can use one of the
+following approaches: 1. Use the
+<code>set</code> function to convert the list to
+a set that would remove all duplicates because <code>set</code> objects cannot
+contain duplicates.
+Then use the <code>list</code> function to convert the set
+back to a list. The drawback here is that the original order of the
+items is lost.</p>
 <p>For more information, see <a href="https://www.w3schools.com/python/ref_func_set.asp">set
 function</a>.</p></div>
 <details class="source">
@@ -1967,11 +2014,12 @@ function</a>.</p></div>
     
     Remarks
     -------
-    To remove deplicated elements in a list, you can use one of the following
-    approaches: 1. Use the  `set` function to convert the list to a set that
-    would remove all duplicates because `set` objects cannot contain duplicates.
-    Then use the `list` function to convert the set back to a list. The drawback
-    here is that the original order of the items is lost.
+    To remove deplicated elements in a list, you can use one of the
+    following approaches: 1. Use the  `set` function to convert the list to
+    a set that would remove all duplicates because `set` objects cannot
+    contain duplicates.  Then use the `list` function to convert the set
+    back to a list. The drawback here is that the original order of the
+    items is lost.
 
     For more information, see [set
     function](https://www.w3schools.com/python/ref_func_set.asp).
@@ -1997,11 +2045,11 @@ function</a>.</p></div>
 <dd>
 <div class="desc"><p>Perform list slicing.</p>
 <h2 id="remarks">Remarks</h2>
-<p>Slicing can be best visualized by considering
-the index to be between the elements as shown below.</p>
+<p>Slicing can be best visualized by considering the index to be between
+the elements as shown below.</p>
 <p><img alt="list_slicing" src="../../media/list_slicing.png"></p>
-<p>So if we want to access a range, we need two index
-that will slice that portion from the list.</p></div>
+<p>So if we want to access a range, we need two index that will slice that
+portion from the list.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2013,13 +2061,13 @@ that will slice that portion from the list.</p></div>
     Remarks
     -------
 
-    Slicing can be best visualized by considering
-    the index to be between the elements as shown below.
+    Slicing can be best visualized by considering the index to be between
+    the elements as shown below.
     
     ![list_slicing](../../media/list_slicing.png)
     
-    So if we want to access a range, we need two index
-    that will slice that portion from the list.
+    So if we want to access a range, we need two index that will slice that
+    portion from the list.
     
     &#34;&#34;&#34;
 
@@ -2048,8 +2096,14 @@ that will slice that portion from the list.</p></div>
 <dd>
 <div class="desc"><p>Use a list as a queue (FIFO). </p>
 <h2 id="remarks">Remarks</h2>
-<p>The list methods make it very easy to use a list as a queue, where the first element added is the first element retrieved (“first-in, first-out” FIFO). However, lists are not efficient for this purpose. While appends and pops from the end of list are fast, doing inserts or pops from the beginning of a list is slow (because all of the other elements have to be shifted by one).</p>
-<p>For more info, see <a href="https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#using-lists-as-queues">using lists as a queue</a>.</p></div>
+<p>The list methods make it very easy to use a list as a queue, where the
+first element added is the first element retrieved (“first-in,
+first-out” FIFO). However, lists are not efficient for this purpose.
+While appends and pops from the end of list are fast, doing inserts or
+pops from the beginning of a list is slow (because all of the other
+elements have to be shifted by one).</p>
+<p>For more info, see <a href="https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#using-lists-as-queues">using lists as a
+queue</a>.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2061,9 +2115,15 @@ that will slice that portion from the list.</p></div>
     Remarks
     -------
 
-    The list methods make it very easy to use a list as a queue, where the first element added is the first element retrieved (“first-in, first-out” FIFO). However, lists are not efficient for this purpose. While appends and pops from the end of list are fast, doing inserts or pops from the beginning of a list is slow (because all of the other elements have to be shifted by one).
+    The list methods make it very easy to use a list as a queue, where the
+    first element added is the first element retrieved (“first-in,
+    first-out” FIFO). However, lists are not efficient for this purpose.
+    While appends and pops from the end of list are fast, doing inserts or
+    pops from the beginning of a list is slow (because all of the other
+    elements have to be shifted by one).
 
-    For more info, see [using lists as a queue](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#using-lists-as-queues).
+    For more info, see [using lists as a
+    queue](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#using-lists-as-queues).
     
     &#34;&#34;&#34;
     from collections import deque
@@ -2091,8 +2151,13 @@ that will slice that portion from the list.</p></div>
 <dd>
 <div class="desc"><p>Use a list as a stack (LIFO). </p>
 <h2 id="remarks">Remarks</h2>
-<p>The list methods make it very easy to use a list as a stack, where the last element added is the first element retrieved (“last-in, first-out” LIFO). To add an item to the top of the stack, use <code>append()</code>. To retrieve an item from the top of the stack, use <code>pop()</code> without an explicit index.</p>
-<p>For more info, see <a href="https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#using-lists-as-stacks">using lists as a stack</a>.</p></div>
+<p>The list methods make it very easy to use a list as a stack, where the
+last element added is the first element retrieved (“last-in, first-out”
+LIFO). To add an item to the top of the stack, use <code>append()</code>. To
+retrieve an item from the top of the stack, use <code>pop()</code> without an
+explicit index.</p>
+<p>For more info, see <a href="https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#using-lists-as-stacks">using lists as a
+stack</a>.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2104,9 +2169,14 @@ that will slice that portion from the list.</p></div>
     Remarks
     -------
 
-    The list methods make it very easy to use a list as a stack, where the last element added is the first element retrieved (“last-in, first-out” LIFO). To add an item to the top of the stack, use `append()`. To retrieve an item from the top of the stack, use `pop()` without an explicit index.
+    The list methods make it very easy to use a list as a stack, where the
+    last element added is the first element retrieved (“last-in, first-out”
+    LIFO). To add an item to the top of the stack, use `append()`. To
+    retrieve an item from the top of the stack, use `pop()` without an
+    explicit index.
 
-    For more info, see [using lists as a stack](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#using-lists-as-stacks).
+    For more info, see [using lists as a
+    stack](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#using-lists-as-stacks).
     
     &#34;&#34;&#34;
 

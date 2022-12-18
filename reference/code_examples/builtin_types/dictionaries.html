@@ -34,8 +34,8 @@ Execute samples from the dictionary group.
 
 from pprint import pprint
 
-# Append the path to the modules location.
-# This is important to allow pdoc to find the modules. 
+# Append the path to the modules location.  This is important to allow pdoc to
+# find the modules. 
 import sys
 
 sys.path.append(&#39;./code_examples/builtin_types&#39;)
@@ -87,8 +87,8 @@ class dictionary_samples:
         -------
         Using curly brackets is one way to create a dictionary.
 
-        The `dict`  function is another way to create a dictionary. `dict`  is also
-        used to convert other objects to a dictionary.
+        The `dict`  function is another way to create a dictionary. `dict`  is
+        also used to convert other objects to a dictionary.
 
         &#34;&#34;&#34;
         
@@ -118,7 +118,8 @@ class dictionary_samples:
 
         Remarks
         -------
-        To access the value of a dictionary element you must use the related key.
+        To access the value of a dictionary element you must use the related
+        key.
         &#34;&#34;&#34;
         
         try:
@@ -133,15 +134,17 @@ class dictionary_samples:
 
     def print_dictionary_formatted(self):
         &#34;&#34;&#34;
-        Create a dictionary of keys a, b, c where each key value is a list from 1 to 10, 11 to 20, and 21 to 30, respectively. 
-        Then print the dictionary in format way. 
+        Create a dictionary of keys a, b, c where each key value is a list from
+        1 to 10, 11 to 20, and 21 to 30, respectively.  Then print the
+        dictionary in format way. 
 
         Remarks
         -------
-        The `pprint` module provides a capability to “pretty-print” arbitrary Python
-        data structures.  The formatted representation keeps objects on a single
-        line if it can, and breaks them onto multiple lines if they don’t fit within
-        the allowed width. For more information, see [pprint](https://docs.python.org/3/library/pprint.html?highlight=pprint). 
+        The `pprint` module provides a capability to “pretty-print” arbitrary
+        Python data structures.  The formatted representation keeps objects on a
+        single line if it can, and breaks them onto multiple lines if they don’t
+        fit within the allowed width. For more information, see
+        [pprint](https://docs.python.org/3/library/pprint.html?highlight=pprint). 
         &#34;&#34;&#34;
         
         try:
@@ -154,7 +157,8 @@ class dictionary_samples:
 
     def filter_dictionary(self, filter: int):
         &#34;&#34;&#34;
-        Filter the dictionary by removing all items with a value greater than the passed value.
+        Filter the dictionary by removing all items with a value greater than
+        the passed value.
 
         Parameters
         ----------
@@ -164,10 +168,11 @@ class dictionary_samples:
 
         Remarks
         -------
-        The example uses comprehension which is the expression inside `dict()`. The
-        comprehension iterates through the existing dictionary items, and if an item
-        is less or equal to the passed value, the item is added to a new dictionary.
-        For more information, see [comprehension in dictionaries](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#dictionaries).
+        The example uses comprehension which is the expression inside `dict()`.
+        The comprehension iterates through the existing dictionary items, and if
+        an item is less or equal to the passed value, the item is added to a new
+        dictionary.  For more information, see [comprehension in
+        dictionaries](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#dictionaries).
         &#34;&#34;&#34;
         
         try:
@@ -234,19 +239,21 @@ class dictionary_samples:
 class dictionary_menu:
 
     &#34;&#34;&#34; 
-    Instantiate the dictionary_menu class.
-    Display the dicitionary selection menu and execute the sample selected by the user. 
+    Instantiate the dictionary_menu class.  Display the dicitionary selection
+    menu and execute the sample selected by the user. 
 
     Remarks
     -------
-    It displays the menu to allow the user to select the samples to execute from the dictionary group. 
+    It displays the menu to allow the user to select the samples to execute from
+    the dictionary group. 
     
     Use
     ---    
 
-    From the main function perform the following steps:
-    `amenu = dictionary_menu()` # Instantiate the dictionary_menu class.
-    `amenu.dict_selection_menu()` # Display the dicitionary samples selection menu and execute the sample selected by the user. 
+    From the main function perform the following steps: `amenu =
+    dictionary_menu()` # Instantiate the dictionary_menu class.
+    `amenu.dict_selection_menu()` # Display the dicitionary samples selection
+    menu and execute the sample selected by the user. 
   
     &#34;&#34;&#34;
 
@@ -259,8 +266,8 @@ class dictionary_menu:
 
     def dict_selection_menu(self):
         &#34;&#34;&#34;
-            Display menu and process user&#39;s input.
-            Call the proper method based on the user&#39;s selection.
+            Display menu and process user&#39;s input.  Call the proper method based
+            on the user&#39;s selection.
         &#34;&#34;&#34;
        
         # Instantiate the dictionary menu class. 
@@ -319,13 +326,16 @@ class dictionary_menu:
 </code></dt>
 <dd>
 <div class="desc"><p>Instantiate the dictionary_menu class.
-Display the dicitionary selection menu and execute the sample selected by the user. </p>
+Display the dicitionary selection
+menu and execute the sample selected by the user. </p>
 <h2 id="remarks">Remarks</h2>
-<p>It displays the menu to allow the user to select the samples to execute from the dictionary group. </p>
+<p>It displays the menu to allow the user to select the samples to execute from
+the dictionary group. </p>
 <h2 id="use">Use</h2>
-<p>From the main function perform the following steps:
-<code>amenu = dictionary_menu()</code> # Instantiate the dictionary_menu class.
-<code>amenu.dict_selection_menu()</code> # Display the dicitionary samples selection menu and execute the sample selected by the user. </p>
+<p>From the main function perform the following steps: <code>amenu =
+dictionary_menu()</code> # Instantiate the dictionary_menu class.
+<code>amenu.dict_selection_menu()</code> # Display the dicitionary samples selection
+menu and execute the sample selected by the user. </p>
 <p>Initialize the class <code><a title="code_examples.builtin_types.dictionaries.dictionary_menu" href="#code_examples.builtin_types.dictionaries.dictionary_menu">dictionary_menu</a></code> instance.</p></div>
 <details class="source">
 <summary>
@@ -334,19 +344,21 @@ Display the dicitionary selection menu and execute the sample selected by the us
 <pre><code class="python">class dictionary_menu:
 
     &#34;&#34;&#34; 
-    Instantiate the dictionary_menu class.
-    Display the dicitionary selection menu and execute the sample selected by the user. 
+    Instantiate the dictionary_menu class.  Display the dicitionary selection
+    menu and execute the sample selected by the user. 
 
     Remarks
     -------
-    It displays the menu to allow the user to select the samples to execute from the dictionary group. 
+    It displays the menu to allow the user to select the samples to execute from
+    the dictionary group. 
     
     Use
     ---    
 
-    From the main function perform the following steps:
-    `amenu = dictionary_menu()` # Instantiate the dictionary_menu class.
-    `amenu.dict_selection_menu()` # Display the dicitionary samples selection menu and execute the sample selected by the user. 
+    From the main function perform the following steps: `amenu =
+    dictionary_menu()` # Instantiate the dictionary_menu class.
+    `amenu.dict_selection_menu()` # Display the dicitionary samples selection
+    menu and execute the sample selected by the user. 
   
     &#34;&#34;&#34;
 
@@ -359,8 +371,8 @@ Display the dicitionary selection menu and execute the sample selected by the us
 
     def dict_selection_menu(self):
         &#34;&#34;&#34;
-            Display menu and process user&#39;s input.
-            Call the proper method based on the user&#39;s selection.
+            Display menu and process user&#39;s input.  Call the proper method based
+            on the user&#39;s selection.
         &#34;&#34;&#34;
        
         # Instantiate the dictionary menu class. 
@@ -411,15 +423,16 @@ Display the dicitionary selection menu and execute the sample selected by the us
 </code></dt>
 <dd>
 <div class="desc"><p>Display menu and process user's input.
-Call the proper method based on the user's selection.</p></div>
+Call the proper method based
+on the user's selection.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def dict_selection_menu(self):
     &#34;&#34;&#34;
-        Display menu and process user&#39;s input.
-        Call the proper method based on the user&#39;s selection.
+        Display menu and process user&#39;s input.  Call the proper method based
+        on the user&#39;s selection.
     &#34;&#34;&#34;
    
     # Instantiate the dictionary menu class. 
@@ -532,8 +545,8 @@ or methods like append() and extend().</p>
         -------
         Using curly brackets is one way to create a dictionary.
 
-        The `dict`  function is another way to create a dictionary. `dict`  is also
-        used to convert other objects to a dictionary.
+        The `dict`  function is another way to create a dictionary. `dict`  is
+        also used to convert other objects to a dictionary.
 
         &#34;&#34;&#34;
         
@@ -563,7 +576,8 @@ or methods like append() and extend().</p>
 
         Remarks
         -------
-        To access the value of a dictionary element you must use the related key.
+        To access the value of a dictionary element you must use the related
+        key.
         &#34;&#34;&#34;
         
         try:
@@ -578,15 +592,17 @@ or methods like append() and extend().</p>
 
     def print_dictionary_formatted(self):
         &#34;&#34;&#34;
-        Create a dictionary of keys a, b, c where each key value is a list from 1 to 10, 11 to 20, and 21 to 30, respectively. 
-        Then print the dictionary in format way. 
+        Create a dictionary of keys a, b, c where each key value is a list from
+        1 to 10, 11 to 20, and 21 to 30, respectively.  Then print the
+        dictionary in format way. 
 
         Remarks
         -------
-        The `pprint` module provides a capability to “pretty-print” arbitrary Python
-        data structures.  The formatted representation keeps objects on a single
-        line if it can, and breaks them onto multiple lines if they don’t fit within
-        the allowed width. For more information, see [pprint](https://docs.python.org/3/library/pprint.html?highlight=pprint). 
+        The `pprint` module provides a capability to “pretty-print” arbitrary
+        Python data structures.  The formatted representation keeps objects on a
+        single line if it can, and breaks them onto multiple lines if they don’t
+        fit within the allowed width. For more information, see
+        [pprint](https://docs.python.org/3/library/pprint.html?highlight=pprint). 
         &#34;&#34;&#34;
         
         try:
@@ -599,7 +615,8 @@ or methods like append() and extend().</p>
 
     def filter_dictionary(self, filter: int):
         &#34;&#34;&#34;
-        Filter the dictionary by removing all items with a value greater than the passed value.
+        Filter the dictionary by removing all items with a value greater than
+        the passed value.
 
         Parameters
         ----------
@@ -609,10 +626,11 @@ or methods like append() and extend().</p>
 
         Remarks
         -------
-        The example uses comprehension which is the expression inside `dict()`. The
-        comprehension iterates through the existing dictionary items, and if an item
-        is less or equal to the passed value, the item is added to a new dictionary.
-        For more information, see [comprehension in dictionaries](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#dictionaries).
+        The example uses comprehension which is the expression inside `dict()`.
+        The comprehension iterates through the existing dictionary items, and if
+        an item is less or equal to the passed value, the item is added to a new
+        dictionary.  For more information, see [comprehension in
+        dictionaries](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#dictionaries).
         &#34;&#34;&#34;
         
         try:
@@ -697,8 +715,8 @@ values.</p>
 <p>Using curly brackets is one way to create a dictionary.</p>
 <p>The <code>dict</code>
 function is another way to create a dictionary. <code>dict</code>
-is also
-used to convert other objects to a dictionary.</p></div>
+is
+also used to convert other objects to a dictionary.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -727,8 +745,8 @@ key2: str, value2: int):
     -------
     Using curly brackets is one way to create a dictionary.
 
-    The `dict`  function is another way to create a dictionary. `dict`  is also
-    used to convert other objects to a dictionary.
+    The `dict`  function is another way to create a dictionary. `dict`  is
+    also used to convert other objects to a dictionary.
 
     &#34;&#34;&#34;
     
@@ -749,24 +767,28 @@ key2: str, value2: int):
 <span>def <span class="ident">filter_dictionary</span></span>(<span>self, filter: int)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Filter the dictionary by removing all items with a value greater than the passed value.</p>
+<div class="desc"><p>Filter the dictionary by removing all items with a value greater than
+the passed value.</p>
 <h2 id="parameters">Parameters</h2>
 <dl>
 <dt><strong><code>filter</code></strong> :&ensp;<code>int</code></dt>
 <dd>The value to use for filtering the dictionary.</dd>
 </dl>
 <h2 id="remarks">Remarks</h2>
-<p>The example uses comprehension which is the expression inside <code>dict()</code>. The
-comprehension iterates through the existing dictionary items, and if an item
-is less or equal to the passed value, the item is added to a new dictionary.
-For more information, see <a href="https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#dictionaries">comprehension in dictionaries</a>.</p></div>
+<p>The example uses comprehension which is the expression inside <code>dict()</code>.
+The comprehension iterates through the existing dictionary items, and if
+an item is less or equal to the passed value, the item is added to a new
+dictionary.
+For more information, see <a href="https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#dictionaries">comprehension in
+dictionaries</a>.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def filter_dictionary(self, filter: int):
     &#34;&#34;&#34;
-    Filter the dictionary by removing all items with a value greater than the passed value.
+    Filter the dictionary by removing all items with a value greater than
+    the passed value.
 
     Parameters
     ----------
@@ -776,10 +798,11 @@ For more information, see <a href="https://docs.python.org/3/tutorial/datastruct
 
     Remarks
     -------
-    The example uses comprehension which is the expression inside `dict()`. The
-    comprehension iterates through the existing dictionary items, and if an item
-    is less or equal to the passed value, the item is added to a new dictionary.
-    For more information, see [comprehension in dictionaries](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#dictionaries).
+    The example uses comprehension which is the expression inside `dict()`.
+    The comprehension iterates through the existing dictionary items, and if
+    an item is less or equal to the passed value, the item is added to a new
+    dictionary.  For more information, see [comprehension in
+    dictionaries](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#dictionaries).
     &#34;&#34;&#34;
     
     try:
@@ -807,7 +830,8 @@ For more information, see <a href="https://docs.python.org/3/tutorial/datastruct
 <dd>The key of the element whose value must the obtained.</dd>
 </dl>
 <h2 id="remarks">Remarks</h2>
-<p>To access the value of a dictionary element you must use the related key.</p></div>
+<p>To access the value of a dictionary element you must use the related
+key.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -826,7 +850,8 @@ For more information, see <a href="https://docs.python.org/3/tutorial/datastruct
 
     Remarks
     -------
-    To access the value of a dictionary element you must use the related key.
+    To access the value of a dictionary element you must use the related
+    key.
     &#34;&#34;&#34;
     
     try:
@@ -918,29 +943,34 @@ For more information, see <a href="https://docs.python.org/3/tutorial/datastruct
 <span>def <span class="ident">print_dictionary_formatted</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Create a dictionary of keys a, b, c where each key value is a list from 1 to 10, 11 to 20, and 21 to 30, respectively.
-Then print the dictionary in format way. </p>
+<div class="desc"><p>Create a dictionary of keys a, b, c where each key value is a list from
+1 to 10, 11 to 20, and 21 to 30, respectively.
+Then print the
+dictionary in format way. </p>
 <h2 id="remarks">Remarks</h2>
-<p>The <code>pprint</code> module provides a capability to “pretty-print” arbitrary Python
-data structures.
-The formatted representation keeps objects on a single
-line if it can, and breaks them onto multiple lines if they don’t fit within
-the allowed width. For more information, see <a href="https://docs.python.org/3/library/pprint.html?highlight=pprint">pprint</a>.</p></div>
+<p>The <code>pprint</code> module provides a capability to “pretty-print” arbitrary
+Python data structures.
+The formatted representation keeps objects on a
+single line if it can, and breaks them onto multiple lines if they don’t
+fit within the allowed width. For more information, see
+<a href="https://docs.python.org/3/library/pprint.html?highlight=pprint">pprint</a>.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def print_dictionary_formatted(self):
     &#34;&#34;&#34;
-    Create a dictionary of keys a, b, c where each key value is a list from 1 to 10, 11 to 20, and 21 to 30, respectively. 
-    Then print the dictionary in format way. 
+    Create a dictionary of keys a, b, c where each key value is a list from
+    1 to 10, 11 to 20, and 21 to 30, respectively.  Then print the
+    dictionary in format way. 
 
     Remarks
     -------
-    The `pprint` module provides a capability to “pretty-print” arbitrary Python
-    data structures.  The formatted representation keeps objects on a single
-    line if it can, and breaks them onto multiple lines if they don’t fit within
-    the allowed width. For more information, see [pprint](https://docs.python.org/3/library/pprint.html?highlight=pprint). 
+    The `pprint` module provides a capability to “pretty-print” arbitrary
+    Python data structures.  The formatted representation keeps objects on a
+    single line if it can, and breaks them onto multiple lines if they don’t
+    fit within the allowed width. For more information, see
+    [pprint](https://docs.python.org/3/library/pprint.html?highlight=pprint). 
     &#34;&#34;&#34;
     
     try:
