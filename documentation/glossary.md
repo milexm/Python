@@ -6,6 +6,18 @@
 
 <hr style="border-top: 2px dashed blue"/>
 
+See also [Python glossary](https://docs.python.org/3/glossary.html#glossary). 
+
+## H ##
+
+### Hashable 
+
+An object is **hashable** if it has a **hash value which never changes during
+its lifetime** (it needs a __hash__() method), and can be compared to other
+objects (it needs an __eq__() method). Hashability makes an object usable as a
+dictionary key and a set member, because these data structures use the hash
+value internally.  For more information, see
+[hashable](https://docs.python.org/3/glossary.html#term-hashable).
 
 ## I ##
 

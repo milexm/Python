@@ -5,8 +5,8 @@ Execute samples from the dictionary group.
 
 from pprint import pprint
 
-# Append the path to the modules location.
-# This is important to allow pdoc to find the modules. 
+# Append the path to the modules location.  This is important to allow pdoc to
+# find the modules. 
 import sys
 
 sys.path.append('./code_examples/builtin_types')
@@ -58,8 +58,8 @@ class dictionary_samples:
         -------
         Using curly brackets is one way to create a dictionary.
 
-        The `dict`  function is another way to create a dictionary. `dict`  is also
-        used to convert other objects to a dictionary.
+        The `dict`  function is another way to create a dictionary. `dict`  is
+        also used to convert other objects to a dictionary.
 
         """
         
@@ -89,7 +89,8 @@ class dictionary_samples:
 
         Remarks
         -------
-        To access the value of a dictionary element you must use the related key.
+        To access the value of a dictionary element you must use the related
+        key.
         """
         
         try:
@@ -104,15 +105,17 @@ class dictionary_samples:
 
     def print_dictionary_formatted(self):
         """
-        Create a dictionary of keys a, b, c where each key value is a list from 1 to 10, 11 to 20, and 21 to 30, respectively. 
-        Then print the dictionary in format way. 
+        Create a dictionary of keys a, b, c where each key value is a list from
+        1 to 10, 11 to 20, and 21 to 30, respectively.  Then print the
+        dictionary in format way. 
 
         Remarks
         -------
-        The `pprint` module provides a capability to “pretty-print” arbitrary Python
-        data structures.  The formatted representation keeps objects on a single
-        line if it can, and breaks them onto multiple lines if they don’t fit within
-        the allowed width. For more information, see [pprint](https://docs.python.org/3/library/pprint.html?highlight=pprint). 
+        The `pprint` module provides a capability to “pretty-print” arbitrary
+        Python data structures.  The formatted representation keeps objects on a
+        single line if it can, and breaks them onto multiple lines if they don’t
+        fit within the allowed width. For more information, see
+        [pprint](https://docs.python.org/3/library/pprint.html?highlight=pprint). 
         """
         
         try:
@@ -125,7 +128,8 @@ class dictionary_samples:
 
     def filter_dictionary(self, filter: int):
         """
-        Filter the dictionary by removing all items with a value greater than the passed value.
+        Filter the dictionary by removing all items with a value greater than
+        the passed value.
 
         Parameters
         ----------
@@ -135,10 +139,11 @@ class dictionary_samples:
 
         Remarks
         -------
-        The example uses comprehension which is the expression inside `dict()`. The
-        comprehension iterates through the existing dictionary items, and if an item
-        is less or equal to the passed value, the item is added to a new dictionary.
-        For more information, see [comprehension in dictionaries](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#dictionaries).
+        The example uses comprehension which is the expression inside `dict()`.
+        The comprehension iterates through the existing dictionary items, and if
+        an item is less or equal to the passed value, the item is added to a new
+        dictionary.  For more information, see [comprehension in
+        dictionaries](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#dictionaries).
         """
         
         try:
@@ -205,19 +210,21 @@ class dictionary_samples:
 class dictionary_menu:
 
     """ 
-    Instantiate the dictionary_menu class.
-    Display the dicitionary selection menu and execute the sample selected by the user. 
+    Instantiate the dictionary_menu class.  Display the dicitionary selection
+    menu and execute the sample selected by the user. 
 
     Remarks
     -------
-    It displays the menu to allow the user to select the samples to execute from the dictionary group. 
+    It displays the menu to allow the user to select the samples to execute from
+    the dictionary group. 
     
     Use
     ---    
 
-    From the main function perform the following steps:
-    `amenu = dictionary_menu()` # Instantiate the dictionary_menu class.
-    `amenu.dict_selection_menu()` # Display the dicitionary samples selection menu and execute the sample selected by the user. 
+    From the main function perform the following steps: `amenu =
+    dictionary_menu()` # Instantiate the dictionary_menu class.
+    `amenu.dict_selection_menu()` # Display the dicitionary samples selection
+    menu and execute the sample selected by the user. 
   
     """
 
@@ -230,8 +237,8 @@ class dictionary_menu:
 
     def dict_selection_menu(self):
         """
-            Display menu and process user's input.
-            Call the proper method based on the user's selection.
+            Display menu and process user's input.  Call the proper method based
+            on the user's selection.
         """
        
         # Instantiate the dictionary menu class. 
