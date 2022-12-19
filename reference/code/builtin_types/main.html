@@ -39,10 +39,10 @@ sys.path.append(&#39;./code/builtin_types&#39;)
 from create_menu import create_menu  
 from lists import list_menu
 from dictionaries import dictionary_menu
-
+from strings import string_menu
 
 # Define the menu item list.  
-menuItems = [&#34;Lists&#34;, &#34;Dictionaries&#34;,&#34;Quit&#34;]
+menuItems = [&#34;Lists&#34;, &#34;Dictionaries&#34;, &#34;Strings&#34;, &#34;Quit&#34;]
 
 
 class group_menu:
@@ -56,7 +56,7 @@ class group_menu:
 
     Use
     ---    
-    In a terminal window enter: python [user path]./language_elements/main.py
+    In a terminal window enter: python [user path]./builtin_types/main.py
   
     &#34;&#34;&#34;
     def select_sample_group(self):
@@ -76,17 +76,24 @@ class group_menu:
             choice = group_menu.display_menu(menuItems, False)
 
             if choice == 1:
-                # Instantiate the listMenu class.
+                # Instantiate the list_menu class.
                 amenu = list_menu()
                 # Dispkay the list samples selection menu.
                 amenu.list_selection_menu()
                 dummy = group_menu.display_menu(menuItems, True)
 
             if choice == 2:
-                # Instantiate the dictionaryMenu class.
+                # Instantiate the dictionary_menu class.
                 amenu = dictionary_menu()
                 # Display the dictionary samples selection menu. 
                 amenu.dict_selection_menu()
+                dummy = group_menu.display_menu(menuItems, True)
+
+            if choice == 3:
+                # Instantiate the string_menu class.
+                amenu = string_menu()
+                # Display the string samples selection menu. 
+                amenu.string_selection_menu()
                 dummy = group_menu.display_menu(menuItems, True)
 
             elif choice == len(menuItems):
@@ -116,7 +123,7 @@ if __name__ == &#39;__main__&#39;:
 <h2 id="remarks">Remarks</h2>
 <p>It displays the menu to allow the user to select the group of examples to execute. It allows the sample group selection. </p>
 <h2 id="use">Use</h2>
-<p>In a terminal window enter: python [user path]./language_elements/main.py</p></div>
+<p>In a terminal window enter: python [user path]./builtin_types/main.py</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -132,7 +139,7 @@ if __name__ == &#39;__main__&#39;:
 
     Use
     ---    
-    In a terminal window enter: python [user path]./language_elements/main.py
+    In a terminal window enter: python [user path]./builtin_types/main.py
   
     &#34;&#34;&#34;
     def select_sample_group(self):
@@ -152,17 +159,24 @@ if __name__ == &#39;__main__&#39;:
             choice = group_menu.display_menu(menuItems, False)
 
             if choice == 1:
-                # Instantiate the listMenu class.
+                # Instantiate the list_menu class.
                 amenu = list_menu()
                 # Dispkay the list samples selection menu.
                 amenu.list_selection_menu()
                 dummy = group_menu.display_menu(menuItems, True)
 
             if choice == 2:
-                # Instantiate the dictionaryMenu class.
+                # Instantiate the dictionary_menu class.
                 amenu = dictionary_menu()
                 # Display the dictionary samples selection menu. 
                 amenu.dict_selection_menu()
+                dummy = group_menu.display_menu(menuItems, True)
+
+            if choice == 3:
+                # Instantiate the string_menu class.
+                amenu = string_menu()
+                # Display the string samples selection menu. 
+                amenu.string_selection_menu()
                 dummy = group_menu.display_menu(menuItems, True)
 
             elif choice == len(menuItems):
@@ -197,17 +211,24 @@ Calls the proper method based on the user's selection.</p></div>
         choice = group_menu.display_menu(menuItems, False)
 
         if choice == 1:
-            # Instantiate the listMenu class.
+            # Instantiate the list_menu class.
             amenu = list_menu()
             # Dispkay the list samples selection menu.
             amenu.list_selection_menu()
             dummy = group_menu.display_menu(menuItems, True)
 
         if choice == 2:
-            # Instantiate the dictionaryMenu class.
+            # Instantiate the dictionary_menu class.
             amenu = dictionary_menu()
             # Display the dictionary samples selection menu. 
             amenu.dict_selection_menu()
+            dummy = group_menu.display_menu(menuItems, True)
+
+        if choice == 3:
+            # Instantiate the string_menu class.
+            amenu = string_menu()
+            # Display the string samples selection menu. 
+            amenu.string_selection_menu()
             dummy = group_menu.display_menu(menuItems, True)
 
         elif choice == len(menuItems):
