@@ -4,15 +4,15 @@ last update: 12/17/22
 
 # ![python-icon](../../media/icons/python-icon.svg) Language builtin types
 
-- [Overview](#overview)
-- [1. Sequence types](#1-sequence-types)
-- [2. Mapping types](#2-mapping-types)
-- [3. Set types](#3-set-types)
-- [4. Examples](#4-examples)
-- [5. References](#5-references)
+- [1. Overview](#1-overview)
+- [2. Sequence types](#2-sequence-types)
+- [3. Mapping types](#3-mapping-types)
+- [4. Set types](#4-set-types)
+- [5. Examples](#5-examples)
+- [6. References](#6-references)
 
 
-## Overview 
+## 1. Overview 
 
 The **examples** in this folder show the use of Python builtin types and their
 meaning.  When choosing a builtin type, it is useful to understand the
@@ -25,8 +25,7 @@ user. For simplicity, the figure shows only the selection of the list samples.
 
 ![builtin types selection](../../media/python-builtin_types_selection.png) 
 
-
-## 1. Sequence types
+## 2. Sequence types
 
 There are three basic sequence types: **lists**, **tuples**, and **range** objects.
 Additional sequence types also exist that are tailored for processing of binary
@@ -53,7 +52,7 @@ is commonly used for looping a specific number of times **in for loops**.  For
 more information, see
 [ranges](https://docs.python.org/3/library/stdtypes.html#ranges).
 
-## 2. Mapping types
+## 3. Mapping types
 
 **Dictionary**. Dictionaries, unlike sequences which are
 indexed by a range of numbers, are indexed by keys, which can be
@@ -63,7 +62,7 @@ members**. For more information, see [mapping types —
 dict](https://docs.python.org/3/library/stdtypes.html#mapping-types-dict) and
 [dictionaries](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#dictionaries).
 
-## 3. Set types
+## 4. Set types
 
 **Set**. A set object is an unordered collection of distinct
 [hashable](../../documentation/glossary.md#hashable) objects.  Common uses
@@ -89,7 +88,7 @@ and
 > whenever you like.  As of Python version 3.7, dictionaries are ordered. In
 > Python 3.6 and earlier, dictionaries are unordered.
 
-## 4. Examples 
+## 5. Examples 
 
 The following are collections related examples.
 
@@ -99,7 +98,7 @@ The following are collections related examples.
 | [dictionaries.py](dictionaries.py)         |Examples showing the use of dicitonary| 
 |                                            |                                      |
 
-## 5. References
+## 6. References
 
 - [Python 3.11.1 documentation](https://docs.python.org/3/)
   - [The Python Standard Library](https://docs.python.org/3/library/index.html#the-python-standard-library)
