@@ -4,16 +4,26 @@ last update: 12/17/22
 
 # ![python-icon](../../media/icons/python-icon.svg) Language builtin types
 
-The **examples** in this folder show the use of Python builtin types and their meaning. 
-When choosing a builtin type, it is useful to understand the properties of
-that type.  Choosing the right type for a particular data set could mean
-retention of meaning, and, it could mean an increase in efficiency or security.
-
+- [Overview](#overview)
 - [1. Sequence types](#1-sequence-types)
 - [2. Mapping types](#2-mapping-types)
 - [3. Set types](#3-set-types)
 - [4. Examples](#4-examples)
 - [5. References](#5-references)
+
+
+## Overview 
+
+The **examples** in this folder show the use of Python builtin types and their
+meaning.  When choosing a builtin type, it is useful to understand the
+properties of that type.  Choosing the right type for a particular data set
+could mean retention of meaning, and, it could mean an increase in efficiency or
+security.
+
+The following figure shows the code involved in selecting a sample to run by the
+user. For simplicity, the figure shows only the selection of the list samples. 
+
+![builtin types selection](../../media/python-builtin_types_selection.png) 
 
 
 ## 1. Sequence types

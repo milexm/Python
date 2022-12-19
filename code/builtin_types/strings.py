@@ -17,7 +17,7 @@ class string_samples:
         """ Initialize the class `string_samples` instance. """
 
         # Define the entries of the string samples menu. 
-        self.astring = " Hello World! "
+        self.astring = " Hello, World! "
 
     def create_string(self):
         print(f'This is a string: {self.astring}')
@@ -28,7 +28,7 @@ class string_samples:
 
     def strip_white_spaces(self):
         # Remove leadiing and trailing white spaces. 
-        print(f'String without white spaces: {self.astring.strip(" ")}')
+        print(f'String without white spaces: {self.astring.strip()}')
         
     def get_lower_case_string(self):
         lower_case_string =  self.astring.lower()
@@ -39,8 +39,6 @@ class string_samples:
         print(f'Upper case string: {upper_case_string}')
      
     def split_string(self):
-        # Add separating character.
-        self.astring = " Hellom, World! "
         # Split using separating character.
         split_string =  self.astring.split(',')
         print(f'Split string: {split_string}')

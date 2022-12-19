@@ -11,10 +11,18 @@ class create_menu:
     Remarks
     -------
     This class main method displays the menu to allow the user's selection.
-    It also prompt the user to input a number from the allowed choices. 
+    It also prompts the user to input a number from the allowed choices. 
     """
 
     def __init__(self, name:str):
+        """ Iitialize the class instance.
+        
+        Parameters
+        ----------
+        name: 
+            The name of the menu to display. 
+
+        """
         self.menu_name = name
    
     def input_number(self, prompt):
@@ -40,7 +48,7 @@ class create_menu:
         Parameters
         ----------
         options: 
-            Array of strings
+            Array of strings representing the menu elements. 
 
         display: 
             Boolean
@@ -52,7 +60,7 @@ class create_menu:
 
         Use
         ----
-        choice = displayMenu(options, display)
+        choice = display_menu(options, display)
 
         """
         # Display menu
