@@ -10,10 +10,10 @@ sys.path.append('./code/builtin_types')
 from create_menu import create_menu  
 from lists import list_menu
 from dictionaries import dictionary_menu
-
+from strings import string_menu
 
 # Define the menu item list.  
-menuItems = ["Lists", "Dictionaries","Quit"]
+menuItems = ["Lists", "Dictionaries", "Strings", "Quit"]
 
 
 class group_menu:
@@ -27,7 +27,7 @@ class group_menu:
 
     Use
     ---    
-    In a terminal window enter: python [user path]./language_elements/main.py
+    In a terminal window enter: python [user path]./builtin_types/main.py
   
     """
     def select_sample_group(self):
@@ -47,17 +47,24 @@ class group_menu:
             choice = group_menu.display_menu(menuItems, False)
 
             if choice == 1:
-                # Instantiate the listMenu class.
+                # Instantiate the list_menu class.
                 amenu = list_menu()
                 # Dispkay the list samples selection menu.
                 amenu.list_selection_menu()
                 dummy = group_menu.display_menu(menuItems, True)
 
             if choice == 2:
-                # Instantiate the dictionaryMenu class.
+                # Instantiate the dictionary_menu class.
                 amenu = dictionary_menu()
                 # Display the dictionary samples selection menu. 
                 amenu.dict_selection_menu()
+                dummy = group_menu.display_menu(menuItems, True)
+
+            if choice == 3:
+                # Instantiate the string_menu class.
+                amenu = string_menu()
+                # Display the string samples selection menu. 
+                amenu.string_selection_menu()
                 dummy = group_menu.display_menu(menuItems, True)
 
             elif choice == len(menuItems):

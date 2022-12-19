@@ -45,9 +45,8 @@ more information, see
 
 ## 2. Mapping types
 
-**Dictionary**. Dictionaries are sometimes found in other languages as
-_associative memories_ or _associative arrays_. Unlike sequences, which are
-indexed by a range of numbers, dictionaries are indexed by keys, which can be
+**Dictionary**. Dictionaries, unlike sequences which are
+indexed by a range of numbers, are indexed by keys, which can be
 **any immutable type** such as **strings** and **numbers**.  
 A dictionary is **ordered** and **mutable**. It **does not allow duplicate
 members**. For more information, see [mapping types —

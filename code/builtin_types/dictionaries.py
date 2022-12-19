@@ -1,6 +1,15 @@
 """ 
 Execute samples from the dictionary group. 
 
+Dictionaries, unlike sequences which are
+indexed by a range of numbers, are indexed by keys, which can be
+**any immutable type** such as **strings** and **numbers**.  
+A dictionary is **ordered** and **mutable**. It **does not allow duplicate
+members**. For more information, see [mapping types —
+dict](https://docs.python.org/3/library/stdtypes.html#mapping-types-dict) and
+[dictionaries](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#dictionaries).
+
+
 """
 
 from pprint import pprint
