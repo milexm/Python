@@ -40,10 +40,18 @@ class create_menu:
     Remarks
     -------
     This class main method displays the menu to allow the user&#39;s selection.
-    It also prompt the user to input a number from the allowed choices. 
+    It also prompts the user to input a number from the allowed choices. 
     &#34;&#34;&#34;
 
     def __init__(self, name:str):
+        &#34;&#34;&#34; Iitialize the class instance.
+        
+        Parameters
+        ----------
+        name: 
+            The name of the menu to display. 
+
+        &#34;&#34;&#34;
         self.menu_name = name
    
     def input_number(self, prompt):
@@ -69,7 +77,7 @@ class create_menu:
         Parameters
         ----------
         options: 
-            Array of strings
+            Array of strings representing the menu elements. 
 
         display: 
             Boolean
@@ -81,7 +89,7 @@ class create_menu:
 
         Use
         ----
-        choice = displayMenu(options, display)
+        choice = display_menu(options, display)
 
         &#34;&#34;&#34;
         # Display menu
@@ -126,7 +134,13 @@ class create_menu:
 <div class="desc"><p>Defines a menu class </p>
 <h2 id="remarks">Remarks</h2>
 <p>This class main method displays the menu to allow the user's selection.
-It also prompt the user to input a number from the allowed choices.</p></div>
+It also prompts the user to input a number from the allowed choices. </p>
+<p>Iitialize the class instance.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>name</code></strong></dt>
+<dd>The name of the menu to display.</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -138,10 +152,18 @@ It also prompt the user to input a number from the allowed choices.</p></div>
     Remarks
     -------
     This class main method displays the menu to allow the user&#39;s selection.
-    It also prompt the user to input a number from the allowed choices. 
+    It also prompts the user to input a number from the allowed choices. 
     &#34;&#34;&#34;
 
     def __init__(self, name:str):
+        &#34;&#34;&#34; Iitialize the class instance.
+        
+        Parameters
+        ----------
+        name: 
+            The name of the menu to display. 
+
+        &#34;&#34;&#34;
         self.menu_name = name
    
     def input_number(self, prompt):
@@ -167,7 +189,7 @@ It also prompt the user to input a number from the allowed choices.</p></div>
         Parameters
         ----------
         options: 
-            Array of strings
+            Array of strings representing the menu elements. 
 
         display: 
             Boolean
@@ -179,7 +201,7 @@ It also prompt the user to input a number from the allowed choices.</p></div>
 
         Use
         ----
-        choice = displayMenu(options, display)
+        choice = display_menu(options, display)
 
         &#34;&#34;&#34;
         # Display menu
@@ -217,7 +239,7 @@ number of the option chosen.</p>
 <h2 id="parameters">Parameters</h2>
 <dl>
 <dt><strong><code>options</code></strong></dt>
-<dd>Array of strings</dd>
+<dd>Array of strings representing the menu elements.</dd>
 <dt><strong><code>display</code></strong></dt>
 <dd>Boolean</dd>
 </dl>
@@ -228,7 +250,7 @@ number of the option chosen.</p>
 </dl>
 <p>the menu.</p>
 <h2 id="use">Use</h2>
-<p>choice = displayMenu(options, display)</p></div>
+<p>choice = display_menu(options, display)</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -241,7 +263,7 @@ number of the option chosen.</p>
     Parameters
     ----------
     options: 
-        Array of strings
+        Array of strings representing the menu elements. 
 
     display: 
         Boolean
@@ -253,7 +275,7 @@ number of the option chosen.</p>
 
     Use
     ----
-    choice = displayMenu(options, display)
+    choice = display_menu(options, display)
 
     &#34;&#34;&#34;
     # Display menu

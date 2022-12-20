@@ -46,7 +46,7 @@ class string_samples:
         &#34;&#34;&#34; Initialize the class `string_samples` instance. &#34;&#34;&#34;
 
         # Define the entries of the string samples menu. 
-        self.astring = &#34; Hello World! &#34;
+        self.astring = &#34; Hello, World! &#34;
 
     def create_string(self):
         print(f&#39;This is a string: {self.astring}&#39;)
@@ -57,7 +57,7 @@ class string_samples:
 
     def strip_white_spaces(self):
         # Remove leadiing and trailing white spaces. 
-        print(f&#39;String without white spaces: {self.astring.strip(&#34; &#34;)}&#39;)
+        print(f&#39;String without white spaces: {self.astring.strip()}&#39;)
         
     def get_lower_case_string(self):
         lower_case_string =  self.astring.lower()
@@ -68,8 +68,6 @@ class string_samples:
         print(f&#39;Upper case string: {upper_case_string}&#39;)
      
     def split_string(self):
-        # Add separating character.
-        self.astring = &#34; Hellom, World! &#34;
         # Split using separating character.
         split_string =  self.astring.split(&#39;,&#39;)
         print(f&#39;Split string: {split_string}&#39;)
@@ -99,55 +97,55 @@ class string_menu:
     &#34;&#34;&#34;
 
     def __init__(self):
-        &#34;&#34;&#34; Initialize the class `dictionary_menu` instance. &#34;&#34;&#34;
+        &#34;&#34;&#34; Initialize the class `string_menu` instance. &#34;&#34;&#34;
 
         # Define the entries of the string samples menu. 
         self.menu_items = [&#34;Create a string&#34;, &#34;Get a substring&#34;, &#34;Remove white spaces&#34;, &#34;Make lower case&#34;, &#34;Make upper case&#34;, &#34;Split string&#34;, &#34;Quit&#34;]
     
+        # Instantiate the string menu class. 
+        self.stringmenu = create_menu(&#34;String Menu&#34;)
+        
+        # Instantiate the string sample class
+        self.stringsamples = string_samples()
+
 
     def string_selection_menu(self):
         &#34;&#34;&#34;
             Display menu and process user&#39;s input.  Call the proper method based
             on the user&#39;s selection.
         &#34;&#34;&#34;
-       
-        # Instantiate the string menu class. 
-        stringmenu = create_menu(&#34;String Menu&#34;)
-        
-        # Instantiate the string sample class
-        stringsamples = string_samples()
 
         # Display the menu but ignore the user&#39;s choice.
-        dummy = stringmenu.display_menu(self.menu_items, True)
+        dummy = self.stringmenu.display_menu(self.menu_items, True)
 
         while True:
             # Get the user&#39;s choice and do not display the menu.
-            choice = stringmenu.display_menu(self.menu_items, False)
+            choice = self.stringmenu.display_menu(self.menu_items, False)
 
             if choice == 1:
                 print(&#34;\n*** Create a simple string ***&#34;)
-                stringsamples.create_string()
-                dummy = stringmenu.display_menu(self.menu_items, True)
+                self.stringsamples.create_string()
+                dummy = self.stringmenu.display_menu(self.menu_items, True)
             elif choice == 2:
                 print(&#34;\n*** Get a substring ***&#34;)
-                stringsamples.get_sub_string()
-                dummy = stringmenu.display_menu(self.menu_items, True)
+                self.stringsamples.get_sub_string()
+                dummy = self.stringmenu.display_menu(self.menu_items, True)
             elif choice == 3:
                 print(&#34;\n*** Strip white spaces ***&#34;)
-                stringsamples.strip_white_spaces()
-                dummy = stringmenu.display_menu(self.menu_items, True)
+                self.stringsamples.strip_white_spaces()
+                dummy = self.stringmenu.display_menu(self.menu_items, True)
             elif choice == 4:
                 print(&#34;\n*** Get lower case string ***&#34;)
-                stringsamples.get_lower_case_string()
-                dummy = stringmenu.display_menu(self.menu_items, True)
+                self.stringsamples.get_lower_case_string()
+                dummy = self.stringmenu.display_menu(self.menu_items, True)
             elif choice == 5:
                 print(&#34;\n*** Get upper case string ***&#34;)
-                stringsamples.get_upper_case_string()
-                dummy = stringmenu.display_menu(self.menu_items, True)
+                self.stringsamples.get_upper_case_string()
+                dummy = self.stringmenu.display_menu(self.menu_items, True)
             elif choice == 6:
                 print(&#34;\n*** Split string ***&#34;)
-                stringsamples.split_string()
-                dummy = stringmenu.display_menu(self.menu_items, True)
+                self.stringsamples.split_string()
+                dummy = self.stringmenu.display_menu(self.menu_items, True)
             elif choice == len(self.menu_items):
                 break</code></pre>
 </details>
@@ -176,7 +174,7 @@ the string group. </p>
 string_menu()</code> # Instantiate the dictionary_menu class.
 <code>amenu.string_selection_menu()</code> # Display the dicitionary samples selection
 menu and execute the sample selected by the user. </p>
-<p>Initialize the class <code>dictionary_menu</code> instance.</p></div>
+<p>Initialize the class <code><a title="code.builtin_types.strings.string_menu" href="#code.builtin_types.strings.string_menu">string_menu</a></code> instance.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -203,55 +201,55 @@ menu and execute the sample selected by the user. </p>
     &#34;&#34;&#34;
 
     def __init__(self):
-        &#34;&#34;&#34; Initialize the class `dictionary_menu` instance. &#34;&#34;&#34;
+        &#34;&#34;&#34; Initialize the class `string_menu` instance. &#34;&#34;&#34;
 
         # Define the entries of the string samples menu. 
         self.menu_items = [&#34;Create a string&#34;, &#34;Get a substring&#34;, &#34;Remove white spaces&#34;, &#34;Make lower case&#34;, &#34;Make upper case&#34;, &#34;Split string&#34;, &#34;Quit&#34;]
     
+        # Instantiate the string menu class. 
+        self.stringmenu = create_menu(&#34;String Menu&#34;)
+        
+        # Instantiate the string sample class
+        self.stringsamples = string_samples()
+
 
     def string_selection_menu(self):
         &#34;&#34;&#34;
             Display menu and process user&#39;s input.  Call the proper method based
             on the user&#39;s selection.
         &#34;&#34;&#34;
-       
-        # Instantiate the string menu class. 
-        stringmenu = create_menu(&#34;String Menu&#34;)
-        
-        # Instantiate the string sample class
-        stringsamples = string_samples()
 
         # Display the menu but ignore the user&#39;s choice.
-        dummy = stringmenu.display_menu(self.menu_items, True)
+        dummy = self.stringmenu.display_menu(self.menu_items, True)
 
         while True:
             # Get the user&#39;s choice and do not display the menu.
-            choice = stringmenu.display_menu(self.menu_items, False)
+            choice = self.stringmenu.display_menu(self.menu_items, False)
 
             if choice == 1:
                 print(&#34;\n*** Create a simple string ***&#34;)
-                stringsamples.create_string()
-                dummy = stringmenu.display_menu(self.menu_items, True)
+                self.stringsamples.create_string()
+                dummy = self.stringmenu.display_menu(self.menu_items, True)
             elif choice == 2:
                 print(&#34;\n*** Get a substring ***&#34;)
-                stringsamples.get_sub_string()
-                dummy = stringmenu.display_menu(self.menu_items, True)
+                self.stringsamples.get_sub_string()
+                dummy = self.stringmenu.display_menu(self.menu_items, True)
             elif choice == 3:
                 print(&#34;\n*** Strip white spaces ***&#34;)
-                stringsamples.strip_white_spaces()
-                dummy = stringmenu.display_menu(self.menu_items, True)
+                self.stringsamples.strip_white_spaces()
+                dummy = self.stringmenu.display_menu(self.menu_items, True)
             elif choice == 4:
                 print(&#34;\n*** Get lower case string ***&#34;)
-                stringsamples.get_lower_case_string()
-                dummy = stringmenu.display_menu(self.menu_items, True)
+                self.stringsamples.get_lower_case_string()
+                dummy = self.stringmenu.display_menu(self.menu_items, True)
             elif choice == 5:
                 print(&#34;\n*** Get upper case string ***&#34;)
-                stringsamples.get_upper_case_string()
-                dummy = stringmenu.display_menu(self.menu_items, True)
+                self.stringsamples.get_upper_case_string()
+                dummy = self.stringmenu.display_menu(self.menu_items, True)
             elif choice == 6:
                 print(&#34;\n*** Split string ***&#34;)
-                stringsamples.split_string()
-                dummy = stringmenu.display_menu(self.menu_items, True)
+                self.stringsamples.split_string()
+                dummy = self.stringmenu.display_menu(self.menu_items, True)
             elif choice == len(self.menu_items):
                 break</code></pre>
 </details>
@@ -273,44 +271,38 @@ on the user's selection.</p></div>
         Display menu and process user&#39;s input.  Call the proper method based
         on the user&#39;s selection.
     &#34;&#34;&#34;
-   
-    # Instantiate the string menu class. 
-    stringmenu = create_menu(&#34;String Menu&#34;)
-    
-    # Instantiate the string sample class
-    stringsamples = string_samples()
 
     # Display the menu but ignore the user&#39;s choice.
-    dummy = stringmenu.display_menu(self.menu_items, True)
+    dummy = self.stringmenu.display_menu(self.menu_items, True)
 
     while True:
         # Get the user&#39;s choice and do not display the menu.
-        choice = stringmenu.display_menu(self.menu_items, False)
+        choice = self.stringmenu.display_menu(self.menu_items, False)
 
         if choice == 1:
             print(&#34;\n*** Create a simple string ***&#34;)
-            stringsamples.create_string()
-            dummy = stringmenu.display_menu(self.menu_items, True)
+            self.stringsamples.create_string()
+            dummy = self.stringmenu.display_menu(self.menu_items, True)
         elif choice == 2:
             print(&#34;\n*** Get a substring ***&#34;)
-            stringsamples.get_sub_string()
-            dummy = stringmenu.display_menu(self.menu_items, True)
+            self.stringsamples.get_sub_string()
+            dummy = self.stringmenu.display_menu(self.menu_items, True)
         elif choice == 3:
             print(&#34;\n*** Strip white spaces ***&#34;)
-            stringsamples.strip_white_spaces()
-            dummy = stringmenu.display_menu(self.menu_items, True)
+            self.stringsamples.strip_white_spaces()
+            dummy = self.stringmenu.display_menu(self.menu_items, True)
         elif choice == 4:
             print(&#34;\n*** Get lower case string ***&#34;)
-            stringsamples.get_lower_case_string()
-            dummy = stringmenu.display_menu(self.menu_items, True)
+            self.stringsamples.get_lower_case_string()
+            dummy = self.stringmenu.display_menu(self.menu_items, True)
         elif choice == 5:
             print(&#34;\n*** Get upper case string ***&#34;)
-            stringsamples.get_upper_case_string()
-            dummy = stringmenu.display_menu(self.menu_items, True)
+            self.stringsamples.get_upper_case_string()
+            dummy = self.stringmenu.display_menu(self.menu_items, True)
         elif choice == 6:
             print(&#34;\n*** Split string ***&#34;)
-            stringsamples.split_string()
-            dummy = stringmenu.display_menu(self.menu_items, True)
+            self.stringsamples.split_string()
+            dummy = self.stringmenu.display_menu(self.menu_items, True)
         elif choice == len(self.menu_items):
             break</code></pre>
 </details>
@@ -332,7 +324,7 @@ on the user's selection.</p></div>
         &#34;&#34;&#34; Initialize the class `string_samples` instance. &#34;&#34;&#34;
 
         # Define the entries of the string samples menu. 
-        self.astring = &#34; Hello World! &#34;
+        self.astring = &#34; Hello, World! &#34;
 
     def create_string(self):
         print(f&#39;This is a string: {self.astring}&#39;)
@@ -343,7 +335,7 @@ on the user's selection.</p></div>
 
     def strip_white_spaces(self):
         # Remove leadiing and trailing white spaces. 
-        print(f&#39;String without white spaces: {self.astring.strip(&#34; &#34;)}&#39;)
+        print(f&#39;String without white spaces: {self.astring.strip()}&#39;)
         
     def get_lower_case_string(self):
         lower_case_string =  self.astring.lower()
@@ -354,8 +346,6 @@ on the user's selection.</p></div>
         print(f&#39;Upper case string: {upper_case_string}&#39;)
      
     def split_string(self):
-        # Add separating character.
-        self.astring = &#34; Hellom, World! &#34;
         # Split using separating character.
         split_string =  self.astring.split(&#39;,&#39;)
         print(f&#39;Split string: {split_string}&#39;)</code></pre>
@@ -427,8 +417,6 @@ on the user's selection.</p></div>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def split_string(self):
-    # Add separating character.
-    self.astring = &#34; Hellom, World! &#34;
     # Split using separating character.
     split_string =  self.astring.split(&#39;,&#39;)
     print(f&#39;Split string: {split_string}&#39;)</code></pre>
@@ -445,7 +433,7 @@ on the user's selection.</p></div>
 </summary>
 <pre><code class="python">def strip_white_spaces(self):
     # Remove leadiing and trailing white spaces. 
-    print(f&#39;String without white spaces: {self.astring.strip(&#34; &#34;)}&#39;)</code></pre>
+    print(f&#39;String without white spaces: {self.astring.strip()}&#39;)</code></pre>
 </details>
 </dd>
 </dl>
