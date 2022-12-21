@@ -10,7 +10,7 @@ class create_menu:
 
     Remarks
     -------
-    This class main method displays the menu to allow the user's selection.
+    Display the menu to allow the user's selection.
     It also prompts the user to input a number from the allowed choices. 
     """
 
@@ -42,30 +42,18 @@ class create_menu:
 
     def display_menu(self, options:list):
         """ 
-        Displays a menu of options the user can choose from. It returns the 
-        number of the option chosen.
+        Display the menu of options the user can choose from. 
         
         Parameters
         ----------
         options: 
-            Array of strings representing the menu elements. 
-
-        display: 
-            Boolean
-
-        Returns
-        -------
-        If display is True, it returns the integer representing the user's choice; otherwise it returns zero (dummy). In both cases, it displays 
-        the menu.
-
-        Use
-        ----
-        choice = display_menu(options, display)
+            List of strings representing the menu elements. 
 
         """
         # Display menu name. 
         print(f"\n*** {self.menu_name} ***") 
 
+        # Display the menu options.
         for i in range(len(options)):
             # print("{:d}->{:s}  ".format(i+1, options[i]), end=' ')
             if ((i+1)%3!=0):
@@ -82,29 +70,21 @@ class create_menu:
 
     def get_user_choice(self, options:list):
         """ 
-        Displays a menu of options the user can choose from. It returns the 
-        number of the option chosen.
+        Prompt the user to input a number from the allowed choices. 
+        Get the choice made by the user.
         
         Parameters
         ----------
         options: 
-            Array of strings representing the menu elements. 
-
-        display: 
-            Boolean
+            List of strings representing the menu elements. 
 
         Returns
         -------
-        If display is True, it returns the integer representing the user's choice; otherwise it returns zero (dummy). In both cases, it displays 
-        the menu.
-
-        Use
-        ----
-        choice = display_menu(options, display)
+        choice: int 
+            The number indicating the user's choice. 
 
         """
         # Get a valid menu choice
-       
         choice = 0
         while not(np.any(choice == np.arange(len(options))+1)):
             choice = self.input_number("\nMake allowed selection number; " + str(len(options)) +  " to quit: ")

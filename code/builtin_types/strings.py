@@ -85,36 +85,38 @@ class string_menu:
             on the user's selection.
         """
 
-        # Display the menu but ignore the user's choice.
-        dummy = self.stringmenu.display_menu(self.menu_items, True)
-
         while True:
-            # Get the user's choice and do not display the menu.
-            choice = self.stringmenu.display_menu(self.menu_items, False)
+
+            
+            # Display the menu.
+            self.stringmenu.display_menu(self.menu_items)
+
+            # Get the user's choice.
+            choice = self.stringmenu.get_user_choice(self.menu_items)
 
             if choice == 1:
                 print("\n*** Create a simple string ***")
                 self.stringsamples.create_string()
-                dummy = self.stringmenu.display_menu(self.menu_items, True)
+                
             elif choice == 2:
                 print("\n*** Get a substring ***")
                 self.stringsamples.get_sub_string()
-                dummy = self.stringmenu.display_menu(self.menu_items, True)
+                
             elif choice == 3:
                 print("\n*** Strip white spaces ***")
                 self.stringsamples.strip_white_spaces()
-                dummy = self.stringmenu.display_menu(self.menu_items, True)
+                
             elif choice == 4:
                 print("\n*** Get lower case string ***")
                 self.stringsamples.get_lower_case_string()
-                dummy = self.stringmenu.display_menu(self.menu_items, True)
+                
             elif choice == 5:
                 print("\n*** Get upper case string ***")
                 self.stringsamples.get_upper_case_string()
-                dummy = self.stringmenu.display_menu(self.menu_items, True)
+                
             elif choice == 6:
                 print("\n*** Split string ***")
                 self.stringsamples.split_string()
-                dummy = self.stringmenu.display_menu(self.menu_items, True)
+                
             elif choice == len(self.menu_items):
                 break

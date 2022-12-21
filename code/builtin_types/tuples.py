@@ -143,7 +143,7 @@ class tuple_menu:
         while True:
 
             # Just display the menu.
-            dummy = self.tuplemenu.display_menu(self.menu_items)
+            self.tuplemenu.display_menu(self.menu_items)
 
             # Get the user's choice.
             choice = self.tuplemenu.get_user_choice(self.menu_items)

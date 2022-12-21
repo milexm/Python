@@ -49,7 +49,7 @@ class group_menu:
         while True:
 
             # Display the menu.
-            dummy = self.group_menu.display_menu(self.menu_items)
+            self.group_menu.display_menu(self.menu_items)
 
             # Get the user's choice.
             choice = self.group_menu.get_user_choice(self.menu_items)
