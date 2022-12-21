@@ -6,13 +6,10 @@ Allow the user to select a sample group.
 # Append the path to the modules location.
 # This is important to allow pdoc to find the modules. 
 import sys
-sys.path.append('./code/builtin_types')
+sys.path.append('./code/templates/test_samples_templates')
 
 from create_menu import create_menu  
-from lists import list_menu
-from tuples import tuple_menu
-from dictionaries import dictionary_menu
-from strings import string_menu
+from test_samples import nnn_menu
 
 
 class group_menu:
@@ -34,7 +31,7 @@ class group_menu:
         """ Initialize the class `self.group_menu` instance. """
 
         # Define the entries of the group menu. 
-        self.menu_items = ["Lists", "Tuples", "Dictionaries", "Strings", "Quit"]
+        self.menu_items = ["Samples template", "Quit"]
         
         # Instantiate the group menu class. 
         self.group_menu = create_menu("Group Menu")
@@ -46,39 +43,19 @@ class group_menu:
             Call the group selection menu based on the user's selection.
         """
 
+        # Display the menu but ignore the user's choice.
+        dummy = self.group_menu.display_menu(self.menu_items, True)
+
         while True:
-
-            # Display the menu.
-            dummy = self.group_menu.display_menu(self.menu_items)
-
-            # Get the user's choice.
-            choice = self.group_menu.get_user_choice(self.menu_items)
+            # Get the user's choice and do not display the menu.
+            choice = self.group_menu.display_menu(self.menu_items, False)
 
             if choice == 1:
                 # Instantiate the list_menu class.
-                amenu = list_menu()
+                amenu = nnn_menu()
                 # Display the list samples selection menu.
-                amenu.list_selection_menu()
-                
-            if choice == 2:
-                # Instantiate the tuple_menu class.
-                amenu = tuple_menu()
-                # Display the tuple samples selection menu. 
-                amenu.tuple_selection_menu()
-                
-            if choice == 3:
-                # Instantiate the dictionary_menu class.
-                amenu = dictionary_menu()
-                # Display the dictionary samples selection menu. 
-                amenu.dict_selection_menu()
-                
-            if choice == 4:
-                # Instantiate the string_menu class.
-                amenu = string_menu()
-                # Display the string samples selection menu. 
-                amenu.string_selection_menu()
-                
-
+                amenu.nnn_selection_menu()
+                dummy = self.group_menu.display_menu(self.menu_items, True)
             elif choice == len(self.menu_items):
                 break
 

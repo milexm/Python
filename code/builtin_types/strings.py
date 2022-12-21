@@ -10,6 +10,7 @@ sys.path.append('./code/builtin_types')
 
 from create_menu import create_menu
 
+##### ****** Samples class ****** #####
 
 class string_samples:
 
@@ -44,26 +45,24 @@ class string_samples:
         print(f'Split string: {split_string}')
        
 
-##### ****** Selection Menu ****** #####
+##### ****** Menu class ****** #####
 
 class string_menu:
 
     """ 
-    Instantiate the string_menu class.  Display the string selection
-    menu and execute the sample selected by the user. 
+    Instantiate the menu class and create the menu.
+    Display the selection menu and execute the sample selected by the user. 
 
     Remarks
     -------
-    It displays the menu to allow the user to select the samples to execute from
-    the string group. 
-    
+   Display the menu to allow the user to select the sample to execute.
+
     Use
     ---    
+    In the calling module perform the following steps: 
 
-    From the main function perform the following steps: `amenu =
-    string_menu()` # Instantiate the dictionary_menu class.
-    `amenu.string_selection_menu()` # Display the dicitionary samples selection
-    menu and execute the sample selected by the user. 
+    1_ `amenu = string_menu()` # Instantiate the create_menu class and create the menu.  
+    1_ `amenu.string_selection_menu()` # Display the menu and execute the sample selected by the user.
   
     """
 

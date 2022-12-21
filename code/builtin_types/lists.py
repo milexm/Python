@@ -21,6 +21,8 @@ sys.path.append('./code/builtin_types')
 
 from create_menu import create_menu
 
+##### ****** Samples class ****** #####
+
 class list_samples:
     """ 
     Examples showing the use of lists. 
@@ -529,26 +531,25 @@ class list_samples:
             print(f"{type(error).__name__} was raised: {error}") 
 
 
-##### ****** Selection Menu ****** #####
+##### ****** Menu class ****** #####
 
 class list_menu:
 
     """ 
-    Executes the samples in the list group  
+    Instantiate the menu class and create the menu.
+    Display the selection menu and execute the sample selected by the user.  
     
     Remarks
     -------
-    This class main nethod displays the menu to allow the user to select the
-    sample to execute.  It also instantiates the local `list_samples` class to
-    execute the list samples as selected by the user. 
+    Display the menu to allow the user to select the sample to execute.
     
     Use
     ---    
+    In the calling module perform the following steps: 
+    1_ `amenu = list_menu()` # Instantiate the list_menu class.
+    1_ `amenu.list_selection_menu()` # Display the list samples selection
+    menu. 
 
-    From the main function perform the following steps: `amenu = list_menu()` #
-    Instantiate the self.listmenu class.  `amenu.list_selection_menu()` # Dispkay the
-    list samples selection menu.
-  
     """
 
     def __init__(self):
@@ -559,7 +560,7 @@ class list_menu:
         "Remove duplicated list elments", "Perform list indexing",
         "Change list elements", "Add element to a list", "Slice a list", "Apply list methods", "Use a list as a stack", "Use a list as a queue", "Quit"]
     
-        # Instantiate the list menu class. 
+        # Instantiate the list menu class and create menu.
         self.listmenu = create_menu("List Menu")
 
         # Instantiate the list samples class. 
