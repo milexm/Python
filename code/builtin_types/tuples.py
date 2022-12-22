@@ -71,6 +71,11 @@ class tuple_samples:
             my_tuple = ("abc", 34, True, 40, "wax", "strings", 50, "bananas")
             print(f'The kicthen sink tuple:  {my_tuple}')
 
+            # Create a tuple using the `tuple()` constructor.
+            # Note the double round-brackets
+            my_tuple = tuple(("apple", "banana", "cherry")) 
+            print(f'Tuple using the `tuple()` constructor:  {my_tuple}')
+
             # Display tuple data type.
             print(f'The tuple data type is:  {type(my_tuple)}')
 
@@ -98,14 +103,55 @@ class tuple_samples:
             # Display the error.
             print(f"{type(error).__name__} was raised: {error}") 
 
+    def access_tuple(self):
+        """ Access a tuple. """
+        
+        try:
+
+            # Create a tuple.
+            my_tuple = ("apple", "banana", "cherry", 
+            "orange", "kiwi", "melon", "mango")
+            print(f'The tuple is:  {my_tuple}')
+
+            # Access the tuple item with the index 1.
+            # Notice that the index start from zero. 
+            print(f'The tuple second item (at index 1) is:  {my_tuple[1]}')
+    
+            # Negative indexing means start from the end.  Where -1 refers to
+            # the last item, -2 refers to the second last item etc.
+            print(f'The tuple last item (at index -1) is:  {my_tuple[-1]}')
+
+            # You can specify a range of indexes by specifying where to start
+            # and where to end the range. When specifying a range, the return
+            # value will be a new tuple with the specified items.  The search
+            # will start at index 2 (included) and end at index 5 (not
+            # included).
+            sub_tuple = my_tuple[2:5]
+            print(f'The sub tuple in the range [2:5] is:  {sub_tuple}')
+
+            # This example returns the items from the beginning to, but NOT
+            # included, "kiwi".
+
+            sub_tuple = my_tuple[:4]
+            print(f'The sub tuple in the range [:4] is:  {sub_tuple}')
+
+            # By leaving out the end value, the range will go on to the end of
+            # the list.
+            sub_tuple = my_tuple[2:]
+            print(f'The sub tuple in the range [2:] is:  {sub_tuple}')
+
+        except Exception as error:
+            # Display the error.
+            print(f"{type(error).__name__} was raised: {error}") 
+
 
 ##### ****** Menu class ****** #####
 
 class tuple_menu:
 
     """ 
-    Instantiate the menu class and create the menu.
-    Display the selection menu and execute the sample selected by the user. 
+    Instantiate the menu class and create the menu.  Display the selection menu
+    and execute the sample selected by the user. 
 
     Remarks
     -------
@@ -115,9 +161,8 @@ class tuple_menu:
     ---    
 
     In the calling module perform the following steps: 
-    1_ `amenu = tuple_menu()` # Instantiate the nn_menu class.
-    1_ `amenu.tuple_selection_menu()` # Display the nnn samples selection
-    menu. 
+    1_ `amenu = tuple_menu()` # Instantiate the class.  
+    1_ `amenu.tuple_selection_menu()` # Display the selection menu. 
   
     """
 
@@ -125,7 +170,7 @@ class tuple_menu:
         """ Initialize the class `string_menu` instance. """
 
         # Define the entries of the string samples menu. 
-        self.menu_items = ["Create a tuple", "Modify a tuple", "Selection c", "Quit"]
+        self.menu_items = ["Create a tuple", "Modify a tuple", "Access a tuple", "Quit"]
     
         # Instantiate the menu class and create the menu.
         self.tuplemenu = create_menu("Tuple Menu")
@@ -136,8 +181,8 @@ class tuple_menu:
 
     def tuple_selection_menu(self):
         """
-            Display menu and process user's input.  Call the proper method based
-            on the user's selection.
+        Display menu and process user's input.  Call the proper method based on
+        the user's selection.
         """
 
         while True:
@@ -157,8 +202,8 @@ class tuple_menu:
                 self.tuplesamples.modify_tuple()
                 
             elif choice == 3:
-                print("\n*** Sample c ***")
-                self.tuplesamples.func_c()
+                print("\n*** Access a tuple ***")
+                self.tuplesamples.access_tuple()
                 
             elif choice == len(self.menu_items):
                 break
