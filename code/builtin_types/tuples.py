@@ -14,8 +14,6 @@ For more information, see
 [tuples](https://docs.python.org/3/library/stdtypes.html#tuples) and [tuples and
 sequences](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#tuples-and-sequences).
 
-
-@author: Michael
 """
 
 # Append the path to the modules location.  This is important to allow pdoc to
@@ -39,19 +37,19 @@ class tuple_samples:
     
     A Python tuple shares a lot of properties with the more commonly known Python list:
 
-        - It can hold multiple values in a single variable
-        - It’s ordered: the order of items is preserved
-        - A tuple can have duplicate values
-        - It’s indexed: you can access items numerically
-        - A tuple can have an arbitrary length
+        1) It can hold multiple values in a single variable
+        2) It’s ordered: the order of items is preserved
+        3) A tuple can have duplicate values
+        4) It’s indexed: you can access items numerically
+        5) A tuple can have an arbitrary length
     
     But there are significant differences:
 
-        - A tuple is immutable; it can not be changed once you have defined it.
-        - A tuple is defined using optional parentheses () instead of square brackets []
-        - Since a tuple is immutable, it can be hashed, and thus it can act as the key in a dictionary
+        1) A tuple is immutable; it can not be changed once you have defined it.
+        2) A tuple is defined using optional parentheses () instead of square brackets []
+        3) Since a tuple is immutable, it can be hashed, and thus it can act as the key in a dictionary
 
-    For more information, see [Python Tuple: How to Create, Use, and Convert](https://python.land/python-data-types/python-tuple).
+    For more information, see [Python Tuples](https://www.w3schools.com/python/python_tuples.asp).
     
     """
 
