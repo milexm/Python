@@ -250,6 +250,7 @@ class dictionary_samples:
             # Display the error.
             print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
 
+
 ##### ****** Selection Menu ****** #####
 
 class dictionary_menu:
@@ -292,38 +293,39 @@ class dictionary_menu:
             on the user&#39;s selection.
         &#34;&#34;&#34;
 
-        # Display the menu but ignore the user&#39;s choice.
-        dummy = self.dictmenu.display_menu(self.menu_items, True)
-
         while True:
-            # Get the user&#39;s choice and do not display the menu.
-            choice = self.dictmenu.display_menu(self.menu_items, False)
+
+            # Display the menu. 
+            self.dictmenu.display_menu(self.menu_items)
+
+            # Get the user&#39;s choice.
+            choice = self.dictmenu.get_user_choice(self.menu_items)
 
             if choice == 1:
                 print(&#34;\n*** Create a simple dictionary ***&#34;)
                 self.dictsamples.create_simple_dictionary(&#34;a&#34;, 1, &#34;b&#34;, 2)
-                dummy = self.dictmenu.display_menu(self.menu_items, True)
+                
             elif choice == 2:
                 print(&#34;\n*** Get dictionary element ***&#34;)
                 d = dict(a=1, b=2)
                 self.dictsamples.get_dictionary_element_value(d, &#34;a&#34;)
-                dummy = self.dictmenu.display_menu(self.menu_items, True)
+                
             elif choice == 3:
                 print(&#34;\n*** Print fornatted dictionary ***&#34;)
                 self.dictsamples.print_dictionary_formatted()
-                dummy = self.dictmenu.display_menu(self.menu_items, True)
+                
             elif choice == 4:
                 print(&#34;\n*** Filter dictionary ***&#34;)
                 self.dictsamples.filter_dictionary(3)
-                dummy = self.dictmenu.display_menu(self.menu_items, True)
+                
             elif choice == 5:
                 print(&#34;\n*** Get value in a multilevel dictionary ***&#34;)
                 self.dictsamples.get_value_multilevel_dictionary(&#34;b&#34;, 3)
-                dummy = self.dictmenu.display_menu(self.menu_items, True)
+                
             elif choice == 6:
                 print(&#34;\n*** Iterate through a dictionary ***&#34;)
                 self.dictsamples.iterate_dictionary()
-                dummy = self.dictmenu.display_menu(self.menu_items, True)
+                
             elif choice == len(self.menu_items):
                 break</code></pre>
 </details>
@@ -397,38 +399,39 @@ menu and execute the sample selected by the user. </p>
             on the user&#39;s selection.
         &#34;&#34;&#34;
 
-        # Display the menu but ignore the user&#39;s choice.
-        dummy = self.dictmenu.display_menu(self.menu_items, True)
-
         while True:
-            # Get the user&#39;s choice and do not display the menu.
-            choice = self.dictmenu.display_menu(self.menu_items, False)
+
+            # Display the menu. 
+            self.dictmenu.display_menu(self.menu_items)
+
+            # Get the user&#39;s choice.
+            choice = self.dictmenu.get_user_choice(self.menu_items)
 
             if choice == 1:
                 print(&#34;\n*** Create a simple dictionary ***&#34;)
                 self.dictsamples.create_simple_dictionary(&#34;a&#34;, 1, &#34;b&#34;, 2)
-                dummy = self.dictmenu.display_menu(self.menu_items, True)
+                
             elif choice == 2:
                 print(&#34;\n*** Get dictionary element ***&#34;)
                 d = dict(a=1, b=2)
                 self.dictsamples.get_dictionary_element_value(d, &#34;a&#34;)
-                dummy = self.dictmenu.display_menu(self.menu_items, True)
+                
             elif choice == 3:
                 print(&#34;\n*** Print fornatted dictionary ***&#34;)
                 self.dictsamples.print_dictionary_formatted()
-                dummy = self.dictmenu.display_menu(self.menu_items, True)
+                
             elif choice == 4:
                 print(&#34;\n*** Filter dictionary ***&#34;)
                 self.dictsamples.filter_dictionary(3)
-                dummy = self.dictmenu.display_menu(self.menu_items, True)
+                
             elif choice == 5:
                 print(&#34;\n*** Get value in a multilevel dictionary ***&#34;)
                 self.dictsamples.get_value_multilevel_dictionary(&#34;b&#34;, 3)
-                dummy = self.dictmenu.display_menu(self.menu_items, True)
+                
             elif choice == 6:
                 print(&#34;\n*** Iterate through a dictionary ***&#34;)
                 self.dictsamples.iterate_dictionary()
-                dummy = self.dictmenu.display_menu(self.menu_items, True)
+                
             elif choice == len(self.menu_items):
                 break</code></pre>
 </details>
@@ -451,38 +454,39 @@ on the user's selection.</p></div>
         on the user&#39;s selection.
     &#34;&#34;&#34;
 
-    # Display the menu but ignore the user&#39;s choice.
-    dummy = self.dictmenu.display_menu(self.menu_items, True)
-
     while True:
-        # Get the user&#39;s choice and do not display the menu.
-        choice = self.dictmenu.display_menu(self.menu_items, False)
+
+        # Display the menu. 
+        self.dictmenu.display_menu(self.menu_items)
+
+        # Get the user&#39;s choice.
+        choice = self.dictmenu.get_user_choice(self.menu_items)
 
         if choice == 1:
             print(&#34;\n*** Create a simple dictionary ***&#34;)
             self.dictsamples.create_simple_dictionary(&#34;a&#34;, 1, &#34;b&#34;, 2)
-            dummy = self.dictmenu.display_menu(self.menu_items, True)
+            
         elif choice == 2:
             print(&#34;\n*** Get dictionary element ***&#34;)
             d = dict(a=1, b=2)
             self.dictsamples.get_dictionary_element_value(d, &#34;a&#34;)
-            dummy = self.dictmenu.display_menu(self.menu_items, True)
+            
         elif choice == 3:
             print(&#34;\n*** Print fornatted dictionary ***&#34;)
             self.dictsamples.print_dictionary_formatted()
-            dummy = self.dictmenu.display_menu(self.menu_items, True)
+            
         elif choice == 4:
             print(&#34;\n*** Filter dictionary ***&#34;)
             self.dictsamples.filter_dictionary(3)
-            dummy = self.dictmenu.display_menu(self.menu_items, True)
+            
         elif choice == 5:
             print(&#34;\n*** Get value in a multilevel dictionary ***&#34;)
             self.dictsamples.get_value_multilevel_dictionary(&#34;b&#34;, 3)
-            dummy = self.dictmenu.display_menu(self.menu_items, True)
+            
         elif choice == 6:
             print(&#34;\n*** Iterate through a dictionary ***&#34;)
             self.dictsamples.iterate_dictionary()
-            dummy = self.dictmenu.display_menu(self.menu_items, True)
+            
         elif choice == len(self.menu_items):
             break</code></pre>
 </details>

@@ -39,7 +39,7 @@ class create_menu:
 
     Remarks
     -------
-    This class main method displays the menu to allow the user&#39;s selection.
+    Display the menu to allow the user&#39;s selection.
     It also prompts the user to input a number from the allowed choices. 
     &#34;&#34;&#34;
 
@@ -69,52 +69,55 @@ class create_menu:
 
         return num
 
-    def display_menu(self, options:list, display:bool):
+    def display_menu(self, options:list):
         &#34;&#34;&#34; 
-        Displays a menu of options the user can choose from. It returns the 
-        number of the option chosen.
+        Display the menu of options the user can choose from. 
         
         Parameters
         ----------
         options: 
-            Array of strings representing the menu elements. 
+            List of strings representing the menu elements. 
 
-        display: 
-            Boolean
+        &#34;&#34;&#34;
+        # Display menu name. 
+        print(f&#34;\n*** {self.menu_name} ***&#34;) 
+
+        # Display the menu options.
+        for i in range(len(options)):
+            # print(&#34;{:d}-&gt;{:s}  &#34;.format(i+1, options[i]), end=&#39; &#39;)
+            if ((i+1)%3!=0):
+                # Calculate the blank space to add to the right of a menu
+                # item for allignment. 
+                right_padding = &#34;&#34;*(16-len(options[i]))
+                # right_padding = &#34;&#34;*(16-len(options[i]))
+                # Display 3 menu items on the same line 
+                print(&#34;{:d}.{:s}&#34;.format(i+1, options[i] + right_padding), 
+                    end=&#39; &#39;)
+            else:
+                print(&#34;{:d}.{:s}&#34;.format(i+1, options[i]))
+                
+
+    def get_user_choice(self, options:list):
+        &#34;&#34;&#34; 
+        Prompt the user to input a number from the allowed choices. 
+        Get the choice made by the user.
+        
+        Parameters
+        ----------
+        options: 
+            List of strings representing the menu elements. 
 
         Returns
         -------
-        If display is True, it returns the integer representing the user&#39;s choice; otherwise it returns zero (dummy). In both cases, it displays 
-        the menu.
-
-        Use
-        ----
-        choice = display_menu(options, display)
+        choice: int 
+            The number indicating the user&#39;s choice. 
 
         &#34;&#34;&#34;
-        # Display menu
-        if (display == True):
-            print(f&#34;\n*** {self.menu_name} ***&#34;) 
-            for i in range(len(options)):
-                # print(&#34;{:d}-&gt;{:s}  &#34;.format(i+1, options[i]), end=&#39; &#39;)
-                
-                if ((i+1)%3!=0):
-                    # Calculate the blank space to add to the right of a menu
-                    # item for allignment. 
-                    right_padding = &#34;&#34;*(16-len(options[i]))
-                    # right_padding = &#34;&#34;*(16-len(options[i]))
-                    # Display 3 menu items on the same line 
-                    print(&#34;{:d}.{:s}&#34;.format(i+1, options[i] + right_padding), 
-                        end=&#39; &#39;)
-                else:
-                    print(&#34;{:d}.{:s}&#34;.format(i+1, options[i]))
-                
         # Get a valid menu choice
-        if (display == False):
-            choice = 0
-            while not(np.any(choice == np.arange(len(options))+1)):
-                choice = self.input_number(&#34;\nMake allowed selection number; &#34; + str(len(options)) +  &#34; to quit: &#34;)
-            return choice</code></pre>
+        choice = 0
+        while not(np.any(choice == np.arange(len(options))+1)):
+            choice = self.input_number(&#34;\nMake allowed selection number; &#34; + str(len(options)) +  &#34; to quit: &#34;)
+        return choice</code></pre>
 </details>
 </section>
 <section>
@@ -133,7 +136,7 @@ class create_menu:
 <dd>
 <div class="desc"><p>Defines a menu class </p>
 <h2 id="remarks">Remarks</h2>
-<p>This class main method displays the menu to allow the user's selection.
+<p>Display the menu to allow the user's selection.
 It also prompts the user to input a number from the allowed choices. </p>
 <p>Iitialize the class instance.</p>
 <h2 id="parameters">Parameters</h2>
@@ -151,7 +154,7 @@ It also prompts the user to input a number from the allowed choices. </p>
 
     Remarks
     -------
-    This class main method displays the menu to allow the user&#39;s selection.
+    Display the menu to allow the user&#39;s selection.
     It also prompts the user to input a number from the allowed choices. 
     &#34;&#34;&#34;
 
@@ -181,109 +184,22 @@ It also prompts the user to input a number from the allowed choices. </p>
 
         return num
 
-    def display_menu(self, options:list, display:bool):
+    def display_menu(self, options:list):
         &#34;&#34;&#34; 
-        Displays a menu of options the user can choose from. It returns the 
-        number of the option chosen.
+        Display the menu of options the user can choose from. 
         
         Parameters
         ----------
         options: 
-            Array of strings representing the menu elements. 
-
-        display: 
-            Boolean
-
-        Returns
-        -------
-        If display is True, it returns the integer representing the user&#39;s choice; otherwise it returns zero (dummy). In both cases, it displays 
-        the menu.
-
-        Use
-        ----
-        choice = display_menu(options, display)
+            List of strings representing the menu elements. 
 
         &#34;&#34;&#34;
-        # Display menu
-        if (display == True):
-            print(f&#34;\n*** {self.menu_name} ***&#34;) 
-            for i in range(len(options)):
-                # print(&#34;{:d}-&gt;{:s}  &#34;.format(i+1, options[i]), end=&#39; &#39;)
-                
-                if ((i+1)%3!=0):
-                    # Calculate the blank space to add to the right of a menu
-                    # item for allignment. 
-                    right_padding = &#34;&#34;*(16-len(options[i]))
-                    # right_padding = &#34;&#34;*(16-len(options[i]))
-                    # Display 3 menu items on the same line 
-                    print(&#34;{:d}.{:s}&#34;.format(i+1, options[i] + right_padding), 
-                        end=&#39; &#39;)
-                else:
-                    print(&#34;{:d}.{:s}&#34;.format(i+1, options[i]))
-                
-        # Get a valid menu choice
-        if (display == False):
-            choice = 0
-            while not(np.any(choice == np.arange(len(options))+1)):
-                choice = self.input_number(&#34;\nMake allowed selection number; &#34; + str(len(options)) +  &#34; to quit: &#34;)
-            return choice</code></pre>
-</details>
-<h3>Methods</h3>
-<dl>
-<dt id="code.builtin_types.create_menu.create_menu.display_menu"><code class="name flex">
-<span>def <span class="ident">display_menu</span></span>(<span>self, options: list, display: bool)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Displays a menu of options the user can choose from. It returns the
-number of the option chosen.</p>
-<h2 id="parameters">Parameters</h2>
-<dl>
-<dt><strong><code>options</code></strong></dt>
-<dd>Array of strings representing the menu elements.</dd>
-<dt><strong><code>display</code></strong></dt>
-<dd>Boolean</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>If display is True, it returns the integer representing the user's choice; otherwise it returns zero (dummy). In both cases, it displays</code></dt>
-<dd>&nbsp;</dd>
-</dl>
-<p>the menu.</p>
-<h2 id="use">Use</h2>
-<p>choice = display_menu(options, display)</p></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def display_menu(self, options:list, display:bool):
-    &#34;&#34;&#34; 
-    Displays a menu of options the user can choose from. It returns the 
-    number of the option chosen.
-    
-    Parameters
-    ----------
-    options: 
-        Array of strings representing the menu elements. 
-
-    display: 
-        Boolean
-
-    Returns
-    -------
-    If display is True, it returns the integer representing the user&#39;s choice; otherwise it returns zero (dummy). In both cases, it displays 
-    the menu.
-
-    Use
-    ----
-    choice = display_menu(options, display)
-
-    &#34;&#34;&#34;
-    # Display menu
-    if (display == True):
+        # Display menu name. 
         print(f&#34;\n*** {self.menu_name} ***&#34;) 
+
+        # Display the menu options.
         for i in range(len(options)):
             # print(&#34;{:d}-&gt;{:s}  &#34;.format(i+1, options[i]), end=&#39; &#39;)
-            
             if ((i+1)%3!=0):
                 # Calculate the blank space to add to the right of a menu
                 # item for allignment. 
@@ -294,13 +210,115 @@ number of the option chosen.</p>
                     end=&#39; &#39;)
             else:
                 print(&#34;{:d}.{:s}&#34;.format(i+1, options[i]))
-            
-    # Get a valid menu choice
-    if (display == False):
+                
+
+    def get_user_choice(self, options:list):
+        &#34;&#34;&#34; 
+        Prompt the user to input a number from the allowed choices. 
+        Get the choice made by the user.
+        
+        Parameters
+        ----------
+        options: 
+            List of strings representing the menu elements. 
+
+        Returns
+        -------
+        choice: int 
+            The number indicating the user&#39;s choice. 
+
+        &#34;&#34;&#34;
+        # Get a valid menu choice
         choice = 0
         while not(np.any(choice == np.arange(len(options))+1)):
             choice = self.input_number(&#34;\nMake allowed selection number; &#34; + str(len(options)) +  &#34; to quit: &#34;)
         return choice</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="code.builtin_types.create_menu.create_menu.display_menu"><code class="name flex">
+<span>def <span class="ident">display_menu</span></span>(<span>self, options: list)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Display the menu of options the user can choose from. </p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>options</code></strong></dt>
+<dd>List of strings representing the menu elements.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def display_menu(self, options:list):
+    &#34;&#34;&#34; 
+    Display the menu of options the user can choose from. 
+    
+    Parameters
+    ----------
+    options: 
+        List of strings representing the menu elements. 
+
+    &#34;&#34;&#34;
+    # Display menu name. 
+    print(f&#34;\n*** {self.menu_name} ***&#34;) 
+
+    # Display the menu options.
+    for i in range(len(options)):
+        # print(&#34;{:d}-&gt;{:s}  &#34;.format(i+1, options[i]), end=&#39; &#39;)
+        if ((i+1)%3!=0):
+            # Calculate the blank space to add to the right of a menu
+            # item for allignment. 
+            right_padding = &#34;&#34;*(16-len(options[i]))
+            # right_padding = &#34;&#34;*(16-len(options[i]))
+            # Display 3 menu items on the same line 
+            print(&#34;{:d}.{:s}&#34;.format(i+1, options[i] + right_padding), 
+                end=&#39; &#39;)
+        else:
+            print(&#34;{:d}.{:s}&#34;.format(i+1, options[i]))</code></pre>
+</details>
+</dd>
+<dt id="code.builtin_types.create_menu.create_menu.get_user_choice"><code class="name flex">
+<span>def <span class="ident">get_user_choice</span></span>(<span>self, options: list)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Prompt the user to input a number from the allowed choices.
+Get the choice made by the user.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>options</code></strong></dt>
+<dd>List of strings representing the menu elements.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>choice</code></strong> :&ensp;<code>int </code></dt>
+<dd>The number indicating the user's choice.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_user_choice(self, options:list):
+    &#34;&#34;&#34; 
+    Prompt the user to input a number from the allowed choices. 
+    Get the choice made by the user.
+    
+    Parameters
+    ----------
+    options: 
+        List of strings representing the menu elements. 
+
+    Returns
+    -------
+    choice: int 
+        The number indicating the user&#39;s choice. 
+
+    &#34;&#34;&#34;
+    # Get a valid menu choice
+    choice = 0
+    while not(np.any(choice == np.arange(len(options))+1)):
+        choice = self.input_number(&#34;\nMake allowed selection number; &#34; + str(len(options)) +  &#34; to quit: &#34;)
+    return choice</code></pre>
 </details>
 </dd>
 <dt id="code.builtin_types.create_menu.create_menu.input_number"><code class="name flex">
@@ -352,6 +370,7 @@ It runs until the user input the correct number.</p></div>
 <h4><code><a title="code.builtin_types.create_menu.create_menu" href="#code.builtin_types.create_menu.create_menu">create_menu</a></code></h4>
 <ul class="">
 <li><code><a title="code.builtin_types.create_menu.create_menu.display_menu" href="#code.builtin_types.create_menu.create_menu.display_menu">display_menu</a></code></li>
+<li><code><a title="code.builtin_types.create_menu.create_menu.get_user_choice" href="#code.builtin_types.create_menu.create_menu.get_user_choice">get_user_choice</a></code></li>
 <li><code><a title="code.builtin_types.create_menu.create_menu.input_number" href="#code.builtin_types.create_menu.create_menu.input_number">input_number</a></code></li>
 </ul>
 </li>

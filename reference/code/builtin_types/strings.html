@@ -39,6 +39,7 @@ sys.path.append(&#39;./code/builtin_types&#39;)
 
 from create_menu import create_menu
 
+##### ****** Samples class ****** #####
 
 class string_samples:
 
@@ -73,26 +74,24 @@ class string_samples:
         print(f&#39;Split string: {split_string}&#39;)
        
 
-##### ****** Selection Menu ****** #####
+##### ****** Menu class ****** #####
 
 class string_menu:
 
     &#34;&#34;&#34; 
-    Instantiate the string_menu class.  Display the string selection
-    menu and execute the sample selected by the user. 
+    Instantiate the menu class and create the menu.
+    Display the selection menu and execute the sample selected by the user. 
 
     Remarks
     -------
-    It displays the menu to allow the user to select the samples to execute from
-    the string group. 
-    
+   Display the menu to allow the user to select the sample to execute.
+
     Use
     ---    
+    In the calling module perform the following steps: 
 
-    From the main function perform the following steps: `amenu =
-    string_menu()` # Instantiate the dictionary_menu class.
-    `amenu.string_selection_menu()` # Display the dicitionary samples selection
-    menu and execute the sample selected by the user. 
+    1_ `amenu = string_menu()` # Instantiate the create_menu class and create the menu.  
+    1_ `amenu.string_selection_menu()` # Display the menu and execute the sample selected by the user.
   
     &#34;&#34;&#34;
 
@@ -115,37 +114,39 @@ class string_menu:
             on the user&#39;s selection.
         &#34;&#34;&#34;
 
-        # Display the menu but ignore the user&#39;s choice.
-        dummy = self.stringmenu.display_menu(self.menu_items, True)
-
         while True:
-            # Get the user&#39;s choice and do not display the menu.
-            choice = self.stringmenu.display_menu(self.menu_items, False)
+
+            
+            # Display the menu.
+            self.stringmenu.display_menu(self.menu_items)
+
+            # Get the user&#39;s choice.
+            choice = self.stringmenu.get_user_choice(self.menu_items)
 
             if choice == 1:
                 print(&#34;\n*** Create a simple string ***&#34;)
                 self.stringsamples.create_string()
-                dummy = self.stringmenu.display_menu(self.menu_items, True)
+                
             elif choice == 2:
                 print(&#34;\n*** Get a substring ***&#34;)
                 self.stringsamples.get_sub_string()
-                dummy = self.stringmenu.display_menu(self.menu_items, True)
+                
             elif choice == 3:
                 print(&#34;\n*** Strip white spaces ***&#34;)
                 self.stringsamples.strip_white_spaces()
-                dummy = self.stringmenu.display_menu(self.menu_items, True)
+                
             elif choice == 4:
                 print(&#34;\n*** Get lower case string ***&#34;)
                 self.stringsamples.get_lower_case_string()
-                dummy = self.stringmenu.display_menu(self.menu_items, True)
+                
             elif choice == 5:
                 print(&#34;\n*** Get upper case string ***&#34;)
                 self.stringsamples.get_upper_case_string()
-                dummy = self.stringmenu.display_menu(self.menu_items, True)
+                
             elif choice == 6:
                 print(&#34;\n*** Split string ***&#34;)
                 self.stringsamples.split_string()
-                dummy = self.stringmenu.display_menu(self.menu_items, True)
+                
             elif choice == len(self.menu_items):
                 break</code></pre>
 </details>
@@ -163,17 +164,16 @@ class string_menu:
 <span>class <span class="ident">string_menu</span></span>
 </code></dt>
 <dd>
-<div class="desc"><p>Instantiate the string_menu class.
-Display the string selection
-menu and execute the sample selected by the user. </p>
-<h2 id="remarks">Remarks</h2>
-<p>It displays the menu to allow the user to select the samples to execute from
-the string group. </p>
-<h2 id="use">Use</h2>
-<p>From the main function perform the following steps: <code>amenu =
-string_menu()</code> # Instantiate the dictionary_menu class.
-<code>amenu.string_selection_menu()</code> # Display the dicitionary samples selection
-menu and execute the sample selected by the user. </p>
+<div class="desc"><p>Instantiate the menu class and create the menu.
+Display the selection menu and execute the sample selected by the user. </p>
+<p>Remarks</p>
+<hr>
+<p>Display the menu to allow the user to select the sample to execute.</p>
+<p>Use</p>
+<hr>
+<p>In the calling module perform the following steps: </p>
+<p>1_ <code>amenu = string_menu()</code> # Instantiate the create_menu class and create the menu.<br>
+1_ <code>amenu.string_selection_menu()</code> # Display the menu and execute the sample selected by the user.</p>
 <p>Initialize the class <code><a title="code.builtin_types.strings.string_menu" href="#code.builtin_types.strings.string_menu">string_menu</a></code> instance.</p></div>
 <details class="source">
 <summary>
@@ -182,21 +182,19 @@ menu and execute the sample selected by the user. </p>
 <pre><code class="python">class string_menu:
 
     &#34;&#34;&#34; 
-    Instantiate the string_menu class.  Display the string selection
-    menu and execute the sample selected by the user. 
+    Instantiate the menu class and create the menu.
+    Display the selection menu and execute the sample selected by the user. 
 
     Remarks
     -------
-    It displays the menu to allow the user to select the samples to execute from
-    the string group. 
-    
+   Display the menu to allow the user to select the sample to execute.
+
     Use
     ---    
+    In the calling module perform the following steps: 
 
-    From the main function perform the following steps: `amenu =
-    string_menu()` # Instantiate the dictionary_menu class.
-    `amenu.string_selection_menu()` # Display the dicitionary samples selection
-    menu and execute the sample selected by the user. 
+    1_ `amenu = string_menu()` # Instantiate the create_menu class and create the menu.  
+    1_ `amenu.string_selection_menu()` # Display the menu and execute the sample selected by the user.
   
     &#34;&#34;&#34;
 
@@ -219,37 +217,39 @@ menu and execute the sample selected by the user. </p>
             on the user&#39;s selection.
         &#34;&#34;&#34;
 
-        # Display the menu but ignore the user&#39;s choice.
-        dummy = self.stringmenu.display_menu(self.menu_items, True)
-
         while True:
-            # Get the user&#39;s choice and do not display the menu.
-            choice = self.stringmenu.display_menu(self.menu_items, False)
+
+            
+            # Display the menu.
+            self.stringmenu.display_menu(self.menu_items)
+
+            # Get the user&#39;s choice.
+            choice = self.stringmenu.get_user_choice(self.menu_items)
 
             if choice == 1:
                 print(&#34;\n*** Create a simple string ***&#34;)
                 self.stringsamples.create_string()
-                dummy = self.stringmenu.display_menu(self.menu_items, True)
+                
             elif choice == 2:
                 print(&#34;\n*** Get a substring ***&#34;)
                 self.stringsamples.get_sub_string()
-                dummy = self.stringmenu.display_menu(self.menu_items, True)
+                
             elif choice == 3:
                 print(&#34;\n*** Strip white spaces ***&#34;)
                 self.stringsamples.strip_white_spaces()
-                dummy = self.stringmenu.display_menu(self.menu_items, True)
+                
             elif choice == 4:
                 print(&#34;\n*** Get lower case string ***&#34;)
                 self.stringsamples.get_lower_case_string()
-                dummy = self.stringmenu.display_menu(self.menu_items, True)
+                
             elif choice == 5:
                 print(&#34;\n*** Get upper case string ***&#34;)
                 self.stringsamples.get_upper_case_string()
-                dummy = self.stringmenu.display_menu(self.menu_items, True)
+                
             elif choice == 6:
                 print(&#34;\n*** Split string ***&#34;)
                 self.stringsamples.split_string()
-                dummy = self.stringmenu.display_menu(self.menu_items, True)
+                
             elif choice == len(self.menu_items):
                 break</code></pre>
 </details>
@@ -272,37 +272,39 @@ on the user's selection.</p></div>
         on the user&#39;s selection.
     &#34;&#34;&#34;
 
-    # Display the menu but ignore the user&#39;s choice.
-    dummy = self.stringmenu.display_menu(self.menu_items, True)
-
     while True:
-        # Get the user&#39;s choice and do not display the menu.
-        choice = self.stringmenu.display_menu(self.menu_items, False)
+
+        
+        # Display the menu.
+        self.stringmenu.display_menu(self.menu_items)
+
+        # Get the user&#39;s choice.
+        choice = self.stringmenu.get_user_choice(self.menu_items)
 
         if choice == 1:
             print(&#34;\n*** Create a simple string ***&#34;)
             self.stringsamples.create_string()
-            dummy = self.stringmenu.display_menu(self.menu_items, True)
+            
         elif choice == 2:
             print(&#34;\n*** Get a substring ***&#34;)
             self.stringsamples.get_sub_string()
-            dummy = self.stringmenu.display_menu(self.menu_items, True)
+            
         elif choice == 3:
             print(&#34;\n*** Strip white spaces ***&#34;)
             self.stringsamples.strip_white_spaces()
-            dummy = self.stringmenu.display_menu(self.menu_items, True)
+            
         elif choice == 4:
             print(&#34;\n*** Get lower case string ***&#34;)
             self.stringsamples.get_lower_case_string()
-            dummy = self.stringmenu.display_menu(self.menu_items, True)
+            
         elif choice == 5:
             print(&#34;\n*** Get upper case string ***&#34;)
             self.stringsamples.get_upper_case_string()
-            dummy = self.stringmenu.display_menu(self.menu_items, True)
+            
         elif choice == 6:
             print(&#34;\n*** Split string ***&#34;)
             self.stringsamples.split_string()
-            dummy = self.stringmenu.display_menu(self.menu_items, True)
+            
         elif choice == len(self.menu_items):
             break</code></pre>
 </details>

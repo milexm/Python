@@ -55,6 +55,8 @@ sys.path.append(&#39;./code/builtin_types&#39;)
 
 from create_menu import create_menu
 
+##### ****** Samples class ****** #####
+
 class list_samples:
     &#34;&#34;&#34; 
     Examples showing the use of lists. 
@@ -563,26 +565,25 @@ class list_samples:
             print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
 
 
-##### ****** Selection Menu ****** #####
+##### ****** Menu class ****** #####
 
 class list_menu:
 
     &#34;&#34;&#34; 
-    Executes the samples in the list group  
+    Instantiate the menu class and create the menu.
+    Display the selection menu and execute the sample selected by the user.  
     
     Remarks
     -------
-    This class main nethod displays the menu to allow the user to select the
-    sample to execute.  It also instantiates the local `list_samples` class to
-    execute the list samples as selected by the user. 
+    Display the menu to allow the user to select the sample to execute.
     
     Use
     ---    
+    In the calling module perform the following steps: 
+    1_ `amenu = list_menu()` # Instantiate the list_menu class.
+    1_ `amenu.list_selection_menu()` # Display the list samples selection
+    menu. 
 
-    From the main function perform the following steps: `amenu = list_menu()` #
-    Instantiate the self.listmenu class.  `amenu.list_selection_menu()` # Dispkay the
-    list samples selection menu.
-  
     &#34;&#34;&#34;
 
     def __init__(self):
@@ -593,7 +594,7 @@ class list_menu:
         &#34;Remove duplicated list elments&#34;, &#34;Perform list indexing&#34;,
         &#34;Change list elements&#34;, &#34;Add element to a list&#34;, &#34;Slice a list&#34;, &#34;Apply list methods&#34;, &#34;Use a list as a stack&#34;, &#34;Use a list as a queue&#34;, &#34;Quit&#34;]
     
-        # Instantiate the list menu class. 
+        # Instantiate the list menu class and create menu.
         self.listmenu = create_menu(&#34;List Menu&#34;)
 
         # Instantiate the list samples class. 
@@ -605,69 +606,70 @@ class list_menu:
             on the user&#39;s selection.
         &#34;&#34;&#34;
        
-        # Display the menu but ignore the user&#39;s choice.
-        dummy = self.listmenu.display_menu(self.menu_items, True) 
-
 
         while True:
-            # Get the user&#39;s choice and do not display the menu.
-            choice = self.listmenu.display_menu(self.menu_items, False)
+
+            # Display the menu.
+            self.listmenu.display_menu(self.menu_items) 
+
+            # Get the user&#39;s choice.
+            choice = self.listmenu.get_user_choice(self.menu_items)
 
             if  choice == 1:
                 print(&#34;\n*** Index a list ***&#34;)
                 self.listsamples.get_list_item(2)
                 self.listsamples.get_list_item(-2)
-                dummy = self.listmenu.display_menu(self.menu_items, True)
+                
             elif choice == 2:
                 print(&#34;\n*** Slice a list ***&#34;)
                 self.listsamples.get_list_range_items(3, 5)
                 self.listsamples.get_list_negative_range_items(-3, -1)
                 self.listsamples.get_list_range_items_in_steps(1, 10, 2)
-                dummy = self.listmenu.display_menu(self.menu_items, True)
+                
             elif choice == 3:
                 print(&#34;\n*** Create a list of numbers ***&#34;)
                 self.listsamples.create_number_list(1, 21)
-                dummy = self.listmenu.display_menu(self.menu_items, True)
+                
             elif choice == 4:
                 print(&#34;\n*** Create a list of numbers in a range ***&#34;)
                 self.listsamples.create_number_list_in_range(range(1, 21))
-                dummy = self.listmenu.display_menu(self.menu_items, True)
+                
             elif choice == 5:
                 print(&#34;\n*** Create a list of strings in a range ***&#34;)
                 self.listsamples.create_string_list_in_range(range(1, 21))
-                dummy = self.listmenu.display_menu(self.menu_items, True)
+                
             elif choice == 6:
                 print(&#34;\n*** Remove duplicated list elements ***&#34;)
                 self.listsamples.remove_duplicated_list_elements()
-                dummy = self.listmenu.display_menu(self.menu_items, True)
+                
             elif choice == 7:
                 print(&#34;\n*** List indexing ***&#34;)
                 self.listsamples.index_list()
-                dummy = self.listmenu.display_menu(self.menu_items, True)
+                
             elif choice == 8:
                 print(&#34;\n*** Change list element ***&#34;)
                 self.listsamples.change_list_element()
-                dummy = self.listmenu.display_menu(self.menu_items, True)
+                
             elif choice == 9:
                 print(&#34;\n*** Add elements to a list ***&#34;)
                 self.listsamples.add_list_element()
-                dummy = self.listmenu.display_menu(self.menu_items, True)
+                
             elif choice == 10:
                 print(&#34;\n*** Slice a list ***&#34;)
                 self.listsamples.slice_list()
-                dummy = self.listmenu.display_menu(self.menu_items, True)
+                
             elif choice == 11:
                 print(&#34;\n*** Apply list methods ***&#34;)
                 self.listsamples.apply_list_methods()
-                dummy = self.listmenu.display_menu(self.menu_items, True)
+                
             elif choice == 12:
                 print(&#34;\n*** Use a list as a stack ***&#34;)
                 self.listsamples.use_list_as_stack()
-                dummy = self.listmenu.display_menu(self.menu_items, True)
+                
             elif choice == 13:
                 print(&#34;\n*** Use a list as a queue ***&#34;)
                 self.listsamples.use_list_as_queue()
-                dummy = self.listmenu.display_menu(self.menu_items, True)
+                
             elif choice == len(self.menu_items):
                 break</code></pre>
 </details>
@@ -685,18 +687,16 @@ class list_menu:
 <span>class <span class="ident">list_menu</span></span>
 </code></dt>
 <dd>
-<div class="desc"><p>Executes the samples in the list group
+<div class="desc"><p>Instantiate the menu class and create the menu.
+Display the selection menu and execute the sample selected by the user.
 </p>
 <h2 id="remarks">Remarks</h2>
-<p>This class main nethod displays the menu to allow the user to select the
-sample to execute.
-It also instantiates the local <code><a title="code.builtin_types.lists.list_samples" href="#code.builtin_types.lists.list_samples">list_samples</a></code> class to
-execute the list samples as selected by the user. </p>
+<p>Display the menu to allow the user to select the sample to execute.</p>
 <h2 id="use">Use</h2>
-<p>From the main function perform the following steps: <code>amenu = list_menu()</code> #
-Instantiate the self.listmenu class.
-<code>amenu.list_selection_menu()</code> # Dispkay the
-list samples selection menu.</p>
+<p>In the calling module perform the following steps:
+1_ <code>amenu = list_menu()</code> # Instantiate the list_menu class.
+1_ <code>amenu.list_selection_menu()</code> # Display the list samples selection
+menu. </p>
 <p>Initialize the class <code><a title="code.builtin_types.lists.list_menu" href="#code.builtin_types.lists.list_menu">list_menu</a></code> instance.</p></div>
 <details class="source">
 <summary>
@@ -705,21 +705,20 @@ list samples selection menu.</p>
 <pre><code class="python">class list_menu:
 
     &#34;&#34;&#34; 
-    Executes the samples in the list group  
+    Instantiate the menu class and create the menu.
+    Display the selection menu and execute the sample selected by the user.  
     
     Remarks
     -------
-    This class main nethod displays the menu to allow the user to select the
-    sample to execute.  It also instantiates the local `list_samples` class to
-    execute the list samples as selected by the user. 
+    Display the menu to allow the user to select the sample to execute.
     
     Use
     ---    
+    In the calling module perform the following steps: 
+    1_ `amenu = list_menu()` # Instantiate the list_menu class.
+    1_ `amenu.list_selection_menu()` # Display the list samples selection
+    menu. 
 
-    From the main function perform the following steps: `amenu = list_menu()` #
-    Instantiate the self.listmenu class.  `amenu.list_selection_menu()` # Dispkay the
-    list samples selection menu.
-  
     &#34;&#34;&#34;
 
     def __init__(self):
@@ -730,7 +729,7 @@ list samples selection menu.</p>
         &#34;Remove duplicated list elments&#34;, &#34;Perform list indexing&#34;,
         &#34;Change list elements&#34;, &#34;Add element to a list&#34;, &#34;Slice a list&#34;, &#34;Apply list methods&#34;, &#34;Use a list as a stack&#34;, &#34;Use a list as a queue&#34;, &#34;Quit&#34;]
     
-        # Instantiate the list menu class. 
+        # Instantiate the list menu class and create menu.
         self.listmenu = create_menu(&#34;List Menu&#34;)
 
         # Instantiate the list samples class. 
@@ -742,69 +741,70 @@ list samples selection menu.</p>
             on the user&#39;s selection.
         &#34;&#34;&#34;
        
-        # Display the menu but ignore the user&#39;s choice.
-        dummy = self.listmenu.display_menu(self.menu_items, True) 
-
 
         while True:
-            # Get the user&#39;s choice and do not display the menu.
-            choice = self.listmenu.display_menu(self.menu_items, False)
+
+            # Display the menu.
+            self.listmenu.display_menu(self.menu_items) 
+
+            # Get the user&#39;s choice.
+            choice = self.listmenu.get_user_choice(self.menu_items)
 
             if  choice == 1:
                 print(&#34;\n*** Index a list ***&#34;)
                 self.listsamples.get_list_item(2)
                 self.listsamples.get_list_item(-2)
-                dummy = self.listmenu.display_menu(self.menu_items, True)
+                
             elif choice == 2:
                 print(&#34;\n*** Slice a list ***&#34;)
                 self.listsamples.get_list_range_items(3, 5)
                 self.listsamples.get_list_negative_range_items(-3, -1)
                 self.listsamples.get_list_range_items_in_steps(1, 10, 2)
-                dummy = self.listmenu.display_menu(self.menu_items, True)
+                
             elif choice == 3:
                 print(&#34;\n*** Create a list of numbers ***&#34;)
                 self.listsamples.create_number_list(1, 21)
-                dummy = self.listmenu.display_menu(self.menu_items, True)
+                
             elif choice == 4:
                 print(&#34;\n*** Create a list of numbers in a range ***&#34;)
                 self.listsamples.create_number_list_in_range(range(1, 21))
-                dummy = self.listmenu.display_menu(self.menu_items, True)
+                
             elif choice == 5:
                 print(&#34;\n*** Create a list of strings in a range ***&#34;)
                 self.listsamples.create_string_list_in_range(range(1, 21))
-                dummy = self.listmenu.display_menu(self.menu_items, True)
+                
             elif choice == 6:
                 print(&#34;\n*** Remove duplicated list elements ***&#34;)
                 self.listsamples.remove_duplicated_list_elements()
-                dummy = self.listmenu.display_menu(self.menu_items, True)
+                
             elif choice == 7:
                 print(&#34;\n*** List indexing ***&#34;)
                 self.listsamples.index_list()
-                dummy = self.listmenu.display_menu(self.menu_items, True)
+                
             elif choice == 8:
                 print(&#34;\n*** Change list element ***&#34;)
                 self.listsamples.change_list_element()
-                dummy = self.listmenu.display_menu(self.menu_items, True)
+                
             elif choice == 9:
                 print(&#34;\n*** Add elements to a list ***&#34;)
                 self.listsamples.add_list_element()
-                dummy = self.listmenu.display_menu(self.menu_items, True)
+                
             elif choice == 10:
                 print(&#34;\n*** Slice a list ***&#34;)
                 self.listsamples.slice_list()
-                dummy = self.listmenu.display_menu(self.menu_items, True)
+                
             elif choice == 11:
                 print(&#34;\n*** Apply list methods ***&#34;)
                 self.listsamples.apply_list_methods()
-                dummy = self.listmenu.display_menu(self.menu_items, True)
+                
             elif choice == 12:
                 print(&#34;\n*** Use a list as a stack ***&#34;)
                 self.listsamples.use_list_as_stack()
-                dummy = self.listmenu.display_menu(self.menu_items, True)
+                
             elif choice == 13:
                 print(&#34;\n*** Use a list as a queue ***&#34;)
                 self.listsamples.use_list_as_queue()
-                dummy = self.listmenu.display_menu(self.menu_items, True)
+                
             elif choice == len(self.menu_items):
                 break</code></pre>
 </details>
@@ -827,69 +827,70 @@ on the user's selection.</p></div>
         on the user&#39;s selection.
     &#34;&#34;&#34;
    
-    # Display the menu but ignore the user&#39;s choice.
-    dummy = self.listmenu.display_menu(self.menu_items, True) 
-
 
     while True:
-        # Get the user&#39;s choice and do not display the menu.
-        choice = self.listmenu.display_menu(self.menu_items, False)
+
+        # Display the menu.
+        self.listmenu.display_menu(self.menu_items) 
+
+        # Get the user&#39;s choice.
+        choice = self.listmenu.get_user_choice(self.menu_items)
 
         if  choice == 1:
             print(&#34;\n*** Index a list ***&#34;)
             self.listsamples.get_list_item(2)
             self.listsamples.get_list_item(-2)
-            dummy = self.listmenu.display_menu(self.menu_items, True)
+            
         elif choice == 2:
             print(&#34;\n*** Slice a list ***&#34;)
             self.listsamples.get_list_range_items(3, 5)
             self.listsamples.get_list_negative_range_items(-3, -1)
             self.listsamples.get_list_range_items_in_steps(1, 10, 2)
-            dummy = self.listmenu.display_menu(self.menu_items, True)
+            
         elif choice == 3:
             print(&#34;\n*** Create a list of numbers ***&#34;)
             self.listsamples.create_number_list(1, 21)
-            dummy = self.listmenu.display_menu(self.menu_items, True)
+            
         elif choice == 4:
             print(&#34;\n*** Create a list of numbers in a range ***&#34;)
             self.listsamples.create_number_list_in_range(range(1, 21))
-            dummy = self.listmenu.display_menu(self.menu_items, True)
+            
         elif choice == 5:
             print(&#34;\n*** Create a list of strings in a range ***&#34;)
             self.listsamples.create_string_list_in_range(range(1, 21))
-            dummy = self.listmenu.display_menu(self.menu_items, True)
+            
         elif choice == 6:
             print(&#34;\n*** Remove duplicated list elements ***&#34;)
             self.listsamples.remove_duplicated_list_elements()
-            dummy = self.listmenu.display_menu(self.menu_items, True)
+            
         elif choice == 7:
             print(&#34;\n*** List indexing ***&#34;)
             self.listsamples.index_list()
-            dummy = self.listmenu.display_menu(self.menu_items, True)
+            
         elif choice == 8:
             print(&#34;\n*** Change list element ***&#34;)
             self.listsamples.change_list_element()
-            dummy = self.listmenu.display_menu(self.menu_items, True)
+            
         elif choice == 9:
             print(&#34;\n*** Add elements to a list ***&#34;)
             self.listsamples.add_list_element()
-            dummy = self.listmenu.display_menu(self.menu_items, True)
+            
         elif choice == 10:
             print(&#34;\n*** Slice a list ***&#34;)
             self.listsamples.slice_list()
-            dummy = self.listmenu.display_menu(self.menu_items, True)
+            
         elif choice == 11:
             print(&#34;\n*** Apply list methods ***&#34;)
             self.listsamples.apply_list_methods()
-            dummy = self.listmenu.display_menu(self.menu_items, True)
+            
         elif choice == 12:
             print(&#34;\n*** Use a list as a stack ***&#34;)
             self.listsamples.use_list_as_stack()
-            dummy = self.listmenu.display_menu(self.menu_items, True)
+            
         elif choice == 13:
             print(&#34;\n*** Use a list as a queue ***&#34;)
             self.listsamples.use_list_as_queue()
-            dummy = self.listmenu.display_menu(self.menu_items, True)
+            
         elif choice == len(self.menu_items):
             break</code></pre>
 </details>

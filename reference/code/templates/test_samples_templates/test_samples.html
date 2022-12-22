@@ -64,13 +64,12 @@ class nnn_samples:
 class nnn_menu:
 
     &#34;&#34;&#34; 
-    Display the nnn_menu selection
-    menu and execute the sample selected by the user. 
+    Instantiate the menu class and create the menu.
+    Display the selection menu and execute the sample selected by the user. 
 
     Remarks
     -------
-    It displays the menu to allow the user to select the samples to execute from
-    the string group. 
+    Display the menu to allow the user to select the sample to execute.
     
     Use
     ---    
@@ -88,10 +87,10 @@ class nnn_menu:
         # Define the entries of the string samples menu. 
         self.menu_items = [&#34;Selection a&#34;, &#34;Selection b&#34;, &#34;Selection c&#34;, &#34;Quit&#34;]
     
-        # Instantiate the menu class. 
+        # Instantiate the menu class and create the menu.
         self.nnnmenu = create_menu(&#34;Template Menu&#34;)
         
-        # Instantiate the sample class
+        # Instantiate the sample class.
         self.nnnsamples = nnn_samples()
 
 
@@ -101,27 +100,26 @@ class nnn_menu:
             on the user&#39;s selection.
         &#34;&#34;&#34;
 
-        # Display the menu but ignore the user&#39;s choice.
-        dummy = self.nnnmenu.display_menu(self.menu_items, True)
-
         while True:
+
+            # Just display the menu and ignore the user&#39;s choice.
+            dummy = self.nnnmenu.display_menu(self.menu_items, True)
+
             # Get the user&#39;s choice and do not display the menu.
             choice = self.nnnmenu.display_menu(self.menu_items, False)
 
             if choice == 1:
                 print(&#34;\n*** Sample a ***&#34;)
                 self.nnnsamples.func_a()
-                dummy = self.nnnmenu.display_menu(self.menu_items, True)
             elif choice == 2:
                 print(&#34;\n*** Sample b ***&#34;)
                 self.nnnsamples.func_b()
-                dummy = self.nnnmenu.display_menu(self.menu_items, True)
             elif choice == 3:
                 print(&#34;\n*** Sample c ***&#34;)
                 self.nnnsamples.func_c()
-                dummy = self.nnnmenu.display_menu(self.menu_items, True)
             elif choice == len(self.menu_items):
-                break</code></pre>
+                break
+        </code></pre>
 </details>
 </section>
 <section>
@@ -137,11 +135,10 @@ class nnn_menu:
 <span>class <span class="ident">nnn_menu</span></span>
 </code></dt>
 <dd>
-<div class="desc"><p>Display the nnn_menu selection
-menu and execute the sample selected by the user. </p>
+<div class="desc"><p>Instantiate the menu class and create the menu.
+Display the selection menu and execute the sample selected by the user. </p>
 <h2 id="remarks">Remarks</h2>
-<p>It displays the menu to allow the user to select the samples to execute from
-the string group. </p>
+<p>Display the menu to allow the user to select the sample to execute.</p>
 <h2 id="use">Use</h2>
 <p>In the calling module perform the following steps:
 1_ <code>amenu = nnn_menu()</code> # Instantiate the nn_menu class.
@@ -155,13 +152,12 @@ menu. </p>
 <pre><code class="python">class nnn_menu:
 
     &#34;&#34;&#34; 
-    Display the nnn_menu selection
-    menu and execute the sample selected by the user. 
+    Instantiate the menu class and create the menu.
+    Display the selection menu and execute the sample selected by the user. 
 
     Remarks
     -------
-    It displays the menu to allow the user to select the samples to execute from
-    the string group. 
+    Display the menu to allow the user to select the sample to execute.
     
     Use
     ---    
@@ -179,10 +175,10 @@ menu. </p>
         # Define the entries of the string samples menu. 
         self.menu_items = [&#34;Selection a&#34;, &#34;Selection b&#34;, &#34;Selection c&#34;, &#34;Quit&#34;]
     
-        # Instantiate the menu class. 
+        # Instantiate the menu class and create the menu.
         self.nnnmenu = create_menu(&#34;Template Menu&#34;)
         
-        # Instantiate the sample class
+        # Instantiate the sample class.
         self.nnnsamples = nnn_samples()
 
 
@@ -192,25 +188,23 @@ menu. </p>
             on the user&#39;s selection.
         &#34;&#34;&#34;
 
-        # Display the menu but ignore the user&#39;s choice.
-        dummy = self.nnnmenu.display_menu(self.menu_items, True)
-
         while True:
+
+            # Just display the menu and ignore the user&#39;s choice.
+            dummy = self.nnnmenu.display_menu(self.menu_items, True)
+
             # Get the user&#39;s choice and do not display the menu.
             choice = self.nnnmenu.display_menu(self.menu_items, False)
 
             if choice == 1:
                 print(&#34;\n*** Sample a ***&#34;)
                 self.nnnsamples.func_a()
-                dummy = self.nnnmenu.display_menu(self.menu_items, True)
             elif choice == 2:
                 print(&#34;\n*** Sample b ***&#34;)
                 self.nnnsamples.func_b()
-                dummy = self.nnnmenu.display_menu(self.menu_items, True)
             elif choice == 3:
                 print(&#34;\n*** Sample c ***&#34;)
                 self.nnnsamples.func_c()
-                dummy = self.nnnmenu.display_menu(self.menu_items, True)
             elif choice == len(self.menu_items):
                 break</code></pre>
 </details>
@@ -233,25 +227,23 @@ on the user's selection.</p></div>
         on the user&#39;s selection.
     &#34;&#34;&#34;
 
-    # Display the menu but ignore the user&#39;s choice.
-    dummy = self.nnnmenu.display_menu(self.menu_items, True)
-
     while True:
+
+        # Just display the menu and ignore the user&#39;s choice.
+        dummy = self.nnnmenu.display_menu(self.menu_items, True)
+
         # Get the user&#39;s choice and do not display the menu.
         choice = self.nnnmenu.display_menu(self.menu_items, False)
 
         if choice == 1:
             print(&#34;\n*** Sample a ***&#34;)
             self.nnnsamples.func_a()
-            dummy = self.nnnmenu.display_menu(self.menu_items, True)
         elif choice == 2:
             print(&#34;\n*** Sample b ***&#34;)
             self.nnnsamples.func_b()
-            dummy = self.nnnmenu.display_menu(self.menu_items, True)
         elif choice == 3:
             print(&#34;\n*** Sample c ***&#34;)
             self.nnnsamples.func_c()
-            dummy = self.nnnmenu.display_menu(self.menu_items, True)
         elif choice == len(self.menu_items):
             break</code></pre>
 </details>
