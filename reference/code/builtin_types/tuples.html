@@ -119,26 +119,6 @@ class tuple_samples:
             # Display the error.
             print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
 
-    def modify_tuple(self):
-        &#34;&#34;&#34; 
-        Attempt to modify the tuple.
-
-        A tuple is immutable, so it cannot be modified once it has been created.
-
-        &#34;&#34;&#34; 
-        
-        try:
-            # Tuple having integers.
-            my_tuple = (1, 2, 3)
-            print(f&#39;Tuple containing integers:  {my_tuple}&#39;)
-            
-            # Attempt to modify the tuple. 
-            my_tuple[1]=10
-
-        except Exception as error:
-            # Display the error.
-            print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
-
     def access_tuple(self):
         &#34;&#34;&#34; Access a tuple. &#34;&#34;&#34;
         
@@ -180,6 +160,181 @@ class tuple_samples:
             # Display the error.
             print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
 
+    def modify_tuple(self):
+        &#34;&#34;&#34; 
+        Update a tuple. 
+        
+        Remarks
+        -------
+
+        Once a tuple is created, you cannot change its values. Tuples are
+        **unchangeable**, or **immutable** as it also is called.  But there is a
+        workaround. You can convert the tuple into a list, change the list, and
+        convert the list back into a tuple.
+        
+        &#34;&#34;&#34;
+        
+        try:
+
+            # Create a tuple.
+            my_tuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, 
+            &#34;orange&#34;, &#34;kiwi&#34;, &#34;melon&#34;, &#34;mango&#34;)
+            print(f&#39;\nThe tuple is:  {my_tuple}&#39;)
+
+            # Modify a tuple. 
+
+            # Create a list from the tuple.
+            my_list = list(my_tuple)
+            # Change the second item of the list.
+            my_list[1] = &#34;kiwi&#34;
+            # Covert the list back to a tuple. 
+            my_tuple = tuple(my_list)
+            print(&#34;Modify a tuple item.&#34;)
+            print(f&#39;The modified tuple is:  {my_tuple}&#39;)
+
+
+            # Add a new element to a tuple using a list.
+            my_tuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
+            print(f&#39;\nThe tuple is:  {my_tuple}&#39;)
+            # Create a list from the tuple.
+            my_list = list(my_tuple)
+            # Append a new item to the list.
+            my_list.append(&#34;orange&#34;)
+            # Covert the list back to a tuple. 
+            my_tuple = tuple(my_list)
+            print(&#34;Add an item to the tuple using a list&#34;)
+            print(f&#39;The modified tuple is:  {my_tuple}&#39;)
+
+            # Add a new item to a tuple using another tuple. 
+            my_tuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
+            print(f&#39;\nThe tuple is:  {my_tuple}&#39;)
+            # Create another tuple. Notice the comma at the end. 
+            a_tuple = (&#34;orange&#34;,)
+            # Append the tuple 
+            my_tuple += a_tuple
+            print(&#34;Add an item to the tuple using a tuple&#34;)
+            print(f&#39;The modified tuple is:  {my_tuple}&#39;)
+
+            # Remove item from a tuple by using a list. 
+            my_tuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
+            print(f&#39;\nThe tuple is:  {my_tuple}&#39;)
+            # Create a list from the tuple.
+            my_list = list(my_tuple)
+            # Remove an item.
+            my_list.remove(&#34;apple&#34;)
+            # Covert the list back to a tuple. 
+            my_tuple = tuple(my_list)
+            print(&#34;Remove an item from the tuple using a list&#34;)
+            print(f&#39;The modified tuple is:  {my_tuple}&#39;)
+
+            # Generate an error
+            print(&#34;\Modify a tuple item causing an error.&#34;)
+            my_tuple[&#34;apple&#34;] = &#34;pear&#34;
+
+        except Exception as error:
+            # Display the error.
+            print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
+
+
+    def unpack_tuple(self):
+        &#34;&#34;&#34; 
+        Unpack a tuple. 
+        
+        Remarks
+        -------
+
+        When you create a tuple, you normally assign values to it. This is
+        called **packing** a tuple.
+
+        You are also allowed to extract the values back into variables. This is
+        called **unpacking**.
+        
+        &#34;&#34;&#34;
+        
+        try:
+
+            # Pack (create) a tuple.
+            my_tuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, 
+            &#34;orange&#34;, &#34;kiwi&#34;, &#34;melon&#34;, &#34;mango&#34;)
+            print(f&#39;\nThe packed tuple is:  {my_tuple}&#39;)
+
+            (item1, item2, item3, *alist) = my_tuple
+
+            print(f&#39;\nThe single unpacked items are:  {item1, item2, item3}&#39;)
+            print(f&#39;The list unpacked items are:  {alist}&#39;)
+
+        except Exception as error:
+            # Display the error.
+            print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
+        
+    def odds_ends_tuple(self):
+        &#34;&#34;&#34; 
+        Loop through a tuple, join tuples, use tuple methos.
+        
+        &#34;&#34;&#34;
+        try:
+            # Create a tuple.
+            my_tuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, 
+            &#34;orange&#34;, &#34;kiwi&#34;, &#34;melon&#34;, &#34;mango&#34;)
+            print(f&#39;\nThe tuple is:  {my_tuple}&#39;)
+
+            # Loop through tuple.
+
+            print(&#34;\nLoop through the tuple using a for loop&#34;)
+            items = &#34;&#34;
+            for item in my_tuple:
+                items += item + &#34; &#34;
+            print(f&#39;Tuple items:  {items}&#39;)
+
+            print(&#34;\nLoop through the tuple using a while loop&#34;)
+            items = &#34;&#34;
+            i = 0
+            while i &lt; len(my_tuple):
+                items += my_tuple[i] + &#34; &#34;
+                i += 1
+            print(f&#39;Tuple items:  {items}&#39;)
+
+            # Join tuples.
+
+            print(&#34;\nJoin tuples&#34;)
+            a_tuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
+            b_tuple = (&#34;orange&#34;, &#34;kiwi&#34;, &#34;melon&#34;, &#34;mango&#34;)
+            print(f&#39;Tuple a is:  {a_tuple}&#39;)
+            print(f&#39;Tuple b is:  {b_tuple}&#39;)
+
+            c_tuple = a_tuple + b_tuple
+            print(f&#39;The joined tuple is:  {c_tuple}&#39;)
+
+            # Multiply a tuple.
+
+            print(&#34;\nMultiply a tuple&#34;)
+            a_tuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
+            print(f&#39;The tuple is:  {a_tuple}&#39;)
+
+            m_tuple = a_tuple * 2
+            print(f&#39;The multiplied tuple is:  {m_tuple}&#39;)
+
+            # Using tuple methods.
+
+            print(&#34;\nUsing tuple methods&#34;)
+            a_tuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, &#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
+            print(f&#39;The tuple is:  {a_tuple}&#39;)
+
+            # Find how many times an item occurs.
+            print(&#34;\nFind how many times an item occurs&#34;)
+            occurrences = a_tuple.count(&#34;apple&#34;)
+            print(f&#39;The item **apple** occurs: {occurrences} times&#39;)
+
+
+            # Index of the first occurence of a specific item.
+            print(&#34;\nIndex of the first occurence of a specific item&#34;)
+            index = a_tuple.index(&#34;cherry&#34;)
+            print(f&#39;Index of the item **cherry** first occurrence is: {index}&#39;)
+
+        except Exception as error:
+            # Display the error.
+            print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
+
 
 ##### ****** Menu class ****** #####
 
@@ -206,7 +361,7 @@ class tuple_menu:
         &#34;&#34;&#34; Initialize the class `string_menu` instance. &#34;&#34;&#34;
 
         # Define the entries of the string samples menu. 
-        self.menu_items = [&#34;Create a tuple&#34;, &#34;Modify a tuple&#34;, &#34;Access a tuple&#34;, &#34;Quit&#34;]
+        self.menu_items = [&#34;Create a tuple&#34;, &#34;Modify a tuple error&#34;, &#34;Access a tuple&#34;, &#34;Unpack a tuple&#34;, &#34;Tuple odds and ends&#34;, &#34;Quit&#34;]
     
         # Instantiate the menu class and create the menu.
         self.tuplemenu = create_menu(&#34;Tuple Menu&#34;)
@@ -234,13 +389,22 @@ class tuple_menu:
                 self.tuplesamples.create_tuple()
                 
             elif choice == 2:
-                print(&#34;\n*** Attempt to modify a tuple ***&#34;)
+                print(&#34;\n*** Modify a tuple ***&#34;)
                 self.tuplesamples.modify_tuple()
                 
             elif choice == 3:
                 print(&#34;\n*** Access a tuple ***&#34;)
                 self.tuplesamples.access_tuple()
-                
+
+            elif choice == 4:
+                print(&#34;\n*** Unpack a tuple ***&#34;)
+                self.tuplesamples.unpack_tuple()
+            
+            elif choice == 5:
+                print(&#34;\n*** Tuple odds and ends***&#34;)
+                self.tuplesamples.odds_ends_tuple()
+
+
             elif choice == len(self.menu_items):
                 break</code></pre>
 </details>
@@ -295,7 +459,7 @@ and execute the sample selected by the user. </p>
         &#34;&#34;&#34; Initialize the class `string_menu` instance. &#34;&#34;&#34;
 
         # Define the entries of the string samples menu. 
-        self.menu_items = [&#34;Create a tuple&#34;, &#34;Modify a tuple&#34;, &#34;Access a tuple&#34;, &#34;Quit&#34;]
+        self.menu_items = [&#34;Create a tuple&#34;, &#34;Modify a tuple error&#34;, &#34;Access a tuple&#34;, &#34;Unpack a tuple&#34;, &#34;Tuple odds and ends&#34;, &#34;Quit&#34;]
     
         # Instantiate the menu class and create the menu.
         self.tuplemenu = create_menu(&#34;Tuple Menu&#34;)
@@ -323,13 +487,22 @@ and execute the sample selected by the user. </p>
                 self.tuplesamples.create_tuple()
                 
             elif choice == 2:
-                print(&#34;\n*** Attempt to modify a tuple ***&#34;)
+                print(&#34;\n*** Modify a tuple ***&#34;)
                 self.tuplesamples.modify_tuple()
                 
             elif choice == 3:
                 print(&#34;\n*** Access a tuple ***&#34;)
                 self.tuplesamples.access_tuple()
-                
+
+            elif choice == 4:
+                print(&#34;\n*** Unpack a tuple ***&#34;)
+                self.tuplesamples.unpack_tuple()
+            
+            elif choice == 5:
+                print(&#34;\n*** Tuple odds and ends***&#34;)
+                self.tuplesamples.odds_ends_tuple()
+
+
             elif choice == len(self.menu_items):
                 break</code></pre>
 </details>
@@ -365,13 +538,22 @@ the user's selection.</p></div>
             self.tuplesamples.create_tuple()
             
         elif choice == 2:
-            print(&#34;\n*** Attempt to modify a tuple ***&#34;)
+            print(&#34;\n*** Modify a tuple ***&#34;)
             self.tuplesamples.modify_tuple()
             
         elif choice == 3:
             print(&#34;\n*** Access a tuple ***&#34;)
             self.tuplesamples.access_tuple()
-            
+
+        elif choice == 4:
+            print(&#34;\n*** Unpack a tuple ***&#34;)
+            self.tuplesamples.unpack_tuple()
+        
+        elif choice == 5:
+            print(&#34;\n*** Tuple odds and ends***&#34;)
+            self.tuplesamples.odds_ends_tuple()
+
+
         elif choice == len(self.menu_items):
             break</code></pre>
 </details>
@@ -456,26 +638,6 @@ the user's selection.</p></div>
             # Display the error.
             print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
 
-    def modify_tuple(self):
-        &#34;&#34;&#34; 
-        Attempt to modify the tuple.
-
-        A tuple is immutable, so it cannot be modified once it has been created.
-
-        &#34;&#34;&#34; 
-        
-        try:
-            # Tuple having integers.
-            my_tuple = (1, 2, 3)
-            print(f&#39;Tuple containing integers:  {my_tuple}&#39;)
-            
-            # Attempt to modify the tuple. 
-            my_tuple[1]=10
-
-        except Exception as error:
-            # Display the error.
-            print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
-
     def access_tuple(self):
         &#34;&#34;&#34; Access a tuple. &#34;&#34;&#34;
         
@@ -512,6 +674,181 @@ the user's selection.</p></div>
             # the list.
             sub_tuple = my_tuple[2:]
             print(f&#39;The sub tuple in the range [2:] is:  {sub_tuple}&#39;)
+
+        except Exception as error:
+            # Display the error.
+            print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
+
+    def modify_tuple(self):
+        &#34;&#34;&#34; 
+        Update a tuple. 
+        
+        Remarks
+        -------
+
+        Once a tuple is created, you cannot change its values. Tuples are
+        **unchangeable**, or **immutable** as it also is called.  But there is a
+        workaround. You can convert the tuple into a list, change the list, and
+        convert the list back into a tuple.
+        
+        &#34;&#34;&#34;
+        
+        try:
+
+            # Create a tuple.
+            my_tuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, 
+            &#34;orange&#34;, &#34;kiwi&#34;, &#34;melon&#34;, &#34;mango&#34;)
+            print(f&#39;\nThe tuple is:  {my_tuple}&#39;)
+
+            # Modify a tuple. 
+
+            # Create a list from the tuple.
+            my_list = list(my_tuple)
+            # Change the second item of the list.
+            my_list[1] = &#34;kiwi&#34;
+            # Covert the list back to a tuple. 
+            my_tuple = tuple(my_list)
+            print(&#34;Modify a tuple item.&#34;)
+            print(f&#39;The modified tuple is:  {my_tuple}&#39;)
+
+
+            # Add a new element to a tuple using a list.
+            my_tuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
+            print(f&#39;\nThe tuple is:  {my_tuple}&#39;)
+            # Create a list from the tuple.
+            my_list = list(my_tuple)
+            # Append a new item to the list.
+            my_list.append(&#34;orange&#34;)
+            # Covert the list back to a tuple. 
+            my_tuple = tuple(my_list)
+            print(&#34;Add an item to the tuple using a list&#34;)
+            print(f&#39;The modified tuple is:  {my_tuple}&#39;)
+
+            # Add a new item to a tuple using another tuple. 
+            my_tuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
+            print(f&#39;\nThe tuple is:  {my_tuple}&#39;)
+            # Create another tuple. Notice the comma at the end. 
+            a_tuple = (&#34;orange&#34;,)
+            # Append the tuple 
+            my_tuple += a_tuple
+            print(&#34;Add an item to the tuple using a tuple&#34;)
+            print(f&#39;The modified tuple is:  {my_tuple}&#39;)
+
+            # Remove item from a tuple by using a list. 
+            my_tuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
+            print(f&#39;\nThe tuple is:  {my_tuple}&#39;)
+            # Create a list from the tuple.
+            my_list = list(my_tuple)
+            # Remove an item.
+            my_list.remove(&#34;apple&#34;)
+            # Covert the list back to a tuple. 
+            my_tuple = tuple(my_list)
+            print(&#34;Remove an item from the tuple using a list&#34;)
+            print(f&#39;The modified tuple is:  {my_tuple}&#39;)
+
+            # Generate an error
+            print(&#34;\Modify a tuple item causing an error.&#34;)
+            my_tuple[&#34;apple&#34;] = &#34;pear&#34;
+
+        except Exception as error:
+            # Display the error.
+            print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
+
+
+    def unpack_tuple(self):
+        &#34;&#34;&#34; 
+        Unpack a tuple. 
+        
+        Remarks
+        -------
+
+        When you create a tuple, you normally assign values to it. This is
+        called **packing** a tuple.
+
+        You are also allowed to extract the values back into variables. This is
+        called **unpacking**.
+        
+        &#34;&#34;&#34;
+        
+        try:
+
+            # Pack (create) a tuple.
+            my_tuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, 
+            &#34;orange&#34;, &#34;kiwi&#34;, &#34;melon&#34;, &#34;mango&#34;)
+            print(f&#39;\nThe packed tuple is:  {my_tuple}&#39;)
+
+            (item1, item2, item3, *alist) = my_tuple
+
+            print(f&#39;\nThe single unpacked items are:  {item1, item2, item3}&#39;)
+            print(f&#39;The list unpacked items are:  {alist}&#39;)
+
+        except Exception as error:
+            # Display the error.
+            print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
+        
+    def odds_ends_tuple(self):
+        &#34;&#34;&#34; 
+        Loop through a tuple, join tuples, use tuple methos.
+        
+        &#34;&#34;&#34;
+        try:
+            # Create a tuple.
+            my_tuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, 
+            &#34;orange&#34;, &#34;kiwi&#34;, &#34;melon&#34;, &#34;mango&#34;)
+            print(f&#39;\nThe tuple is:  {my_tuple}&#39;)
+
+            # Loop through tuple.
+
+            print(&#34;\nLoop through the tuple using a for loop&#34;)
+            items = &#34;&#34;
+            for item in my_tuple:
+                items += item + &#34; &#34;
+            print(f&#39;Tuple items:  {items}&#39;)
+
+            print(&#34;\nLoop through the tuple using a while loop&#34;)
+            items = &#34;&#34;
+            i = 0
+            while i &lt; len(my_tuple):
+                items += my_tuple[i] + &#34; &#34;
+                i += 1
+            print(f&#39;Tuple items:  {items}&#39;)
+
+            # Join tuples.
+
+            print(&#34;\nJoin tuples&#34;)
+            a_tuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
+            b_tuple = (&#34;orange&#34;, &#34;kiwi&#34;, &#34;melon&#34;, &#34;mango&#34;)
+            print(f&#39;Tuple a is:  {a_tuple}&#39;)
+            print(f&#39;Tuple b is:  {b_tuple}&#39;)
+
+            c_tuple = a_tuple + b_tuple
+            print(f&#39;The joined tuple is:  {c_tuple}&#39;)
+
+            # Multiply a tuple.
+
+            print(&#34;\nMultiply a tuple&#34;)
+            a_tuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
+            print(f&#39;The tuple is:  {a_tuple}&#39;)
+
+            m_tuple = a_tuple * 2
+            print(f&#39;The multiplied tuple is:  {m_tuple}&#39;)
+
+            # Using tuple methods.
+
+            print(&#34;\nUsing tuple methods&#34;)
+            a_tuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, &#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
+            print(f&#39;The tuple is:  {a_tuple}&#39;)
+
+            # Find how many times an item occurs.
+            print(&#34;\nFind how many times an item occurs&#34;)
+            occurrences = a_tuple.count(&#34;apple&#34;)
+            print(f&#39;The item **apple** occurs: {occurrences} times&#39;)
+
+
+            # Index of the first occurence of a specific item.
+            print(&#34;\nIndex of the first occurence of a specific item&#34;)
+            index = a_tuple.index(&#34;cherry&#34;)
+            print(f&#39;Index of the item **cherry** first occurrence is: {index}&#39;)
 
         except Exception as error:
             # Display the error.
@@ -612,27 +949,211 @@ the user's selection.</p></div>
 <span>def <span class="ident">modify_tuple</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Attempt to modify the tuple.</p>
-<p>A tuple is immutable, so it cannot be modified once it has been created.</p></div>
+<div class="desc"><p>Update a tuple. </p>
+<h2 id="remarks">Remarks</h2>
+<p>Once a tuple is created, you cannot change its values. Tuples are
+<strong>unchangeable</strong>, or <strong>immutable</strong> as it also is called.
+But there is a
+workaround. You can convert the tuple into a list, change the list, and
+convert the list back into a tuple.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def modify_tuple(self):
     &#34;&#34;&#34; 
-    Attempt to modify the tuple.
+    Update a tuple. 
+    
+    Remarks
+    -------
 
-    A tuple is immutable, so it cannot be modified once it has been created.
-
-    &#34;&#34;&#34; 
+    Once a tuple is created, you cannot change its values. Tuples are
+    **unchangeable**, or **immutable** as it also is called.  But there is a
+    workaround. You can convert the tuple into a list, change the list, and
+    convert the list back into a tuple.
+    
+    &#34;&#34;&#34;
     
     try:
-        # Tuple having integers.
-        my_tuple = (1, 2, 3)
-        print(f&#39;Tuple containing integers:  {my_tuple}&#39;)
-        
-        # Attempt to modify the tuple. 
-        my_tuple[1]=10
+
+        # Create a tuple.
+        my_tuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, 
+        &#34;orange&#34;, &#34;kiwi&#34;, &#34;melon&#34;, &#34;mango&#34;)
+        print(f&#39;\nThe tuple is:  {my_tuple}&#39;)
+
+        # Modify a tuple. 
+
+        # Create a list from the tuple.
+        my_list = list(my_tuple)
+        # Change the second item of the list.
+        my_list[1] = &#34;kiwi&#34;
+        # Covert the list back to a tuple. 
+        my_tuple = tuple(my_list)
+        print(&#34;Modify a tuple item.&#34;)
+        print(f&#39;The modified tuple is:  {my_tuple}&#39;)
+
+
+        # Add a new element to a tuple using a list.
+        my_tuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
+        print(f&#39;\nThe tuple is:  {my_tuple}&#39;)
+        # Create a list from the tuple.
+        my_list = list(my_tuple)
+        # Append a new item to the list.
+        my_list.append(&#34;orange&#34;)
+        # Covert the list back to a tuple. 
+        my_tuple = tuple(my_list)
+        print(&#34;Add an item to the tuple using a list&#34;)
+        print(f&#39;The modified tuple is:  {my_tuple}&#39;)
+
+        # Add a new item to a tuple using another tuple. 
+        my_tuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
+        print(f&#39;\nThe tuple is:  {my_tuple}&#39;)
+        # Create another tuple. Notice the comma at the end. 
+        a_tuple = (&#34;orange&#34;,)
+        # Append the tuple 
+        my_tuple += a_tuple
+        print(&#34;Add an item to the tuple using a tuple&#34;)
+        print(f&#39;The modified tuple is:  {my_tuple}&#39;)
+
+        # Remove item from a tuple by using a list. 
+        my_tuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
+        print(f&#39;\nThe tuple is:  {my_tuple}&#39;)
+        # Create a list from the tuple.
+        my_list = list(my_tuple)
+        # Remove an item.
+        my_list.remove(&#34;apple&#34;)
+        # Covert the list back to a tuple. 
+        my_tuple = tuple(my_list)
+        print(&#34;Remove an item from the tuple using a list&#34;)
+        print(f&#39;The modified tuple is:  {my_tuple}&#39;)
+
+        # Generate an error
+        print(&#34;\Modify a tuple item causing an error.&#34;)
+        my_tuple[&#34;apple&#34;] = &#34;pear&#34;
+
+    except Exception as error:
+        # Display the error.
+        print(f&#34;{type(error).__name__} was raised: {error}&#34;) </code></pre>
+</details>
+</dd>
+<dt id="code.builtin_types.tuples.tuple_samples.odds_ends_tuple"><code class="name flex">
+<span>def <span class="ident">odds_ends_tuple</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Loop through a tuple, join tuples, use tuple methos.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def odds_ends_tuple(self):
+    &#34;&#34;&#34; 
+    Loop through a tuple, join tuples, use tuple methos.
+    
+    &#34;&#34;&#34;
+    try:
+        # Create a tuple.
+        my_tuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, 
+        &#34;orange&#34;, &#34;kiwi&#34;, &#34;melon&#34;, &#34;mango&#34;)
+        print(f&#39;\nThe tuple is:  {my_tuple}&#39;)
+
+        # Loop through tuple.
+
+        print(&#34;\nLoop through the tuple using a for loop&#34;)
+        items = &#34;&#34;
+        for item in my_tuple:
+            items += item + &#34; &#34;
+        print(f&#39;Tuple items:  {items}&#39;)
+
+        print(&#34;\nLoop through the tuple using a while loop&#34;)
+        items = &#34;&#34;
+        i = 0
+        while i &lt; len(my_tuple):
+            items += my_tuple[i] + &#34; &#34;
+            i += 1
+        print(f&#39;Tuple items:  {items}&#39;)
+
+        # Join tuples.
+
+        print(&#34;\nJoin tuples&#34;)
+        a_tuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
+        b_tuple = (&#34;orange&#34;, &#34;kiwi&#34;, &#34;melon&#34;, &#34;mango&#34;)
+        print(f&#39;Tuple a is:  {a_tuple}&#39;)
+        print(f&#39;Tuple b is:  {b_tuple}&#39;)
+
+        c_tuple = a_tuple + b_tuple
+        print(f&#39;The joined tuple is:  {c_tuple}&#39;)
+
+        # Multiply a tuple.
+
+        print(&#34;\nMultiply a tuple&#34;)
+        a_tuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
+        print(f&#39;The tuple is:  {a_tuple}&#39;)
+
+        m_tuple = a_tuple * 2
+        print(f&#39;The multiplied tuple is:  {m_tuple}&#39;)
+
+        # Using tuple methods.
+
+        print(&#34;\nUsing tuple methods&#34;)
+        a_tuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, &#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
+        print(f&#39;The tuple is:  {a_tuple}&#39;)
+
+        # Find how many times an item occurs.
+        print(&#34;\nFind how many times an item occurs&#34;)
+        occurrences = a_tuple.count(&#34;apple&#34;)
+        print(f&#39;The item **apple** occurs: {occurrences} times&#39;)
+
+
+        # Index of the first occurence of a specific item.
+        print(&#34;\nIndex of the first occurence of a specific item&#34;)
+        index = a_tuple.index(&#34;cherry&#34;)
+        print(f&#39;Index of the item **cherry** first occurrence is: {index}&#39;)
+
+    except Exception as error:
+        # Display the error.
+        print(f&#34;{type(error).__name__} was raised: {error}&#34;) </code></pre>
+</details>
+</dd>
+<dt id="code.builtin_types.tuples.tuple_samples.unpack_tuple"><code class="name flex">
+<span>def <span class="ident">unpack_tuple</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Unpack a tuple. </p>
+<h2 id="remarks">Remarks</h2>
+<p>When you create a tuple, you normally assign values to it. This is
+called <strong>packing</strong> a tuple.</p>
+<p>You are also allowed to extract the values back into variables. This is
+called <strong>unpacking</strong>.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def unpack_tuple(self):
+    &#34;&#34;&#34; 
+    Unpack a tuple. 
+    
+    Remarks
+    -------
+
+    When you create a tuple, you normally assign values to it. This is
+    called **packing** a tuple.
+
+    You are also allowed to extract the values back into variables. This is
+    called **unpacking**.
+    
+    &#34;&#34;&#34;
+    
+    try:
+
+        # Pack (create) a tuple.
+        my_tuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, 
+        &#34;orange&#34;, &#34;kiwi&#34;, &#34;melon&#34;, &#34;mango&#34;)
+        print(f&#39;\nThe packed tuple is:  {my_tuple}&#39;)
+
+        (item1, item2, item3, *alist) = my_tuple
+
+        print(f&#39;\nThe single unpacked items are:  {item1, item2, item3}&#39;)
+        print(f&#39;The list unpacked items are:  {alist}&#39;)
 
     except Exception as error:
         # Display the error.
@@ -671,6 +1192,8 @@ the user's selection.</p></div>
 <li><code><a title="code.builtin_types.tuples.tuple_samples.access_tuple" href="#code.builtin_types.tuples.tuple_samples.access_tuple">access_tuple</a></code></li>
 <li><code><a title="code.builtin_types.tuples.tuple_samples.create_tuple" href="#code.builtin_types.tuples.tuple_samples.create_tuple">create_tuple</a></code></li>
 <li><code><a title="code.builtin_types.tuples.tuple_samples.modify_tuple" href="#code.builtin_types.tuples.tuple_samples.modify_tuple">modify_tuple</a></code></li>
+<li><code><a title="code.builtin_types.tuples.tuple_samples.odds_ends_tuple" href="#code.builtin_types.tuples.tuple_samples.odds_ends_tuple">odds_ends_tuple</a></code></li>
+<li><code><a title="code.builtin_types.tuples.tuple_samples.unpack_tuple" href="#code.builtin_types.tuples.tuple_samples.unpack_tuple">unpack_tuple</a></code></li>
 </ul>
 </li>
 </ul>
