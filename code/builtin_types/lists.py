@@ -1,12 +1,11 @@
 """ 
 Module name: lists.py 
 
+Remarks
+-------
+
 Lists are mutable sequences, typically used to store collections of homogeneous
 items (where the precise degree of similarity will vary by application).
-
-For more information, see
-[lists](https://docs.python.org/3/library/stdtypes.html#lists) and [more on
-lists](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#more-on-lists). See also [Python Lists](https://www.w3schools.com/python/python_lists.asp).
 
 You can create lists in a number of ways:
 
@@ -14,6 +13,11 @@ You can create lists in a number of ways:
 - Using square brackets, separating items with commas: `[a]`, `[a, b, c]`
 - Using a list comprehension: `[x for x in iterable]`
 - Using the type constructor: `list()` or `list(iterable)`
+
+For more information, see
+[lists](https://docs.python.org/3/library/stdtypes.html#lists) and [more on
+lists](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#more-on-lists). See also [Python Lists](https://www.w3schools.com/python/python_lists.asp).
+
 
 """
 

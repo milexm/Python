@@ -1,13 +1,31 @@
 """ 
-Execute samples from the dictionary group. 
+Module name: dictionarie.py
 
-Dictionaries, unlike sequences which are
-indexed by a range of numbers, are indexed by keys, which can be
-**any immutable type** such as **strings** and **numbers**.  
-A dictionary is **ordered** and **mutable**. It **does not allow duplicate
-members**. For more information, see [mapping types —
+Remarks
+-------
+
+Dictionaries, unlike sequences which are indexed by a range of numbers, are
+indexed by keys, which can be **any immutable type** such as **strings** and
+**numbers**.  A dictionary is **ordered** and **mutable**. It **does not allow
+duplicate members**. 
+
+A **dictionary** is a mapping object that maps hashable values to arbitrary
+objects. Mappings are mutable objects.
+
+A dictionary’s keys are almost arbitrary values. Values that are not hashable
+cannot be used as keys.
+
+You can create dictiuonaries in a number of ways:
+
+- Use a comma-separated list of `key: value` pairs within braces: `{'jack': 4098, 'sjoerd': 4127} or {4098: 'jack', 4127: 'sjoerd'}`
+- Use a `dict comprehension: {}`, `{x: x ** 2 for x in range(10)}`
+- Use the type constructor: `dict()`, `dict([('foo', 100), ('bar', 200)])`, `dict(foo=100, bar=200)`
+
+For more information, see [mapping types —
 dict](https://docs.python.org/3/library/stdtypes.html#mapping-types-dict) and
-[dictionaries](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#dictionaries).
+[dictionaries](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#dictionaries). Sea also [Python Dictionaries](https://www.w3schools.com/python/python_dictionaries.asp).
+
+
 
 
 """
