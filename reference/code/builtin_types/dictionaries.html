@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
 <title>code.builtin_types.dictionaries API documentation</title>
-<meta name="description" content="Execute samples from the dictionary group …" />
+<meta name="description" content="Module name: dictionarie.py …" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -22,28 +22,58 @@
 <h1 class="title">Module <code>code.builtin_types.dictionaries</code></h1>
 </header>
 <section id="section-intro">
-<p>Execute samples from the dictionary group. </p>
-<p>Dictionaries, unlike sequences which are
-indexed by a range of numbers, are indexed by keys, which can be
-<strong>any immutable type</strong> such as <strong>strings</strong> and <strong>numbers</strong>.<br>
-A dictionary is <strong>ordered</strong> and <strong>mutable</strong>. It <strong>does not allow duplicate
-members</strong>. For more information, see <a href="https://docs.python.org/3/library/stdtypes.html#mapping-types-dict">mapping types —
+<p>Module name: dictionarie.py</p>
+<h2 id="remarks">Remarks</h2>
+<p>Dictionaries, unlike sequences which are indexed by a range of numbers, are
+indexed by keys, which can be <strong>any immutable type</strong> such as <strong>strings</strong> and
+<strong>numbers</strong>.
+A dictionary is <strong>ordered</strong> and <strong>mutable</strong>. It <strong>does not allow
+duplicate members</strong>. </p>
+<p>A <strong>dictionary</strong> is a mapping object that maps hashable values to arbitrary
+objects. Mappings are mutable objects.</p>
+<p>A dictionary’s keys are almost arbitrary values. Values that are not hashable
+cannot be used as keys.</p>
+<p>You can create dictiuonaries in a number of ways:</p>
+<ul>
+<li>Use a comma-separated list of <code>key: value</code> pairs within braces: <code>{'jack': 4098, 'sjoerd': 4127} or {4098: 'jack', 4127: 'sjoerd'}</code></li>
+<li>Use a <code>dict comprehension: {}</code>, <code>{x: x ** 2 for x in range(10)}</code></li>
+<li>Use the type constructor: <code>dict()</code>, <code>dict([('foo', 100), ('bar', 200)])</code>, <code>dict(foo=100, bar=200)</code></li>
+</ul>
+<p>For more information, see <a href="https://docs.python.org/3/library/stdtypes.html#mapping-types-dict">mapping types —
 dict</a> and
-<a href="https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#dictionaries">dictionaries</a>.</p>
+<a href="https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#dictionaries">dictionaries</a>. Sea also <a href="https://www.w3schools.com/python/python_dictionaries.asp">Python Dictionaries</a>.</p>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">&#34;&#34;&#34; 
-Execute samples from the dictionary group. 
+Module name: dictionarie.py
 
-Dictionaries, unlike sequences which are
-indexed by a range of numbers, are indexed by keys, which can be
-**any immutable type** such as **strings** and **numbers**.  
-A dictionary is **ordered** and **mutable**. It **does not allow duplicate
-members**. For more information, see [mapping types —
+Remarks
+-------
+
+Dictionaries, unlike sequences which are indexed by a range of numbers, are
+indexed by keys, which can be **any immutable type** such as **strings** and
+**numbers**.  A dictionary is **ordered** and **mutable**. It **does not allow
+duplicate members**. 
+
+A **dictionary** is a mapping object that maps hashable values to arbitrary
+objects. Mappings are mutable objects.
+
+A dictionary’s keys are almost arbitrary values. Values that are not hashable
+cannot be used as keys.
+
+You can create dictiuonaries in a number of ways:
+
+- Use a comma-separated list of `key: value` pairs within braces: `{&#39;jack&#39;: 4098, &#39;sjoerd&#39;: 4127} or {4098: &#39;jack&#39;, 4127: &#39;sjoerd&#39;}`
+- Use a `dict comprehension: {}`, `{x: x ** 2 for x in range(10)}`
+- Use the type constructor: `dict()`, `dict([(&#39;foo&#39;, 100), (&#39;bar&#39;, 200)])`, `dict(foo=100, bar=200)`
+
+For more information, see [mapping types —
 dict](https://docs.python.org/3/library/stdtypes.html#mapping-types-dict) and
-[dictionaries](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#dictionaries).
+[dictionaries](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#dictionaries). Sea also [Python Dictionaries](https://www.w3schools.com/python/python_dictionaries.asp).
+
+
 
 
 &#34;&#34;&#34;
@@ -1004,7 +1034,9 @@ fit within the allowed width. For more information, see
 <nav id="sidebar">
 <h1>Index</h1>
 <div class="toc">
-<ul></ul>
+<ul>
+<li><a href="#remarks">Remarks</a></li>
+</ul>
 </div>
 <ul id="index">
 <li><h3>Super-module</h3>
