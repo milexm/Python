@@ -10,9 +10,17 @@ is that tuples are immutable. Tuples once created cannot be modified.
 Tuples are used to write-protect data and are usually faster than list as 
 they cannot change dynamically. A tuple is defined within parentheses () where 
 items are separated by commas.
+
+You can create tuples in a number of ways:
+
+- Using a pair of parentheses to denote the **empty tuple**: `()`
+- Using a trailing comma for a singleton tuple: `a,` or `(a,)`
+- Separating items with commas: `a, b, c` or `(a, b, c)`
+- Using the `tuple()` built-in: `tuple()` or `tuple(iterable)`
+
 For more information, see
 [tuples](https://docs.python.org/3/library/stdtypes.html#tuples) and [tuples and
-sequences](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#tuples-and-sequences).
+sequences](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#tuples-and-sequences). See also [Python Tuples](https://www.w3schools.com/python/python_tuples.asp).
 
 """
 
