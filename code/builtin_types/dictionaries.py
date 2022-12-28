@@ -25,9 +25,6 @@ For more information, see [mapping types —
 dict](https://docs.python.org/3/library/stdtypes.html#mapping-types-dict) and
 [dictionaries](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehension#dictionaries). Sea also [Python Dictionaries](https://www.w3schools.com/python/python_dictionaries.asp).
 
-
-
-
 """
 
 from pprint import pprint
