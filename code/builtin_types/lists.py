@@ -541,6 +541,30 @@ class list_samples:
         except Exception as error:
             print(f"{type(error).__name__} was raised: {error}") 
 
+    def  use_list_comprehension (self):
+        """ 
+        Use list comprehension. 
+        
+        Remarks
+        -------
+        List comprehensions provide a concise way to create lists. Common
+        applications are to make new lists where each element is the result of
+        some operations applied to each member of another sequence or iterable,
+        or to create a subsequence of those elements that satisfy a certain
+        condition.
+
+        """
+
+        try:
+            # Create a list of squares.
+            self.squares = [x**2 for x in range(10)]
+            print(f"Create a list of squares")
+            print(self.squares)
+
+        except Exception as error:
+            print(f"{type(error).__name__} was raised: {error}") 
+
+
 
 ##### ****** Menu class ****** #####
 
@@ -569,7 +593,7 @@ class list_menu:
         # Define the entries of the list samples menu. 
         self.menu_items = ["Index a list", "Slice a list", "Create a list", "Create a list in a range", "Create a string list in a range", 
         "Remove duplicated list elments", "Perform list indexing",
-        "Change list elements", "Add element to a list", "Slice a list", "Apply list methods", "Use a list as a stack", "Use a list as a queue", "Quit"]
+        "Change list elements", "Add element to a list", "Slice a list", "Apply list methods", "Use a list as a stack", "Use a list as a queue", "Use list comprehension", "Quit"]
     
         # Instantiate the list menu class and create menu.
         self.listmenu = create_menu("List Menu")
@@ -646,6 +670,10 @@ class list_menu:
             elif choice == 13:
                 print("\n*** Use a list as a queue ***")
                 self.listsamples.use_list_as_queue()
+
+            elif choice == 14:
+                print("\n*** Use list comprehension ***")
+                self.listsamples.use_list_comprehension()
                 
             elif choice == len(self.menu_items):
                 break
