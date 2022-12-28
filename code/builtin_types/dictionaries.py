@@ -1,5 +1,5 @@
 """ 
-Module name: dictionarie.py
+Module name: dictionaries.py
 
 Remarks
 -------
