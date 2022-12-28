@@ -124,8 +124,8 @@ class string_menu:
     ---    
     In the calling module perform the following steps: 
 
-    1_ `amenu = string_menu()` # Instantiate the create_menu class and create the menu.  
-    1_ `amenu.string_selection_menu()` # Display the menu and execute the sample selected by the user.
+    1) `amenu = string_menu()` # Instantiate the create_menu class and create the menu.  
+    2) `amenu.string_selection_menu()` # Display the menu and execute the sample selected by the user.
   
     """
 
