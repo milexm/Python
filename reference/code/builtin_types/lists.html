@@ -583,6 +583,30 @@ class list_samples:
         except Exception as error:
             print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
 
+    def  use_list_comprehension (self):
+        &#34;&#34;&#34; 
+        Use list comprehension. 
+        
+        Remarks
+        -------
+        List comprehensions provide a concise way to create lists. Common
+        applications are to make new lists where each element is the result of
+        some operations applied to each member of another sequence or iterable,
+        or to create a subsequence of those elements that satisfy a certain
+        condition.
+
+        &#34;&#34;&#34;
+
+        try:
+            # Create a list of squares.
+            self.squares = [x**2 for x in range(10)]
+            print(f&#34;Create a list of squares&#34;)
+            print(self.squares)
+
+        except Exception as error:
+            print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
+
+
 
 ##### ****** Menu class ****** #####
 
@@ -611,7 +635,7 @@ class list_menu:
         # Define the entries of the list samples menu. 
         self.menu_items = [&#34;Index a list&#34;, &#34;Slice a list&#34;, &#34;Create a list&#34;, &#34;Create a list in a range&#34;, &#34;Create a string list in a range&#34;, 
         &#34;Remove duplicated list elments&#34;, &#34;Perform list indexing&#34;,
-        &#34;Change list elements&#34;, &#34;Add element to a list&#34;, &#34;Slice a list&#34;, &#34;Apply list methods&#34;, &#34;Use a list as a stack&#34;, &#34;Use a list as a queue&#34;, &#34;Quit&#34;]
+        &#34;Change list elements&#34;, &#34;Add element to a list&#34;, &#34;Slice a list&#34;, &#34;Apply list methods&#34;, &#34;Use a list as a stack&#34;, &#34;Use a list as a queue&#34;, &#34;Use list comprehension&#34;, &#34;Quit&#34;]
     
         # Instantiate the list menu class and create menu.
         self.listmenu = create_menu(&#34;List Menu&#34;)
@@ -688,6 +712,10 @@ class list_menu:
             elif choice == 13:
                 print(&#34;\n*** Use a list as a queue ***&#34;)
                 self.listsamples.use_list_as_queue()
+
+            elif choice == 14:
+                print(&#34;\n*** Use list comprehension ***&#34;)
+                self.listsamples.use_list_comprehension()
                 
             elif choice == len(self.menu_items):
                 break</code></pre>
@@ -746,7 +774,7 @@ menu. </p>
         # Define the entries of the list samples menu. 
         self.menu_items = [&#34;Index a list&#34;, &#34;Slice a list&#34;, &#34;Create a list&#34;, &#34;Create a list in a range&#34;, &#34;Create a string list in a range&#34;, 
         &#34;Remove duplicated list elments&#34;, &#34;Perform list indexing&#34;,
-        &#34;Change list elements&#34;, &#34;Add element to a list&#34;, &#34;Slice a list&#34;, &#34;Apply list methods&#34;, &#34;Use a list as a stack&#34;, &#34;Use a list as a queue&#34;, &#34;Quit&#34;]
+        &#34;Change list elements&#34;, &#34;Add element to a list&#34;, &#34;Slice a list&#34;, &#34;Apply list methods&#34;, &#34;Use a list as a stack&#34;, &#34;Use a list as a queue&#34;, &#34;Use list comprehension&#34;, &#34;Quit&#34;]
     
         # Instantiate the list menu class and create menu.
         self.listmenu = create_menu(&#34;List Menu&#34;)
@@ -823,6 +851,10 @@ menu. </p>
             elif choice == 13:
                 print(&#34;\n*** Use a list as a queue ***&#34;)
                 self.listsamples.use_list_as_queue()
+
+            elif choice == 14:
+                print(&#34;\n*** Use list comprehension ***&#34;)
+                self.listsamples.use_list_comprehension()
                 
             elif choice == len(self.menu_items):
                 break</code></pre>
@@ -909,6 +941,10 @@ on the user's selection.</p></div>
         elif choice == 13:
             print(&#34;\n*** Use a list as a queue ***&#34;)
             self.listsamples.use_list_as_queue()
+
+        elif choice == 14:
+            print(&#34;\n*** Use list comprehension ***&#34;)
+            self.listsamples.use_list_comprehension()
             
         elif choice == len(self.menu_items):
             break</code></pre>
@@ -1437,6 +1473,29 @@ For more information, see
             print(f&#34;{left} the second to arrive now leaves.&#34;)
             queue = deque([&#39;Michael&#39;, &#39;Terry&#39;, &#39;Graham&#39;])
             print(f&#34;Remaining queue in order of arrival: {queue}&#34;)
+        except Exception as error:
+            print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
+
+    def  use_list_comprehension (self):
+        &#34;&#34;&#34; 
+        Use list comprehension. 
+        
+        Remarks
+        -------
+        List comprehensions provide a concise way to create lists. Common
+        applications are to make new lists where each element is the result of
+        some operations applied to each member of another sequence or iterable,
+        or to create a subsequence of those elements that satisfy a certain
+        condition.
+
+        &#34;&#34;&#34;
+
+        try:
+            # Create a list of squares.
+            self.squares = [x**2 for x in range(10)]
+            print(f&#34;Create a list of squares&#34;)
+            print(self.squares)
+
         except Exception as error:
             print(f&#34;{type(error).__name__} was raised: {error}&#34;) </code></pre>
 </details>
@@ -2208,6 +2267,45 @@ stack</a>.</p></div>
         print(f&#34;{type(error).__name__} was raised: {error}&#34;) </code></pre>
 </details>
 </dd>
+<dt id="code.builtin_types.lists.list_samples.use_list_comprehension"><code class="name flex">
+<span>def <span class="ident">use_list_comprehension</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Use list comprehension. </p>
+<h2 id="remarks">Remarks</h2>
+<p>List comprehensions provide a concise way to create lists. Common
+applications are to make new lists where each element is the result of
+some operations applied to each member of another sequence or iterable,
+or to create a subsequence of those elements that satisfy a certain
+condition.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def  use_list_comprehension (self):
+    &#34;&#34;&#34; 
+    Use list comprehension. 
+    
+    Remarks
+    -------
+    List comprehensions provide a concise way to create lists. Common
+    applications are to make new lists where each element is the result of
+    some operations applied to each member of another sequence or iterable,
+    or to create a subsequence of those elements that satisfy a certain
+    condition.
+
+    &#34;&#34;&#34;
+
+    try:
+        # Create a list of squares.
+        self.squares = [x**2 for x in range(10)]
+        print(f&#34;Create a list of squares&#34;)
+        print(self.squares)
+
+    except Exception as error:
+        print(f&#34;{type(error).__name__} was raised: {error}&#34;) </code></pre>
+</details>
+</dd>
 </dl>
 </dd>
 </dl>
@@ -2252,6 +2350,7 @@ stack</a>.</p></div>
 <li><code><a title="code.builtin_types.lists.list_samples.slice_list" href="#code.builtin_types.lists.list_samples.slice_list">slice_list</a></code></li>
 <li><code><a title="code.builtin_types.lists.list_samples.use_list_as_queue" href="#code.builtin_types.lists.list_samples.use_list_as_queue">use_list_as_queue</a></code></li>
 <li><code><a title="code.builtin_types.lists.list_samples.use_list_as_stack" href="#code.builtin_types.lists.list_samples.use_list_as_stack">use_list_as_stack</a></code></li>
+<li><code><a title="code.builtin_types.lists.list_samples.use_list_comprehension" href="#code.builtin_types.lists.list_samples.use_list_comprehension">use_list_comprehension</a></code></li>
 </ul>
 </li>
 </ul>

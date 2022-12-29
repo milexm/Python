@@ -137,7 +137,16 @@ ut labore et dolore magna aliqua.&#34;&#34;&#34;
         print(f&#39;Upper case string: {upper_case_string}&#39;)
      
     def split_string(self):
-        &#34;&#34;&#34; Split a string using separating character. &#34;&#34;&#34;
+        &#34;&#34;&#34; 
+        Split a string using blank as separating character.  
+        
+        Remarks
+        -------
+        When you don&#39;t pass
+        a separator, the builtin function `split` splits a string at white
+        spaces.
+        
+        &#34;&#34;&#34;
 
         self.astring_multilines = &#34;&#34;&#34;Lorem ipsum dolor sit amet, 
 consectetur adipiscing elit, 
@@ -146,8 +155,24 @@ ut labore et dolore magna aliqua.&#34;&#34;&#34;
 
         self.split_string =  self.astring_multilines.split()
         print(f&#39;Split string: {self.split_string}&#39;)
-       
 
+        try:
+            # Count number of words in a file.
+            self.file_path = &#34;code/files/san_martino.txt&#34; 
+            print(f&#39;Words in file: {self.file_path}&#39;)
+            with open(self.file_path, &#39;r&#39;) as file:
+                self.text_read = file.read()
+                # Replace , ; . with a blank so they are not counted as words.
+                # Notice the use of the regular expression function `re`. `
+                self.string_list = re.split(&#34;, ; .| &#34;, self.text_read)
+            # Display the etext read.
+            print(f&#39;Text read: {self.string_list}&#39;)
+            # Display word count. 
+            self.words_number = len(self.string_list)
+            print(f&#39;Word count: {self.words_number}&#39;)
+        except Exception as error:
+            print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
+      
 ##### ****** Menu class ****** #####
 
 class string_menu:
@@ -461,7 +486,16 @@ ut labore et dolore magna aliqua.&#34;&#34;&#34;
         print(f&#39;Upper case string: {upper_case_string}&#39;)
      
     def split_string(self):
-        &#34;&#34;&#34; Split a string using separating character. &#34;&#34;&#34;
+        &#34;&#34;&#34; 
+        Split a string using blank as separating character.  
+        
+        Remarks
+        -------
+        When you don&#39;t pass
+        a separator, the builtin function `split` splits a string at white
+        spaces.
+        
+        &#34;&#34;&#34;
 
         self.astring_multilines = &#34;&#34;&#34;Lorem ipsum dolor sit amet, 
 consectetur adipiscing elit, 
@@ -469,7 +503,24 @@ sed do eiusmod tempor incididunt
 ut labore et dolore magna aliqua.&#34;&#34;&#34;
 
         self.split_string =  self.astring_multilines.split()
-        print(f&#39;Split string: {self.split_string}&#39;)</code></pre>
+        print(f&#39;Split string: {self.split_string}&#39;)
+
+        try:
+            # Count number of words in a file.
+            self.file_path = &#34;code/files/san_martino.txt&#34; 
+            print(f&#39;Words in file: {self.file_path}&#39;)
+            with open(self.file_path, &#39;r&#39;) as file:
+                self.text_read = file.read()
+                # Replace , ; . with a blank so they are not counted as words.
+                # Notice the use of the regular expression function `re`. `
+                self.string_list = re.split(&#34;, ; .| &#34;, self.text_read)
+            # Display the etext read.
+            print(f&#39;Text read: {self.string_list}&#39;)
+            # Display word count. 
+            self.words_number = len(self.string_list)
+            print(f&#39;Word count: {self.words_number}&#39;)
+        except Exception as error:
+            print(f&#34;{type(error).__name__} was raised: {error}&#34;) </code></pre>
 </details>
 <h3>Methods</h3>
 <dl>
@@ -553,13 +604,27 @@ ut labore et dolore magna aliqua.&#34;&#34;&#34;
 <span>def <span class="ident">split_string</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Split a string using separating character.</p></div>
+<div class="desc"><p>Split a string using blank as separating character.
+</p>
+<h2 id="remarks">Remarks</h2>
+<p>When you don't pass
+a separator, the builtin function <code>split</code> splits a string at white
+spaces.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">    def split_string(self):
-        &#34;&#34;&#34; Split a string using separating character. &#34;&#34;&#34;
+        &#34;&#34;&#34; 
+        Split a string using blank as separating character.  
+        
+        Remarks
+        -------
+        When you don&#39;t pass
+        a separator, the builtin function `split` splits a string at white
+        spaces.
+        
+        &#34;&#34;&#34;
 
         self.astring_multilines = &#34;&#34;&#34;Lorem ipsum dolor sit amet, 
 consectetur adipiscing elit, 
@@ -567,7 +632,24 @@ sed do eiusmod tempor incididunt
 ut labore et dolore magna aliqua.&#34;&#34;&#34;
 
         self.split_string =  self.astring_multilines.split()
-        print(f&#39;Split string: {self.split_string}&#39;)</code></pre>
+        print(f&#39;Split string: {self.split_string}&#39;)
+
+        try:
+            # Count number of words in a file.
+            self.file_path = &#34;code/files/san_martino.txt&#34; 
+            print(f&#39;Words in file: {self.file_path}&#39;)
+            with open(self.file_path, &#39;r&#39;) as file:
+                self.text_read = file.read()
+                # Replace , ; . with a blank so they are not counted as words.
+                # Notice the use of the regular expression function `re`. `
+                self.string_list = re.split(&#34;, ; .| &#34;, self.text_read)
+            # Display the etext read.
+            print(f&#39;Text read: {self.string_list}&#39;)
+            # Display word count. 
+            self.words_number = len(self.string_list)
+            print(f&#39;Word count: {self.words_number}&#39;)
+        except Exception as error:
+            print(f&#34;{type(error).__name__} was raised: {error}&#34;) </code></pre>
 </details>
 </dd>
 <dt id="code.builtin_types.strings.string_samples.strip_white_spaces"><code class="name flex">
