@@ -97,7 +97,16 @@ ut labore et dolore magna aliqua."""
         print(f'Upper case string: {upper_case_string}')
      
     def split_string(self):
-        """ Split a string using separating character. """
+        """ 
+        Split a string using blank as separating character.  
+        
+        Remarks
+        -------
+        When you don't pass
+        a separator, the builtin function `split` splits a string at white
+        spaces.
+        
+        """
 
         self.astring_multilines = """Lorem ipsum dolor sit amet, 
 consectetur adipiscing elit, 
@@ -106,8 +115,24 @@ ut labore et dolore magna aliqua."""
 
         self.split_string =  self.astring_multilines.split()
         print(f'Split string: {self.split_string}')
-       
 
+        try:
+            # Count number of words in a file.
+            self.file_path = "code/files/san_martino.txt" 
+            print(f'Words in file: {self.file_path}')
+            with open(self.file_path, 'r') as file:
+                self.text_read = file.read()
+                # Replace , ; . with a blank so they are not counted as words.
+                # Notice the use of the regular expression function `re`. `
+                self.string_list = re.split(", ; .| ", self.text_read)
+            # Display the etext read.
+            print(f'Text read: {self.string_list}')
+            # Display word count. 
+            self.words_number = len(self.string_list)
+            print(f'Word count: {self.words_number}')
+        except Exception as error:
+            print(f"{type(error).__name__} was raised: {error}") 
+      
 ##### ****** Menu class ****** #####
 
 class string_menu:
