@@ -20,9 +20,6 @@ sys.path.append('./code/packages')
 from utilities.console_menu import create_menu
 
 
-
-
-
 class group_menu:
 
     """ 
