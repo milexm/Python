@@ -37,12 +37,16 @@ Allow the user to select a sample group.
 import sys
 sys.path.append(&#39;./code/builtin_types&#39;)
 
-from create_menu import create_menu  
+
+# from create_menu import create_menu  
 from lists import list_menu
 from tuples import tuple_menu
 from dictionaries import dictionary_menu
 from strings import string_menu
 
+import sys
+sys.path.append(&#39;./code/packages&#39;) 
+from utilities.console_menu import create_menu
 
 class group_menu:
 
