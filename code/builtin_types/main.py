@@ -11,7 +11,7 @@ sys.path.append('./code/builtin_types')
 from lists import list_menu
 from tuples import tuple_menu
 from dictionaries import dictionary_menu
-from strings import string_menu
+# from strings import string_menu
 
 # Append the path to the modules location.  
 # This is important to allow pdoc to find the modules. 
@@ -80,7 +80,7 @@ class group_menu:
                 
             if choice == 4:
                 # Instantiate the string_menu class.
-                amenu = string_menu()
+                amenu = util.string_menu()
                 # Display the string samples selection menu. 
                 amenu.string_selection_menu()
                 

@@ -4,6 +4,7 @@
         "./code/packages",
         "./code/language_elements/lists",
         "./code/language_elements/collections",
-        "./code/oldpackages"
+        "./code/oldpackages",
+        "./code/builtin_types"
     ]
 }

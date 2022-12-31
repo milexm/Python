@@ -12,9 +12,8 @@ by the Python interpreter as part of one package only: "utilities".
 # Perform package wide initializations.
 
 """ 
-The following imports allow the use of functions from  different modules as they
-belonged to one package only, without the need to import the various modules one
-by one. 
+The following imports allow the use of functions from  different modules because they belong to one package only, without the need to import the various modules one by one. 
 """
 
 from .console_menu import create_menu
+from .string_menu import string_menu
