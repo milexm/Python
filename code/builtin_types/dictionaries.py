@@ -29,10 +29,13 @@ dict](https://docs.python.org/3/library/stdtypes.html#mapping-types-dict) and
 
 from pprint import pprint
 
+# Append the path to the modules location.  
+# This is important to allow pdoc to find the modules. 
 import sys
-sys.path.append('./code/packages/utilities') 
+sys.path.append('./code/packages') 
 
-from utilities.console_menu import create_menu
+import utilities as util
+ 
 
 class dictionary_samples:
     """ 
@@ -257,7 +260,7 @@ class dictionary_menu:
         self.menu_items = ["Create a simple dictionary", "Get dictionary element value", "Print formatted dictionary", "Filter dictionary", "Get value in a multilevel dictionary", "Iterate through a dictionary", "Quit"]
 
         # Create the menu for the dictionary samples. 
-        self.dict_sample_menu = create_menu("Dictionary Menu")
+        self.dict_sample_menu = util.create_menu("Dictionary Menu")
         
         # Instantiate the dictionery samples class. 
         self.dict_samples = dictionary_samples()

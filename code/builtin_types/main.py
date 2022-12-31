@@ -8,16 +8,17 @@ Allow the user to select a sample group.
 import sys
 sys.path.append('./code/builtin_types')
 
-
-# from create_menu import create_menu  
 from lists import list_menu
 from tuples import tuple_menu
 from dictionaries import dictionary_menu
 from strings import string_menu
 
+# Append the path to the modules location.  
+# This is important to allow pdoc to find the modules. 
 import sys
 sys.path.append('./code/packages') 
-from utilities.console_menu import create_menu
+
+import utilities as util
 
 
 class group_menu:
@@ -42,7 +43,7 @@ class group_menu:
         self.menu_items = ["Lists", "Tuples", "Dictionaries", "Strings", "Quit"]
         
         # Instantiate the group menu class. 
-        self.group_menu = create_menu("Group Menu")
+        self.group_menu = util.create_menu("Group Menu")
 
 
     def group_selection_menu(self):

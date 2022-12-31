@@ -28,7 +28,8 @@ from pprint import pprint
 # This is important to allow pdoc to find the modules. 
 import sys
 sys.path.append('./code/packages') 
-from utilities.console_menu import create_menu
+
+import utilities as util
 
 ##### ****** Samples class ****** #####
 
@@ -594,7 +595,7 @@ class list_menu:
         "Change list elements", "Add element to a list", "Slice a list", "Apply list methods", "Use a list as a stack", "Use a list as a queue", "Use list comprehension", "Quit"]
     
         # Create the menu for the list samples.
-        self.list_sample_menu = create_menu("List Menu")
+        self.list_sample_menu = util.create_menu("List Menu")
 
         # Instantiate the list samples class. 
         self.list_samples = list_samples()

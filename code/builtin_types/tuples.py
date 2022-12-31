@@ -28,7 +28,8 @@ sequences](https://docs.python.org/3/tutorial/datastructures.html?highlight=comp
 # This is important to allow pdoc to find the modules. 
 import sys
 sys.path.append('./code/packages') 
-from utilities.console_menu import create_menu
+
+import utilities as util
 
 ##### ****** Samples class ****** #####
 
@@ -331,7 +332,7 @@ class tuple_menu:
         self.menu_items = ["Create a tuple", "Modify a tuple error", "Access a tuple", "Unpack a tuple", "Tuple odds and ends", "Quit"]
     
         # Create the menu for the tuple samples.
-        self.tuple_sample_menu = create_menu("Tuple Menu")
+        self.tuple_sample_menu = util.create_menu("Tuple Menu")
         
         # Instantiate the sample class.
         self.tuple_samples = tuple_samples()

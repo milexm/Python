@@ -58,14 +58,14 @@ For more information, see [Text Sequence Type — str](https://docs.python.org/3
 
 &#34;&#34;&#34; 
 
-# Append the path to the modules location.  This is important to allow pdoc to
-# find the modules. 
+# Append the path to the modules location.  
+# This is important to allow pdoc to find the modules. 
 import sys
+sys.path.append(&#39;./code/packages&#39;) 
 
-sys.path.append(&#39;./code/builtin_types&#39;)
+import utilities as util
 
-from create_menu import create_menu
-
+# Import regular expression module. 
 import re 
 
 ##### ****** Samples class ****** #####
@@ -79,8 +79,6 @@ class string_samples:
         self.astring = &#34; Hello, World! &#34;
         
         
-        
-
     def create_string(self):
         &#34;&#34;&#34; Create a string using different approaches.&#34;&#34;&#34;
 
@@ -200,11 +198,11 @@ class string_menu:
         # Define the entries of the string samples menu. 
         self.menu_items = [&#34;Create a string&#34;, &#34;Get a substring&#34;, &#34;Remove white spaces&#34;, &#34;Make lower case&#34;, &#34;Make upper case&#34;, &#34;Split string&#34;, &#34;Quit&#34;]
     
-        # Instantiate the string menu class. 
-        self.stringmenu = create_menu(&#34;String Menu&#34;)
+        # Create the menu for the string samples.
+        self.string_sample_menu = util.create_menu(&#34;String Menu&#34;)
         
         # Instantiate the string sample class
-        self.stringsamples = string_samples()
+        self.string_samples = string_samples()
 
 
     def string_selection_menu(self):
@@ -217,34 +215,34 @@ class string_menu:
 
             
             # Display the menu.
-            self.stringmenu.display_menu(self.menu_items)
+            self.string_sample_menu.display_menu(self.menu_items)
 
             # Get the user&#39;s choice.
-            choice = self.stringmenu.get_user_choice(self.menu_items)
+            choice = self.string_sample_menu.get_user_choice(self.menu_items)
 
             if choice == 1:
                 print(&#34;\n*** Create a simple string ***&#34;)
-                self.stringsamples.create_string()
+                self.string_samples.create_string()
                 
             elif choice == 2:
                 print(&#34;\n*** Get a substring ***&#34;)
-                self.stringsamples.get_sub_string()
+                self.string_samples.get_sub_string()
                 
             elif choice == 3:
                 print(&#34;\n*** Strip white spaces ***&#34;)
-                self.stringsamples.strip_white_spaces()
+                self.string_samples.strip_white_spaces()
                 
             elif choice == 4:
                 print(&#34;\n*** Get lower case string ***&#34;)
-                self.stringsamples.get_lower_case_string()
+                self.string_samples.get_lower_case_string()
                 
             elif choice == 5:
                 print(&#34;\n*** Get upper case string ***&#34;)
-                self.stringsamples.get_upper_case_string()
+                self.string_samples.get_upper_case_string()
                 
             elif choice == 6:
                 print(&#34;\n*** Split string ***&#34;)
-                self.stringsamples.split_string()
+                self.string_samples.split_string()
                 
             elif choice == len(self.menu_items):
                 break</code></pre>
@@ -303,11 +301,11 @@ Display the selection menu and execute the sample selected by the user. </p>
         # Define the entries of the string samples menu. 
         self.menu_items = [&#34;Create a string&#34;, &#34;Get a substring&#34;, &#34;Remove white spaces&#34;, &#34;Make lower case&#34;, &#34;Make upper case&#34;, &#34;Split string&#34;, &#34;Quit&#34;]
     
-        # Instantiate the string menu class. 
-        self.stringmenu = create_menu(&#34;String Menu&#34;)
+        # Create the menu for the string samples.
+        self.string_sample_menu = util.create_menu(&#34;String Menu&#34;)
         
         # Instantiate the string sample class
-        self.stringsamples = string_samples()
+        self.string_samples = string_samples()
 
 
     def string_selection_menu(self):
@@ -320,34 +318,34 @@ Display the selection menu and execute the sample selected by the user. </p>
 
             
             # Display the menu.
-            self.stringmenu.display_menu(self.menu_items)
+            self.string_sample_menu.display_menu(self.menu_items)
 
             # Get the user&#39;s choice.
-            choice = self.stringmenu.get_user_choice(self.menu_items)
+            choice = self.string_sample_menu.get_user_choice(self.menu_items)
 
             if choice == 1:
                 print(&#34;\n*** Create a simple string ***&#34;)
-                self.stringsamples.create_string()
+                self.string_samples.create_string()
                 
             elif choice == 2:
                 print(&#34;\n*** Get a substring ***&#34;)
-                self.stringsamples.get_sub_string()
+                self.string_samples.get_sub_string()
                 
             elif choice == 3:
                 print(&#34;\n*** Strip white spaces ***&#34;)
-                self.stringsamples.strip_white_spaces()
+                self.string_samples.strip_white_spaces()
                 
             elif choice == 4:
                 print(&#34;\n*** Get lower case string ***&#34;)
-                self.stringsamples.get_lower_case_string()
+                self.string_samples.get_lower_case_string()
                 
             elif choice == 5:
                 print(&#34;\n*** Get upper case string ***&#34;)
-                self.stringsamples.get_upper_case_string()
+                self.string_samples.get_upper_case_string()
                 
             elif choice == 6:
                 print(&#34;\n*** Split string ***&#34;)
-                self.stringsamples.split_string()
+                self.string_samples.split_string()
                 
             elif choice == len(self.menu_items):
                 break</code></pre>
@@ -375,34 +373,34 @@ on the user's selection.</p></div>
 
         
         # Display the menu.
-        self.stringmenu.display_menu(self.menu_items)
+        self.string_sample_menu.display_menu(self.menu_items)
 
         # Get the user&#39;s choice.
-        choice = self.stringmenu.get_user_choice(self.menu_items)
+        choice = self.string_sample_menu.get_user_choice(self.menu_items)
 
         if choice == 1:
             print(&#34;\n*** Create a simple string ***&#34;)
-            self.stringsamples.create_string()
+            self.string_samples.create_string()
             
         elif choice == 2:
             print(&#34;\n*** Get a substring ***&#34;)
-            self.stringsamples.get_sub_string()
+            self.string_samples.get_sub_string()
             
         elif choice == 3:
             print(&#34;\n*** Strip white spaces ***&#34;)
-            self.stringsamples.strip_white_spaces()
+            self.string_samples.strip_white_spaces()
             
         elif choice == 4:
             print(&#34;\n*** Get lower case string ***&#34;)
-            self.stringsamples.get_lower_case_string()
+            self.string_samples.get_lower_case_string()
             
         elif choice == 5:
             print(&#34;\n*** Get upper case string ***&#34;)
-            self.stringsamples.get_upper_case_string()
+            self.string_samples.get_upper_case_string()
             
         elif choice == 6:
             print(&#34;\n*** Split string ***&#34;)
-            self.stringsamples.split_string()
+            self.string_samples.split_string()
             
         elif choice == len(self.menu_items):
             break</code></pre>
@@ -428,8 +426,6 @@ on the user's selection.</p></div>
         self.astring = &#34; Hello, World! &#34;
         
         
-        
-
     def create_string(self):
         &#34;&#34;&#34; Create a string using different approaches.&#34;&#34;&#34;
 

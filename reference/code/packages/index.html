@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
 <title>code.packages API documentation</title>
-<meta name="description" content="Directory that contains packages.
-It allows to direct the interpreter to locate the package via its path." />
+<meta name="description" content="This is the __init__ module that makes the directory &#39;packages&#39; a package.
+The directory contains several modules that through __init__ are considered …" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -23,37 +23,30 @@ It allows to direct the interpreter to locate the package via its path." />
 <h1 class="title">Module <code>code.packages</code></h1>
 </header>
 <section id="section-intro">
-<p>Directory that contains packages.
-It allows to direct the interpreter to locate the package via its path.</p>
+<p>This is the <strong>init</strong> module that makes the directory 'packages' a package.
+The directory contains several modules that through <strong>init</strong> are considered by
+the Python interpreter as part of one package only: "packages".</p>
+<p><strong>init</strong>.py might contain initialization statements. It does not contain any in this case.</p>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">&#34;&#34;&#34;
-Directory that contains packages.
-It allows to direct the interpreter to locate the package via its path. 
+This is the __init__ module that makes the directory &#39;packages&#39; a package.
+The directory contains several modules that through __init__ are considered by 
+the Python interpreter as part of one package only: &#34;packages&#34;.
+
+__init__.py might contain initialization statements. It does not contain any in this case. 
 &#34;&#34;&#34;</code></pre>
 </details>
 </section>
 <section>
 <h2 class="section-title" id="header-submodules">Sub-modules</h2>
 <dl>
-<dt><code class="name"><a title="code.packages.mymath" href="mymath/index.html">code.packages.mymath</a></code></dt>
-<dd>
-<div class="desc"><p>mymath package</p></div>
-</dd>
-<dt><code class="name"><a title="code.packages.mypkg" href="mypkg/index.html">code.packages.mypkg</a></code></dt>
-<dd>
-<div class="desc"><p>This is the <strong>init</strong> module that makes the related directory 'pkg' a package.
-The directory contains several modules that through <strong>init</strong> are …</p></div>
-</dd>
-<dt><code class="name"><a title="code.packages.mytypes" href="mytypes/index.html">code.packages.mytypes</a></code></dt>
-<dd>
-<div class="desc"><p>mytypes package</p></div>
-</dd>
 <dt><code class="name"><a title="code.packages.utilities" href="utilities/index.html">code.packages.utilities</a></code></dt>
 <dd>
-<div class="desc"><p>utilities package</p></div>
+<div class="desc"><p>The <strong>init</strong>.py module allows access to the <code>create_menu</code> class contained by the <code>console_menu.py</code> module inside the <code><a title="code.packages.utilities" href="utilities/index.html">code.packages.utilities</a></code> package.<br>
+This is …</p></div>
 </dd>
 </dl>
 </section>
@@ -77,9 +70,6 @@ The directory contains several modules that through <strong>init</strong> are �
 </li>
 <li><h3><a href="#header-submodules">Sub-modules</a></h3>
 <ul>
-<li><code><a title="code.packages.mymath" href="mymath/index.html">code.packages.mymath</a></code></li>
-<li><code><a title="code.packages.mypkg" href="mypkg/index.html">code.packages.mypkg</a></code></li>
-<li><code><a title="code.packages.mytypes" href="mytypes/index.html">code.packages.mytypes</a></code></li>
 <li><code><a title="code.packages.utilities" href="utilities/index.html">code.packages.utilities</a></code></li>
 </ul>
 </li>

@@ -22,7 +22,8 @@ For more information, see [Text Sequence Type — str](https://docs.python.org/3
 # This is important to allow pdoc to find the modules. 
 import sys
 sys.path.append('./code/packages') 
-from utilities.console_menu import create_menu
+
+import utilities as util
 
 # Import regular expression module. 
 import re 
@@ -158,7 +159,7 @@ class string_menu:
         self.menu_items = ["Create a string", "Get a substring", "Remove white spaces", "Make lower case", "Make upper case", "Split string", "Quit"]
     
         # Create the menu for the string samples.
-        self.string_sample_menu = create_menu("String Menu")
+        self.string_sample_menu = util.create_menu("String Menu")
         
         # Instantiate the string sample class
         self.string_samples = string_samples()
