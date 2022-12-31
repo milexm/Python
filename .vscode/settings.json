@@ -4,6 +4,8 @@
         "./code/packages",
         "./code/learning_by_doing/section_one_samples",
         "./code/language_elements/lists",
-        "./code/language_elements/collections"
+        "./code/language_elements/collections",
+        "./code/oldpackages",
+        "./code/packages"
     ]
 }

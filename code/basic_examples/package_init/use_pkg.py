@@ -10,7 +10,9 @@ import sys
 Append the path to the packages location.
 This is important to allow the interpreter to find the packages.
 """
-sys.path.append('./code/packages')
+
+import sys
+sys.path.append('./code/oldpackages')
 
 import mypkg
 

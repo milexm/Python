@@ -29,13 +29,10 @@ dict](https://docs.python.org/3/library/stdtypes.html#mapping-types-dict) and
 
 from pprint import pprint
 
-# Append the path to the modules location.  This is important to allow pdoc to
-# find the modules. 
 import sys
+sys.path.append('./code/packages/utilities') 
 
-sys.path.append('./code/builtin_types')
-
-from create_menu import create_menu
+from utilities.console_menu import create_menu
 
 class dictionary_samples:
     """ 
@@ -259,11 +256,11 @@ class dictionary_menu:
         # Define the entries of the dictionary samples menu. 
         self.menu_items = ["Create a simple dictionary", "Get dictionary element value", "Print formatted dictionary", "Filter dictionary", "Get value in a multilevel dictionary", "Iterate through a dictionary", "Quit"]
 
-        # Instantiate the dictionary menu class. 
-        self.dictmenu = create_menu("Dictionary Menu")
+        # Create the menu for the dictionary samples. 
+        self.dict_sample_menu = create_menu("Dictionary Menu")
         
         # Instantiate the dictionery samples class. 
-        self.dictsamples = dictionary_samples()
+        self.dict_samples = dictionary_samples()
     
 
     def dict_selection_menu(self):
@@ -275,35 +272,35 @@ class dictionary_menu:
         while True:
 
             # Display the menu. 
-            self.dictmenu.display_menu(self.menu_items)
+            self.dict_sample_menu.display_menu(self.menu_items)
 
             # Get the user's choice.
-            choice = self.dictmenu.get_user_choice(self.menu_items)
+            choice = self.dict_sample_menu.get_user_choice(self.menu_items)
 
             if choice == 1:
                 print("\n*** Create a simple dictionary ***")
-                self.dictsamples.create_simple_dictionary("a", 1, "b", 2)
+                self.dict_samples.create_simple_dictionary("a", 1, "b", 2)
                 
             elif choice == 2:
                 print("\n*** Get dictionary element ***")
                 d = dict(a=1, b=2)
-                self.dictsamples.get_dictionary_element_value(d, "a")
+                self.dict_samples.get_dictionary_element_value(d, "a")
                 
             elif choice == 3:
                 print("\n*** Print fornatted dictionary ***")
-                self.dictsamples.print_dictionary_formatted()
+                self.dict_samples.print_dictionary_formatted()
                 
             elif choice == 4:
                 print("\n*** Filter dictionary ***")
-                self.dictsamples.filter_dictionary(3)
+                self.dict_samples.filter_dictionary(3)
                 
             elif choice == 5:
                 print("\n*** Get value in a multilevel dictionary ***")
-                self.dictsamples.get_value_multilevel_dictionary("b", 3)
+                self.dict_samples.get_value_multilevel_dictionary("b", 3)
                 
             elif choice == 6:
                 print("\n*** Iterate through a dictionary ***")
-                self.dictsamples.iterate_dictionary()
+                self.dict_samples.iterate_dictionary()
                 
             elif choice == len(self.menu_items):
                 break

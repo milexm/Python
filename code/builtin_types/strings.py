@@ -18,14 +18,13 @@ For more information, see [Text Sequence Type — str](https://docs.python.org/3
 
 """ 
 
-# Append the path to the modules location.  This is important to allow pdoc to
-# find the modules. 
+# Append the path to the modules location.  
+# This is important to allow pdoc to find the modules. 
 import sys
+sys.path.append('./code/packages') 
+from utilities.console_menu import create_menu
 
-sys.path.append('./code/builtin_types')
-
-from create_menu import create_menu
-
+# Import regular expression module. 
 import re 
 
 ##### ****** Samples class ****** #####
@@ -39,8 +38,6 @@ class string_samples:
         self.astring = " Hello, World! "
         
         
-        
-
     def create_string(self):
         """ Create a string using different approaches."""
 
@@ -160,11 +157,11 @@ class string_menu:
         # Define the entries of the string samples menu. 
         self.menu_items = ["Create a string", "Get a substring", "Remove white spaces", "Make lower case", "Make upper case", "Split string", "Quit"]
     
-        # Instantiate the string menu class. 
-        self.stringmenu = create_menu("String Menu")
+        # Create the menu for the string samples.
+        self.string_sample_menu = create_menu("String Menu")
         
         # Instantiate the string sample class
-        self.stringsamples = string_samples()
+        self.string_samples = string_samples()
 
 
     def string_selection_menu(self):
@@ -177,34 +174,34 @@ class string_menu:
 
             
             # Display the menu.
-            self.stringmenu.display_menu(self.menu_items)
+            self.string_sample_menu.display_menu(self.menu_items)
 
             # Get the user's choice.
-            choice = self.stringmenu.get_user_choice(self.menu_items)
+            choice = self.string_sample_menu.get_user_choice(self.menu_items)
 
             if choice == 1:
                 print("\n*** Create a simple string ***")
-                self.stringsamples.create_string()
+                self.string_samples.create_string()
                 
             elif choice == 2:
                 print("\n*** Get a substring ***")
-                self.stringsamples.get_sub_string()
+                self.string_samples.get_sub_string()
                 
             elif choice == 3:
                 print("\n*** Strip white spaces ***")
-                self.stringsamples.strip_white_spaces()
+                self.string_samples.strip_white_spaces()
                 
             elif choice == 4:
                 print("\n*** Get lower case string ***")
-                self.stringsamples.get_lower_case_string()
+                self.string_samples.get_lower_case_string()
                 
             elif choice == 5:
                 print("\n*** Get upper case string ***")
-                self.stringsamples.get_upper_case_string()
+                self.string_samples.get_upper_case_string()
                 
             elif choice == 6:
                 print("\n*** Split string ***")
-                self.stringsamples.split_string()
+                self.string_samples.split_string()
                 
             elif choice == len(self.menu_items):
                 break

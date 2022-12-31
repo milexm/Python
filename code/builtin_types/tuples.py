@@ -24,14 +24,11 @@ sequences](https://docs.python.org/3/tutorial/datastructures.html?highlight=comp
 
 """
 
-# Append the path to the modules location.  This is important to allow pdoc to
-# find the modules. 
+# Append the path to the modules location.  
+# This is important to allow pdoc to find the modules. 
 import sys
-
-sys.path.append('./code/builtin_types')
-
-
-from create_menu import create_menu
+sys.path.append('./code/packages') 
+from utilities.console_menu import create_menu
 
 ##### ****** Samples class ****** #####
 
@@ -322,8 +319,8 @@ class tuple_menu:
     ---    
 
     In the calling module perform the following steps: 
-    1_ `amenu = tuple_menu()` # Instantiate the class.  
-    1_ `amenu.tuple_selection_menu()` # Display the selection menu. 
+    1) `amenu = tuple_menu()` # Instantiate the class.  
+    2) `amenu.tuple_selection_menu()` # Display the selection menu. 
   
     """
 
@@ -333,11 +330,11 @@ class tuple_menu:
         # Define the entries of the string samples menu. 
         self.menu_items = ["Create a tuple", "Modify a tuple error", "Access a tuple", "Unpack a tuple", "Tuple odds and ends", "Quit"]
     
-        # Instantiate the menu class and create the menu.
-        self.tuplemenu = create_menu("Tuple Menu")
+        # Create the menu for the tuple samples.
+        self.tuple_sample_menu = create_menu("Tuple Menu")
         
         # Instantiate the sample class.
-        self.tuplesamples = tuple_samples()
+        self.tuple_samples = tuple_samples()
 
 
     def tuple_selection_menu(self):
@@ -349,30 +346,30 @@ class tuple_menu:
         while True:
 
             # Just display the menu.
-            self.tuplemenu.display_menu(self.menu_items)
+            self.tuple_sample_menu.display_menu(self.menu_items)
 
             # Get the user's choice.
-            choice = self.tuplemenu.get_user_choice(self.menu_items)
+            choice = self.tuple_sample_menu.get_user_choice(self.menu_items)
 
             if choice == 1:
                 print("\n*** Create a tuple ***")
-                self.tuplesamples.create_tuple()
+                self.tuple_samples.create_tuple()
                 
             elif choice == 2:
                 print("\n*** Modify a tuple ***")
-                self.tuplesamples.modify_tuple()
+                self.tuple_samples.modify_tuple()
                 
             elif choice == 3:
                 print("\n*** Access a tuple ***")
-                self.tuplesamples.access_tuple()
+                self.tuple_samples.access_tuple()
 
             elif choice == 4:
                 print("\n*** Unpack a tuple ***")
-                self.tuplesamples.unpack_tuple()
+                self.tuple_samples.unpack_tuple()
             
             elif choice == 5:
                 print("\n*** Tuple odds and ends***")
-                self.tuplesamples.odds_ends_tuple()
+                self.tuple_samples.odds_ends_tuple()
 
 
             elif choice == len(self.menu_items):
