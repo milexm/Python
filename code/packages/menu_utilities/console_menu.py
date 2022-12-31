@@ -1,5 +1,5 @@
 """ 
-Define a menu class. 
+Module name: console_menu.py
 
 """
 import numpy as np

@@ -8,7 +8,7 @@ sys.path.append('./code/builtin_types')
 
 from strings import string_samples
 
-import utilities as menu
+import menu_utilities as menu
 
 class string_menu:
 

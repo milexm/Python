@@ -17,3 +17,6 @@ The following imports allow the use of functions from  different modules because
 
 from .console_menu import create_menu
 from .string_menu import string_menu
+from .list_menu import list_menu
+from .tuple_menu import tuple_menu
+from .dictionary_menu import dictionary_menu

@@ -3,23 +3,12 @@ Allow the user to select a sample group.
 
 """
 
-# Append the path to the modules location.
-# This is important to allow pdoc to find the modules. 
-import sys
-sys.path.append('./code/builtin_types')
-
-from lists import list_menu
-from tuples import tuple_menu
-from dictionaries import dictionary_menu
-# from strings import string_menu
-
 # Append the path to the modules location.  
 # This is important to allow pdoc to find the modules. 
 import sys
 sys.path.append('./code/packages') 
 
-import utilities as util
-
+import menu_utilities as menu
 
 class group_menu:
 
@@ -43,7 +32,7 @@ class group_menu:
         self.menu_items = ["Lists", "Tuples", "Dictionaries", "Strings", "Quit"]
         
         # Instantiate the group menu class. 
-        self.group_menu = util.create_menu("Group Menu")
+        self.group_menu = menu.create_menu("Group Menu")
 
 
     def group_selection_menu(self):
@@ -62,25 +51,25 @@ class group_menu:
 
             if choice == 1:
                 # Instantiate the list_menu class.
-                amenu = list_menu()
+                amenu = menu.list_menu()
                 # Display the list samples selection menu.
                 amenu.list_selection_menu()
                 
             if choice == 2:
                 # Instantiate the tuple_menu class.
-                amenu = tuple_menu()
+                amenu = menu.tuple_menu()
                 # Display the tuple samples selection menu. 
                 amenu.tuple_selection_menu()
                 
             if choice == 3:
                 # Instantiate the dictionary_menu class.
-                amenu = dictionary_menu()
+                amenu = menu.dictionary_menu()
                 # Display the dictionary samples selection menu. 
                 amenu.dict_selection_menu()
                 
             if choice == 4:
                 # Instantiate the string_menu class.
-                amenu = util.string_menu()
+                amenu = menu.string_menu()
                 # Display the string samples selection menu. 
                 amenu.string_selection_menu()
                 
