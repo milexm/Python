@@ -1,5 +1,12 @@
 """ 
 Module templates.py.
+
+Remarks
+------=
+
+Use this template as starting point to build your specific samples. 
+Replace the name template with your specific name.  
+
 """ 
 
 class template_samples:

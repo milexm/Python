@@ -4,7 +4,7 @@ Module template_menu.py
 Remarks
 ------=
 
-Use this template as starting point to buil your specific menu. 
+Use this template as starting point to build your specific menu. 
 Replace the name template(s) with your specific name.  
 
 """ 
