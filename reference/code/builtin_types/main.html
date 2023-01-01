@@ -58,7 +58,7 @@ class group_menu:
         &#34;&#34;&#34; Initialize the class `self.group_menu` instance. &#34;&#34;&#34;
 
         # Define the entries of the group menu. 
-        self.menu_items = [&#34;Lists&#34;, &#34;Tuples&#34;, &#34;Dictionaries&#34;, &#34;Strings&#34;, &#34;Quit&#34;]
+        self.menu_items = [&#34;Lists&#34;, &#34;Tuples&#34;, &#34;Dictionaries&#34;, &#34;Strings&#34;, &#34;Templates&#34;, &#34;Quit&#34;]
         
         # Instantiate the group menu class. 
         self.group_menu = menu.create_menu(&#34;Group Menu&#34;)
@@ -102,6 +102,11 @@ class group_menu:
                 # Display the string samples selection menu. 
                 amenu.string_selection_menu()
                 
+            if choice == 5:
+                # Instantiate the template_menu class.
+                amenu = menu.template_menu()
+                # Display the string samples selection menu. 
+                amenu.template_selection_menu()
 
             elif choice == len(self.menu_items):
                 break
@@ -155,7 +160,7 @@ if __name__ == &#39;__main__&#39;:
         &#34;&#34;&#34; Initialize the class `self.group_menu` instance. &#34;&#34;&#34;
 
         # Define the entries of the group menu. 
-        self.menu_items = [&#34;Lists&#34;, &#34;Tuples&#34;, &#34;Dictionaries&#34;, &#34;Strings&#34;, &#34;Quit&#34;]
+        self.menu_items = [&#34;Lists&#34;, &#34;Tuples&#34;, &#34;Dictionaries&#34;, &#34;Strings&#34;, &#34;Templates&#34;, &#34;Quit&#34;]
         
         # Instantiate the group menu class. 
         self.group_menu = menu.create_menu(&#34;Group Menu&#34;)
@@ -199,6 +204,11 @@ if __name__ == &#39;__main__&#39;:
                 # Display the string samples selection menu. 
                 amenu.string_selection_menu()
                 
+            if choice == 5:
+                # Instantiate the template_menu class.
+                amenu = menu.template_menu()
+                # Display the string samples selection menu. 
+                amenu.template_selection_menu()
 
             elif choice == len(self.menu_items):
                 break</code></pre>
@@ -253,6 +263,11 @@ Call the group selection menu based on the user's selection.</p></div>
             # Display the string samples selection menu. 
             amenu.string_selection_menu()
             
+        if choice == 5:
+            # Instantiate the template_menu class.
+            amenu = menu.template_menu()
+            # Display the string samples selection menu. 
+            amenu.template_selection_menu()
 
         elif choice == len(self.menu_items):
             break</code></pre>
