@@ -29,7 +29,7 @@ class group_menu:
         """ Initialize the class `self.group_menu` instance. """
 
         # Define the entries of the group menu. 
-        self.menu_items = ["Lists", "Tuples", "Dictionaries", "Strings", "Quit"]
+        self.menu_items = ["Lists", "Tuples", "Dictionaries", "Strings", "Templates", "Quit"]
         
         # Instantiate the group menu class. 
         self.group_menu = menu.create_menu("Group Menu")
@@ -73,6 +73,11 @@ class group_menu:
                 # Display the string samples selection menu. 
                 amenu.string_selection_menu()
                 
+            if choice == 5:
+                # Instantiate the template_menu class.
+                amenu = menu.template_menu()
+                # Display the string samples selection menu. 
+                amenu.template_selection_menu()
 
             elif choice == len(self.menu_items):
                 break
