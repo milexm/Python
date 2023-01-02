@@ -46,12 +46,12 @@ Replace the name template(s) with your specific name.
 import sys
 sys.path.append(&#39;./code/builtin_types&#39;)
 
-from templates import template_samples
+from templates import TemplateSamples
 
 import menu_utilities as menu
 
 
-class template_menu:
+class TemplateMenu:
 
     &#34;&#34;&#34; 
     Instantiate the menu class and create the menu.
@@ -59,14 +59,18 @@ class template_menu:
 
     Remarks
     -------
-    Display the menu to allow the user to select the sample to execute.
+    
+    The class `TemplateMenu` displays a menu to the user and calls one of the methods from the templateSamples class based on the user&#39;s selection. The templateMenu class has a single method, template_selection_menu, which displays the menu, gets the user&#39;s choice, and then calls the appropriate method from the templateSamples class.
+
+    The `TemplateMenu` class also has an instance variable `self.template_samples`, which is an instance of the `templateSamples` class. This instance is used to call the methods of the `templateSamples` class.
+
     
     Use
     ---    
 
     In the calling module perform the following steps: 
-    1) `amenu = nnn_menu()` # Instantiate the nn_menu class.
-    1) `amenu.nnn_selection_menu()` # Display the nnn samples selection
+    1) `amenu = TemplateMenu()` # Instantiate the TemplateMenu class.
+    2) `amenu.template_selection_menu()` # Display the nnn samples selection
     menu. 
   
     &#34;&#34;&#34;
@@ -81,7 +85,7 @@ class template_menu:
         self.template_sample_menu = menu.create_menu(&#34;Template Menu&#34;)
         
         # Instantiate the sample class.
-        self.template_samples = template_samples()
+        self.template_samples = TemplateSamples()
 
 
     def template_selection_menu(self):
@@ -122,25 +126,26 @@ class template_menu:
 <section>
 <h2 class="section-title" id="header-classes">Classes</h2>
 <dl>
-<dt id="code.packages.menu_utilities.template_menu.template_menu"><code class="flex name class">
-<span>class <span class="ident">template_menu</span></span>
+<dt id="code.packages.menu_utilities.template_menu.TemplateMenu"><code class="flex name class">
+<span>class <span class="ident">TemplateMenu</span></span>
 </code></dt>
 <dd>
 <div class="desc"><p>Instantiate the menu class and create the menu.
 Display the selection menu and execute the sample selected by the user. </p>
 <h2 id="remarks">Remarks</h2>
-<p>Display the menu to allow the user to select the sample to execute.</p>
+<p>The class <code><a title="code.packages.menu_utilities.template_menu.TemplateMenu" href="#code.packages.menu_utilities.template_menu.TemplateMenu">TemplateMenu</a></code> displays a menu to the user and calls one of the methods from the templateSamples class based on the user's selection. The templateMenu class has a single method, template_selection_menu, which displays the menu, gets the user's choice, and then calls the appropriate method from the templateSamples class.</p>
+<p>The <code><a title="code.packages.menu_utilities.template_menu.TemplateMenu" href="#code.packages.menu_utilities.template_menu.TemplateMenu">TemplateMenu</a></code> class also has an instance variable <code>self.template_samples</code>, which is an instance of the <code>templateSamples</code> class. This instance is used to call the methods of the <code>templateSamples</code> class.</p>
 <h2 id="use">Use</h2>
 <p>In the calling module perform the following steps:
-1) <code>amenu = nnn_menu()</code> # Instantiate the nn_menu class.
-1) <code>amenu.nnn_selection_menu()</code> # Display the nnn samples selection
+1) <code>amenu = TemplateMenu()</code> # Instantiate the TemplateMenu class.
+2) <code>amenu.template_selection_menu()</code> # Display the nnn samples selection
 menu. </p>
 <p>Initialize the class <code>string_menu</code> instance.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">class template_menu:
+<pre><code class="python">class TemplateMenu:
 
     &#34;&#34;&#34; 
     Instantiate the menu class and create the menu.
@@ -148,14 +153,18 @@ menu. </p>
 
     Remarks
     -------
-    Display the menu to allow the user to select the sample to execute.
+    
+    The class `TemplateMenu` displays a menu to the user and calls one of the methods from the templateSamples class based on the user&#39;s selection. The templateMenu class has a single method, template_selection_menu, which displays the menu, gets the user&#39;s choice, and then calls the appropriate method from the templateSamples class.
+
+    The `TemplateMenu` class also has an instance variable `self.template_samples`, which is an instance of the `templateSamples` class. This instance is used to call the methods of the `templateSamples` class.
+
     
     Use
     ---    
 
     In the calling module perform the following steps: 
-    1) `amenu = nnn_menu()` # Instantiate the nn_menu class.
-    1) `amenu.nnn_selection_menu()` # Display the nnn samples selection
+    1) `amenu = TemplateMenu()` # Instantiate the TemplateMenu class.
+    2) `amenu.template_selection_menu()` # Display the nnn samples selection
     menu. 
   
     &#34;&#34;&#34;
@@ -170,7 +179,7 @@ menu. </p>
         self.template_sample_menu = menu.create_menu(&#34;Template Menu&#34;)
         
         # Instantiate the sample class.
-        self.template_samples = template_samples()
+        self.template_samples = TemplateSamples()
 
 
     def template_selection_menu(self):
@@ -202,7 +211,7 @@ menu. </p>
 </details>
 <h3>Methods</h3>
 <dl>
-<dt id="code.packages.menu_utilities.template_menu.template_menu.template_selection_menu"><code class="name flex">
+<dt id="code.packages.menu_utilities.template_menu.TemplateMenu.template_selection_menu"><code class="name flex">
 <span>def <span class="ident">template_selection_menu</span></span>(<span>self)</span>
 </code></dt>
 <dd>
@@ -262,9 +271,9 @@ on the user's selection.</p></div>
 <li><h3><a href="#header-classes">Classes</a></h3>
 <ul>
 <li>
-<h4><code><a title="code.packages.menu_utilities.template_menu.template_menu" href="#code.packages.menu_utilities.template_menu.template_menu">template_menu</a></code></h4>
+<h4><code><a title="code.packages.menu_utilities.template_menu.TemplateMenu" href="#code.packages.menu_utilities.template_menu.TemplateMenu">TemplateMenu</a></code></h4>
 <ul class="">
-<li><code><a title="code.packages.menu_utilities.template_menu.template_menu.template_selection_menu" href="#code.packages.menu_utilities.template_menu.template_menu.template_selection_menu">template_selection_menu</a></code></li>
+<li><code><a title="code.packages.menu_utilities.template_menu.TemplateMenu.template_selection_menu" href="#code.packages.menu_utilities.template_menu.TemplateMenu.template_selection_menu">template_selection_menu</a></code></li>
 </ul>
 </li>
 </ul>

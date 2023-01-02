@@ -15,9 +15,9 @@ by the Python interpreter as part of one package only: "utilities".
 The following imports allow the use of functions from  different modules because they belong to one package only, without the need to import the various modules one by one. 
 """
 
-from .console_menu import create_menu
+from .console_menu import ConsoleMenu
 from .string_menu import string_menu
 from .list_menu import list_menu
 from .tuple_menu import tuple_menu
 from .dictionary_menu import dictionary_menu
-from .template_menu import template_menu
+from .template_menu import TemplateMenu

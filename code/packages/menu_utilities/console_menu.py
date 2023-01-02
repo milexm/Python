@@ -4,7 +4,7 @@ Module name: console_menu.py
 """
 import numpy as np
 
-class create_menu:
+class ConsoleMenu:
     """ 
     Defines a menu class 
 

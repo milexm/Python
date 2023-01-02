@@ -14,12 +14,12 @@ Replace the name template(s) with your specific name.
 import sys
 sys.path.append('./code/builtin_types')
 
-from templates import template_samples
+from templates import TemplateSamples
 
 import menu_utilities as menu
 
 
-class template_menu:
+class TemplateMenu:
 
     """ 
     Instantiate the menu class and create the menu.
@@ -27,14 +27,18 @@ class template_menu:
 
     Remarks
     -------
-    Display the menu to allow the user to select the sample to execute.
+    
+    The class `TemplateMenu` displays a menu to the user and calls one of the methods from the templateSamples class based on the user's selection. The templateMenu class has a single method, template_selection_menu, which displays the menu, gets the user's choice, and then calls the appropriate method from the templateSamples class.
+
+    The `TemplateMenu` class also has an instance variable `self.template_samples`, which is an instance of the `templateSamples` class. This instance is used to call the methods of the `templateSamples` class.
+
     
     Use
     ---    
 
     In the calling module perform the following steps: 
-    1) `amenu = nnn_menu()` # Instantiate the nn_menu class.
-    1) `amenu.nnn_selection_menu()` # Display the nnn samples selection
+    1) `amenu = TemplateMenu()` # Instantiate the TemplateMenu class.
+    2) `amenu.template_selection_menu()` # Display the nnn samples selection
     menu. 
   
     """
@@ -49,7 +53,7 @@ class template_menu:
         self.template_sample_menu = menu.create_menu("Template Menu")
         
         # Instantiate the sample class.
-        self.template_samples = template_samples()
+        self.template_samples = TemplateSamples()
 
 
     def template_selection_menu(self):

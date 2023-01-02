@@ -160,7 +160,22 @@ In conclusion the value of `__name__` will have one of two values depending on w
 See the examples [About `if __name__ == "__main__"` idiom in Python](../basics/glossary-samples/name-main-idiom/README.md).
 
 
+## P ##
 
+### PEP 
+
+PEP stands for **Python Enhancement Proposal**. PEPs are a series of documents
+that describe changes, improvements, or new features for Python.  To access
+PEPs, see [Index of Python Enhancement Proposals
+(PEPs)](https://peps.python.org/).
+
+### PEP8 
+
+PEP8 is the style guide for Python code. It provides guidelines for formatting,
+naming conventions, and other best practices for writing clean and maintainable
+Python code. Following PEP8 is important for ensuring that your code is readable
+and easy to understand for other developers.  To access PEP8, see [PEP 8 – Style
+Guide for Python Code](https://peps.python.org/pep-0008/).
 
 ## R ##
 
@@ -172,15 +187,20 @@ See the examples [About `if __name__ == "__main__"` idiom in Python](../basics/g
 
 ### Version - Check version of python modules
 
-When you install Python, you also get the Python package manager **pip**. You can use pip to get the versions of python modules. If you want to list all installed Python modules with their version numbers, use the following command:
+When you install Python, you also get the Python package manager **pip**. You
+can use pip to get the versions of python modules. If you want to list all
+installed Python modules with their version numbers, use the following command:
 
 ```cmd
 $ pip freeze
 ```
-To individually find the version number you can grep on this output. For example, in windows, you can use **findstr** instead of grep. For example:
+
+To individually find the version number you can grep on this output. For
+example, in windows, you can use **findstr** instead of grep. For example:
 
 ```cmd
 pip freeze | findstr botbuilder-dialogs
 ```
+
 See also [Questions and Answers](https://www.tutorialspoint.com/How-to-check-version-of-python-modules).
 

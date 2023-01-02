@@ -26,5 +26,7 @@ For information about Python modules, see: [Python Runtime Services](https://doc
 
 
 ## 3. References
+
 - [Docstrings in Python Tutorial](https://www.datacamp.com/tutorial/docstrings-python)
 - [Python Runtime Services](https://docs.python.org/3.9/library/python.html#python-runtime-services)
+- [PEP 8 – Style Guide for Python Code](https://peps.python.org/pep-0008/)

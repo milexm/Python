@@ -68,8 +68,10 @@ In addition to built-in functions, a large number of **pre-defined functions** a
 ```
 
 ## References
--  [Python examples W3 Schools](https://www.w3schools.com/python/python_examples.asp)
--  [Learn Python Programming](https://www.tutorialsteacher.com/python)
--  [Python standard library](https://docs.python.org/3/library/index.html)
-   -  [Built-in-Functions](https://docs.python.org/3/library/functions.html)
+
+- [Python examples W3 Schools](https://www.w3schools.com/python/python_examples.asp)
+- [Learn Python Programming](https://www.tutorialsteacher.com/python)
+- [PEP 8 – Style Guide for Python Code](https://peps.python.org/pep-0008/)
+- [Python standard library](https://docs.python.org/3/library/index.html)
+  - [Built-in-Functions](https://docs.python.org/3/library/functions.html)
 
