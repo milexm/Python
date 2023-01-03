@@ -1,5 +1,5 @@
 """ 
-Module name: dictionaries.py
+Module dictionaries.py
 
 Remarks
 -------
@@ -29,7 +29,7 @@ dict](https://docs.python.org/3/library/stdtypes.html#mapping-types-dict) and
 
 from pprint import pprint
 
-class dictionary_samples:
+class DictionarySamples:
     """ 
     Examples showing the use of dictionaries. 
 

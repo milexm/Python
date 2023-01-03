@@ -6,18 +6,37 @@ Remarks
 
 The `__init__.py` module makes the directory 'utilities' a package.
 The directory may contain several modules that through `__init__` are considered
-by the Python interpreter as part of one package only: "utilities".
+by the Python interpreter as part of one package only called `utilities`.
  
 """
 # Perform package wide initializations.
 
 """ 
-The following imports allow the use of functions from  different modules because they belong to one package only, without the need to import the various modules one by one. 
+The following imports allow the use of functions from  different modules as they would belong to one package only, without the need to import the various modules one by one. 
+
+For example, to use the `ConsoleMenu` class in the calling module you do the following:
+
+# Append the path to the package modules location.  
+import sys
+sys.path.append('./code/packages') 
+
+import menu_utilities as _menu
+
+# Instantiate the menu class. 
+self.group_menu = _menu.ConsoleMenu("Group Menu")
+
+# Display the menu.
+self.group_menu.display_menu(self.menu_items)
+
+# Get the user's choice.
+choice = self.group_menu.get_user_choice(self.menu_items)
+
+
 """
 
 from .console_menu import ConsoleMenu
-from .string_menu import string_menu
-from .list_menu import list_menu
-from .tuple_menu import tuple_menu
-from .dictionary_menu import dictionary_menu
+from .string_menu import StringMenu
+from .list_menu import ListMenu
+from .tuple_menu import TupleMenu
+from .dictionary_menu import DictionaryMenu
 from .template_menu import TemplateMenu

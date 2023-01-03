@@ -1,56 +1,67 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Module name: tuple_menu.py
+Module tuple_menu.py
 
 """
 
-# Append the path to the modules location.  
-# This is important to allow pdoc to find the modules. 
 import sys
 sys.path.append('./code/builtin_types')
 
-from tuples import tuple_samples
+from tuples import TupleSamples
 
-import menu_utilities as menu
+import menu_utilities as _menu
 
 
-class tuple_menu:
+class TupleMenu:
 
     """ 
-    Instantiate the menu class and create the menu.  Display the selection menu
-    and execute the sample selected by the user. 
+    The class `TupleMenu` creates a menu for interacting with a collection of tuple-related samples. The `TupleMenu` class has an instance method `tuple_selection_menu` that displays a menu of available samples and allows the user to select a sample to execute.
 
+    
     Remarks
     -------
-    Display the menu to allow the user to select the sample to execute.
+
+    The `TupleMenu` class has a single instance method, `tuple_selection_menu`, which displays the menu and gets the user's choice of which sample to run. It then calls the appropriate method from the `tuple_samples` instance to run the chosen sample. If the user selects the `Quit` option, the method exits.
+
     
     Use
     ---    
 
     In the calling module perform the following steps: 
-    1) `amenu = tuple_menu()` # Instantiate the class.  
-    2) `amenu.tuple_selection_menu()` # Display the selection menu. 
+    
+    1. `amenu = TupleMenu()` # Instantiate the class.  
+    1. `amenu.tuple_selection_menu()` # Display the selection menu. 
   
     """
+    
+    menu_items : list 
+    """ List of strings representing the options in the menu. """
+
+    tuple_sample_menu : _menu.ConsoleMenu
+    """ An instance of the class `ConsoleMenu`, from the `console_menu` module, used to display the menu and get user input. """
+
+    tuple_samples : TupleSamples
+    """ An instance of the class `TupleSamples`, from the `tuples` module, which contains the actual tuple-related samples that can be run. """
+
 
     def __init__(self):
-        """ Initialize the class `string_menu` instance. """
+        """ Initializes the `menu_items` attribute with the tuple menu items. Then it initiliazes the `tuple_sample_menu` attribute with a `ConsoleMenu` instance and the `tuple_samples` attribute with a `TupleSamples` instance."""
+
 
         # Define the entries of the string samples menu. 
         self.menu_items = ["Create a tuple", "Modify a tuple error", "Access a tuple", "Unpack a tuple", "Tuple odds and ends", "Quit"]
     
         # Create the menu for the tuple samples.
-        self.tuple_sample_menu = menu.create_menu("Tuple Menu")
+        self.tuple_sample_menu = _menu.ConsoleMenu("Tuple Menu")
         
         # Instantiate the sample class.
-        self.tuple_samples = tuple_samples()
+        self.tuple_samples = TupleSamples()
 
 
     def tuple_selection_menu(self):
         """
-        Display menu and process user's input.  Call the proper method based on
-        the user's selection.
+        Displays menu and process user's input.  Calls the proper method based on the user's selection.
         """
 
         while True:

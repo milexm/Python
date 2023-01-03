@@ -37,10 +37,17 @@ class ConsoleMenu:
     &#34;&#34;&#34; 
     Defines a menu class 
 
+    The `ConsoleMenu` class is a class for creating and interacting with menus in the console. 
+
     Remarks
     -------
-    Display the menu to allow the user&#39;s selection.
-    It also prompts the user to input a number from the allowed choices. 
+    The `ConsoleMenu` class has these methods:
+
+    1. `__init__`: a constructor that initializes an instance of the class with a name for the menu
+    1. `input_number`: a method that prompts the user to input a number and returns the input as a float
+    1. `display_menu`: a method that displays the menu to the user with each menu option numbered
+    1. `get_user_choice`:` a method that prompts the user to input a number corresponding to one of the menu options, checks that the input is a valid choice, and returns the user&#39;s choice as an integer
+
     &#34;&#34;&#34;
 
     def __init__(self, name:str):
@@ -84,12 +91,12 @@ class ConsoleMenu:
 
         # Display the menu options.
         for i in range(len(options)):
-            # print(&#34;{:d}-&gt;{:s}  &#34;.format(i+1, options[i]), end=&#39; &#39;)
-            if ((i+1)%3!=0):
+            # Display 2 menu items on the same line 
+            if ((i+1)%2!=0):
                 # Calculate the blank space to add to the right of a menu
                 # item for allignment. 
-                right_padding = &#34;&#34;*(16-len(options[i]))
-                # right_padding = &#34;&#34;*(16-len(options[i]))
+                right_padding = &#34; &#34; * (16 - len(options[i]))
+
                 # Display 3 menu items on the same line 
                 print(&#34;{:d}.{:s}&#34;.format(i+1, options[i] + right_padding), 
                     end=&#39; &#39;)
@@ -135,9 +142,15 @@ class ConsoleMenu:
 </code></dt>
 <dd>
 <div class="desc"><p>Defines a menu class </p>
+<p>The <code><a title="code.packages.menu_utilities.console_menu.ConsoleMenu" href="#code.packages.menu_utilities.console_menu.ConsoleMenu">ConsoleMenu</a></code> class is a class for creating and interacting with menus in the console. </p>
 <h2 id="remarks">Remarks</h2>
-<p>Display the menu to allow the user's selection.
-It also prompts the user to input a number from the allowed choices. </p>
+<p>The <code><a title="code.packages.menu_utilities.console_menu.ConsoleMenu" href="#code.packages.menu_utilities.console_menu.ConsoleMenu">ConsoleMenu</a></code> class has these methods:</p>
+<ol>
+<li><code>__init__</code>: a constructor that initializes an instance of the class with a name for the menu</li>
+<li><code>input_number</code>: a method that prompts the user to input a number and returns the input as a float</li>
+<li><code>display_menu</code>: a method that displays the menu to the user with each menu option numbered</li>
+<li><code>get_user_choice</code>:` a method that prompts the user to input a number corresponding to one of the menu options, checks that the input is a valid choice, and returns the user's choice as an integer</li>
+</ol>
 <p>Iitialize the class instance.</p>
 <h2 id="parameters">Parameters</h2>
 <dl>
@@ -152,10 +165,17 @@ It also prompts the user to input a number from the allowed choices. </p>
     &#34;&#34;&#34; 
     Defines a menu class 
 
+    The `ConsoleMenu` class is a class for creating and interacting with menus in the console. 
+
     Remarks
     -------
-    Display the menu to allow the user&#39;s selection.
-    It also prompts the user to input a number from the allowed choices. 
+    The `ConsoleMenu` class has these methods:
+
+    1. `__init__`: a constructor that initializes an instance of the class with a name for the menu
+    1. `input_number`: a method that prompts the user to input a number and returns the input as a float
+    1. `display_menu`: a method that displays the menu to the user with each menu option numbered
+    1. `get_user_choice`:` a method that prompts the user to input a number corresponding to one of the menu options, checks that the input is a valid choice, and returns the user&#39;s choice as an integer
+
     &#34;&#34;&#34;
 
     def __init__(self, name:str):
@@ -199,12 +219,12 @@ It also prompts the user to input a number from the allowed choices. </p>
 
         # Display the menu options.
         for i in range(len(options)):
-            # print(&#34;{:d}-&gt;{:s}  &#34;.format(i+1, options[i]), end=&#39; &#39;)
-            if ((i+1)%3!=0):
+            # Display 2 menu items on the same line 
+            if ((i+1)%2!=0):
                 # Calculate the blank space to add to the right of a menu
                 # item for allignment. 
-                right_padding = &#34;&#34;*(16-len(options[i]))
-                # right_padding = &#34;&#34;*(16-len(options[i]))
+                right_padding = &#34; &#34; * (16 - len(options[i]))
+
                 # Display 3 menu items on the same line 
                 print(&#34;{:d}.{:s}&#34;.format(i+1, options[i] + right_padding), 
                     end=&#39; &#39;)
@@ -265,12 +285,12 @@ It also prompts the user to input a number from the allowed choices. </p>
 
     # Display the menu options.
     for i in range(len(options)):
-        # print(&#34;{:d}-&gt;{:s}  &#34;.format(i+1, options[i]), end=&#39; &#39;)
-        if ((i+1)%3!=0):
+        # Display 2 menu items on the same line 
+        if ((i+1)%2!=0):
             # Calculate the blank space to add to the right of a menu
             # item for allignment. 
-            right_padding = &#34;&#34;*(16-len(options[i]))
-            # right_padding = &#34;&#34;*(16-len(options[i]))
+            right_padding = &#34; &#34; * (16 - len(options[i]))
+
             # Display 3 menu items on the same line 
             print(&#34;{:d}.{:s}&#34;.format(i+1, options[i] + right_padding), 
                 end=&#39; &#39;)

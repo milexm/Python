@@ -24,7 +24,7 @@ lists](https://docs.python.org/3/tutorial/datastructures.html?highlight=comprehe
 from typing import OrderedDict
 from pprint import pprint
 
-class list_samples:
+class ListSamples:
     """ 
     Examples showing the use of lists. 
 

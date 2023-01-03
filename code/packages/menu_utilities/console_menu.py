@@ -8,10 +8,17 @@ class ConsoleMenu:
     """ 
     Defines a menu class 
 
+    The `ConsoleMenu` class is a class for creating and interacting with menus in the console. 
+
     Remarks
     -------
-    Display the menu to allow the user's selection.
-    It also prompts the user to input a number from the allowed choices. 
+    The `ConsoleMenu` class has these methods:
+
+    1. `__init__`: a constructor that initializes an instance of the class with a name for the menu
+    1. `input_number`: a method that prompts the user to input a number and returns the input as a float
+    1. `display_menu`: a method that displays the menu to the user with each menu option numbered
+    1. `get_user_choice`:` a method that prompts the user to input a number corresponding to one of the menu options, checks that the input is a valid choice, and returns the user's choice as an integer
+
     """
 
     def __init__(self, name:str):
@@ -55,12 +62,12 @@ class ConsoleMenu:
 
         # Display the menu options.
         for i in range(len(options)):
-            # print("{:d}->{:s}  ".format(i+1, options[i]), end=' ')
-            if ((i+1)%3!=0):
+            # Display 2 menu items on the same line 
+            if ((i+1)%2!=0):
                 # Calculate the blank space to add to the right of a menu
                 # item for allignment. 
-                right_padding = ""*(16-len(options[i]))
-                # right_padding = ""*(16-len(options[i]))
+                right_padding = " " * (16 - len(options[i]))
+
                 # Display 3 menu items on the same line 
                 print("{:d}.{:s}".format(i+1, options[i] + right_padding), 
                     end=' ')

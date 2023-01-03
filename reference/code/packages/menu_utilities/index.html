@@ -27,7 +27,7 @@
 <h2 id="remarks">Remarks</h2>
 <p>The <code>__init__.py</code> module makes the directory 'utilities' a package.
 The directory may contain several modules that through <code>__init__</code> are considered
-by the Python interpreter as part of one package only: "utilities".</p>
+by the Python interpreter as part of one package only called <code>utilities</code>.</p>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -40,20 +40,39 @@ Remarks
 
 The `__init__.py` module makes the directory &#39;utilities&#39; a package.
 The directory may contain several modules that through `__init__` are considered
-by the Python interpreter as part of one package only: &#34;utilities&#34;.
+by the Python interpreter as part of one package only called `utilities`.
  
 &#34;&#34;&#34;
 # Perform package wide initializations.
 
 &#34;&#34;&#34; 
-The following imports allow the use of functions from  different modules because they belong to one package only, without the need to import the various modules one by one. 
+The following imports allow the use of functions from  different modules as they would belong to one package only, without the need to import the various modules one by one. 
+
+For example, to use the `ConsoleMenu` class in the calling module you do the following:
+
+# Append the path to the package modules location.  
+import sys
+sys.path.append(&#39;./code/packages&#39;) 
+
+import menu_utilities as _menu
+
+# Instantiate the menu class. 
+self.group_menu = _menu.ConsoleMenu(&#34;Group Menu&#34;)
+
+# Display the menu.
+self.group_menu.display_menu(self.menu_items)
+
+# Get the user&#39;s choice.
+choice = self.group_menu.get_user_choice(self.menu_items)
+
+
 &#34;&#34;&#34;
 
 from .console_menu import ConsoleMenu
-from .string_menu import string_menu
-from .list_menu import list_menu
-from .tuple_menu import tuple_menu
-from .dictionary_menu import dictionary_menu
+from .string_menu import StringMenu
+from .list_menu import ListMenu
+from .tuple_menu import TupleMenu
+from .dictionary_menu import DictionaryMenu
 from .template_menu import TemplateMenu</code></pre>
 </details>
 </section>
@@ -66,15 +85,15 @@ from .template_menu import TemplateMenu</code></pre>
 </dd>
 <dt><code class="name"><a title="code.packages.menu_utilities.dictionary_menu" href="dictionary_menu.html">code.packages.menu_utilities.dictionary_menu</a></code></dt>
 <dd>
-<div class="desc"><p>Module name: dictionary_menu.py</p></div>
+<div class="desc"><p>Module dictionary_menu.py</p></div>
 </dd>
 <dt><code class="name"><a title="code.packages.menu_utilities.list_menu" href="list_menu.html">code.packages.menu_utilities.list_menu</a></code></dt>
 <dd>
-<div class="desc"><p>Module name: list_menu.py</p></div>
+<div class="desc"><p>Module list_menu.py</p></div>
 </dd>
 <dt><code class="name"><a title="code.packages.menu_utilities.string_menu" href="string_menu.html">code.packages.menu_utilities.string_menu</a></code></dt>
 <dd>
-<div class="desc"><p>Module name: string_menu.py</p></div>
+<div class="desc"><p>Module string_menu.py</p></div>
 </dd>
 <dt><code class="name"><a title="code.packages.menu_utilities.template_menu" href="template_menu.html">code.packages.menu_utilities.template_menu</a></code></dt>
 <dd>
@@ -82,7 +101,7 @@ from .template_menu import TemplateMenu</code></pre>
 </dd>
 <dt><code class="name"><a title="code.packages.menu_utilities.tuple_menu" href="tuple_menu.html">code.packages.menu_utilities.tuple_menu</a></code></dt>
 <dd>
-<div class="desc"><p>Module name: tuple_menu.py</p></div>
+<div class="desc"><p>Module tuple_menu.py</p></div>
 </dd>
 </dl>
 </section>

@@ -1,5 +1,5 @@
 """ 
-Module name: strings.py
+Module strings.py
 
 Remarks
 -------
@@ -21,9 +21,9 @@ For more information, see [Text Sequence Type — str](https://docs.python.org/3
 # Import regular expression module. 
 import re 
 
-class string_samples:
+class StringSamples:
     """
-    Examples showing the use strings. 
+    Examples showing the use of strings. 
     """
 
     def __init__(self):

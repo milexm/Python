@@ -16,7 +16,7 @@ sys.path.append('./code/builtin_types')
 
 from templates import TemplateSamples
 
-import menu_utilities as menu
+import menu_utilities as _menu
 
 
 class TemplateMenu:
@@ -50,7 +50,7 @@ class TemplateMenu:
         self.menu_items = ["Selection a", "Selection b", "Selection c", "Quit"]
     
         # Create the menu for the template samples.
-        self.template_sample_menu = menu.create_menu("Template Menu")
+        self.template_sample_menu = _menu.ConsoleMenu("Template Menu")
         
         # Instantiate the sample class.
         self.template_samples = TemplateSamples()

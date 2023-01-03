@@ -27,7 +27,7 @@ class GroupMenu:
     """
 
     def __init__(self):
-        """ Initializes the `menu_items` variable with the group menu items. Then initiliazes the `group_menu` variable with the `ConsoleMenu` instance. """
+        """ Initializes the `menu_items` attribute with the group menu items. Then it initiliazes the `group_menu` attribute with a `ConsoleMenu` instance. """
 
         # Define the entries of the group menu. 
         self.menu_items = ["Lists", "Tuples", "Dictionaries", "Strings", "Templates", "Quit"]
@@ -52,33 +52,33 @@ class GroupMenu:
 
             if choice == 1:
                 # Instantiate the list_menu class.
-                _lmenu = _menu.list_menu()
+                _lmenu = _menu.ListMenu()
                 # Display the list samples selection menu.
                 _lmenu.list_selection_menu()
                 
             if choice == 2:
                 # Instantiate the tuple_menu class.
-                amenu = _menu.tuple_menu()
+                _tmenu = _menu.TupleMenu()
                 # Display the tuple samples selection menu. 
-                amenu.tuple_selection_menu()
+                _tmenu.tuple_selection_menu()
                 
             if choice == 3:
                 # Instantiate the dictionary_menu class.
-                amenu = _menu.dictionary_menu()
+                _dmenu = _menu.DictionaryMenu()
                 # Display the dictionary samples selection menu. 
-                amenu.dict_selection_menu()
+                _dmenu.dict_selection_menu()
                 
             if choice == 4:
                 # Instantiate the string_menu class.
-                amenu = _menu.string_menu()
+                _smenu = _menu.StringMenu()
                 # Display the string samples selection menu. 
-                amenu.string_selection_menu()
+                _smenu.string_selection_menu()
                 
             if choice == 5:
                 # Instantiate the template_menu class.
-                amenu = _menu.TemplateMenu()
+                _tmenu = _menu.TemplateMenu()
                 # Display the string samples selection menu. 
-                amenu.template_selection_menu()
+                _tmenu.template_selection_menu()
 
             elif choice == len(self.menu_items):
                 break

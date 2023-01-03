@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
 <title>code.packages.menu_utilities.list_menu API documentation</title>
-<meta name="description" content="Module name: list_menu.py" />
+<meta name="description" content="Module list_menu.py" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -22,13 +22,13 @@
 <h1 class="title">Module <code>code.packages.menu_utilities.list_menu</code></h1>
 </header>
 <section id="section-intro">
-<p>Module name: list_menu.py</p>
+<p>Module list_menu.py</p>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">&#34;&#34;&#34; 
-Module name: list_menu.py 
+Module list_menu.py 
 
 &#34;&#34;&#34;
 
@@ -37,42 +37,51 @@ Module name: list_menu.py
 import sys
 sys.path.append(&#39;./code/builtin_types&#39;)
 
-from lists import list_samples
+from lists import ListSamples
 
-import menu_utilities as menu
+import menu_utilities as _menu
 
-class list_menu:
+class ListMenu:
 
     &#34;&#34;&#34; 
-    Instantiate the menu class and create the menu.
-    Display the selection menu and execute the sample selected by the user.  
+    The class `ListMenu` creates a menu for interacting with a collection of list-related samples. The `ListMenu` class has an instance method `list_selection_menu` that displays a menu of available samples and allows the user to select a sample to execute.
     
     Remarks
     -------
-    Display the menu to allow the user to select the sample to execute.
+    The `ListMenu` class has a single instance method, `list_selection_menu`, which displays the menu and gets the user&#39;s choice of which sample to run. It then calls the appropriate method from the `list_samples` instance to run the chosen sample. If the user selects the `Quit` option, the method exits.
     
     Use
     ---    
     In the calling module perform the following steps: 
-    1_ `amenu = list_menu()` # Instantiate the list_menu class.
-    1_ `amenu.list_selection_menu()` # Display the list samples selection
+
+    1. `amenu = ListMenu()` # Instantiate the ListMenu class.
+    1. `amenu.list_selection_menu()` # Display the list samples selection
     menu. 
 
     &#34;&#34;&#34;
+    menu_items : list 
+    &#34;&#34;&#34; List of strings representing the options in the menu. &#34;&#34;&#34;
+
+    list_sample_menu : _menu.ConsoleMenu
+    &#34;&#34;&#34; An instance of the class `ConsoleMenu`, from the `console_menu` module, used to display the menu and get user input. &#34;&#34;&#34;
+
+    list_samples : ListSamples
+    &#34;&#34;&#34; An instance of the class `ListSamples`, from the `tuples` module, which contains the actual list-related samples that can be run. &#34;&#34;&#34;
 
     def __init__(self):
-        &#34;&#34;&#34; Initialize the class `list_menu` instance. &#34;&#34;&#34;
+        &#34;&#34;&#34; Initializes the `menu_items` attribute with the list menu items. Then it initiliazes the `list_sample_menu` attribute with a `ConsoleMenu` instance and the `list_samples` attribute with a `ListSamples` instance.&#34;&#34;&#34;
+
 
         # Define the entries of the list samples menu. 
         self.menu_items = [&#34;Index a list&#34;, &#34;Slice a list&#34;, &#34;Create a list&#34;, &#34;Create a list in a range&#34;, &#34;Create a string list in a range&#34;, 
-        &#34;Remove duplicated list elments&#34;, &#34;Perform list indexing&#34;,
+        &#34;Remove duplicated list elements&#34;, &#34;Perform list indexing&#34;,
         &#34;Change list elements&#34;, &#34;Add element to a list&#34;, &#34;Slice a list&#34;, &#34;Apply list methods&#34;, &#34;Use a list as a stack&#34;, &#34;Use a list as a queue&#34;, &#34;Use list comprehension&#34;, &#34;Quit&#34;]
     
         # Create the menu for the list samples.
-        self.list_sample_menu = menu.create_menu(&#34;List Menu&#34;)
+        self.list_sample_menu = _menu.ConsoleMenu(&#34;List Menu&#34;)
 
         # Instantiate the list samples class. 
-        self.list_samples = list_samples()
+        self.list_samples = ListSamples()
 
     def list_selection_menu(self):
         &#34;&#34;&#34;
@@ -161,57 +170,66 @@ class list_menu:
 <section>
 <h2 class="section-title" id="header-classes">Classes</h2>
 <dl>
-<dt id="code.packages.menu_utilities.list_menu.list_menu"><code class="flex name class">
-<span>class <span class="ident">list_menu</span></span>
+<dt id="code.packages.menu_utilities.list_menu.ListMenu"><code class="flex name class">
+<span>class <span class="ident">ListMenu</span></span>
 </code></dt>
 <dd>
-<div class="desc"><p>Instantiate the menu class and create the menu.
-Display the selection menu and execute the sample selected by the user.
-</p>
+<div class="desc"><p>The class <code><a title="code.packages.menu_utilities.list_menu.ListMenu" href="#code.packages.menu_utilities.list_menu.ListMenu">ListMenu</a></code> creates a menu for interacting with a collection of list-related samples. The <code><a title="code.packages.menu_utilities.list_menu.ListMenu" href="#code.packages.menu_utilities.list_menu.ListMenu">ListMenu</a></code> class has an instance method <code>list_selection_menu</code> that displays a menu of available samples and allows the user to select a sample to execute.</p>
 <h2 id="remarks">Remarks</h2>
-<p>Display the menu to allow the user to select the sample to execute.</p>
+<p>The <code><a title="code.packages.menu_utilities.list_menu.ListMenu" href="#code.packages.menu_utilities.list_menu.ListMenu">ListMenu</a></code> class has a single instance method, <code>list_selection_menu</code>, which displays the menu and gets the user's choice of which sample to run. It then calls the appropriate method from the <code>list_samples</code> instance to run the chosen sample. If the user selects the <code>Quit</code> option, the method exits.</p>
 <h2 id="use">Use</h2>
-<p>In the calling module perform the following steps:
-1_ <code>amenu = list_menu()</code> # Instantiate the list_menu class.
-1_ <code>amenu.list_selection_menu()</code> # Display the list samples selection
-menu. </p>
-<p>Initialize the class <code><a title="code.packages.menu_utilities.list_menu.list_menu" href="#code.packages.menu_utilities.list_menu.list_menu">list_menu</a></code> instance.</p></div>
+<p>In the calling module perform the following steps: </p>
+<ol>
+<li><code>amenu = ListMenu()</code> # Instantiate the ListMenu class.</li>
+<li><code>amenu.list_selection_menu()</code> # Display the list samples selection
+menu. </li>
+</ol>
+<p>Initializes the <code>menu_items</code> attribute with the list menu items. Then it initiliazes the <code>list_sample_menu</code> attribute with a <code>ConsoleMenu</code> instance and the <code>list_samples</code> attribute with a <code>ListSamples</code> instance.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">class list_menu:
+<pre><code class="python">class ListMenu:
 
     &#34;&#34;&#34; 
-    Instantiate the menu class and create the menu.
-    Display the selection menu and execute the sample selected by the user.  
+    The class `ListMenu` creates a menu for interacting with a collection of list-related samples. The `ListMenu` class has an instance method `list_selection_menu` that displays a menu of available samples and allows the user to select a sample to execute.
     
     Remarks
     -------
-    Display the menu to allow the user to select the sample to execute.
+    The `ListMenu` class has a single instance method, `list_selection_menu`, which displays the menu and gets the user&#39;s choice of which sample to run. It then calls the appropriate method from the `list_samples` instance to run the chosen sample. If the user selects the `Quit` option, the method exits.
     
     Use
     ---    
     In the calling module perform the following steps: 
-    1_ `amenu = list_menu()` # Instantiate the list_menu class.
-    1_ `amenu.list_selection_menu()` # Display the list samples selection
+
+    1. `amenu = ListMenu()` # Instantiate the ListMenu class.
+    1. `amenu.list_selection_menu()` # Display the list samples selection
     menu. 
 
     &#34;&#34;&#34;
+    menu_items : list 
+    &#34;&#34;&#34; List of strings representing the options in the menu. &#34;&#34;&#34;
+
+    list_sample_menu : _menu.ConsoleMenu
+    &#34;&#34;&#34; An instance of the class `ConsoleMenu`, from the `console_menu` module, used to display the menu and get user input. &#34;&#34;&#34;
+
+    list_samples : ListSamples
+    &#34;&#34;&#34; An instance of the class `ListSamples`, from the `tuples` module, which contains the actual list-related samples that can be run. &#34;&#34;&#34;
 
     def __init__(self):
-        &#34;&#34;&#34; Initialize the class `list_menu` instance. &#34;&#34;&#34;
+        &#34;&#34;&#34; Initializes the `menu_items` attribute with the list menu items. Then it initiliazes the `list_sample_menu` attribute with a `ConsoleMenu` instance and the `list_samples` attribute with a `ListSamples` instance.&#34;&#34;&#34;
+
 
         # Define the entries of the list samples menu. 
         self.menu_items = [&#34;Index a list&#34;, &#34;Slice a list&#34;, &#34;Create a list&#34;, &#34;Create a list in a range&#34;, &#34;Create a string list in a range&#34;, 
-        &#34;Remove duplicated list elments&#34;, &#34;Perform list indexing&#34;,
+        &#34;Remove duplicated list elements&#34;, &#34;Perform list indexing&#34;,
         &#34;Change list elements&#34;, &#34;Add element to a list&#34;, &#34;Slice a list&#34;, &#34;Apply list methods&#34;, &#34;Use a list as a stack&#34;, &#34;Use a list as a queue&#34;, &#34;Use list comprehension&#34;, &#34;Quit&#34;]
     
         # Create the menu for the list samples.
-        self.list_sample_menu = menu.create_menu(&#34;List Menu&#34;)
+        self.list_sample_menu = _menu.ConsoleMenu(&#34;List Menu&#34;)
 
         # Instantiate the list samples class. 
-        self.list_samples = list_samples()
+        self.list_samples = ListSamples()
 
     def list_selection_menu(self):
         &#34;&#34;&#34;
@@ -290,9 +308,24 @@ menu. </p>
             elif choice == len(self.menu_items):
                 break</code></pre>
 </details>
+<h3>Class variables</h3>
+<dl>
+<dt id="code.packages.menu_utilities.list_menu.ListMenu.list_sample_menu"><code class="name">var <span class="ident">list_sample_menu</span> : menu_utilities.console_menu.ConsoleMenu</code></dt>
+<dd>
+<div class="desc"><p>An instance of the class <code>ConsoleMenu</code>, from the <code>console_menu</code> module, used to display the menu and get user input.</p></div>
+</dd>
+<dt id="code.packages.menu_utilities.list_menu.ListMenu.list_samples"><code class="name">var <span class="ident">list_samples</span> : lists.ListSamples</code></dt>
+<dd>
+<div class="desc"><p>An instance of the class <code>ListSamples</code>, from the <code>tuples</code> module, which contains the actual list-related samples that can be run.</p></div>
+</dd>
+<dt id="code.packages.menu_utilities.list_menu.ListMenu.menu_items"><code class="name">var <span class="ident">menu_items</span> : list</code></dt>
+<dd>
+<div class="desc"><p>List of strings representing the options in the menu.</p></div>
+</dd>
+</dl>
 <h3>Methods</h3>
 <dl>
-<dt id="code.packages.menu_utilities.list_menu.list_menu.list_selection_menu"><code class="name flex">
+<dt id="code.packages.menu_utilities.list_menu.ListMenu.list_selection_menu"><code class="name flex">
 <span>def <span class="ident">list_selection_menu</span></span>(<span>self)</span>
 </code></dt>
 <dd>
@@ -400,9 +433,12 @@ on the user's selection.</p></div>
 <li><h3><a href="#header-classes">Classes</a></h3>
 <ul>
 <li>
-<h4><code><a title="code.packages.menu_utilities.list_menu.list_menu" href="#code.packages.menu_utilities.list_menu.list_menu">list_menu</a></code></h4>
+<h4><code><a title="code.packages.menu_utilities.list_menu.ListMenu" href="#code.packages.menu_utilities.list_menu.ListMenu">ListMenu</a></code></h4>
 <ul class="">
-<li><code><a title="code.packages.menu_utilities.list_menu.list_menu.list_selection_menu" href="#code.packages.menu_utilities.list_menu.list_menu.list_selection_menu">list_selection_menu</a></code></li>
+<li><code><a title="code.packages.menu_utilities.list_menu.ListMenu.list_sample_menu" href="#code.packages.menu_utilities.list_menu.ListMenu.list_sample_menu">list_sample_menu</a></code></li>
+<li><code><a title="code.packages.menu_utilities.list_menu.ListMenu.list_samples" href="#code.packages.menu_utilities.list_menu.ListMenu.list_samples">list_samples</a></code></li>
+<li><code><a title="code.packages.menu_utilities.list_menu.ListMenu.list_selection_menu" href="#code.packages.menu_utilities.list_menu.ListMenu.list_selection_menu">list_selection_menu</a></code></li>
+<li><code><a title="code.packages.menu_utilities.list_menu.ListMenu.menu_items" href="#code.packages.menu_utilities.list_menu.ListMenu.menu_items">menu_items</a></code></li>
 </ul>
 </li>
 </ul>

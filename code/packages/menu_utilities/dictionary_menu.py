@@ -1,37 +1,47 @@
 """ 
-Module name: dictionary_menu.py
+Module dictionary_menu.py
 
 """
 
-# Append the path to the modules location.  
-# This is important to allow pdoc to find the modules. 
 import sys
 sys.path.append('./code/builtin_types')
 
-from dictionaries import dictionary_samples
+from dictionaries import DictionarySamples
 
-import menu_utilities as menu
+import menu_utilities as _menu
 
-class dictionary_menu:
+
+class DictionaryMenu:
 
     """ 
-    Instantiate the dictionary_menu class.  Display the dicitionary selection
-    menu and execute the sample selected by the user. 
+    The class `DictionaryMenu` creates a menu for interacting with a collection of dictionary-related samples. The `DictionaryMenu` class has an instance method `dict_selection_menu` that displays a menu of available samples and allows the user to select a sample to execute.
+
 
     Remarks
     -------
-    It displays the menu to allow the user to select the samples to execute from
-    the dictionary group. 
+
+    The `DictionaryMenu` class has a single instance method, `dict_selection_menu`, which displays the menu and gets the user's choice of which sample to run. It then calls the appropriate method from the `dict_samples` instance to run the chosen sample. If the user selects the `Quit` option, the method exits.
     
     Use
     ---    
 
-    From the main function perform the following steps: `amenu =
-    dictionary_menu()` # Instantiate the dictionary_menu class.
-    `amenu.dict_selection_menu()` # Display the dicitionary samples selection
-    menu and execute the sample selected by the user. 
+    In the calling module perform the following steps: 
+    
+    1. `amenu = DictionaryMenu()` # Instantiate the class.  
+    1. `amenu.dict_selection_menu()` # Display the selection menu. 
+  
   
     """
+
+    menu_items : list 
+    """ List of strings representing the options in the menu. """
+
+    dict_sample_menu : _menu.ConsoleMenu
+    """ An instance of the class `ConsoleMenu`, from the `console_menu` module, used to display the menu and get user input. """
+
+    dict_samples : DictionarySamples
+    """ An instance of the class `DictionarySamples`, from the `dictionaries` module, which contains the actual dictionary-related samples that can be run. """
+
 
     def __init__(self):
         """ Initialize the class `dictionary_menu` instance. """
@@ -40,10 +50,10 @@ class dictionary_menu:
         self.menu_items = ["Create a simple dictionary", "Get dictionary element value", "Print formatted dictionary", "Filter dictionary", "Get value in a multilevel dictionary", "Iterate through a dictionary", "Quit"]
 
         # Create the menu for the dictionary samples. 
-        self.dict_sample_menu = menu.create_menu("Dictionary Menu")
+        self.dict_sample_menu = _menu.ConsoleMenu("Dictionary Menu")
         
         # Instantiate the dictionery samples class. 
-        self.dict_samples = dictionary_samples()
+        self.dict_samples = DictionarySamples()
     
 
     def dict_selection_menu(self):

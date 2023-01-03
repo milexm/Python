@@ -24,7 +24,7 @@ sequences](https://docs.python.org/3/tutorial/datastructures.html?highlight=comp
 
 """
 
-class tuple_samples:
+class TupleSamples:
     """
     Examples that show the use of tuples.
 

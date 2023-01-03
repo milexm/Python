@@ -1,33 +1,45 @@
 """ 
-Module name: string_menu.py
+Module string_menu.py
 
 """""
 
 import sys
 sys.path.append('./code/builtin_types')
 
-from strings import string_samples
+from strings import StringSamples
 
-import menu_utilities as menu
+import menu_utilities as _menu
 
-class string_menu:
+class StringMenu:
 
     """ 
-    Instantiate the menu class and create the menu.
-    Display the selection menu and execute the sample selected by the user. 
+    The class `StringMenu` creates a menu for interacting with a collection of string-related samples. The `StringMenu` class has an instance method `string_selection_menu` that displays a menu of available samples and allows the user to select a sample to execute.
 
     Remarks
     -------
-   Display the menu to allow the user to select the sample to execute.
+
+    The `StringMenu` class has a single instance method, `string_selection_menu`, which displays the menu and gets the user's choice of which sample to run. It then calls the appropriate method from the `string_samples` instance to run the chosen sample. If the user selects the `Quit` option, the method exits.
+
 
     Use
     ---    
-    In the calling module perform the following steps: 
 
-    1) `amenu = string_menu()` # Instantiate the create_menu class and create the menu.  
-    2) `amenu.string_selection_menu()` # Display the menu and execute the sample selected by the user.
+    In the calling module perform the following steps: 
+    
+    1. `amenu = StringMenu()` # Instantiate the class.  
+    1. `amenu.string_selection_menu()` # Display the selection menu. 
   
     """
+
+    menu_items : list 
+    """ List of strings representing the options in the menu. """
+
+    string_sample_menu : _menu.ConsoleMenu
+    """ An instance of the class `ConsoleMenu`, from the `console_menu` module, used to display the menu and get user input. """
+
+    dict_samples : StringSamples
+    """ An instance of the class `StringSamples`, from the `strings` module, which contains the actual dictionary-related samples that can be run. """
+
 
     def __init__(self):
         """ Initialize the class `string_menu` instance. """
@@ -36,10 +48,10 @@ class string_menu:
         self.menu_items = ["Create a string", "Get a substring", "Remove white spaces", "Make lower case", "Make upper case", "Split string", "Quit"]
     
         # Create the menu for the string samples.
-        self.string_sample_menu = menu.create_menu("String Menu")
+        self.string_sample_menu = _menu.ConsoleMenu("String Menu")
 
         # Instantiate the string sample class
-        self.string_samples = string_samples()
+        self.string_samples = StringSamples()
 
 
     def string_selection_menu(self):

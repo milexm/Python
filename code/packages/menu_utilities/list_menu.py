@@ -1,5 +1,5 @@
 """ 
-Module name: list_menu.py 
+Module list_menu.py 
 
 """
 
@@ -8,42 +8,51 @@ Module name: list_menu.py
 import sys
 sys.path.append('./code/builtin_types')
 
-from lists import list_samples
+from lists import ListSamples
 
-import menu_utilities as menu
+import menu_utilities as _menu
 
-class list_menu:
+class ListMenu:
 
     """ 
-    Instantiate the menu class and create the menu.
-    Display the selection menu and execute the sample selected by the user.  
+    The class `ListMenu` creates a menu for interacting with a collection of list-related samples. The `ListMenu` class has an instance method `list_selection_menu` that displays a menu of available samples and allows the user to select a sample to execute.
     
     Remarks
     -------
-    Display the menu to allow the user to select the sample to execute.
+    The `ListMenu` class has a single instance method, `list_selection_menu`, which displays the menu and gets the user's choice of which sample to run. It then calls the appropriate method from the `list_samples` instance to run the chosen sample. If the user selects the `Quit` option, the method exits.
     
     Use
     ---    
     In the calling module perform the following steps: 
-    1_ `amenu = list_menu()` # Instantiate the list_menu class.
-    1_ `amenu.list_selection_menu()` # Display the list samples selection
+
+    1. `amenu = ListMenu()` # Instantiate the ListMenu class.
+    1. `amenu.list_selection_menu()` # Display the list samples selection
     menu. 
 
     """
+    menu_items : list 
+    """ List of strings representing the options in the menu. """
+
+    list_sample_menu : _menu.ConsoleMenu
+    """ An instance of the class `ConsoleMenu`, from the `console_menu` module, used to display the menu and get user input. """
+
+    list_samples : ListSamples
+    """ An instance of the class `ListSamples`, from the `tuples` module, which contains the actual list-related samples that can be run. """
 
     def __init__(self):
-        """ Initialize the class `list_menu` instance. """
+        """ Initializes the `menu_items` attribute with the list menu items. Then it initiliazes the `list_sample_menu` attribute with a `ConsoleMenu` instance and the `list_samples` attribute with a `ListSamples` instance."""
+
 
         # Define the entries of the list samples menu. 
         self.menu_items = ["Index a list", "Slice a list", "Create a list", "Create a list in a range", "Create a string list in a range", 
-        "Remove duplicated list elments", "Perform list indexing",
+        "Remove duplicated list elements", "Perform list indexing",
         "Change list elements", "Add element to a list", "Slice a list", "Apply list methods", "Use a list as a stack", "Use a list as a queue", "Use list comprehension", "Quit"]
     
         # Create the menu for the list samples.
-        self.list_sample_menu = menu.create_menu("List Menu")
+        self.list_sample_menu = _menu.ConsoleMenu("List Menu")
 
         # Instantiate the list samples class. 
-        self.list_samples = list_samples()
+        self.list_samples = ListSamples()
 
     def list_selection_menu(self):
         """
