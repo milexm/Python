@@ -28,6 +28,33 @@
 <p>The <code>__init__.py</code> module makes the directory 'utilities' a package.
 The directory may contain several modules that through <code>__init__</code> are considered
 by the Python interpreter as part of one package only called <code>utilities</code>.</p>
+<p>The following imports allow the use of functions from
+different modules as they would belong to one package only, without the need to import the various modules one by one. </p>
+<p>For example, to use the <code>ConsoleMenu</code> class in the calling module you do the following:</p>
+<ul>
+<li>
+<p>Append the path to the package modules location.
+</p>
+<p><code>import sys</code>
+<code>sys.path.append('./code/packages')</code></p>
+</li>
+<li>
+<p>Import the menu utilities package.</p>
+<p><code>import menu_utilities as _menu</code></p>
+</li>
+<li>
+<p>Instantiate the menu class. </p>
+<p><code>self.group_menu = _menu.ConsoleMenu("Group Menu")</code></p>
+</li>
+<li>
+<p>Display the menu.</p>
+<p><code>self.group_menu.display_menu(self.menu_items)</code></p>
+</li>
+<li>
+<p>Get the user's choice.</p>
+<p><code>choice = self.group_menu.get_user_choice(self.menu_items)</code></p>
+</li>
+</ul>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -41,32 +68,35 @@ Remarks
 The `__init__.py` module makes the directory &#39;utilities&#39; a package.
 The directory may contain several modules that through `__init__` are considered
 by the Python interpreter as part of one package only called `utilities`.
- 
-&#34;&#34;&#34;
-# Perform package wide initializations.
 
-&#34;&#34;&#34; 
 The following imports allow the use of functions from  different modules as they would belong to one package only, without the need to import the various modules one by one. 
 
 For example, to use the `ConsoleMenu` class in the calling module you do the following:
 
-# Append the path to the package modules location.  
-import sys
-sys.path.append(&#39;./code/packages&#39;) 
+- Append the path to the package modules location.  
+   
+    `import sys` 
+    `sys.path.append(&#39;./code/packages&#39;)`
 
-import menu_utilities as _menu
+- Import the menu utilities package.
 
-# Instantiate the menu class. 
-self.group_menu = _menu.ConsoleMenu(&#34;Group Menu&#34;)
+    `import menu_utilities as _menu`
 
-# Display the menu.
-self.group_menu.display_menu(self.menu_items)
+- Instantiate the menu class. 
+    
+    `self.group_menu = _menu.ConsoleMenu(&#34;Group Menu&#34;)`
 
-# Get the user&#39;s choice.
-choice = self.group_menu.get_user_choice(self.menu_items)
+- Display the menu.
+    
+    `self.group_menu.display_menu(self.menu_items)`
 
+- Get the user&#39;s choice.
+    
+    `choice = self.group_menu.get_user_choice(self.menu_items)`
 
 &#34;&#34;&#34;
+
+# Perform package wide initializations.
 
 from .console_menu import ConsoleMenu
 from .string_menu import StringMenu

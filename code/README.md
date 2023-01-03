@@ -1,5 +1,5 @@
 ---
-last update: 12/27/22
+last update: 01/02/23
 ---
 
 # ![python-icon](../media/icons/python-icon.svg) API reference documentation
@@ -19,15 +19,25 @@ documentation because it is included by the `code/__init__.py` This is
 why:
 >
 > The landing page for the documentation is the project's top-level
-`<modulename>/__init__.py` file that in our case is `code/__init__.py`
-> .  Adding a module-level docstring here is a great way to introduce users to
+> `<modulename>/__init__.py` file that in our case is `code/__init__.py`
+> Adding a module-level docstring here is a great way to introduce users to
 > the project. 
 
+You can include external Markdown files in your documentation by using
+reStructuredText's `.. include::` directive. For example, a common pattern is to
+include your project's README in your top-level `__init__.py` like this:
+
+`.. include:: ../README.md`
+
+For more information, see [include Markdown
+files?](https://pdoc.dev/docs/pdoc.html#include-markdown-files).
 
 ## References
 
 - [Python 3.11.1 documentation](https://docs.python.org/3/)
 - [PEP 8 – Style Guide for Python Code](https://peps.python.org/pep-0008/)
+- [PDoc](https://pdoc.dev/docs/pdoc.html)
+- [Easy Documentation Generation in Python using PDoc](https://medium.com/cemac/simple-documentation-generation-in-python-using-pdoc-16fb86eb5cd5)
 - [The Python Mega Course Build 10 Real World Applications](https://github.com/JayabharathP/The-Python-Mega-Course-Build-10-Real-World-Applications-#readme) - Github sample repo
   - [The Python Mega Course: Learn Python in 40 Days with 18 Apps](https://www.udemy.com/course/the-python-mega-course/) - Udemy class
 - [Practice Python with 100 Python Exercises](https://www.udemy.com/course/python-video-workbook/) - Udemy class
