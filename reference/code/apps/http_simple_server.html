@@ -4,10 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
-<title>code API documentation</title>
-<meta name="description" content="---
-last update: 01/02/23
---- …" />
+<title>code.apps.http_simple_server API documentation</title>
+<meta name="description" content="Module http_simple_server …" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -21,136 +19,156 @@ last update: 01/02/23
 <main>
 <article id="content">
 <header>
-<h1 class="title">Package <code>code</code></h1>
+<h1 class="title">Module <code>code.apps.http_simple_server</code></h1>
 </header>
 <section id="section-intro">
-<hr>
-<h2 id="last-update-010223">last update: 01/02/23</h2>
-<h1 id="api-reference-documentation"><img alt="python-icon" src="../media/icons/python-icon.svg"> API reference documentation</h1>
-<p>The examples API reference documentation is created automatically from the
-<strong>docstrings</strong> contained in the code.
-</p>
-<p>The following is the command used to generate the API documentation, executed
-from the directory: <code>&lt;user path&gt;\&lt;python project&gt;</code>:</p>
-<pre><code class="language-cmd">    pdoc --force --html .\code --output .\reference\
-</code></pre>
-<blockquote>
-<p>[!NOTE] This README file is the landing page of the API reference
-documentation because it is included by the <code>code/__init__.py</code> This is
-why:</p>
-<p>The landing page for the documentation is the project's top-level
-<code>&lt;modulename&gt;/__init__.py</code> file that in our case is <code>code/__init__.py</code>
-Adding a module-level docstring here is a great way to introduce users to
-the project. </p>
-</blockquote>
-<p>You can include external Markdown files in your documentation by using
-reStructuredText's <code>.. include::</code> directive. For example, a common pattern is to
-include your project's README in your top-level <code>__init__.py</code> like this:</p>
-<p><code>.. include:: ../README.md</code></p>
-<p>For more information, see <a href="https://pdoc.dev/docs/pdoc.html#include-markdown-files">include Markdown
-files?</a>.</p>
-<h2 id="references">References</h2>
-<ul>
-<li><a href="https://docs.python.org/3/">Python 3.11.1 documentation</a></li>
-<li><a href="https://peps.python.org/pep-0008/">PEP 8 – Style Guide for Python Code</a></li>
-<li><a href="https://pdoc.dev/docs/pdoc.html">PDoc</a></li>
-<li><a href="https://medium.com/cemac/simple-documentation-generation-in-python-using-pdoc-16fb86eb5cd5">Easy Documentation Generation in Python using PDoc</a></li>
-<li><a href="https://github.com/JayabharathP/The-Python-Mega-Course-Build-10-Real-World-Applications-#readme">The Python Mega Course Build 10 Real World Applications</a> - Github sample repo</li>
-<li><a href="https://www.udemy.com/course/the-python-mega-course/">The Python Mega Course: Learn Python in 40 Days with 18 Apps</a> - Udemy class</li>
-<li><a href="https://www.udemy.com/course/python-video-workbook/">Practice Python with 100 Python Exercises</a> - Udemy class</li>
-<li><a href="https://www.linuxjournal.com/content/tech-tip-really-simple-http-server-python">Tech Tip: Really Simple HTTP Server with Python</a></li>
-<li><a href="https://www.w3schools.com/python/python_classes.asp">Python Classes and Objects</a> - W3 Schools</li>
-</ul>
+<p>Module http_simple_server</p>
+<h2 id="remarks">Remarks</h2>
+<p>This program defines a simple <code><a title="code.apps.http_simple_server.SimpleHTTPRequestHandler" href="#code.apps.http_simple_server.SimpleHTTPRequestHandler">SimpleHTTPRequestHandler</a></code> class that subclasses <code>BaseHTTPRequestHandler</code> from the <code>http.server</code> module. The <code>do_GET</code> method of this class is called whenever the server receives a <code>GET</code> request, and it sends a fixed response to the client with a status code of <code>200 (OK)</code> and the body "Hello, World!".</p>
+<p>To test this server, run the program and then send a GET request to it using a tool such as curl: <code>curl http://localhost:8000</code>.</p>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">&#34;&#34;&#34;
+Module http_simple_server
 
-.. include:: ./README.md
+Remarks
+-------
+
+This program defines a simple `SimpleHTTPRequestHandler` class that subclasses `BaseHTTPRequestHandler` from the `http.server` module. The `do_GET` method of this class is called whenever the server receives a `GET` request, and it sends a fixed response to the client with a status code of `200 (OK)` and the body &#34;Hello, World!&#34;.
+
+To test this server, run the program and then send a GET request to it using a tool such as curl: `curl http://localhost:8000`.
 
 &#34;&#34;&#34;
 
-&#34;&#34;&#34;
+import http.server
 
-The landing page for your documentation is your project&#39;s top-level
-&lt;modulename&gt;/__init__.py file. Adding a module-level docstring here is a great
-way to introduce users to your project. For example, the documentation you are
-reading right now is sourced from pdoc/__init__.py. You can also include your
-title page from a Markdown file.
+class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
+    &#34;&#34;&#34;A simple HTTP request handler that always returns a fixed response.&#34;&#34;&#34;
+    
+    def do_GET(self):
+        &#34;&#34;&#34;Handle GET requests.&#34;&#34;&#34;
+        self.send_response(200)
+        self.send_header(&#34;Content-type&#34;, &#34;text/plain&#34;)
+        self.end_headers()
+        self.wfile.write(b&#34;Hello, World!&#34;)
 
-You can include external Markdown files in your documentation by using reStructuredText&#39;s .. include:: directive. For example, a common pattern is to include your project&#39;s README in your top-level __init__.py like this:
+def test_http_server():
+    &#34;&#34;&#34;Test the SimpleHTTPRequestHandler class.&#34;&#34;&#34;
+    server_address = (&#34;&#34;, 8000)
+    httpd = http.server.HTTPServer(server_address, SimpleHTTPRequestHandler)
+    print(&#34;Starting HTTP server on port 8000...&#34;)
+    httpd.serve_forever()
 
-`.. include:: ../README.md`
-
-&#34;&#34;&#34;</code></pre>
+# test_http_server()</code></pre>
 </details>
 </section>
 <section>
-<h2 class="section-title" id="header-submodules">Sub-modules</h2>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
-<dt><code class="name"><a title="code.apps" href="apps/index.html">code.apps</a></code></dt>
+<dt id="code.apps.http_simple_server.test_http_server"><code class="name flex">
+<span>def <span class="ident">test_http_server</span></span>(<span>)</span>
+</code></dt>
 <dd>
-<div class="desc"></div>
-</dd>
-<dt><code class="name"><a title="code.basic_examples" href="basic_examples/index.html">code.basic_examples</a></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt><code class="name"><a title="code.builtin_types" href="builtin_types/index.html">code.builtin_types</a></code></dt>
-<dd>
-<div class="desc"><hr>
-<p>last update: 12/17/22
-&mdash; …</p></div>
-</dd>
-<dt><code class="name"><a title="code.docstring" href="docstring/index.html">code.docstring</a></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt><code class="name"><a title="code.language_types" href="language_types/index.html">code.language_types</a></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt><code class="name"><a title="code.oldpackages" href="oldpackages/index.html">code.oldpackages</a></code></dt>
-<dd>
-<div class="desc"><p>Directory that contains packages.
-It allows to direct the interpreter to locate the package via its path.</p></div>
-</dd>
-<dt><code class="name"><a title="code.packages" href="packages/index.html">code.packages</a></code></dt>
-<dd>
-<div class="desc"><p>This is the <strong>init</strong>.py module makes the directory 'packages' a package.
-The directory contains several modules that through <strong>init</strong> are considered …</p></div>
+<div class="desc"><p>Test the SimpleHTTPRequestHandler class.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def test_http_server():
+    &#34;&#34;&#34;Test the SimpleHTTPRequestHandler class.&#34;&#34;&#34;
+    server_address = (&#34;&#34;, 8000)
+    httpd = http.server.HTTPServer(server_address, SimpleHTTPRequestHandler)
+    print(&#34;Starting HTTP server on port 8000...&#34;)
+    httpd.serve_forever()</code></pre>
+</details>
 </dd>
 </dl>
 </section>
 <section>
-</section>
-<section>
-</section>
-<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="code.apps.http_simple_server.SimpleHTTPRequestHandler"><code class="flex name class">
+<span>class <span class="ident">SimpleHTTPRequestHandler</span></span>
+<span>(</span><span>request, client_address, server)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>A simple HTTP request handler that always returns a fixed response.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
+    &#34;&#34;&#34;A simple HTTP request handler that always returns a fixed response.&#34;&#34;&#34;
+    
+    def do_GET(self):
+        &#34;&#34;&#34;Handle GET requests.&#34;&#34;&#34;
+        self.send_response(200)
+        self.send_header(&#34;Content-type&#34;, &#34;text/plain&#34;)
+        self.end_headers()
+        self.wfile.write(b&#34;Hello, World!&#34;)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>http.server.BaseHTTPRequestHandler</li>
+<li>socketserver.StreamRequestHandler</li>
+<li>socketserver.BaseRequestHandler</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="code.apps.http_simple_server.SimpleHTTPRequestHandler.do_GET"><code class="name flex">
+<span>def <span class="ident">do_GET</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Handle GET requests.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def do_GET(self):
+    &#34;&#34;&#34;Handle GET requests.&#34;&#34;&#34;
+    self.send_response(200)
+    self.send_header(&#34;Content-type&#34;, &#34;text/plain&#34;)
+    self.end_headers()
+    self.wfile.write(b&#34;Hello, World!&#34;)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
 </section>
 </article>
 <nav id="sidebar">
 <h1>Index</h1>
 <div class="toc">
 <ul>
-<li><a href="#last-update-010223">last update: 01/02/23</a></li>
-<li><a href="#api-reference-documentation">API reference documentation</a><ul>
-<li><a href="#references">References</a></li>
-</ul>
-</li>
+<li><a href="#remarks">Remarks</a></li>
 </ul>
 </div>
 <ul id="index">
-<li><h3><a href="#header-submodules">Sub-modules</a></h3>
+<li><h3>Super-module</h3>
 <ul>
-<li><code><a title="code.apps" href="apps/index.html">code.apps</a></code></li>
-<li><code><a title="code.basic_examples" href="basic_examples/index.html">code.basic_examples</a></code></li>
-<li><code><a title="code.builtin_types" href="builtin_types/index.html">code.builtin_types</a></code></li>
-<li><code><a title="code.docstring" href="docstring/index.html">code.docstring</a></code></li>
-<li><code><a title="code.language_types" href="language_types/index.html">code.language_types</a></code></li>
-<li><code><a title="code.oldpackages" href="oldpackages/index.html">code.oldpackages</a></code></li>
-<li><code><a title="code.packages" href="packages/index.html">code.packages</a></code></li>
+<li><code><a title="code.apps" href="index.html">code.apps</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="code.apps.http_simple_server.test_http_server" href="#code.apps.http_simple_server.test_http_server">test_http_server</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="code.apps.http_simple_server.SimpleHTTPRequestHandler" href="#code.apps.http_simple_server.SimpleHTTPRequestHandler">SimpleHTTPRequestHandler</a></code></h4>
+<ul class="">
+<li><code><a title="code.apps.http_simple_server.SimpleHTTPRequestHandler.do_GET" href="#code.apps.http_simple_server.SimpleHTTPRequestHandler.do_GET">do_GET</a></code></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
