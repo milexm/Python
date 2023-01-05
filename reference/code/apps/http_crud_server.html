@@ -24,18 +24,25 @@
 <section id="section-intro">
 <p>Module http_crud_server.py</p>
 <h2 id="remarks">Remarks</h2>
-<p>This code defines a simple CRUD HTTP server using the BaseHTTPRequestHandler class from the Python Standard Library's http.server module. The CRUDHandler class is a subclass of BaseHTTPRequestHandler and overrides the following methods to handle different HTTP requests:</p>
+<p>This code defines a simple CRUD HTTP server using the BaseHTTPRequestHandler
+class from the Python Standard Library's http.server module. The CRUDHandler
+class is a subclass of BaseHTTPRequestHandler and overrides the following
+methods to handle different HTTP requests:</p>
 <ul>
 <li><code>do_GET</code>: handles GET requests</li>
 <li><code>do_POST</code>: handles POST requests</li>
 <li><code>do_PUT</code>: handles PUT requests</li>
-<li><code>do_DELETE</code>: handles DELETE requests
-Each of these methods sends a response to the client with a 200 status code and a message indicating the type of request that was received.</li>
+<li><code>do_DELETE</code>: handles DELETE requests</li>
 </ul>
-<p>The run_server function sets up the server and starts it running on the specified port (default is 8000). The server will run indefinitely until it is stopped manually.</p>
+<p>Each of these methods sends a response to the client with a 200 status code and
+a message indicating the type of request that was received.</p>
+<p>The run_server function sets up the server and starts it running on the
+specified port (default is 8000). The server will run indefinitely until it is
+stopped manually.</p>
 <p>To start the server, you can run the script from the command line:</p>
 <p><code>python http_crud_server.py</code></p>
-<p>Once the server is running, you can test it using the test_http_crud_server function provided in the previous code snippet.</p>
+<p>Once the server is running, you can test it using the test_http_crud_server
+function provided in the previous code snippet.</p>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -46,21 +53,29 @@ Module http_crud_server.py
 Remarks
 -------
 
-This code defines a simple CRUD HTTP server using the BaseHTTPRequestHandler class from the Python Standard Library&#39;s http.server module. The CRUDHandler class is a subclass of BaseHTTPRequestHandler and overrides the following methods to handle different HTTP requests:
+This code defines a simple CRUD HTTP server using the BaseHTTPRequestHandler
+class from the Python Standard Library&#39;s http.server module. The CRUDHandler
+class is a subclass of BaseHTTPRequestHandler and overrides the following
+methods to handle different HTTP requests:
 
 - `do_GET`: handles GET requests
 - `do_POST`: handles POST requests
 - `do_PUT`: handles PUT requests
 - `do_DELETE`: handles DELETE requests
-Each of these methods sends a response to the client with a 200 status code and a message indicating the type of request that was received.
 
-The run_server function sets up the server and starts it running on the specified port (default is 8000). The server will run indefinitely until it is stopped manually.
+Each of these methods sends a response to the client with a 200 status code and
+a message indicating the type of request that was received.
+
+The run_server function sets up the server and starts it running on the
+specified port (default is 8000). The server will run indefinitely until it is
+stopped manually.
 
 To start the server, you can run the script from the command line:
 
 `python http_crud_server.py`
 
-Once the server is running, you can test it using the test_http_crud_server function provided in the previous code snippet.
+Once the server is running, you can test it using the test_http_crud_server
+function provided in the previous code snippet.
 
 &#34;&#34;&#34;
 
