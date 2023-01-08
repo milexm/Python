@@ -93,8 +93,7 @@ pip list
 
 This is the result:
 
-![default venv packages](../../Media/Python/env/default-venv-packages.PNG)
-
+![default venv packages](../../media/envs/default-venv-packages.PNG)
 
 For equivalent Linux commands, see [Python Virtual Environments: A Primer](https://realpython.com/python-virtual-environments-a-primer/).
 
