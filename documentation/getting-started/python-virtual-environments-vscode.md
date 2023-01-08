@@ -33,7 +33,7 @@ An environment consists of:
 By default, the Python extension looks for and uses the first **Python interpreter** it finds in the system path. If it doesn't find an interpreter, it issues a warning.
 To select a specific environment, use the **Python: Select Interpreter** command from the **Command Palette `(Ctrl+Shift+P)`**.
 
-![select-environment](../../media/envs/select-environment.PNG)
+![select-environment](../../media/envs/select-environment.png)
 
 You can switch environments at any time; switching environments helps you test different parts of your project with different interpreters or library versions as needed.
 
