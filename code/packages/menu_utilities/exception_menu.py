@@ -14,12 +14,12 @@ Replace the name template(s) with your specific name.
 import sys
 sys.path.append('./code/builtin_types')
 
-from errors import ErrorSamples
+from exceptions import ExceptionSamples
 
 import menu_utilities as _menu
 
 
-class ErrorMenu:
+class ExceptionMenu:
 
     """ 
     Instantiate the menu class and create the menu.
@@ -48,16 +48,16 @@ class ErrorMenu:
         """ Initialize the class `string_menu` instance. """
 
         # Define the entries of the string samples menu. 
-        self.menu_items = ["Type error", "Name error", "Quit"]
+        self.menu_items = ["Type error", "Name error", "Attribute error", "Quit"]
     
         # Create the menu for the template samples.
-        self.error_sample_menu = _menu.ConsoleMenu("Template Menu")
+        self.error_sample_menu = _menu.ConsoleMenu("Exception Menu")
         
         # Instantiate the sample class.
-        self.error_samples = ErrorSamples()
+        self.error_samples = ExceptionSamples()
 
 
-    def error_selection_menu(self):
+    def exception_selection_menu(self):
         """
             Display menu and process user's input.  Call the proper method based
             on the user's selection.
@@ -79,6 +79,10 @@ class ErrorMenu:
             if choice == 2:
                 print("\n*** Isssue name error ***")
                 self.error_samples.issue_name_error_exception()
+
+            if choice == 3:
+                print("\n*** Isssue attribute error ***")
+                self.error_samples.issue_attribute_error_exception()
 
             elif choice == len(self.menu_items):
                 break

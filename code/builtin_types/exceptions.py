@@ -15,7 +15,7 @@ class’s constructor. For more information, see [Built-in Exceptions](https://d
 """
 import sys
 
-class ErrorSamples:
+class ExceptionSamples:
 
     def issue_type_error_exception(self):
         """ 
@@ -55,7 +55,7 @@ class ErrorSamples:
 
     def issue_name_error_exception(self):
         """ 
-        Issues a NameeError exception,
+        Issues a NameeError exception.
         
         Remarks
         -------
@@ -75,7 +75,40 @@ class ErrorSamples:
         """ 
 
         try:
-            # The following statement uses the math library which is not imported. 
+            # The following statement uses the math library 
+            # which is not imported. 
             square = math.sqrt(9)
         except Exception as error:
             print(f"{type(error).__name__} was raised: {error}") 
+
+
+    def issue_attribute_error_exception(self):
+        """ 
+        Issues an AttributeError exception.
+        
+        Remarks
+        -------
+
+        This example uses the incorrect attribute 'cosine'; 
+        it should be `cos` instead.
+        To find the correct attribute in a terminal do the following:
+      
+        1. activate `python`.
+        1. >>> import math
+        1. >>> dir(math) 
+        1. >>> help(math.cos)  
+
+        Raised when an attribute reference (see Attribute references) or assignment fails. (When an object does not support attribute references or attribute assignments at all, TypeError is raised.)
+
+        For more information, see [exception AttributeError](https://docs.python.org/3/library/exceptions.html#AttributeError). 
+
+        """
+        try:
+            # The following statement uses incorrect attribute 'cosine'; 
+            # it should be `cos` instead.  
+            import math
+            cosine = math.cosine(1)
+        except Exception as error:
+            print(f"{type(error).__name__} was raised: {error}") 
+
+        

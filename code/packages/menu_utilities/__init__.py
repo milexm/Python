@@ -43,4 +43,4 @@ from .list_menu import ListMenu
 from .tuple_menu import TupleMenu
 from .dictionary_menu import DictionaryMenu
 from .template_menu import TemplateMenu
-from .error_menu import ErrorMenu
+from .exception_menu import ExceptionMenu
