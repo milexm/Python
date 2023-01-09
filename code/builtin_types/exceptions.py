@@ -39,8 +39,9 @@ class ExceptionSamples:
         about the type mismatch.
 
         This exception may be raised by user code to indicate that an attempted
-        operation on an object is not supported, and is not meant to be. 
-        For more information, see [exception TypeError](https://docs.python.org/3/library/exceptions.html#TypeError).
+        operation on an object is not supported, and is not meant to be.  For
+        more information, see [exception
+        TypeError](https://docs.python.org/3/library/exceptions.html#TypeError).
 
         """
         a = "1" # This is a string.
@@ -70,7 +71,8 @@ class ExceptionSamples:
 
         The name attribute can be set using a keyword-only argument to the
         constructor. When set it represent the name of the variable that was
-        attempted to be accessed. For more information, see [exception `NameError`](https://docs.python.org/3/library/exceptions.html#NameError).
+        attempted to be accessed. For more information, see [exception
+        `NameError`](https://docs.python.org/3/library/exceptions.html#NameError).
 
         """ 
 
@@ -89,18 +91,20 @@ class ExceptionSamples:
         Remarks
         -------
 
-        This example uses the incorrect attribute 'cosine'; 
-        it should be `cos` instead.
-        To find the correct attribute in a terminal do the following:
+        This example uses the incorrect attribute 'cosine'; it should be `cos`
+        instead.  To find the correct attribute in a terminal do the following:
       
         1. activate `python`.
-        1. >>> import math
-        1. >>> dir(math) 
-        1. >>> help(math.cos)  
+        1. \>>> import math
+        1. \>>> dir(math) 
+        1. \>>> help(math.cos)  
 
-        Raised when an attribute reference (see Attribute references) or assignment fails. (When an object does not support attribute references or attribute assignments at all, TypeError is raised.)
+        Raised when an attribute reference (see Attribute references) or
+        assignment fails. (When an object does not support attribute references
+        or attribute assignments at all, TypeError is raised.)
 
-        For more information, see [exception AttributeError](https://docs.python.org/3/library/exceptions.html#AttributeError). 
+        For more information, see [exception
+        AttributeError](https://docs.python.org/3/library/exceptions.html#AttributeError). 
 
         """
         try:
