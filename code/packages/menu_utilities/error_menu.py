@@ -48,7 +48,7 @@ class ErrorMenu:
         """ Initialize the class `string_menu` instance. """
 
         # Define the entries of the string samples menu. 
-        self.menu_items = ["Issue eType error", "Quit"]
+        self.menu_items = ["Type error", "Name error", "Quit"]
     
         # Create the menu for the template samples.
         self.error_sample_menu = _menu.ConsoleMenu("Template Menu")
@@ -74,8 +74,12 @@ class ErrorMenu:
 
             if choice == 1:
                 print("\n*** Isssue type error ***")
-                self.error_samples.issue_type_error()
+                self.error_samples.issue_type_error_exception()
            
+            if choice == 2:
+                print("\n*** Isssue name error ***")
+                self.error_samples.issue_name_error_exception()
+
             elif choice == len(self.menu_items):
                 break
         
