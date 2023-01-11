@@ -48,12 +48,26 @@ class ExceptionSamples:
         a = "1" # This is a string.
         b = 2 # This is an integer. 
 
+        # Example 1
         try:
             # The following statement mixes string and integer types. 
             print(a + b)
         except Exception as error:
-            print(f"{type(error).__name__} was raised: {error}") 
+            print(f"Example 1 - {type(error).__name__} was raised: {error}") 
+        finally: 
+            # Transform integer to string to fix the problem.
+            print(f'Tranforming int to str fix the problem: {a+str(2)}')
 
+        # Example 2
+        try:
+            firstname = input("Enter first name: ")
+            lastname = input("Enter second name: ")
+            print("Your first name is %s and your second name is %s" % firstname, lastname)
+        except Exception as error:
+            print(f"Example 2 - {type(error).__name__} was raised: {error}") 
+        finally: 
+            # Pass values inside a tuple to fix the problem.
+            print("Pass values as a tuple. Your first name is %s and your last name is %s" % (firstname, lastname))
 
     def issue_name_error_exception(self):
         """ 
