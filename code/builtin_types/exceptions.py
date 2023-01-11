@@ -11,6 +11,7 @@ indicating the detailed cause of the error. This may be a string or a tuple of
 several items of information (e.g., an error code and a string explaining the
 code). The associated value is usually passed as arguments to the exception
 class’s constructor. For more information, see [Built-in Exceptions](https://docs.python.org/3/library/exceptions.html#built-in-exceptions).
+See also [Exception hierarchy](https://docs.python.org/3/library/exceptions.html#exception-hierarchy).
 
 """
 import sys
@@ -115,4 +116,22 @@ class ExceptionSamples:
         except Exception as error:
             print(f"{type(error).__name__} was raised: {error}") 
 
+    def issue_file_not_found_error_exception(self):
+        """ 
+        Issues a FileNotFoundError exception.
         
+        Remarks
+        -------
+
+        Raised when a file or directory is requested but does not exist.
+
+        For more information, see [exception FileNotFoundError](https://docs.python.org/3/library/exceptions.html#FileNotFoundError). 
+
+        """
+        try:
+            # The following statement tries to open a non exisiting file.
+            file_path = "dummy.txt"
+            f = open(file_path, 'r') 
+        except Exception as error:
+            print(f"{type(error).__name__} was raised: {error}") 
+

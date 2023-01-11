@@ -48,7 +48,7 @@ class ExceptionMenu:
         """ Initialize the class `string_menu` instance. """
 
         # Define the entries of the string samples menu. 
-        self.menu_items = ["Type error", "Name error", "Attribute error", "Quit"]
+        self.menu_items = ["Type error", "Name error", "Attribute error", "File not found", "Quit"]
     
         # Create the menu for the template samples.
         self.error_sample_menu = _menu.ConsoleMenu("Exception Menu")
@@ -83,6 +83,10 @@ class ExceptionMenu:
             if choice == 3:
                 print("\n*** Isssue attribute error ***")
                 self.error_samples.issue_attribute_error_exception()
+                
+            if choice == 4:
+                print("\n*** Isssue file not found error ***")
+                self.error_samples.issue_file_not_found_error_exception()
 
             elif choice == len(self.menu_items):
                 break

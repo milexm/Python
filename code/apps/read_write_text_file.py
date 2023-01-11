@@ -50,7 +50,8 @@ def test_text_file():
     test_str = "This is a test string."
     text_file.write(test_str)
     
-    # Read the contents of the file and check that they match the test string
+    # Read the contents of the file and check 
+    # that they match the test string
     assert text_file.read() == test_str
     
     print("test_text_file passed.")
