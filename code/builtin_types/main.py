@@ -33,7 +33,7 @@ class GroupMenu:
         self.menu_items = ["Lists", "Tuples", "Dictionaries", "Strings", "Exceptions", "Templates", "Quit"]
         
         # Instantiate the group menu class. 
-        self.group_menu = _menu.ConsoleMenu("Group Menu")
+        self.group_menu = _menu.ConsoleMenu("Builtin Types Group Menu")
 
 
     def group_selection_menu(self):
