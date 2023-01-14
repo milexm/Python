@@ -18,9 +18,9 @@ import sys
 
 class ExceptionSamples:
 
-    def issue_type_error_exception(self):
+    def raise_type_exception(self):
         """ 
-        Issues a TypeError exception.
+        Raises a TypeError exception.
         
         Remarks
         -------
@@ -69,9 +69,9 @@ class ExceptionSamples:
             # Pass values inside a tuple to fix the problem.
             print("Pass values as a tuple. Your first name is %s and your last name is %s" % (firstname, lastname))
 
-    def issue_name_error_exception(self):
+    def raise_name_exception(self):
         """ 
-        Issues a NameeError exception.
+        Raises a NameeError exception.
         
         Remarks
         -------
@@ -99,9 +99,9 @@ class ExceptionSamples:
             print(f"{type(error).__name__} was raised: {error}") 
 
 
-    def issue_attribute_error_exception(self):
+    def raise_attribute_exception(self):
         """ 
-        Issues an AttributeError exception.
+        Raises an AttributeError exception.
         
         Remarks
         -------
@@ -130,9 +130,9 @@ class ExceptionSamples:
         except Exception as error:
             print(f"{type(error).__name__} was raised: {error}") 
 
-    def issue_file_not_found_error_exception(self):
+    def raise_file_not_found_exception(self):
         """ 
-        Issues a FileNotFoundError exception.
+        Raises a FileNotFoundError exception.
         
         Remarks
         -------
@@ -149,3 +149,24 @@ class ExceptionSamples:
         except Exception as error:
             print(f"{type(error).__name__} was raised: {error}") 
 
+
+    def raise_EOF_exception(self):
+        """
+        Raises an EOFError exception. 
+        
+        Remarks
+        -------
+        The EOFError can be used when a program is expecting input from the user
+        and the user enters an end-of-file character (Ctrl-D on Unix, Ctrl-Z on
+        Windows).
+
+        For more information, see [exception EOFError](https://docs.python.org/3/library/exceptions.html#EOFError). 
+        """
+        try:
+            input("Enter some text. Enter Cntl-Z (windows) or Cntl-D (Unix) to raise EOF exception: ")
+        except Exception as error:
+            print(f"{type(error).__name__} was raised: {error}") 
+
+        finally: 
+            # Pass values inside a tuple to fix the problem.
+            print("When you enter an end-of-file character (Ctrl-D on Uunix, Ctrl-Z on Windows) an EOF exception is raised.")
