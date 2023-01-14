@@ -8,6 +8,10 @@ last update: 10/06/2022
 - [Overview](#overview)
 - [Create a virtual environment](#create-a-virtual-environment)
 - [Install packages](#install-packages)
+- [Manage virtual environments](#manage-virtual-environments)
+  - [Requirements Files](#requirements-files)
+  - [Troubleshooting](#troubleshooting)
+    - [Window runtime error](#window-runtime-error)
 - [References](#references)
   
 ## Overview 
@@ -96,6 +100,39 @@ This is the result:
 ![default venv packages](../../media/envs/default-venv-packages.png)
 
 For equivalent Linux commands, see [Python Virtual Environments: A Primer](https://realpython.com/python-virtual-environments-a-primer/).
+
+## Manage virtual environments
+
+### Requirements Files
+
+The easiest way to make your work reproducible by others is to include a `requirements.txt` file in your project’s root directory (top directory). To do so, you’ll run `pip freeze`, which lists installed third party packages along with their version numbers. You write the output to a file, which we’ll call `requirements.txt`. The following is an example
+
+```(learn-python) pip freeze > requirements.txt```
+
+As it stands right now the `requirements.txt` (evironment) contains only this entry: `numpy==1.19.5`.
+
+Put the `requirements.txt` in your project directory and ship it along with your project files. If you put in your enviroment directory rememmber to save it if you have to delete the environment directory and recreate it again.
+
+Now anyone will be able to run your project on their system by duplicating your environment using the `requirements.txt` file.
+To do it you install the project’s dependencies inside an active virtual environment with this command: 
+
+```(active-env) pip install -r requirements.txt```.
+
+### Troubleshooting
+
+If you run into problems perhaps you updated a particular package by mistake and now find yourself in the dependency hell, unable to run your project’s code. Whatever it is, the easiest way to escape is to re-create your project’s virtual environment. For example:
+
+```bash
+rm -r .envs\python-learn/                           # Delete the old environment
+virtualenv --python python3 .envs\learn-python      # Make a blank new environment
+.envs\learn-python\activate                         # Activate environment  
+(learn-python) pip install -r requirements.txt      # Re-installs dependencies
+```
+Thanks to the `requirements.txt` file you’re back in business. This is another reason to always include a `requirements.txt` file in your projects.
+
+#### Window runtime error
+A bug exixts in Windows that generates a runtime error when using numpy version greater than **1.19.3** with Python **3.9**. Until the bug is fixed, the work around is to replace your current numpy line with this **numpy==1.19.3** in your requirements file. 
+For more information, see [windows runtime error](https://stackoverflow.com/questions/64729944/runtimeerror-the-current-numpy-installation-fails-to-pass-a-sanity-check-due-to) on StackOverflow.
 
 ## References
 

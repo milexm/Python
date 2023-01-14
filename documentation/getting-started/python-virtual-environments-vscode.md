@@ -24,7 +24,7 @@ An environment consists of:
 - a library (typically the Python Standard Library)
 - a set of installed packages
 
-> **Note**.
+> [!NOTE]
 > An environment determine which language constructs and syntax are valid, what operating-system functionality you can access, and which packages you can use.
 
 
@@ -114,4 +114,3 @@ When you create a new virtual environment, a prompt will be displayed to allow y
 - [Getting Started with Python in VS Code](https://code.visualstudio.com/docs/python/python-tutorial)
 - [Using Python environments in VS Code](https://code.visualstudio.com/docs/python/environments#_global-virtual-and-conda-environments)
 - [How to create and manage Python environments in Visual Studio](https://docs.microsoft.com/en-us/visualstudio/python/managing-python-environments-in-visual-studio?view=vs-2019)
-
