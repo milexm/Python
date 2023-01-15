@@ -12,3 +12,5 @@ Python interpreters are available for many operating systems. [CPython](https://
 
 
 ![Monti Python gang](media/general/monty-python.png)
+
+<video controls src="https://docs.google.com/uc?export=download&id=151_iDpkc4TM8yoFoqnek0bdKIMGK_S65" width="300px" height="200px"/>
