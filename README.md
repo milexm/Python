@@ -13,7 +13,7 @@ Python interpreters are available for many operating systems. [CPython](https://
 <div style="align: center;">
 
 <img
-    style="width: 60%;"
+    style="width: 40%;"
     src="media/montipython.png"
     alt="Monti Python gang"/>
 
