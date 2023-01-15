@@ -12,11 +12,13 @@ last update: 01/14/2023
 
 ## Python documentation
 
-The documentation presented here gives you the fundamental know-how to build upon your Python knowedlge. Have a nice trip :star:.
+The documentation presented here gives you the fundamental know-how to build upon your Python knowedlge. Have a nice trip :walking_man: :walking_woman:.
 
 |Topic <img width=200\>|Description|
 |-------------|----------|
-|[Python language elements](language-elements.md)|Analyzes the language main elements|
+|[Python language elements](./getting-started/language-elements.md)|Describes the language main elements|
+|[Python virtual environments](./getting-started/virtual-environments.md)|Describes Python virtual environments|
+|[Python virtual environments in VS code](./getting-started/virtual-environments-vscode.md)|Describes Python virtual environments in VS code|
 |||
 
 
