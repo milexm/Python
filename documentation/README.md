@@ -1,19 +1,23 @@
 ---
 author: michael
-last update: 10/06/2022
+last update: 01/14/2023
 ---
 
   
 # Python notes
 
-- [Basic file operations](#basic-file-operations)
+- [Python documentation](#python-documentation)
 - [References](#references)
-  
-## Basic file operations
 
 
+## Python documentation
 
-See [File operations](python-cheatsheet.md#basic-file-operations)
+The documentation presented here gives you the fundamental know-how to build upon your Python knowedlge. Have a nice trip :star:.
+
+|Topic <img width=200\>|Description|
+|-------------|----------|
+|[Python language elements](language-elements.md)|Analyzes the language main elements|
+|||
 
 
 ## References

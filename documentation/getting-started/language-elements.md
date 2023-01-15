@@ -1,10 +1,12 @@
 ---
 author: michael
-last update: 11/067/2022
+last update: 01/14/2023
 ---
 
 # Python language elements
+
 Python language is made of many elements, let's analyze the main ones.
+
 - [Python standard library](#python-standard-library)
 - [Built-in functions](#built-in-functions)
 - [Built-in modules](#built-in-modules)
