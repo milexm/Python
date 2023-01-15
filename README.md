@@ -12,8 +12,8 @@ Python interpreters are available for many operating systems. [CPython](https://
 
 <img 
     style="display: block; 
-           margin-left: 100px;
-           margin-right: auto;
+           margin-left: auto;
+           margin-right: 100px;
            width: 50%;"
     src="media/montipython.png" 
     alt="Our logo"/>
