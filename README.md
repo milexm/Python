@@ -10,13 +10,9 @@ Python features a dynamic type system and automatic memory management. It suppor
 
 Python interpreters are available for many operating systems. [CPython](https://en.wikipedia.org/wiki/CPython), the reference implementation of Python, is open source software and has a community-based development model, as do nearly all of Python's other implementations. Python and CPython are managed by the non-profit [Python Software Foundation](https://en.wikipedia.org/wiki/Python_Software_Foundation).
 
-<div style="align=center">
-![monti python](media/montipython.png)
-</div>
-
 <img 
     style="display: block; 
-           margin-left: 5px;
+           margin-left: 100px;
            margin-right: auto;
            width: 50%;"
     src="media/montipython.png" 
