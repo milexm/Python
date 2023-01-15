@@ -12,10 +12,10 @@ Python interpreters are available for many operating systems. [CPython](https://
 
 <div style="text-align: center;">
 
-    <img
-        style="width: 60%;
-        margin: auto;"
-        src="media/montipython.png"
-        alt="Monti Python gang"/>
+<img
+    style="width: 60%;
+    margin: auto;"
+    src="media/montipython.png"
+    alt="Monti Python gang"/>
 
 </div>
