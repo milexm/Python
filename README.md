@@ -14,3 +14,5 @@ Python interpreters are available for many operating systems. [CPython](https://
 ![Monti Python gang](media/general/monty-python.png)
 
 [![Monty Python](https://res.cloudinary.com/marcomontalbano/image/upload/v1673753845/video_to_markdown/images/youtube--imhrDrE4-mI-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=imhrDrE4-mI "Monty Python")
+
+[![Monty Python](media/general/monty-python.png)](https://www.youtube.com/watch?v=imhrDrE4-mI "Monty Python")
