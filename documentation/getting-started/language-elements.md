@@ -1,16 +1,53 @@
 ---
-author: michael
-last update: 01/14/2023
+last update: 01/15/2023
 ---
 
 # Python language elements
 
 Python language is made of many elements, let's analyze the main ones.
 
+- [Under the hood](#under-the-hood)
+  - [Float elements](#float-elements)
+  - [Int elements](#int-elements)
+  - [Builtin elements](#builtin-elements)
+  - [Tuple elements](#tuple-elements)
 - [Python standard library](#python-standard-library)
 - [Built-in functions](#built-in-functions)
 - [Built-in modules](#built-in-modules)
 - [References](#references)
+
+## Under the hood
+
+In Python everything is in the open, you can see the language components in detail, if you know where and how to look. From the class [The Complete Python Course in the Professional OOP Approach](https://www.udemy.com/course/the-python-pro-course/). The following are some examples.
+
+In terminal activate Python and then execute the following scripts:
+
+### Float elements
+
+```python
+'{0} {1}'.format("float elements:", dir(float))
+
+help(float.__mod__)
+```
+
+`help(float.__init__)`
+
+### Int elements
+
+`'{0} {1}'.format("integer elements:", dir(int))`
+
+`help(int.to_bytes)`
+
+### Builtin elements
+
+`'{0} {1}'.format("buitins elements:", dir(__builtins__))`
+
+### Tuple elements
+
+`'{0} {1}'.format("tuple elements:", dir(tuple))`
+
+`help(tuple.__str__)`
+
 
 ## Python standard library
 
@@ -24,6 +61,7 @@ See [Python standard library](https://docs.python.org/3/library/index.html).
 In addition to the standard library, there is a growing collection of several thousand components (from individual programs and modules to packages and entire application development frameworks), available from the [Python Package Index](https://pypi.org/).
 
 ## Built-in functions
+
 The Python interpreter interactive shell has a number of **built-in functions**. They are loaded automatically as a shell starts and are always available, such as `print()` and `input()` for `I/O`, number conversion functions `int()`, `float()`, `complex()`, data type conversions `list()`, `tuple()`, `set()`, etc. 
 
 > [!NOTE] To use th built-in functions in your code, you just call them and you do not have to do any `import` or things like that.

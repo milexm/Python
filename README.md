@@ -10,5 +10,6 @@ Python features a dynamic type system and automatic memory management. It suppor
 
 Python interpreters are available for many operating systems. [CPython](https://en.wikipedia.org/wiki/CPython), the reference implementation of Python, is open source software and has a community-based development model, as do nearly all of Python's other implementations. Python and CPython are managed by the non-profit [Python Software Foundation](https://en.wikipedia.org/wiki/Python_Software_Foundation).
 
+Python is an interpreted high-level object-oriented dynamically-typed scripting language. Python interpreter reads one line of code at a time, interprets it into low level machine language (byte code) and then executes it. As a result, run time errors are usually encountered. For more information, see [Everything About Python  —  Beginner To Advanced](https://medium.com/fintechexplained/everything-about-python-from-beginner-to-advance-level-227d52ef32d2) article.  
 
 [![Monty Python](media/general/monty-python-video.png)](https://www.youtube.com/watch?v=imhrDrE4-mI "Monty Python")
