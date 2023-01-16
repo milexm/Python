@@ -11,6 +11,14 @@ Python language is made of many elements, let's analyze the main ones.
   - [Int elements](#int-elements)
   - [Builtin elements](#builtin-elements)
   - [Tuple elements](#tuple-elements)
+- [Variables, object types, scope](#variables-object-types-scope)
+  - [Assign values to variables](#assign-values-to-variables)
+  - [Numeric values](#numeric-values)
+  - [Strings](#strings)
+  - [Variable scope](#variable-scope)
+- [Data Types](#data-types)
+  - [Lists](#lists)
+    - [Create a List](#create-a-list)
 - [Python standard library](#python-standard-library)
 - [Built-in functions](#built-in-functions)
 - [Built-in modules](#built-in-modules)
@@ -20,7 +28,7 @@ Python language is made of many elements, let's analyze the main ones.
 
 In Python everything is in the open, you can see the language components in detail, if you know where and how to look. From the class [The Complete Python Course in the Professional OOP Approach](https://www.udemy.com/course/the-python-pro-course/). The following are some examples.
 
-In terminal activate Python and then execute the following scripts:
+In a terminal activate Python and then execute the following scripts:
 
 ### Float elements
 
@@ -49,6 +57,69 @@ help(int.to_bytes)
 '{0} {1}'.format("tuple elements:", dir(tuple))
 help(tuple.__str__)
 ```
+
+## Variables, object types, scope
+
+Variables store information that can be used in your program such as to hold user inputs, local states of your program etc. They are also known as **names** in Python.
+Python standard data types are: **numbers, strings, sets, lists, tuples and dictionaries**
+
+### Assign values to variables
+
+Assigning values to varaiables, aka **binding**. 
+Next we assign a string value after assigning numeric value to the same variable. This is possible because data types are dynamically typed in Python. 
+
+```python
+myVar1 = 1
+msg = '{0} {1}'.format("myVar1: ", myVar1)
+msg = f'(myVar1:{myVar1})'
+print(msg)
+# Assign string value after assigning numeric value.
+# This is possible because data types are dynamically
+# typed in Python. 
+myVar1 ="Hello, World!"
+msg = f'(myVar1:{myVar1})'
+print(msg)
+```
+
+### Numeric values
+
+```python
+import sys 
+
+val = 1 # integer
+msg = f'(Integer:{val})'
+print(msg)
+val = 1.2 # float
+msg = f'(Float:{val})'
+print(msg)
+val = sys.maxsize - 1
+msg = f'(Long:{val})'
+print(msg)
+```
+
+### Strings
+
+Strings contain textual information; they are sequences of characters. A string value is enclosed in quotation marks. They are immutable; once created they cannot be changed.
+
+### Variable scope
+
+Variables declared within a function, as an example, can only exist within the block. Once the block exists, the variables also become inaccessible.
+
+## Data Types
+
+Every value in Python has a datatype. Since everything is an object in Python programming, data types are actually classes and variables are instance (object) of these classes.
+
+There are various data types in Python. Some of the important types are described below.
+
+### Lists
+
+Python has a number of compound data types, used to group together other values. The most versatile is the **list**, which is an ordered (each element is indexed) collection of comma-separated values (items) between square brackets. Lists might contain items of different types, but usually the items all have the same type. The following examples demonstrate how to use lists. 
+
+#### Create a List
+
+Create a list named *areas* that contains the area of the hallway (hall), kitchen (kit), living room (liv), bedroom (bed) and bathroom (bath), in this order. Use the predefined variables.
+
+
 
 ## Python standard library
 
