@@ -26,11 +26,9 @@ In terminal activate Python and then execute the following scripts:
 
 ```python
 '{0} {1}'.format("float elements:", dir(float))
-
 help(float.__mod__)
+help(float.__init__)
 ```
-
-`help(float.__init__)`
 
 ### Int elements
 
