@@ -32,20 +32,23 @@ help(float.__init__)
 
 ### Int elements
 
-`'{0} {1}'.format("integer elements:", dir(int))`
-
-`help(int.to_bytes)`
+```python
+'{0} {1}'.format("integer elements:", dir(int))
+help(int.to_bytes)
+```
 
 ### Builtin elements
 
-`'{0} {1}'.format("buitins elements:", dir(__builtins__))`
+```python
+'{0} {1}'.format("buitins elements:", dir(__builtins__))
+```
 
 ### Tuple elements
 
-`'{0} {1}'.format("tuple elements:", dir(tuple))`
-
-`help(tuple.__str__)`
-
+```python
+'{0} {1}'.format("tuple elements:", dir(tuple))
+help(tuple.__str__)
+```
 
 ## Python standard library
 
