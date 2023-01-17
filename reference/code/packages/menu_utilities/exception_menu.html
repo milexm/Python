@@ -80,7 +80,7 @@ class ExceptionMenu:
         &#34;&#34;&#34; Initialize the class `string_menu` instance. &#34;&#34;&#34;
 
         # Define the entries of the string samples menu. 
-        self.menu_items = [&#34;Type error&#34;, &#34;Name error&#34;, &#34;Attribute error&#34;, &#34;File not found&#34;, &#34;Quit&#34;]
+        self.menu_items = [&#34;Type exception&#34;, &#34;Name exception&#34;, &#34;Attribute exception&#34;, &#34;File not found exception&#34;, &#34;EOF exception&#34;, &#34;Quit&#34;]
     
         # Create the menu for the template samples.
         self.error_sample_menu = _menu.ConsoleMenu(&#34;Exception Menu&#34;)
@@ -106,19 +106,23 @@ class ExceptionMenu:
 
             if choice == 1:
                 print(&#34;\n*** Isssue type error ***&#34;)
-                self.error_samples.issue_type_error_exception()
+                self.error_samples.raise_type_exception()
            
             if choice == 2:
                 print(&#34;\n*** Isssue name error ***&#34;)
-                self.error_samples.issue_name_error_exception()
+                self.error_samples.raise_name_exception()
 
             if choice == 3:
                 print(&#34;\n*** Isssue attribute error ***&#34;)
-                self.error_samples.issue_attribute_error_exception()
+                self.error_samples.raise_attribute_exception()
                 
             if choice == 4:
                 print(&#34;\n*** Isssue file not found error ***&#34;)
-                self.error_samples.issue_file_not_found_error_exception()
+                self.error_samples.raise_file_not_found_exception()
+
+            if choice == 5:
+                print(&#34;\n*** Isssue end of file error ***&#34;)
+                self.error_samples.raise_EOF_exception()
 
             elif choice == len(self.menu_items):
                 break
@@ -184,7 +188,7 @@ menu. </li>
         &#34;&#34;&#34; Initialize the class `string_menu` instance. &#34;&#34;&#34;
 
         # Define the entries of the string samples menu. 
-        self.menu_items = [&#34;Type error&#34;, &#34;Name error&#34;, &#34;Attribute error&#34;, &#34;File not found&#34;, &#34;Quit&#34;]
+        self.menu_items = [&#34;Type exception&#34;, &#34;Name exception&#34;, &#34;Attribute exception&#34;, &#34;File not found exception&#34;, &#34;EOF exception&#34;, &#34;Quit&#34;]
     
         # Create the menu for the template samples.
         self.error_sample_menu = _menu.ConsoleMenu(&#34;Exception Menu&#34;)
@@ -210,19 +214,23 @@ menu. </li>
 
             if choice == 1:
                 print(&#34;\n*** Isssue type error ***&#34;)
-                self.error_samples.issue_type_error_exception()
+                self.error_samples.raise_type_exception()
            
             if choice == 2:
                 print(&#34;\n*** Isssue name error ***&#34;)
-                self.error_samples.issue_name_error_exception()
+                self.error_samples.raise_name_exception()
 
             if choice == 3:
                 print(&#34;\n*** Isssue attribute error ***&#34;)
-                self.error_samples.issue_attribute_error_exception()
+                self.error_samples.raise_attribute_exception()
                 
             if choice == 4:
                 print(&#34;\n*** Isssue file not found error ***&#34;)
-                self.error_samples.issue_file_not_found_error_exception()
+                self.error_samples.raise_file_not_found_exception()
+
+            if choice == 5:
+                print(&#34;\n*** Isssue end of file error ***&#34;)
+                self.error_samples.raise_EOF_exception()
 
             elif choice == len(self.menu_items):
                 break</code></pre>
@@ -257,19 +265,23 @@ on the user's selection.</p></div>
 
         if choice == 1:
             print(&#34;\n*** Isssue type error ***&#34;)
-            self.error_samples.issue_type_error_exception()
+            self.error_samples.raise_type_exception()
        
         if choice == 2:
             print(&#34;\n*** Isssue name error ***&#34;)
-            self.error_samples.issue_name_error_exception()
+            self.error_samples.raise_name_exception()
 
         if choice == 3:
             print(&#34;\n*** Isssue attribute error ***&#34;)
-            self.error_samples.issue_attribute_error_exception()
+            self.error_samples.raise_attribute_exception()
             
         if choice == 4:
             print(&#34;\n*** Isssue file not found error ***&#34;)
-            self.error_samples.issue_file_not_found_error_exception()
+            self.error_samples.raise_file_not_found_exception()
+
+        if choice == 5:
+            print(&#34;\n*** Isssue end of file error ***&#34;)
+            self.error_samples.raise_EOF_exception()
 
         elif choice == len(self.menu_items):
             break</code></pre>

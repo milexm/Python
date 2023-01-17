@@ -57,9 +57,9 @@ import sys
 
 class ExceptionSamples:
 
-    def issue_type_error_exception(self):
+    def raise_type_exception(self):
         &#34;&#34;&#34; 
-        Issues a TypeError exception.
+        Raises a TypeError exception.
         
         Remarks
         -------
@@ -108,9 +108,9 @@ class ExceptionSamples:
             # Pass values inside a tuple to fix the problem.
             print(&#34;Pass values as a tuple. Your first name is %s and your last name is %s&#34; % (firstname, lastname))
 
-    def issue_name_error_exception(self):
+    def raise_name_exception(self):
         &#34;&#34;&#34; 
-        Issues a NameeError exception.
+        Raises a NameeError exception.
         
         Remarks
         -------
@@ -138,9 +138,9 @@ class ExceptionSamples:
             print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
 
 
-    def issue_attribute_error_exception(self):
+    def raise_attribute_exception(self):
         &#34;&#34;&#34; 
-        Issues an AttributeError exception.
+        Raises an AttributeError exception.
         
         Remarks
         -------
@@ -169,9 +169,9 @@ class ExceptionSamples:
         except Exception as error:
             print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
 
-    def issue_file_not_found_error_exception(self):
+    def raise_file_not_found_exception(self):
         &#34;&#34;&#34; 
-        Issues a FileNotFoundError exception.
+        Raises a FileNotFoundError exception.
         
         Remarks
         -------
@@ -186,7 +186,29 @@ class ExceptionSamples:
             file_path = &#34;dummy.txt&#34;
             f = open(file_path, &#39;r&#39;) 
         except Exception as error:
-            print(f&#34;{type(error).__name__} was raised: {error}&#34;) </code></pre>
+            print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
+
+
+    def raise_EOF_exception(self):
+        &#34;&#34;&#34;
+        Raises an EOFError exception. 
+        
+        Remarks
+        -------
+        The EOFError can be used when a program is expecting input from the user
+        and the user enters an end-of-file character (Ctrl-D on Unix, Ctrl-Z on
+        Windows).
+
+        For more information, see [exception EOFError](https://docs.python.org/3/library/exceptions.html#EOFError). 
+        &#34;&#34;&#34;
+        try:
+            input(&#34;Enter some text. Enter Cntl-Z (windows) or Cntl-D (Unix) to raise EOF exception: &#34;)
+        except Exception as error:
+            print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
+
+        finally: 
+            # Pass values inside a tuple to fix the problem.
+            print(&#34;When you enter an end-of-file character (Ctrl-D on Uunix, Ctrl-Z on Windows) an EOF exception is raised.&#34;)</code></pre>
 </details>
 </section>
 <section>
@@ -209,9 +231,9 @@ class ExceptionSamples:
 </summary>
 <pre><code class="python">class ExceptionSamples:
 
-    def issue_type_error_exception(self):
+    def raise_type_exception(self):
         &#34;&#34;&#34; 
-        Issues a TypeError exception.
+        Raises a TypeError exception.
         
         Remarks
         -------
@@ -260,9 +282,9 @@ class ExceptionSamples:
             # Pass values inside a tuple to fix the problem.
             print(&#34;Pass values as a tuple. Your first name is %s and your last name is %s&#34; % (firstname, lastname))
 
-    def issue_name_error_exception(self):
+    def raise_name_exception(self):
         &#34;&#34;&#34; 
-        Issues a NameeError exception.
+        Raises a NameeError exception.
         
         Remarks
         -------
@@ -290,9 +312,9 @@ class ExceptionSamples:
             print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
 
 
-    def issue_attribute_error_exception(self):
+    def raise_attribute_exception(self):
         &#34;&#34;&#34; 
-        Issues an AttributeError exception.
+        Raises an AttributeError exception.
         
         Remarks
         -------
@@ -321,9 +343,9 @@ class ExceptionSamples:
         except Exception as error:
             print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
 
-    def issue_file_not_found_error_exception(self):
+    def raise_file_not_found_exception(self):
         &#34;&#34;&#34; 
-        Issues a FileNotFoundError exception.
+        Raises a FileNotFoundError exception.
         
         Remarks
         -------
@@ -338,15 +360,73 @@ class ExceptionSamples:
             file_path = &#34;dummy.txt&#34;
             f = open(file_path, &#39;r&#39;) 
         except Exception as error:
-            print(f&#34;{type(error).__name__} was raised: {error}&#34;) </code></pre>
+            print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
+
+
+    def raise_EOF_exception(self):
+        &#34;&#34;&#34;
+        Raises an EOFError exception. 
+        
+        Remarks
+        -------
+        The EOFError can be used when a program is expecting input from the user
+        and the user enters an end-of-file character (Ctrl-D on Unix, Ctrl-Z on
+        Windows).
+
+        For more information, see [exception EOFError](https://docs.python.org/3/library/exceptions.html#EOFError). 
+        &#34;&#34;&#34;
+        try:
+            input(&#34;Enter some text. Enter Cntl-Z (windows) or Cntl-D (Unix) to raise EOF exception: &#34;)
+        except Exception as error:
+            print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
+
+        finally: 
+            # Pass values inside a tuple to fix the problem.
+            print(&#34;When you enter an end-of-file character (Ctrl-D on Uunix, Ctrl-Z on Windows) an EOF exception is raised.&#34;)</code></pre>
 </details>
 <h3>Methods</h3>
 <dl>
-<dt id="code.builtin_types.exceptions.ExceptionSamples.issue_attribute_error_exception"><code class="name flex">
-<span>def <span class="ident">issue_attribute_error_exception</span></span>(<span>self)</span>
+<dt id="code.builtin_types.exceptions.ExceptionSamples.raise_EOF_exception"><code class="name flex">
+<span>def <span class="ident">raise_EOF_exception</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Issues an AttributeError exception.</p>
+<div class="desc"><p>Raises an EOFError exception. </p>
+<h2 id="remarks">Remarks</h2>
+<p>The EOFError can be used when a program is expecting input from the user
+and the user enters an end-of-file character (Ctrl-D on Unix, Ctrl-Z on
+Windows).</p>
+<p>For more information, see <a href="https://docs.python.org/3/library/exceptions.html#EOFError">exception EOFError</a>.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def raise_EOF_exception(self):
+    &#34;&#34;&#34;
+    Raises an EOFError exception. 
+    
+    Remarks
+    -------
+    The EOFError can be used when a program is expecting input from the user
+    and the user enters an end-of-file character (Ctrl-D on Unix, Ctrl-Z on
+    Windows).
+
+    For more information, see [exception EOFError](https://docs.python.org/3/library/exceptions.html#EOFError). 
+    &#34;&#34;&#34;
+    try:
+        input(&#34;Enter some text. Enter Cntl-Z (windows) or Cntl-D (Unix) to raise EOF exception: &#34;)
+    except Exception as error:
+        print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
+
+    finally: 
+        # Pass values inside a tuple to fix the problem.
+        print(&#34;When you enter an end-of-file character (Ctrl-D on Uunix, Ctrl-Z on Windows) an EOF exception is raised.&#34;)</code></pre>
+</details>
+</dd>
+<dt id="code.builtin_types.exceptions.ExceptionSamples.raise_attribute_exception"><code class="name flex">
+<span>def <span class="ident">raise_attribute_exception</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Raises an AttributeError exception.</p>
 <h2 id="remarks">Remarks</h2>
 <p>This example uses the incorrect attribute 'cosine'; it should be <code>cos</code>
 instead.
@@ -367,9 +447,9 @@ AttributeError</a>.</p></div>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def issue_attribute_error_exception(self):
+<pre><code class="python">def raise_attribute_exception(self):
     &#34;&#34;&#34; 
-    Issues an AttributeError exception.
+    Raises an AttributeError exception.
     
     Remarks
     -------
@@ -399,11 +479,11 @@ AttributeError</a>.</p></div>
         print(f&#34;{type(error).__name__} was raised: {error}&#34;) </code></pre>
 </details>
 </dd>
-<dt id="code.builtin_types.exceptions.ExceptionSamples.issue_file_not_found_error_exception"><code class="name flex">
-<span>def <span class="ident">issue_file_not_found_error_exception</span></span>(<span>self)</span>
+<dt id="code.builtin_types.exceptions.ExceptionSamples.raise_file_not_found_exception"><code class="name flex">
+<span>def <span class="ident">raise_file_not_found_exception</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Issues a FileNotFoundError exception.</p>
+<div class="desc"><p>Raises a FileNotFoundError exception.</p>
 <h2 id="remarks">Remarks</h2>
 <p>Raised when a file or directory is requested but does not exist.</p>
 <p>For more information, see <a href="https://docs.python.org/3/library/exceptions.html#FileNotFoundError">exception FileNotFoundError</a>.</p></div>
@@ -411,9 +491,9 @@ AttributeError</a>.</p></div>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def issue_file_not_found_error_exception(self):
+<pre><code class="python">def raise_file_not_found_exception(self):
     &#34;&#34;&#34; 
-    Issues a FileNotFoundError exception.
+    Raises a FileNotFoundError exception.
     
     Remarks
     -------
@@ -431,11 +511,11 @@ AttributeError</a>.</p></div>
         print(f&#34;{type(error).__name__} was raised: {error}&#34;) </code></pre>
 </details>
 </dd>
-<dt id="code.builtin_types.exceptions.ExceptionSamples.issue_name_error_exception"><code class="name flex">
-<span>def <span class="ident">issue_name_error_exception</span></span>(<span>self)</span>
+<dt id="code.builtin_types.exceptions.ExceptionSamples.raise_name_exception"><code class="name flex">
+<span>def <span class="ident">raise_name_exception</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Issues a NameeError exception.</p>
+<div class="desc"><p>Raises a NameeError exception.</p>
 <h2 id="remarks">Remarks</h2>
 <p>In this exampe you get the error that <code>math</code> is not defined, that means
 math is not in the default namespace. You could easily find out that
@@ -452,9 +532,9 @@ attempted to be accessed. For more information, see <a href="https://docs.python
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def issue_name_error_exception(self):
+<pre><code class="python">def raise_name_exception(self):
     &#34;&#34;&#34; 
-    Issues a NameeError exception.
+    Raises a NameeError exception.
     
     Remarks
     -------
@@ -482,11 +562,11 @@ attempted to be accessed. For more information, see <a href="https://docs.python
         print(f&#34;{type(error).__name__} was raised: {error}&#34;) </code></pre>
 </details>
 </dd>
-<dt id="code.builtin_types.exceptions.ExceptionSamples.issue_type_error_exception"><code class="name flex">
-<span>def <span class="ident">issue_type_error_exception</span></span>(<span>self)</span>
+<dt id="code.builtin_types.exceptions.ExceptionSamples.raise_type_exception"><code class="name flex">
+<span>def <span class="ident">raise_type_exception</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Issues a TypeError exception.</p>
+<div class="desc"><p>Raises a TypeError exception.</p>
 <h2 id="remarks">Remarks</h2>
 <p>Python has different types. In this example, the value assigned to <code>a</code>
 is of string type (i.e., text) while the value of <code>b</code> is an integer
@@ -507,9 +587,9 @@ TypeError</a>.</p></div>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def issue_type_error_exception(self):
+<pre><code class="python">def raise_type_exception(self):
     &#34;&#34;&#34; 
-    Issues a TypeError exception.
+    Raises a TypeError exception.
     
     Remarks
     -------
@@ -582,10 +662,11 @@ TypeError</a>.</p></div>
 <li>
 <h4><code><a title="code.builtin_types.exceptions.ExceptionSamples" href="#code.builtin_types.exceptions.ExceptionSamples">ExceptionSamples</a></code></h4>
 <ul class="">
-<li><code><a title="code.builtin_types.exceptions.ExceptionSamples.issue_attribute_error_exception" href="#code.builtin_types.exceptions.ExceptionSamples.issue_attribute_error_exception">issue_attribute_error_exception</a></code></li>
-<li><code><a title="code.builtin_types.exceptions.ExceptionSamples.issue_file_not_found_error_exception" href="#code.builtin_types.exceptions.ExceptionSamples.issue_file_not_found_error_exception">issue_file_not_found_error_exception</a></code></li>
-<li><code><a title="code.builtin_types.exceptions.ExceptionSamples.issue_name_error_exception" href="#code.builtin_types.exceptions.ExceptionSamples.issue_name_error_exception">issue_name_error_exception</a></code></li>
-<li><code><a title="code.builtin_types.exceptions.ExceptionSamples.issue_type_error_exception" href="#code.builtin_types.exceptions.ExceptionSamples.issue_type_error_exception">issue_type_error_exception</a></code></li>
+<li><code><a title="code.builtin_types.exceptions.ExceptionSamples.raise_EOF_exception" href="#code.builtin_types.exceptions.ExceptionSamples.raise_EOF_exception">raise_EOF_exception</a></code></li>
+<li><code><a title="code.builtin_types.exceptions.ExceptionSamples.raise_attribute_exception" href="#code.builtin_types.exceptions.ExceptionSamples.raise_attribute_exception">raise_attribute_exception</a></code></li>
+<li><code><a title="code.builtin_types.exceptions.ExceptionSamples.raise_file_not_found_exception" href="#code.builtin_types.exceptions.ExceptionSamples.raise_file_not_found_exception">raise_file_not_found_exception</a></code></li>
+<li><code><a title="code.builtin_types.exceptions.ExceptionSamples.raise_name_exception" href="#code.builtin_types.exceptions.ExceptionSamples.raise_name_exception">raise_name_exception</a></code></li>
+<li><code><a title="code.builtin_types.exceptions.ExceptionSamples.raise_type_exception" href="#code.builtin_types.exceptions.ExceptionSamples.raise_type_exception">raise_type_exception</a></code></li>
 </ul>
 </li>
 </ul>

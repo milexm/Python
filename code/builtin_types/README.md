@@ -23,7 +23,7 @@ security.
 The following figure shows the code involved in selecting a sample to run by the
 user. For simplicity, the figure shows only the selection of the list samples. 
 
-![builtin types selection](../../media/python-builtin_types_selection.png) 
+![builtin types selection](../../media/samples/python-builtin_types_selection.png) 
 
 ## 2. Sequence types
 
