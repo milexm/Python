@@ -18,7 +18,9 @@ Python language is made of many elements, let's analyze the main ones.
   - [Variable scope](#variable-scope)
 - [Data Types](#data-types)
   - [Lists](#lists)
-    - [Create a List](#create-a-list)
+  - [Tuples](#tuples)
+  - [Sets](#sets)
+  - [Dictionary](#dictionary)
 - [Python standard library](#python-standard-library)
 - [Built-in functions](#built-in-functions)
 - [Built-in modules](#built-in-modules)
@@ -65,8 +67,8 @@ Python standard data types are: **numbers, strings, sets, lists, tuples and dict
 
 ### Assign values to variables
 
-Assigning values to varaiables, aka **binding**. 
-Next we assign a string value after assigning numeric value to the same variable. This is possible because data types are dynamically typed in Python. 
+Assigning values to varaiables, aka **binding**.
+Next we assign a string value after assigning numeric value to the same variable. This is possible because data types are dynamically typed in Python.
 
 ```python
 myVar1 = 1
@@ -100,6 +102,9 @@ print(msg)
 ### Strings
 
 Strings contain textual information; they are sequences of characters. A string value is enclosed in quotation marks. They are immutable; once created they cannot be changed.
+String is sequence of Unicode characters. We can use single quotes or double quotes to define strings. Multi-line strings can be denoted using triple quotes, `'''` or `"""`.
+
+For string code examples, refer to the [buitin types](../../code/builtin_types/main.py) string examples.
 
 ### Variable scope
 
@@ -113,17 +118,32 @@ There are various data types in Python. Some of the important types are describe
 
 ### Lists
 
-Python has a number of compound data types, used to group together other values. The most versatile is the **list**, which is an ordered (each element is indexed) collection of comma-separated values (items) between square brackets. Lists might contain items of different types, but usually the items all have the same type. The following examples demonstrate how to use lists. 
+Python has a number of compound data types, used to group together other values. The most versatile is the **list**, which is **an ordered (each element is indexed) collection of comma-separated items between square brackets**. Lists might contain items of different types, but usually the items all have the same type.
 
-#### Create a List
+For list code examples, refer to the [buitin types](../../code/builtin_types/main.py) list examples.
 
-Create a list named *areas* that contains the area of the hallway (hall), kitchen (kit), living room (liv), bedroom (bed) and bathroom (bath), in this order. Use the predefined variables.
+### Tuples
 
+Tuple is an ordered sequence of items same as list.The only difference is that tuples are immutable. Tuples once created cannot be modified.
+Tuples are used to write-protect data and are usually faster than list beacuse they cannot change dynamically. **A tuple is defined within parentheses () where items are separated by commas**.
 
+For tuple code examples, refer to the [buitin types](../../code/builtin_types/main.py) tuple examples.
+
+### Sets
+
+A set is an unordered collection of unique items. **A set is defined by values separated by comma inside braces { }**. 
+
+### Dictionary
+
+Dictionary is an unordered collection of **key-value pairs**.
+Generally used to handle huge amount of data and optimized for retrieving data. You must know the key to retrieve a value.
+Dictionaries are **defined using braces {} with each item being a pair in the form key:value**. Key and value can be of any type.
+
+For dictionary code examples, refer to the [buitin types](../../code/builtin_types/main.py) dictionary examples.
 
 ## Python standard library
 
-Python’s standard library is very extensive, offering a wide range of facilities. The library contains 
+Python’s standard library is very extensive, offering a wide range of facilities. The library contains
 
 - Built-in modules (written in C) that provide access to system functionality such as file I/O that would otherwise be inaccessible to Python programmers.
 - Modules written in Python that provide standardized solutions for many problems that occur in everyday programming. Some of these modules are explicitly designed to encourage and enhance the portability of Python programs by abstracting away platform-specifics into platform-neutral APIs.
@@ -134,7 +154,7 @@ In addition to the standard library, there is a growing collection of several th
 
 ## Built-in functions
 
-The Python interpreter interactive shell has a number of **built-in functions**. They are loaded automatically as a shell starts and are always available, such as `print()` and `input()` for `I/O`, number conversion functions `int()`, `float()`, `complex()`, data type conversions `list()`, `tuple()`, `set()`, etc. 
+The Python interpreter interactive shell has a number of **built-in functions**. They are loaded automatically as a shell starts and are always available, such as `print()` and `input()` for `I/O`, number conversion functions `int()`, `float()`, `complex()`, data type conversions `list()`, `tuple()`, `set()`, etc.
 
 > [!NOTE] To use th built-in functions in your code, you just call them and you do not have to do any `import` or things like that.
 
@@ -143,14 +163,16 @@ To list these functions, in a terminal window, **activate** the **python interpr
 ```python
     dir(__builtins__)
 ```
+
 See the Python documentation: [Built-in
-Functions](https://docs.python.org/3/library/functions.html). 
+Functions](https://docs.python.org/3/library/functions.html).
 
 ## Built-in modules
+
 In addition to built-in functions, a large number of **pre-defined functions** are also available as a part of **libraries** bundled with Python distributions. These functions are defined in **modules** called **built-in modules**. These modules have the following characteristics:
 
-- Built-in modules are written in C and integrated with the Python shell. 
-- Each built-in module contains resources for certain system-specific functionalities such as OS management, disk IO, etc. 
+- Built-in modules are written in C and integrated with the Python shell.
+- Each built-in module contains resources for certain system-specific functionalities such as OS management, disk IO, etc.
 - The standard library also contains many Python scripts (with the .py extension) containing useful utilities.
 
 > [!NOTE] To use th built-in modules in your code, you must `import` them.
@@ -160,7 +182,8 @@ In addition to built-in functions, a large number of **pre-defined functions** a
 ```cmd
     >>> help('modules') 
 ```
-- To get the documentation for a particular module, for example the `enum` module, execute this command: 
+
+- To get the documentation for a particular module, for example the `enum` module, execute this command:
 
 ```cmd
     >>> help('enum') 
@@ -173,7 +196,7 @@ In addition to built-in functions, a large number of **pre-defined functions** a
     >>> sys.path 
 ```
 
- - To get the path of a specific module, you can execute a commands similar to the following:
+- To get the path of a specific module, you can execute a commands similar to the following:
 
 ```cmd
     >>> import os
@@ -187,4 +210,3 @@ In addition to built-in functions, a large number of **pre-defined functions** a
 - [PEP 8 – Style Guide for Python Code](https://peps.python.org/pep-0008/)
 - [Python standard library](https://docs.python.org/3/library/index.html)
   - [Built-in-Functions](https://docs.python.org/3/library/functions.html)
-
