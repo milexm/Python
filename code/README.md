@@ -39,6 +39,7 @@ files?](https://pdoc.dev/docs/pdoc.html#include-markdown-files).
 - [PDoc](https://pdoc.dev/docs/pdoc.html)
   - [Easy Documentation Generation in Python using PDoc](https://medium.com/cemac/simple-documentation-generation-in-python-using-pdoc-16fb86eb5cd5)
 - [Python tutorial samples :heavy_check_mark: :star: :star:](https://www.iditect.com/guide/python/index.html) 
+- [Python cookbook :heavy_check_mark: :star: :star:](https://d.cxcore.net/Python/Python_Cookbook_3rd_Edition.pdf) 
 - [The Python Mega Course Build 10 Real World Applications](https://github.com/JayabharathP/The-Python-Mega-Course-Build-10-Real-World-Applications-#readme) - Github sample repo
   - [The Python Mega Course: Learn Python in 40 Days with 18 Apps](https://www.udemy.com/course/the-python-mega-course/) - Udemy class
 - [Practice Python with 100 Python Exercises](https://www.udemy.com/course/python-video-workbook/) - Udemy class
