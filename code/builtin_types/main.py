@@ -30,7 +30,7 @@ class GroupMenu:
         """ Initializes the `menu_items` attribute with the group menu items. Then it initiliazes the `group_menu` attribute with a `ConsoleMenu` instance. """
 
         # Define the entries of the group menu. 
-        self.menu_items = ["Lists", "Tuples", "Dictionaries", "Strings", "Exceptions", "Templates", "Quit"]
+        self.menu_items = ["Lists", "Tuples", "Dictionaries", "Strings", "Exceptions", "Files", "Templates", "Quit"]
         
         # Instantiate the group menu class. 
         self.group_menu = _menu.ConsoleMenu("Builtin Types Group Menu")
@@ -81,6 +81,12 @@ class GroupMenu:
                 _emenu.exception_selection_menu()
 
             if choice == 6:
+                # Instantiate the template_menu class.
+                _fmenu = _menu.FileMenu()
+                # Display the string samples selection menu. 
+                _fmenu.file_selection_menu()
+
+            if choice == 7:
                 # Instantiate the template_menu class.
                 _tmenu = _menu.TemplateMenu()
                 # Display the string samples selection menu. 
