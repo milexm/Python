@@ -79,7 +79,7 @@ class FileMenu:
         &#34;&#34;&#34; Initialize the class `string_menu` instance. &#34;&#34;&#34;
 
         # Define the entries of the string samples menu. 
-        self.menu_items = [&#34;Raed a file&#34;, &#34;Write to a file&#34;, &#34;Find a file hash&#34;,&#34;Quit&#34;]
+        self.menu_items = [&#34;Raed a file&#34;, &#34;Write to a file&#34;, &#34;Find a file hash&#34;, &#34;Process image file&#34;,&#34;Quit&#34;]
     
         # Create the menu for the template samples.
         self.file_sample_menu = _menu.ConsoleMenu(&#34;File Menu&#34;)
@@ -112,6 +112,9 @@ class FileMenu:
             elif choice == 3:
                 print(&#34;\n*** Find a file hash ***&#34;)
                 self.file_samples.find_file_hash()
+            elif choice == 4:
+                print(&#34;\n*** Process image file ***&#34;)
+                self.file_samples.process_image_file()
             elif choice == len(self.menu_items):
                 break
         </code></pre>
@@ -173,7 +176,7 @@ menu. </p>
         &#34;&#34;&#34; Initialize the class `string_menu` instance. &#34;&#34;&#34;
 
         # Define the entries of the string samples menu. 
-        self.menu_items = [&#34;Raed a file&#34;, &#34;Write to a file&#34;, &#34;Find a file hash&#34;,&#34;Quit&#34;]
+        self.menu_items = [&#34;Raed a file&#34;, &#34;Write to a file&#34;, &#34;Find a file hash&#34;, &#34;Process image file&#34;,&#34;Quit&#34;]
     
         # Create the menu for the template samples.
         self.file_sample_menu = _menu.ConsoleMenu(&#34;File Menu&#34;)
@@ -206,6 +209,9 @@ menu. </p>
             elif choice == 3:
                 print(&#34;\n*** Find a file hash ***&#34;)
                 self.file_samples.find_file_hash()
+            elif choice == 4:
+                print(&#34;\n*** Process image file ***&#34;)
+                self.file_samples.process_image_file()
             elif choice == len(self.menu_items):
                 break</code></pre>
 </details>
@@ -246,6 +252,9 @@ on the user's selection.</p></div>
         elif choice == 3:
             print(&#34;\n*** Find a file hash ***&#34;)
             self.file_samples.find_file_hash()
+        elif choice == 4:
+            print(&#34;\n*** Process image file ***&#34;)
+            self.file_samples.process_image_file()
         elif choice == len(self.menu_items):
             break</code></pre>
 </details>

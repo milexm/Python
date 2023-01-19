@@ -47,7 +47,7 @@ class FileMenu:
         """ Initialize the class `string_menu` instance. """
 
         # Define the entries of the string samples menu. 
-        self.menu_items = ["Raed a file", "Write to a file", "Find a file hash","Quit"]
+        self.menu_items = ["Raed a file", "Write to a file", "Find a file hash", "Process image file","Quit"]
     
         # Create the menu for the template samples.
         self.file_sample_menu = _menu.ConsoleMenu("File Menu")
@@ -80,6 +80,9 @@ class FileMenu:
             elif choice == 3:
                 print("\n*** Find a file hash ***")
                 self.file_samples.find_file_hash()
+            elif choice == 4:
+                print("\n*** Process image file ***")
+                self.file_samples.process_image_file()
             elif choice == len(self.menu_items):
                 break
         

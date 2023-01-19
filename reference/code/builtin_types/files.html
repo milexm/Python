@@ -62,7 +62,8 @@ class FileSamples:
         &#39;&#39;&#39; Initialize the class `FileSamples` instance. &#39;&#39;&#39;
         self.file_path_1 = &#34;code/files/san_martino.txt&#34; 
         self.file_path_2 = &#34;code/files/test.txt&#34;
-
+        self.file_path_image = &#34;media/general/monty-python.png&#34;
+        self.thumbnail_path_image = &#34;media/general/monty-python-thumb.png&#34;
 
     def read_file(self):
         &#39;&#39;&#39;  
@@ -168,7 +169,58 @@ class FileSamples:
         except Exception as error:
             print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
         
-       </code></pre>
+       
+    def process_image_file(self):
+        &#39;&#39;&#39;  
+        Experimnent with basic inage file processing.  
+
+
+        REMARKS
+        -------
+       
+        If you need to add image processing features to your app, you can use sveral popular libraries such as: *OpenCV*, *scikit-image*, *Python Imaging Library* and **Pillow**.
+        The following example use Pillow, a library that is powerful, provides a wide array of image processing features, and is simple to use.
+        For more information, see [Image Processing in Python with Pillow](https://auth0.com/blog/image-processing-in-python-with-pillow/).
+
+        &#39;&#39;&#39;
+        try: 
+            from PIL import Image
+
+            # Load image contained in the file.
+            image = Image.open(self.file_path_image)
+         
+            # Diplay image properties.
+            print(&#34;\n*** Image properties ***&#34;)
+            print(f&#39;Image format: {image.format}&#39;)
+            print(f&#39;Image pixels: {image.mode}&#39;)
+            print(f&#39;Image size: {image.size}&#39;)
+            print(f&#39;Image palette: {image.palette}&#39;)
+
+            print(&#34;\n***Create a thumbnail of the image ***&#34;)
+
+            # Create a thumbnail of the image.
+            image.thumbnail((40, 20))
+            # Save thumbnail.
+            image.save(self.thumbnail_path_image)
+    
+            # Combine images horizontally 
+            image1 = Image.open(self.file_path_image)
+            image2 = Image.open(self.thumbnail_path_image)
+            image3 = Image.new(&#39;RGB&#39;, (image1.width + image2.width, image1.height))
+            image3.paste(image1, (0, 0))
+            image3.paste(image2, (image1.width, 0))
+            
+            # Display combned images.
+            image3.show()
+            
+            # Release redources. 
+            image1.close()
+            image2.close()
+            image3.close()
+
+        except Exception as error:
+            print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
+        </code></pre>
 </details>
 </section>
 <section>
@@ -195,7 +247,8 @@ class FileSamples:
         &#39;&#39;&#39; Initialize the class `FileSamples` instance. &#39;&#39;&#39;
         self.file_path_1 = &#34;code/files/san_martino.txt&#34; 
         self.file_path_2 = &#34;code/files/test.txt&#34;
-
+        self.file_path_image = &#34;media/general/monty-python.png&#34;
+        self.thumbnail_path_image = &#34;media/general/monty-python-thumb.png&#34;
 
     def read_file(self):
         &#39;&#39;&#39;  
@@ -298,6 +351,58 @@ class FileSamples:
 
             display_msg = f&#34;\n*** File hash ***\n {file_hash}&#34;
             print(display_msg)
+        except Exception as error:
+            print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
+        
+       
+    def process_image_file(self):
+        &#39;&#39;&#39;  
+        Experimnent with basic inage file processing.  
+
+
+        REMARKS
+        -------
+       
+        If you need to add image processing features to your app, you can use sveral popular libraries such as: *OpenCV*, *scikit-image*, *Python Imaging Library* and **Pillow**.
+        The following example use Pillow, a library that is powerful, provides a wide array of image processing features, and is simple to use.
+        For more information, see [Image Processing in Python with Pillow](https://auth0.com/blog/image-processing-in-python-with-pillow/).
+
+        &#39;&#39;&#39;
+        try: 
+            from PIL import Image
+
+            # Load image contained in the file.
+            image = Image.open(self.file_path_image)
+         
+            # Diplay image properties.
+            print(&#34;\n*** Image properties ***&#34;)
+            print(f&#39;Image format: {image.format}&#39;)
+            print(f&#39;Image pixels: {image.mode}&#39;)
+            print(f&#39;Image size: {image.size}&#39;)
+            print(f&#39;Image palette: {image.palette}&#39;)
+
+            print(&#34;\n***Create a thumbnail of the image ***&#34;)
+
+            # Create a thumbnail of the image.
+            image.thumbnail((40, 20))
+            # Save thumbnail.
+            image.save(self.thumbnail_path_image)
+    
+            # Combine images horizontally 
+            image1 = Image.open(self.file_path_image)
+            image2 = Image.open(self.thumbnail_path_image)
+            image3 = Image.new(&#39;RGB&#39;, (image1.width + image2.width, image1.height))
+            image3.paste(image1, (0, 0))
+            image3.paste(image2, (image1.width, 0))
+            
+            # Display combned images.
+            image3.show()
+            
+            # Release redources. 
+            image1.close()
+            image2.close()
+            image3.close()
+
         except Exception as error:
             print(f&#34;{type(error).__name__} was raised: {error}&#34;) </code></pre>
 </details>
@@ -351,6 +456,72 @@ files are very large to fit in memory. Breaking the file into small chunks will 
 
         display_msg = f&#34;\n*** File hash ***\n {file_hash}&#34;
         print(display_msg)
+    except Exception as error:
+        print(f&#34;{type(error).__name__} was raised: {error}&#34;) </code></pre>
+</details>
+</dd>
+<dt id="code.builtin_types.files.FileSamples.process_image_file"><code class="name flex">
+<span>def <span class="ident">process_image_file</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Experimnent with basic inage file processing.
+</p>
+<h2 id="remarks">Remarks</h2>
+<p>If you need to add image processing features to your app, you can use sveral popular libraries such as: <em>OpenCV</em>, <em>scikit-image</em>, <em>Python Imaging Library</em> and <strong>Pillow</strong>.
+The following example use Pillow, a library that is powerful, provides a wide array of image processing features, and is simple to use.
+For more information, see <a href="https://auth0.com/blog/image-processing-in-python-with-pillow/">Image Processing in Python with Pillow</a>.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def process_image_file(self):
+    &#39;&#39;&#39;  
+    Experimnent with basic inage file processing.  
+
+
+    REMARKS
+    -------
+   
+    If you need to add image processing features to your app, you can use sveral popular libraries such as: *OpenCV*, *scikit-image*, *Python Imaging Library* and **Pillow**.
+    The following example use Pillow, a library that is powerful, provides a wide array of image processing features, and is simple to use.
+    For more information, see [Image Processing in Python with Pillow](https://auth0.com/blog/image-processing-in-python-with-pillow/).
+
+    &#39;&#39;&#39;
+    try: 
+        from PIL import Image
+
+        # Load image contained in the file.
+        image = Image.open(self.file_path_image)
+     
+        # Diplay image properties.
+        print(&#34;\n*** Image properties ***&#34;)
+        print(f&#39;Image format: {image.format}&#39;)
+        print(f&#39;Image pixels: {image.mode}&#39;)
+        print(f&#39;Image size: {image.size}&#39;)
+        print(f&#39;Image palette: {image.palette}&#39;)
+
+        print(&#34;\n***Create a thumbnail of the image ***&#34;)
+
+        # Create a thumbnail of the image.
+        image.thumbnail((40, 20))
+        # Save thumbnail.
+        image.save(self.thumbnail_path_image)
+
+        # Combine images horizontally 
+        image1 = Image.open(self.file_path_image)
+        image2 = Image.open(self.thumbnail_path_image)
+        image3 = Image.new(&#39;RGB&#39;, (image1.width + image2.width, image1.height))
+        image3.paste(image1, (0, 0))
+        image3.paste(image2, (image1.width, 0))
+        
+        # Display combned images.
+        image3.show()
+        
+        # Release redources. 
+        image1.close()
+        image2.close()
+        image3.close()
+
     except Exception as error:
         print(f&#34;{type(error).__name__} was raised: {error}&#34;) </code></pre>
 </details>
@@ -473,6 +644,7 @@ content.</p></div>
 <h4><code><a title="code.builtin_types.files.FileSamples" href="#code.builtin_types.files.FileSamples">FileSamples</a></code></h4>
 <ul class="">
 <li><code><a title="code.builtin_types.files.FileSamples.find_file_hash" href="#code.builtin_types.files.FileSamples.find_file_hash">find_file_hash</a></code></li>
+<li><code><a title="code.builtin_types.files.FileSamples.process_image_file" href="#code.builtin_types.files.FileSamples.process_image_file">process_image_file</a></code></li>
 <li><code><a title="code.builtin_types.files.FileSamples.read_file" href="#code.builtin_types.files.FileSamples.read_file">read_file</a></code></li>
 <li><code><a title="code.builtin_types.files.FileSamples.write_file" href="#code.builtin_types.files.FileSamples.write_file">write_file</a></code></li>
 </ul>

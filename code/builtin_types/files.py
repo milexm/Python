@@ -23,7 +23,8 @@ class FileSamples:
         ''' Initialize the class `FileSamples` instance. '''
         self.file_path_1 = "code/files/san_martino.txt" 
         self.file_path_2 = "code/files/test.txt"
-
+        self.file_path_image = "media/general/monty-python.png"
+        self.thumbnail_path_image = "media/general/monty-python-thumb.png"
 
     def read_file(self):
         '''  
@@ -130,3 +131,54 @@ class FileSamples:
             print(f"{type(error).__name__} was raised: {error}") 
         
        
+    def process_image_file(self):
+        '''  
+        Experimnent with basic inage file processing.  
+
+
+        REMARKS
+        -------
+       
+        If you need to add image processing features to your app, you can use sveral popular libraries such as: *OpenCV*, *scikit-image*, *Python Imaging Library* and **Pillow**.
+        The following example use Pillow, a library that is powerful, provides a wide array of image processing features, and is simple to use.
+        For more information, see [Image Processing in Python with Pillow](https://auth0.com/blog/image-processing-in-python-with-pillow/).
+
+        '''
+        try: 
+            from PIL import Image
+
+            # Load image contained in the file.
+            image = Image.open(self.file_path_image)
+         
+            # Diplay image properties.
+            print("\n*** Image properties ***")
+            print(f'Image format: {image.format}')
+            print(f'Image pixels: {image.mode}')
+            print(f'Image size: {image.size}')
+            print(f'Image palette: {image.palette}')
+
+            print("\n***Create a thumbnail of the image ***")
+
+            # Create a thumbnail of the image.
+            image.thumbnail((40, 20))
+            # Save thumbnail.
+            image.save(self.thumbnail_path_image)
+    
+            # Combine images horizontally 
+            image1 = Image.open(self.file_path_image)
+            image2 = Image.open(self.thumbnail_path_image)
+            image3 = Image.new('RGB', (image1.width + image2.width, image1.height))
+            image3.paste(image1, (0, 0))
+            image3.paste(image2, (image1.width, 0))
+            
+            # Display combned images.
+            image3.show()
+            
+            # Release redources. 
+            image1.close()
+            image2.close()
+            image3.close()
+
+        except Exception as error:
+            print(f"{type(error).__name__} was raised: {error}") 
+        
