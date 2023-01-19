@@ -139,9 +139,13 @@ class FileSamples:
         REMARKS
         -------
        
-        If you need to add image processing features to your app, you can use sveral popular libraries such as: *OpenCV*, *scikit-image*, *Python Imaging Library* and **Pillow**.
-        The following example use Pillow, a library that is powerful, provides a wide array of image processing features, and is simple to use.
-        For more information, see [Image Processing in Python with Pillow](https://auth0.com/blog/image-processing-in-python-with-pillow/).
+        If you need to add image processing features to your app, you can use
+        sveral popular libraries such as: *OpenCV*, *scikit-image*, *Python
+        Imaging Library* and **Pillow**.  The following example use Pillow, a
+        library that is powerful, provides a wide array of image processing
+        features, and is simple to use.  For more information, see [Image
+        Processing in Python with
+        Pillow](https://auth0.com/blog/image-processing-in-python-with-pillow/).
 
         '''
         try: 
