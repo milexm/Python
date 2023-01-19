@@ -75,15 +75,10 @@ Python                                                             //
 │  ├─ basic_examples                                               //
 │  │  ├─ modules                                                   //
 │  │  │  ├─ use_modules.py                                         //
-│  │  │  └─ __pycache__                                            //
-│  │  │     └─ use_modules.cpython-39.pyc                          //
 │  │  ├─ name_main_idiom                                           //
 │  │  │  ├─ echo.py                                                //
 │  │  │  ├─ namemain.py                                            //
 │  │  │  ├─ README.md                                              //
-│  │  │  └─ __pycache__                                            //
-│  │  │     ├─ echo.cpython-39.pyc                                 //
-│  │  │     └─ namemain.cpython-39.pyc                             //
 │  │  ├─ numpy-package.py                                          //
 │  │  ├─ package_init                                              //
 │  │  │  ├─ README.md                                              //
@@ -105,20 +100,10 @@ Python                                                             //
 │  ├─ docstring                                                    //
 │  │  ├─ aminal.py                                                 //
 │  │  ├─ complex_number.py                                         //
-│  │  └─ __pycache__                                               //
-│  │     ├─ aminal.cpython-39.pyc                                  //
-│  │     └─ complex_number.cpython-39.pyc                          //
 │  ├─ files                                                        //
 │  │  └─ san_martino.txt                                           //
 │  ├─ language_types                                               //
 │  │  ├─ main.py                                                   //
-│  │  └─ __pycache__                                               //
-│  │     ├─ displayMenu.cpython-39.pyc                             //
-│  │     ├─ lists.cpython-39.pyc                                   //
-│  │     ├─ main.cpython-39.pyc                                    //
-│  │     ├─ number.cpython-39.pyc                                  //
-│  │     ├─ strings.cpython-39.pyc                                 //
-│  │     └─ tuples.cpython-39.pyc                                  //
 │  ├─ oldpackages                                                  //
 │  │  ├─ mymath                                                    //
 │  │  │  ├─ fibo.py                                                //
@@ -133,37 +118,17 @@ Python                                                             //
 │  │  │  ├─ string_to_lower.py                                     //
 │  │  │  ├─ string_to_upper.py                                     //
 │  │  │  ├─ __init__.py                                            //
-│  │  │  └─ __pycache__                                            //
-│  │  │     ├─ string_length.cpython-39.pyc                        //
-│  │  │     ├─ string_to_lower.cpython-39.pyc                      //
-│  │  │     ├─ string_to_upper.cpython-39.pyc                      //
-│  │  │     └─ __init__.cpython-39.pyc                             //
 │  │  ├─ mytypes                                                   //
 │  │  │  ├─ lists.py                                               //
 │  │  │  ├─ number.py                                              //
 │  │  │  ├─ strings.py                                             //
 │  │  │  ├─ tuples.py                                              //
-│  │  │  ├─ __init__.py                                            //
-│  │  │  └─ __pycache__                                            //
-│  │  │     ├─ displayMenu.cpython-39.pyc                          //
-│  │  │     ├─ lists.cpython-39.pyc                                //
-│  │  │     ├─ main.cpython-39.pyc                                 //
-│  │  │     ├─ number.cpython-39.pyc                               //
-│  │  │     ├─ strings.cpython-39.pyc                              //
-│  │  │     ├─ tuples.cpython-39.pyc                               //
-│  │  │     └─ __init__.cpython-39.pyc                             //
+│  │  │  ├─ __init__.py                                            //                           //
 │  │  ├─ utilities                                                 //
 │  │  │  ├─ displayMenu.py                                         //
 │  │  │  ├─ switch.py                                              //
 │  │  │  ├─ __init__.py                                            //
-│  │  │  └─ __pycache__                                            //
-│  │  │     ├─ console_menu.cpython-39.pyc                         //
-│  │  │     ├─ displayMenu.cpython-39.pyc                          //
-│  │  │     ├─ switch.cpython-39.pyc                               //
-│  │  │     └─ __init__.cpython-39.pyc                             //
 │  │  ├─ __init__.py                                               //
-│  │  └─ __pycache__                                               //
-│  │     └─ __init__.cpython-39.pyc                                //
 │  ├─ packages                                                     //
 │  │  ├─ menu_utilities                                            //
 │  │  │  ├─ console_menu.py                                        //
@@ -173,20 +138,8 @@ Python                                                             //
 │  │  │  ├─ string_menu.py                                         //
 │  │  │  ├─ template_menu.py                                       //
 │  │  │  ├─ tuple_menu.py                                          //
-│  │  │  ├─ __init__.py                                            //
-│  │  │  └─ __pycache__                                            //
-│  │  │     ├─ console_menu.cpython-39.pyc                         //
-│  │  │     ├─ dictionary_menu.cpython-39.pyc                      //
-│  │  │     ├─ error_menu.cpython-39.pyc                           //
-│  │  │     ├─ exception_menu.cpython-39.pyc                       //
-│  │  │     ├─ list_menu.cpython-39.pyc                            //
-│  │  │     ├─ string_menu.cpython-39.pyc                          //
-│  │  │     ├─ template_menu.cpython-39.pyc                        //
-│  │  │     ├─ tuple_menu.cpython-39.pyc                           //
-│  │  │     └─ __init__.cpython-39.pyc                             //
-│  │  ├─ __init__.py                                               //
-│  │  └─ __pycache__                                               //
-│  │     └─ __init__.cpython-39.pyc                                //
+│  │  │  ├─ __init__.py                                            //                     
+│  │  ├─ __init__.py                                               //                            
 │  ├─ README.md                                                    //
 │  ├─ __init__.py                                                  //
 │  └─ __pycache__                                                  //
