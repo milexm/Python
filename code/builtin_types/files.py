@@ -133,7 +133,7 @@ class FileSamples:
        
     def process_image_file(self):
         '''  
-        Experimnent with basic inage file processing.  
+        Basic image file processing.  
 
 
         REMARKS
