@@ -25,6 +25,7 @@ class FileSamples:
         self.file_path_2 = "code/files/test.txt"
         self.file_path_image = "media/general/monty-python.png"
         self.thumbnail_path_image = "media/general/monty-python-thumb.png"
+        self.combined_path_image = "media/general/monty-python-combined.png"
 
     def read_file(self):
         '''  
@@ -161,13 +162,14 @@ class FileSamples:
             print(f'Image size: {image.size}')
             print(f'Image palette: {image.palette}')
 
-            print("\n***Create a thumbnail of the image ***")
+            print("\n***Create a thumbnail of the image and combine original and thumbnail images ***")
 
             # Create a thumbnail of the image.
             image.thumbnail((40, 20))
             # Save thumbnail.
             image.save(self.thumbnail_path_image)
     
+            """ 
             # Combine images horizontally 
             image1 = Image.open(self.file_path_image)
             image2 = Image.open(self.thumbnail_path_image)
@@ -175,13 +177,48 @@ class FileSamples:
             image3.paste(image1, (0, 0))
             image3.paste(image2, (image1.width, 0))
             
+            # Combine images vertically 
+            image4 = Image.new('RGB', (image1.width, image1.height + image2.height))
+            image4.paste(image1, (0, 0))
+            image4.paste(image2, (0, image1.height))
+   
+
             # Display combned images.
             image3.show()
-            
+            image4.show()
+
+            """
+
+            # Load images.   
+            image1 = Image.open(self.file_path_image)
+            image2 = Image.open(self.thumbnail_path_image)
+
+             # Make a copy of image1 to preserve the original.
+            image1_copy = image1.copy()
+
+            # Evaluate the position of the overlaying image2.
+            position = ((image1_copy.width - image2.width), (image1_copy.height - image2.height))
+
+            # Paste image2 into image1 copy.  By passing image2 as third
+            # parameters also, avoids the transparent background to be
+            # displayed as solid pixels.  
+            # image1_copy.paste(image2, position, image2)
+
+            image1_copy.paste(image2, position)
+
+             # Save combined image.
+            image1_copy.save(self.combined_path_image)
+    
+            # Load combined image.
+            combinedImage = Image.open(self.combined_path_image)
+    
+            # Display combined image.
+            combinedImage.show()
+
             # Release redources. 
             image1.close()
             image2.close()
-            image3.close()
+            combinedImage.close()
 
         except Exception as error:
             print(f"{type(error).__name__} was raised: {error}") 
