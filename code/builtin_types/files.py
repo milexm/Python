@@ -11,9 +11,9 @@ file are freed. The following are the
 
 The next examples cover common idioms for working with different kinds of files,
 including text and binary files, file encodings, and other related matters.
-Techniques for manipulating filenames and directories are also covered. 
-For more information, see [IO - Core tools for working with streams](https://docs.python.org/3/library/io.html#module-io),
-
+Techniques for manipulating filenames and directories are also covered.  For
+more information, see [IO - Core tools for working with
+streams](https://docs.python.org/3/library/io.html#module-io),
 
 '''
 
@@ -95,15 +95,21 @@ class FileSamples:
 
     def find_file_hash(self):
         '''  
-        Hash functions take an arbitrary amount of data and return a fixed-length bit string. The output of the function is called the digest message.
+        Hash functions take an arbitrary amount of data and return a
+        fixed-length bit string. The output of the function is called the digest
+        message.
 
-        Hash is used in cryptography for authentication purposes.
-        Many hashing functions exist such as: MD5, SHA-1 etc. For more information, see [Hash functions in cryptography]("http://en.wikipedia.org/wiki/Cryptographic_hash_function).
+        Hash is used in cryptography for authentication purposes.  Many hashing
+        functions exist such as: MD5, SHA-1 etc. For more information, see [Hash
+        functions in
+        cryptography]("http://en.wikipedia.org/wiki/Cryptographic_hash_function).
 
-        The following code illustrates how to hash a file. It uses the SHA-1 hashing algorithm. The digest of SHA-1 is 160 bits long. 
+        The following code illustrates how to hash a file. It uses the SHA-1
+        hashing algorithm. The digest of SHA-1 is 160 bits long. 
         
-        The file data is not processed all at once, because some
-        files are very large to fit in memory. Breaking the file into small chunks will make the process memory efficient.
+        The file data is not processed all at once, because some files are very
+        large to fit in memory. Breaking the file into small chunks will make
+        the process memory efficient.
         '''
         # import hashlib module
         import hashlib
@@ -212,20 +218,26 @@ class FileSamples:
         
     def process_csv_file(self):
         '''  
-        Adds a row to a csv file. The function first checks if the row already exists in the csv file and only adds the row if it does not exist.
-        The function asks the user how many columns to write for each row.
-        It loops asking for a new row as long as the user wishes to continue.
-        Prints the raw input and calls the write function to write it to the 
-        file.  Finally, it reads the file and prints the content. 
+        Adds a row to a csv file. The function first checks if the row already
+        exists in the csv file and only adds the row if it does not exist.  The
+        function asks the user how many columns to write for each row.  It loops
+        asking for a new row as long as the user wishes to continue.  Prints the
+        raw input and calls the write function to write it to the file.
+        Finally, it reads the file and prints the content. 
     
         REMARKS
         -------
-        CSV (comma-separated values) is a standard format for exporting and importing data. It allows you to store numbers and text in plain text.  Each row of the file is a data record and every record consists of one or more fields (columns) separated by commas. Python has native
-        support for CSV files. It contains a **csv module** which holds
-        everything you need to make a CSV reader/writer, and it follows [RFC
-        4180](https://www.ietf.org/rfc/rfc4180.txt) standards. 
-        For mor information, see [csv — CSV File Reading and Writing](https://docs.python.org/3/library/csv.html#module-csv).
-        See also [Sample CSV Files](https://wsform.com/knowledgebase/sample-csv-files/).
+        CSV (comma-separated values) is a standard format for exporting and
+        importing data. It allows you to store numbers and text in plain text.
+        Each row of the file is a data record and every record consists of one
+        or more fields (columns) separated by commas. Python has native support
+        for CSV files. It contains a **csv module** which holds everything you
+        need to make a CSV reader/writer, and it follows [RFC
+        4180](https://www.ietf.org/rfc/rfc4180.txt) standards.  For mor
+        information, see [csv — CSV File Reading and
+        Writing](https://docs.python.org/3/library/csv.html#module-csv).  See
+        also [Sample CSV
+        Files](https://wsform.com/knowledgebase/sample-csv-files/).
 
         '''
         import csv 
