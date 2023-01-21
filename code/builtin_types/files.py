@@ -21,12 +21,12 @@ class FileSamples:
 
     def __init__(self):
         ''' Initialize the class `FileSamples` instance. '''
-        self.file_path_1 = "code/files/san_martino.txt" 
-        self.file_path_2 = "code/files/test.txt"
+        self.files_path = "code/files/" 
+
         self.file_path_image = "media/general/monty-python.png"
         self.thumbnail_path_image = "media/general/monty-python-thumb.png"
         self.combined_path_image = "media/general/monty-python-combined.png"
-
+        
     def read_file(self):
         '''  
         Read the entire file as a single string.  Close the file when finished.
@@ -34,7 +34,8 @@ class FileSamples:
         '''
         try: 
             # Read file content.
-            with open(self.file_path_1, "rt", newline="") as f: 
+            file_path = self.files_path + "san_martino.txt"
+            with open(file_path, "rt", newline="") as f: 
                 fcontent = f.read()
             # Display the file content.    
             display_mesg = f"\n***File Content***\n {fcontent}"
@@ -52,8 +53,8 @@ class FileSamples:
             # Write 
             # Let's write to the file. If the file does not exist, 
             # it will be created. 
-
-            with open(self.file_path_2,'w',encoding = 'utf-8') as f:
+            file_path = self.files_path + "test.txt"
+            with open(file_path,'w',encoding = 'utf-8') as f:
                 f.write("La nebbia a gl'irti colli\n")
                 f.write("piovigginando sale,\n")
                 f.write("e sotto il maestrale\n")
@@ -64,7 +65,7 @@ class FileSamples:
 
             # Read
             # Open file.
-            f = open(self.file_path_2, 'rt', encoding = 'utf-8')
+            f = open(file_path, 'rt', encoding = 'utf-8')
 
             # Read the entire file content as single string
             fcontent = f.read()
@@ -112,9 +113,10 @@ class FileSamples:
         try: 
             # Create a hash object
             sha = hashlib.sha1()
+            file_path = self.files_path + "san_martino.txt"
 
             # Open file for reading in binary mode
-            with open(self.file_path_1,'rb') as file:
+            with open(file_path,'rb') as file:
         
                 # Loop till the end of the file
                 chunk = 0
@@ -149,26 +151,33 @@ class FileSamples:
         Pillow](https://auth0.com/blog/image-processing-in-python-with-pillow/).
 
         '''
+        from PIL import Image
+
         try: 
-            from PIL import Image
+        
+            with Image.open(self.file_path_image) as img:
+                # Diplay image properties.
+                print("\n*** Image properties ***")
+                print(f'Image format: {img.format}')
+                print(f'Image pixels: {img.mode}')
+                print(f'Image size: {img.size}')
+                print(f'Image palette: {img.palette}')
+                # Create a thumbnail of the image
+                img.thumbnail((100, 100))
+                # Save the thumbnail to a file
+                img.save(self.thumbnail_path_image)
+                # Open the thumbnail
+                with Image.open(self.thumbnail_path_image) as thumbnail_img:
+                    # Create a new image that is the combination of the original image and the thumbnail
+                    combined_img = Image.new('RGB', (img.width + thumbnail_img.width, max(img.height, thumbnail_img.height)))
+                    combined_img.paste(img, (0, 0))
+                    combined_img.paste(thumbnail_img, (img.width, 0))
+                    # Display the combined image
+                    combined_img.show()
+                    # Save the combined image to a file
+                    combined_img.save(self.combined_path_image)
+                    print(f"The image has been saved to {self.combined_path_image}")
 
-            # Load image contained in the file.
-            image = Image.open(self.file_path_image)
-         
-            # Diplay image properties.
-            print("\n*** Image properties ***")
-            print(f'Image format: {image.format}')
-            print(f'Image pixels: {image.mode}')
-            print(f'Image size: {image.size}')
-            print(f'Image palette: {image.palette}')
-
-            print("\n***Create a thumbnail of the image and combine original and thumbnail images ***")
-
-            # Create a thumbnail of the image.
-            image.thumbnail((40, 20))
-            # Save thumbnail.
-            image.save(self.thumbnail_path_image)
-    
             """ 
             # Combine images horizontally 
             image1 = Image.open(self.file_path_image)
@@ -189,37 +198,103 @@ class FileSamples:
 
             """
 
-            # Load images.   
-            image1 = Image.open(self.file_path_image)
-            image2 = Image.open(self.thumbnail_path_image)
-
-             # Make a copy of image1 to preserve the original.
-            image1_copy = image1.copy()
-
-            # Evaluate the position of the overlaying image2.
-            position = ((image1_copy.width - image2.width), (image1_copy.height - image2.height))
-
-            # Paste image2 into image1 copy.  By passing image2 as third
-            # parameters also, avoids the transparent background to be
-            # displayed as solid pixels.  
-            # image1_copy.paste(image2, position, image2)
-
-            image1_copy.paste(image2, position)
-
-             # Save combined image.
-            image1_copy.save(self.combined_path_image)
-    
-            # Load combined image.
-            combinedImage = Image.open(self.combined_path_image)
-    
-            # Display combined image.
-            combinedImage.show()
-
-            # Release redources. 
-            image1.close()
-            image2.close()
-            combinedImage.close()
-
         except Exception as error:
             print(f"{type(error).__name__} was raised: {error}") 
         
+    def process_csv_file(self):
+        '''  
+        Adds a row to a csv file. The function first checks if the row already exists in the csv file and only adds the row if it does not exist.
+        The function asks the user how many columns to write for each row.
+        It loops asking for a new row as long as the user wishes to continue.
+        Prints the raw input and calls the write function to write it to the 
+        file.  Finally, it reads the file and prints the content. 
+    
+        REMARKS
+        -------
+        CSV (comma-separated values) is a standard format for exporting and importing data. It allows you to store numbers and text in plain text.  Each row of the file is a data record and every record consists of one or more fields (columns) separated by commas. Python has native
+        support for CSV files. It contains a **csv module** which holds
+        everything you need to make a CSV reader/writer, and it follows [RFC
+        4180](https://www.ietf.org/rfc/rfc4180.txt) standards. 
+        For mor information, see [csv — CSV File Reading and Writing](https://docs.python.org/3/library/csv.html#module-csv).
+        See also [Sample CSV Files](https://wsform.com/knowledgebase/sample-csv-files/).
+
+        '''
+        import csv 
+
+        try: 
+            file_path =  self.files_path + "students.csv"
+
+            columns = int(input("How many columns do you want to write? "))
+            input_rows = []
+            keep_going = True
+            while keep_going:
+                input_rows.append([input("column {}: ".format(i + 1)) 
+                    for i in range(0, columns)])
+                ui_keep_going = input("continue? (y/n): ")
+                if ui_keep_going != "y":
+                    keep_going = False
+            print("Values entered by the user: " + str(input_rows))
+
+            # Open the csv file in read mode.
+            with open(file_path, 'r') as file:
+                # Create a csv reader object.
+                reader = csv.reader(file)
+                # Convert the rows of the csv file to a list.
+                rows = list(reader)
+                print(f"List of rows {rows}")
+            
+            for row in input_rows:
+                # Check if the row already exists in the csv file.
+                if row not in rows:
+                    # Open the csv file in append mode.
+                    # The way Python handles newlines on Windows can result in # blank lines appearing between rows when using csv.writer.
+                    # The parameter `newline=''`` disables universal newlines.
+                    with open(file_path, 'a', newline='') as file:
+                        # Create a csv writer object.
+                        writer = csv.writer(file)
+                        # Write the new row to the csv file.
+                        writer.writerow(row)
+                    print(f"The row {row} has been added to {file_path}")
+                else:
+                    print(f"The row {row} already exists in {file_path}")
+              
+            # Read and display the csv file content. 
+            with open(file_path, "r+", newline="") as csvfile:
+                reader = csv.reader(csvfile)
+                values = [row for row in reader] 
+            print("Values stored in the file: " + str(values))
+    
+        except Exception as error:
+            print(f"{type(error).__name__} was raised: {error}") 
+        
+
+from PIL import Image
+
+def create_thumbnail_and_combined_image(image_path, thumbnail_path, combined_image_path):
+    """
+    Read an image, make a thumbnail from it, save the thumbnail to a file, 
+    combine the original image and the thumbnail horizontally, 
+    display the combined image and save it to a file.
+
+    Args:
+    image_path (str): The path of the original image file.
+    thumbnail_path (str): The path of the thumbnail image file.
+    combined_image_path (str): The path of the combined image file.
+    """
+    # Open the original image
+    with Image.open(image_path) as img:
+        # Create a thumbnail of the image
+        img.thumbnail((100, 100))
+        # Save the thumbnail to a file
+        img.save(thumbnail_path)
+        # Open the thumbnail
+        with Image.open(thumbnail_path) as thumbnail_img:
+            # Create a new image that is the combination of the original image and the thumbnail
+            combined_img = Image.new('RGB', (img.width + thumbnail_img.width, max(img.height, thumbnail_img.height)))
+            combined_img.paste(img, (0, 0))
+            combined_img.paste(thumbnail_img, (img.width, 0))
+            # Display the combined image
+            combined_img.show()
+            # Save the combined image to a file
+            combined_img.save(combined_image_path)
+            print(f"The image has been saved to {combined_image_path}")
