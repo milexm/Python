@@ -22,11 +22,9 @@ class FileSamples:
     def __init__(self):
         ''' Initialize the class `FileSamples` instance. '''
         self.files_path = "code/files/" 
+        self.media_general_path = "media/general/"
 
-        self.file_path_image = "media/general/monty-python.png"
-        self.thumbnail_path_image = "media/general/monty-python-thumb.png"
-        self.combined_path_image = "media/general/monty-python-combined.png"
-        
+
     def read_file(self):
         '''  
         Read the entire file as a single string.  Close the file when finished.
@@ -153,50 +151,61 @@ class FileSamples:
         '''
         from PIL import Image
 
+        # Set images paths. 
+        image_path = self.media_general_path + "monty-python.png"
+        thumb_image_path = self.media_general_path + "monty-python-thumb.png"
+        comb_image_path = self.media_general_path + "monty-python-combined.png"
+
         try: 
         
-            with Image.open(self.file_path_image) as img:
+            with Image.open(image_path) as img:
                 # Diplay image properties.
                 print("\n*** Image properties ***")
                 print(f'Image format: {img.format}')
                 print(f'Image pixels: {img.mode}')
                 print(f'Image size: {img.size}')
                 print(f'Image palette: {img.palette}')
+
+                # Calculate image resolution.
+                # Open file for reading in binary mode
+                with open(image_path,'rb') as img_file_binary:
+
+                    # The height of image (in 2 bytes) is at 164th position.
+                    # Posiiton the cursor accordingly. 
+                    img_file_binary.seek(163)
+
+                    # Read the 2 bytes.
+                    a = img_file_binary.read(2)
+
+                    # Calculate the height.
+                    height = (a[0] << 8) + a[1]
+
+                    # Read the next 2 bytes that contain the width.
+                    a = img_file_binary.read(2)
+
+                    # Calculate the width.
+                    width = (a[0] << 8) + a[1]
+
+                    print(f"The resolution of the image is: {width} x {height}")
+
+                # Make a copy of image1 to preserve the original.
+                orig_img = img.copy()
+            
                 # Create a thumbnail of the image
                 img.thumbnail((100, 100))
                 # Save the thumbnail to a file
-                img.save(self.thumbnail_path_image)
+                img.save(thumb_image_path)
+                
                 # Open the thumbnail
-                with Image.open(self.thumbnail_path_image) as thumbnail_img:
+                with Image.open(thumb_image_path) as thumbnail_img:
                     # Create a new image that is the combination of the original image and the thumbnail
-                    combined_img = Image.new('RGB', (img.width + thumbnail_img.width, max(img.height, thumbnail_img.height)))
-                    combined_img.paste(img, (0, 0))
-                    combined_img.paste(thumbnail_img, (img.width, 0))
+                    combined_img = Image.new('RGB', (orig_img.width + thumbnail_img.width, max(orig_img.height, thumbnail_img.height)))
+                    combined_img.paste(orig_img, (0, 0))
+                    combined_img.paste(thumbnail_img, (orig_img.width, 0))
                     # Display the combined image
                     combined_img.show()
                     # Save the combined image to a file
-                    combined_img.save(self.combined_path_image)
-                    print(f"The image has been saved to {self.combined_path_image}")
-
-            """ 
-            # Combine images horizontally 
-            image1 = Image.open(self.file_path_image)
-            image2 = Image.open(self.thumbnail_path_image)
-            image3 = Image.new('RGB', (image1.width + image2.width, image1.height))
-            image3.paste(image1, (0, 0))
-            image3.paste(image2, (image1.width, 0))
-            
-            # Combine images vertically 
-            image4 = Image.new('RGB', (image1.width, image1.height + image2.height))
-            image4.paste(image1, (0, 0))
-            image4.paste(image2, (0, image1.height))
-   
-
-            # Display combned images.
-            image3.show()
-            image4.show()
-
-            """
+                    combined_img.save(comb_image_path)
 
         except Exception as error:
             print(f"{type(error).__name__} was raised: {error}") 
@@ -233,7 +242,7 @@ class FileSamples:
                 ui_keep_going = input("continue? (y/n): ")
                 if ui_keep_going != "y":
                     keep_going = False
-            print("Values entered by the user: " + str(input_rows))
+            print(f"Values entered by the user: {str(input_rows)}")
 
             # Open the csv file in read mode.
             with open(file_path, 'r') as file:
@@ -267,34 +276,3 @@ class FileSamples:
         except Exception as error:
             print(f"{type(error).__name__} was raised: {error}") 
         
-
-from PIL import Image
-
-def create_thumbnail_and_combined_image(image_path, thumbnail_path, combined_image_path):
-    """
-    Read an image, make a thumbnail from it, save the thumbnail to a file, 
-    combine the original image and the thumbnail horizontally, 
-    display the combined image and save it to a file.
-
-    Args:
-    image_path (str): The path of the original image file.
-    thumbnail_path (str): The path of the thumbnail image file.
-    combined_image_path (str): The path of the combined image file.
-    """
-    # Open the original image
-    with Image.open(image_path) as img:
-        # Create a thumbnail of the image
-        img.thumbnail((100, 100))
-        # Save the thumbnail to a file
-        img.save(thumbnail_path)
-        # Open the thumbnail
-        with Image.open(thumbnail_path) as thumbnail_img:
-            # Create a new image that is the combination of the original image and the thumbnail
-            combined_img = Image.new('RGB', (img.width + thumbnail_img.width, max(img.height, thumbnail_img.height)))
-            combined_img.paste(img, (0, 0))
-            combined_img.paste(thumbnail_img, (img.width, 0))
-            # Display the combined image
-            combined_img.show()
-            # Save the combined image to a file
-            combined_img.save(combined_image_path)
-            print(f"The image has been saved to {combined_image_path}")
