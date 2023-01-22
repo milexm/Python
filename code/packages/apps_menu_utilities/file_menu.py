@@ -10,7 +10,7 @@ sys.path.append('./code/builtin_types/apps')
 
 from files import FileSamples
 
-import menu_utilities as _menu
+import console_menu_utilities as _menu   
 
 
 class FileMenu:

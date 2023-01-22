@@ -7,7 +7,7 @@ import sys
 sys.path.append('./code/packages') 
 
 import apps_menu_utilities as _menu  
-import menu_utilities as _gmenu  
+import console_menu_utilities as _gmenu    
 
 class GroupMenu:
 
@@ -33,7 +33,7 @@ class GroupMenu:
         self.menu_items = ["File", "Http", "Quit"]
         
         # Instantiate the group menu class. 
-        self.group_menu = _gmenu.ConsoleMenu("Apps Group Menu")
+        self.group_menu = _gmenu.ConsoleMenu("Apps Group Menu") 
 
 
     def group_selection_menu(self):

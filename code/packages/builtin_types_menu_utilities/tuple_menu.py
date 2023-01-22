@@ -10,7 +10,7 @@ sys.path.append('./code/builtin_types')
 
 from tuples import TupleSamples
 
-import menu_utilities as _menu
+import console_menu_utilities as _menu   
 
 
 class TupleMenu:

@@ -10,7 +10,7 @@ sys.path.append('./code/builtin_types')
 
 from lists import ListSamples
 
-import menu_utilities as _menu
+import console_menu_utilities as _menu   
 
 class ListMenu:
 
@@ -30,14 +30,6 @@ class ListMenu:
     menu. 
 
     """
-    menu_items : list 
-    """ List of strings representing the options in the menu. """
-
-    list_sample_menu : _menu.ConsoleMenu
-    """ An instance of the class `ConsoleMenu`, from the `console_menu` module, used to display the menu and get user input. """
-
-    list_samples : ListSamples
-    """ An instance of the class `ListSamples`, from the `tuples` module, which contains the actual list-related samples that can be run. """
 
     def __init__(self):
         """ Initializes the `menu_items` attribute with the list menu items. Then it initiliazes the `list_sample_menu` attribute with a `ConsoleMenu` instance and the `list_samples` attribute with a `ListSamples` instance."""

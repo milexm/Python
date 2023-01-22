@@ -6,8 +6,8 @@ Module main.py
 import sys
 sys.path.append('./code/packages') 
 
-import menu_utilities as _menu
-
+import builtin_types_menu_utilities as _menu  
+import console_menu_utilities as _gmenu   
 
 class GroupMenu:
 
@@ -33,7 +33,7 @@ class GroupMenu:
         self.menu_items = ["Lists", "Tuples", "Dictionaries", "Strings", "Exceptions", "Files", "Templates", "Quit"]
         
         # Instantiate the group menu class. 
-        self.group_menu = _menu.ConsoleMenu("Builtin Types Group Menu")
+        self.group_menu = _gmenu.ConsoleMenu("Builtin Types Group Menu")
 
 
     def group_selection_menu(self):

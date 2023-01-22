@@ -16,7 +16,7 @@ sys.path.append('./code/builtin_types')
 
 from exceptions import ExceptionSamples
 
-import menu_utilities as _menu
+import console_menu_utilities as _menu   
 
 
 class ExceptionMenu:

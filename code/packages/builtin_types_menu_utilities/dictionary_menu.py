@@ -8,7 +8,7 @@ sys.path.append('./code/builtin_types')
 
 from dictionaries import DictionarySamples
 
-import menu_utilities as _menu
+import console_menu_utilities as _menu   
 
 
 class DictionaryMenu:
@@ -32,16 +32,6 @@ class DictionaryMenu:
   
   
     """
-
-    menu_items : list 
-    """ List of strings representing the options in the menu. """
-
-    dict_sample_menu : _menu.ConsoleMenu
-    """ An instance of the class `ConsoleMenu`, from the `console_menu` module, used to display the menu and get user input. """
-
-    dict_samples : DictionarySamples
-    """ An instance of the class `DictionarySamples`, from the `dictionaries` module, which contains the actual dictionary-related samples that can be run. """
-
 
     def __init__(self):
         """ Initialize the class `dictionary_menu` instance. """
