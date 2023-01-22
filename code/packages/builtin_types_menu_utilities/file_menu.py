@@ -1,21 +1,14 @@
 """ 
 Module template_menu.py 
 
-Remarks
-------=
-
-Use this template as starting point to build your specific menu. 
-Replace the name template(s) with your specific name.  
-
 """ 
 
-# Append the path to the modules location.  
-# This is important to allow pdoc to find the modules. 
 import sys
 sys.path.append('./code/builtin_types')
-
 from files import FileSamples
 
+import sys
+sys.path.append('./code/console_menu_utilities')
 import console_menu_utilities as _menu   
 
 

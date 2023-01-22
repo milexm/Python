@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
-<title>code.builtin_types.main API documentation</title>
+<title>code.apps.main API documentation</title>
 <meta name="description" content="Module main.py" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
@@ -19,7 +19,7 @@
 <main>
 <article id="content">
 <header>
-<h1 class="title">Module <code>code.builtin_types.main</code></h1>
+<h1 class="title">Module <code>code.apps.main</code></h1>
 </header>
 <section id="section-intro">
 <p>Module main.py</p>
@@ -35,8 +35,9 @@ Module main.py
 import sys
 sys.path.append(&#39;./code/packages&#39;) 
 
-import builtin_types_menu_utilities as _menu  
+import apps_menu_utilities as _menu  
 import console_menu_utilities as _gmenu   
+
 
 class GroupMenu:
 
@@ -59,10 +60,10 @@ class GroupMenu:
         &#34;&#34;&#34; Initializes the `menu_items` attribute with the group menu items. Then it initiliazes the `group_menu` attribute with a `ConsoleMenu` instance. &#34;&#34;&#34;
 
         # Define the entries of the group menu. 
-        self.menu_items = [&#34;Lists&#34;, &#34;Tuples&#34;, &#34;Dictionaries&#34;, &#34;Strings&#34;, &#34;Exceptions&#34;, &#34;Files&#34;, &#34;Templates&#34;, &#34;Quit&#34;]
+        self.menu_items = [&#34;File&#34;, &#34;Http&#34;, &#34;Quit&#34;]
         
         # Instantiate the group menu class. 
-        self.group_menu = _gmenu.ConsoleMenu(&#34;Builtin Types Group Menu&#34;)
+        self.group_menu = _gmenu.ConsoleMenu(&#34;Apps Group Menu&#34;) 
 
 
     def group_selection_menu(self):
@@ -80,46 +81,16 @@ class GroupMenu:
             choice = self.group_menu.get_user_choice(self.menu_items)
 
             if choice == 1:
-                # Instantiate the list_menu class.
-                _lmenu = _menu.ListMenu()
-                # Display the list samples selection menu.
-                _lmenu.list_selection_menu()
-                
-            if choice == 2:
-                # Instantiate the tuple_menu class.
-                _tmenu = _menu.TupleMenu()
-                # Display the tuple samples selection menu. 
-                _tmenu.tuple_selection_menu()
-                
-            if choice == 3:
-                # Instantiate the dictionary_menu class.
-                _dmenu = _menu.DictionaryMenu()
-                # Display the dictionary samples selection menu. 
-                _dmenu.dict_selection_menu()
-                
-            if choice == 4:
-                # Instantiate the string_menu class.
-                _smenu = _menu.StringMenu()
-                # Display the string samples selection menu. 
-                _smenu.string_selection_menu()
-            
-            if choice == 5:
-                # Instantiate the exception menu class.
-                _emenu = _menu.ExceptionMenu()
-                # Display the string samples selection menu. 
-                _emenu.exception_selection_menu()
-
-            if choice == 6:
                 # Instantiate the template_menu class.
                 _fmenu = _menu.FileMenu()
                 # Display the string samples selection menu. 
                 _fmenu.file_selection_menu()
 
-            if choice == 7:
-                # Instantiate the template_menu class.
-                _tmenu = _menu.TemplateMenu()
+            if choice == 2:
+                # Instantiate the http_menu class.
+                _hmenu = _menu.HttpMenu()
                 # Display the string samples selection menu. 
-                _tmenu.template_selection_menu()
+                _hmenu.http_selection_menu()
 
             elif choice == len(self.menu_items):
                 break
@@ -140,14 +111,14 @@ if __name__ == &#39;__main__&#39;:
 <section>
 <h2 class="section-title" id="header-classes">Classes</h2>
 <dl>
-<dt id="code.builtin_types.main.GroupMenu"><code class="flex name class">
+<dt id="code.apps.main.GroupMenu"><code class="flex name class">
 <span>class <span class="ident">GroupMenu</span></span>
 </code></dt>
 <dd>
-<div class="desc"><p>The <code><a title="code.builtin_types.main.GroupMenu" href="#code.builtin_types.main.GroupMenu">GroupMenu</a></code> class allows the user to select a group of examples to execute. It initializes the instance of the class by defining a list of menu items. It also instantiates an instance of the <code>ConsoleMenu</code> class called group_menu.</p>
+<div class="desc"><p>The <code><a title="code.apps.main.GroupMenu" href="#code.apps.main.GroupMenu">GroupMenu</a></code> class allows the user to select a group of examples to execute. It initializes the instance of the class by defining a list of menu items. It also instantiates an instance of the <code>ConsoleMenu</code> class called group_menu.</p>
 <h2 id="remarks">Remarks</h2>
-<p>The <code>group_selection_menu</code> method of the <code><a title="code.builtin_types.main.GroupMenu" href="#code.builtin_types.main.GroupMenu">GroupMenu</a></code> class displays a menu to the user with the options specified in the <code>self.menu_items</code> list. It waits for the user to make a selection and then calls the corresponding menu based on the selection. For example, if the user selects 1, it will instantiate an instance of the <code>_menu.list_menu</code> class called <code>_lmenu</code> and then call the <code>list_selection_menu</code> method on <code>_lmenu</code>.</p>
-<p>The if <strong>name</strong> == '<strong>main</strong>': block at the bottom of the code instantiates an instance of the <code><a title="code.builtin_types.main.GroupMenu" href="#code.builtin_types.main.GroupMenu">GroupMenu</a></code> class called <code>_gmenu</code> and then calls the group_selection_menu method on _gmenu. This will display the group selection menu to the user and allow them to choose a group of examples to execute.</p>
+<p>The <code>group_selection_menu</code> method of the <code><a title="code.apps.main.GroupMenu" href="#code.apps.main.GroupMenu">GroupMenu</a></code> class displays a menu to the user with the options specified in the <code>self.menu_items</code> list. It waits for the user to make a selection and then calls the corresponding menu based on the selection. For example, if the user selects 1, it will instantiate an instance of the <code>_menu.list_menu</code> class called <code>_lmenu</code> and then call the <code>list_selection_menu</code> method on <code>_lmenu</code>.</p>
+<p>The if <strong>name</strong> == '<strong>main</strong>': block at the bottom of the code instantiates an instance of the <code><a title="code.apps.main.GroupMenu" href="#code.apps.main.GroupMenu">GroupMenu</a></code> class called <code>_gmenu</code> and then calls the group_selection_menu method on _gmenu. This will display the group selection menu to the user and allow them to choose a group of examples to execute.</p>
 <h2 id="use">Use</h2>
 <p>In a terminal window enter: python [user path]./builtin_types/main.py</p>
 <p>Initializes the <code>menu_items</code> attribute with the group menu items. Then it initiliazes the <code>group_menu</code> attribute with a <code>ConsoleMenu</code> instance.</p></div>
@@ -176,10 +147,10 @@ if __name__ == &#39;__main__&#39;:
         &#34;&#34;&#34; Initializes the `menu_items` attribute with the group menu items. Then it initiliazes the `group_menu` attribute with a `ConsoleMenu` instance. &#34;&#34;&#34;
 
         # Define the entries of the group menu. 
-        self.menu_items = [&#34;Lists&#34;, &#34;Tuples&#34;, &#34;Dictionaries&#34;, &#34;Strings&#34;, &#34;Exceptions&#34;, &#34;Files&#34;, &#34;Templates&#34;, &#34;Quit&#34;]
+        self.menu_items = [&#34;File&#34;, &#34;Http&#34;, &#34;Quit&#34;]
         
         # Instantiate the group menu class. 
-        self.group_menu = _gmenu.ConsoleMenu(&#34;Builtin Types Group Menu&#34;)
+        self.group_menu = _gmenu.ConsoleMenu(&#34;Apps Group Menu&#34;) 
 
 
     def group_selection_menu(self):
@@ -197,53 +168,23 @@ if __name__ == &#39;__main__&#39;:
             choice = self.group_menu.get_user_choice(self.menu_items)
 
             if choice == 1:
-                # Instantiate the list_menu class.
-                _lmenu = _menu.ListMenu()
-                # Display the list samples selection menu.
-                _lmenu.list_selection_menu()
-                
-            if choice == 2:
-                # Instantiate the tuple_menu class.
-                _tmenu = _menu.TupleMenu()
-                # Display the tuple samples selection menu. 
-                _tmenu.tuple_selection_menu()
-                
-            if choice == 3:
-                # Instantiate the dictionary_menu class.
-                _dmenu = _menu.DictionaryMenu()
-                # Display the dictionary samples selection menu. 
-                _dmenu.dict_selection_menu()
-                
-            if choice == 4:
-                # Instantiate the string_menu class.
-                _smenu = _menu.StringMenu()
-                # Display the string samples selection menu. 
-                _smenu.string_selection_menu()
-            
-            if choice == 5:
-                # Instantiate the exception menu class.
-                _emenu = _menu.ExceptionMenu()
-                # Display the string samples selection menu. 
-                _emenu.exception_selection_menu()
-
-            if choice == 6:
                 # Instantiate the template_menu class.
                 _fmenu = _menu.FileMenu()
                 # Display the string samples selection menu. 
                 _fmenu.file_selection_menu()
 
-            if choice == 7:
-                # Instantiate the template_menu class.
-                _tmenu = _menu.TemplateMenu()
+            if choice == 2:
+                # Instantiate the http_menu class.
+                _hmenu = _menu.HttpMenu()
                 # Display the string samples selection menu. 
-                _tmenu.template_selection_menu()
+                _hmenu.http_selection_menu()
 
             elif choice == len(self.menu_items):
                 break</code></pre>
 </details>
 <h3>Methods</h3>
 <dl>
-<dt id="code.builtin_types.main.GroupMenu.group_selection_menu"><code class="name flex">
+<dt id="code.apps.main.GroupMenu.group_selection_menu"><code class="name flex">
 <span>def <span class="ident">group_selection_menu</span></span>(<span>self)</span>
 </code></dt>
 <dd>
@@ -268,46 +209,16 @@ Calls the group selection menu based on the user's selection.</p></div>
         choice = self.group_menu.get_user_choice(self.menu_items)
 
         if choice == 1:
-            # Instantiate the list_menu class.
-            _lmenu = _menu.ListMenu()
-            # Display the list samples selection menu.
-            _lmenu.list_selection_menu()
-            
-        if choice == 2:
-            # Instantiate the tuple_menu class.
-            _tmenu = _menu.TupleMenu()
-            # Display the tuple samples selection menu. 
-            _tmenu.tuple_selection_menu()
-            
-        if choice == 3:
-            # Instantiate the dictionary_menu class.
-            _dmenu = _menu.DictionaryMenu()
-            # Display the dictionary samples selection menu. 
-            _dmenu.dict_selection_menu()
-            
-        if choice == 4:
-            # Instantiate the string_menu class.
-            _smenu = _menu.StringMenu()
-            # Display the string samples selection menu. 
-            _smenu.string_selection_menu()
-        
-        if choice == 5:
-            # Instantiate the exception menu class.
-            _emenu = _menu.ExceptionMenu()
-            # Display the string samples selection menu. 
-            _emenu.exception_selection_menu()
-
-        if choice == 6:
             # Instantiate the template_menu class.
             _fmenu = _menu.FileMenu()
             # Display the string samples selection menu. 
             _fmenu.file_selection_menu()
 
-        if choice == 7:
-            # Instantiate the template_menu class.
-            _tmenu = _menu.TemplateMenu()
+        if choice == 2:
+            # Instantiate the http_menu class.
+            _hmenu = _menu.HttpMenu()
             # Display the string samples selection menu. 
-            _tmenu.template_selection_menu()
+            _hmenu.http_selection_menu()
 
         elif choice == len(self.menu_items):
             break</code></pre>
@@ -326,15 +237,15 @@ Calls the group selection menu based on the user's selection.</p></div>
 <ul id="index">
 <li><h3>Super-module</h3>
 <ul>
-<li><code><a title="code.builtin_types" href="index.html">code.builtin_types</a></code></li>
+<li><code><a title="code.apps" href="index.html">code.apps</a></code></li>
 </ul>
 </li>
 <li><h3><a href="#header-classes">Classes</a></h3>
 <ul>
 <li>
-<h4><code><a title="code.builtin_types.main.GroupMenu" href="#code.builtin_types.main.GroupMenu">GroupMenu</a></code></h4>
+<h4><code><a title="code.apps.main.GroupMenu" href="#code.apps.main.GroupMenu">GroupMenu</a></code></h4>
 <ul class="">
-<li><code><a title="code.builtin_types.main.GroupMenu.group_selection_menu" href="#code.builtin_types.main.GroupMenu.group_selection_menu">group_selection_menu</a></code></li>
+<li><code><a title="code.apps.main.GroupMenu.group_selection_menu" href="#code.apps.main.GroupMenu.group_selection_menu">group_selection_menu</a></code></li>
 </ul>
 </li>
 </ul>

@@ -7,9 +7,10 @@ Module tuple_menu.py
 
 import sys
 sys.path.append('./code/builtin_types')
-
 from tuples import TupleSamples
 
+import sys
+sys.path.append('./code/console_menu_utilities')
 import console_menu_utilities as _menu   
 
 

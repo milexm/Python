@@ -5,9 +5,10 @@ Module dictionary_menu.py
 
 import sys
 sys.path.append('./code/builtin_types')
-
 from dictionaries import DictionarySamples
 
+import sys
+sys.path.append('./code/console_menu_utilities')
 import console_menu_utilities as _menu   
 
 

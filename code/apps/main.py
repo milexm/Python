@@ -7,7 +7,8 @@ import sys
 sys.path.append('./code/packages') 
 
 import apps_menu_utilities as _menu  
-import console_menu_utilities as _gmenu    
+import console_menu_utilities as _gmenu   
+
 
 class GroupMenu:
 

@@ -3,13 +3,12 @@ file_menu.py
 
 """ 
 
-# Append the path to the modules location.  
-# This is important to allow pdoc to find the modules. 
 import sys
-sys.path.append('./code/builtin_types/apps')
-
+sys.path.append('./code/apps')
 from files import FileSamples
 
+import sys
+sys.path.append('./code/console_menu_utilities')
 import console_menu_utilities as _menu   
 
 
