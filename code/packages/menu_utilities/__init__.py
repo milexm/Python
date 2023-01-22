@@ -37,6 +37,7 @@ For example, to use the `ConsoleMenu` class in the calling module you do the fol
 
 # Perform package wide initializations.
 
+# Builtin types
 from .console_menu import ConsoleMenu
 from .string_menu import StringMenu
 from .list_menu import ListMenu
@@ -45,3 +46,4 @@ from .dictionary_menu import DictionaryMenu
 from .template_menu import TemplateMenu
 from .exception_menu import ExceptionMenu
 from .file_menu import FileMenu 
+
