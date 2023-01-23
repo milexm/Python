@@ -6,8 +6,8 @@ last update: 01/22/23
 
 - [Overview](#overview)
 - [Running code examples](#running-code-examples)
-  - [First level nmenu](#first-level-nmenu)
-  - [Second level nmenu](#second-level-nmenu)
+  - [First level menu](#first-level-menu)
+  - [Second level menu](#second-level-menu)
 - [References](#references)
 
 ## Overview
@@ -55,7 +55,7 @@ run:
 - The second level menu (sub-menu) allows the selecrion and the execution of the
   acual examples.
 
-### First level nmenu
+### First level menu
 
 The first level menu is implemented by a `main.py` module contained in the
 specific area folder i.e., the folder that contains the module with the actual
@@ -89,7 +89,7 @@ section.
 > reference documnetation. 
 >
 
-### Second level nmenu
+### Second level menu
 
 The second level menu is implemented by several modules contained in packages.
 Each module implements a menu specific to a particular set of examples.
