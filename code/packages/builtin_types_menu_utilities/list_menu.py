@@ -11,8 +11,6 @@ import sys
 sys.path.append('./code/console_menu_utilities')
 import console_menu_utilities as _menu   
 
-import console_menu_utilities as _menu   
-
 class ListMenu:
 
     """ 

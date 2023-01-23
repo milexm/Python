@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
 <title>code.packages.builtin_types_menu_utilities.exception_menu API documentation</title>
-<meta name="description" content="Module error_menu.py …" />
+<meta name="description" content="Module error_menu.py" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -22,10 +22,7 @@
 <h1 class="title">Module <code>code.packages.builtin_types_menu_utilities.exception_menu</code></h1>
 </header>
 <section id="section-intro">
-<p>Module error_menu.py </p>
-<h2 id="remarks">Remarks</h2>
-<p>Use this template as starting point to build your specific menu.
-Replace the name template(s) with your specific name.</p>
+<p>Module error_menu.py</p>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -33,23 +30,15 @@ Replace the name template(s) with your specific name.</p>
 <pre><code class="python">&#34;&#34;&#34; 
 Module error_menu.py 
 
-Remarks
-------=
-
-Use this template as starting point to build your specific menu. 
-Replace the name template(s) with your specific name.  
-
 &#34;&#34;&#34; 
 
-# Append the path to the modules location.  
-# This is important to allow pdoc to find the modules. 
 import sys
 sys.path.append(&#39;./code/builtin_types&#39;)
-
 from exceptions import ExceptionSamples
 
+import sys
+sys.path.append(&#39;./code/console_menu_utilities&#39;)
 import console_menu_utilities as _menu   
-
 
 class ExceptionMenu:
 
@@ -295,9 +284,7 @@ on the user's selection.</p></div>
 <nav id="sidebar">
 <h1>Index</h1>
 <div class="toc">
-<ul>
-<li><a href="#remarks">Remarks</a></li>
-</ul>
+<ul></ul>
 </div>
 <ul id="index">
 <li><h3>Super-module</h3>
