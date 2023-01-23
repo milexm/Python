@@ -2,7 +2,7 @@
 last update: 01/22/23
 ---
 
-# ![python-icon](../../media/icons/python-icon.svg) Language builtin types
+# ![python-icon](../../media/icons/python-icon.svg) Apps
 
 - [Overview](#overview)
 
