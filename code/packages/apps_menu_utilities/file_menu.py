@@ -5,7 +5,7 @@ file_menu.py
 
 import sys
 sys.path.append('./code/apps')
-from files import FileSamples
+from file_samples import FileSamples 
 
 import sys
 sys.path.append('./code/console_menu_utilities')
