@@ -39,7 +39,7 @@ class FileMenu:
     def __init__(self):
         """ Initialize the class `string_menu` instance. """
 
-        # Define the entries of the string samples menu. 
+        # Define the entries of the file samples menu. 
         self.menu_items = ["Read a file", "Write to a file", "Find a file hash", "Process image file", "Process csv file", "Quit"]
     
         # Create the menu for the template samples.

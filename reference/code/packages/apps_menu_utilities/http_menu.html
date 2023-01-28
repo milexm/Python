@@ -4,10 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
-<title>code.apps API documentation</title>
-<meta name="description" content="---
-last update: 01/22/23
---- …" />
+<title>code.packages.apps_menu_utilities.http_menu API documentation</title>
+<meta name="description" content="Module http_menu.py" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -21,87 +19,186 @@ last update: 01/22/23
 <main>
 <article id="content">
 <header>
-<h1 class="title">Module <code>code.apps</code></h1>
+<h1 class="title">Module <code>code.packages.apps_menu_utilities.http_menu</code></h1>
 </header>
 <section id="section-intro">
-<hr>
-<h2 id="last-update-012223">last update: 01/22/23</h2>
-<h1 id="apps"><img alt="python-icon" src="../../media/icons/python-icon.svg"> Apps</h1>
-<ul>
-<li><a href="#overview">Overview</a></li>
-</ul>
-<h2 id="overview">Overview</h2>
-<p>The <strong>examples</strong> in this folder show some ready to run Python apps.</p>
+<p>Module http_menu.py</p>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">&#34;&#34;&#34;
-.. include:: ./README.md
-&#34;&#34;&#34;</code></pre>
+<pre><code class="python">&#34;&#34;&#34; 
+Module http_menu.py 
+
+&#34;&#34;&#34; 
+
+import http.server
+
+import sys
+sys.path.append(&#39;./code/apps&#39;)
+from http_samples import HttpSamples 
+
+import sys
+sys.path.append(&#39;./code/console_menu_utilities&#39;)
+import console_menu_utilities as _menu   
+
+
+class HttpMenu:
+
+    def __init__(self):
+        &#39;&#39;&#39; Initialize the class `HttpMenu` instance. &#39;&#39;&#39;
+
+        # Define the entries of the string samples menu. 
+        self.menu_items = [&#34;Simple Http server&#34;, &#34;CRUD Http server&#34;, &#34;Quit&#34;]
+    
+        # Create the menu for the http samples.
+        self.http_sample_menu = _menu.ConsoleMenu(&#34;Http Menu&#34;)
+        
+        # Instantiate the sample class.
+        self.http_samples = HttpSamples()
+        
+    
+    def http_selection_menu(self):
+        &#34;&#34;&#34;
+            Display menu and process user&#39;s input.  Call the proper method based
+            on the user&#39;s selection.
+        &#34;&#34;&#34;
+
+        while True:
+
+            # Just display the menu.
+            self.http_sample_menu.display_menu(self.menu_items)
+
+            # Get the user&#39;s choice.
+            choice = self.http_sample_menu.get_user_choice(self.menu_items)
+
+            if choice == 1:
+                print(&#34;\n*** Activate simple http server ***&#34;)
+                self.http_samples.simple_http_server() 
+            elif choice == 2:
+                print(&#34;\n*** Activate CRUD http server ***&#34;)
+                self.http_samples.crud_http_server() 
+            elif choice == len(self.menu_items):
+                break</code></pre>
 </details>
 </section>
 <section>
-<h2 class="section-title" id="header-submodules">Sub-modules</h2>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
 <dl>
-<dt><code class="name"><a title="code.apps.files" href="files.html">code.apps.files</a></code></dt>
+<dt id="code.packages.apps_menu_utilities.http_menu.HttpMenu"><code class="flex name class">
+<span>class <span class="ident">HttpMenu</span></span>
+</code></dt>
 <dd>
-<div class="desc"><p>Module files.py …</p></div>
-</dd>
-<dt><code class="name"><a title="code.apps.headlines_scraper" href="headlines_scraper.html">code.apps.headlines_scraper</a></code></dt>
+<div class="desc"><p>Initialize the class <code><a title="code.packages.apps_menu_utilities.http_menu.HttpMenu" href="#code.packages.apps_menu_utilities.http_menu.HttpMenu">HttpMenu</a></code> instance.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class HttpMenu:
+
+    def __init__(self):
+        &#39;&#39;&#39; Initialize the class `HttpMenu` instance. &#39;&#39;&#39;
+
+        # Define the entries of the string samples menu. 
+        self.menu_items = [&#34;Simple Http server&#34;, &#34;CRUD Http server&#34;, &#34;Quit&#34;]
+    
+        # Create the menu for the http samples.
+        self.http_sample_menu = _menu.ConsoleMenu(&#34;Http Menu&#34;)
+        
+        # Instantiate the sample class.
+        self.http_samples = HttpSamples()
+        
+    
+    def http_selection_menu(self):
+        &#34;&#34;&#34;
+            Display menu and process user&#39;s input.  Call the proper method based
+            on the user&#39;s selection.
+        &#34;&#34;&#34;
+
+        while True:
+
+            # Just display the menu.
+            self.http_sample_menu.display_menu(self.menu_items)
+
+            # Get the user&#39;s choice.
+            choice = self.http_sample_menu.get_user_choice(self.menu_items)
+
+            if choice == 1:
+                print(&#34;\n*** Activate simple http server ***&#34;)
+                self.http_samples.simple_http_server() 
+            elif choice == 2:
+                print(&#34;\n*** Activate CRUD http server ***&#34;)
+                self.http_samples.crud_http_server() 
+            elif choice == len(self.menu_items):
+                break</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="code.packages.apps_menu_utilities.http_menu.HttpMenu.http_selection_menu"><code class="name flex">
+<span>def <span class="ident">http_selection_menu</span></span>(<span>self)</span>
+</code></dt>
 <dd>
-<div class="desc"></div>
-</dd>
-<dt><code class="name"><a title="code.apps.http_samples" href="http_samples.html">code.apps.http_samples</a></code></dt>
-<dd>
-<div class="desc"><p>Module http_samples.py …</p></div>
-</dd>
-<dt><code class="name"><a title="code.apps.main" href="main.html">code.apps.main</a></code></dt>
-<dd>
-<div class="desc"><p>Module main.py</p></div>
-</dd>
-<dt><code class="name"><a title="code.apps.test_headlines_scraper" href="test_headlines_scraper.html">code.apps.test_headlines_scraper</a></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt><code class="name"><a title="code.apps.test_http_crud_server" href="test_http_crud_server.html">code.apps.test_http_crud_server</a></code></dt>
-<dd>
-<div class="desc"><p>Module test_http_crud_server.py …</p></div>
+<div class="desc"><p>Display menu and process user's input.
+Call the proper method based
+on the user's selection.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def http_selection_menu(self):
+    &#34;&#34;&#34;
+        Display menu and process user&#39;s input.  Call the proper method based
+        on the user&#39;s selection.
+    &#34;&#34;&#34;
+
+    while True:
+
+        # Just display the menu.
+        self.http_sample_menu.display_menu(self.menu_items)
+
+        # Get the user&#39;s choice.
+        choice = self.http_sample_menu.get_user_choice(self.menu_items)
+
+        if choice == 1:
+            print(&#34;\n*** Activate simple http server ***&#34;)
+            self.http_samples.simple_http_server() 
+        elif choice == 2:
+            print(&#34;\n*** Activate CRUD http server ***&#34;)
+            self.http_samples.crud_http_server() 
+        elif choice == len(self.menu_items):
+            break</code></pre>
+</details>
 </dd>
 </dl>
-</section>
-<section>
-</section>
-<section>
-</section>
-<section>
+</dd>
+</dl>
 </section>
 </article>
 <nav id="sidebar">
 <h1>Index</h1>
 <div class="toc">
-<ul>
-<li><a href="#last-update-012223">last update: 01/22/23</a></li>
-<li><a href="#apps">Apps</a><ul>
-<li><a href="#overview">Overview</a></li>
-</ul>
-</li>
-</ul>
+<ul></ul>
 </div>
 <ul id="index">
 <li><h3>Super-module</h3>
 <ul>
-<li><code><a title="code" href="../index.html">code</a></code></li>
+<li><code><a title="code.packages.apps_menu_utilities" href="index.html">code.packages.apps_menu_utilities</a></code></li>
 </ul>
 </li>
-<li><h3><a href="#header-submodules">Sub-modules</a></h3>
+<li><h3><a href="#header-classes">Classes</a></h3>
 <ul>
-<li><code><a title="code.apps.files" href="files.html">code.apps.files</a></code></li>
-<li><code><a title="code.apps.headlines_scraper" href="headlines_scraper.html">code.apps.headlines_scraper</a></code></li>
-<li><code><a title="code.apps.http_samples" href="http_samples.html">code.apps.http_samples</a></code></li>
-<li><code><a title="code.apps.main" href="main.html">code.apps.main</a></code></li>
-<li><code><a title="code.apps.test_headlines_scraper" href="test_headlines_scraper.html">code.apps.test_headlines_scraper</a></code></li>
-<li><code><a title="code.apps.test_http_crud_server" href="test_http_crud_server.html">code.apps.test_http_crud_server</a></code></li>
+<li>
+<h4><code><a title="code.packages.apps_menu_utilities.http_menu.HttpMenu" href="#code.packages.apps_menu_utilities.http_menu.HttpMenu">HttpMenu</a></code></h4>
+<ul class="">
+<li><code><a title="code.packages.apps_menu_utilities.http_menu.HttpMenu.http_selection_menu" href="#code.packages.apps_menu_utilities.http_menu.HttpMenu.http_selection_menu">http_selection_menu</a></code></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

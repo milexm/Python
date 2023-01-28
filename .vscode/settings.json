@@ -4,6 +4,7 @@
         "./code/packages",
         "./code/language_elements/lists",
         "./code/oldpackages",
-        "./code/builtin_types"
+        "./code/builtin_types",
+        "./code/apps"
     ]
 }

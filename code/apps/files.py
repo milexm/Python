@@ -1,5 +1,5 @@
 ''' 
-Module files.py.
+Module files.py
 
 Remarks
 ------
