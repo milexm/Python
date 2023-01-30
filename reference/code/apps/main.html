@@ -60,7 +60,7 @@ class GroupMenu:
         &#34;&#34;&#34; Initializes the `menu_items` attribute with the group menu items. Then it initiliazes the `group_menu` attribute with a `ConsoleMenu` instance. &#34;&#34;&#34;
 
         # Define the entries of the group menu. 
-        self.menu_items = [&#34;File&#34;, &#34;Http&#34;, &#34;Quit&#34;]
+        self.menu_items = [&#34;File&#34;, &#34;Http&#34;, &#34;Scrape headlines&#34;, &#34;Quit&#34;]
         
         # Instantiate the group menu class. 
         self.group_menu = _gmenu.ConsoleMenu(&#34;Apps Group Menu&#34;) 
@@ -81,16 +81,22 @@ class GroupMenu:
             choice = self.group_menu.get_user_choice(self.menu_items)
 
             if choice == 1:
-                # Instantiate the template_menu class.
+                # Instantiate the file menu class.
                 _fmenu = _menu.FileMenu()
-                # Display the string samples selection menu. 
+                # Display the samples selection menu. 
                 _fmenu.file_selection_menu()
 
-            if choice == 2:
-                # Instantiate the http_menu class.
+            elif choice == 2:
+                # Instantiate the http menu class.
                 _hmenu = _menu.HttpMenu()
-                # Display the string samples selection menu. 
+                # Display the samples selection menu. 
                 _hmenu.http_selection_menu()
+
+            elif choice == 3:
+                # Instantiate the headline scrape menu class.
+                _smenu = _menu.HeadlineScraperMenu()
+                # Display the samples selection menu. 
+                _smenu.h_scraper_selection_menu()
 
             elif choice == len(self.menu_items):
                 break
@@ -147,7 +153,7 @@ if __name__ == &#39;__main__&#39;:
         &#34;&#34;&#34; Initializes the `menu_items` attribute with the group menu items. Then it initiliazes the `group_menu` attribute with a `ConsoleMenu` instance. &#34;&#34;&#34;
 
         # Define the entries of the group menu. 
-        self.menu_items = [&#34;File&#34;, &#34;Http&#34;, &#34;Quit&#34;]
+        self.menu_items = [&#34;File&#34;, &#34;Http&#34;, &#34;Scrape headlines&#34;, &#34;Quit&#34;]
         
         # Instantiate the group menu class. 
         self.group_menu = _gmenu.ConsoleMenu(&#34;Apps Group Menu&#34;) 
@@ -168,16 +174,22 @@ if __name__ == &#39;__main__&#39;:
             choice = self.group_menu.get_user_choice(self.menu_items)
 
             if choice == 1:
-                # Instantiate the template_menu class.
+                # Instantiate the file menu class.
                 _fmenu = _menu.FileMenu()
-                # Display the string samples selection menu. 
+                # Display the samples selection menu. 
                 _fmenu.file_selection_menu()
 
-            if choice == 2:
-                # Instantiate the http_menu class.
+            elif choice == 2:
+                # Instantiate the http menu class.
                 _hmenu = _menu.HttpMenu()
-                # Display the string samples selection menu. 
+                # Display the samples selection menu. 
                 _hmenu.http_selection_menu()
+
+            elif choice == 3:
+                # Instantiate the headline scrape menu class.
+                _smenu = _menu.HeadlineScraperMenu()
+                # Display the samples selection menu. 
+                _smenu.h_scraper_selection_menu()
 
             elif choice == len(self.menu_items):
                 break</code></pre>
@@ -209,16 +221,22 @@ Calls the group selection menu based on the user's selection.</p></div>
         choice = self.group_menu.get_user_choice(self.menu_items)
 
         if choice == 1:
-            # Instantiate the template_menu class.
+            # Instantiate the file menu class.
             _fmenu = _menu.FileMenu()
-            # Display the string samples selection menu. 
+            # Display the samples selection menu. 
             _fmenu.file_selection_menu()
 
-        if choice == 2:
-            # Instantiate the http_menu class.
+        elif choice == 2:
+            # Instantiate the http menu class.
             _hmenu = _menu.HttpMenu()
-            # Display the string samples selection menu. 
+            # Display the samples selection menu. 
             _hmenu.http_selection_menu()
+
+        elif choice == 3:
+            # Instantiate the headline scrape menu class.
+            _smenu = _menu.HeadlineScraperMenu()
+            # Display the samples selection menu. 
+            _smenu.h_scraper_selection_menu()
 
         elif choice == len(self.menu_items):
             break</code></pre>
