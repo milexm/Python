@@ -1,7 +1,6 @@
 """ 
 Module main.py
 
-Remark
 -----
 
 
