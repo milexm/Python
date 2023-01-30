@@ -1,5 +1,5 @@
 ---
-last update: 01/13/23
+last update: 01/30/23
 ---
 
 # ![python-icon](media/icons/python-icon.svg) Python
@@ -12,7 +12,8 @@ Python interpreters are available for many operating systems. [CPython](https://
 
 Python is an interpreted high-level object-oriented dynamically-typed scripting language. Python interpreter reads one line of code at a time, interprets it into low level machine language (byte code) and then executes it. As a result, run time errors are usually encountered. For more information, see [Everything About Python  —  Beginner To Advanced](https://medium.com/fintechexplained/everything-about-python-from-beginner-to-advance-level-227d52ef32d2) article.  
 
-[![Monty Python](media/general/monty-python-video.png)](https://www.youtube.com/watch?v=imhrDrE4-mI "Monty Python")
+
+&nbsp! [![Monty Python](media/general/monty-python-video.png)](https://www.youtube.com/watch?v=imhrDrE4-mI "Monty Python")
 
 ## Refernces
 
