@@ -19,10 +19,10 @@ class HttpMenu:
     def __init__(self):
         ''' Initialize the class `HttpMenu` instance. '''
 
-        # Define the entries of the string samples menu. 
+        # Define the entries of the samples menu. 
         self.menu_items = ["Simple Http server", "CRUD Http server", "Quit"]
     
-        # Create the menu for the http samples.
+        # Create the menu for the samples.
         self.http_sample_menu = _menu.ConsoleMenu("Http Menu")
         
         # Instantiate the sample class.

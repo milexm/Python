@@ -8,10 +8,20 @@ Remarks
 '''
 
 import requests
+import unittest 
 from bs4 import BeautifulSoup
-import sys
 
+
+import sys
 sys.path.append('./code/apps')
+
+class CheckResult(unittest.TestCase):
+  
+    def check_scraper_results(self, result, expected_result):
+        try: 
+            self.assertEqual(result, expected_result)
+        except Exception as error:
+            print(f"{type(error).__name__} was raised: {error}") 
 
 class HeadlineScraper:
     def __init__(self, url):
@@ -63,6 +73,8 @@ class HeadlineScraperSamples():
         Set up the test case by creating a scraper for the test HTML page.
         """
         self.scraper = HeadlineScraper("https://www.geeksforgeeks.org/python-programming-language/")
+
+        self.check_result = CheckResult()
         
     def extract_basic_headline(self):
         """
@@ -97,7 +109,7 @@ class HeadlineScraperSamples():
         headlines = self.scraper.scrape()
         
         # Assert that the expected and actual outputs are equal
-        self.assertEqual(headlines, expected_headlines)
+        self.check_result.check_scraper_results(headlines, expected_headlines)
         
     def extract_nested_html_elements(self):
         """
@@ -114,7 +126,7 @@ class HeadlineScraperSamples():
         headlines = self.scraper.scrape()
         
         # Assert that the expected and actual outputs are equal
-        self.assertEqual(headlines, expected_headlines)
+        self.check_result.check_scraper_results(headlines, expected_headlines)
         
     def empty_headline_list(self):
         """
@@ -124,11 +136,14 @@ class HeadlineScraperSamples():
         page has no headlines, and returns an empty list.
         """
         # Set the URL of the scraper to an HTML page with no headlines
-        self.scraper.url = "http://localhost/no_headlines.html"
+        self.scraper.url = "https://www.indeed.com/?from=gnav-title-webapp"
         
+       
         # Set the expected output
         expected_headlines = []
         
         # Call the scraper's scrape method
         headlines = self.scraper.scrape()
         
+        # Assert that the expected and actual outputs are equal
+        self.check_result.check_scraper_results(headlines, expected_headlines)

@@ -31,7 +31,7 @@ class GroupMenu:
         """ Initializes the `menu_items` attribute with the group menu items. Then it initiliazes the `group_menu` attribute with a `ConsoleMenu` instance. """
 
         # Define the entries of the group menu. 
-        self.menu_items = ["File", "Http", "Quit"]
+        self.menu_items = ["File", "Http", "Scrape headlines", "Quit"]
         
         # Instantiate the group menu class. 
         self.group_menu = _gmenu.ConsoleMenu("Apps Group Menu") 
@@ -52,16 +52,22 @@ class GroupMenu:
             choice = self.group_menu.get_user_choice(self.menu_items)
 
             if choice == 1:
-                # Instantiate the template_menu class.
+                # Instantiate the file menu class.
                 _fmenu = _menu.FileMenu()
-                # Display the string samples selection menu. 
+                # Display the samples selection menu. 
                 _fmenu.file_selection_menu()
 
-            if choice == 2:
-                # Instantiate the http_menu class.
+            elif choice == 2:
+                # Instantiate the http menu class.
                 _hmenu = _menu.HttpMenu()
-                # Display the string samples selection menu. 
+                # Display the samples selection menu. 
                 _hmenu.http_selection_menu()
+
+            elif choice == 3:
+                # Instantiate the headline scrape menu class.
+                _smenu = _menu.HeadlineScraperMenu()
+                # Display the samples selection menu. 
+                _smenu.h_scraper_selection_menu()
 
             elif choice == len(self.menu_items):
                 break
