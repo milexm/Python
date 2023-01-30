@@ -15,7 +15,7 @@ Python is an interpreted high-level object-oriented dynamically-typed scripting 
 <!--- [![Monty Python](media/general/monty-python-video.png)](https://www.youtube.com/watch?v=imhrDrE4-mI "Monty Python") --->
 
 <p align="center">
- <a href="https://www.youtube.com/watch?v=imhrDrE4-mI"> <img alt="Monty Python" src="media/general/monty-python-video.png"/></a>
+ <a href="https://www.youtube.com/watch?v=imhrDrE4-mI" target="_blank"> <img alt="Monty Python" src="media/general/monty-python-video.png"/></a>
 </p>
 
 
