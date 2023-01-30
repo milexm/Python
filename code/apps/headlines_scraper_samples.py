@@ -1,7 +1,6 @@
 ''' 
 Module headlines_scraper_samples.py
 
-Remarks
 ------
 
 
