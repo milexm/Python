@@ -59,7 +59,9 @@ run:
 
 The first level menu is implemented by a `main.py` module contained in the
 specific area folder i.e., the folder that contains the module with the actual
-code examples. For this to work, `main.py` must import the supporting packages, such as
+code examples. For this to work, `main.py` must import the supporting packages,
+as shown in the following example, see [main.py](./builtin_types/main.py) which
+is contained in the `builtin_types` folder. 
 
 ```python
 
@@ -74,16 +76,15 @@ import console_menu_utilities as _gmenu
 
 In the previous code snippet, 
 
-- The `builtin_types_menu_utilities` package allows
-the selection of the class menu for each set of examples, This must be supported
-by the package `__init__-py` module. See related note in the second level menu
-section. 
+- The `builtin_types_menu_utilities` package allows the selection of the class
+menu for each set of examples, This must be supported by the package
+`__init__-py` module. See related note in the second level menu section.  
 - The package `console_menu_utilities`, allows the implementation of the group menu.
   
 
-> [!IMPORTANT] In the folder that contains `main.py`, you must include a
-> `__init__.py` `__init__.py` may include a README.md file that would be the
-> landing page for the folder itself and ist examples.  
+> [!IMPORTANT] To implement a package in a folder, you must define a
+`__init__.py` module, which can be empty. `__init__.py` may include a README.md
+> file that becomes the landing page for the folder itself and its examples.  
 > `__init__.py` allows the `import` directive to refer to the modules in the
 > folder. This for Python interpreter and for `pdoc` when generating the
 > reference documnetation. 
