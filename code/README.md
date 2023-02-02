@@ -42,17 +42,25 @@ files?](https://pdoc.dev/docs/pdoc.html#include-markdown-files).
 ## Running code examples
 
 The code examples are contained in the folder `Python/code` and grouped by areas
-in the relative foldera. For example:
+in the related foldera. For example:
 
-- `code/apps`. It contains the ready to run simple apps.
-- `code/builtin_types`. It contains ready to run examples showing the use of
-  built-in types. 
+- `code/apps`. Ready to run apps.
+- `code/builtin_types` Ready to run examples showing the use of built-in types. 
+
+These folders contain modules with examples ready to run. For example, the
+module `code/builtin_types/file_examples.py` contains file related examples. 
+
+Aong with these example folders, there are menu utilities used to create menus
+specifc to each example folder. For example:
+
+- `code/packages/apps_menu_utilities`. Menu to select app samples.
+- `code/packages/builtin_types_menu_utilities`. Menu to select builtin type samples. 
 
 For each area, a two level menus simplifies the selection of the examples to
 run:
 
 - The first level menu allows the selection of the group of examples.
-- The second level menu (sub-menu) allows the selecrion and the execution of the
+- The second level menu (sub-menu) allows the selection and the execution of the
   acual examples.
 
 ### First level menu
@@ -87,7 +95,7 @@ menu for each set of examples, This must be supported by the package
 > file that becomes the landing page for the folder itself and its examples.  
 > `__init__.py` allows the `import` directive to refer to the modules in the
 > folder. This for Python interpreter and for `pdoc` when generating the
-> reference documnetation. 
+> reference documentation. 
 >
 
 ### Second level menu
