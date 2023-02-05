@@ -1,5 +1,5 @@
 ''' 
-Module templates.py.
+Module template_samples.py.
 
 Remarks
 ------

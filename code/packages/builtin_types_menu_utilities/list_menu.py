@@ -5,7 +5,7 @@ Module list_menu.py
 
 import sys
 sys.path.append('./code/builtin_types')
-from lists import ListSamples
+from list_samples import ListSamples
 
 import sys
 sys.path.append('./code/console_menu_utilities')

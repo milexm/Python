@@ -10,7 +10,7 @@ Replace the name template(s) with your specific name.
 """  
 import sys
 sys.path.append('./code/builtin_types')
-from templates import TemplateSamples
+from template_samples import TemplateSamples
 
 import sys
 sys.path.append('./code/console_menu_utilities')

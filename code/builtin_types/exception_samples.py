@@ -1,5 +1,5 @@
 """ 
-Module errors.py
+Module exception_samples.py
 
 Remarks
 -------

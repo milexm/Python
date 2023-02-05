@@ -7,7 +7,7 @@ Module tuple_menu.py
 
 import sys
 sys.path.append('./code/builtin_types')
-from tuples import TupleSamples
+from tuple_samples import TupleSamples
 
 import sys
 sys.path.append('./code/console_menu_utilities')

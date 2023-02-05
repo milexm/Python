@@ -1,5 +1,5 @@
 """ 
-Module name: lists.py 
+Module list_samples.py 
 
 Remarks
 -------

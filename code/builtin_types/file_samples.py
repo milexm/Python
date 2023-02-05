@@ -1,5 +1,5 @@
 ''' 
-Module files.py.
+Module file_samples.py.
 
 Remarks
 ------

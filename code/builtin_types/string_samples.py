@@ -1,5 +1,5 @@
 """ 
-Module strings.py
+Module string_samples.py
 
 Remarks
 -------

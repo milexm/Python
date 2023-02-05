@@ -5,7 +5,7 @@ Module string_menu.py
 
 import sys
 sys.path.append('./code/builtin_types')
-from strings import StringSamples
+from string_samples import StringSamples
 
 import sys
 sys.path.append('./code/console_menu_utilities')

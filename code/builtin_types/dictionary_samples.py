@@ -1,5 +1,5 @@
 """ 
-Module dictionaries.py
+Module dictionary_sampples.py
 
 Remarks
 -------
