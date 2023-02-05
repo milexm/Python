@@ -58,23 +58,32 @@ include your project's README in your top-level <code>__init__.py</code> like th
 files?</a>.</p>
 <h2 id="running-code-examples">Running code examples</h2>
 <p>The code examples are contained in the folder <code>Python/code</code> and grouped by areas
-in the relative foldera. For example:</p>
+in the related foldera. For example:</p>
 <ul>
-<li><code>code/apps</code>. It contains the ready to run simple apps.</li>
-<li><code>code/builtin_types</code>. It contains ready to run examples showing the use of
-built-in types. </li>
+<li><code>code/apps</code>. Ready to run apps.</li>
+<li><code>code/builtin_types</code> Ready to run examples showing the use of built-in types. </li>
+</ul>
+<p>These folders contain modules with examples ready to run. For example, the
+module <code>code/builtin_types/file_examples.py</code> contains file related examples. </p>
+<p>Aong with these example folders, there are menu utilities used to create menus
+specifc to each example folder. For example:</p>
+<ul>
+<li><code>code/packages/apps_menu_utilities</code>. Menu to select app samples.</li>
+<li><code>code/packages/builtin_types_menu_utilities</code>. Menu to select builtin type samples. </li>
 </ul>
 <p>For each area, a two level menus simplifies the selection of the examples to
 run:</p>
 <ul>
 <li>The first level menu allows the selection of the group of examples.</li>
-<li>The second level menu (sub-menu) allows the selecrion and the execution of the
+<li>The second level menu (sub-menu) allows the selection and the execution of the
 acual examples.</li>
 </ul>
 <h3 id="first-level-menu">First level menu</h3>
 <p>The first level menu is implemented by a <code>main.py</code> module contained in the
 specific area folder i.e., the folder that contains the module with the actual
-code examples. For this to work, <code>main.py</code> must import the supporting packages, such as</p>
+code examples. For this to work, <code>main.py</code> must import the supporting packages,
+as shown in the following example, see <a href="./builtin_types/main.py">main.py</a> which
+is contained in the <code><a title="code.builtin_types" href="builtin_types/index.html">code.builtin_types</a></code> folder. </p>
 <pre><code class="language-python">
 # Append the path to the package modules location.  
 import sys
@@ -86,19 +95,19 @@ import console_menu_utilities as _gmenu
 </code></pre>
 <p>In the previous code snippet, </p>
 <ul>
-<li>The <code>builtin_types_menu_utilities</code> package allows
-the selection of the class menu for each set of examples, This must be supported
-by the package <code>__init__-py</code> module. See related note in the second level menu
-section. </li>
+<li>The <code>builtin_types_menu_utilities</code> package allows the selection of the class
+menu for each set of examples, This must be supported by the package
+<code>__init__-py</code> module. See related note in the second level menu section.
+</li>
 <li>The package <code>console_menu_utilities</code>, allows the implementation of the group menu.</li>
 </ul>
 <blockquote>
-<p>[!IMPORTANT] In the folder that contains <code>main.py</code>, you must include a
-<code>__init__.py</code> <code>__init__.py</code> may include a README.md file that would be the
-landing page for the folder itself and ist examples.<br>
+<p>[!IMPORTANT] To implement a package in a folder, you must define a
+<code>__init__.py</code> module, which can be empty. <code>__init__.py</code> may include a README.md
+file that becomes the landing page for the folder itself and its examples.<br>
 <code>__init__.py</code> allows the <code>import</code> directive to refer to the modules in the
 folder. This for Python interpreter and for <code>pdoc</code> when generating the
-reference documnetation.
+reference documentation.
 </p>
 </blockquote>
 <h3 id="second-level-menu">Second level menu</h3>
