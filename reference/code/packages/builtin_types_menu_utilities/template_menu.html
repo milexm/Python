@@ -44,9 +44,10 @@ import sys
 sys.path.append(&#39;./code/builtin_types&#39;)
 from template_samples import TemplateSamples
 
+# Import the ConsoleMenu class.
 import sys
-sys.path.append(&#39;./code/console_menu_utilities&#39;)
-import console_menu_utilities as _menu   
+sys.path.append(&#39;./code/packages/console_menu_utilities&#39;)
+from console_menu import ConsoleMenu
 
 
 class TemplateMenu:
@@ -80,7 +81,7 @@ class TemplateMenu:
         self.menu_items = [&#34;Selection a&#34;, &#34;Selection b&#34;, &#34;Selection c&#34;, &#34;Quit&#34;]
     
         # Create the menu for the template samples.
-        self.template_sample_menu = _menu.ConsoleMenu(&#34;Template Menu&#34;)
+        self.template_sample_menu = ConsoleMenu(&#34;Template Menu&#34;)
         
         # Instantiate the sample class.
         self.template_samples = TemplateSamples()
@@ -174,7 +175,7 @@ menu. </p>
         self.menu_items = [&#34;Selection a&#34;, &#34;Selection b&#34;, &#34;Selection c&#34;, &#34;Quit&#34;]
     
         # Create the menu for the template samples.
-        self.template_sample_menu = _menu.ConsoleMenu(&#34;Template Menu&#34;)
+        self.template_sample_menu = ConsoleMenu(&#34;Template Menu&#34;)
         
         # Instantiate the sample class.
         self.template_samples = TemplateSamples()

@@ -7,9 +7,10 @@ import sys
 sys.path.append('./code/builtin_types')
 from exception_samples import ExceptionSamples
 
+# Import the ConsoleMenu class.
 import sys
-sys.path.append('./code/console_menu_utilities')
-import console_menu_utilities as _menu   
+sys.path.append('./code/packages/console_menu_utilities')
+from console_menu import ConsoleMenu
 
 class ExceptionMenu:
 
@@ -43,7 +44,7 @@ class ExceptionMenu:
         self.menu_items = ["Type exception", "Name exception", "Attribute exception", "File not found exception", "EOF exception", "Quit"]
     
         # Create the menu for the template samples.
-        self.error_sample_menu = _menu.ConsoleMenu("Exception Menu")
+        self.error_sample_menu = ConsoleMenu("Exception Menu")
         
         # Instantiate the sample class.
         self.error_samples = ExceptionSamples()

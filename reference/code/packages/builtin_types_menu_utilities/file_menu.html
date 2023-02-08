@@ -32,16 +32,17 @@ Module template_menu.py
 
 &#34;&#34;&#34; 
 
+# Import the FileSamples class. 
 import sys
 sys.path.append(&#39;./code/builtin_types&#39;)
 from file_samples import FileSamples
 
+# Import the ConsoleMenu class.
 import sys
-sys.path.append(&#39;./code/console_menu_utilities&#39;)
-import console_menu_utilities as _menu   
+sys.path.append(&#39;./code/packages/console_menu_utilities&#39;)
+from console_menu import ConsoleMenu
 
-
-class FileMenu:
+class FileMenu(ConsoleMenu):
 
     &#34;&#34;&#34; 
     Instantiate the menu class and create the menu.
@@ -72,8 +73,9 @@ class FileMenu:
         self.menu_items = [&#34;Read a file&#34;, &#34;Write to a file&#34;, &#34;Find a file hash&#34;, &#34;Process image file&#34;, &#34;Process csv file&#34;, &#34;Quit&#34;]
     
         # Create the menu for the template samples.
-        self.file_sample_menu = _menu.ConsoleMenu(&#34;File Menu&#34;)
-        
+        # self.file_sample_menu = _menu.ConsoleMenu(&#34;File Menu&#34;)
+        self.file_sample_menu = ConsoleMenu(&#34;File Menu&#34;)
+
         # Instantiate the sample class.
         self.file_samples = FileSamples()
 
@@ -141,7 +143,7 @@ menu. </p>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">class FileMenu:
+<pre><code class="python">class FileMenu(ConsoleMenu):
 
     &#34;&#34;&#34; 
     Instantiate the menu class and create the menu.
@@ -172,8 +174,9 @@ menu. </p>
         self.menu_items = [&#34;Read a file&#34;, &#34;Write to a file&#34;, &#34;Find a file hash&#34;, &#34;Process image file&#34;, &#34;Process csv file&#34;, &#34;Quit&#34;]
     
         # Create the menu for the template samples.
-        self.file_sample_menu = _menu.ConsoleMenu(&#34;File Menu&#34;)
-        
+        # self.file_sample_menu = _menu.ConsoleMenu(&#34;File Menu&#34;)
+        self.file_sample_menu = ConsoleMenu(&#34;File Menu&#34;)
+
         # Instantiate the sample class.
         self.file_samples = FileSamples()
 
@@ -211,6 +214,10 @@ menu. </p>
             elif choice == len(self.menu_items):
                 break</code></pre>
 </details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>console_menu.ConsoleMenu</li>
+</ul>
 <h3>Methods</h3>
 <dl>
 <dt id="code.packages.builtin_types_menu_utilities.file_menu.FileMenu.file_selection_menu"><code class="name flex">

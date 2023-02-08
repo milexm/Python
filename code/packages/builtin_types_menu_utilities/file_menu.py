@@ -3,16 +3,17 @@ Module template_menu.py
 
 """ 
 
+# Import the FileSamples class. 
 import sys
 sys.path.append('./code/builtin_types')
 from file_samples import FileSamples
 
+# Import the ConsoleMenu class.
 import sys
-sys.path.append('./code/console_menu_utilities')
-import console_menu_utilities as _menu   
+sys.path.append('./code/packages/console_menu_utilities')
+from console_menu import ConsoleMenu
 
-
-class FileMenu:
+class FileMenu(ConsoleMenu):
 
     """ 
     Instantiate the menu class and create the menu.
@@ -43,8 +44,9 @@ class FileMenu:
         self.menu_items = ["Read a file", "Write to a file", "Find a file hash", "Process image file", "Process csv file", "Quit"]
     
         # Create the menu for the template samples.
-        self.file_sample_menu = _menu.ConsoleMenu("File Menu")
-        
+        # self.file_sample_menu = _menu.ConsoleMenu("File Menu")
+        self.file_sample_menu = ConsoleMenu("File Menu")
+
         # Instantiate the sample class.
         self.file_samples = FileSamples()
 

@@ -7,9 +7,10 @@ import sys
 sys.path.append('./code/builtin_types')
 from string_samples import StringSamples
 
+# Import the ConsoleMenu class.
 import sys
-sys.path.append('./code/console_menu_utilities')
-import console_menu_utilities as _menu   
+sys.path.append('./code/packages/console_menu_utilities')
+from console_menu import ConsoleMenu
 
 class StringMenu:
 
@@ -32,16 +33,6 @@ class StringMenu:
   
     """
 
-    menu_items : list 
-    """ List of strings representing the options in the menu. """
-
-    string_sample_menu : _menu.ConsoleMenu
-    """ An instance of the class `ConsoleMenu`, from the `console_menu` module, used to display the menu and get user input. """
-
-    dict_samples : StringSamples
-    """ An instance of the class `StringSamples`, from the `strings` module, which contains the actual dictionary-related samples that can be run. """
-
-
     def __init__(self):
         """ Initialize the class `string_menu` instance. """
 
@@ -49,7 +40,7 @@ class StringMenu:
         self.menu_items = ["Create a string", "Get a substring", "Remove white spaces", "Make lower case", "Make upper case", "Split string", "Quit"]
     
         # Create the menu for the string samples.
-        self.string_sample_menu = _menu.ConsoleMenu("String Menu")
+        self.string_sample_menu = ConsoleMenu("String Menu")
 
         # Instantiate the string sample class
         self.string_samples = StringSamples()

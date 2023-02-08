@@ -5,9 +5,15 @@ Module main.py
 # Append the path to the package modules location.  
 import sys
 sys.path.append('./code/packages') 
-
+# Import the menu classes ffrom the  
+# builtin_types_menu_utilities package.
 import builtin_types_menu_utilities as _menu  
-import console_menu_utilities as _gmenu   
+
+# Import the ConsoleMenu class.
+import sys
+sys.path.append('./code/packages/console_menu_utilities')
+from console_menu import ConsoleMenu
+
 
 class GroupMenu:
 
@@ -32,9 +38,8 @@ class GroupMenu:
         # Define the entries of the group menu. 
         self.menu_items = ["Lists", "Tuples", "Dictionaries", "Strings", "Exceptions", "Files", "Templates", "Quit"]
         
-        # Instantiate the group menu class. 
-        self.group_menu = _gmenu.ConsoleMenu("Builtin Types Group Menu")
-
+        # Instantiate the ConsoleMenu class. 
+        self.menu = ConsoleMenu("Builtin Types Group Menu")
 
     def group_selection_menu(self):
         """
@@ -45,10 +50,10 @@ class GroupMenu:
         while True:
 
             # Display the menu.
-            self.group_menu.display_menu(self.menu_items)
+            self.menu.display_menu(self.menu_items)
 
             # Get the user's choice.
-            choice = self.group_menu.get_user_choice(self.menu_items)
+            choice = self.menu.get_user_choice(self.menu_items)
 
             if choice == 1:
                 # Instantiate the list_menu class.

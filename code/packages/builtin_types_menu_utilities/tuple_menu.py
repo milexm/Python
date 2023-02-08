@@ -9,9 +9,10 @@ import sys
 sys.path.append('./code/builtin_types')
 from tuple_samples import TupleSamples
 
+# Import the ConsoleMenu class.
 import sys
-sys.path.append('./code/console_menu_utilities')
-import console_menu_utilities as _menu   
+sys.path.append('./code/packages/console_menu_utilities')
+from console_menu import ConsoleMenu
 
 
 class TupleMenu:
@@ -35,16 +36,6 @@ class TupleMenu:
     1. `amenu.tuple_selection_menu()` # Display the selection menu. 
   
     """
-    
-    menu_items : list 
-    """ List of strings representing the options in the menu. """
-
-    tuple_sample_menu : _menu.ConsoleMenu
-    """ An instance of the class `ConsoleMenu`, from the `console_menu` module, used to display the menu and get user input. """
-
-    tuple_samples : TupleSamples
-    """ An instance of the class `TupleSamples`, from the `tuples` module, which contains the actual tuple-related samples that can be run. """
-
 
     def __init__(self):
         """ Initializes the `menu_items` attribute with the tuple menu items. Then it initiliazes the `tuple_sample_menu` attribute with a `ConsoleMenu` instance and the `tuple_samples` attribute with a `TupleSamples` instance."""
@@ -54,7 +45,7 @@ class TupleMenu:
         self.menu_items = ["Create a tuple", "Modify a tuple error", "Access a tuple", "Unpack a tuple", "Tuple odds and ends", "Quit"]
     
         # Create the menu for the tuple samples.
-        self.tuple_sample_menu = _menu.ConsoleMenu("Tuple Menu")
+        self.tuple_sample_menu = ConsoleMenu("Tuple Menu")
         
         # Instantiate the sample class.
         self.tuple_samples = TupleSamples()

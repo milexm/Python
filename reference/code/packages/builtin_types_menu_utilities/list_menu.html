@@ -36,9 +36,10 @@ import sys
 sys.path.append(&#39;./code/builtin_types&#39;)
 from list_samples import ListSamples
 
+# Import the ConsoleMenu class.
 import sys
-sys.path.append(&#39;./code/console_menu_utilities&#39;)
-import console_menu_utilities as _menu   
+sys.path.append(&#39;./code/packages/console_menu_utilities&#39;)
+from console_menu import ConsoleMenu 
 
 class ListMenu:
 
@@ -69,7 +70,7 @@ class ListMenu:
         &#34;Change list elements&#34;, &#34;Add element to a list&#34;, &#34;Slice a list&#34;, &#34;Apply list methods&#34;, &#34;Use a list as a stack&#34;, &#34;Use a list as a queue&#34;, &#34;Use list comprehension&#34;, &#34;Quit&#34;]
     
         # Create the menu for the list samples.
-        self.list_sample_menu = _menu.ConsoleMenu(&#34;List Menu&#34;)
+        self.list_sample_menu = ConsoleMenu(&#34;List Menu&#34;)
 
         # Instantiate the list samples class. 
         self.list_samples = ListSamples()
@@ -209,7 +210,7 @@ menu. </li>
         &#34;Change list elements&#34;, &#34;Add element to a list&#34;, &#34;Slice a list&#34;, &#34;Apply list methods&#34;, &#34;Use a list as a stack&#34;, &#34;Use a list as a queue&#34;, &#34;Use list comprehension&#34;, &#34;Quit&#34;]
     
         # Create the menu for the list samples.
-        self.list_sample_menu = _menu.ConsoleMenu(&#34;List Menu&#34;)
+        self.list_sample_menu = ConsoleMenu(&#34;List Menu&#34;)
 
         # Instantiate the list samples class. 
         self.list_samples = ListSamples()

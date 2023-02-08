@@ -7,9 +7,10 @@ import sys
 sys.path.append('./code/builtin_types')
 from dictionary_samples import DictionarySamples
 
+# Import the ConsoleMenu class.
 import sys
-sys.path.append('./code/console_menu_utilities')
-import console_menu_utilities as _menu   
+sys.path.append('./code/packages/console_menu_utilities')
+from console_menu import ConsoleMenu
 
 
 class DictionaryMenu:
@@ -41,7 +42,7 @@ class DictionaryMenu:
         self.menu_items = ["Create a simple dictionary", "Get dictionary element value", "Print formatted dictionary", "Filter dictionary", "Get value in a multilevel dictionary", "Iterate through a dictionary", "Quit"]
 
         # Create the menu for the dictionary samples. 
-        self.dict_sample_menu = _menu.ConsoleMenu("Dictionary Menu")
+        self.dict_sample_menu = ConsoleMenu("Dictionary Menu")
         
         # Instantiate the dictionery samples class. 
         self.dict_samples = DictionarySamples()

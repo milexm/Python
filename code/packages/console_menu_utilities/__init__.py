@@ -5,5 +5,3 @@ the Python interpreter as part of one package only: "packages".
 
 __init__.py might contain initialization statements. It does not contain any in this case. 
 """
-
-from .console_menu import ConsoleMenu

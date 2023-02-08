@@ -36,9 +36,10 @@ import sys
 sys.path.append(&#39;./code/builtin_types&#39;)
 from string_samples import StringSamples
 
+# Import the ConsoleMenu class.
 import sys
-sys.path.append(&#39;./code/console_menu_utilities&#39;)
-import console_menu_utilities as _menu   
+sys.path.append(&#39;./code/packages/console_menu_utilities&#39;)
+from console_menu import ConsoleMenu
 
 class StringMenu:
 
@@ -61,16 +62,6 @@ class StringMenu:
   
     &#34;&#34;&#34;
 
-    menu_items : list 
-    &#34;&#34;&#34; List of strings representing the options in the menu. &#34;&#34;&#34;
-
-    string_sample_menu : _menu.ConsoleMenu
-    &#34;&#34;&#34; An instance of the class `ConsoleMenu`, from the `console_menu` module, used to display the menu and get user input. &#34;&#34;&#34;
-
-    dict_samples : StringSamples
-    &#34;&#34;&#34; An instance of the class `StringSamples`, from the `strings` module, which contains the actual dictionary-related samples that can be run. &#34;&#34;&#34;
-
-
     def __init__(self):
         &#34;&#34;&#34; Initialize the class `string_menu` instance. &#34;&#34;&#34;
 
@@ -78,7 +69,7 @@ class StringMenu:
         self.menu_items = [&#34;Create a string&#34;, &#34;Get a substring&#34;, &#34;Remove white spaces&#34;, &#34;Make lower case&#34;, &#34;Make upper case&#34;, &#34;Split string&#34;, &#34;Quit&#34;]
     
         # Create the menu for the string samples.
-        self.string_sample_menu = _menu.ConsoleMenu(&#34;String Menu&#34;)
+        self.string_sample_menu = ConsoleMenu(&#34;String Menu&#34;)
 
         # Instantiate the string sample class
         self.string_samples = StringSamples()
@@ -176,16 +167,6 @@ class StringMenu:
   
     &#34;&#34;&#34;
 
-    menu_items : list 
-    &#34;&#34;&#34; List of strings representing the options in the menu. &#34;&#34;&#34;
-
-    string_sample_menu : _menu.ConsoleMenu
-    &#34;&#34;&#34; An instance of the class `ConsoleMenu`, from the `console_menu` module, used to display the menu and get user input. &#34;&#34;&#34;
-
-    dict_samples : StringSamples
-    &#34;&#34;&#34; An instance of the class `StringSamples`, from the `strings` module, which contains the actual dictionary-related samples that can be run. &#34;&#34;&#34;
-
-
     def __init__(self):
         &#34;&#34;&#34; Initialize the class `string_menu` instance. &#34;&#34;&#34;
 
@@ -193,7 +174,7 @@ class StringMenu:
         self.menu_items = [&#34;Create a string&#34;, &#34;Get a substring&#34;, &#34;Remove white spaces&#34;, &#34;Make lower case&#34;, &#34;Make upper case&#34;, &#34;Split string&#34;, &#34;Quit&#34;]
     
         # Create the menu for the string samples.
-        self.string_sample_menu = _menu.ConsoleMenu(&#34;String Menu&#34;)
+        self.string_sample_menu = ConsoleMenu(&#34;String Menu&#34;)
 
         # Instantiate the string sample class
         self.string_samples = StringSamples()
@@ -241,21 +222,6 @@ class StringMenu:
             elif choice == len(self.menu_items):
                 break</code></pre>
 </details>
-<h3>Class variables</h3>
-<dl>
-<dt id="code.packages.builtin_types_menu_utilities.string_menu.StringMenu.dict_samples"><code class="name">var <span class="ident">dict_samples</span> : string_samples.StringSamples</code></dt>
-<dd>
-<div class="desc"><p>An instance of the class <code>StringSamples</code>, from the <code>strings</code> module, which contains the actual dictionary-related samples that can be run.</p></div>
-</dd>
-<dt id="code.packages.builtin_types_menu_utilities.string_menu.StringMenu.menu_items"><code class="name">var <span class="ident">menu_items</span> : list</code></dt>
-<dd>
-<div class="desc"><p>List of strings representing the options in the menu.</p></div>
-</dd>
-<dt id="code.packages.builtin_types_menu_utilities.string_menu.StringMenu.string_sample_menu"><code class="name">var <span class="ident">string_sample_menu</span> : console_menu_utilities.console_menu.ConsoleMenu</code></dt>
-<dd>
-<div class="desc"><p>An instance of the class <code>ConsoleMenu</code>, from the <code>console_menu</code> module, used to display the menu and get user input.</p></div>
-</dd>
-</dl>
 <h3>Methods</h3>
 <dl>
 <dt id="code.packages.builtin_types_menu_utilities.string_menu.StringMenu.string_selection_menu"><code class="name flex">
@@ -333,9 +299,6 @@ on the user's selection.</p></div>
 <li>
 <h4><code><a title="code.packages.builtin_types_menu_utilities.string_menu.StringMenu" href="#code.packages.builtin_types_menu_utilities.string_menu.StringMenu">StringMenu</a></code></h4>
 <ul class="">
-<li><code><a title="code.packages.builtin_types_menu_utilities.string_menu.StringMenu.dict_samples" href="#code.packages.builtin_types_menu_utilities.string_menu.StringMenu.dict_samples">dict_samples</a></code></li>
-<li><code><a title="code.packages.builtin_types_menu_utilities.string_menu.StringMenu.menu_items" href="#code.packages.builtin_types_menu_utilities.string_menu.StringMenu.menu_items">menu_items</a></code></li>
-<li><code><a title="code.packages.builtin_types_menu_utilities.string_menu.StringMenu.string_sample_menu" href="#code.packages.builtin_types_menu_utilities.string_menu.StringMenu.string_sample_menu">string_sample_menu</a></code></li>
 <li><code><a title="code.packages.builtin_types_menu_utilities.string_menu.StringMenu.string_selection_menu" href="#code.packages.builtin_types_menu_utilities.string_menu.StringMenu.string_selection_menu">string_selection_menu</a></code></li>
 </ul>
 </li>

@@ -38,9 +38,10 @@ import sys
 sys.path.append(&#39;./code/builtin_types&#39;)
 from tuple_samples import TupleSamples
 
+# Import the ConsoleMenu class.
 import sys
-sys.path.append(&#39;./code/console_menu_utilities&#39;)
-import console_menu_utilities as _menu   
+sys.path.append(&#39;./code/packages/console_menu_utilities&#39;)
+from console_menu import ConsoleMenu
 
 
 class TupleMenu:
@@ -64,16 +65,6 @@ class TupleMenu:
     1. `amenu.tuple_selection_menu()` # Display the selection menu. 
   
     &#34;&#34;&#34;
-    
-    menu_items : list 
-    &#34;&#34;&#34; List of strings representing the options in the menu. &#34;&#34;&#34;
-
-    tuple_sample_menu : _menu.ConsoleMenu
-    &#34;&#34;&#34; An instance of the class `ConsoleMenu`, from the `console_menu` module, used to display the menu and get user input. &#34;&#34;&#34;
-
-    tuple_samples : TupleSamples
-    &#34;&#34;&#34; An instance of the class `TupleSamples`, from the `tuples` module, which contains the actual tuple-related samples that can be run. &#34;&#34;&#34;
-
 
     def __init__(self):
         &#34;&#34;&#34; Initializes the `menu_items` attribute with the tuple menu items. Then it initiliazes the `tuple_sample_menu` attribute with a `ConsoleMenu` instance and the `tuple_samples` attribute with a `TupleSamples` instance.&#34;&#34;&#34;
@@ -83,7 +74,7 @@ class TupleMenu:
         self.menu_items = [&#34;Create a tuple&#34;, &#34;Modify a tuple error&#34;, &#34;Access a tuple&#34;, &#34;Unpack a tuple&#34;, &#34;Tuple odds and ends&#34;, &#34;Quit&#34;]
     
         # Create the menu for the tuple samples.
-        self.tuple_sample_menu = _menu.ConsoleMenu(&#34;Tuple Menu&#34;)
+        self.tuple_sample_menu = ConsoleMenu(&#34;Tuple Menu&#34;)
         
         # Instantiate the sample class.
         self.tuple_samples = TupleSamples()
@@ -176,16 +167,6 @@ class TupleMenu:
     1. `amenu.tuple_selection_menu()` # Display the selection menu. 
   
     &#34;&#34;&#34;
-    
-    menu_items : list 
-    &#34;&#34;&#34; List of strings representing the options in the menu. &#34;&#34;&#34;
-
-    tuple_sample_menu : _menu.ConsoleMenu
-    &#34;&#34;&#34; An instance of the class `ConsoleMenu`, from the `console_menu` module, used to display the menu and get user input. &#34;&#34;&#34;
-
-    tuple_samples : TupleSamples
-    &#34;&#34;&#34; An instance of the class `TupleSamples`, from the `tuples` module, which contains the actual tuple-related samples that can be run. &#34;&#34;&#34;
-
 
     def __init__(self):
         &#34;&#34;&#34; Initializes the `menu_items` attribute with the tuple menu items. Then it initiliazes the `tuple_sample_menu` attribute with a `ConsoleMenu` instance and the `tuple_samples` attribute with a `TupleSamples` instance.&#34;&#34;&#34;
@@ -195,7 +176,7 @@ class TupleMenu:
         self.menu_items = [&#34;Create a tuple&#34;, &#34;Modify a tuple error&#34;, &#34;Access a tuple&#34;, &#34;Unpack a tuple&#34;, &#34;Tuple odds and ends&#34;, &#34;Quit&#34;]
     
         # Create the menu for the tuple samples.
-        self.tuple_sample_menu = _menu.ConsoleMenu(&#34;Tuple Menu&#34;)
+        self.tuple_sample_menu = ConsoleMenu(&#34;Tuple Menu&#34;)
         
         # Instantiate the sample class.
         self.tuple_samples = TupleSamples()
@@ -238,21 +219,6 @@ class TupleMenu:
             elif choice == len(self.menu_items):
                 break</code></pre>
 </details>
-<h3>Class variables</h3>
-<dl>
-<dt id="code.packages.builtin_types_menu_utilities.tuple_menu.TupleMenu.menu_items"><code class="name">var <span class="ident">menu_items</span> : list</code></dt>
-<dd>
-<div class="desc"><p>List of strings representing the options in the menu.</p></div>
-</dd>
-<dt id="code.packages.builtin_types_menu_utilities.tuple_menu.TupleMenu.tuple_sample_menu"><code class="name">var <span class="ident">tuple_sample_menu</span> : console_menu_utilities.console_menu.ConsoleMenu</code></dt>
-<dd>
-<div class="desc"><p>An instance of the class <code>ConsoleMenu</code>, from the <code>console_menu</code> module, used to display the menu and get user input.</p></div>
-</dd>
-<dt id="code.packages.builtin_types_menu_utilities.tuple_menu.TupleMenu.tuple_samples"><code class="name">var <span class="ident">tuple_samples</span> : tuple_samples.TupleSamples</code></dt>
-<dd>
-<div class="desc"><p>An instance of the class <code>TupleSamples</code>, from the <code>tuples</code> module, which contains the actual tuple-related samples that can be run.</p></div>
-</dd>
-</dl>
 <h3>Methods</h3>
 <dl>
 <dt id="code.packages.builtin_types_menu_utilities.tuple_menu.TupleMenu.tuple_selection_menu"><code class="name flex">
@@ -324,9 +290,6 @@ Calls the proper method based on the user's selection.</p></div>
 <li>
 <h4><code><a title="code.packages.builtin_types_menu_utilities.tuple_menu.TupleMenu" href="#code.packages.builtin_types_menu_utilities.tuple_menu.TupleMenu">TupleMenu</a></code></h4>
 <ul class="">
-<li><code><a title="code.packages.builtin_types_menu_utilities.tuple_menu.TupleMenu.menu_items" href="#code.packages.builtin_types_menu_utilities.tuple_menu.TupleMenu.menu_items">menu_items</a></code></li>
-<li><code><a title="code.packages.builtin_types_menu_utilities.tuple_menu.TupleMenu.tuple_sample_menu" href="#code.packages.builtin_types_menu_utilities.tuple_menu.TupleMenu.tuple_sample_menu">tuple_sample_menu</a></code></li>
-<li><code><a title="code.packages.builtin_types_menu_utilities.tuple_menu.TupleMenu.tuple_samples" href="#code.packages.builtin_types_menu_utilities.tuple_menu.TupleMenu.tuple_samples">tuple_samples</a></code></li>
 <li><code><a title="code.packages.builtin_types_menu_utilities.tuple_menu.TupleMenu.tuple_selection_menu" href="#code.packages.builtin_types_menu_utilities.tuple_menu.TupleMenu.tuple_selection_menu">tuple_selection_menu</a></code></li>
 </ul>
 </li>

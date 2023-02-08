@@ -5,6 +5,7 @@
         "./code/language_elements/lists",
         "./code/oldpackages",
         "./code/builtin_types",
-        "./code/apps"
+        "./code/apps",
+        "./code/packages/console_menu_utilities"
     ]
 }
