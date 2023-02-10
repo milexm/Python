@@ -21,7 +21,7 @@ class ConsoleMenu:
 
     """
 
-    def __init__(self, name:str):
+    def __init__(self, name:str, menu:list):
         """ Iitialize the class instance.
         
         Parameters
@@ -31,6 +31,7 @@ class ConsoleMenu:
 
         """
         self.menu_name = name
+        self.menu_options = menu
    
     def input_number(self, prompt):
         """ 
@@ -95,4 +96,55 @@ class ConsoleMenu:
         choice = 0
         while not(np.any(choice == np.arange(len(options))+1)):
             choice = self.input_number("\nMake allowed selection number; " + str(len(options)) +  " to quit: ")
+        return choice
+
+
+    def display_menu(self):
+        """ 
+        Display the menu of options the user can choose from. 
+        
+        Parameters
+        ----------
+        options: 
+            List of strings representing the menu elements. 
+
+        """
+        # Display menu name. 
+        print(f"\n*** {self.menu_name} ***") 
+
+        # Display the menu options.
+        for i in range(len(self.menu_options)):
+            # Display 2 menu items on the same line 
+            if ((i+1)%2!=0):
+                # Calculate the blank space to add to the right of a menu
+                # item for allignment. 
+                right_padding = " " * (16 - len(self.menu_options[i]))
+
+                # Display 3 menu items on the same line 
+                print("{:d}.{:s}".format(i+1, self.menu_options[i] + right_padding), 
+                    end=' ')
+            else:
+                print("{:d}.{:s}".format(i+1, self.menu_options[i]))
+                
+
+    def get_user_choice(self):
+        """ 
+        Prompt the user to input a number from the allowed choices. 
+        Get the choice made by the user.
+        
+        Parameters
+        ----------
+        options: 
+            List of strings representing the menu elements. 
+
+        Returns
+        -------
+        choice: int 
+            The number indicating the user's choice. 
+
+        """
+        # Get a valid menu choice
+        choice = 0
+        while not(np.any(choice == np.arange(len(self.menu_options))+1)):
+            choice = self.input_number("\nMake allowed selection number; " + str(len(self.menu_options)) +  " to quit: ")
         return choice

@@ -12,7 +12,7 @@ import sys
 sys.path.append('./code/packages/console_menu_utilities')
 from console_menu import ConsoleMenu 
 
-class ListMenu:
+class ListMenu(ConsoleMenu):
 
     """ 
     The class `ListMenu` creates a menu for interacting with a collection of list-related samples. The `ListMenu` class has an instance method `list_selection_menu` that displays a menu of available samples and allows the user to select a sample to execute.
@@ -39,9 +39,9 @@ class ListMenu:
         self.menu_items = ["Index a list", "Slice a list", "Create a list", "Create a list in a range", "Create a string list in a range", 
         "Remove duplicated list elements", "Perform list indexing",
         "Change list elements", "Add element to a list", "Slice a list", "Apply list methods", "Use a list as a stack", "Use a list as a queue", "Use list comprehension", "Quit"]
-    
-        # Create the menu for the list samples.
-        self.list_sample_menu = ConsoleMenu("List Menu")
+
+        # Initialize menu name and options through the parent class.  
+        super().__init__("List Menu", self.menu_items)
 
         # Instantiate the list samples class. 
         self.list_samples = ListSamples()
@@ -56,10 +56,10 @@ class ListMenu:
         while True:
 
             # Display the menu.
-            self.list_sample_menu.display_menu(self.menu_items) 
+            self.display_menu() 
 
             # Get the user's choice.
-            choice = self.list_sample_menu.get_user_choice(self.menu_items)
+            choice = self.get_user_choice()
 
             if  choice == 1:
                 print("\n*** Index a list ***")

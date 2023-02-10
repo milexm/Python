@@ -43,9 +43,8 @@ class FileMenu(ConsoleMenu):
         # Define the entries of the file samples menu. 
         self.menu_items = ["Read a file", "Write to a file", "Find a file hash", "Process image file", "Process csv file", "Quit"]
     
-        # Create the menu for the template samples.
-        # self.file_sample_menu = _menu.ConsoleMenu("File Menu")
-        self.file_sample_menu = ConsoleMenu("File Menu")
+        # Initialize menu name and options through the parent class.  
+        super().__init__("File Menu", self.menu_items)
 
         # Instantiate the sample class.
         self.file_samples = FileSamples()
@@ -59,12 +58,17 @@ class FileMenu(ConsoleMenu):
 
         while True:
 
-            # Just display the menu.
-            self.file_sample_menu.display_menu(self.menu_items)
+            # Display the menu.
+            # self.display_menu(self.menu_items)
 
             # Get the user's choice.
-            choice = self.file_sample_menu.get_user_choice(self.menu_items)
+            # choice = self.get_user_choice(self.menu_items)
 
+             # Display the menu.
+            self.display_menu()
+
+            # Get the user's choice.
+            choice = self.get_user_choice()
 
             if choice == 1:
                 print("\n*** Read a file ***")
