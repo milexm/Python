@@ -11,21 +11,22 @@ import sys
 sys.path.append('./code/apps')
 from headlines_scraper_samples import HeadlineScraperSamples 
 
+# Import the ConsoleMenu class.
 import sys
-sys.path.append('./code/console_menu_utilities')
-import console_menu_utilities as _menu   
+sys.path.append('./code/packages/console_menu_utilities')
+from console_menu import ConsoleMenu
 
-
-class HeadlineScraperMenu:
+class HeadlineScraperMenu(ConsoleMenu):
 
     def __init__(self):
         ''' Initialize the class `HttpMenu` instance. '''
 
         # Define the entries of the samples menu. 
         self.menu_items = ["Basic headline", "Multiple headlines", "Nested html elements", "Empty headlines", "Quit"]
-    
-        # Create the menu for the samples.
-        self.hs_samples_menu = _menu.ConsoleMenu("Headline Scraper Menu")
+
+        # Initialize menu name and options through the parent class.  
+        super().__init__("Headline Scraper Menu", self.menu_items)
+        
         
         # Instantiate the sample class.
         self.h_scraper_samples = HeadlineScraperSamples()
@@ -40,10 +41,10 @@ class HeadlineScraperMenu:
         while True:
 
             # Just display the menu.
-            self.hs_samples_menu.display_menu(self.menu_items)
+            self.display_menu()
 
             # Get the user's choice.
-            choice = self.hs_samples_menu.get_user_choice(self.menu_items)
+            choice = self.get_user_choice()
 
             if choice == 1:
                 print("\n*** Extract basic headline ***")

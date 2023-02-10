@@ -11,7 +11,5 @@ by the Python interpreter as part of one package only called `apps_menu_utilitie
 """
 
 # Perform package wide initializations.
-
-from .file_menu import FileMenu 
 from .http_menu import HttpMenu 
 from .headline_scraper_menu import HeadlineScraperMenu

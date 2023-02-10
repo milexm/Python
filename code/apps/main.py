@@ -11,10 +11,14 @@ import sys
 sys.path.append('./code/packages') 
 
 import apps_menu_utilities as _menu  
-import console_menu_utilities as _gmenu   
+
+# Import the ConsoleMenu class.
+import sys
+sys.path.append('./code/packages/console_menu_utilities')
+from console_menu import ConsoleMenu
 
 
-class GroupMenu:
+class GroupMenu(ConsoleMenu):
 
     """ 
     The `GroupMenu` class allows the user to select a group of examples to execute. It initializes the instance of the class by defining a list of menu items. It also instantiates an instance of the `ConsoleMenu` class called group_menu.
@@ -35,10 +39,10 @@ class GroupMenu:
         """ Initializes the `menu_items` attribute with the group menu items. Then it initiliazes the `group_menu` attribute with a `ConsoleMenu` instance. """
 
         # Define the entries of the group menu. 
-        self.menu_items = ["File", "Http", "Scrape headlines", "Quit"]
-        
-        # Instantiate the group menu class. 
-        self.group_menu = _gmenu.ConsoleMenu("Apps Group Menu") 
+        self.menu_items = ["Http", "Scrape headlines", "Quit"]
+      
+        # Initialize menu name and options through the parent class.  
+        super().__init__("Apps Group Menu", self.menu_items)
 
 
     def group_selection_menu(self):
@@ -50,24 +54,18 @@ class GroupMenu:
         while True:
 
             # Display the menu.
-            self.group_menu.display_menu(self.menu_items)
+            self.display_menu()
 
             # Get the user's choice.
-            choice = self.group_menu.get_user_choice(self.menu_items)
+            choice = self.get_user_choice()
 
             if choice == 1:
-                # Instantiate the file menu class.
-                _fmenu = _menu.FileMenu()
-                # Display the samples selection menu. 
-                _fmenu.file_selection_menu()
-
-            elif choice == 2:
                 # Instantiate the http menu class.
                 _hmenu = _menu.HttpMenu()
                 # Display the samples selection menu. 
                 _hmenu.http_selection_menu()
 
-            elif choice == 3:
+            elif choice == 2:
                 # Instantiate the headline scrape menu class.
                 _smenu = _menu.HeadlineScraperMenu()
                 # Display the samples selection menu. 

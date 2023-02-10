@@ -9,21 +9,21 @@ import sys
 sys.path.append('./code/apps')
 from http_samples import HttpSamples 
 
+# Import the ConsoleMenu class.
 import sys
-sys.path.append('./code/console_menu_utilities')
-import console_menu_utilities as _menu   
+sys.path.append('./code/packages/console_menu_utilities')
+from console_menu import ConsoleMenu
 
-
-class HttpMenu:
+class HttpMenu(ConsoleMenu):
 
     def __init__(self):
         ''' Initialize the class `HttpMenu` instance. '''
 
         # Define the entries of the samples menu. 
         self.menu_items = ["Simple Http server", "CRUD Http server", "Quit"]
-    
-        # Create the menu for the samples.
-        self.http_sample_menu = _menu.ConsoleMenu("Http Menu")
+              
+        # Initialize menu name and options through the parent class.  
+        super().__init__("Http Menu", self.menu_items)
         
         # Instantiate the sample class.
         self.http_samples = HttpSamples()
@@ -38,10 +38,10 @@ class HttpMenu:
         while True:
 
             # Just display the menu.
-            self.http_sample_menu.display_menu(self.menu_items)
+            self.display_menu()
 
             # Get the user's choice.
-            choice = self.http_sample_menu.get_user_choice(self.menu_items)
+            choice = self.get_user_choice()
 
             if choice == 1:
                 print("\n*** Activate simple http server ***")
