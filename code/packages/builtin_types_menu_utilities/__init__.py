@@ -41,7 +41,6 @@ from .string_menu import StringMenu
 from .list_menu import ListMenu
 from .tuple_menu import TupleMenu
 from .dictionary_menu import DictionaryMenu
-from .template_menu import TemplateMenu
 from .exception_menu import ExceptionMenu
 from .file_menu import FileMenu 
 

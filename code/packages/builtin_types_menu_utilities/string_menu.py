@@ -12,7 +12,7 @@ import sys
 sys.path.append('./code/packages/console_menu_utilities')
 from console_menu import ConsoleMenu
 
-class StringMenu:
+class StringMenu(ConsoleMenu):
 
     """ 
     The class `StringMenu` creates a menu for interacting with a collection of string-related samples. The `StringMenu` class has an instance method `string_selection_menu` that displays a menu of available samples and allows the user to select a sample to execute.
@@ -38,9 +38,9 @@ class StringMenu:
 
         # Define the entries of the string samples menu. 
         self.menu_items = ["Create a string", "Get a substring", "Remove white spaces", "Make lower case", "Make upper case", "Split string", "Quit"]
-    
-        # Create the menu for the string samples.
-        self.string_sample_menu = ConsoleMenu("String Menu")
+            
+        # Initialize menu name and options through the parent class.  
+        super().__init__("String Menu", self.menu_items)
 
         # Instantiate the string sample class
         self.string_samples = StringSamples()
@@ -56,10 +56,10 @@ class StringMenu:
 
             
             # Display the menu.
-            self.string_sample_menu.display_menu(self.menu_items)
+            self.display_menu()
 
             # Get the user's choice.
-            choice = self.string_sample_menu.get_user_choice(self.menu_items)
+            choice = self.get_user_choice()
 
             if choice == 1:
                 print("\n*** Create a simple string ***")

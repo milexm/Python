@@ -13,7 +13,7 @@ sys.path.append('./code/packages/console_menu_utilities')
 from console_menu import ConsoleMenu
 
 
-class DictionaryMenu:
+class DictionaryMenu(ConsoleMenu):
 
     """ 
     The class `DictionaryMenu` creates a menu for interacting with a collection of dictionary-related samples. The `DictionaryMenu` class has an instance method `dict_selection_menu` that displays a menu of available samples and allows the user to select a sample to execute.
@@ -41,8 +41,8 @@ class DictionaryMenu:
         # Define the entries of the dictionary samples menu. 
         self.menu_items = ["Create a simple dictionary", "Get dictionary element value", "Print formatted dictionary", "Filter dictionary", "Get value in a multilevel dictionary", "Iterate through a dictionary", "Quit"]
 
-        # Create the menu for the dictionary samples. 
-        self.dict_sample_menu = ConsoleMenu("Dictionary Menu")
+        # Initialize menu name and options through the parent class.  
+        super().__init__("Dictionary Menu", self.menu_items)
         
         # Instantiate the dictionery samples class. 
         self.dict_samples = DictionarySamples()
@@ -57,10 +57,10 @@ class DictionaryMenu:
         while True:
 
             # Display the menu. 
-            self.dict_sample_menu.display_menu(self.menu_items)
+            self.display_menu()
 
             # Get the user's choice.
-            choice = self.dict_sample_menu.get_user_choice(self.menu_items)
+            choice = self.get_user_choice()
 
             if choice == 1:
                 print("\n*** Create a simple dictionary ***")

@@ -12,7 +12,7 @@ import sys
 sys.path.append('./code/packages/console_menu_utilities')
 from console_menu import ConsoleMenu
 
-class ExceptionMenu:
+class ExceptionMenu(ConsoleMenu):
 
     """ 
     Instantiate the menu class and create the menu.
@@ -42,10 +42,10 @@ class ExceptionMenu:
 
         # Define the entries of the string samples menu. 
         self.menu_items = ["Type exception", "Name exception", "Attribute exception", "File not found exception", "EOF exception", "Quit"]
-    
-        # Create the menu for the template samples.
-        self.error_sample_menu = ConsoleMenu("Exception Menu")
         
+        # Initialize menu name and options through the parent class.  
+        super().__init__("Exception Menu", self.menu_items)
+
         # Instantiate the sample class.
         self.error_samples = ExceptionSamples()
 
@@ -59,10 +59,10 @@ class ExceptionMenu:
         while True:
 
             # Just display the menu.
-            self.error_sample_menu.display_menu(self.menu_items)
+            self.display_menu()
 
             # Get the user's choice.
-            choice = self.error_sample_menu.get_user_choice(self.menu_items)
+            choice = self.get_user_choice()
 
 
             if choice == 1:

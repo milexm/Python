@@ -15,7 +15,7 @@ sys.path.append('./code/packages/console_menu_utilities')
 from console_menu import ConsoleMenu
 
 
-class TupleMenu:
+class TupleMenu(ConsoleMenu):
 
     """ 
     The class `TupleMenu` creates a menu for interacting with a collection of tuple-related samples. The `TupleMenu` class has an instance method `tuple_selection_menu` that displays a menu of available samples and allows the user to select a sample to execute.
@@ -43,9 +43,9 @@ class TupleMenu:
 
         # Define the entries of the string samples menu. 
         self.menu_items = ["Create a tuple", "Modify a tuple error", "Access a tuple", "Unpack a tuple", "Tuple odds and ends", "Quit"]
-    
-        # Create the menu for the tuple samples.
-        self.tuple_sample_menu = ConsoleMenu("Tuple Menu")
+
+        # Initialize menu name and options through the parent class.  
+        super().__init__("Tuple Menu", self.menu_items)
         
         # Instantiate the sample class.
         self.tuple_samples = TupleSamples()
@@ -59,10 +59,10 @@ class TupleMenu:
         while True:
 
             # Just display the menu.
-            self.tuple_sample_menu.display_menu(self.menu_items)
+            self.display_menu()
 
             # Get the user's choice.
-            choice = self.tuple_sample_menu.get_user_choice(self.menu_items)
+            choice = self.get_user_choice()
 
             if choice == 1:
                 print("\n*** Create a tuple ***")
