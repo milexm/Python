@@ -90,13 +90,15 @@ and
 
 ## 5. Examples 
 
-The following are collections related examples.
-
-|Module                                      |Notes                                 |  
-|--------------------------------------------|--------------------------------------|
-| [lists.py](lists.py)                       |Examples showing the use of list      | 
-| [dictionaries.py](dictionaries.py)         |Examples showing the use of dicitonary| 
-|                                            |                                      |
+|Module                                          |Notes               |  
+|------------------------------------------------|--------------------|
+| [dictionary_samples.py](dictionary_samples.py) |Using dictionaries  |
+| [exception_samples.py](exception_samples.py)   |Using exceptions    |
+| [file_sasmples.py](file_samples.py)            |Using files         |
+| [list_samples.py](list_samples.py)             |Using lists         |
+| [string_samples.py](string_samples.py)         |Using strings       |
+| [tuple_samples.py](tuple_samples.py)           |Using tuples        |
+|                                                |                    |
 
 ## 6. References
 
