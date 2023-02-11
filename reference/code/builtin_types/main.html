@@ -44,7 +44,7 @@ sys.path.append(&#39;./code/packages/console_menu_utilities&#39;)
 from console_menu import ConsoleMenu
 
 
-class GroupMenu:
+class GroupMenu(ConsoleMenu):
 
     &#34;&#34;&#34; 
     The `GroupMenu` class allows the user to select a group of examples to execute. It initializes the instance of the class by defining a list of menu items. It also instantiates an instance of the `ConsoleMenu` class called group_menu.
@@ -65,10 +65,13 @@ class GroupMenu:
         &#34;&#34;&#34; Initializes the `menu_items` attribute with the group menu items. Then it initiliazes the `group_menu` attribute with a `ConsoleMenu` instance. &#34;&#34;&#34;
 
         # Define the entries of the group menu. 
-        self.menu_items = [&#34;Lists&#34;, &#34;Tuples&#34;, &#34;Dictionaries&#34;, &#34;Strings&#34;, &#34;Exceptions&#34;, &#34;Files&#34;, &#34;Templates&#34;, &#34;Quit&#34;]
+        self.menu_items = [&#34;Lists&#34;, &#34;Tuples&#34;, &#34;Dictionaries&#34;, &#34;Strings&#34;, &#34;Exceptions&#34;, &#34;Files&#34;, &#34;Quit&#34;]
         
         # Instantiate the ConsoleMenu class. 
-        self.menu = ConsoleMenu(&#34;Builtin Types Group Menu&#34;)
+        # self.menu = ConsoleMenu(&#34;Builtin Types Group Menu&#34;)
+        
+        # Initialize menu name and options through the parent class.  
+        super().__init__(&#34;Builtin Types Group Menu&#34;, self.menu_items)
 
     def group_selection_menu(self):
         &#34;&#34;&#34;
@@ -79,10 +82,10 @@ class GroupMenu:
         while True:
 
             # Display the menu.
-            self.menu.display_menu(self.menu_items)
+            self.display_menu()
 
             # Get the user&#39;s choice.
-            choice = self.menu.get_user_choice(self.menu_items)
+            choice = self.get_user_choice()
 
             if choice == 1:
                 # Instantiate the list_menu class.
@@ -119,12 +122,6 @@ class GroupMenu:
                 _fmenu = _menu.FileMenu()
                 # Display the string samples selection menu. 
                 _fmenu.file_selection_menu()
-
-            if choice == 7:
-                # Instantiate the template_menu class.
-                _tmenu = _menu.TemplateMenu()
-                # Display the string samples selection menu. 
-                _tmenu.template_selection_menu()
 
             elif choice == len(self.menu_items):
                 break
@@ -160,7 +157,7 @@ if __name__ == &#39;__main__&#39;:
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">class GroupMenu:
+<pre><code class="python">class GroupMenu(ConsoleMenu):
 
     &#34;&#34;&#34; 
     The `GroupMenu` class allows the user to select a group of examples to execute. It initializes the instance of the class by defining a list of menu items. It also instantiates an instance of the `ConsoleMenu` class called group_menu.
@@ -181,10 +178,13 @@ if __name__ == &#39;__main__&#39;:
         &#34;&#34;&#34; Initializes the `menu_items` attribute with the group menu items. Then it initiliazes the `group_menu` attribute with a `ConsoleMenu` instance. &#34;&#34;&#34;
 
         # Define the entries of the group menu. 
-        self.menu_items = [&#34;Lists&#34;, &#34;Tuples&#34;, &#34;Dictionaries&#34;, &#34;Strings&#34;, &#34;Exceptions&#34;, &#34;Files&#34;, &#34;Templates&#34;, &#34;Quit&#34;]
+        self.menu_items = [&#34;Lists&#34;, &#34;Tuples&#34;, &#34;Dictionaries&#34;, &#34;Strings&#34;, &#34;Exceptions&#34;, &#34;Files&#34;, &#34;Quit&#34;]
         
         # Instantiate the ConsoleMenu class. 
-        self.menu = ConsoleMenu(&#34;Builtin Types Group Menu&#34;)
+        # self.menu = ConsoleMenu(&#34;Builtin Types Group Menu&#34;)
+        
+        # Initialize menu name and options through the parent class.  
+        super().__init__(&#34;Builtin Types Group Menu&#34;, self.menu_items)
 
     def group_selection_menu(self):
         &#34;&#34;&#34;
@@ -195,10 +195,10 @@ if __name__ == &#39;__main__&#39;:
         while True:
 
             # Display the menu.
-            self.menu.display_menu(self.menu_items)
+            self.display_menu()
 
             # Get the user&#39;s choice.
-            choice = self.menu.get_user_choice(self.menu_items)
+            choice = self.get_user_choice()
 
             if choice == 1:
                 # Instantiate the list_menu class.
@@ -236,15 +236,13 @@ if __name__ == &#39;__main__&#39;:
                 # Display the string samples selection menu. 
                 _fmenu.file_selection_menu()
 
-            if choice == 7:
-                # Instantiate the template_menu class.
-                _tmenu = _menu.TemplateMenu()
-                # Display the string samples selection menu. 
-                _tmenu.template_selection_menu()
-
             elif choice == len(self.menu_items):
                 break</code></pre>
 </details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>console_menu.ConsoleMenu</li>
+</ul>
 <h3>Methods</h3>
 <dl>
 <dt id="code.builtin_types.main.GroupMenu.group_selection_menu"><code class="name flex">
@@ -266,10 +264,10 @@ Calls the group selection menu based on the user's selection.</p></div>
     while True:
 
         # Display the menu.
-        self.menu.display_menu(self.menu_items)
+        self.display_menu()
 
         # Get the user&#39;s choice.
-        choice = self.menu.get_user_choice(self.menu_items)
+        choice = self.get_user_choice()
 
         if choice == 1:
             # Instantiate the list_menu class.
@@ -306,12 +304,6 @@ Calls the group selection menu based on the user's selection.</p></div>
             _fmenu = _menu.FileMenu()
             # Display the string samples selection menu. 
             _fmenu.file_selection_menu()
-
-        if choice == 7:
-            # Instantiate the template_menu class.
-            _tmenu = _menu.TemplateMenu()
-            # Display the string samples selection menu. 
-            _tmenu.template_selection_menu()
 
         elif choice == len(self.menu_items):
             break</code></pre>

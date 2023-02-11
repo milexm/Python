@@ -41,7 +41,7 @@ import sys
 sys.path.append(&#39;./code/packages/console_menu_utilities&#39;)
 from console_menu import ConsoleMenu 
 
-class ListMenu:
+class ListMenu(ConsoleMenu):
 
     &#34;&#34;&#34; 
     The class `ListMenu` creates a menu for interacting with a collection of list-related samples. The `ListMenu` class has an instance method `list_selection_menu` that displays a menu of available samples and allows the user to select a sample to execute.
@@ -68,9 +68,9 @@ class ListMenu:
         self.menu_items = [&#34;Index a list&#34;, &#34;Slice a list&#34;, &#34;Create a list&#34;, &#34;Create a list in a range&#34;, &#34;Create a string list in a range&#34;, 
         &#34;Remove duplicated list elements&#34;, &#34;Perform list indexing&#34;,
         &#34;Change list elements&#34;, &#34;Add element to a list&#34;, &#34;Slice a list&#34;, &#34;Apply list methods&#34;, &#34;Use a list as a stack&#34;, &#34;Use a list as a queue&#34;, &#34;Use list comprehension&#34;, &#34;Quit&#34;]
-    
-        # Create the menu for the list samples.
-        self.list_sample_menu = ConsoleMenu(&#34;List Menu&#34;)
+
+        # Initialize menu name and options through the parent class.  
+        super().__init__(&#34;List Menu&#34;, self.menu_items)
 
         # Instantiate the list samples class. 
         self.list_samples = ListSamples()
@@ -85,10 +85,10 @@ class ListMenu:
         while True:
 
             # Display the menu.
-            self.list_sample_menu.display_menu(self.menu_items) 
+            self.display_menu() 
 
             # Get the user&#39;s choice.
-            choice = self.list_sample_menu.get_user_choice(self.menu_items)
+            choice = self.get_user_choice()
 
             if  choice == 1:
                 print(&#34;\n*** Index a list ***&#34;)
@@ -181,7 +181,7 @@ menu. </li>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">class ListMenu:
+<pre><code class="python">class ListMenu(ConsoleMenu):
 
     &#34;&#34;&#34; 
     The class `ListMenu` creates a menu for interacting with a collection of list-related samples. The `ListMenu` class has an instance method `list_selection_menu` that displays a menu of available samples and allows the user to select a sample to execute.
@@ -208,9 +208,9 @@ menu. </li>
         self.menu_items = [&#34;Index a list&#34;, &#34;Slice a list&#34;, &#34;Create a list&#34;, &#34;Create a list in a range&#34;, &#34;Create a string list in a range&#34;, 
         &#34;Remove duplicated list elements&#34;, &#34;Perform list indexing&#34;,
         &#34;Change list elements&#34;, &#34;Add element to a list&#34;, &#34;Slice a list&#34;, &#34;Apply list methods&#34;, &#34;Use a list as a stack&#34;, &#34;Use a list as a queue&#34;, &#34;Use list comprehension&#34;, &#34;Quit&#34;]
-    
-        # Create the menu for the list samples.
-        self.list_sample_menu = ConsoleMenu(&#34;List Menu&#34;)
+
+        # Initialize menu name and options through the parent class.  
+        super().__init__(&#34;List Menu&#34;, self.menu_items)
 
         # Instantiate the list samples class. 
         self.list_samples = ListSamples()
@@ -225,10 +225,10 @@ menu. </li>
         while True:
 
             # Display the menu.
-            self.list_sample_menu.display_menu(self.menu_items) 
+            self.display_menu() 
 
             # Get the user&#39;s choice.
-            choice = self.list_sample_menu.get_user_choice(self.menu_items)
+            choice = self.get_user_choice()
 
             if  choice == 1:
                 print(&#34;\n*** Index a list ***&#34;)
@@ -292,6 +292,10 @@ menu. </li>
             elif choice == len(self.menu_items):
                 break</code></pre>
 </details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>console_menu.ConsoleMenu</li>
+</ul>
 <h3>Methods</h3>
 <dl>
 <dt id="code.packages.builtin_types_menu_utilities.list_menu.ListMenu.list_selection_menu"><code class="name flex">
@@ -315,10 +319,10 @@ on the user's selection.</p></div>
     while True:
 
         # Display the menu.
-        self.list_sample_menu.display_menu(self.menu_items) 
+        self.display_menu() 
 
         # Get the user&#39;s choice.
-        choice = self.list_sample_menu.get_user_choice(self.menu_items)
+        choice = self.get_user_choice()
 
         if  choice == 1:
             print(&#34;\n*** Index a list ***&#34;)

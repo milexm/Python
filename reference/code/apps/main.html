@@ -41,10 +41,14 @@ import sys
 sys.path.append(&#39;./code/packages&#39;) 
 
 import apps_menu_utilities as _menu  
-import console_menu_utilities as _gmenu   
+
+# Import the ConsoleMenu class.
+import sys
+sys.path.append(&#39;./code/packages/console_menu_utilities&#39;)
+from console_menu import ConsoleMenu
 
 
-class GroupMenu:
+class GroupMenu(ConsoleMenu):
 
     &#34;&#34;&#34; 
     The `GroupMenu` class allows the user to select a group of examples to execute. It initializes the instance of the class by defining a list of menu items. It also instantiates an instance of the `ConsoleMenu` class called group_menu.
@@ -65,10 +69,10 @@ class GroupMenu:
         &#34;&#34;&#34; Initializes the `menu_items` attribute with the group menu items. Then it initiliazes the `group_menu` attribute with a `ConsoleMenu` instance. &#34;&#34;&#34;
 
         # Define the entries of the group menu. 
-        self.menu_items = [&#34;File&#34;, &#34;Http&#34;, &#34;Scrape headlines&#34;, &#34;Quit&#34;]
-        
-        # Instantiate the group menu class. 
-        self.group_menu = _gmenu.ConsoleMenu(&#34;Apps Group Menu&#34;) 
+        self.menu_items = [&#34;Http&#34;, &#34;Scrape headlines&#34;, &#34;Quit&#34;]
+      
+        # Initialize menu name and options through the parent class.  
+        super().__init__(&#34;Apps Group Menu&#34;, self.menu_items)
 
 
     def group_selection_menu(self):
@@ -80,24 +84,18 @@ class GroupMenu:
         while True:
 
             # Display the menu.
-            self.group_menu.display_menu(self.menu_items)
+            self.display_menu()
 
             # Get the user&#39;s choice.
-            choice = self.group_menu.get_user_choice(self.menu_items)
+            choice = self.get_user_choice()
 
             if choice == 1:
-                # Instantiate the file menu class.
-                _fmenu = _menu.FileMenu()
-                # Display the samples selection menu. 
-                _fmenu.file_selection_menu()
-
-            elif choice == 2:
                 # Instantiate the http menu class.
                 _hmenu = _menu.HttpMenu()
                 # Display the samples selection menu. 
                 _hmenu.http_selection_menu()
 
-            elif choice == 3:
+            elif choice == 2:
                 # Instantiate the headline scrape menu class.
                 _smenu = _menu.HeadlineScraperMenu()
                 # Display the samples selection menu. 
@@ -137,7 +135,7 @@ if __name__ == &#39;__main__&#39;:
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">class GroupMenu:
+<pre><code class="python">class GroupMenu(ConsoleMenu):
 
     &#34;&#34;&#34; 
     The `GroupMenu` class allows the user to select a group of examples to execute. It initializes the instance of the class by defining a list of menu items. It also instantiates an instance of the `ConsoleMenu` class called group_menu.
@@ -158,10 +156,10 @@ if __name__ == &#39;__main__&#39;:
         &#34;&#34;&#34; Initializes the `menu_items` attribute with the group menu items. Then it initiliazes the `group_menu` attribute with a `ConsoleMenu` instance. &#34;&#34;&#34;
 
         # Define the entries of the group menu. 
-        self.menu_items = [&#34;File&#34;, &#34;Http&#34;, &#34;Scrape headlines&#34;, &#34;Quit&#34;]
-        
-        # Instantiate the group menu class. 
-        self.group_menu = _gmenu.ConsoleMenu(&#34;Apps Group Menu&#34;) 
+        self.menu_items = [&#34;Http&#34;, &#34;Scrape headlines&#34;, &#34;Quit&#34;]
+      
+        # Initialize menu name and options through the parent class.  
+        super().__init__(&#34;Apps Group Menu&#34;, self.menu_items)
 
 
     def group_selection_menu(self):
@@ -173,24 +171,18 @@ if __name__ == &#39;__main__&#39;:
         while True:
 
             # Display the menu.
-            self.group_menu.display_menu(self.menu_items)
+            self.display_menu()
 
             # Get the user&#39;s choice.
-            choice = self.group_menu.get_user_choice(self.menu_items)
+            choice = self.get_user_choice()
 
             if choice == 1:
-                # Instantiate the file menu class.
-                _fmenu = _menu.FileMenu()
-                # Display the samples selection menu. 
-                _fmenu.file_selection_menu()
-
-            elif choice == 2:
                 # Instantiate the http menu class.
                 _hmenu = _menu.HttpMenu()
                 # Display the samples selection menu. 
                 _hmenu.http_selection_menu()
 
-            elif choice == 3:
+            elif choice == 2:
                 # Instantiate the headline scrape menu class.
                 _smenu = _menu.HeadlineScraperMenu()
                 # Display the samples selection menu. 
@@ -199,6 +191,10 @@ if __name__ == &#39;__main__&#39;:
             elif choice == len(self.menu_items):
                 break</code></pre>
 </details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>console_menu.ConsoleMenu</li>
+</ul>
 <h3>Methods</h3>
 <dl>
 <dt id="code.apps.main.GroupMenu.group_selection_menu"><code class="name flex">
@@ -220,24 +216,18 @@ Calls the group selection menu based on the user's selection.</p></div>
     while True:
 
         # Display the menu.
-        self.group_menu.display_menu(self.menu_items)
+        self.display_menu()
 
         # Get the user&#39;s choice.
-        choice = self.group_menu.get_user_choice(self.menu_items)
+        choice = self.get_user_choice()
 
         if choice == 1:
-            # Instantiate the file menu class.
-            _fmenu = _menu.FileMenu()
-            # Display the samples selection menu. 
-            _fmenu.file_selection_menu()
-
-        elif choice == 2:
             # Instantiate the http menu class.
             _hmenu = _menu.HttpMenu()
             # Display the samples selection menu. 
             _hmenu.http_selection_menu()
 
-        elif choice == 3:
+        elif choice == 2:
             # Instantiate the headline scrape menu class.
             _smenu = _menu.HeadlineScraperMenu()
             # Display the samples selection menu. 

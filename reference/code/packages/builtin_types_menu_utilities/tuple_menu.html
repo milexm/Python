@@ -44,7 +44,7 @@ sys.path.append(&#39;./code/packages/console_menu_utilities&#39;)
 from console_menu import ConsoleMenu
 
 
-class TupleMenu:
+class TupleMenu(ConsoleMenu):
 
     &#34;&#34;&#34; 
     The class `TupleMenu` creates a menu for interacting with a collection of tuple-related samples. The `TupleMenu` class has an instance method `tuple_selection_menu` that displays a menu of available samples and allows the user to select a sample to execute.
@@ -72,9 +72,9 @@ class TupleMenu:
 
         # Define the entries of the string samples menu. 
         self.menu_items = [&#34;Create a tuple&#34;, &#34;Modify a tuple error&#34;, &#34;Access a tuple&#34;, &#34;Unpack a tuple&#34;, &#34;Tuple odds and ends&#34;, &#34;Quit&#34;]
-    
-        # Create the menu for the tuple samples.
-        self.tuple_sample_menu = ConsoleMenu(&#34;Tuple Menu&#34;)
+
+        # Initialize menu name and options through the parent class.  
+        super().__init__(&#34;Tuple Menu&#34;, self.menu_items)
         
         # Instantiate the sample class.
         self.tuple_samples = TupleSamples()
@@ -88,10 +88,10 @@ class TupleMenu:
         while True:
 
             # Just display the menu.
-            self.tuple_sample_menu.display_menu(self.menu_items)
+            self.display_menu()
 
             # Get the user&#39;s choice.
-            choice = self.tuple_sample_menu.get_user_choice(self.menu_items)
+            choice = self.get_user_choice()
 
             if choice == 1:
                 print(&#34;\n*** Create a tuple ***&#34;)
@@ -146,7 +146,7 @@ class TupleMenu:
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">class TupleMenu:
+<pre><code class="python">class TupleMenu(ConsoleMenu):
 
     &#34;&#34;&#34; 
     The class `TupleMenu` creates a menu for interacting with a collection of tuple-related samples. The `TupleMenu` class has an instance method `tuple_selection_menu` that displays a menu of available samples and allows the user to select a sample to execute.
@@ -174,9 +174,9 @@ class TupleMenu:
 
         # Define the entries of the string samples menu. 
         self.menu_items = [&#34;Create a tuple&#34;, &#34;Modify a tuple error&#34;, &#34;Access a tuple&#34;, &#34;Unpack a tuple&#34;, &#34;Tuple odds and ends&#34;, &#34;Quit&#34;]
-    
-        # Create the menu for the tuple samples.
-        self.tuple_sample_menu = ConsoleMenu(&#34;Tuple Menu&#34;)
+
+        # Initialize menu name and options through the parent class.  
+        super().__init__(&#34;Tuple Menu&#34;, self.menu_items)
         
         # Instantiate the sample class.
         self.tuple_samples = TupleSamples()
@@ -190,10 +190,10 @@ class TupleMenu:
         while True:
 
             # Just display the menu.
-            self.tuple_sample_menu.display_menu(self.menu_items)
+            self.display_menu()
 
             # Get the user&#39;s choice.
-            choice = self.tuple_sample_menu.get_user_choice(self.menu_items)
+            choice = self.get_user_choice()
 
             if choice == 1:
                 print(&#34;\n*** Create a tuple ***&#34;)
@@ -219,6 +219,10 @@ class TupleMenu:
             elif choice == len(self.menu_items):
                 break</code></pre>
 </details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>console_menu.ConsoleMenu</li>
+</ul>
 <h3>Methods</h3>
 <dl>
 <dt id="code.packages.builtin_types_menu_utilities.tuple_menu.TupleMenu.tuple_selection_menu"><code class="name flex">
@@ -239,10 +243,10 @@ Calls the proper method based on the user's selection.</p></div>
     while True:
 
         # Just display the menu.
-        self.tuple_sample_menu.display_menu(self.menu_items)
+        self.display_menu()
 
         # Get the user&#39;s choice.
-        choice = self.tuple_sample_menu.get_user_choice(self.menu_items)
+        choice = self.get_user_choice()
 
         if choice == 1:
             print(&#34;\n*** Create a tuple ***&#34;)

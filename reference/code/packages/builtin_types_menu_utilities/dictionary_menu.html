@@ -42,7 +42,7 @@ sys.path.append(&#39;./code/packages/console_menu_utilities&#39;)
 from console_menu import ConsoleMenu
 
 
-class DictionaryMenu:
+class DictionaryMenu(ConsoleMenu):
 
     &#34;&#34;&#34; 
     The class `DictionaryMenu` creates a menu for interacting with a collection of dictionary-related samples. The `DictionaryMenu` class has an instance method `dict_selection_menu` that displays a menu of available samples and allows the user to select a sample to execute.
@@ -70,8 +70,8 @@ class DictionaryMenu:
         # Define the entries of the dictionary samples menu. 
         self.menu_items = [&#34;Create a simple dictionary&#34;, &#34;Get dictionary element value&#34;, &#34;Print formatted dictionary&#34;, &#34;Filter dictionary&#34;, &#34;Get value in a multilevel dictionary&#34;, &#34;Iterate through a dictionary&#34;, &#34;Quit&#34;]
 
-        # Create the menu for the dictionary samples. 
-        self.dict_sample_menu = ConsoleMenu(&#34;Dictionary Menu&#34;)
+        # Initialize menu name and options through the parent class.  
+        super().__init__(&#34;Dictionary Menu&#34;, self.menu_items)
         
         # Instantiate the dictionery samples class. 
         self.dict_samples = DictionarySamples()
@@ -86,10 +86,10 @@ class DictionaryMenu:
         while True:
 
             # Display the menu. 
-            self.dict_sample_menu.display_menu(self.menu_items)
+            self.display_menu()
 
             # Get the user&#39;s choice.
-            choice = self.dict_sample_menu.get_user_choice(self.menu_items)
+            choice = self.get_user_choice()
 
             if choice == 1:
                 print(&#34;\n*** Create a simple dictionary ***&#34;)
@@ -148,7 +148,7 @@ class DictionaryMenu:
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">class DictionaryMenu:
+<pre><code class="python">class DictionaryMenu(ConsoleMenu):
 
     &#34;&#34;&#34; 
     The class `DictionaryMenu` creates a menu for interacting with a collection of dictionary-related samples. The `DictionaryMenu` class has an instance method `dict_selection_menu` that displays a menu of available samples and allows the user to select a sample to execute.
@@ -176,8 +176,8 @@ class DictionaryMenu:
         # Define the entries of the dictionary samples menu. 
         self.menu_items = [&#34;Create a simple dictionary&#34;, &#34;Get dictionary element value&#34;, &#34;Print formatted dictionary&#34;, &#34;Filter dictionary&#34;, &#34;Get value in a multilevel dictionary&#34;, &#34;Iterate through a dictionary&#34;, &#34;Quit&#34;]
 
-        # Create the menu for the dictionary samples. 
-        self.dict_sample_menu = ConsoleMenu(&#34;Dictionary Menu&#34;)
+        # Initialize menu name and options through the parent class.  
+        super().__init__(&#34;Dictionary Menu&#34;, self.menu_items)
         
         # Instantiate the dictionery samples class. 
         self.dict_samples = DictionarySamples()
@@ -192,10 +192,10 @@ class DictionaryMenu:
         while True:
 
             # Display the menu. 
-            self.dict_sample_menu.display_menu(self.menu_items)
+            self.display_menu()
 
             # Get the user&#39;s choice.
-            choice = self.dict_sample_menu.get_user_choice(self.menu_items)
+            choice = self.get_user_choice()
 
             if choice == 1:
                 print(&#34;\n*** Create a simple dictionary ***&#34;)
@@ -225,6 +225,10 @@ class DictionaryMenu:
             elif choice == len(self.menu_items):
                 break</code></pre>
 </details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>console_menu.ConsoleMenu</li>
+</ul>
 <h3>Methods</h3>
 <dl>
 <dt id="code.packages.builtin_types_menu_utilities.dictionary_menu.DictionaryMenu.dict_selection_menu"><code class="name flex">
@@ -247,10 +251,10 @@ on the user's selection.</p></div>
     while True:
 
         # Display the menu. 
-        self.dict_sample_menu.display_menu(self.menu_items)
+        self.display_menu()
 
         # Get the user&#39;s choice.
-        choice = self.dict_sample_menu.get_user_choice(self.menu_items)
+        choice = self.get_user_choice()
 
         if choice == 1:
             print(&#34;\n*** Create a simple dictionary ***&#34;)

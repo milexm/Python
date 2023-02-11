@@ -41,7 +41,7 @@ import sys
 sys.path.append(&#39;./code/packages/console_menu_utilities&#39;)
 from console_menu import ConsoleMenu
 
-class ExceptionMenu:
+class ExceptionMenu(ConsoleMenu):
 
     &#34;&#34;&#34; 
     Instantiate the menu class and create the menu.
@@ -71,10 +71,10 @@ class ExceptionMenu:
 
         # Define the entries of the string samples menu. 
         self.menu_items = [&#34;Type exception&#34;, &#34;Name exception&#34;, &#34;Attribute exception&#34;, &#34;File not found exception&#34;, &#34;EOF exception&#34;, &#34;Quit&#34;]
-    
-        # Create the menu for the template samples.
-        self.error_sample_menu = ConsoleMenu(&#34;Exception Menu&#34;)
         
+        # Initialize menu name and options through the parent class.  
+        super().__init__(&#34;Exception Menu&#34;, self.menu_items)
+
         # Instantiate the sample class.
         self.error_samples = ExceptionSamples()
 
@@ -88,10 +88,10 @@ class ExceptionMenu:
         while True:
 
             # Just display the menu.
-            self.error_sample_menu.display_menu(self.menu_items)
+            self.display_menu()
 
             # Get the user&#39;s choice.
-            choice = self.error_sample_menu.get_user_choice(self.menu_items)
+            choice = self.get_user_choice()
 
 
             if choice == 1:
@@ -149,7 +149,7 @@ menu. </li>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">class ExceptionMenu:
+<pre><code class="python">class ExceptionMenu(ConsoleMenu):
 
     &#34;&#34;&#34; 
     Instantiate the menu class and create the menu.
@@ -179,10 +179,10 @@ menu. </li>
 
         # Define the entries of the string samples menu. 
         self.menu_items = [&#34;Type exception&#34;, &#34;Name exception&#34;, &#34;Attribute exception&#34;, &#34;File not found exception&#34;, &#34;EOF exception&#34;, &#34;Quit&#34;]
-    
-        # Create the menu for the template samples.
-        self.error_sample_menu = ConsoleMenu(&#34;Exception Menu&#34;)
         
+        # Initialize menu name and options through the parent class.  
+        super().__init__(&#34;Exception Menu&#34;, self.menu_items)
+
         # Instantiate the sample class.
         self.error_samples = ExceptionSamples()
 
@@ -196,10 +196,10 @@ menu. </li>
         while True:
 
             # Just display the menu.
-            self.error_sample_menu.display_menu(self.menu_items)
+            self.display_menu()
 
             # Get the user&#39;s choice.
-            choice = self.error_sample_menu.get_user_choice(self.menu_items)
+            choice = self.get_user_choice()
 
 
             if choice == 1:
@@ -225,6 +225,10 @@ menu. </li>
             elif choice == len(self.menu_items):
                 break</code></pre>
 </details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>console_menu.ConsoleMenu</li>
+</ul>
 <h3>Methods</h3>
 <dl>
 <dt id="code.packages.builtin_types_menu_utilities.exception_menu.ExceptionMenu.exception_selection_menu"><code class="name flex">
@@ -247,10 +251,10 @@ on the user's selection.</p></div>
     while True:
 
         # Just display the menu.
-        self.error_sample_menu.display_menu(self.menu_items)
+        self.display_menu()
 
         # Get the user&#39;s choice.
-        choice = self.error_sample_menu.get_user_choice(self.menu_items)
+        choice = self.get_user_choice()
 
 
         if choice == 1:
