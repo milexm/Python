@@ -11,8 +11,7 @@ last update: 12/17/22
 - [5. Examples documentation](#5-examples-documentation)
 - [6. References](#6-references)
 
-
-## 1. Overview 
+## 1. Overview
 
 The **examples** in this folder show the use of Python builtin types and their
 meaning.  When choosing a builtin type, it is useful to understand the
@@ -82,7 +81,6 @@ and
 |Set               | No    | No       | No       | No    |
 |Dictionary        | Yes   | Yes      | No       | Yes   |
 ||||||
-
 
 > [!NOTE] Set items are unchangeable, but you can remove and/or add items
 > whenever you like.  As of Python version 3.7, dictionaries are ordered. In
