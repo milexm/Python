@@ -4,19 +4,19 @@ last update: 01/22/23
 
 # ![python-icon](../../media/icons/python-icon.svg) Apps
 
-- [Overview](#overview)
-- [Rxample Apps](#rxample-apps)
+- [1. Overview](#1-overview)
+- [2. Example apps documentation](#2-example-apps-documentation)
 
 
-## Overview 
+## 1. Overview 
 
 The **examples** in this folder show some ready to run Python apps.
 
 
-## Rxample Apps 
+## 2. Example apps documentation
 
-|Module                                          |Notes                                          |  
-|------------------------------------------------|-----------------------------------------------|
-| [headlines_scraper_samples.py](./headlines_scraper_samples.py) |Scraping a web page for headliens|
-| [http_samples.py](./http_samples.py)                           |Running HTTP server and client   |
-|                                                              |                                 |
+|Module                                                              |
+|--------------------------------------------------------------------|
+| [headlines_scraper_samples.html](./headlines_scraper_samples.html) |
+| [http_samples.html](./http_samples.html)                           |
+|                                                                    |

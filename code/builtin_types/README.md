@@ -8,7 +8,7 @@ last update: 12/17/22
 - [2. Sequence types](#2-sequence-types)
 - [3. Mapping types](#3-mapping-types)
 - [4. Set types](#4-set-types)
-- [5. Examples](#5-examples)
+- [5. Examples documentation](#5-examples-documentation)
 - [6. References](#6-references)
 
 
@@ -88,17 +88,17 @@ and
 > whenever you like.  As of Python version 3.7, dictionaries are ordered. In
 > Python 3.6 and earlier, dictionaries are unordered.
 
-## 5. Examples 
+## 5. Examples documentation
 
-|Module                                          |Notes               |  
-|------------------------------------------------|--------------------|
-| [dictionary_samples.py](dictionary_samples.py) |Using dictionaries  |
-| [exception_samples.py](exception_samples.py)   |Using exceptions    |
-| [file_sasmples.py](file_samples.py)            |Using files         |
-| [list_samples.py](list_samples.py)             |Using lists         |
-| [string_samples.py](string_samples.py)         |Using strings       |
-| [tuple_samples.py](tuple_samples.py)           |Using tuples        |
-|                                                |                    |
+|Documentation                                      |
+|---------------------------------------------------|
+| [dictionary_samples.html](dictionary_samples.html)|
+| [exception_samples.html](exception_samples.html)  |
+| [file_sasmples.html](file_samples.html)           |
+| [list_samples.html](list_samples.html)            |
+| [string_samples.html](string_samples.html)        |
+| [tuple_samples.html](tuple_samples.html)          |
+|                                                   |
 
 ## 6. References
 
