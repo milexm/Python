@@ -61,15 +61,15 @@ files?</a>.</p>
 in the related foldera. For example:</p>
 <ul>
 <li><code>code/apps</code>. Ready to run apps.</li>
-<li><code>code/builtin_types</code> Ready to run examples showing the use of built-in types. </li>
+<li><code>code/builtin_types</code> Ready to run examples showing the use of built-in types.</li>
 </ul>
 <p>These folders contain modules with examples ready to run. For example, the
-module <code>code/builtin_types/file_examples.py</code> contains file related examples. </p>
-<p>Aong with these example folders, there are menu utilities used to create menus
+module <code>code/builtin_types/file_examples.py</code> contains file related examples.</p>
+<p>Along with these example folders, there are menu utilities used to create menus
 specifc to each example folder. For example:</p>
 <ul>
 <li><code>code/packages/apps_menu_utilities</code>. Menu to select app samples.</li>
-<li><code>code/packages/builtin_types_menu_utilities</code>. Menu to select builtin type samples. </li>
+<li><code>code/packages/builtin_types_menu_utilities</code>. Menu to select builtin type samples.</li>
 </ul>
 <p>For each area, a two level menus simplifies the selection of the examples to
 run:</p>
@@ -80,26 +80,29 @@ acual examples.</li>
 </ul>
 <h3 id="first-level-menu">First level menu</h3>
 <p>The first level menu is implemented by a <code>main.py</code> module contained in the
-specific area folder i.e., the folder that contains the module with the actual
+specific area folder i.e., the folder that contains the modules with the actual
 code examples. For this to work, <code>main.py</code> must import the supporting packages,
 as shown in the following example, see <a href="./builtin_types/main.py">main.py</a> which
 is contained in the <code><a title="code.builtin_types" href="builtin_types/index.html">code.builtin_types</a></code> folder. </p>
 <pre><code class="language-python">
-# Append the path to the package modules location.  
+# Import the menu classes from the  
+# builtin_types_menu_utilities package.
 import sys
 sys.path.append('./code/packages') 
-
 import builtin_types_menu_utilities as _menu  
-import console_menu_utilities as _gmenu   
+
+# Import the ConsoleMenu class.
+import sys
+sys.path.append('./code/packages/console_menu_utilities')
+from console_menu import ConsoleMenu
 
 </code></pre>
-<p>In the previous code snippet, </p>
 <ul>
 <li>The <code>builtin_types_menu_utilities</code> package allows the selection of the class
-menu for each set of examples, This must be supported by the package
-<code>__init__-py</code> module. See related note in the second level menu section.
+menu for each set of examples. This must be supported by the package
+<code>__init__-py</code> module. See related note in the <a href="#second-level-menu">second level menu</a> section.
 </li>
-<li>The package <code>console_menu_utilities</code>, allows the implementation of the group menu.</li>
+<li>The package <code>console_menu_utilities</code> allows the implementation of the group menu.</li>
 </ul>
 <blockquote>
 <p>[!IMPORTANT] To implement a package in a folder, you must define a
@@ -107,8 +110,7 @@ menu for each set of examples, This must be supported by the package
 file that becomes the landing page for the folder itself and its examples.<br>
 <code>__init__.py</code> allows the <code>import</code> directive to refer to the modules in the
 folder. This for Python interpreter and for <code>pdoc</code> when generating the
-reference documentation.
-</p>
+reference documentation.</p>
 </blockquote>
 <h3 id="second-level-menu">Second level menu</h3>
 <p>The second level menu is implemented by several modules contained in packages.
@@ -125,12 +127,12 @@ specific samples menu.</li>
 <p>For example, for the <code>list_menu.py</code> you must have the following imports:</p>
 <pre><code class="language-python">import sys
 sys.path.append('./code/builtin_types')
-from lists import ListSamples
+from list_samples import ListSamples
 
-
+# Import the ConsoleMenu class.
 import sys
-sys.path.append('./code/console_menu_utilities')
-import console_menu_utilities as _menu   
+sys.path.append('./code/packages/console_menu_utilities')
+from console_menu import ConsoleMenu 
 
 </code></pre>
 <blockquote>
@@ -138,8 +140,7 @@ import console_menu_utilities as _menu
 <code>__init__.py</code> module.<br>
 <code>__init__.py</code> allows the <code>import</code> directive to refer to the the menu
 class in each module. This from the related samples <code>main.py</code> via the simple import:
-<code>import builtin_types_menu_utilities as _menu</code>.
-</p>
+<code>import builtin_types_menu_utilities as _menu</code>.</p>
 </blockquote>
 <p>These are some examples of directives contained in the <code>__init__.py</code> module:</p>
 <pre><code class="language-python">from .string_menu import StringMenu
@@ -182,7 +183,7 @@ Objects</a> - W3 Schools</li>
 &#34;&#34;&#34;
 
 &#34;&#34;&#34;
-DO NOT DLETE THIS FILE! 
+DO NOT DELETE THIS FILE! 
 
 This __init__.py is important to generate the API reference documentation using `pdoc`. We trick pdoc pretending that the `code` folder is a package. 
 &#34;&#34;&#34;</code></pre>

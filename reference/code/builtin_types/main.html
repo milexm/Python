@@ -31,11 +31,10 @@
 Module main.py
 &#34;&#34;&#34;
 
-# Append the path to the package modules location.  
+# Import the menu classes from the  
+# builtin_types_menu_utilities package.
 import sys
 sys.path.append(&#39;./code/packages&#39;) 
-# Import the menu classes ffrom the  
-# builtin_types_menu_utilities package.
 import builtin_types_menu_utilities as _menu  
 
 # Import the ConsoleMenu class.
@@ -48,6 +47,8 @@ class GroupMenu(ConsoleMenu):
 
     &#34;&#34;&#34; 
     The `GroupMenu` class allows the user to select a group of examples to execute. It initializes the instance of the class by defining a list of menu items. It also instantiates an instance of the `ConsoleMenu` class called group_menu.
+
+    Parent class: `ConsoleMenu` 
 
     Remarks
     -------
@@ -62,7 +63,10 @@ class GroupMenu(ConsoleMenu):
     &#34;&#34;&#34;
 
     def __init__(self):
-        &#34;&#34;&#34; Initializes the `menu_items` attribute with the group menu items. Then it initiliazes the `group_menu` attribute with a `ConsoleMenu` instance. &#34;&#34;&#34;
+        &#34;&#34;&#34; 
+        Initializes the `menu_items` attribute with the group menu items. Then
+        it initiliazes the `group_menu` attribute with a `ConsoleMenu` instance.
+        &#34;&#34;&#34;
 
         # Define the entries of the group menu. 
         self.menu_items = [&#34;Lists&#34;, &#34;Tuples&#34;, &#34;Dictionaries&#34;, &#34;Strings&#34;, &#34;Exceptions&#34;, &#34;Files&#34;, &#34;Quit&#34;]
@@ -75,8 +79,8 @@ class GroupMenu(ConsoleMenu):
 
     def group_selection_menu(self):
         &#34;&#34;&#34;
-            Displays menu and process user&#39;s input.
-            Calls the group selection menu based on the user&#39;s selection.
+        Displays menu and process user&#39;s input.
+        Calls the group selection menu based on the user&#39;s selection.
         &#34;&#34;&#34;
 
         while True:
@@ -147,12 +151,14 @@ if __name__ == &#39;__main__&#39;:
 </code></dt>
 <dd>
 <div class="desc"><p>The <code><a title="code.builtin_types.main.GroupMenu" href="#code.builtin_types.main.GroupMenu">GroupMenu</a></code> class allows the user to select a group of examples to execute. It initializes the instance of the class by defining a list of menu items. It also instantiates an instance of the <code>ConsoleMenu</code> class called group_menu.</p>
+<p>Parent class: <code>ConsoleMenu</code> </p>
 <h2 id="remarks">Remarks</h2>
 <p>The <code>group_selection_menu</code> method of the <code><a title="code.builtin_types.main.GroupMenu" href="#code.builtin_types.main.GroupMenu">GroupMenu</a></code> class displays a menu to the user with the options specified in the <code>self.menu_items</code> list. It waits for the user to make a selection and then calls the corresponding menu based on the selection. For example, if the user selects 1, it will instantiate an instance of the <code>_menu.list_menu</code> class called <code>_lmenu</code> and then call the <code>list_selection_menu</code> method on <code>_lmenu</code>.</p>
 <p>The if <strong>name</strong> == '<strong>main</strong>': block at the bottom of the code instantiates an instance of the <code><a title="code.builtin_types.main.GroupMenu" href="#code.builtin_types.main.GroupMenu">GroupMenu</a></code> class called <code>_gmenu</code> and then calls the group_selection_menu method on _gmenu. This will display the group selection menu to the user and allow them to choose a group of examples to execute.</p>
 <h2 id="use">Use</h2>
 <p>In a terminal window enter: python [user path]./builtin_types/main.py</p>
-<p>Initializes the <code>menu_items</code> attribute with the group menu items. Then it initiliazes the <code>group_menu</code> attribute with a <code>ConsoleMenu</code> instance.</p></div>
+<p>Initializes the <code>menu_items</code> attribute with the group menu items. Then
+it initiliazes the <code>group_menu</code> attribute with a <code>ConsoleMenu</code> instance.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -161,6 +167,8 @@ if __name__ == &#39;__main__&#39;:
 
     &#34;&#34;&#34; 
     The `GroupMenu` class allows the user to select a group of examples to execute. It initializes the instance of the class by defining a list of menu items. It also instantiates an instance of the `ConsoleMenu` class called group_menu.
+
+    Parent class: `ConsoleMenu` 
 
     Remarks
     -------
@@ -175,7 +183,10 @@ if __name__ == &#39;__main__&#39;:
     &#34;&#34;&#34;
 
     def __init__(self):
-        &#34;&#34;&#34; Initializes the `menu_items` attribute with the group menu items. Then it initiliazes the `group_menu` attribute with a `ConsoleMenu` instance. &#34;&#34;&#34;
+        &#34;&#34;&#34; 
+        Initializes the `menu_items` attribute with the group menu items. Then
+        it initiliazes the `group_menu` attribute with a `ConsoleMenu` instance.
+        &#34;&#34;&#34;
 
         # Define the entries of the group menu. 
         self.menu_items = [&#34;Lists&#34;, &#34;Tuples&#34;, &#34;Dictionaries&#34;, &#34;Strings&#34;, &#34;Exceptions&#34;, &#34;Files&#34;, &#34;Quit&#34;]
@@ -188,8 +199,8 @@ if __name__ == &#39;__main__&#39;:
 
     def group_selection_menu(self):
         &#34;&#34;&#34;
-            Displays menu and process user&#39;s input.
-            Calls the group selection menu based on the user&#39;s selection.
+        Displays menu and process user&#39;s input.
+        Calls the group selection menu based on the user&#39;s selection.
         &#34;&#34;&#34;
 
         while True:
@@ -257,8 +268,8 @@ Calls the group selection menu based on the user's selection.</p></div>
 </summary>
 <pre><code class="python">def group_selection_menu(self):
     &#34;&#34;&#34;
-        Displays menu and process user&#39;s input.
-        Calls the group selection menu based on the user&#39;s selection.
+    Displays menu and process user&#39;s input.
+    Calls the group selection menu based on the user&#39;s selection.
     &#34;&#34;&#34;
 
     while True:
