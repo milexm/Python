@@ -15,7 +15,7 @@ The **examples** in this folder show some ready to run Python apps.
 
 ## 2. Example apps documentation
 
-|Module                                                              |
+|Module documentation                                                |
 |--------------------------------------------------------------------|
 | [headlines_scraper_samples.html](./headlines_scraper_samples.html) |
 | [http_samples.html](./http_samples.html)                           |

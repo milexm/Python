@@ -90,7 +90,7 @@ and
 
 ## 5. Examples documentation
 
-|Documentation                                      |
+|Module documentation                               |
 |---------------------------------------------------|
 | [dictionary_samples.html](dictionary_samples.html)|
 | [exception_samples.html](exception_samples.html)  |
