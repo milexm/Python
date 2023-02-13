@@ -2,11 +2,10 @@
 Module main.py
 """
 
-# Append the path to the package modules location.  
+# Import the menu classes from the  
+# builtin_types_menu_utilities package.
 import sys
 sys.path.append('./code/packages') 
-# Import the menu classes ffrom the  
-# builtin_types_menu_utilities package.
 import builtin_types_menu_utilities as _menu  
 
 # Import the ConsoleMenu class.
@@ -19,6 +18,8 @@ class GroupMenu(ConsoleMenu):
 
     """ 
     The `GroupMenu` class allows the user to select a group of examples to execute. It initializes the instance of the class by defining a list of menu items. It also instantiates an instance of the `ConsoleMenu` class called group_menu.
+
+    Parent class: `ConsoleMenu` 
 
     Remarks
     -------
@@ -33,7 +34,10 @@ class GroupMenu(ConsoleMenu):
     """
 
     def __init__(self):
-        """ Initializes the `menu_items` attribute with the group menu items. Then it initiliazes the `group_menu` attribute with a `ConsoleMenu` instance. """
+        """ 
+        Initializes the `menu_items` attribute with the group menu items. Then
+        it initiliazes the `group_menu` attribute with a `ConsoleMenu` instance.
+        """
 
         # Define the entries of the group menu. 
         self.menu_items = ["Lists", "Tuples", "Dictionaries", "Strings", "Exceptions", "Files", "Quit"]
@@ -46,8 +50,8 @@ class GroupMenu(ConsoleMenu):
 
     def group_selection_menu(self):
         """
-            Displays menu and process user's input.
-            Calls the group selection menu based on the user's selection.
+        Displays menu and process user's input.
+        Calls the group selection menu based on the user's selection.
         """
 
         while True:

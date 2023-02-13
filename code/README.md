@@ -45,16 +45,16 @@ The code examples are contained in the folder `Python/code` and grouped by areas
 in the related foldera. For example:
 
 - `code/apps`. Ready to run apps.
-- `code/builtin_types` Ready to run examples showing the use of built-in types. 
+- `code/builtin_types` Ready to run examples showing the use of built-in types.
 
 These folders contain modules with examples ready to run. For example, the
-module `code/builtin_types/file_examples.py` contains file related examples. 
+module `code/builtin_types/file_examples.py` contains file related examples.
 
-Aong with these example folders, there are menu utilities used to create menus
+Along with these example folders, there are menu utilities used to create menus
 specifc to each example folder. For example:
 
 - `code/packages/apps_menu_utilities`. Menu to select app samples.
-- `code/packages/builtin_types_menu_utilities`. Menu to select builtin type samples. 
+- `code/packages/builtin_types_menu_utilities`. Menu to select builtin type samples.
 
 For each area, a two level menus simplifies the selection of the examples to
 run:
@@ -66,28 +66,30 @@ run:
 ### First level menu
 
 The first level menu is implemented by a `main.py` module contained in the
-specific area folder i.e., the folder that contains the module with the actual
+specific area folder i.e., the folder that contains the modules with the actual
 code examples. For this to work, `main.py` must import the supporting packages,
 as shown in the following example, see [main.py](./builtin_types/main.py) which
 is contained in the `builtin_types` folder. 
 
 ```python
 
-# Append the path to the package modules location.  
+# Import the menu classes from the  
+# builtin_types_menu_utilities package.
 import sys
 sys.path.append('./code/packages') 
-
 import builtin_types_menu_utilities as _menu  
-import console_menu_utilities as _gmenu   
+
+# Import the ConsoleMenu class.
+import sys
+sys.path.append('./code/packages/console_menu_utilities')
+from console_menu import ConsoleMenu
 
 ```
 
-In the previous code snippet, 
-
 - The `builtin_types_menu_utilities` package allows the selection of the class
-menu for each set of examples, This must be supported by the package
-`__init__-py` module. See related note in the second level menu section.  
-- The package `console_menu_utilities`, allows the implementation of the group menu.
+menu for each set of examples. This must be supported by the package
+`__init__-py` module. See related note in the [second level menu](#second-level-menu) section.  
+- The package `console_menu_utilities` allows the implementation of the group menu.
   
 
 > [!IMPORTANT] To implement a package in a folder, you must define a
@@ -95,8 +97,8 @@ menu for each set of examples, This must be supported by the package
 > file that becomes the landing page for the folder itself and its examples.  
 > `__init__.py` allows the `import` directive to refer to the modules in the
 > folder. This for Python interpreter and for `pdoc` when generating the
-> reference documentation. 
->
+> reference documentation.
+
 
 ### Second level menu
 
@@ -117,12 +119,12 @@ For example, for the `list_menu.py` you must have the following imports:
 ```python
 import sys
 sys.path.append('./code/builtin_types')
-from lists import ListSamples
+from list_samples import ListSamples
 
-
+# Import the ConsoleMenu class.
 import sys
-sys.path.append('./code/console_menu_utilities')
-import console_menu_utilities as _menu   
+sys.path.append('./code/packages/console_menu_utilities')
+from console_menu import ConsoleMenu 
 
 ```
 
@@ -130,7 +132,7 @@ import console_menu_utilities as _menu
 > `__init__.py` module.  
 > `__init__.py` allows the `import` directive to refer to the the menu
 > class in each module. This from the related samples `main.py` via the simple import:
-> `import builtin_types_menu_utilities as _menu`.   
+> `import builtin_types_menu_utilities as _menu`.
 
 These are some examples of directives contained in the `__init__.py` module:
 
@@ -140,7 +142,7 @@ from .list_menu import ListMenu
 from .tuple_menu import TupleMenu
 ```
 
-The following figure shows the code involved when the user select a sample to run. 
+The following figure shows the code involved when the user select a sample to run.
 For simplicity, the figure shows only the selection of the list samples.
 
 ![builtin types selection](../media/samples/python-builtin_types_selection.png)
