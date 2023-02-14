@@ -58,12 +58,6 @@ class FileMenu(ConsoleMenu):
 
         while True:
 
-            # Display the menu.
-            # self.display_menu(self.menu_items)
-
-            # Get the user's choice.
-            # choice = self.get_user_choice(self.menu_items)
-
              # Display the menu.
             self.display_menu()
 
@@ -86,5 +80,4 @@ class FileMenu(ConsoleMenu):
                 print("\n*** Process csv file ***")
                 self.file_samples.process_csv_file()
             elif choice == len(self.menu_items):
-                break
-        
+                break        
