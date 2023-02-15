@@ -91,7 +91,7 @@ class FileMenu(ConsoleMenu):
 
         while True:
 
-             # Display the menu.
+            # Display the menu.
             self.display_menu()
 
             # Get the user's choice.
@@ -100,7 +100,7 @@ class FileMenu(ConsoleMenu):
             if choice == len(self.menu_items):
                 break        
             else:
-                # Displau the kind of operation performed.
+                # Display the kind of operation to perform.
                 print(self.operations[choice][0])
                 # Perform the operation. 
                 self.operations[choice][1]()
