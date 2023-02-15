@@ -26,14 +26,24 @@ class FileMenu(ConsoleMenu):
     Remarks
     -------
     
-    The class `FileMenu` displays a menu to the user and calls one of the methods from the FileSamples class based on the user's selection. The `FileMenu` class has a single method, `file_selection_menu`, which displays the menu, gets the user's choice, and then calls the appropriate method from the `FileSamples` class.
+    The class `FileMenu` displays a menu to the user and calls one of the
+    methods from the FileSamples class based on the user's selection. The
+    `FileMenu` class has a single method, `file_selection_menu`, which displays
+    the menu, gets the user's choice, and then calls the appropriate method from
+    the `FileSamples` class.
 
-    The `FileMenu` class also has an instance variable `self.file_samples`, which is an instance of the `FileSamples` class. This instance is used to call the methods of the `FileSamples` class.
+    The `FileMenu` class also has an instance variable `self.file_samples`,
+    which is an instance of the `FileSamples` class. This instance is used to
+    call the methods of the `FileSamples` class.
 
-    We have replaced the if ... elif construct with the decision table 
-    `self.operations`. A decision table is a compact representation of a set of rules for making a decision based on the values of one or more inputs.
+    We have replaced the if ... elif construct with the decision table
+    `self.operations`. A decision table is a compact representation of a set of
+    rules for making a decision based on the values of one or more inputs.
 
-    In Python, you can represent a decision table as a dictionary, where the keys represent the inputs and the values represent the corresponding outputs. To use the decision table, you look up the input values in the dictionary to get the corresponding output.
+    In Python, you can represent a decision table as a dictionary, where the
+    keys represent the inputs and the values represent the corresponding
+    outputs. To use the decision table, you look up the input values in the
+    dictionary to get the corresponding output.
 
     Use
     ---    
@@ -58,8 +68,10 @@ class FileMenu(ConsoleMenu):
         self.file_samples = FileSamples() 
         
         """ 
-        Create a desicion table (dictionary) where the key is the number indicating the user's choice and the values are members of a list. 
-        The first value in the list is the type of operation to perform; the second value is the actual `FileSamples` method to call. 
+        Create a decision table (dictionary) where the key is the number
+        indicating the user's choice and the values are members of a list.  The
+        first value in the list is the type of operation to perform; the second
+        value is the actual `FileSamples` method to call. 
         """
         self.operations = {
             1: ["\n*** Read a file ***", self.file_samples.read_file],
@@ -73,8 +85,8 @@ class FileMenu(ConsoleMenu):
 
     def file_selection_menu(self):
         """
-            Display menu and process user's input.  Call the proper method based
-            on the user's selection.
+            Display menu and process user's input. Call the proper method based
+            on the user's choice.
         """
 
         while True:
