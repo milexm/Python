@@ -13,16 +13,13 @@ import sys
 sys.path.append('./code/packages/console_menu_utilities')
 from console_menu import ConsoleMenu
 
+
 class FileMenu(ConsoleMenu):
 
     """ 
     Instantiate the menu class and create the menu.
     Display the selection menu and execute the sample selected by the user. 
-
-    Parent class
-    -------
-    ConsoleMenu
-    
+ 
     Remarks
     -------
     
@@ -50,29 +47,28 @@ class FileMenu(ConsoleMenu):
 
     In the calling module perform the following steps: 
     1) `amenu = FileMenu()` # Instantiate the FileMenu class.
-    2) `amenu.file_selection_menu()` # Display the nnn samples selection
+    2) `amenu.file_selection_menu()` # Display the samples selection
     menu. 
   
     """
 
     def __init__(self):
-        """ Initialize the class `string_menu` instance. """
+        """ Initialize the class instance. """
 
-        # Define the entries of the file samples menu. 
+        
         self.menu_items = ["Read a file", "Write to a file", "Find a file hash", "Process image file", "Process csv file", "Quit"]
-    
+        """ File samples menu."""
+      
         # Initialize menu name and options through the parent class.  
         super().__init__("File Menu", self.menu_items)
 
-        # Instantiate the sample class.
         self.file_samples = FileSamples() 
+        """ `FileSamples` instance. """
         
-        """ 
-        Create a decision table (dictionary) where the key is the number
-        indicating the user's choice and the values are members of a list.  The
-        first value in the list is the type of operation to perform; the second
-        value is the actual `FileSamples` method to call. 
-        """
+        # Create a decision table (dictionary) where the key is the number
+        # indicating the user's choice and the values are members of a list.  
+        # The first value in the list is the type of operation to perform; the
+        # second value is the actual `FileSamples` method to call. 
         self.operations = {
             1: ["\n*** Read a file ***", self.file_samples.read_file],
             2: ["\n*** Write a file ***", self.file_samples.write_file],
@@ -80,8 +76,8 @@ class FileMenu(ConsoleMenu):
             4: ["\n*** Process image file ***", self.file_samples.process_image_file],
             5: ["\n*** Process csv file ***", self.file_samples.process_csv_file],
         }
-
-
+        """ File operations decision table (dictionary). """
+        
 
     def file_selection_menu(self):
         """
