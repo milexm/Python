@@ -243,7 +243,7 @@ class FileSamples:
         import csv 
 
         try: 
-            file_path =  self.files_path + "students.csv"
+            file_path =  self.files_path + "test.csv"
 
             columns = int(input("How many columns do you want to write? "))
             input_rows = []

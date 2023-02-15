@@ -1,16 +1,16 @@
 ---
-last update: 02/10/23
+last update: 02/14/23
 ---
 
 # ![python-icon](../media/icons/python-icon.svg) API reference documentation
 
-- [Overview](#overview)
-- [Running code examples](#running-code-examples)
-  - [First level menu](#first-level-menu)
-  - [Second level menu](#second-level-menu)
-- [References](#references)
+- [1. Overview](#1-overview)
+- [2. Running code examples](#2-running-code-examples)
+  - [2.1. First level menu](#21-first-level-menu)
+  - [2.2. Second level menu](#22-second-level-menu)
+- [3. References](#3-references)
 
-## Overview
+## 1. Overview
 
 The examples API reference documentation is created automatically from the
 **docstrings** contained in the code.  
@@ -39,7 +39,7 @@ include your project's README in your top-level `__init__.py` like this:
 For more information, see [include Markdown
 files?](https://pdoc.dev/docs/pdoc.html#include-markdown-files).
 
-## Running code examples
+## 2. Running code examples
 
 The code examples are contained in the folder `Python/code` and grouped by areas
 in the related foldera. For example:
@@ -63,7 +63,7 @@ run:
 - The second level menu (sub-menu) allows the selection and the execution of the
   acual examples.
 
-### First level menu
+### 2.1. First level menu
 
 The first level menu is implemented by a `main.py` module contained in the
 specific area folder i.e., the folder that contains the modules with the actual
@@ -100,7 +100,7 @@ menu for each set of examples. This must be supported by the package
 > reference documentation.
 
 
-### Second level menu
+### 2.2. Second level menu
 
 The second level menu is implemented by several modules contained in packages.
 Each module implements a menu specific to a particular set of examples.
@@ -149,7 +149,7 @@ For simplicity, the figure shows only the selection of the list samples.
 
 media\samples\python-builtin_types_selection.png
 
-## References
+## 3. References
 
 - [Python 3.11.1 documentation](https://docs.python.org/3/)
 - [PEP 8 – Style Guide for Python Code](https://peps.python.org/pep-0008/)

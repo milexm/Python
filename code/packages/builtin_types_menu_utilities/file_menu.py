@@ -19,14 +19,22 @@ class FileMenu(ConsoleMenu):
     Instantiate the menu class and create the menu.
     Display the selection menu and execute the sample selected by the user. 
 
+    Parent class
+    -------
+    ConsoleMenu
+    
     Remarks
     -------
     
-    The class `FileMenu` displays a menu to the user and calls one of the methods from the templateSamples class based on the user's selection. The FileMenu class has a single method, template_selection_menu, which displays the menu, gets the user's choice, and then calls the appropriate method from the templateSamples class.
+    The class `FileMenu` displays a menu to the user and calls one of the methods from the FileSamples class based on the user's selection. The `FileMenu` class has a single method, `file_selection_menu`, which displays the menu, gets the user's choice, and then calls the appropriate method from the `FileSamples` class.
 
-    The `FileMenu` class also has an instance variable `self.template_samples`, which is an instance of the `templateSamples` class. This instance is used to call the methods of the `templateSamples` class.
+    The `FileMenu` class also has an instance variable `self.file_samples`, which is an instance of the `FileSamples` class. This instance is used to call the methods of the `FileSamples` class.
 
-    
+    We have replaced the if ... elif construct with the decision table 
+    `self.operations`. A decision table is a compact representation of a set of rules for making a decision based on the values of one or more inputs.
+
+    In Python, you can represent a decision table as a dictionary, where the keys represent the inputs and the values represent the corresponding outputs. To use the decision table, you look up the input values in the dictionary to get the corresponding output.
+
     Use
     ---    
 
@@ -47,7 +55,20 @@ class FileMenu(ConsoleMenu):
         super().__init__("File Menu", self.menu_items)
 
         # Instantiate the sample class.
-        self.file_samples = FileSamples()
+        self.file_samples = FileSamples() 
+        
+        """ 
+        Create a desicion table (dictionary) where the key is the number indicating the user's choice and the values are members of a list. 
+        The first value in the list is the type of operation to perform; the second value is the actual `FileSamples` method to call. 
+        """
+        self.operations = {
+            1: ["\n*** Read a file ***", self.file_samples.read_file],
+            2: ["\n*** Write a file ***", self.file_samples.write_file],
+            3: ["\n*** Find a file hash ***", self.file_samples.find_file_hash],
+            4: ["\n*** Process image file ***", self.file_samples.process_image_file],
+            5: ["\n*** Process csv file ***", self.file_samples.process_csv_file],
+        }
+
 
 
     def file_selection_menu(self):
@@ -64,20 +85,10 @@ class FileMenu(ConsoleMenu):
             # Get the user's choice.
             choice = self.get_user_choice()
 
-            if choice == 1:
-                print("\n*** Read a file ***")
-                self.file_samples.read_file()
-            elif choice == 2:
-                print("\n*** Write a file ***")
-                self.file_samples.write_file()
-            elif choice == 3:
-                print("\n*** Find a file hash ***")
-                self.file_samples.find_file_hash()
-            elif choice == 4:
-                print("\n*** Process image file ***")
-                self.file_samples.process_image_file()
-            elif choice == 5:
-                print("\n*** Process csv file ***")
-                self.file_samples.process_csv_file()
-            elif choice == len(self.menu_items):
+            if choice == len(self.menu_items):
                 break        
+            else:
+                # Displau the kind of operation performed.
+                print(self.operations[choice][0])
+                # Perform the operation. 
+                self.operations[choice][1]()

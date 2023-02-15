@@ -6,7 +6,7 @@
 <meta name="generator" content="pdoc 0.10.0" />
 <title>code API documentation</title>
 <meta name="description" content="---
-last update: 02/10/23
+last update: 02/14/23
 --- …" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
@@ -25,16 +25,16 @@ last update: 02/10/23
 </header>
 <section id="section-intro">
 <hr>
-<h2 id="last-update-021023">last update: 02/10/23</h2>
+<h2 id="last-update-021423">last update: 02/14/23</h2>
 <h1 id="api-reference-documentation"><img alt="python-icon" src="../media/icons/python-icon.svg"> API reference documentation</h1>
 <ul>
-<li><a href="#overview">Overview</a></li>
-<li><a href="#running-code-examples">Running code examples</a></li>
-<li><a href="#first-level-menu">First level menu</a></li>
-<li><a href="#second-level-menu">Second level menu</a></li>
-<li><a href="#references">References</a></li>
+<li><a href="#1-overview">1. Overview</a></li>
+<li><a href="#2-running-code-examples">2. Running code examples</a></li>
+<li><a href="#21-first-level-menu">2.1. First level menu</a></li>
+<li><a href="#22-second-level-menu">2.2. Second level menu</a></li>
+<li><a href="#3-references">3. References</a></li>
 </ul>
-<h2 id="overview">Overview</h2>
+<h2 id="1-overview">1. Overview</h2>
 <p>The examples API reference documentation is created automatically from the
 <strong>docstrings</strong> contained in the code.
 </p>
@@ -56,7 +56,7 @@ include your project's README in your top-level <code>__init__.py</code> like th
 <p><code>.. include:: ./README.md</code></p>
 <p>For more information, see <a href="https://pdoc.dev/docs/pdoc.html#include-markdown-files">include Markdown
 files?</a>.</p>
-<h2 id="running-code-examples">Running code examples</h2>
+<h2 id="2-running-code-examples">2. Running code examples</h2>
 <p>The code examples are contained in the folder <code>Python/code</code> and grouped by areas
 in the related foldera. For example:</p>
 <ul>
@@ -78,7 +78,7 @@ run:</p>
 <li>The second level menu (sub-menu) allows the selection and the execution of the
 acual examples.</li>
 </ul>
-<h3 id="first-level-menu">First level menu</h3>
+<h3 id="21-first-level-menu">2.1. First level menu</h3>
 <p>The first level menu is implemented by a <code>main.py</code> module contained in the
 specific area folder i.e., the folder that contains the modules with the actual
 code examples. For this to work, <code>main.py</code> must import the supporting packages,
@@ -112,7 +112,7 @@ file that becomes the landing page for the folder itself and its examples.<br>
 folder. This for Python interpreter and for <code>pdoc</code> when generating the
 reference documentation.</p>
 </blockquote>
-<h3 id="second-level-menu">Second level menu</h3>
+<h3 id="22-second-level-menu">2.2. Second level menu</h3>
 <p>The second level menu is implemented by several modules contained in packages.
 Each module implements a menu specific to a particular set of examples.
 For example the <code>builtin_types_menu_utilities</code> package contains modules such as:
@@ -151,7 +151,7 @@ from .tuple_menu import TupleMenu
 For simplicity, the figure shows only the selection of the list samples.</p>
 <p><img alt="builtin types selection" src="../media/samples/python-builtin_types_selection.png"></p>
 <p>media\samples\python-builtin_types_selection.png</p>
-<h2 id="references">References</h2>
+<h2 id="3-references">3. References</h2>
 <ul>
 <li><a href="https://docs.python.org/3/">Python 3.11.1 documentation</a></li>
 <li><a href="https://peps.python.org/pep-0008/">PEP 8 – Style Guide for Python Code</a></li>
@@ -239,15 +239,15 @@ The directory contains several modules that through <strong>init</strong> are co
 <h1>Index</h1>
 <div class="toc">
 <ul>
-<li><a href="#last-update-021023">last update: 02/10/23</a></li>
+<li><a href="#last-update-021423">last update: 02/14/23</a></li>
 <li><a href="#api-reference-documentation">API reference documentation</a><ul>
-<li><a href="#overview">Overview</a></li>
-<li><a href="#running-code-examples">Running code examples</a><ul>
-<li><a href="#first-level-menu">First level menu</a></li>
-<li><a href="#second-level-menu">Second level menu</a></li>
+<li><a href="#1-overview">1. Overview</a></li>
+<li><a href="#2-running-code-examples">2. Running code examples</a><ul>
+<li><a href="#21-first-level-menu">2.1. First level menu</a></li>
+<li><a href="#22-second-level-menu">2.2. Second level menu</a></li>
 </ul>
 </li>
-<li><a href="#references">References</a></li>
+<li><a href="#3-references">3. References</a></li>
 </ul>
 </li>
 </ul>
