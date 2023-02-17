@@ -216,7 +216,7 @@ class FileSamples:
         except Exception as error:
             print(f"{type(error).__name__} was raised: {error}") 
         
-    def process_csv_file(self):
+    def process_csv_file(self, file_name):
         '''  
         Adds a row to a csv file. The function first checks if the row already
         exists in the csv file and only adds the row if it does not exist.  The
@@ -243,8 +243,9 @@ class FileSamples:
         import csv 
 
         try: 
-            file_path =  self.files_path + "test.csv"
-
+            # file_path =  self.files_path + "test.csv"
+            file_path =  self.files_path + file_name
+            
             columns = int(input("How many columns do you want to write? "))
             input_rows = []
             keep_going = True

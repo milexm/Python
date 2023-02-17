@@ -1,5 +1,5 @@
 """ 
-Module template_menu.py 
+Module file_menu.py 
 
 """ 
 
@@ -74,7 +74,7 @@ class FileMenu(ConsoleMenu):
             2: ["\n*** Write a file ***", self.file_samples.write_file],
             3: ["\n*** Find a file hash ***", self.file_samples.find_file_hash],
             4: ["\n*** Process image file ***", self.file_samples.process_image_file],
-            5: ["\n*** Process csv file ***", self.file_samples.process_csv_file],
+            5: ["\n*** Process csv file ***", lambda: self.file_samples.process_csv_file("test.csv")],
         }
         """ File operations decision table (dictionary). """
         
