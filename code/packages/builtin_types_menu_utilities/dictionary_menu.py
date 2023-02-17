@@ -47,6 +47,18 @@ class DictionaryMenu(ConsoleMenu):
         # Instantiate the dictionery samples class. 
         self.dict_samples = DictionarySamples()
     
+        
+        self.operations = {
+            1: ["\n***  Create a simple dictionary ***", lambda: self.dict_samples.create_simple_dictionary("a", 1, "b", 2)],
+            2: ["\n*** Get dictionary element ***", 
+            lambda: self.dict_samples.get_dictionary_element_value(dict(a=1, b=2), "a")],
+            3: ["\n*** Print fornatted dictionary ***", self.dict_samples.print_dictionary_formatted],
+            4: ["\n*** Filter dictionary ***", lambda: self.dict_samples.filter_dictionary(3)],
+            5: ["\n*** Get value in a multilevel dictionary ***", lambda: self.dict_samples.get_value_multilevel_dictionary("b", 3)],
+            6: ["\n*** Iterate through a dictionary ***", self.dict_samples.iterate_dictionary],
+        }
+        """ Dictionary operations decision table (dictionary). """
+        
 
     def dict_selection_menu(self):
         """
@@ -56,36 +68,16 @@ class DictionaryMenu(ConsoleMenu):
 
         while True:
 
-            # Display the menu. 
+            # Display the menu.
             self.display_menu()
 
             # Get the user's choice.
             choice = self.get_user_choice()
 
-            if choice == 1:
-                print("\n*** Create a simple dictionary ***")
-                self.dict_samples.create_simple_dictionary("a", 1, "b", 2)
-                
-            elif choice == 2:
-                print("\n*** Get dictionary element ***")
-                d = dict(a=1, b=2)
-                self.dict_samples.get_dictionary_element_value(d, "a")
-                
-            elif choice == 3:
-                print("\n*** Print fornatted dictionary ***")
-                self.dict_samples.print_dictionary_formatted()
-                
-            elif choice == 4:
-                print("\n*** Filter dictionary ***")
-                self.dict_samples.filter_dictionary(3)
-                
-            elif choice == 5:
-                print("\n*** Get value in a multilevel dictionary ***")
-                self.dict_samples.get_value_multilevel_dictionary("b", 3)
-                
-            elif choice == 6:
-                print("\n*** Iterate through a dictionary ***")
-                self.dict_samples.iterate_dictionary()
-                
-            elif choice == len(self.menu_items):
-                break
+            if choice == len(self.menu_items):
+                break        
+            else:
+                # Display the kind of operation to perform.
+                print(self.operations[choice][0])
+                # Perform the operation. 
+                self.operations[choice][1]()
