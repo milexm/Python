@@ -56,26 +56,20 @@ class DictionarySamples:
         Create a simple dictionary that contains two keys and their respective
         values.
 
+        Parameters:
+            key1 (str): The value of the first key in the dicitonary.
 
-        Parameters
-        ----------
-        key1 : str 
-            The value of the first key in the dicitonary.
-        value1 : int 
-            The value associated with the first key in the dicitonary.   
+            value1 (int): The value associated with the first key in the dicitonary.  
 
-        key2 : str 
-            The value of the second key in the dicitonary.
-        value2 : int 
-            The value associated with the second key in the dicitonary.  
+            key2 (str): The value of the second key in the dicitonary.
 
+            value2 (int): The value associated with the second key in the dicitonary.  
 
         Remarks
         -------
         Using curly brackets is one way to create a dictionary.
 
-        The `dict`  function is another way to create a dictionary. `dict`  is
-        also used to convert other objects to a dictionary.
+        The `dict`  function is another way to create a dictionary. `dict`  is also used to convert other objects to a dictionary.
 
         """
         
@@ -95,13 +89,11 @@ class DictionarySamples:
         """
         Get the value of a dictionary element with the specified key.
 
-        Parameters
-        ----------
+        Parameters:
 
-        d : dict
-            The dictionary to search.
-        key : str 
-            The key of the element whose value must the obtained. 
+            d (dict): The dictionary to search.
+
+            key (str): The key of the element whose value must the obtained. 
 
         Remarks
         -------
@@ -147,11 +139,9 @@ class DictionarySamples:
         Filter the dictionary by removing all items with a value greater than
         the passed value.
 
-        Parameters
-        ----------
+        Parameters:
 
-        filter : int
-            The value to use for filtering the dictionary. 
+            filter (int): The value to use for filtering the dictionary. 
 
         Remarks
         -------
@@ -177,13 +167,11 @@ class DictionarySamples:
         """
         Get the value of an element in a multilevel dictionary.
 
-        Parameters
-        ----------
+        Parameters:
 
-        key : str
-            The key of the multilevel element.
-        index: int
-            The index of of the value in the multilevel element. 
+            key (str): The key of the multilevel element.  
+        
+            index (int): The index of the value in the multilevel element. 
 
         """
         
@@ -202,7 +190,7 @@ class DictionarySamples:
             print(f"{type(error).__name__} was raised: {error}") 
 
     def iterate_dictionary(self):
-        """
+        """            
         Iterate through a dictionary and display teh output. 
 
         """

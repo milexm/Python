@@ -257,7 +257,7 @@ class FileSamples:
         except Exception as error:
             print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
         
-    def process_csv_file(self):
+    def process_csv_file(self, file_name):
         &#39;&#39;&#39;  
         Adds a row to a csv file. The function first checks if the row already
         exists in the csv file and only adds the row if it does not exist.  The
@@ -284,8 +284,9 @@ class FileSamples:
         import csv 
 
         try: 
-            file_path =  self.files_path + &#34;test.csv&#34;
-
+            # file_path =  self.files_path + &#34;test.csv&#34;
+            file_path =  self.files_path + file_name
+            
             columns = int(input(&#34;How many columns do you want to write? &#34;))
             input_rows = []
             keep_going = True
@@ -548,7 +549,7 @@ class FileSamples:
         except Exception as error:
             print(f&#34;{type(error).__name__} was raised: {error}&#34;) 
         
-    def process_csv_file(self):
+    def process_csv_file(self, file_name):
         &#39;&#39;&#39;  
         Adds a row to a csv file. The function first checks if the row already
         exists in the csv file and only adds the row if it does not exist.  The
@@ -575,8 +576,9 @@ class FileSamples:
         import csv 
 
         try: 
-            file_path =  self.files_path + &#34;test.csv&#34;
-
+            # file_path =  self.files_path + &#34;test.csv&#34;
+            file_path =  self.files_path + file_name
+            
             columns = int(input(&#34;How many columns do you want to write? &#34;))
             input_rows = []
             keep_going = True
@@ -689,7 +691,7 @@ the process memory efficient.</p></div>
 </details>
 </dd>
 <dt id="code.builtin_types.file_samples.FileSamples.process_csv_file"><code class="name flex">
-<span>def <span class="ident">process_csv_file</span></span>(<span>self)</span>
+<span>def <span class="ident">process_csv_file</span></span>(<span>self, file_name)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Adds a row to a csv file. The function first checks if the row already
@@ -719,7 +721,7 @@ Files</a>.</p></div>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def process_csv_file(self):
+<pre><code class="python">def process_csv_file(self, file_name):
     &#39;&#39;&#39;  
     Adds a row to a csv file. The function first checks if the row already
     exists in the csv file and only adds the row if it does not exist.  The
@@ -746,8 +748,9 @@ Files</a>.</p></div>
     import csv 
 
     try: 
-        file_path =  self.files_path + &#34;test.csv&#34;
-
+        # file_path =  self.files_path + &#34;test.csv&#34;
+        file_path =  self.files_path + file_name
+        
         columns = int(input(&#34;How many columns do you want to write? &#34;))
         input_rows = []
         keep_going = True

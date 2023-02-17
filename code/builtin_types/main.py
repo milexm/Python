@@ -47,8 +47,11 @@ class GroupMenu(ConsoleMenu):
         """
 
         # Define the entries of the group menu. 
-        self.menu_items = ["Lists", "Tuples", "Dictionaries", "Strings", "Exceptions", "Files", "Quit"]
+        # self.menu_items = ["Lists", "Tuples", "Dictionaries", "Strings", "Exceptions", "Files", "Quit"]
      
+        
+        self.menu_items = ["Dictionaries", "Exceptions", "Files", "Lists", "Strings", "Tuples", "Quit"]
+
         # Initialize menu name and items through the ConsoleMenu parent class.  
         super().__init__("Builtin Types Group Menu", self.menu_items)
 
@@ -59,19 +62,21 @@ class GroupMenu(ConsoleMenu):
         _smenu = _menu.StringMenu()
         _emenu = _menu.ExceptionMenu()
         _fmenu = _menu.FileMenu()
+        _bltmenu = _menu.BuiltinTypesMenu()  
+
         """ Sub menu class instances. """
 
 
         # Define the sub menu decision table.
         self.sub_menu = {
-            1:  _lmenu.list_selection_menu,
-            2:  _tmenu.tuple_selection_menu,
-            3:  _dmenu.dict_selection_menu,
-            4:  _smenu.string_selection_menu,
-            5:  _emenu.exception_selection_menu,
-            6:  _fmenu.file_selection_menu
+            1:  lambda: _bltmenu.blt_selection_menu(1),
+            2:  _emenu.exception_selection_menu,
+            3:  lambda: _bltmenu.blt_selection_menu(3),
+            4:  _lmenu.list_selection_menu,
+            5:  _smenu.string_selection_menu,
+            6:  _tmenu.tuple_selection_menu,
         }
-        """ Sub menu selection decision table (dictionary). """
+        """ Sub menu selection decision table. """
 
     def group_selection_menu(self):
         """

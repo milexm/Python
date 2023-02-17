@@ -103,7 +103,7 @@ class FileMenu(ConsoleMenu):
             2: [&#34;\n*** Write a file ***&#34;, self.file_samples.write_file],
             3: [&#34;\n*** Find a file hash ***&#34;, self.file_samples.find_file_hash],
             4: [&#34;\n*** Process image file ***&#34;, self.file_samples.process_image_file],
-            5: [&#34;\n*** Process csv file ***&#34;, self.file_samples.process_csv_file],
+            5: [&#34;\n*** Process csv file ***&#34;, lambda: self.file_samples.process_csv_file(&#34;test.csv&#34;)],
         }
         &#34;&#34;&#34; File operations decision table (dictionary). &#34;&#34;&#34;
         
@@ -232,7 +232,7 @@ menu. </p>
             2: [&#34;\n*** Write a file ***&#34;, self.file_samples.write_file],
             3: [&#34;\n*** Find a file hash ***&#34;, self.file_samples.find_file_hash],
             4: [&#34;\n*** Process image file ***&#34;, self.file_samples.process_image_file],
-            5: [&#34;\n*** Process csv file ***&#34;, self.file_samples.process_csv_file],
+            5: [&#34;\n*** Process csv file ***&#34;, lambda: self.file_samples.process_csv_file(&#34;test.csv&#34;)],
         }
         &#34;&#34;&#34; File operations decision table (dictionary). &#34;&#34;&#34;
         

@@ -43,5 +43,7 @@ from .tuple_menu import TupleMenu
 from .dictionary_menu import DictionaryMenu
 from .exception_menu import ExceptionMenu
 from .file_menu import FileMenu  
+from .builtin_types_menu import BuiltinTypesMenu   
+
 
 
