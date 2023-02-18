@@ -51,12 +51,11 @@ class ListSamples:
         """
         Displays the items of a list in the specified range. 
 
-        Parameters
-        ----------
-        lower_bound : int 
-            The index of the first element in the range.
-        upper_bound : int 
-            The index of the last element in the range.
+        Parameters:
+            lower_bound : int 
+                The index of the first element in the range.
+            upper_bound : int 
+                The index of the last element in the range.
 
         Remarks
         -------
@@ -308,10 +307,9 @@ class ListSamples:
         """
         Display the item of a list at the specified index. 
 
-        Parameters
-        ----------
-        index : int 
-            The index of the element to display.
+        Parameters:
+            index : int 
+                The index of the element to display.
 
         Remarks
         -------
@@ -326,8 +324,12 @@ class ListSamples:
         
         # Display the requested item. 
         try:
+            # Get the item at the specified index.
             item = self.letters[index]
             print(f"The item at index {index} is: {item}") 
+            # Get the item at the specified negative index.
+            item = self.letters[-index]
+            print(f"The item at index {-index} is: {item}") 
         except Exception as error:
             print(f"{type(error).__name__} was raised: {index} {error}") 
 

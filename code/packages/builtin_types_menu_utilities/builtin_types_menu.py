@@ -53,7 +53,7 @@ class BuiltinTypesMenu(ConsoleMenu):
         self.file_menu_items = ["Read a file", "Write to a file", "Find a file hash", "Process image file", "Process csv file", "Quit"]
         """ File menu items."""
 
-        self.list_menu_items = ["Positive index a list", "Negative index a list", "Slice a list positive range", "Slice a list negative range", "Slice a list in steps","Create a list", "Create a list in a range", "Create a string list in a range", 
+        self.list_menu_items = ["Index a list", "Slice a list positive range", "Slice a list negative range", "Slice a list in steps","Create a list", "Create a list in a range", "Create a string list in a range", 
         "Remove duplicated list elements", "Perform list indexing",
         "Change list elements", "Add element to a list", "Slice a list", "Apply list methods", "Use a list as a stack", "Use a list as a queue", "Use list comprehension", "Quit"]
         """ List menu items."""
@@ -104,8 +104,7 @@ class BuiltinTypesMenu(ConsoleMenu):
         """ File samples decision table. """
 
         self.list_samples = {
-            1: ["\n*** Positive index a list ***", lambda: self.lis_samples.get_list_item(2)],
-            2: ["\n*** Negative index a list ***", lambda: self.lis_samples.get_list_item(-2)],
+            1: ["\n*** Index a list ***", lambda: self.lis_samples.get_list_item(2)],
             3: ["\n*** Slice a list positive range ***", lambda: self.lis_samples.get_list_range_items(3, 5)], 
             4: ["\n*** Slice a list negative range ***", lambda: self.lis_samples.get_list_negative_range_items(-3, -1)], 
             5: ["\n*** Slice a list in steps ***", lambda: self.lis_samples.get_list_range_items_in_steps(1, 10, 2)], 
@@ -163,8 +162,8 @@ class BuiltinTypesMenu(ConsoleMenu):
             if choice == len(selected_sub_menu_items):
                 break        
             else:
-                # Display selected menu name.
-                print(selected_menu_name)
+                # Display selected sub menu name.
+                print(f"\n*** Sample results ***") 
                 
                 # Get the selected list (second dictionary elememnt)
                 _current_selection = self.sample_groups[sub_menu][1] 
