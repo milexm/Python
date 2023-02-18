@@ -70,9 +70,9 @@ class GroupMenu(ConsoleMenu):
         # Define the sub menu decision table.
         self.sub_menu = {
             1:  lambda: _bltmenu.blt_selection_menu(1),
-            2:  _emenu.exception_selection_menu,
+            2:  lambda: _bltmenu.blt_selection_menu(2),
             3:  lambda: _bltmenu.blt_selection_menu(3),
-            4:  _lmenu.list_selection_menu,
+            4:  lambda: _bltmenu.blt_selection_menu(4),
             5:  _smenu.string_selection_menu,
             6:  _tmenu.tuple_selection_menu,
         }
