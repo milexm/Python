@@ -38,11 +38,9 @@ For example, to use the `ConsoleMenu` class in the calling module you do the fol
 # Perform package wide initializations.
 
 from .string_menu import StringMenu
-from .list_menu import ListMenu
+
 from .tuple_menu import TupleMenu
-from .dictionary_menu import DictionaryMenu
-from .exception_menu import ExceptionMenu
-from .file_menu import FileMenu  
+
 from .builtin_types_menu import BuiltinTypesMenu   
 
 

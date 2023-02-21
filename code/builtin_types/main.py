@@ -56,12 +56,11 @@ class GroupMenu(ConsoleMenu):
         super().__init__("Builtin Types Group Menu", self.menu_items)
 
         # Instantiate the sub menu classes. 
-        _lmenu = _menu.ListMenu()
+      
         _tmenu = _menu.TupleMenu()
-        _dmenu = _menu.DictionaryMenu()
+        
         _smenu = _menu.StringMenu()
-        _emenu = _menu.ExceptionMenu()
-        _fmenu = _menu.FileMenu()
+   
         _bltmenu = _menu.BuiltinTypesMenu()  
 
         """ Sub menu class instances. """

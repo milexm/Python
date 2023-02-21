@@ -76,31 +76,35 @@ class GroupMenu(ConsoleMenu):
         &#34;&#34;&#34;
 
         # Define the entries of the group menu. 
-        self.menu_items = [&#34;Lists&#34;, &#34;Tuples&#34;, &#34;Dictionaries&#34;, &#34;Strings&#34;, &#34;Exceptions&#34;, &#34;Files&#34;, &#34;Quit&#34;]
+        # self.menu_items = [&#34;Lists&#34;, &#34;Tuples&#34;, &#34;Dictionaries&#34;, &#34;Strings&#34;, &#34;Exceptions&#34;, &#34;Files&#34;, &#34;Quit&#34;]
      
+        
+        self.menu_items = [&#34;Dictionaries&#34;, &#34;Exceptions&#34;, &#34;Files&#34;, &#34;Lists&#34;, &#34;Strings&#34;, &#34;Tuples&#34;, &#34;Quit&#34;]
+
         # Initialize menu name and items through the ConsoleMenu parent class.  
         super().__init__(&#34;Builtin Types Group Menu&#34;, self.menu_items)
 
         # Instantiate the sub menu classes. 
-        _lmenu = _menu.ListMenu()
+      
         _tmenu = _menu.TupleMenu()
-        _dmenu = _menu.DictionaryMenu()
+        
         _smenu = _menu.StringMenu()
-        _emenu = _menu.ExceptionMenu()
-        _fmenu = _menu.FileMenu()
+   
+        _bltmenu = _menu.BuiltinTypesMenu()  
+
         &#34;&#34;&#34; Sub menu class instances. &#34;&#34;&#34;
 
 
         # Define the sub menu decision table.
         self.sub_menu = {
-            1:  _lmenu.list_selection_menu,
-            2:  _tmenu.tuple_selection_menu,
-            3:  _dmenu.dict_selection_menu,
-            4:  _smenu.string_selection_menu,
-            5:  _emenu.exception_selection_menu,
-            6:  _fmenu.file_selection_menu
+            1:  lambda: _bltmenu.blt_selection_menu(1),
+            2:  lambda: _bltmenu.blt_selection_menu(2),
+            3:  lambda: _bltmenu.blt_selection_menu(3),
+            4:  lambda: _bltmenu.blt_selection_menu(4),
+            5:  _smenu.string_selection_menu,
+            6:  _tmenu.tuple_selection_menu,
         }
-        &#34;&#34;&#34; Sub menu selection decision table (dictionary). &#34;&#34;&#34;
+        &#34;&#34;&#34; Sub menu selection decision table. &#34;&#34;&#34;
 
     def group_selection_menu(self):
         &#34;&#34;&#34;
@@ -198,31 +202,35 @@ it initiliazes the <code>group_menu</code> attribute with a <code>ConsoleMenu</c
         &#34;&#34;&#34;
 
         # Define the entries of the group menu. 
-        self.menu_items = [&#34;Lists&#34;, &#34;Tuples&#34;, &#34;Dictionaries&#34;, &#34;Strings&#34;, &#34;Exceptions&#34;, &#34;Files&#34;, &#34;Quit&#34;]
+        # self.menu_items = [&#34;Lists&#34;, &#34;Tuples&#34;, &#34;Dictionaries&#34;, &#34;Strings&#34;, &#34;Exceptions&#34;, &#34;Files&#34;, &#34;Quit&#34;]
      
+        
+        self.menu_items = [&#34;Dictionaries&#34;, &#34;Exceptions&#34;, &#34;Files&#34;, &#34;Lists&#34;, &#34;Strings&#34;, &#34;Tuples&#34;, &#34;Quit&#34;]
+
         # Initialize menu name and items through the ConsoleMenu parent class.  
         super().__init__(&#34;Builtin Types Group Menu&#34;, self.menu_items)
 
         # Instantiate the sub menu classes. 
-        _lmenu = _menu.ListMenu()
+      
         _tmenu = _menu.TupleMenu()
-        _dmenu = _menu.DictionaryMenu()
+        
         _smenu = _menu.StringMenu()
-        _emenu = _menu.ExceptionMenu()
-        _fmenu = _menu.FileMenu()
+   
+        _bltmenu = _menu.BuiltinTypesMenu()  
+
         &#34;&#34;&#34; Sub menu class instances. &#34;&#34;&#34;
 
 
         # Define the sub menu decision table.
         self.sub_menu = {
-            1:  _lmenu.list_selection_menu,
-            2:  _tmenu.tuple_selection_menu,
-            3:  _dmenu.dict_selection_menu,
-            4:  _smenu.string_selection_menu,
-            5:  _emenu.exception_selection_menu,
-            6:  _fmenu.file_selection_menu
+            1:  lambda: _bltmenu.blt_selection_menu(1),
+            2:  lambda: _bltmenu.blt_selection_menu(2),
+            3:  lambda: _bltmenu.blt_selection_menu(3),
+            4:  lambda: _bltmenu.blt_selection_menu(4),
+            5:  _smenu.string_selection_menu,
+            6:  _tmenu.tuple_selection_menu,
         }
-        &#34;&#34;&#34; Sub menu selection decision table (dictionary). &#34;&#34;&#34;
+        &#34;&#34;&#34; Sub menu selection decision table. &#34;&#34;&#34;
 
     def group_selection_menu(self):
         &#34;&#34;&#34;
@@ -253,7 +261,7 @@ it initiliazes the <code>group_menu</code> attribute with a <code>ConsoleMenu</c
 <dl>
 <dt id="code.builtin_types.main.GroupMenu.sub_menu"><code class="name">var <span class="ident">sub_menu</span></code></dt>
 <dd>
-<div class="desc"><p>Sub menu selection decision table (dictionary).</p></div>
+<div class="desc"><p>Sub menu selection decision table.</p></div>
 </dd>
 </dl>
 <h3>Methods</h3>
