@@ -1,0 +1,671 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>code.packages.builtin_types_menu_utilities.builtin_types_submenu API documentation</title>
+<meta name="description" content="Module dictionary_menu.py" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>code.packages.builtin_types_menu_utilities.builtin_types_submenu</code></h1>
+</header>
+<section id="section-intro">
+<p>Module dictionary_menu.py</p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">&#34;&#34;&#34; 
+Module dictionary_menu.py
+
+&#34;&#34;&#34;
+
+import sys
+sys.path.append(&#39;./code/builtin_types&#39;)
+from dictionary_samples import DictionarySamples
+from file_samples import FileSamples
+from exception_samples import ExceptionSamples
+from list_samples import ListSamples
+from string_samples import StringSamples
+from tuple_samples import TupleSamples
+
+# Import the ConsoleMenu class.
+import sys
+sys.path.append(&#39;./code/packages/console_menu_utilities&#39;)
+from console_menu import ConsoleMenu
+
+
+class BuiltinTypesSubMenu(ConsoleMenu):
+
+    &#34;&#34;&#34; 
+    The class `BuiltinTypesMenu` creates a menu for the builtin type sample
+    group selected by the user in [main.py](./code/buitin_types/main.py).  The
+    class has an instance method `blt_selection_menu` that displays a menu of
+    available samples, for the selecetd group, that allows the user to select a
+    sample to execute.
+
+
+    Remarks
+    -------
+
+    The `BuiltinTypesMenu` class has a single instance method,
+    `blt_selection_menu`, which displays the menu and gets the user&#39;s choice of
+    which sample to run. It then calls the appropriate method to run the chosen
+    sample. If the user selects the `Quit` option, the method exits.
+    
+    Use
+    ---    
+
+    In the calling module perform the following steps: 
+    
+    1. `amenu = BuiltinTypesMenu()` # Instantiate the class.  
+    1. `amenu.blt_selection_menu()` # Display the selection menu. 
+  
+  
+    &#34;&#34;&#34;
+
+    def __init__(self):
+        &#34;&#34;&#34; Initialize the class `dictionary_menu` instance. &#34;&#34;&#34;
+
+        # Define the menu entries for each sample group. 
+
+        self.dictionary_menu_items = [&#34;Create a simple dictionary&#34;, &#34;Get dictionary element value&#34;, &#34;Print formatted dictionary&#34;, &#34;Filter dictionary&#34;, 
+        &#34;Get value in a multilevel dictionary&#34;, &#34;Iterate through a dictionary&#34;, &#34;Quit&#34;]
+        &#34;&#34;&#34; Dictionary menu items.&#34;&#34;&#34;
+
+        self.exception_menu_items = [&#34;Type exception&#34;, &#34;Name exception&#34;, &#34;Attribute exception&#34;, &#34;File not found exception&#34;, &#34;EOF exception&#34;, &#34;Quit&#34;]
+        &#34;&#34;&#34; Exception menu items.&#34;&#34;&#34;
+    
+        self.file_menu_items = [&#34;Read a file&#34;, &#34;Write to a file&#34;, &#34;Find a file hash&#34;, &#34;Process image file&#34;, &#34;Process csv file&#34;, &#34;Quit&#34;]
+        &#34;&#34;&#34; File menu items.&#34;&#34;&#34;
+
+        self.list_menu_items = [&#34;Index a list&#34;, &#34;Slice a list&#34;,&#34;Create a list&#34;, 
+        &#34;Remove duplicated list elements&#34;, &#34;Perform list indexing&#34;,
+        &#34;Change list elements&#34;, &#34;Add element to a list&#34;, &#34;Apply list methods&#34;, &#34;Use a list as a stack&#34;, &#34;Use a list as a queue&#34;, &#34;Use list comprehension&#34;, &#34;Quit&#34;]
+        &#34;&#34;&#34; List menu items.&#34;&#34;&#34;
+
+        self.string_menu_items = [&#34;Create a string&#34;, &#34;Get a substring&#34;, &#34;Remove white spaces&#34;, &#34;Make lower case&#34;, &#34;Make upper case&#34;, &#34;Split string&#34;, &#34;Quit&#34;]
+            
+        self.tuple_menu_items = [&#34;Create a tuple&#34;, &#34;Modify a tuple error&#34;, &#34;Access a tuple&#34;, &#34;Unpack a tuple&#34;, &#34;Tuple odds and ends&#34;, &#34;Quit&#34;]
+
+
+        # Define the instance for each sample class. 
+
+        self.dictionary_samples_instance = DictionarySamples()
+        &#34;&#34;&#34; `DictionarySamples` instance. &#34;&#34;&#34;
+    
+        self.exception_samples_instance = ExceptionSamples() 
+        &#34;&#34;&#34; `ExceptionSamples` instance. &#34;&#34;&#34;
+
+        self.file_samples_instance = FileSamples() 
+        &#34;&#34;&#34; `FileSamples` instance. &#34;&#34;&#34;
+        
+        self.list_samples_instance = ListSamples() 
+        &#34;&#34;&#34; `ListSamples` instance. &#34;&#34;&#34;
+        
+        self.string_samples_instance = StringSamples() 
+        &#34;&#34;&#34; `StringSamples` instance. &#34;&#34;&#34;
+
+        self.tuple_samples_instance = TupleSamples() 
+        &#34;&#34;&#34; `TupleSamples` instance. &#34;&#34;&#34;
+
+        # Define the decision table for each sample group.  
+        # Each table entry contain the name of the sample and 
+        # the method to call. 
+        # Note the use of the `lambda&#39; function needed to pass 
+        # parameters to the function to call, when needed.  
+        self.dictionary_samples = {
+            1: [&#34;\n***  Create a simple dictionary ***&#34;, lambda: self.dictionary_samples_instance.create_simple_dictionary(&#34;a&#34;, 1, &#34;b&#34;, 2)],
+            2: [&#34;\n*** Get dictionary element ***&#34;, 
+            lambda: self.dictionary_samples_instance.get_dictionary_element_value(dict(a=1, b=2), &#34;a&#34;)],
+            3: [&#34;\n*** Print fornatted dictionary ***&#34;, self.dictionary_samples_instance.print_dictionary_formatted],
+            4: [&#34;\n*** Filter dictionary ***&#34;, lambda: self.dictionary_samples_instance.filter_dictionary(3)],
+            5: [&#34;\n*** Get value in a multilevel dictionary ***&#34;, lambda: self.dictionary_samples_instance.get_value_multilevel_dictionary(&#34;b&#34;, 3)],
+            6: [&#34;\n*** Iterate through a dictionary ***&#34;, self.dictionary_samples_instance.iterate_dictionary],
+        }
+        &#34;&#34;&#34; Dictionary samples decision table. &#34;&#34;&#34;
+
+        self.exception_samples = {
+            1: [&#34;\n*** Raise type exception ***&#34;, self.exception_samples_instance.raise_type_exception], 
+            2: [&#34;\n*** Raise name exception ***&#34;, self.exception_samples_instance.raise_name_exception], 
+            3: [&#34;\n*** Raise attribute exception ***&#34;, self.exception_samples_instance.raise_attribute_exception], 
+            4: [&#34;\n*** Raise file not found exception ***&#34;, self.exception_samples_instance.raise_file_not_found_exception], 
+            5: [&#34;\n*** Raise EOF exception ***&#34;, self.exception_samples_instance.raise_EOF_exception], 
+        }
+        &#34;&#34;&#34; Exception samples decision table. &#34;&#34;&#34;
+
+        self.file_samples = {
+            1: [&#34;\n*** Read a file ***&#34;, self.file_samples_instance.read_file],
+            2: [&#34;\n*** Write to a file ***&#34;, self.file_samples_instance.write_file],
+            3: [&#34;\n*** Find a file hash ***&#34;, self.file_samples_instance.find_file_hash],
+            4: [&#34;\n*** Process image file ***&#34;, self.file_samples_instance.process_image_file],
+            5: [&#34;\n*** Process csv file ***&#34;, lambda: self.file_samples_instance.process_csv_file(&#34;test.csv&#34;)]
+        }
+        &#34;&#34;&#34; File samples decision table. &#34;&#34;&#34;
+
+        self.list_samples = {
+            1: [&#34;\n*** Index a list ***&#34;, lambda: self.list_samples_instance.get_list_item(2)],
+            2: [&#34;\n*** Slice a list ***&#34;, lambda: self.list_samples_instance.slice_list(1, 10, 2)], 
+            3: [&#34;\n*** Create a list ***&#34;, lambda: self.list_samples_instance.create_list(1, 21)],    
+            4: [&#34;\n*** Remove duplicated list elements ***&#34;, self.list_samples_instance.remove_duplicated_list_elements],   
+            5: [&#34;\n*** List indexing ***&#34;, self.list_samples_instance.index_list],   
+            6: [&#34;\n*** Change list element ***&#34;, self.list_samples_instance.change_list_element],
+            7: [&#34;\n*** Add elements to a list ***&#34;, self.list_samples_instance.add_list_element],
+            8: [&#34;\n*** Apply list methods ***&#34;, self.list_samples_instance.apply_list_methods],
+            9: [&#34;\n***  Use a list as a stack ***&#34;, self.list_samples_instance.use_list_as_stack],
+            10: [&#34;\n*** Use a list as a queue ***&#34;, self.list_samples_instance.use_list_as_queue],
+            11: [&#34;\n*** Use list comprehension ***&#34;, self.list_samples_instance.use_list_comprehension]            
+        }    
+        &#34;&#34;&#34; List samples decision table. &#34;&#34;&#34;
+      
+        self.string_samples = {
+            1: [&#34;\n*** Create a simple string ***&#34;, self.string_samples_instance.create_string],
+            2: [&#34;\n*** Get a substring ***&#34;, self.string_samples_instance.get_sub_string],
+            3: [&#34;\n*** Strip white spaces ***&#34;, self.string_samples_instance.strip_white_spaces],
+            4: [&#34;\n*** Get lower case string ***&#34;, self.string_samples_instance.get_lower_case_string],
+            5: [&#34;\n*** Get upper case string ***&#34;, self.string_samples_instance.get_upper_case_string],
+            6: [&#34;\n*** Split string ***&#34;, self.string_samples_instance.split_string]
+        }
+        &#34;&#34;&#34; String samples decision table. &#34;&#34;&#34;
+
+        self.tuple_samples = {
+            1: [&#34;\n*** Create a tuple ***&#34;, self.tuple_samples_instance.create_tuple],
+            2: [&#34;\n*** Modify a tuple ***&#34;, self.tuple_samples_instance.modify_tuple],
+            3: [&#34;\n*** Access a tuple ***&#34;, self.tuple_samples_instance.access_tuple],
+            4: [&#34;\n*** Unpack a tuple ***&#34;, self.tuple_samples_instance.unpack_tuple],
+            5: [&#34;\n*** Tuple odds and ends ***&#34;, self.tuple_samples_instance.odds_ends_tuple]
+        }
+        &#34;&#34;&#34; Tuple samples decision table. &#34;&#34;&#34;
+
+        # The order must match the order of the `self.menu_items` 
+        # list in `code/buintin_types/main.py`.  
+        self.sub_menus = [
+            [], # Leave it empty to match dictionary keys.
+            self.dictionary_menu_items,
+            self.exception_menu_items,
+            self.file_menu_items,
+            self.list_menu_items,
+            self.string_menu_items,
+            self.tuple_menu_items
+        ]
+        &#34;&#34;&#34; Group of all the sample menus. &#34;&#34;&#34;
+
+        self.sample_groups = {
+            1: [&#34;Dictionary Samples&#34;, self.dictionary_samples],
+            2: [&#34;Exception Samples&#34;, self.exception_samples],
+            3: [&#34;File Samples&#34;, self.file_samples],
+            4: [&#34;List Samples&#34;, self.list_samples],
+            5: [&#34;String Samples&#34;, self.string_samples],
+            6: [&#34;Tuple Samples&#34;, self.tuple_samples]
+        }
+        &#34;&#34;&#34; Group of all the samples. &#34;&#34;&#34;
+
+    def blt_selection_menu(self, sub_menu):
+        &#34;&#34;&#34;
+            Display menu and process user&#39;s input.  Call the proper method based
+            on the user&#39;s selection.
+        &#34;&#34;&#34;
+    
+        &#34; Get the name of the selected sample group. &#34;
+        selected_menu_name = self.sample_groups[sub_menu][0]
+
+        &#34; Get the selected submenu. &#34;
+        selected_sub_menu_items = self.sub_menus[sub_menu]
+
+        # Initialize selected menu name and items through the parent class.  
+        super().__init__(selected_menu_name, selected_sub_menu_items)
+        
+        while True:
+
+
+            # Display the menu.
+            self.display_menu()
+
+            # Get the user&#39;s choice.
+            choice = self.get_user_choice()
+
+            if choice == len(selected_sub_menu_items):
+                break        
+            else:
+                # Display selected sub menu name.
+                print(f&#34;\n*** Sample results ***&#34;) 
+                
+                # Get the selected list (second dictionary elememnt)
+                _current_selection = self.sample_groups[sub_menu][1] 
+                
+                # Call the selectd sample function (second list elememnt). 
+                _current_selection[int(choice)][1]()
+                   
+                </code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu"><code class="flex name class">
+<span>class <span class="ident">BuiltinTypesSubMenu</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>The class <code>BuiltinTypesMenu</code> creates a menu for the builtin type sample
+group selected by the user in <a href="./code/buitin_types/main.py">main.py</a>.
+The
+class has an instance method <code>blt_selection_menu</code> that displays a menu of
+available samples, for the selecetd group, that allows the user to select a
+sample to execute.</p>
+<h2 id="remarks">Remarks</h2>
+<p>The <code>BuiltinTypesMenu</code> class has a single instance method,
+<code>blt_selection_menu</code>, which displays the menu and gets the user's choice of
+which sample to run. It then calls the appropriate method to run the chosen
+sample. If the user selects the <code>Quit</code> option, the method exits.</p>
+<h2 id="use">Use</h2>
+<p>In the calling module perform the following steps: </p>
+<ol>
+<li><code>amenu = BuiltinTypesMenu()</code> # Instantiate the class.
+</li>
+<li><code>amenu.blt_selection_menu()</code> # Display the selection menu. </li>
+</ol>
+<p>Initialize the class <code>dictionary_menu</code> instance.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class BuiltinTypesSubMenu(ConsoleMenu):
+
+    &#34;&#34;&#34; 
+    The class `BuiltinTypesMenu` creates a menu for the builtin type sample
+    group selected by the user in [main.py](./code/buitin_types/main.py).  The
+    class has an instance method `blt_selection_menu` that displays a menu of
+    available samples, for the selecetd group, that allows the user to select a
+    sample to execute.
+
+
+    Remarks
+    -------
+
+    The `BuiltinTypesMenu` class has a single instance method,
+    `blt_selection_menu`, which displays the menu and gets the user&#39;s choice of
+    which sample to run. It then calls the appropriate method to run the chosen
+    sample. If the user selects the `Quit` option, the method exits.
+    
+    Use
+    ---    
+
+    In the calling module perform the following steps: 
+    
+    1. `amenu = BuiltinTypesMenu()` # Instantiate the class.  
+    1. `amenu.blt_selection_menu()` # Display the selection menu. 
+  
+  
+    &#34;&#34;&#34;
+
+    def __init__(self):
+        &#34;&#34;&#34; Initialize the class `dictionary_menu` instance. &#34;&#34;&#34;
+
+        # Define the menu entries for each sample group. 
+
+        self.dictionary_menu_items = [&#34;Create a simple dictionary&#34;, &#34;Get dictionary element value&#34;, &#34;Print formatted dictionary&#34;, &#34;Filter dictionary&#34;, 
+        &#34;Get value in a multilevel dictionary&#34;, &#34;Iterate through a dictionary&#34;, &#34;Quit&#34;]
+        &#34;&#34;&#34; Dictionary menu items.&#34;&#34;&#34;
+
+        self.exception_menu_items = [&#34;Type exception&#34;, &#34;Name exception&#34;, &#34;Attribute exception&#34;, &#34;File not found exception&#34;, &#34;EOF exception&#34;, &#34;Quit&#34;]
+        &#34;&#34;&#34; Exception menu items.&#34;&#34;&#34;
+    
+        self.file_menu_items = [&#34;Read a file&#34;, &#34;Write to a file&#34;, &#34;Find a file hash&#34;, &#34;Process image file&#34;, &#34;Process csv file&#34;, &#34;Quit&#34;]
+        &#34;&#34;&#34; File menu items.&#34;&#34;&#34;
+
+        self.list_menu_items = [&#34;Index a list&#34;, &#34;Slice a list&#34;,&#34;Create a list&#34;, 
+        &#34;Remove duplicated list elements&#34;, &#34;Perform list indexing&#34;,
+        &#34;Change list elements&#34;, &#34;Add element to a list&#34;, &#34;Apply list methods&#34;, &#34;Use a list as a stack&#34;, &#34;Use a list as a queue&#34;, &#34;Use list comprehension&#34;, &#34;Quit&#34;]
+        &#34;&#34;&#34; List menu items.&#34;&#34;&#34;
+
+        self.string_menu_items = [&#34;Create a string&#34;, &#34;Get a substring&#34;, &#34;Remove white spaces&#34;, &#34;Make lower case&#34;, &#34;Make upper case&#34;, &#34;Split string&#34;, &#34;Quit&#34;]
+            
+        self.tuple_menu_items = [&#34;Create a tuple&#34;, &#34;Modify a tuple error&#34;, &#34;Access a tuple&#34;, &#34;Unpack a tuple&#34;, &#34;Tuple odds and ends&#34;, &#34;Quit&#34;]
+
+
+        # Define the instance for each sample class. 
+
+        self.dictionary_samples_instance = DictionarySamples()
+        &#34;&#34;&#34; `DictionarySamples` instance. &#34;&#34;&#34;
+    
+        self.exception_samples_instance = ExceptionSamples() 
+        &#34;&#34;&#34; `ExceptionSamples` instance. &#34;&#34;&#34;
+
+        self.file_samples_instance = FileSamples() 
+        &#34;&#34;&#34; `FileSamples` instance. &#34;&#34;&#34;
+        
+        self.list_samples_instance = ListSamples() 
+        &#34;&#34;&#34; `ListSamples` instance. &#34;&#34;&#34;
+        
+        self.string_samples_instance = StringSamples() 
+        &#34;&#34;&#34; `StringSamples` instance. &#34;&#34;&#34;
+
+        self.tuple_samples_instance = TupleSamples() 
+        &#34;&#34;&#34; `TupleSamples` instance. &#34;&#34;&#34;
+
+        # Define the decision table for each sample group.  
+        # Each table entry contain the name of the sample and 
+        # the method to call. 
+        # Note the use of the `lambda&#39; function needed to pass 
+        # parameters to the function to call, when needed.  
+        self.dictionary_samples = {
+            1: [&#34;\n***  Create a simple dictionary ***&#34;, lambda: self.dictionary_samples_instance.create_simple_dictionary(&#34;a&#34;, 1, &#34;b&#34;, 2)],
+            2: [&#34;\n*** Get dictionary element ***&#34;, 
+            lambda: self.dictionary_samples_instance.get_dictionary_element_value(dict(a=1, b=2), &#34;a&#34;)],
+            3: [&#34;\n*** Print fornatted dictionary ***&#34;, self.dictionary_samples_instance.print_dictionary_formatted],
+            4: [&#34;\n*** Filter dictionary ***&#34;, lambda: self.dictionary_samples_instance.filter_dictionary(3)],
+            5: [&#34;\n*** Get value in a multilevel dictionary ***&#34;, lambda: self.dictionary_samples_instance.get_value_multilevel_dictionary(&#34;b&#34;, 3)],
+            6: [&#34;\n*** Iterate through a dictionary ***&#34;, self.dictionary_samples_instance.iterate_dictionary],
+        }
+        &#34;&#34;&#34; Dictionary samples decision table. &#34;&#34;&#34;
+
+        self.exception_samples = {
+            1: [&#34;\n*** Raise type exception ***&#34;, self.exception_samples_instance.raise_type_exception], 
+            2: [&#34;\n*** Raise name exception ***&#34;, self.exception_samples_instance.raise_name_exception], 
+            3: [&#34;\n*** Raise attribute exception ***&#34;, self.exception_samples_instance.raise_attribute_exception], 
+            4: [&#34;\n*** Raise file not found exception ***&#34;, self.exception_samples_instance.raise_file_not_found_exception], 
+            5: [&#34;\n*** Raise EOF exception ***&#34;, self.exception_samples_instance.raise_EOF_exception], 
+        }
+        &#34;&#34;&#34; Exception samples decision table. &#34;&#34;&#34;
+
+        self.file_samples = {
+            1: [&#34;\n*** Read a file ***&#34;, self.file_samples_instance.read_file],
+            2: [&#34;\n*** Write to a file ***&#34;, self.file_samples_instance.write_file],
+            3: [&#34;\n*** Find a file hash ***&#34;, self.file_samples_instance.find_file_hash],
+            4: [&#34;\n*** Process image file ***&#34;, self.file_samples_instance.process_image_file],
+            5: [&#34;\n*** Process csv file ***&#34;, lambda: self.file_samples_instance.process_csv_file(&#34;test.csv&#34;)]
+        }
+        &#34;&#34;&#34; File samples decision table. &#34;&#34;&#34;
+
+        self.list_samples = {
+            1: [&#34;\n*** Index a list ***&#34;, lambda: self.list_samples_instance.get_list_item(2)],
+            2: [&#34;\n*** Slice a list ***&#34;, lambda: self.list_samples_instance.slice_list(1, 10, 2)], 
+            3: [&#34;\n*** Create a list ***&#34;, lambda: self.list_samples_instance.create_list(1, 21)],    
+            4: [&#34;\n*** Remove duplicated list elements ***&#34;, self.list_samples_instance.remove_duplicated_list_elements],   
+            5: [&#34;\n*** List indexing ***&#34;, self.list_samples_instance.index_list],   
+            6: [&#34;\n*** Change list element ***&#34;, self.list_samples_instance.change_list_element],
+            7: [&#34;\n*** Add elements to a list ***&#34;, self.list_samples_instance.add_list_element],
+            8: [&#34;\n*** Apply list methods ***&#34;, self.list_samples_instance.apply_list_methods],
+            9: [&#34;\n***  Use a list as a stack ***&#34;, self.list_samples_instance.use_list_as_stack],
+            10: [&#34;\n*** Use a list as a queue ***&#34;, self.list_samples_instance.use_list_as_queue],
+            11: [&#34;\n*** Use list comprehension ***&#34;, self.list_samples_instance.use_list_comprehension]            
+        }    
+        &#34;&#34;&#34; List samples decision table. &#34;&#34;&#34;
+      
+        self.string_samples = {
+            1: [&#34;\n*** Create a simple string ***&#34;, self.string_samples_instance.create_string],
+            2: [&#34;\n*** Get a substring ***&#34;, self.string_samples_instance.get_sub_string],
+            3: [&#34;\n*** Strip white spaces ***&#34;, self.string_samples_instance.strip_white_spaces],
+            4: [&#34;\n*** Get lower case string ***&#34;, self.string_samples_instance.get_lower_case_string],
+            5: [&#34;\n*** Get upper case string ***&#34;, self.string_samples_instance.get_upper_case_string],
+            6: [&#34;\n*** Split string ***&#34;, self.string_samples_instance.split_string]
+        }
+        &#34;&#34;&#34; String samples decision table. &#34;&#34;&#34;
+
+        self.tuple_samples = {
+            1: [&#34;\n*** Create a tuple ***&#34;, self.tuple_samples_instance.create_tuple],
+            2: [&#34;\n*** Modify a tuple ***&#34;, self.tuple_samples_instance.modify_tuple],
+            3: [&#34;\n*** Access a tuple ***&#34;, self.tuple_samples_instance.access_tuple],
+            4: [&#34;\n*** Unpack a tuple ***&#34;, self.tuple_samples_instance.unpack_tuple],
+            5: [&#34;\n*** Tuple odds and ends ***&#34;, self.tuple_samples_instance.odds_ends_tuple]
+        }
+        &#34;&#34;&#34; Tuple samples decision table. &#34;&#34;&#34;
+
+        # The order must match the order of the `self.menu_items` 
+        # list in `code/buintin_types/main.py`.  
+        self.sub_menus = [
+            [], # Leave it empty to match dictionary keys.
+            self.dictionary_menu_items,
+            self.exception_menu_items,
+            self.file_menu_items,
+            self.list_menu_items,
+            self.string_menu_items,
+            self.tuple_menu_items
+        ]
+        &#34;&#34;&#34; Group of all the sample menus. &#34;&#34;&#34;
+
+        self.sample_groups = {
+            1: [&#34;Dictionary Samples&#34;, self.dictionary_samples],
+            2: [&#34;Exception Samples&#34;, self.exception_samples],
+            3: [&#34;File Samples&#34;, self.file_samples],
+            4: [&#34;List Samples&#34;, self.list_samples],
+            5: [&#34;String Samples&#34;, self.string_samples],
+            6: [&#34;Tuple Samples&#34;, self.tuple_samples]
+        }
+        &#34;&#34;&#34; Group of all the samples. &#34;&#34;&#34;
+
+    def blt_selection_menu(self, sub_menu):
+        &#34;&#34;&#34;
+            Display menu and process user&#39;s input.  Call the proper method based
+            on the user&#39;s selection.
+        &#34;&#34;&#34;
+    
+        &#34; Get the name of the selected sample group. &#34;
+        selected_menu_name = self.sample_groups[sub_menu][0]
+
+        &#34; Get the selected submenu. &#34;
+        selected_sub_menu_items = self.sub_menus[sub_menu]
+
+        # Initialize selected menu name and items through the parent class.  
+        super().__init__(selected_menu_name, selected_sub_menu_items)
+        
+        while True:
+
+
+            # Display the menu.
+            self.display_menu()
+
+            # Get the user&#39;s choice.
+            choice = self.get_user_choice()
+
+            if choice == len(selected_sub_menu_items):
+                break        
+            else:
+                # Display selected sub menu name.
+                print(f&#34;\n*** Sample results ***&#34;) 
+                
+                # Get the selected list (second dictionary elememnt)
+                _current_selection = self.sample_groups[sub_menu][1] 
+                
+                # Call the selectd sample function (second list elememnt). 
+                _current_selection[int(choice)][1]()</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>console_menu.ConsoleMenu</li>
+</ul>
+<h3>Instance variables</h3>
+<dl>
+<dt id="code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.dictionary_menu_items"><code class="name">var <span class="ident">dictionary_menu_items</span></code></dt>
+<dd>
+<div class="desc"><p>Dictionary menu items.</p></div>
+</dd>
+<dt id="code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.dictionary_samples"><code class="name">var <span class="ident">dictionary_samples</span></code></dt>
+<dd>
+<div class="desc"><p>Dictionary samples decision table.</p></div>
+</dd>
+<dt id="code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.dictionary_samples_instance"><code class="name">var <span class="ident">dictionary_samples_instance</span></code></dt>
+<dd>
+<div class="desc"><p><code>DictionarySamples</code> instance.</p></div>
+</dd>
+<dt id="code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.exception_menu_items"><code class="name">var <span class="ident">exception_menu_items</span></code></dt>
+<dd>
+<div class="desc"><p>Exception menu items.</p></div>
+</dd>
+<dt id="code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.exception_samples"><code class="name">var <span class="ident">exception_samples</span></code></dt>
+<dd>
+<div class="desc"><p>Exception samples decision table.</p></div>
+</dd>
+<dt id="code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.exception_samples_instance"><code class="name">var <span class="ident">exception_samples_instance</span></code></dt>
+<dd>
+<div class="desc"><p><code>ExceptionSamples</code> instance.</p></div>
+</dd>
+<dt id="code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.file_menu_items"><code class="name">var <span class="ident">file_menu_items</span></code></dt>
+<dd>
+<div class="desc"><p>File menu items.</p></div>
+</dd>
+<dt id="code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.file_samples"><code class="name">var <span class="ident">file_samples</span></code></dt>
+<dd>
+<div class="desc"><p>File samples decision table.</p></div>
+</dd>
+<dt id="code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.file_samples_instance"><code class="name">var <span class="ident">file_samples_instance</span></code></dt>
+<dd>
+<div class="desc"><p><code>FileSamples</code> instance.</p></div>
+</dd>
+<dt id="code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.list_menu_items"><code class="name">var <span class="ident">list_menu_items</span></code></dt>
+<dd>
+<div class="desc"><p>List menu items.</p></div>
+</dd>
+<dt id="code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.list_samples"><code class="name">var <span class="ident">list_samples</span></code></dt>
+<dd>
+<div class="desc"><p>List samples decision table.</p></div>
+</dd>
+<dt id="code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.list_samples_instance"><code class="name">var <span class="ident">list_samples_instance</span></code></dt>
+<dd>
+<div class="desc"><p><code>ListSamples</code> instance.</p></div>
+</dd>
+<dt id="code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.sample_groups"><code class="name">var <span class="ident">sample_groups</span></code></dt>
+<dd>
+<div class="desc"><p>Group of all the samples.</p></div>
+</dd>
+<dt id="code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.string_samples"><code class="name">var <span class="ident">string_samples</span></code></dt>
+<dd>
+<div class="desc"><p>String samples decision table.</p></div>
+</dd>
+<dt id="code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.string_samples_instance"><code class="name">var <span class="ident">string_samples_instance</span></code></dt>
+<dd>
+<div class="desc"><p><code>StringSamples</code> instance.</p></div>
+</dd>
+<dt id="code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.sub_menus"><code class="name">var <span class="ident">sub_menus</span></code></dt>
+<dd>
+<div class="desc"><p>Group of all the sample menus.</p></div>
+</dd>
+<dt id="code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.tuple_samples"><code class="name">var <span class="ident">tuple_samples</span></code></dt>
+<dd>
+<div class="desc"><p>Tuple samples decision table.</p></div>
+</dd>
+<dt id="code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.tuple_samples_instance"><code class="name">var <span class="ident">tuple_samples_instance</span></code></dt>
+<dd>
+<div class="desc"><p><code>TupleSamples</code> instance.</p></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.blt_selection_menu"><code class="name flex">
+<span>def <span class="ident">blt_selection_menu</span></span>(<span>self, sub_menu)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Display menu and process user's input.
+Call the proper method based
+on the user's selection.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def blt_selection_menu(self, sub_menu):
+    &#34;&#34;&#34;
+        Display menu and process user&#39;s input.  Call the proper method based
+        on the user&#39;s selection.
+    &#34;&#34;&#34;
+
+    &#34; Get the name of the selected sample group. &#34;
+    selected_menu_name = self.sample_groups[sub_menu][0]
+
+    &#34; Get the selected submenu. &#34;
+    selected_sub_menu_items = self.sub_menus[sub_menu]
+
+    # Initialize selected menu name and items through the parent class.  
+    super().__init__(selected_menu_name, selected_sub_menu_items)
+    
+    while True:
+
+
+        # Display the menu.
+        self.display_menu()
+
+        # Get the user&#39;s choice.
+        choice = self.get_user_choice()
+
+        if choice == len(selected_sub_menu_items):
+            break        
+        else:
+            # Display selected sub menu name.
+            print(f&#34;\n*** Sample results ***&#34;) 
+            
+            # Get the selected list (second dictionary elememnt)
+            _current_selection = self.sample_groups[sub_menu][1] 
+            
+            # Call the selectd sample function (second list elememnt). 
+            _current_selection[int(choice)][1]()</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="code.packages.builtin_types_menu_utilities" href="index.html">code.packages.builtin_types_menu_utilities</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu" href="#code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu">BuiltinTypesSubMenu</a></code></h4>
+<ul class="">
+<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.blt_selection_menu" href="#code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.blt_selection_menu">blt_selection_menu</a></code></li>
+<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.dictionary_menu_items" href="#code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.dictionary_menu_items">dictionary_menu_items</a></code></li>
+<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.dictionary_samples" href="#code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.dictionary_samples">dictionary_samples</a></code></li>
+<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.dictionary_samples_instance" href="#code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.dictionary_samples_instance">dictionary_samples_instance</a></code></li>
+<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.exception_menu_items" href="#code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.exception_menu_items">exception_menu_items</a></code></li>
+<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.exception_samples" href="#code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.exception_samples">exception_samples</a></code></li>
+<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.exception_samples_instance" href="#code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.exception_samples_instance">exception_samples_instance</a></code></li>
+<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.file_menu_items" href="#code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.file_menu_items">file_menu_items</a></code></li>
+<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.file_samples" href="#code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.file_samples">file_samples</a></code></li>
+<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.file_samples_instance" href="#code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.file_samples_instance">file_samples_instance</a></code></li>
+<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.list_menu_items" href="#code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.list_menu_items">list_menu_items</a></code></li>
+<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.list_samples" href="#code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.list_samples">list_samples</a></code></li>
+<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.list_samples_instance" href="#code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.list_samples_instance">list_samples_instance</a></code></li>
+<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.sample_groups" href="#code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.sample_groups">sample_groups</a></code></li>
+<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.string_samples" href="#code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.string_samples">string_samples</a></code></li>
+<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.string_samples_instance" href="#code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.string_samples_instance">string_samples_instance</a></code></li>
+<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.sub_menus" href="#code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.sub_menus">sub_menus</a></code></li>
+<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.tuple_samples" href="#code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.tuple_samples">tuple_samples</a></code></li>
+<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.tuple_samples_instance" href="#code.packages.builtin_types_menu_utilities.builtin_types_submenu.BuiltinTypesSubMenu.tuple_samples_instance">tuple_samples_instance</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

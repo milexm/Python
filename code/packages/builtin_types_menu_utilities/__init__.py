@@ -25,7 +25,7 @@ For example, to use the `BuiltinTypesSubMenu` class, in the calling module you d
 
 # Perform package wide initializations.
 
-from .builtin_types_submenus import BuiltinTypesSubMenu   
+from .builtin_types_submenu import BuiltinTypesSubMenu   
 
 
 
