@@ -9,6 +9,8 @@ from dictionary_samples import DictionarySamples
 from file_samples import FileSamples
 from exception_samples import ExceptionSamples
 from list_samples import ListSamples
+from string_samples import StringSamples
+from tuple_samples import TupleSamples
 
 # Import the ConsoleMenu class.
 import sys
@@ -42,7 +44,8 @@ class BuiltinTypesMenu(ConsoleMenu):
     def __init__(self):
         """ Initialize the class `dictionary_menu` instance. """
 
-        # Define the entries of the dictionary samples menu. 
+        # Define the menu entries for each sample group. 
+
         self.dictionary_menu_items = ["Create a simple dictionary", "Get dictionary element value", "Print formatted dictionary", "Filter dictionary", 
         "Get value in a multilevel dictionary", "Iterate through a dictionary", "Quit"]
         """ Dictionary menu items."""
@@ -58,6 +61,12 @@ class BuiltinTypesMenu(ConsoleMenu):
         "Change list elements", "Add element to a list", "Apply list methods", "Use a list as a stack", "Use a list as a queue", "Use list comprehension", "Quit"]
         """ List menu items."""
 
+        self.string_menu_items = ["Create a string", "Get a substring", "Remove white spaces", "Make lower case", "Make upper case", "Split string", "Quit"]
+            
+        self.tuple_menu_items = ["Create a tuple", "Modify a tuple error", "Access a tuple", "Unpack a tuple", "Tuple odds and ends", "Quit"]
+
+
+        # Define the instance for each sample class. 
 
         self.dictionary_samples_instance = DictionarySamples()
         """ `DictionarySamples` instance. """
@@ -71,8 +80,17 @@ class BuiltinTypesMenu(ConsoleMenu):
         self.list_samples_instance = ListSamples() 
         """ `ListSamples` instance. """
         
+        self.string_samples_instance = StringSamples() 
+        """ `StringSamples` instance. """
 
-        
+        self.tuple_samples_instance = TupleSamples() 
+        """ `TupleSamples` instance. """
+
+        # Define the decision table for each sample group.  
+        # Each table entry contain the name of the sample and 
+        # the method to call. 
+        # Note the use of the `lambda' function needed to pass 
+        # parameters to the function to call, when needed.  
         self.dictionary_samples = {
             1: ["\n***  Create a simple dictionary ***", lambda: self.dictionary_samples_instance.create_simple_dictionary("a", 1, "b", 2)],
             2: ["\n*** Get dictionary element ***", 
@@ -98,7 +116,7 @@ class BuiltinTypesMenu(ConsoleMenu):
             2: ["\n*** Write to a file ***", self.file_samples_instance.write_file],
             3: ["\n*** Find a file hash ***", self.file_samples_instance.find_file_hash],
             4: ["\n*** Process image file ***", self.file_samples_instance.process_image_file],
-            5: ["\n*** Process csv file ***", lambda: self.file_samples_instance.process_csv_file("test.csv")],
+            5: ["\n*** Process csv file ***", lambda: self.file_samples_instance.process_csv_file("test.csv")]
         }
         """ File samples decision table. """
 
@@ -117,6 +135,24 @@ class BuiltinTypesMenu(ConsoleMenu):
         }    
         """ List samples decision table. """
       
+        self.string_samples = {
+            1: ["\n*** Create a simple string ***", self.string_samples_instance.create_string],
+            2: ["\n*** Get a substring ***", self.string_samples_instance.get_sub_string],
+            3: ["\n*** Strip white spaces ***", self.string_samples_instance.strip_white_spaces],
+            4: ["\n*** Get lower case string ***", self.string_samples_instance.get_lower_case_string],
+            5: ["\n*** Get upper case string ***", self.string_samples_instance.get_upper_case_string],
+            6: ["\n*** Split string ***", self.string_samples_instance.split_string]
+        }
+        """ String samples decision table. """
+
+        self.tuple_samples = {
+            1: ["\n*** Create a tuple ***", self.tuple_samples_instance.create_tuple],
+            2: ["\n*** Modify a tuple ***", self.tuple_samples_instance.modify_tuple],
+            3: ["\n*** Access a tuple ***", self.tuple_samples_instance.access_tuple],
+            4: ["\n*** Unpack a tuple ***", self.tuple_samples_instance.unpack_tuple],
+            5: ["\n*** Tuple odds and ends ***", self.tuple_samples_instance.odds_ends_tuple]
+        }
+        """ Tuple samples decision table. """
 
         # The order must match the order of the `self.menu_items` 
         # list in `code/buintin_types/main.py`.  
@@ -126,19 +162,20 @@ class BuiltinTypesMenu(ConsoleMenu):
             self.exception_menu_items,
             self.file_menu_items,
             self.list_menu_items,
-            [],
-            [],
-   
+            self.string_menu_items,
+            self.tuple_menu_items
         ]
-        """ Group of all sample menus. """
+        """ Group of all the sample menus. """
 
         self.sample_groups = {
             1: ["Dictionary Samples", self.dictionary_samples],
             2: ["Exception Samples", self.exception_samples],
             3: ["File Samples", self.file_samples],
-            4: ["List Samples", self.list_samples]
+            4: ["List Samples", self.list_samples],
+            5: ["String Samples", self.string_samples],
+            6: ["Tuple Samples", self.tuple_samples]
         }
-        """ Group of all samples. """
+        """ Group of all the samples. """
 
     def blt_selection_menu(self, sub_menu):
         """

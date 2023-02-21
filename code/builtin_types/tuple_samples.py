@@ -187,7 +187,7 @@ class TupleSamples:
             print(f'The modified tuple is:  {my_tuple}')
 
             # Generate an error
-            print("\Modify a tuple item causing an error.")
+            print("Modify a tuple item causing an error.")
             my_tuple["apple"] = "pear"
 
         except Exception as error:

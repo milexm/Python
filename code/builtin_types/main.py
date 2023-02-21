@@ -55,12 +55,8 @@ class GroupMenu(ConsoleMenu):
         # Initialize menu name and items through the ConsoleMenu parent class.  
         super().__init__("Builtin Types Group Menu", self.menu_items)
 
-        # Instantiate the sub menu classes. 
+        # Instantiate the sub menu class. 
       
-        _tmenu = _menu.TupleMenu()
-        
-        _smenu = _menu.StringMenu()
-   
         _bltmenu = _menu.BuiltinTypesMenu()  
 
         """ Sub menu class instances. """
@@ -72,8 +68,8 @@ class GroupMenu(ConsoleMenu):
             2:  lambda: _bltmenu.blt_selection_menu(2),
             3:  lambda: _bltmenu.blt_selection_menu(3),
             4:  lambda: _bltmenu.blt_selection_menu(4),
-            5:  _smenu.string_selection_menu,
-            6:  _tmenu.tuple_selection_menu,
+            5:  lambda: _bltmenu.blt_selection_menu(5),
+            6:  lambda: _bltmenu.blt_selection_menu(6)
         }
         """ Sub menu selection decision table. """
 
