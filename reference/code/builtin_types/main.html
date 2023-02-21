@@ -84,12 +84,7 @@ class GroupMenu(ConsoleMenu):
         # Initialize menu name and items through the ConsoleMenu parent class.  
         super().__init__(&#34;Builtin Types Group Menu&#34;, self.menu_items)
 
-        # Instantiate the sub menu classes. 
-      
-        _tmenu = _menu.TupleMenu()
-        
-        _smenu = _menu.StringMenu()
-   
+        # Instantiate the sub menu class. 
         _bltmenu = _menu.BuiltinTypesMenu()  
 
         &#34;&#34;&#34; Sub menu class instances. &#34;&#34;&#34;
@@ -101,8 +96,8 @@ class GroupMenu(ConsoleMenu):
             2:  lambda: _bltmenu.blt_selection_menu(2),
             3:  lambda: _bltmenu.blt_selection_menu(3),
             4:  lambda: _bltmenu.blt_selection_menu(4),
-            5:  _smenu.string_selection_menu,
-            6:  _tmenu.tuple_selection_menu,
+            5:  lambda: _bltmenu.blt_selection_menu(5),
+            6:  lambda: _bltmenu.blt_selection_menu(6)
         }
         &#34;&#34;&#34; Sub menu selection decision table. &#34;&#34;&#34;
 
@@ -210,12 +205,7 @@ it initiliazes the <code>group_menu</code> attribute with a <code>ConsoleMenu</c
         # Initialize menu name and items through the ConsoleMenu parent class.  
         super().__init__(&#34;Builtin Types Group Menu&#34;, self.menu_items)
 
-        # Instantiate the sub menu classes. 
-      
-        _tmenu = _menu.TupleMenu()
-        
-        _smenu = _menu.StringMenu()
-   
+        # Instantiate the sub menu class. 
         _bltmenu = _menu.BuiltinTypesMenu()  
 
         &#34;&#34;&#34; Sub menu class instances. &#34;&#34;&#34;
@@ -227,8 +217,8 @@ it initiliazes the <code>group_menu</code> attribute with a <code>ConsoleMenu</c
             2:  lambda: _bltmenu.blt_selection_menu(2),
             3:  lambda: _bltmenu.blt_selection_menu(3),
             4:  lambda: _bltmenu.blt_selection_menu(4),
-            5:  _smenu.string_selection_menu,
-            6:  _tmenu.tuple_selection_menu,
+            5:  lambda: _bltmenu.blt_selection_menu(5),
+            6:  lambda: _bltmenu.blt_selection_menu(6)
         }
         &#34;&#34;&#34; Sub menu selection decision table. &#34;&#34;&#34;
 
