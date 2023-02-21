@@ -15,18 +15,17 @@ Even though the directory contains only one module, The following import allow
 the use of functions from  different modules as they would belong to one package
 only, without the need to import the various modules one by one. 
 
-For example, to use the `BuiltinTypesMenu` class, in the calling module you do
-the following:
+For example, to use the `BuiltinTypesSubMenu` class, in the calling module you do the following:
 
 `import builtin_types_menu_utilities as _menu`  
 
-`_bltmenu = _menu.BuiltinTypesMenu()` # Instantiate the sub menu class. 
+`_bltmenu = _menu.BuiltinTypesSubMenu()` # Instantiate the sub menu class. 
 
 """
 
 # Perform package wide initializations.
 
-from .builtin_types_menu import BuiltinTypesMenu   
+from .builtin_types_submenus import BuiltinTypesSubMenu   
 
 
 

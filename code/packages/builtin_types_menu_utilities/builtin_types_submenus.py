@@ -18,17 +18,23 @@ sys.path.append('./code/packages/console_menu_utilities')
 from console_menu import ConsoleMenu
 
 
-class BuiltinTypesMenu(ConsoleMenu):
+class BuiltinTypesSubMenu(ConsoleMenu):
 
     """ 
-    The class `BuiltinTypesMenu` creates a menu for the builtin type sample group selected by the user in [main.py](./code/buitin_types/main.py). 
-    The class has an instance method `blt_selection_menu` that displays a menu of available samples, for the selecetd group, that allows the user to select a sample to execute.
+    The class `BuiltinTypesMenu` creates a menu for the builtin type sample
+    group selected by the user in [main.py](./code/buitin_types/main.py).  The
+    class has an instance method `blt_selection_menu` that displays a menu of
+    available samples, for the selecetd group, that allows the user to select a
+    sample to execute.
 
 
     Remarks
     -------
 
-    The `BuiltinTypesMenu` class has a single instance method, `blt_selection_menu`, which displays the menu and gets the user's choice of which sample to run. It then calls the appropriate method to run the chosen sample. If the user selects the `Quit` option, the method exits.
+    The `BuiltinTypesMenu` class has a single instance method,
+    `blt_selection_menu`, which displays the menu and gets the user's choice of
+    which sample to run. It then calls the appropriate method to run the chosen
+    sample. If the user selects the `Quit` option, the method exits.
     
     Use
     ---    

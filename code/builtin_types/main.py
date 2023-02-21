@@ -56,7 +56,7 @@ class GroupMenu(ConsoleMenu):
         super().__init__("Builtin Types Group Menu", self.menu_items)
 
         # Instantiate the sub menu class. 
-        _bltmenu = _menu.BuiltinTypesMenu()  
+        _bltmenu = _menu.BuiltinTypesSubMenu()  
 
         """ Sub menu class instances. """
 

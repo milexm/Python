@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
-<title>code.packages.builtin_types_menu_utilities.builtin_types_menu API documentation</title>
+<title>code.packages.builtin_types_menu_utilities.builtin_types_submenus API documentation</title>
 <meta name="description" content="Module dictionary_menu.py" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
@@ -19,7 +19,7 @@
 <main>
 <article id="content">
 <header>
-<h1 class="title">Module <code>code.packages.builtin_types_menu_utilities.builtin_types_menu</code></h1>
+<h1 class="title">Module <code>code.packages.builtin_types_menu_utilities.builtin_types_submenus</code></h1>
 </header>
 <section id="section-intro">
 <p>Module dictionary_menu.py</p>
@@ -47,7 +47,7 @@ sys.path.append(&#39;./code/packages/console_menu_utilities&#39;)
 from console_menu import ConsoleMenu
 
 
-class BuiltinTypesMenu(ConsoleMenu):
+class BuiltinTypesSubMenu(ConsoleMenu):
 
     &#34;&#34;&#34; 
     The class `BuiltinTypesMenu` creates a menu for the builtin type sample
@@ -260,18 +260,18 @@ class BuiltinTypesMenu(ConsoleMenu):
 <section>
 <h2 class="section-title" id="header-classes">Classes</h2>
 <dl>
-<dt id="code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu"><code class="flex name class">
-<span>class <span class="ident">BuiltinTypesMenu</span></span>
+<dt id="code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu"><code class="flex name class">
+<span>class <span class="ident">BuiltinTypesSubMenu</span></span>
 </code></dt>
 <dd>
-<div class="desc"><p>The class <code><a title="code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu" href="#code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu">BuiltinTypesMenu</a></code> creates a menu for the builtin type sample
+<div class="desc"><p>The class <code>BuiltinTypesMenu</code> creates a menu for the builtin type sample
 group selected by the user in <a href="./code/buitin_types/main.py">main.py</a>.
 The
 class has an instance method <code>blt_selection_menu</code> that displays a menu of
 available samples, for the selecetd group, that allows the user to select a
 sample to execute.</p>
 <h2 id="remarks">Remarks</h2>
-<p>The <code><a title="code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu" href="#code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu">BuiltinTypesMenu</a></code> class has a single instance method,
+<p>The <code>BuiltinTypesMenu</code> class has a single instance method,
 <code>blt_selection_menu</code>, which displays the menu and gets the user's choice of
 which sample to run. It then calls the appropriate method to run the chosen
 sample. If the user selects the <code>Quit</code> option, the method exits.</p>
@@ -287,7 +287,7 @@ sample. If the user selects the <code>Quit</code> option, the method exits.</p>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">class BuiltinTypesMenu(ConsoleMenu):
+<pre><code class="python">class BuiltinTypesSubMenu(ConsoleMenu):
 
     &#34;&#34;&#34; 
     The class `BuiltinTypesMenu` creates a menu for the builtin type sample
@@ -494,82 +494,82 @@ sample. If the user selects the <code>Quit</code> option, the method exits.</p>
 </ul>
 <h3>Instance variables</h3>
 <dl>
-<dt id="code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.dictionary_menu_items"><code class="name">var <span class="ident">dictionary_menu_items</span></code></dt>
+<dt id="code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.dictionary_menu_items"><code class="name">var <span class="ident">dictionary_menu_items</span></code></dt>
 <dd>
 <div class="desc"><p>Dictionary menu items.</p></div>
 </dd>
-<dt id="code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.dictionary_samples"><code class="name">var <span class="ident">dictionary_samples</span></code></dt>
+<dt id="code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.dictionary_samples"><code class="name">var <span class="ident">dictionary_samples</span></code></dt>
 <dd>
 <div class="desc"><p>Dictionary samples decision table.</p></div>
 </dd>
-<dt id="code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.dictionary_samples_instance"><code class="name">var <span class="ident">dictionary_samples_instance</span></code></dt>
+<dt id="code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.dictionary_samples_instance"><code class="name">var <span class="ident">dictionary_samples_instance</span></code></dt>
 <dd>
 <div class="desc"><p><code>DictionarySamples</code> instance.</p></div>
 </dd>
-<dt id="code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.exception_menu_items"><code class="name">var <span class="ident">exception_menu_items</span></code></dt>
+<dt id="code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.exception_menu_items"><code class="name">var <span class="ident">exception_menu_items</span></code></dt>
 <dd>
 <div class="desc"><p>Exception menu items.</p></div>
 </dd>
-<dt id="code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.exception_samples"><code class="name">var <span class="ident">exception_samples</span></code></dt>
+<dt id="code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.exception_samples"><code class="name">var <span class="ident">exception_samples</span></code></dt>
 <dd>
 <div class="desc"><p>Exception samples decision table.</p></div>
 </dd>
-<dt id="code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.exception_samples_instance"><code class="name">var <span class="ident">exception_samples_instance</span></code></dt>
+<dt id="code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.exception_samples_instance"><code class="name">var <span class="ident">exception_samples_instance</span></code></dt>
 <dd>
 <div class="desc"><p><code>ExceptionSamples</code> instance.</p></div>
 </dd>
-<dt id="code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.file_menu_items"><code class="name">var <span class="ident">file_menu_items</span></code></dt>
+<dt id="code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.file_menu_items"><code class="name">var <span class="ident">file_menu_items</span></code></dt>
 <dd>
 <div class="desc"><p>File menu items.</p></div>
 </dd>
-<dt id="code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.file_samples"><code class="name">var <span class="ident">file_samples</span></code></dt>
+<dt id="code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.file_samples"><code class="name">var <span class="ident">file_samples</span></code></dt>
 <dd>
 <div class="desc"><p>File samples decision table.</p></div>
 </dd>
-<dt id="code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.file_samples_instance"><code class="name">var <span class="ident">file_samples_instance</span></code></dt>
+<dt id="code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.file_samples_instance"><code class="name">var <span class="ident">file_samples_instance</span></code></dt>
 <dd>
 <div class="desc"><p><code>FileSamples</code> instance.</p></div>
 </dd>
-<dt id="code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.list_menu_items"><code class="name">var <span class="ident">list_menu_items</span></code></dt>
+<dt id="code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.list_menu_items"><code class="name">var <span class="ident">list_menu_items</span></code></dt>
 <dd>
 <div class="desc"><p>List menu items.</p></div>
 </dd>
-<dt id="code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.list_samples"><code class="name">var <span class="ident">list_samples</span></code></dt>
+<dt id="code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.list_samples"><code class="name">var <span class="ident">list_samples</span></code></dt>
 <dd>
 <div class="desc"><p>List samples decision table.</p></div>
 </dd>
-<dt id="code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.list_samples_instance"><code class="name">var <span class="ident">list_samples_instance</span></code></dt>
+<dt id="code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.list_samples_instance"><code class="name">var <span class="ident">list_samples_instance</span></code></dt>
 <dd>
 <div class="desc"><p><code>ListSamples</code> instance.</p></div>
 </dd>
-<dt id="code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.sample_groups"><code class="name">var <span class="ident">sample_groups</span></code></dt>
+<dt id="code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.sample_groups"><code class="name">var <span class="ident">sample_groups</span></code></dt>
 <dd>
 <div class="desc"><p>Group of all the samples.</p></div>
 </dd>
-<dt id="code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.string_samples"><code class="name">var <span class="ident">string_samples</span></code></dt>
+<dt id="code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.string_samples"><code class="name">var <span class="ident">string_samples</span></code></dt>
 <dd>
 <div class="desc"><p>String samples decision table.</p></div>
 </dd>
-<dt id="code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.string_samples_instance"><code class="name">var <span class="ident">string_samples_instance</span></code></dt>
+<dt id="code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.string_samples_instance"><code class="name">var <span class="ident">string_samples_instance</span></code></dt>
 <dd>
 <div class="desc"><p><code>StringSamples</code> instance.</p></div>
 </dd>
-<dt id="code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.sub_menus"><code class="name">var <span class="ident">sub_menus</span></code></dt>
+<dt id="code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.sub_menus"><code class="name">var <span class="ident">sub_menus</span></code></dt>
 <dd>
 <div class="desc"><p>Group of all the sample menus.</p></div>
 </dd>
-<dt id="code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.tuple_samples"><code class="name">var <span class="ident">tuple_samples</span></code></dt>
+<dt id="code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.tuple_samples"><code class="name">var <span class="ident">tuple_samples</span></code></dt>
 <dd>
 <div class="desc"><p>Tuple samples decision table.</p></div>
 </dd>
-<dt id="code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.tuple_samples_instance"><code class="name">var <span class="ident">tuple_samples_instance</span></code></dt>
+<dt id="code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.tuple_samples_instance"><code class="name">var <span class="ident">tuple_samples_instance</span></code></dt>
 <dd>
 <div class="desc"><p><code>TupleSamples</code> instance.</p></div>
 </dd>
 </dl>
 <h3>Methods</h3>
 <dl>
-<dt id="code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.blt_selection_menu"><code class="name flex">
+<dt id="code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.blt_selection_menu"><code class="name flex">
 <span>def <span class="ident">blt_selection_menu</span></span>(<span>self, sub_menu)</span>
 </code></dt>
 <dd>
@@ -636,27 +636,27 @@ on the user's selection.</p></div>
 <li><h3><a href="#header-classes">Classes</a></h3>
 <ul>
 <li>
-<h4><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu" href="#code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu">BuiltinTypesMenu</a></code></h4>
+<h4><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu" href="#code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu">BuiltinTypesSubMenu</a></code></h4>
 <ul class="">
-<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.blt_selection_menu" href="#code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.blt_selection_menu">blt_selection_menu</a></code></li>
-<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.dictionary_menu_items" href="#code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.dictionary_menu_items">dictionary_menu_items</a></code></li>
-<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.dictionary_samples" href="#code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.dictionary_samples">dictionary_samples</a></code></li>
-<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.dictionary_samples_instance" href="#code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.dictionary_samples_instance">dictionary_samples_instance</a></code></li>
-<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.exception_menu_items" href="#code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.exception_menu_items">exception_menu_items</a></code></li>
-<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.exception_samples" href="#code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.exception_samples">exception_samples</a></code></li>
-<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.exception_samples_instance" href="#code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.exception_samples_instance">exception_samples_instance</a></code></li>
-<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.file_menu_items" href="#code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.file_menu_items">file_menu_items</a></code></li>
-<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.file_samples" href="#code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.file_samples">file_samples</a></code></li>
-<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.file_samples_instance" href="#code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.file_samples_instance">file_samples_instance</a></code></li>
-<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.list_menu_items" href="#code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.list_menu_items">list_menu_items</a></code></li>
-<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.list_samples" href="#code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.list_samples">list_samples</a></code></li>
-<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.list_samples_instance" href="#code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.list_samples_instance">list_samples_instance</a></code></li>
-<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.sample_groups" href="#code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.sample_groups">sample_groups</a></code></li>
-<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.string_samples" href="#code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.string_samples">string_samples</a></code></li>
-<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.string_samples_instance" href="#code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.string_samples_instance">string_samples_instance</a></code></li>
-<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.sub_menus" href="#code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.sub_menus">sub_menus</a></code></li>
-<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.tuple_samples" href="#code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.tuple_samples">tuple_samples</a></code></li>
-<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.tuple_samples_instance" href="#code.packages.builtin_types_menu_utilities.builtin_types_menu.BuiltinTypesMenu.tuple_samples_instance">tuple_samples_instance</a></code></li>
+<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.blt_selection_menu" href="#code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.blt_selection_menu">blt_selection_menu</a></code></li>
+<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.dictionary_menu_items" href="#code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.dictionary_menu_items">dictionary_menu_items</a></code></li>
+<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.dictionary_samples" href="#code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.dictionary_samples">dictionary_samples</a></code></li>
+<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.dictionary_samples_instance" href="#code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.dictionary_samples_instance">dictionary_samples_instance</a></code></li>
+<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.exception_menu_items" href="#code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.exception_menu_items">exception_menu_items</a></code></li>
+<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.exception_samples" href="#code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.exception_samples">exception_samples</a></code></li>
+<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.exception_samples_instance" href="#code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.exception_samples_instance">exception_samples_instance</a></code></li>
+<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.file_menu_items" href="#code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.file_menu_items">file_menu_items</a></code></li>
+<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.file_samples" href="#code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.file_samples">file_samples</a></code></li>
+<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.file_samples_instance" href="#code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.file_samples_instance">file_samples_instance</a></code></li>
+<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.list_menu_items" href="#code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.list_menu_items">list_menu_items</a></code></li>
+<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.list_samples" href="#code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.list_samples">list_samples</a></code></li>
+<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.list_samples_instance" href="#code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.list_samples_instance">list_samples_instance</a></code></li>
+<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.sample_groups" href="#code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.sample_groups">sample_groups</a></code></li>
+<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.string_samples" href="#code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.string_samples">string_samples</a></code></li>
+<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.string_samples_instance" href="#code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.string_samples_instance">string_samples_instance</a></code></li>
+<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.sub_menus" href="#code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.sub_menus">sub_menus</a></code></li>
+<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.tuple_samples" href="#code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.tuple_samples">tuple_samples</a></code></li>
+<li><code><a title="code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.tuple_samples_instance" href="#code.packages.builtin_types_menu_utilities.builtin_types_submenus.BuiltinTypesSubMenu.tuple_samples_instance">tuple_samples_instance</a></code></li>
 </ul>
 </li>
 </ul>
