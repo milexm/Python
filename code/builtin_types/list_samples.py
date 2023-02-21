@@ -47,14 +47,14 @@ class ListSamples:
         # Define a list with duplicated elements.
         self.letters_duplicated = ["a", "b", "b", "d", "d", "f", "g", "h", "h", "j", "j"]
 
-    def get_list_range_items(self, lower_bound: int, upper_bound: int):
+    def _slice_list_range(self, lower_bound: int, upper_bound: int):
         """
-        Displays the items of a list in the specified range. 
+        Slice the items of a list in the specified range. 
 
         Parameters:
-            lower_bound : int 
+            lower_bound(int): 
                 The index of the first element in the range.
-            upper_bound : int 
+            upper_bound(int): 
                 The index of the last element in the range.
 
         Remarks
@@ -65,55 +65,33 @@ class ListSamples:
 
         """
         
-        # Display the elements in the requested range. 
         try:
+            # Positive range.
             range_items = str(self.letters[lower_bound:upper_bound+1])
-            print(f"The items in the specified range are: {range_items}") 
+            print(f"The items in the range {lower_bound, upper_bound} are: {range_items}") 
+
+            # Negative range. 
+            # Invert the upper with lower bound an make them negative.
+            range_items = str(self.letters[-upper_bound:-lower_bound])
+            print(f"The items in the range {-upper_bound,-lower_bound} are: {range_items}") 
         except Exception as error:
             print(f"{type(error).__name__} was raised: {error}") 
 
 
-    def get_list_negative_range_items(self, lower_bound: int, upper_bound: int):
-        """
-        Displays the items of a list in the specified range. 
-
-        Parameters
-        ----------
-        lower_bound : int 
-            The index of the first element in the range.
-        upper_bound : int 
-            The index of the last element in the range.    
-
-        Remarks
-        -------
-        The list slicing syntax is upper-bound exclusive. For example, if you
-        want to include the element whose index is 5, you need to pass 6 as the
-        upper bound.
-
-        """
-        
-        # Display the elements in the requested range. 
-        try:
-            range_items = str(self.letters[lower_bound:upper_bound])
-            print(f"The items in the specified range are: {range_items}") 
-        except Exception as error:
-            print(f"{type(error).__name__} was raised: {error}") 
-
-    def get_list_range_items_in_steps(self, lower_bound: int, 
+    def _slice_list_range_in_steps(self, lower_bound: int, 
     upper_bound: int, step: int):
         """
-        Displays the items of a list in the specified range, using the specified
+        Slice the items of a list in the specified range, using the specified
         step. 
         
-        Parameters
-        ----------
-        lower_bound : int 
-            The index of the first element in the range.
-        upper_bound : int 
-            The index of the last element in the range.    
-        step : int 
-            The step to use when returning the elements. For example, if the
-            step is 2 every other item in the range is returned.
+        Parameters:
+            lower_bound(int): 
+                The index of the first element in the range.
+            upper_bound(int): 
+                The index of the last element in the range.    
+            step(int): 
+                The step to use when returning the elements. For example, if the
+                step is 2 every other item in the range is returned.
 
         Remarks
         -------
@@ -126,49 +104,56 @@ class ListSamples:
         # Display the elements in the requested range with the specified step.
         try:
             range_items = str(self.letters[lower_bound:upper_bound:step])
-            print(f"The items in the specified range are: {range_items}") 
+            print(f"The items in the range {lower_bound, upper_bound} with step {step} are: {range_items}") 
         except Exception as error:
             print(f"{type(error).__name__} was raised: {error}") 
 
-    def create_number_list(self, first_number: int, last_number: int):
-        """
-        Create a list of numbers in the specified number range. 
-
-        Parameters
-        ----------
-        first_number : int 
-            The value of the first number in the list.
-        last_number : int 
-            The value of the last number in the list.    
-
+ 
+    def slice_list(self, lower_bound: int, upper_bound: int, step: int):
+        """ 
+        Perform list slicing.
+        
         Remarks
         -------
-        This example uses the Python built-in function `range()` that generates
-        a range of integers.  However, `range()` creates a Python range object.
-        To get the list object, the example uses the `list()` function to
-        convert the range object into a list object.
 
+        Slicing can be best visualized by considering the index to be between
+        the elements as shown below.
+        
+        ![list_slicing](../../media/list_slicing.png)
+        
+        So if we want to access a range, we need two index that will slice that
+        portion from the list.
+        
         """
-        
+
         try:
-            # Get the range object. 
-            my_range = range(first_number, last_number)
-            # Get the related list.
-            my_list = list(my_range)
-            print(f"The list from {first_number} and {last_number} is:") 
-            print(my_list)
+
+            # Define the list. 
+            print(f"The list to slice is: {self.letters}") 
+            # Select elements 3rd to 5th.
+            print(f"\nSelect 3rd to 5th element: {self.letters[2:5]}")
+            # Select elements beginning at the 4th.
+            print(f"Select 1st to 4th element: {self.letters[:-5]}")
+            # Select elements from the 6th to the end.
+            print(f"Select 3rd to 5th element: {self.letters[5:]}")
+
+            # Slice the items in the specified range. 
+            self._slice_list_range(lower_bound, upper_bound)
+
+            # Slice the items in the specified range and step. 
+            self._slice_list_range_in_steps(lower_bound, upper_bound, step)
+
         except Exception as error:
-            # Display the error.
             print(f"{type(error).__name__} was raised: {error}") 
-        
-    def create_number_list_in_range(self, arange: range):
+
+
+    def _create_number_list_in_range(self, arange: range):
         """
         Create a list of numbers in the specified range. 
 
-        Parameters
-        ----------
-        arange : range
-            The range to create the number list.
+        Parameters:
+            arange(range):
+                The range to create the number list.
         
         Remarks
         -------
@@ -182,21 +167,20 @@ class ListSamples:
         
         try:
             # Create a list of numbers in the specified range. 
-            my_list = [10 * n for n in arange]
-            print(f"The list in the {arange} is:") 
+            my_list = [n for n in arange]
+            print(f"The number list in the {arange} is:") 
             print(my_list)
         except Exception as error:
             # Display the error.
             print(f"{type(error).__name__} was raised: {error}") 
         
-    def create_string_list_in_range(self, arange: range):
+    def _create_string_list_in_range(self, arange: range):
         """
         Create a list of strings in the specified range. 
 
-        Parameters
-        ----------
-        arange : range
-            The range to create the number list.
+        Parameters:
+            arange(range):
+                The range to create the number list.
         
         Remarks
         -------
@@ -214,12 +198,59 @@ class ListSamples:
             # Create a list of numbers in the specified range. 
             my_list = list(map(str, arange))
             # my_list = [str(10 * n) for n in arange]
-            print(f"The list in the {arange} is:") 
+            print(f"The string list in the {arange} is:") 
             print(my_list)
         except Exception as error:
             # Display the error.
             print(f"{type(error).__name__} was raised: {error}") 
         
+    def create_list(self, first_number: int, last_number: int):
+        """
+        Create a list in the specified number range. 
+
+        Parameters:
+            first_number(int): 
+                The value of the first number in the list.
+            last_number(int): 
+                The value of the last number in the list.    
+
+        Remarks
+        -------
+        This example uses the Python built-in function `range()` that generates
+        a range of integers.  However, `range()` creates a Python range object.
+        To get the list object, the example uses the `list()` function to
+        convert the range object into a list object.
+
+        """
+        
+        try:
+            # Get the range object. 
+            arange = range(first_number, last_number)
+            
+            # Get the related list.
+            print(f"Create a list in the range: ({first_number}, {last_number}) :") 
+            my_list = list(arange)
+
+            print(f"Using the 'range()` function the list is:' {my_list}")
+            print(f"The list length is: {len(my_list)}") 
+            print(f"The indices of the first and last items are: {my_list.index(first_number), my_list.index(last_number-1)}") 
+
+            # Get the range object. 
+            first_number = first_number + 10
+            last_number = last_number + 10
+
+            new_range = range(first_number, last_number)
+
+            print(f"\nUsing {new_range} parameter.")
+
+            self._create_number_list_in_range(new_range)
+
+            self._create_string_list_in_range(new_range)            
+            
+        except Exception as error:
+            # Display the error.
+            print(f"{type(error).__name__} was raised: {error}") 
+
 
     def remove_duplicated_list_elements(self):
         """
@@ -260,48 +291,41 @@ class ListSamples:
         """ 
         Perform basic index operations. 
         """
+        try: 
+            # Define a list.
+            my_list = ['p', 'r', 'o', 'b', 'e']
+            print(f"The list is: {my_list}") 
+            
+            # At index 0 is : p
+            print("At index 0 is : " + my_list[0])
+            # At index 2 is : o
+            print("At index 2 is : " + my_list[2])
+            # At index 4 is : e
+            print("At index 4 is : " + my_list[4])
 
-        # Define a list.
-        my_list = ['p', 'r', 'o', 'b', 'e']
-        print(f"The list is: {my_list}") 
+            # Negative indexing The index -1 refers to the last element 
+            # The index -5 refers to the first element (in this example)
+            # At index -1 is : e
+            print("At index -1 is : " + my_list[-1])
+            # At index -5 is : p
+            print("At index -5 is : " + my_list[-5])
 
-        # At index 0 is : p
-        print("At index 0 is : " + my_list[0])
+            # Create nested list
+            n_list = ["Happy", [2, 0, 1, 5]]
+            print(f"The nested list is: {n_list}") 
 
-        # At index 2 is : o
-        print("At index 2 is : " + my_list[2])
+            # Nested indexing
+            # In the nested list at index 0,1 is : a
+            print("In the nested list at index 0, 1 is : " + n_list[0][1])
+            # In the nested list at index 1,3 is : 5
+            print("In the nested list at index 1,3 is : " + str((n_list[1][3])))
 
-        # At index 4 is : e
-        print("At index 4 is : " + my_list[4])
-
-        # Error!  List indices must be integers or slices, not float
-        try:
+            # Error!  List indices must be integers or slices, not float.
             element = my_list[4.0]
+
         except Exception as error:
-            # Display the error.
-            print(f"{type(error).__name__} was raised: {error}") 
-
-        # Negative indexing The index -1 refers to the last element The index -5
-        # refers to the first element (in this example)
-
-        # At index -1 is : e
-        print("At index -1 is : " + my_list[-1])
-
-        # At index -5 is : p
-        print("At index -5 is : " + my_list[-5])
-
-        # Create nested list
-        n_list = ["Happy", [2, 0, 1, 5]]
-
-        print(f"The nested list is: {n_list}") 
-
-        # Nested indexing
-
-        # In the nested list at index 0,1 is : a
-        print("In the nested list at index 0, 1 is : " + n_list[0][1])
-
-        # In the nested list at index 1,3 is : 5
-        print("In the nested list at index 1,3 is : " + str((n_list[1][3])))
+                # Display the error.
+                print(f"{type(error).__name__} was raised: {error}") 
 
     def get_list_item(self, index:int):
         """
@@ -324,6 +348,7 @@ class ListSamples:
         
         # Display the requested item. 
         try:
+            print(f"The list is: {self.letters}") 
             # Get the item at the specified index.
             item = self.letters[index]
             print(f"The item at index {index} is: {item}") 
@@ -379,41 +404,6 @@ class ListSamples:
             # Add several elements to the list
             my_list.extend([9, 11, 13])
             print(f"Added several elements to the list: {my_list[:]}")   
-
-        except Exception as error:
-            print(f"{type(error).__name__} was raised: {error}") 
-
-    def slice_list(self):
-        """ 
-        Perform list slicing.
-        
-        Remarks
-        -------
-
-        Slicing can be best visualized by considering the index to be between
-        the elements as shown below.
-        
-        ![list_slicing](../../media/list_slicing.png)
-        
-        So if we want to access a range, we need two index that will slice that
-        portion from the list.
-        
-        """
-
-        try:
-
-            # Define the list. 
-            my_list = ['p', 'r', 'o', 'g', 'r', 'a', 'm', 'i', 'z']
-            print(f"The list is: {my_list}") 
-
-            # Select elements 3rd to 5th.
-            print(f"Select 3rd to 5th element: {my_list[2:5]}")
-
-            # Select elements beginning at the 4th.
-            print(f"SSelect 1st to 4th element: {my_list[:-5]}")
-
-            # Select elements from the 6th to the end.
-            print(f"Select 3rd to 5th element: {my_list[5:]}")
 
         except Exception as error:
             print(f"{type(error).__name__} was raised: {error}") 

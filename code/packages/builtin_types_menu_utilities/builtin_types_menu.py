@@ -53,65 +53,70 @@ class BuiltinTypesMenu(ConsoleMenu):
         self.file_menu_items = ["Read a file", "Write to a file", "Find a file hash", "Process image file", "Process csv file", "Quit"]
         """ File menu items."""
 
-        self.list_menu_items = ["Index a list", "Slice a list positive range", "Slice a list negative range", "Slice a list in steps","Create a list", "Create a list in a range", "Create a string list in a range", 
+        self.list_menu_items = ["Index a list", "Slice a list","Create a list", 
         "Remove duplicated list elements", "Perform list indexing",
-        "Change list elements", "Add element to a list", "Slice a list", "Apply list methods", "Use a list as a stack", "Use a list as a queue", "Use list comprehension", "Quit"]
+        "Change list elements", "Add element to a list", "Apply list methods", "Use a list as a stack", "Use a list as a queue", "Use list comprehension", "Quit"]
         """ List menu items."""
 
 
-
-        self.dict_samples = DictionarySamples()
+        self.dictionary_samples_instance = DictionarySamples()
         """ `DictionarySamples` instance. """
     
-        self.exc_samples = ExceptionSamples() 
+        self.exception_samples_instance = ExceptionSamples() 
         """ `ExceptionSamples` instance. """
 
-        self.fil_samples = FileSamples() 
+        self.file_samples_instance = FileSamples() 
         """ `FileSamples` instance. """
         
-        self.lis_samples = ListSamples() 
+        self.list_samples_instance = ListSamples() 
         """ `ListSamples` instance. """
         
 
         
         self.dictionary_samples = {
-            1: ["\n***  Create a simple dictionary ***", lambda: self.dict_samples.create_simple_dictionary("a", 1, "b", 2)],
+            1: ["\n***  Create a simple dictionary ***", lambda: self.dictionary_samples_instance.create_simple_dictionary("a", 1, "b", 2)],
             2: ["\n*** Get dictionary element ***", 
-            lambda: self.dict_samples.get_dictionary_element_value(dict(a=1, b=2), "a")],
-            3: ["\n*** Print fornatted dictionary ***", self.dict_samples.print_dictionary_formatted],
-            4: ["\n*** Filter dictionary ***", lambda: self.dict_samples.filter_dictionary(3)],
-            5: ["\n*** Get value in a multilevel dictionary ***", lambda: self.dict_samples.get_value_multilevel_dictionary("b", 3)],
-            6: ["\n*** Iterate through a dictionary ***", self.dict_samples.iterate_dictionary],
+            lambda: self.dictionary_samples_instance.get_dictionary_element_value(dict(a=1, b=2), "a")],
+            3: ["\n*** Print fornatted dictionary ***", self.dictionary_samples_instance.print_dictionary_formatted],
+            4: ["\n*** Filter dictionary ***", lambda: self.dictionary_samples_instance.filter_dictionary(3)],
+            5: ["\n*** Get value in a multilevel dictionary ***", lambda: self.dictionary_samples_instance.get_value_multilevel_dictionary("b", 3)],
+            6: ["\n*** Iterate through a dictionary ***", self.dictionary_samples_instance.iterate_dictionary],
         }
         """ Dictionary samples decision table. """
 
         self.exception_samples = {
-            1: ["\n*** Raise type exception ***", self.exc_samples.raise_type_exception], 
-            2: ["\n*** Raise name exception ***", self.exc_samples.raise_name_exception], 
-            3: ["\n*** Raise attribute exception ***", self.exc_samples.raise_attribute_exception], 
-            4: ["\n*** Raise file not found exception ***", self.exc_samples.raise_file_not_found_exception], 
-            5: ["\n*** Raise EOF exception ***", self.exc_samples.raise_EOF_exception], 
+            1: ["\n*** Raise type exception ***", self.exception_samples_instance.raise_type_exception], 
+            2: ["\n*** Raise name exception ***", self.exception_samples_instance.raise_name_exception], 
+            3: ["\n*** Raise attribute exception ***", self.exception_samples_instance.raise_attribute_exception], 
+            4: ["\n*** Raise file not found exception ***", self.exception_samples_instance.raise_file_not_found_exception], 
+            5: ["\n*** Raise EOF exception ***", self.exception_samples_instance.raise_EOF_exception], 
         }
         """ Exception samples decision table. """
 
         self.file_samples = {
-            1: ["\n*** Read a file ***", self.fil_samples.read_file],
-            2: ["\n*** Write to a file ***", self.fil_samples.write_file],
-            3: ["\n*** Find a file hash ***", self.fil_samples.find_file_hash],
-            4: ["\n*** Process image file ***", self.fil_samples.process_image_file],
-            5: ["\n*** Process csv file ***", lambda: self.fil_samples.process_csv_file("test.csv")],
+            1: ["\n*** Read a file ***", self.file_samples_instance.read_file],
+            2: ["\n*** Write to a file ***", self.file_samples_instance.write_file],
+            3: ["\n*** Find a file hash ***", self.file_samples_instance.find_file_hash],
+            4: ["\n*** Process image file ***", self.file_samples_instance.process_image_file],
+            5: ["\n*** Process csv file ***", lambda: self.file_samples_instance.process_csv_file("test.csv")],
         }
         """ File samples decision table. """
 
         self.list_samples = {
-            1: ["\n*** Index a list ***", lambda: self.lis_samples.get_list_item(2)],
-            3: ["\n*** Slice a list positive range ***", lambda: self.lis_samples.get_list_range_items(3, 5)], 
-            4: ["\n*** Slice a list negative range ***", lambda: self.lis_samples.get_list_negative_range_items(-3, -1)], 
-            5: ["\n*** Slice a list in steps ***", lambda: self.lis_samples.get_list_range_items_in_steps(1, 10, 2)], 
-
-        }
+            1: ["\n*** Index a list ***", lambda: self.list_samples_instance.get_list_item(2)],
+            2: ["\n*** Slice a list ***", lambda: self.list_samples_instance.slice_list(1, 10, 2)], 
+            3: ["\n*** Create a list ***", lambda: self.list_samples_instance.create_list(1, 21)],    
+            4: ["\n*** Remove duplicated list elements ***", self.list_samples_instance.remove_duplicated_list_elements],   
+            5: ["\n*** List indexing ***", self.list_samples_instance.index_list],   
+            6: ["\n*** Change list element ***", self.list_samples_instance.change_list_element],
+            7: ["\n*** Add elements to a list ***", self.list_samples_instance.add_list_element],
+            8: ["\n*** Apply list methods ***", self.list_samples_instance.apply_list_methods],
+            9: ["\n***  Use a list as a stack ***", self.list_samples_instance.use_list_as_stack],
+            10: ["\n*** Use a list as a queue ***", self.list_samples_instance.use_list_as_queue],
+            11: ["\n*** Use list comprehension ***", self.list_samples_instance.use_list_comprehension]            
+        }    
         """ List samples decision table. """
-
+      
 
         # The order must match the order of the `self.menu_items` 
         # list in `code/buintin_types/main.py`.  
@@ -170,58 +175,5 @@ class BuiltinTypesMenu(ConsoleMenu):
                 
                 # Call the selectd sample function (second list elememnt). 
                 _current_selection[int(choice)][1]()
+                   
                 
-
-
-"""
-          
-                
-            elif choice == 3:
-                print("\n*** Create a list of numbers ***")
-                self.list_samples.create_number_list(1, 21)
-                
-            elif choice == 4:
-                print("\n*** Create a list of numbers in a range ***")
-                self.list_samples.create_number_list_in_range(range(1, 21))
-                
-            elif choice == 5:
-                print("\n*** Create a list of strings in a range ***")
-                self.list_samples.create_string_list_in_range(range(1, 21))
-                
-            elif choice == 6:
-                print("\n*** Remove duplicated list elements ***")
-                self.list_samples.remove_duplicated_list_elements()
-                
-            elif choice == 7:
-                print("\n*** List indexing ***")
-                self.list_samples.index_list()
-                
-            elif choice == 8:
-                print("\n*** Change list element ***")
-                self.list_samples.change_list_element()
-                
-            elif choice == 9:
-                print("\n*** Add elements to a list ***")
-                self.list_samples.add_list_element()
-                
-            elif choice == 10:
-                print("\n*** Slice a list ***")
-                self.list_samples.slice_list()
-                
-            elif choice == 11:
-                print("\n*** Apply list methods ***")
-                self.list_samples.apply_list_methods()
-                
-            elif choice == 12:
-                print("\n*** Use a list as a stack ***")
-                self.list_samples.use_list_as_stack()
-                
-            elif choice == 13:
-                print("\n*** Use a list as a queue ***")
-                self.list_samples.use_list_as_queue()
-
-            elif choice == 14:
-                print("\n*** Use list comprehension ***")
-                self.list_samples.use_list_comprehension()
-                
-"""
