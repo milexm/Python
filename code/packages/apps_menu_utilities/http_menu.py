@@ -11,8 +11,8 @@ from http_samples import HttpSamples
 
 # Import the ConsoleMenu class.
 import sys
-sys.path.append('./code/packages/console_menu_utilities')
-from console_menu import ConsoleMenu
+sys.path.append('./code/packages/menu_utilities')
+from menu_utilities import ConsoleMenu
 
 class HttpMenu(ConsoleMenu):
 

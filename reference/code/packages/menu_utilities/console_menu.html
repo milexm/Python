@@ -50,7 +50,7 @@ class ConsoleMenu:
 
     &#34;&#34;&#34;
 
-    def __init__(self, name:str):
+    def __init__(self, name:str, menu:list):
         &#34;&#34;&#34; Iitialize the class instance.
         
         Parameters
@@ -60,6 +60,7 @@ class ConsoleMenu:
 
         &#34;&#34;&#34;
         self.menu_name = name
+        self.menu_options = menu
    
     def input_number(self, prompt):
         &#34;&#34;&#34; 
@@ -124,6 +125,57 @@ class ConsoleMenu:
         choice = 0
         while not(np.any(choice == np.arange(len(options))+1)):
             choice = self.input_number(&#34;\nMake allowed selection number; &#34; + str(len(options)) +  &#34; to quit: &#34;)
+        return choice
+
+
+    def display_menu(self):
+        &#34;&#34;&#34; 
+        Display the menu of options the user can choose from. 
+        
+        Parameters
+        ----------
+        options: 
+            List of strings representing the menu elements. 
+
+        &#34;&#34;&#34;
+        # Display menu name. 
+        print(f&#34;\n*** {self.menu_name} ***&#34;) 
+
+        # Display the menu options.
+        for i in range(len(self.menu_options)):
+            # Display 2 menu items on the same line 
+            if ((i+1)%2!=0):
+                # Calculate the blank space to add to the right of a menu
+                # item for allignment. 
+                right_padding = &#34; &#34; * (16 - len(self.menu_options[i]))
+
+                # Display 3 menu items on the same line 
+                print(&#34;{:d}.{:s}&#34;.format(i+1, self.menu_options[i] + right_padding), 
+                    end=&#39; &#39;)
+            else:
+                print(&#34;{:d}.{:s}&#34;.format(i+1, self.menu_options[i]))
+                
+
+    def get_user_choice(self):
+        &#34;&#34;&#34; 
+        Prompt the user to input a number from the allowed choices. 
+        Get the choice made by the user.
+        
+        Parameters
+        ----------
+        options: 
+            List of strings representing the menu elements. 
+
+        Returns
+        -------
+        choice: int 
+            The number indicating the user&#39;s choice. 
+
+        &#34;&#34;&#34;
+        # Get a valid menu choice
+        choice = 0
+        while not(np.any(choice == np.arange(len(self.menu_options))+1)):
+            choice = self.input_number(&#34;\nMake allowed selection number; &#34; + str(len(self.menu_options)) +  &#34; to quit: &#34;)
         return choice</code></pre>
 </details>
 </section>
@@ -138,7 +190,7 @@ class ConsoleMenu:
 <dl>
 <dt id="code.packages.menu_utilities.console_menu.ConsoleMenu"><code class="flex name class">
 <span>class <span class="ident">ConsoleMenu</span></span>
-<span>(</span><span>name: str)</span>
+<span>(</span><span>name: str, menu: list)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Defines a menu class </p>
@@ -178,7 +230,7 @@ class ConsoleMenu:
 
     &#34;&#34;&#34;
 
-    def __init__(self, name:str):
+    def __init__(self, name:str, menu:list):
         &#34;&#34;&#34; Iitialize the class instance.
         
         Parameters
@@ -188,6 +240,7 @@ class ConsoleMenu:
 
         &#34;&#34;&#34;
         self.menu_name = name
+        self.menu_options = menu
    
     def input_number(self, prompt):
         &#34;&#34;&#34; 
@@ -252,12 +305,63 @@ class ConsoleMenu:
         choice = 0
         while not(np.any(choice == np.arange(len(options))+1)):
             choice = self.input_number(&#34;\nMake allowed selection number; &#34; + str(len(options)) +  &#34; to quit: &#34;)
+        return choice
+
+
+    def display_menu(self):
+        &#34;&#34;&#34; 
+        Display the menu of options the user can choose from. 
+        
+        Parameters
+        ----------
+        options: 
+            List of strings representing the menu elements. 
+
+        &#34;&#34;&#34;
+        # Display menu name. 
+        print(f&#34;\n*** {self.menu_name} ***&#34;) 
+
+        # Display the menu options.
+        for i in range(len(self.menu_options)):
+            # Display 2 menu items on the same line 
+            if ((i+1)%2!=0):
+                # Calculate the blank space to add to the right of a menu
+                # item for allignment. 
+                right_padding = &#34; &#34; * (16 - len(self.menu_options[i]))
+
+                # Display 3 menu items on the same line 
+                print(&#34;{:d}.{:s}&#34;.format(i+1, self.menu_options[i] + right_padding), 
+                    end=&#39; &#39;)
+            else:
+                print(&#34;{:d}.{:s}&#34;.format(i+1, self.menu_options[i]))
+                
+
+    def get_user_choice(self):
+        &#34;&#34;&#34; 
+        Prompt the user to input a number from the allowed choices. 
+        Get the choice made by the user.
+        
+        Parameters
+        ----------
+        options: 
+            List of strings representing the menu elements. 
+
+        Returns
+        -------
+        choice: int 
+            The number indicating the user&#39;s choice. 
+
+        &#34;&#34;&#34;
+        # Get a valid menu choice
+        choice = 0
+        while not(np.any(choice == np.arange(len(self.menu_options))+1)):
+            choice = self.input_number(&#34;\nMake allowed selection number; &#34; + str(len(self.menu_options)) +  &#34; to quit: &#34;)
         return choice</code></pre>
 </details>
 <h3>Methods</h3>
 <dl>
 <dt id="code.packages.menu_utilities.console_menu.ConsoleMenu.display_menu"><code class="name flex">
-<span>def <span class="ident">display_menu</span></span>(<span>self, options: list)</span>
+<span>def <span class="ident">display_menu</span></span>(<span>self)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Display the menu of options the user can choose from. </p>
@@ -270,7 +374,7 @@ class ConsoleMenu:
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def display_menu(self, options:list):
+<pre><code class="python">def display_menu(self):
     &#34;&#34;&#34; 
     Display the menu of options the user can choose from. 
     
@@ -284,22 +388,22 @@ class ConsoleMenu:
     print(f&#34;\n*** {self.menu_name} ***&#34;) 
 
     # Display the menu options.
-    for i in range(len(options)):
+    for i in range(len(self.menu_options)):
         # Display 2 menu items on the same line 
         if ((i+1)%2!=0):
             # Calculate the blank space to add to the right of a menu
             # item for allignment. 
-            right_padding = &#34; &#34; * (16 - len(options[i]))
+            right_padding = &#34; &#34; * (16 - len(self.menu_options[i]))
 
             # Display 3 menu items on the same line 
-            print(&#34;{:d}.{:s}&#34;.format(i+1, options[i] + right_padding), 
+            print(&#34;{:d}.{:s}&#34;.format(i+1, self.menu_options[i] + right_padding), 
                 end=&#39; &#39;)
         else:
-            print(&#34;{:d}.{:s}&#34;.format(i+1, options[i]))</code></pre>
+            print(&#34;{:d}.{:s}&#34;.format(i+1, self.menu_options[i]))</code></pre>
 </details>
 </dd>
 <dt id="code.packages.menu_utilities.console_menu.ConsoleMenu.get_user_choice"><code class="name flex">
-<span>def <span class="ident">get_user_choice</span></span>(<span>self, options: list)</span>
+<span>def <span class="ident">get_user_choice</span></span>(<span>self)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Prompt the user to input a number from the allowed choices.
@@ -318,7 +422,7 @@ Get the choice made by the user.</p>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_user_choice(self, options:list):
+<pre><code class="python">def get_user_choice(self):
     &#34;&#34;&#34; 
     Prompt the user to input a number from the allowed choices. 
     Get the choice made by the user.
@@ -336,8 +440,8 @@ Get the choice made by the user.</p>
     &#34;&#34;&#34;
     # Get a valid menu choice
     choice = 0
-    while not(np.any(choice == np.arange(len(options))+1)):
-        choice = self.input_number(&#34;\nMake allowed selection number; &#34; + str(len(options)) +  &#34; to quit: &#34;)
+    while not(np.any(choice == np.arange(len(self.menu_options))+1)):
+        choice = self.input_number(&#34;\nMake allowed selection number; &#34; + str(len(self.menu_options)) +  &#34; to quit: &#34;)
     return choice</code></pre>
 </details>
 </dd>

@@ -6,12 +6,12 @@ Module main.py
 # builtin_types_menu_utilities package.
 import sys
 sys.path.append('./code/packages') 
-import builtin_types_menu_utilities as _menu  
+import menu_utilities as _menu  
 
 # Import the ConsoleMenu class.
 import sys
-sys.path.append('./code/packages/console_menu_utilities')
-from console_menu import ConsoleMenu
+sys.path.append('./code/packages/menu_utilities')
+from menu_utilities import ConsoleMenu
 
 
 class GroupMenu(ConsoleMenu):

@@ -14,7 +14,7 @@ from tuple_samples import TupleSamples
 
 # Import the ConsoleMenu class.
 import sys
-sys.path.append('./code/packages/console_menu_utilities')
+sys.path.append('./code/packages/menu_utilities')
 from console_menu import ConsoleMenu
 
 
