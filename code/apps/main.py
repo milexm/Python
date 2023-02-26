@@ -1,22 +1,23 @@
 """ 
 Module main.py
 
------
-
-
 """
 
-# Append the path to the package modules location.  
+# Import the menu classes from the  
+# menu_utilities package.
 import sys
 sys.path.append('./code/packages') 
+import menu_utilities as _menu  
 
-import apps_menu_utilities as _menu  
+# Append the path to the package modules location.  
+# import sys
+# sys.path.append('./code/packages') 
+# import apps_menu_utilities as _menu  
 
 # Import the ConsoleMenu class.
 import sys
-sys.path.append('./code/packages/console_menu_utilities')
-from console_menu import ConsoleMenu
-
+sys.path.append('./code/packages/menu_utilities')
+from menu_utilities import ConsoleMenu
 
 class GroupMenu(ConsoleMenu):
 
@@ -45,34 +46,38 @@ class GroupMenu(ConsoleMenu):
         super().__init__("Apps Group Menu", self.menu_items)
 
 
+       # Instantiate the sub menu class. 
+        _amenu = _menu.AppsSubMenu()
+        """ Sub menu class instance. """
+
+        # Define the sub menu decision table.
+        self.sub_menu = {
+            1:  lambda: _amenu.apps_selection_menu(1),
+            2:  lambda: _amenu.apps_selection_menu(2),
+        }
+        """ Sub menu selection decision table. """
+
     def group_selection_menu(self):
         """
-            Displays menu and process user's input.
-            Calls the group selection menu based on the user's selection.
+        Display the group menuand and start an endless loop.  Wait for the
+        user's input and display the submenu based on the user's selection.  End
+        the loop based on the user's request. 
         """
 
         while True:
 
-            # Display the menu.
+        # Display the menu.
             self.display_menu()
 
             # Get the user's choice.
             choice = self.get_user_choice()
 
-            if choice == 1:
-                # Instantiate the http menu class.
-                _hmenu = _menu.HttpMenu()
-                # Display the samples selection menu. 
-                _hmenu.http_selection_menu()
-
-            elif choice == 2:
-                # Instantiate the headline scrape menu class.
-                _smenu = _menu.HeadlineScraperMenu()
-                # Display the samples selection menu. 
-                _smenu.h_scraper_selection_menu()
-
-            elif choice == len(self.menu_items):
-                break
+            if choice == len(self.menu_items):
+                break        
+            else:
+                # Display the selected sub menu. 
+                self.sub_menu[choice]()
+            
 
 if __name__ == '__main__':
     # Instantiate the class.

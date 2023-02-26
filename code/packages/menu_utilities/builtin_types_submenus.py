@@ -1,5 +1,5 @@
 """ 
-Module dictionary_menu.py
+Module builtin_types_submenus.py
 
 """
 
@@ -210,13 +210,12 @@ class BuiltinTypesSubMenu(ConsoleMenu):
             if choice == len(selected_sub_menu_items):
                 break        
             else:
-                # Display selected sub menu name.
                 print(f"\n*** Sample results ***") 
                 
-                # Get the selected list (second dictionary elememnt)
+                # Get the selected list (second dictionary elememnt).
                 _current_selection = self.sample_groups[sub_menu][1] 
                 
-                # Call the selectd sample function (second list elememnt). 
+                # Call the selectd sample function (second list element). 
                 _current_selection[int(choice)][1]()
                    
                 

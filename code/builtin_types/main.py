@@ -3,7 +3,7 @@ Module main.py
 """
 
 # Import the menu classes from the  
-# builtin_types_menu_utilities package.
+# menu_utilities package.
 import sys
 sys.path.append('./code/packages') 
 import menu_utilities as _menu  
@@ -47,9 +47,6 @@ class GroupMenu(ConsoleMenu):
         """
 
         # Define the entries of the group menu. 
-        # self.menu_items = ["Lists", "Tuples", "Dictionaries", "Strings", "Exceptions", "Files", "Quit"]
-     
-        
         self.menu_items = ["Dictionaries", "Exceptions", "Files", "Lists", "Strings", "Tuples", "Quit"]
 
         # Initialize menu name and items through the ConsoleMenu parent class.  
@@ -57,9 +54,7 @@ class GroupMenu(ConsoleMenu):
 
         # Instantiate the sub menu class. 
         _bltmenu = _menu.BuiltinTypesSubMenu()  
-
-        """ Sub menu class instances. """
-
+        """ Sub menu class instance. """
 
         # Define the sub menu decision table.
         self.sub_menu = {
