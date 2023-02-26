@@ -5,18 +5,11 @@ Exercise Python basic syntax.
 
 # Append path to the packages folder to access the related modules
 import sys
-sys.path.append('./code/packages') 
+sys.path.append('./code/oldpackages') 
 
 
 from mymath.fibo import fiboTriangle
 from mymath.mynumpy import plotting
-
-
-from mytypes.lists import mylist
-
-from mytypes.strings import mystring 
-
-from mytypes.tuples import createTuples 
 
 from mytypes.number import numbers
 
@@ -32,8 +25,8 @@ __email__ = "milexm@gmail.com"
 __status__ = "Test"
 
 # Define list of menu items
-menuItems = ["Basic types", "Strings", "Lists", "Dictionary",
-                      "Tuple", "Plot", "Display menu", "Quit"]
+menuItems = ["Basic types", "Fibonacci",
+              "Plot", "Display menu", "Quit"]
 
 class types:
 
@@ -76,39 +69,9 @@ class types:
                 n.getType(1000)
                 n.getComplexType(1+2j)
             elif choice == 2:
-                print("\n*** String Operations ***")
-                print("\n---Get a string---")
-                astring = mystring()
-                astring.useString()
-                print("\n---Get a substring---")
-                astring.subString()
-                print("\n---Strip white spaces---")
-                astring.stripWhiteSpaces()
-                print("\n---Lower case string---")
-                astring.lowerString()
-                print("\n---Upper case string---")
-                astring.upperString()
-                print("\n---Split string---")
-                astring.splitString()
-            elif choice == 3:
-                print("\n *** List Operations ***")
-                print("\n---Index lists---")
-                alist = mylist()
-                alist.listIndex()
-                print("\n---Slice lists---")
-                alist.listSlice()
-                print("\n---Change lists---")
-                alist.listChange()
-                print("\n---Add lists---")
-                alist.listAdd()
-            elif choice == 4:
-                print("\n*** Dictionary Operations ***")
+                print("\n*** Fibonacci Operations ***")
                 fiboTriangle(5)
-            elif choice == 5:
-                print("\n*** Tuple Operations ***")
-                print("\n---Create tuples ---")
-                createTuples()
-            elif choice == 6:
+            elif choice == 3:
                 print("\n*** Plot Operations ***")
                 plotting()
                 
