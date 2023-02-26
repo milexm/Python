@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
 <title>code.packages.menu_utilities.builtin_types_submenus API documentation</title>
-<meta name="description" content="Module dictionary_menu.py" />
+<meta name="description" content="Module builtin_types_submenus.py" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -22,13 +22,13 @@
 <h1 class="title">Module <code>code.packages.menu_utilities.builtin_types_submenus</code></h1>
 </header>
 <section id="section-intro">
-<p>Module dictionary_menu.py</p>
+<p>Module builtin_types_submenus.py</p>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">&#34;&#34;&#34; 
-Module dictionary_menu.py
+Module builtin_types_submenus.py
 
 &#34;&#34;&#34;
 
@@ -239,13 +239,12 @@ class BuiltinTypesSubMenu(ConsoleMenu):
             if choice == len(selected_sub_menu_items):
                 break        
             else:
-                # Display selected sub menu name.
                 print(f&#34;\n*** Sample results ***&#34;) 
                 
-                # Get the selected list (second dictionary elememnt)
+                # Get the selected list (second dictionary elememnt).
                 _current_selection = self.sample_groups[sub_menu][1] 
                 
-                # Call the selectd sample function (second list elememnt). 
+                # Call the selectd sample function (second list element). 
                 _current_selection[int(choice)][1]()
                    
                 </code></pre>
@@ -479,13 +478,12 @@ sample. If the user selects the <code>Quit</code> option, the method exits.</p>
             if choice == len(selected_sub_menu_items):
                 break        
             else:
-                # Display selected sub menu name.
                 print(f&#34;\n*** Sample results ***&#34;) 
                 
-                # Get the selected list (second dictionary elememnt)
+                # Get the selected list (second dictionary elememnt).
                 _current_selection = self.sample_groups[sub_menu][1] 
                 
-                # Call the selectd sample function (second list elememnt). 
+                # Call the selectd sample function (second list element). 
                 _current_selection[int(choice)][1]()</code></pre>
 </details>
 <h3>Ancestors</h3>
@@ -607,13 +605,12 @@ on the user's selection.</p></div>
         if choice == len(selected_sub_menu_items):
             break        
         else:
-            # Display selected sub menu name.
             print(f&#34;\n*** Sample results ***&#34;) 
             
-            # Get the selected list (second dictionary elememnt)
+            # Get the selected list (second dictionary elememnt).
             _current_selection = self.sample_groups[sub_menu][1] 
             
-            # Call the selectd sample function (second list elememnt). 
+            # Call the selectd sample function (second list element). 
             _current_selection[int(choice)][1]()</code></pre>
 </details>
 </dd>

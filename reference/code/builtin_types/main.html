@@ -32,7 +32,7 @@ Module main.py
 &#34;&#34;&#34;
 
 # Import the menu classes from the  
-# builtin_types_menu_utilities package.
+# menu_utilities package.
 import sys
 sys.path.append(&#39;./code/packages&#39;) 
 import menu_utilities as _menu  
@@ -76,9 +76,6 @@ class GroupMenu(ConsoleMenu):
         &#34;&#34;&#34;
 
         # Define the entries of the group menu. 
-        # self.menu_items = [&#34;Lists&#34;, &#34;Tuples&#34;, &#34;Dictionaries&#34;, &#34;Strings&#34;, &#34;Exceptions&#34;, &#34;Files&#34;, &#34;Quit&#34;]
-     
-        
         self.menu_items = [&#34;Dictionaries&#34;, &#34;Exceptions&#34;, &#34;Files&#34;, &#34;Lists&#34;, &#34;Strings&#34;, &#34;Tuples&#34;, &#34;Quit&#34;]
 
         # Initialize menu name and items through the ConsoleMenu parent class.  
@@ -86,9 +83,7 @@ class GroupMenu(ConsoleMenu):
 
         # Instantiate the sub menu class. 
         _bltmenu = _menu.BuiltinTypesSubMenu()  
-
-        &#34;&#34;&#34; Sub menu class instances. &#34;&#34;&#34;
-
+        &#34;&#34;&#34; Sub menu class instance. &#34;&#34;&#34;
 
         # Define the sub menu decision table.
         self.sub_menu = {
@@ -197,9 +192,6 @@ it initiliazes the <code>group_menu</code> attribute with a <code>ConsoleMenu</c
         &#34;&#34;&#34;
 
         # Define the entries of the group menu. 
-        # self.menu_items = [&#34;Lists&#34;, &#34;Tuples&#34;, &#34;Dictionaries&#34;, &#34;Strings&#34;, &#34;Exceptions&#34;, &#34;Files&#34;, &#34;Quit&#34;]
-     
-        
         self.menu_items = [&#34;Dictionaries&#34;, &#34;Exceptions&#34;, &#34;Files&#34;, &#34;Lists&#34;, &#34;Strings&#34;, &#34;Tuples&#34;, &#34;Quit&#34;]
 
         # Initialize menu name and items through the ConsoleMenu parent class.  
@@ -207,9 +199,7 @@ it initiliazes the <code>group_menu</code> attribute with a <code>ConsoleMenu</c
 
         # Instantiate the sub menu class. 
         _bltmenu = _menu.BuiltinTypesSubMenu()  
-
-        &#34;&#34;&#34; Sub menu class instances. &#34;&#34;&#34;
-
+        &#34;&#34;&#34; Sub menu class instance. &#34;&#34;&#34;
 
         # Define the sub menu decision table.
         self.sub_menu = {
