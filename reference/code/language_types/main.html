@@ -34,18 +34,11 @@ Exercise Python basic syntax.
 
 # Append path to the packages folder to access the related modules
 import sys
-sys.path.append(&#39;./code/packages&#39;) 
+sys.path.append(&#39;./code/oldpackages&#39;) 
 
 
 from mymath.fibo import fiboTriangle
 from mymath.mynumpy import plotting
-
-
-from mytypes.lists import mylist
-
-from mytypes.strings import mystring 
-
-from mytypes.tuples import createTuples 
 
 from mytypes.number import numbers
 
@@ -61,8 +54,8 @@ __email__ = &#34;milexm@gmail.com&#34;
 __status__ = &#34;Test&#34;
 
 # Define list of menu items
-menuItems = [&#34;Basic types&#34;, &#34;Strings&#34;, &#34;Lists&#34;, &#34;Dictionary&#34;,
-                      &#34;Tuple&#34;, &#34;Plot&#34;, &#34;Display menu&#34;, &#34;Quit&#34;]
+menuItems = [&#34;Basic types&#34;, &#34;Fibonacci&#34;,
+              &#34;Plot&#34;, &#34;Display menu&#34;, &#34;Quit&#34;]
 
 class types:
 
@@ -105,39 +98,9 @@ class types:
                 n.getType(1000)
                 n.getComplexType(1+2j)
             elif choice == 2:
-                print(&#34;\n*** String Operations ***&#34;)
-                print(&#34;\n---Get a string---&#34;)
-                astring = mystring()
-                astring.useString()
-                print(&#34;\n---Get a substring---&#34;)
-                astring.subString()
-                print(&#34;\n---Strip white spaces---&#34;)
-                astring.stripWhiteSpaces()
-                print(&#34;\n---Lower case string---&#34;)
-                astring.lowerString()
-                print(&#34;\n---Upper case string---&#34;)
-                astring.upperString()
-                print(&#34;\n---Split string---&#34;)
-                astring.splitString()
-            elif choice == 3:
-                print(&#34;\n *** List Operations ***&#34;)
-                print(&#34;\n---Index lists---&#34;)
-                alist = mylist()
-                alist.listIndex()
-                print(&#34;\n---Slice lists---&#34;)
-                alist.listSlice()
-                print(&#34;\n---Change lists---&#34;)
-                alist.listChange()
-                print(&#34;\n---Add lists---&#34;)
-                alist.listAdd()
-            elif choice == 4:
-                print(&#34;\n*** Dictionary Operations ***&#34;)
+                print(&#34;\n*** Fibonacci Operations ***&#34;)
                 fiboTriangle(5)
-            elif choice == 5:
-                print(&#34;\n*** Tuple Operations ***&#34;)
-                print(&#34;\n---Create tuples ---&#34;)
-                createTuples()
-            elif choice == 6:
+            elif choice == 3:
                 print(&#34;\n*** Plot Operations ***&#34;)
                 plotting()
                 
@@ -219,39 +182,9 @@ and processes the user's imput.
                 n.getType(1000)
                 n.getComplexType(1+2j)
             elif choice == 2:
-                print(&#34;\n*** String Operations ***&#34;)
-                print(&#34;\n---Get a string---&#34;)
-                astring = mystring()
-                astring.useString()
-                print(&#34;\n---Get a substring---&#34;)
-                astring.subString()
-                print(&#34;\n---Strip white spaces---&#34;)
-                astring.stripWhiteSpaces()
-                print(&#34;\n---Lower case string---&#34;)
-                astring.lowerString()
-                print(&#34;\n---Upper case string---&#34;)
-                astring.upperString()
-                print(&#34;\n---Split string---&#34;)
-                astring.splitString()
-            elif choice == 3:
-                print(&#34;\n *** List Operations ***&#34;)
-                print(&#34;\n---Index lists---&#34;)
-                alist = mylist()
-                alist.listIndex()
-                print(&#34;\n---Slice lists---&#34;)
-                alist.listSlice()
-                print(&#34;\n---Change lists---&#34;)
-                alist.listChange()
-                print(&#34;\n---Add lists---&#34;)
-                alist.listAdd()
-            elif choice == 4:
-                print(&#34;\n*** Dictionary Operations ***&#34;)
+                print(&#34;\n*** Fibonacci Operations ***&#34;)
                 fiboTriangle(5)
-            elif choice == 5:
-                print(&#34;\n*** Tuple Operations ***&#34;)
-                print(&#34;\n---Create tuples ---&#34;)
-                createTuples()
-            elif choice == 6:
+            elif choice == 3:
                 print(&#34;\n*** Plot Operations ***&#34;)
                 plotting()
                 
@@ -296,39 +229,9 @@ def main():
             n.getType(1000)
             n.getComplexType(1+2j)
         elif choice == 2:
-            print(&#34;\n*** String Operations ***&#34;)
-            print(&#34;\n---Get a string---&#34;)
-            astring = mystring()
-            astring.useString()
-            print(&#34;\n---Get a substring---&#34;)
-            astring.subString()
-            print(&#34;\n---Strip white spaces---&#34;)
-            astring.stripWhiteSpaces()
-            print(&#34;\n---Lower case string---&#34;)
-            astring.lowerString()
-            print(&#34;\n---Upper case string---&#34;)
-            astring.upperString()
-            print(&#34;\n---Split string---&#34;)
-            astring.splitString()
-        elif choice == 3:
-            print(&#34;\n *** List Operations ***&#34;)
-            print(&#34;\n---Index lists---&#34;)
-            alist = mylist()
-            alist.listIndex()
-            print(&#34;\n---Slice lists---&#34;)
-            alist.listSlice()
-            print(&#34;\n---Change lists---&#34;)
-            alist.listChange()
-            print(&#34;\n---Add lists---&#34;)
-            alist.listAdd()
-        elif choice == 4:
-            print(&#34;\n*** Dictionary Operations ***&#34;)
+            print(&#34;\n*** Fibonacci Operations ***&#34;)
             fiboTriangle(5)
-        elif choice == 5:
-            print(&#34;\n*** Tuple Operations ***&#34;)
-            print(&#34;\n---Create tuples ---&#34;)
-            createTuples()
-        elif choice == 6:
+        elif choice == 3:
             print(&#34;\n*** Plot Operations ***&#34;)
             plotting()
             
