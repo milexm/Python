@@ -14,7 +14,7 @@ the Python interpreter as part of one package only called
 `menu_utilities`.
 
 The following import allow the use of functions from  different modules as they
-would belong to one package only, without the need to import the various modules
+would belong to one module only, without the need to import the various modules
 one by one. 
 
 For example, to use the `BuiltinTypesSubMenu` class, in the calling module you do the following:

@@ -25,19 +25,27 @@ value internally.  For more information, see
 
 There are two aspects when it comes to `__init__`:
 
-1. **Object initialization** when a class is instantiated. This is done by the method `__init__()`,
+1. **Object initialization** when a class is instantiated. This is done by the
+   method `__init__()`,
 2. **Paackage initialization**. This is done by the module `__init__.py`.
 
 
 #### Object initialization \_\_init__()
 
-When you create a new object of a class, Python automatically calls the `__init__()` method to initialize the object’s attributes.
+When you create a new object of a class, Python automatically calls the
+`__init__()` method to initialize the object’s attributes.
 
-Unlike regular methods, the `__init__()` method has two underscores `__` on each side. Therefore, the `__init__()` is often called **dunder** init. The name comes abbreviation of the double underscores init.
+Unlike regular methods, the `__init__()` method has two underscores `__` on each
+side. Therefore, the `__init__()` is often called **dunder** init. The name
+comes abbreviation of the double underscores init.
 
-The double underscores at both sides of the __init__() method indicate that Python will use the method internally. In other words, **you should not call this method explicitly**.
+The double underscores at both sides of the __init__() method indicate that
+Python will use the method internally. In other words, **you should not call
+this method explicitly**.
 
-Since Python will automatically call the __init__() method immediately after creating a new object, you can use the __init__() method to **initialize the object**.
+Since Python will automatically call the __init__() method immediately after
+creating a new object, you can use the __init__() method to **initialize the
+object**.
 
 The following defines the Person class with the __init__() method:
 
@@ -55,18 +63,26 @@ if __name__ == '__main__':
 
 ```
 
-For the use of Python’s `if __name__ == "__main__"` idion, see [__main__](#__main__---use-of-the--if-__name__--__main__-idiom) idiom. 
+For the use of Python’s `if __name__ == "__main__"` idion, see
+[__main__](#__main__---use-of-the--if-__name__--__main__-idiom) idiom. 
 
 When you create an instance of the Person class, Python performs two things:
 
-1. It creates a new instance of the Person class by setting the object’s namespace such as `__dict__` attribute to empty ({}).
-1. It calls the `__init__` method to initialize the attributes of the newly created object.
+1. It creates a new instance of the Person class by setting the object’s
+   namespace such as `__dict__` attribute to empty ({}).
+1. It calls the `__init__` method to initialize the attributes of the newly
+   created object.
 
-> [!NOTE] The `__init__` method doesn’t create the object but only initializes the object. Hence, the `__init__()` is not a constructor.
+> [!NOTE] The `__init__` method doesn’t create the object but only initializes
+> the object. Hence, the `__init__()` is not a constructor.
 
-If `__init__` has parameters other than the `self`, you need to pass the corresponding arguments when creating a new object like the example above. 
+If `__init__` has parameters other than the `self`, you need to pass the
+corresponding arguments when creating a new object like the example above. 
 
-Fore more information, see [Python Class Constructors: Control Your Object Instantiation](https://realpython.com/python-class-constructor/) and [Python `__init__`](https://www.pythontutorial.net/python-oop/python-__init__/). See also [search __init__](https://realpython.com/search?q=__init__).
+Fore more information, see [Python Class Constructors: Control Your Object
+Instantiation](https://realpython.com/python-class-constructor/) and [Python
+`__init__`](https://www.pythontutorial.net/python-oop/python-__init__/). See
+also [search __init__](https://realpython.com/search?q=__init__).
 
 #### Package initialization \_\_init__.py
 
@@ -92,17 +108,33 @@ The `__init__.py` file is usually empty, but it can be used to export selected
 portions of the package under more convenient name, hold convenience functions,
 etc.
  
-See the examples [About `__init()__.py` and packages in Python](../basics/glossary-samples/package-init/README.md). In particular, if you refer to the [use-pkg.py](../basics/glossary-samples/package-init/use-pkg.py) module, you will see that the imports defined in [__intit__.py](../basics/glossary-samples/package-init/pkg/__init__.py), allow the use of functions from  different modules in the directory **pkg** as they belonged to one package only, without the need to import each module one by one.
+See the examples [About `__init()__.py` and packages in
+Python](../basics/glossary-samples/package-init/README.md). In particular, if
+you refer to the
+[use-pkg.py](../basics/glossary-samples/package-init/use-pkg.py) module, you
+will see that the imports defined in
+[__intit__.py](../basics/glossary-samples/package-init/pkg/__init__.py), allow
+the use of functions from  different modules in the directory **pkg** as they
+belonged to one package only, without the need to import each module one by one.
 
 
 ## M ##
 
 ### \_\_main__ - Use of the  `if __name__ == "__main__"` idiom
 
-The `if __name__ == "__main__"` idiom allows to execute certain code only when Python program is run as the **main** executable or script, but not when it is imported as a module. You can think of the conditional block that you open with `if __name__ == "__main__"` as a way to store code that should only run when your program is the main executable (executed as a script).
+The `if __name__ == "__main__"` idiom allows to execute certain code only when
+Python program is run as the **main** executable or script, but not when it is
+imported as a module. You can think of the conditional block that you open with
+`if __name__ == "__main__"` as a way to store code that should only run when
+your program is the main executable (executed as a script).
 
-Consider the module [echo.py](../basics/glossary-samples/name-main-idiom/echo.py), this is what happens: 
-- If you execute this module as the top level code the idiom evaluates to `true` and the indented code is executed, as in this example:
+Consider the module
+[echo.py](../basics/glossary-samples/name-main-idiom/echo.py), this is what
+happens: 
+
+- If you execute this module as the top level code the idiom evaluates to `true`
+  and the indented code is executed, as in this example:
+
     ```cmd
     > python echo.py
     > Yell something at a mountain: hello world
@@ -111,7 +143,9 @@ Consider the module [echo.py](../basics/glossary-samples/name-main-idiom/echo.py
     d
     .
     ```
-- If you include this module, instead, the idiom evaluates to false and the indented code is not executed, as in this example:
+
+- If you include this module, instead, the idiom evaluates to false and the
+  indented code is not executed, as in this example:
 
     ```cmd
     > python
@@ -119,29 +153,42 @@ Consider the module [echo.py](../basics/glossary-samples/name-main-idiom/echo.py
     >>> echo("not top level code")            
     'ode\nde\ne\n.'
     ```
+
 #### How does the name-main idiom work?
 
-At its core, the idiom is a conditional statement that checks whether the value of the variable __name__ is equal to the string "__main__":
+At its core, the idiom is a conditional statement that checks whether the value
+of the variable __name__ is equal to the string "__main__":
 
-- If the `__name__ == "__main__"` expression is `True`, then the indented code following the conditional statement executes.
-- If the `__name__ == "__main__"` expression is `False`, then Python skips the indented code.
+- If the `__name__ == "__main__"` expression is `True`, then the indented code
+  following the conditional statement executes.
+- If the `__name__ == "__main__"` expression is `False`, then Python skips the
+  indented code.
 
 But when is `__name__` equal to the string `"__main__"`? 
 
-Python sets the global `__name__` of a module equal to `"__main__"` if the Python interpreter runs the code in the **top-level code environment**:
+Python sets the global `__name__` of a module equal to `"__main__"` if the
+Python interpreter runs the code in the **top-level code environment**:
 
-> [!NOTE] **Top-level code** is the **first user-specified Python module that starts running**. It’s *top-level* because it imports all other modules that the program needs. 
+> [!NOTE] **Top-level code** is the **first user-specified Python module that
+> starts running**. It’s *top-level* because it imports all other modules that
+> the program needs. 
 
-To better understand what that means, see the small practical example [namemain.py](..\basics\glossary-samples\name-main-idiom\namemain.py). You will see the following:
+To better understand what that means, see the small practical example
+[namemain.py](..\basics\glossary-samples\name-main-idiom\namemain.py). You will
+see the following:
 
-- If you execute this module as the top level code the idiom `if __name__ == "__main__"` evaluates to true and the indented code is executed, as in this example:
+- If you execute this module as the top level code the idiom `if __name__ ==
+  "__main__"` evaluates to true and the indented code is executed, as in this
+  example:
 
     ```cmd
     > python namemain.py
         __main__ <class 'str'>
         namamain.py is running as top leval code.
     ```
-- If you include this module, instead, the idiom evaluates to false and the indented code is not executed as in this example:
+
+- If you include this module, instead, the idiom evaluates to false and the
+  indented code is not executed as in this example:
 
     ```cmd
     > python
@@ -149,15 +196,21 @@ To better understand what that means, see the small practical example [namemain.
     >>> namemain <class 'str'>
     ```
 
-> [!NOTE] You can import any file that contains Python code as a module, and Python will run the code in your file during import. The name of the module will usually be the filename without the file extension for Python files (.py).
+> [!NOTE] You can import any file that contains Python code as a module, and
+> Python will run the code in your file during import. The name of the module
+> will usually be the filename without the file extension for Python files
+> (.py).
 
-In conclusion the value of `__name__` will have one of two values depending on where it lives:
+In conclusion the value of `__name__` will have one of two values depending on
+where it lives:
 
 1. In the top-level code environment, the value of `__name__` is `"__main__"`.
-1. In an imported module, the value of `__name__` is the module’s name as a string.
+1. In an imported module, the value of `__name__` is the module’s name as a
+   string.
 
 
-See the examples [About `if __name__ == "__main__"` idiom in Python](../basics/glossary-samples/name-main-idiom/README.md).
+See the examples [About `if __name__ == "__main__"` idiom in
+Python](../basics/glossary-samples/name-main-idiom/README.md).
 
 
 ## P ##
@@ -202,5 +255,6 @@ example, in windows, you can use **findstr** instead of grep. For example:
 pip freeze | findstr botbuilder-dialogs
 ```
 
-See also [Questions and Answers](https://www.tutorialspoint.com/How-to-check-version-of-python-modules).
+See also [Questions and
+Answers](https://www.tutorialspoint.com/How-to-check-version-of-python-modules).
 
