@@ -235,6 +235,25 @@ Guide for Python Code](https://peps.python.org/pep-0008/).
 ### Requirements - Use of the requirements.txt file
 
 
+## S ##
+
+### str.format()
+
+In Python, the `str.format()` method is used to **insert values into a string**.
+The curly braces `{}` serve as **placeholders** for values that will be inserted
+into the string. In this code snippet: `"files/boy{}.txt".format(i+1)` a string
+contains a placeholder `{}`.  The `.format()` method is called on the string and the
+value of `i+1` is passed as an argument. This value is then inserted into the
+string, replacing the `{}` placeholder.
+
+For example, if i is 0, then the string `"files/boy{}.txt".format(i+1)` will
+evaluate to `"files/boy1.txt"`. If i is 1, the string will evaluate to
+`"files/boy2.txt"`, and so on.
+
+The `{}` placeholder can be customized to specify the data type, formatting
+options, and the order in which the arguments are passed. For example, `{:.2f}`
+specifies a floating point number with two decimal places. The `str.format()`
+method is a powerful and flexible way to format strings in Python.
 
 ## V ##
 
