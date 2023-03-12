@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
 <title>code.language_constructs.name_main_idiom.echo API documentation</title>
-<meta name="description" content="This example (module) shows the behavior of the &lt;i&gt;if __name__ == &#34;__main__&#34;&lt;/i&gt; idiom …" />
+<meta name="description" content="Module echo.py …" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -22,39 +22,40 @@
 <h1 class="title">Module <code>code.language_constructs.name_main_idiom.echo</code></h1>
 </header>
 <section id="section-intro">
-<p>This example (module) shows the behavior of the <i>if <strong>name</strong> == "<strong>main</strong>"</i> idiom.</p>
-<p>If you execute this module as the top level code, for example by executing it directly from the command line, the idiom evaluates to true and the indented code is executed, that is the <code><a title="code.language_constructs.name_main_idiom.echo.main" href="#code.language_constructs.name_main_idiom.echo.main">main()</a></code> function is called.</p>
-<p>If you include this module, instead, the idiom evaluates to false and the indented code is not executed, that is the <code><a title="code.language_constructs.name_main_idiom.echo.main" href="#code.language_constructs.name_main_idiom.echo.main">main()</a></code> function is not called.</p>
+<p>Module echo.py </p>
+<h2 id="remarks">Remarks</h2>
+<p>This example shows the behavior of the <i>if <strong>name</strong> == "<strong>main</strong>"</i> idiom.</p>
+<p>If you execute this module as the top level code, for example by executing it directly from the command line, the idiom evaluates to true and the <code><a title="code.language_constructs.name_main_idiom.echo.main" href="#code.language_constructs.name_main_idiom.echo.main">main()</a></code> function is called.</p>
+<p>If you include this module, instead, the idiom evaluates to false and the
+<code><a title="code.language_constructs.name_main_idiom.echo.main" href="#code.language_constructs.name_main_idiom.echo.main">main()</a></code> function is not called.</p>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">&#34;&#34;&#34;
-This example (module) shows the behavior of the &lt;i&gt;if __name__ == &#34;__main__&#34;&lt;/i&gt; idiom.
+Module echo.py 
 
-If you execute this module as the top level code, for example by executing it directly from the command line, the idiom evaluates to true and the indented code is executed, that is the `main()` function is called.
+Remarks
+-------
+This example shows the behavior of the &lt;i&gt;if __name__ == &#34;__main__&#34;&lt;/i&gt; idiom.
 
-If you include this module, instead, the idiom evaluates to false and the indented code is not executed, that is the `main()` function is not called.
+If you execute this module as the top level code, for example by executing it directly from the command line, the idiom evaluates to true and the `main()` function is called.
+
+If you include this module, instead, the idiom evaluates to false and the 
+`main()` function is not called.
 
 &#34;&#34;&#34;
 
-
 def echo(text: str, repetitions: int = 3) -&gt; str:
-    &#34;&#34;&#34;Imitate a real-world echo.
+    &#34;&#34;&#34;
+    Imitate real-world echo.
     
-    Parameters
-    ----------
-    text : str
-        The text to echo. 
-    
-    repetitions: int
-        The number of echoes. 
+    Parameters:
+        text(str) : The text to echo. 
+        repetitions(int) : The number of echoes. 
 
-    Returns
-    -------
-    echoed_text : str
-        The text echoed.
-
+    Returns: 
+        echoed_text(str) : The text echoed.
     &#34;&#34;&#34;
     echoed_text = &#34;&#34;
     for i in range(repetitions, 0, -1):
@@ -63,8 +64,8 @@ def echo(text: str, repetitions: int = 3) -&gt; str:
 
 
 def main():
-    &#34;&#34;&#34; Executes only if this module runs as a top level code. 
-    
+    &#34;&#34;&#34; 
+        Executes only if this module runs as a top level code. 
         It is called when  __name__ == &#34;__main__&#34;
     &#34;&#34;&#34;
     
@@ -87,39 +88,26 @@ if __name__ == &#34;__main__&#34;:
 <span>def <span class="ident">echo</span></span>(<span>text: str, repetitions: int = 3) ‑> str</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Imitate a real-world echo.</p>
+<div class="desc"><p>Imitate real-world echo.</p>
 <h2 id="parameters">Parameters</h2>
-<dl>
-<dt><strong><code>text</code></strong> :&ensp;<code>str</code></dt>
-<dd>The text to echo.</dd>
-<dt><strong><code>repetitions</code></strong> :&ensp;<code>int</code></dt>
-<dd>The number of echoes.</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><strong><code>echoed_text</code></strong> :&ensp;<code>str</code></dt>
-<dd>The text echoed.</dd>
-</dl></div>
+<p>text(str) : The text to echo.
+repetitions(int) : The number of echoes. </p>
+<p>Returns:
+echoed_text(str) : The text echoed.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def echo(text: str, repetitions: int = 3) -&gt; str:
-    &#34;&#34;&#34;Imitate a real-world echo.
+    &#34;&#34;&#34;
+    Imitate real-world echo.
     
-    Parameters
-    ----------
-    text : str
-        The text to echo. 
-    
-    repetitions: int
-        The number of echoes. 
+    Parameters:
+        text(str) : The text to echo. 
+        repetitions(int) : The number of echoes. 
 
-    Returns
-    -------
-    echoed_text : str
-        The text echoed.
-
+    Returns: 
+        echoed_text(str) : The text echoed.
     &#34;&#34;&#34;
     echoed_text = &#34;&#34;
     for i in range(repetitions, 0, -1):
@@ -131,16 +119,16 @@ if __name__ == &#34;__main__&#34;:
 <span>def <span class="ident">main</span></span>(<span>)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Executes only if this module runs as a top level code. </p>
-<p>It is called when
+<div class="desc"><p>Executes only if this module runs as a top level code.
+It is called when
 <strong>name</strong> == "<strong>main</strong>"</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def main():
-    &#34;&#34;&#34; Executes only if this module runs as a top level code. 
-    
+    &#34;&#34;&#34; 
+        Executes only if this module runs as a top level code. 
         It is called when  __name__ == &#34;__main__&#34;
     &#34;&#34;&#34;
     
@@ -156,7 +144,9 @@ if __name__ == &#34;__main__&#34;:
 <nav id="sidebar">
 <h1>Index</h1>
 <div class="toc">
-<ul></ul>
+<ul>
+<li><a href="#remarks">Remarks</a></li>
+</ul>
 </div>
 <ul id="index">
 <li><h3>Super-module</h3>

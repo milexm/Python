@@ -11,9 +11,10 @@ from http_samples import HttpSamples
 from headlines_scraper_samples import HeadlineScraperSamples 
 
 # Import the ConsoleMenu class.
-import sys
-sys.path.append('./code/packages/menu_utilities')
+# import sys
+# sys.path.append('./code/packages/menu_utilities')
 from menu_utilities import ConsoleMenu
+
 
 class AppsSubMenu(ConsoleMenu):
     """ 

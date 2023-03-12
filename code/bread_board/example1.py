@@ -15,9 +15,9 @@ def example():
     loop and open function. The names are written using the write method of the
     file object.
     
-    See also ["files/boy{}.txt".format(i+1)](../documentation/glossary.md/#str.format())
+    See also ["files/boy{}.txt".format(i+1)](https://github.com/milexm/Python/blob/main/documentation/glossary.md#strformat)
     """
-
+   
     # Create directory if it doesn't exist
     if not os.path.exists("./code/bread_board/files"):
         os.makedirs("./code/bread_board/files")
