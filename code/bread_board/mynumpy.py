@@ -1,10 +1,4 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Dec 12 17:45:14 2018
-Example of function using numpy.
-@author: Michael
-"""
+
 def plotting():
 # Plotting using numpy and matplotlib
     
@@ -25,3 +19,7 @@ def plotting():
         bar.set_alpha(0.5)
     
     plt.show()
+
+
+if __name__ == '__main__':
+    plotting()

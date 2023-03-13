@@ -94,3 +94,10 @@ def test3():
         if case(): # default
             print("I dunno what c was!")
 
+
+if __name__ == '__main__':
+    test1()
+    test2()
+    test3()
+
+    

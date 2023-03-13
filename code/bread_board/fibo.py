@@ -1,10 +1,4 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Dec 11 23:10:16 2018
 
-@author: Michael
-"""
 
 # Python 3 Implementation for 
 # Fibonacci triangle 
@@ -46,3 +40,6 @@ def fiboTriangle(n) :
             print(f[fiboNum], " ", end = "") 
             
         print() 
+
+if __name__ == '__main__':
+    fiboTriangle(5)
