@@ -4,16 +4,14 @@ import os
 
 def example():
     """
-    Here is an example Python program that creates 5 text files each containing
-    a different boy and girl name, and stores them in a directory called
-    "files".
+    This example creates 5 text files each containing a different boy and girl
+    name, and stores them in a directory called "files".
 
     Remarks: 
-    This program first checks if the "files" directory exists, and
-    creates it if it doesn't. It then defines two lists of boy and girl names,
-    and writes each name to a separate file in the "files" directory using a for
-    loop and open function. The names are written using the write method of the
-    file object.
+    This program first checks if the "files" directory exists, and creates it if
+    it doesn't. It then defines two lists of boy and girl names, and writes each
+    name to a separate file in the "files" directory using a for loop and open
+    function. The names are written using the write method of the file object.
     
     See also ["files/boy{}.txt".format(i+1)](https://github.com/milexm/Python/blob/main/documentation/glossary.md#strformat)
     """
