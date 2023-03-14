@@ -3,7 +3,7 @@ import os
 
 def example():
     """
-    Given a set of text files in a folder called "files", assure that each sentence in each of the file starts with a capital letter. Write a Python script that does that. 
+    Given a set of text files in a folder called "files", assure that each sentence in each of the file starts with a capital letter. 
    
     Remarks:
     This script uses the `os` module to list all the files in the `files`
