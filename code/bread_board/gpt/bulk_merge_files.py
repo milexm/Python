@@ -5,8 +5,6 @@ def example():
     """
     Given a set of text files in a folder called "files", merge them.
    
-    Remarks:
-    
     """
 
     folder_path = "code/bread_board/files/"

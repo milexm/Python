@@ -5,7 +5,8 @@ def example():
     """
     Given a set of text files in a folder called "files", assure that each sentence in each of the file starts with a capital letter. 
    
-    Remarks:
+    Remarks
+    -------
     This script uses the `os` module to list all the files in the `files`
     folder, and then reads each text file in turn. It then processes the text to
     capitalize the first letter of each sentence, and writes the processed text

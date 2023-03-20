@@ -7,7 +7,9 @@ def example():
     This example creates 5 text files each containing a different boy and girl
     name, and stores them in a directory called "files".
 
-    Remarks: 
+    Remarks
+    -------
+    
     This program first checks if the "files" directory exists, and creates it if
     it doesn't. It then defines two lists of boy and girl names, and writes each
     name to a separate file in the "files" directory using a for loop and open

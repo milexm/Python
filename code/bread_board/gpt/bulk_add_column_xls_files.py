@@ -7,8 +7,8 @@ def example():
     2 columns: "employee" and "monthly salary". Add a third column: "annual
     salary" that contains the annual salary for each employee. 
 
-    Remarks: 
-    
+    Remarks
+    -------
     To add a third column "annual salary" to each Excel file in a
     folder "xlsfiles", we can use the pandas library. The following script reads
     each file, adds the new column, calculates the annual salary, and then
