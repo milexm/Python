@@ -28,6 +28,10 @@ def example():
     # Load data
     df = pd.read_csv('code/bread_board/files/weather.csv')
 
+    # Calculate the mean temperature
+    mean_temp = df['TG'].mean()
+    print(f'The mean temperature is: {mean_temp:.2f} C')
+
     # Plot histogram
     plt.hist(df['TG'], bins=50)
     plt.title('Temperature Histogram')

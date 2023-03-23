@@ -56,6 +56,10 @@ def example():
     # Load data
     df = pd.read_csv(&#39;code/bread_board/files/weather.csv&#39;)
 
+    # Calculate the mean temperature
+    mean_temp = df[&#39;TG&#39;].mean()
+    print(f&#39;The mean temperature is: {mean_temp:.2f} C&#39;)
+
     # Plot histogram
     plt.hist(df[&#39;TG&#39;], bins=50)
     plt.title(&#39;Temperature Histogram&#39;)
@@ -123,6 +127,10 @@ view your Streamlit app in your browser.</p></div>
 
     # Load data
     df = pd.read_csv(&#39;code/bread_board/files/weather.csv&#39;)
+
+    # Calculate the mean temperature
+    mean_temp = df[&#39;TG&#39;].mean()
+    print(f&#39;The mean temperature is: {mean_temp:.2f} C&#39;)
 
     # Plot histogram
     plt.hist(df[&#39;TG&#39;], bins=50)
