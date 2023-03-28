@@ -2,21 +2,21 @@ import csv
 
 def example():
     """
-    Create a histogram for the TG column using Streamlit and Python. The
-    "weather.csv" has a column TG that contains temperature in Celsius. The file
-    is in a folder called "files". 
+    The `weather.csv` has a column TG that contains temperature in Celsius. 
+    The file is in a folder called `files`.
+    This program creates a histogram for the TG column using [Streamlit](https://streamlit.io/).  
    
     Remarks
     -------
-    To create a histogram for the TG column in the "weather.csv" file using
-    Streamlit and Python, we can follow these steps:
+    To create a histogram for the TG column in the `weather.csv` file using
+    Streamlit, follow these steps:
 
     1. Install the necessary packages: streamlit and pandas
     2. Load the "weather.csv" file using pandas
     3. Create a histogram using the streamlit histogram function
     
     Run the script using streamlit run command in the terminal as follows:
-    `streamlit run code/bread_board/gpt/plot_histogram_csv_file.py`, You can now
+    `streamlit run code/bread_board/gpt/plot_histogram_csv_file.py`. You can
     view your Streamlit app in your browser.
     
     """
@@ -40,4 +40,4 @@ def example():
     st.pyplot()
 
 if __name__ == "__main__":
-    example()
+    print("Warning: to view this Streamlit app in a browser, run it with the following command: streamlit run plot_annual_temp_csv_file.py")
