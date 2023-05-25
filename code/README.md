@@ -42,7 +42,7 @@ files?](https://pdoc.dev/docs/pdoc.html#include-markdown-files).
 ## 2. Running code examples
 
 The code examples are contained in the folder `Python/code` and grouped by areas
-in the related foldera. For example:
+in the related folders. For example:
 
 - `code/apps`. Ready to run apps.
 - `code/builtin_types` Ready to run examples showing the use of built-in types.
