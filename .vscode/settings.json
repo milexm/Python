@@ -6,6 +6,7 @@
         "./code/oldpackages",
         "./code/builtin_types",
         "./code/apps",
-        "./code/packages/console_menu_utilities"
+        "./code/packages/console_menu_utilities",
+        "./code/bread_board/gpt/data_analysis"
     ]
 }

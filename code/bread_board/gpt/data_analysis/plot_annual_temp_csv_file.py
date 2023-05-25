@@ -1,6 +1,6 @@
 import csv
 
-def example():
+def plot_annual_temp():
     """
     The `weather.csv` has a column TG that contains temperature in Celsius.  The
     file is in a folder called `files`.  The "weather.csv" file also has a
