@@ -48,13 +48,13 @@ class GptSubMenu(ConsoleMenu):
         # parameters to the function to call, when needed. 
 
         self.data_analysis_samples = {
-            1: ["\n***  Activate simple http server ***", self.data_analysis_samples_instance.plot_annual_temp],
-            2: ["\n***  Activate CRUD http server ***", self.data_analysis_samples_instance.plot_annual_temp_histogram],
+            1: ["\n***  Activate data analysis samples ***", self.data_analysis_samples_instance.plot_annual_temp],
+            2: ["\n***  Activate giles operation samples ***", self.data_analysis_samples_instance.plot_annual_temp_histogram],
         }
 
 
         # The order must match the order of the `self.menu_items` 
-        # list in `code/buintin_types/main.py`.  
+        # list in `code//main.py`.  
         self.sub_menus = [
             [], # Leave it empty to match dictionary keys.
             self.temp_menu_items,
@@ -63,7 +63,7 @@ class GptSubMenu(ConsoleMenu):
         """ Group of all the sample menus. """
     
         self.sample_groups = {
-            1: ["Data Analysis Samples", self.temp_menu_items],
+            1: ["Data Analysis Samples", self.data_analysis_samples],
             2: ["Histogram Samples", self.temp_hist_menu_items]
         }
         """ Group of all the samples. """

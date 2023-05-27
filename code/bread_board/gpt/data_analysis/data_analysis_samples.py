@@ -3,7 +3,7 @@
 class DataAnalysisSamples:
 
 
-    def plot_annual_temp():
+    def plot_annual_temp(self):
         """
         The `weather.csv` has a column TG that contains temperature in Celsius.  The
         file is in a folder called `files`.  The "weather.csv" file also has a
@@ -36,8 +36,9 @@ class DataAnalysisSamples:
         print("Warning: to view this Streamlit app in a browser, run it with the following command: streamlit run plot_annual_temp_csv_file.py")
         
         # Read in the data from the CSV file
-        data = pd.read_csv("code/bread_board/files/stockholm_weather.csv")
-
+        # data = pd.read_csv("code/bread_board/files/stockholm_weather.csv")
+        data = pd.read_csv("stockholm_weather.csv")
+        
         # Convert DATE column to datetime format
         data["DATE"] = pd.to_datetime(data["DATE"], format="%Y%m%d")
 
@@ -57,7 +58,7 @@ class DataAnalysisSamples:
 
 
 
-    def plot_annual_temp_histogram():
+    def plot_annual_temp_histogram(self):
         """
         The `weather.csv` has a column TG that contains temperature in Celsius. 
         The file is in a folder called `files`.

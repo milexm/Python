@@ -1,4 +1,5 @@
 import os
+import sys
 import pandas as pd
 
 def example():
@@ -18,6 +19,9 @@ def example():
 
 def example():
    
+   # Set the directory where the CSV files are stored
+    directory = "code/bread_board/files/"
+
     # Set the directory where the Excel files are stored
     directory = "code/bread_board/xlsfiles/"
 

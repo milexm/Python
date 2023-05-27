@@ -25,8 +25,9 @@ def plot_annual_temp_histogram():
     import pandas as pd
     import matplotlib.pyplot as plt
 
+    csv_file_path = "code/bread_board/files/stockholm_weather.csv" 
     # Load data
-    df = pd.read_csv('code/bread_board/files/weather.csv')
+    df = pd.read_csv(csv_file_path)
 
     # Calculate the mean temperature
     mean_temp = df['TG'].mean()

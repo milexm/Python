@@ -29,9 +29,11 @@ def plot_annual_temp():
     import pandas as pd
     import matplotlib.pyplot as plt
 
-
-    # Read in the data from the CSV file
-    data = pd.read_csv("code/bread_board/files/stockholm_weather.csv")
+    # Set CSV file path 
+    csv_file_path = "code/bread_board/files/stockholm_weather.csv" 
+    
+    # Read the data from the CSV file
+    data = pd.read_csv(csv_file_path)
 
     # Convert DATE column to datetime format
     data["DATE"] = pd.to_datetime(data["DATE"], format="%Y%m%d")
