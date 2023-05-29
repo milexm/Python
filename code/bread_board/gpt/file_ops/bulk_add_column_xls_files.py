@@ -18,12 +18,9 @@ def example():
     """
 
 def example():
-   
-   # Set the directory where the CSV files are stored
-    directory = "code/bread_board/files/"
 
-    # Set the directory where the Excel files are stored
-    directory = "code/bread_board/xlsfiles/"
+    # Set the directory where the CSV files are stored.
+    directory = "./code/bread_board/xlsfiles"
 
     # Loop through each file in the directory
     for filename in os.listdir(directory):

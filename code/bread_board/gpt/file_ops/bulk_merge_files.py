@@ -7,7 +7,7 @@ def example():
    
     """
 
-    folder_path = "code/bread_board/files/"
+    folder_path = "./code/bread_board/files/"
     merged_content = ""
 
     # Loop through each file in the directory
