@@ -1,11 +1,13 @@
 """
 Module name: number.py
-Integers, floating point numbers and complex numbers falls under Python 
-numbers category. They are defined as int, float and complex class in Python.
+
 """
 
-
 class numbers:
+    """ 
+    Integers, floating point numbers and complex numbers falls under Python 
+    numbers category. They are defined as int, float and complex class in Python.
+    """
 
     def inputNumber(self, prompt):
         # Prompts user to imput a number.
