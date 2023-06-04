@@ -40,6 +40,3 @@ def fiboTriangle(n) :
             print(f[fiboNum], " ", end = "") 
             
         print() 
-
-if __name__ == '__main__':
-    fiboTriangle(5)

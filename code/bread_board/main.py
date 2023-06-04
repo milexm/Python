@@ -35,7 +35,7 @@ class GroupMenu(ConsoleMenu):
         """ Initializes the `menu_items` attribute with the group menu items. Then it initiliazes the `group_menu` attribute with a `ConsoleMenu` instance. """
 
         # Define the entries of the group menu. 
-        self.menu_items = ["Data Analysis", "File Operations", "Quit"]
+        self.menu_items = ["Data Analysis", "Misc Operations", "File Operations", "Quit"]
       
         # Initialize menu name and options through the parent class.  
         super().__init__("GPT Group Menu", self.menu_items)
@@ -49,6 +49,7 @@ class GroupMenu(ConsoleMenu):
         self.sub_menu = {
             1:  lambda: _amenu.gpt_selection_menu(1),
             2:  lambda: _amenu.gpt_selection_menu(2),
+            3:  lambda: _amenu.gpt_selection_menu(3)
         }
         """ Sub menu selection decision table. """
 
