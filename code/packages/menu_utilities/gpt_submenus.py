@@ -9,7 +9,8 @@ from console_menu import ConsoleMenu
 import sys
 sys.path.append('./code/bread_board/gpt/data_analysis')
 from data_analysis_samples import DataAnalysisSamples 
-
+sys.path.append('./code/bread_board/misc')
+from miscellanea_samples import MiscellaneaSamples 
 
 
 
@@ -34,12 +35,16 @@ class GptSubMenu(ConsoleMenu):
         self.temp_hist_menu_items = ["Bulk add xsl column", "Bulk create files", "Bulk nerge files", "Bulk merge xls files", "Quit"]
         """ File operations menu items."""
 
+        self.misc_menu_items = ["Fibonacci", "Plot", "Numbers", "Quit"]
+        """ Misc menu items."""
         
         # Define the instance for each sample class. 
 
         self.data_analysis_samples_instance = DataAnalysisSamples()
         """ `DataAnalysisSamples` instance. """
 
+        self.misc_samples_instance = MiscellaneaSamples()
+        """ `MiscellaneaSamples` instance. """
 
         # Define the decision table for each sample group.  
         # Each table entry contain the name of the sample and 
@@ -52,19 +57,27 @@ class GptSubMenu(ConsoleMenu):
             2: ["\n***  Activate giles operation samples ***", self.data_analysis_samples_instance.plot_annual_temp_histogram],
         }
 
+        self.misc_samples = {
+            1: ["\n***  Calculate Fibonacci ***", lambda: self.misc_samples_instance.fiboTriangle(5)],
+            2: ["\n***  Plotting ***", self.misc_samples_instance.plotting],
+            3: ["\n***  Number Types ***", self.misc_samples_instance.getNumberTypes],
+        }
 
         # The order must match the order of the `self.menu_items` 
-        # list in `code//main.py`.  
+        # list in `main.py`.  
         self.sub_menus = [
             [], # Leave it empty to match dictionary keys.
             self.temp_menu_items,
+            self.misc_menu_items,
             self.temp_hist_menu_items,
+            
         ]
         """ Group of all the sample menus. """
     
         self.sample_groups = {
             1: ["Data Analysis Samples", self.data_analysis_samples],
-            2: ["Histogram Samples", self.temp_hist_menu_items]
+            2: ["Misc Samples", self.misc_samples],
+            3: ["File Samples", self.temp_hist_menu_items],
         }
         """ Group of all the samples. """
 
@@ -99,5 +112,5 @@ class GptSubMenu(ConsoleMenu):
                 # Get the selected list (second dictionary elememnt)
                 _current_selection = self.sample_groups[sub_menu][1] 
                 
-                # Call the selectd sample function (second list element). 
+                # Call the selected sample function (second list element). 
                 _current_selection[int(choice)][1]()
