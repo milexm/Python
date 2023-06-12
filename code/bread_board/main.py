@@ -38,11 +38,11 @@ class GroupMenu(ConsoleMenu):
         self.menu_items = ["Data Analysis", "Misc Operations", "File Operations", "Quit"]
       
         # Initialize menu name and options through the parent class.  
-        super().__init__("GPT Group Menu", self.menu_items)
+        super().__init__("Breadboard Group Menu", self.menu_items)
 
 
-       # Instantiate the sub menu class. 
-        _amenu = _menu.GptSubMenu()
+       # Instantiate the sub menus class. 
+        _amenu = _menu.BreadboardSubMenus()
         """ Sub menu class instance. """
 
         # Define the sub menu decision table.

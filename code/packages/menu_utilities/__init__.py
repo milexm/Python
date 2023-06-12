@@ -29,7 +29,7 @@ For example, to use the `BuiltinTypesSubMenu` class, in the calling module you d
 from .builtin_types_submenus import BuiltinTypesSubMenu   
 from .console_menu import ConsoleMenu
 from .apps_submenus import AppsSubMenu
-from .gpt_submenus import GptSubMenu
+from .breadboard_submenus import BreadboardSubMenus
 
 
 
