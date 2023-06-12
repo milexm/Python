@@ -11,6 +11,44 @@ last update: 03/14/23
 - [3. ChatGPT](#3-chatgpt)
 - [4. Miscellanea](#4-miscellanea)
 
+## Define activation menus
+
+The steps to create menus are a bit cumbersome and interrelated. Also, we are
+going to use decision tables and not switch statements. The best way to
+demonstrate this is via an example.
+
+### Menus creation
+
+The main menu is created by the [main.py](main.py) file, that is the main
+ativation code for the entire *bread-board* **folder** that contains all the example
+code for this area.
+
+The following are the steps you must follow.
+
+1. Define the entries of the group menu.
+
+   ```python
+      self.menu_items = ["Data Analysis", "Misc Operations", "File Operations", "Quit"]
+   ```
+
+1. Initialize menu name and options through the `ConsoleMenu` parent class
+
+   ```python
+      super().__init__("Breadboard Group Menu", self.menu_items)
+   ```
+
+   This generates the followng menu:
+
+   \*** Breadboard Group Menu ***  
+   1.Data Analysis    2.Misc Operations  
+   3.File Operations  4.Quit  
+   Enter allowed selection number; 4 to quit: 
+
+1. Instantiate the sub menus class.
+
+   ```python
+      _amenu = _menu.BreadboardSubMenus()
+   ```
 
 ## 1. Overview
 
@@ -101,6 +139,7 @@ code using *ChatGPT* and bring their ideas to life.
 
 ## 4. Miscellanea
 
-The examples in the misc folder do not fit in any organization yet.  folder do
-not fit in any organization yet.
+The examples in the misc folder do not fit in any organization yet.
+folder do not fit in any organization yet.
+
 

@@ -82,6 +82,7 @@ class BreadboardSubMenus(ConsoleMenu):
         """ Group of all the samples. """
 
     def breadboard_selection_menu(self, sub_menu):
+
         """
             Display menu and process user's input.  Call the proper method based
             on the user's selection.
