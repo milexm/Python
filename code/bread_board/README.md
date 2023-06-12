@@ -4,6 +4,9 @@ last update: 03/14/23
 
 # ![python-icon](../../media/icons/python-icon.svg) Bread board
 
+- [Define activation menus](#define-activation-menus)
+  - [Menus creation](#menus-creation)
+
 - [1. Overview](#1-overview)
 - [2. Define activation menus](#2-define-activation-menus)
   - [2.1. Menus creation](#21-menus-creation)
@@ -82,3 +85,5 @@ code using *ChatGPT* and bring their ideas to life.
 ## 4. Miscellanea
 
 The examples in the misc folder do not fit in any organization yet.
+folder do not fit in any organization yet.
+
