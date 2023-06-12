@@ -30,7 +30,8 @@ last update: 03/14/23
 <ul>
 <li><a href="#1-overview">1. Overview</a></li>
 <li><a href="#2-define-activation-menus">2. Define activation menus</a></li>
-<li><a href="#21-menus-creation">2.1. Menus creation</a></li>
+<li><a href="#21-group-menu">2.1. Group menu</a></li>
+<li><a href="#22-submenus">2.2. Submenus</a></li>
 <li><a href="#3-chatgpt">3. ChatGPT</a></li>
 <li><a href="#4-miscellanea">4. Miscellanea</a></li>
 </ul>
@@ -41,11 +42,13 @@ determined.</p>
 <h2 id="2-define-activation-menus">2. Define activation menus</h2>
 <p>The steps to create menus are a bit cumbersome and interrelated. Also, we are
 going to use decision tables and not switch statements. The best way to
-demonstrate this is via an example.</p>
-<h3 id="21-menus-creation">2.1. Menus creation</h3>
+demonstrate this is via an example. We are using as example the <strong>bread_board
+group</strong> in the <em>bread_board folder</em>.
+</p>
+<h3 id="21-group-menu">2.1. Group menu</h3>
 <p>The main menu is created by the <a href="main.py">main.py</a> file, that is the main
-ativation code for the entire <em>bread-board</em> <strong>folder</strong> that contains all the example
-code for this area.</p>
+ativation code for the entire <em>bread-board</em> <strong>folder</strong> that contains all the
+example code for this area.</p>
 <p>The following are the steps you must follow.</p>
 <ol>
 <li>Define the entries of the group menu.</li>
@@ -63,12 +66,31 @@ super().__init__("Breadboard Group Menu", self.menu_items)</code></p>
 2.Misc Operations<br>
 3.File Operations
 4.Quit<br>
-Enter allowed selection number; 4 to quit: </p>
+Enter allowed selection number; 4 to quit:</p>
 <ol>
 <li>Instantiate the sub menus class.</li>
 </ol>
 <p><code>python
 _amenu = _menu.BreadboardSubMenus()</code></p>
+<ol>
+<li>Define the sub menus decision table</li>
+</ol>
+<p><code>python
+self.sub_menu = {
+1:
+lambda: _amenu.breadboard_selection_menu(1),
+2:
+lambda: _amenu.breadboard_selection_menu(2),
+3:
+lambda: _amenu.breadboard_selection_menu(3)
+}</code></p>
+<h3 id="22-submenus">2.2. Submenus</h3>
+<p>After the creation of the group menu, we can start creating submenus.
+Each
+submenu is activated by selecting one of the entries displayed in the group menu
+described before. This is where the rubber hits the road. The group menus is
+connected to the submenus whose entries in turn are connected toe the functions
+(samples) to run. The key is the <code>class BreadboardSubMenus(ConsoleMenu)</code>.</p>
 <h2 id="3-chatgpt">3. ChatGPT</h2>
 <p>The examples in the <strong>gpt</strong> folder use
 <a href="https://openai.com/blog/chatgpt">ChatGPT</a>, a powerful AI language model, to
@@ -91,7 +113,9 @@ and desktop GUI apps.</li>
 <p>This is the perfect class for anyone who wants to learn how to generate Python
 code using <em>ChatGPT</em> and bring their ideas to life.</p>
 <h2 id="4-miscellanea">4. Miscellanea</h2>
-<p>The examples in the misc folder do not fit in any organization yet.</p>
+<p>The examples in the misc folder do not fit in any organization yet.
+folder do
+not fit in any organization yet.</p>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -137,7 +161,8 @@ code using <em>ChatGPT</em> and bring their ideas to life.</p>
 <li><a href="#bread-board">Bread board</a><ul>
 <li><a href="#1-overview">1. Overview</a></li>
 <li><a href="#2-define-activation-menus">2. Define activation menus</a><ul>
-<li><a href="#21-menus-creation">2.1. Menus creation</a></li>
+<li><a href="#21-group-menu">2.1. Group menu</a></li>
+<li><a href="#22-submenus">2.2. Submenus</a></li>
 </ul>
 </li>
 <li><a href="#3-chatgpt">3. ChatGPT</a></li>
