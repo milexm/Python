@@ -1,5 +1,5 @@
 """ 
-Module gpt_submenus.py 
+Module breadboard_submenus.py 
 
 """ 
 
@@ -14,7 +14,7 @@ from miscellanea_samples import MiscellaneaSamples
 
 
 
-class GptSubMenu(ConsoleMenu):
+class BreadboardSubMenus(ConsoleMenu):
     """ 
     The class `GetSubMenu` creates a menu for the gpt sample
     group selected by the user in [main.py](./code/bread_board/main.py).  The

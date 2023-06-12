@@ -95,7 +95,7 @@ class ConsoleMenu:
         # Get a valid menu choice
         choice = 0
         while not(np.any(choice == np.arange(len(options))+1)):
-            choice = self.input_number("\nMake allowed selection number; " + str(len(options)) +  " to quit: ")
+            choice = self.input_number("\nEnter allowed selection number; " + str(len(options)) +  " to quit: ")
         return choice
 
 
