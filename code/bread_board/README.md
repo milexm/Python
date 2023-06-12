@@ -6,6 +6,7 @@ last update: 03/14/23
 
 - [Define activation menus](#define-activation-menus)
   - [Menus creation](#menus-creation)
+
 - [1. Overview](#1-overview)
 - [2. ChatGPT](#2-chatgpt)
 - [3. Miscellanea](#3-miscellanea)
@@ -80,3 +81,5 @@ code using *ChatGPT* and bring their ideas to life.
 ## 3. Miscellanea
 
 The examples in the misc folder do not fit in any organization yet.
+folder do not fit in any organization yet.
+

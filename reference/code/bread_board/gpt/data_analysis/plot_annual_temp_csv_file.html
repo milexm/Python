@@ -28,7 +28,7 @@
 </summary>
 <pre><code class="python">import csv
 
-def example():
+def plot_annual_temp():
     &#34;&#34;&#34;
     The `weather.csv` has a column TG that contains temperature in Celsius.  The
     file is in a folder called `files`.  The &#34;weather.csv&#34; file also has a
@@ -57,9 +57,11 @@ def example():
     import pandas as pd
     import matplotlib.pyplot as plt
 
-
-    # Read in the data from the CSV file
-    data = pd.read_csv(&#34;code/bread_board/files/stockholm_weather.csv&#34;)
+    # Set CSV file path 
+    csv_file_path = &#34;code/bread_board/files/stockholm_weather.csv&#34; 
+    
+    # Read the data from the CSV file
+    data = pd.read_csv(csv_file_path)
 
     # Convert DATE column to datetime format
     data[&#34;DATE&#34;] = pd.to_datetime(data[&#34;DATE&#34;], format=&#34;%Y%m%d&#34;)
@@ -91,8 +93,8 @@ if __name__ == &#34;__main__&#34;:
 <section>
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
-<dt id="code.bread_board.gpt.data_analysis.plot_annual_temp_csv_file.example"><code class="name flex">
-<span>def <span class="ident">example</span></span>(<span>)</span>
+<dt id="code.bread_board.gpt.data_analysis.plot_annual_temp_csv_file.plot_annual_temp"><code class="name flex">
+<span>def <span class="ident">plot_annual_temp</span></span>(<span>)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>The <code>weather.csv</code> has a column TG that contains temperature in Celsius.
@@ -121,7 +123,7 @@ view your Streamlit app in your browser.</p></div>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def example():
+<pre><code class="python">def plot_annual_temp():
     &#34;&#34;&#34;
     The `weather.csv` has a column TG that contains temperature in Celsius.  The
     file is in a folder called `files`.  The &#34;weather.csv&#34; file also has a
@@ -150,9 +152,11 @@ view your Streamlit app in your browser.</p></div>
     import pandas as pd
     import matplotlib.pyplot as plt
 
-
-    # Read in the data from the CSV file
-    data = pd.read_csv(&#34;code/bread_board/files/stockholm_weather.csv&#34;)
+    # Set CSV file path 
+    csv_file_path = &#34;code/bread_board/files/stockholm_weather.csv&#34; 
+    
+    # Read the data from the CSV file
+    data = pd.read_csv(csv_file_path)
 
     # Convert DATE column to datetime format
     data[&#34;DATE&#34;] = pd.to_datetime(data[&#34;DATE&#34;], format=&#34;%Y%m%d&#34;)
@@ -190,7 +194,7 @@ view your Streamlit app in your browser.</p></div>
 </li>
 <li><h3><a href="#header-functions">Functions</a></h3>
 <ul class="">
-<li><code><a title="code.bread_board.gpt.data_analysis.plot_annual_temp_csv_file.example" href="#code.bread_board.gpt.data_analysis.plot_annual_temp_csv_file.example">example</a></code></li>
+<li><code><a title="code.bread_board.gpt.data_analysis.plot_annual_temp_csv_file.plot_annual_temp" href="#code.bread_board.gpt.data_analysis.plot_annual_temp_csv_file.plot_annual_temp">plot_annual_temp</a></code></li>
 </ul>
 </li>
 </ul>
