@@ -124,7 +124,7 @@ class ConsoleMenu:
         # Get a valid menu choice
         choice = 0
         while not(np.any(choice == np.arange(len(options))+1)):
-            choice = self.input_number(&#34;\nMake allowed selection number; &#34; + str(len(options)) +  &#34; to quit: &#34;)
+            choice = self.input_number(&#34;\nEnter allowed selection number; &#34; + str(len(options)) +  &#34; to quit: &#34;)
         return choice
 
 
@@ -304,7 +304,7 @@ class ConsoleMenu:
         # Get a valid menu choice
         choice = 0
         while not(np.any(choice == np.arange(len(options))+1)):
-            choice = self.input_number(&#34;\nMake allowed selection number; &#34; + str(len(options)) +  &#34; to quit: &#34;)
+            choice = self.input_number(&#34;\nEnter allowed selection number; &#34; + str(len(options)) +  &#34; to quit: &#34;)
         return choice
 
 

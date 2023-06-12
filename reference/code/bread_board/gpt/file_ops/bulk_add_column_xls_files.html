@@ -27,6 +27,7 @@
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">import os
+import sys
 import pandas as pd
 
 def example():
@@ -45,9 +46,9 @@ def example():
     &#34;&#34;&#34;
 
 def example():
-   
-    # Set the directory where the Excel files are stored
-    directory = &#34;code/bread_board/xlsfiles/&#34;
+
+    # Set the directory where the CSV files are stored.
+    directory = &#34;./code/bread_board/xlsfiles&#34;
 
     # Loop through each file in the directory
     for filename in os.listdir(directory):
@@ -84,9 +85,9 @@ if __name__ == &#34;__main__&#34;:
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def example():
-   
-    # Set the directory where the Excel files are stored
-    directory = &#34;code/bread_board/xlsfiles/&#34;
+
+    # Set the directory where the CSV files are stored.
+    directory = &#34;./code/bread_board/xlsfiles&#34;
 
     # Loop through each file in the directory
     for filename in os.listdir(directory):

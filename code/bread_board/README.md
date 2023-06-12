@@ -4,19 +4,26 @@ last update: 03/14/23
 
 # ![python-icon](../../media/icons/python-icon.svg) Bread board
 
-- [Define activation menus](#define-activation-menus)
-  - [Menus creation](#menus-creation)
 - [1. Overview](#1-overview)
-- [2. ChatGPT](#2-chatgpt)
-- [3. Miscellanea](#3-miscellanea)
+- [2. Define activation menus](#2-define-activation-menus)
+  - [2.1. Menus creation](#21-menus-creation)
+- [3. ChatGPT](#3-chatgpt)
+- [4. Miscellanea](#4-miscellanea)
 
-## Define activation menus
+
+## 1. Overview
+
+The bread_board folder contains experimental code that does not fit in current
+project organization. We'll keep the examples here until a final location is
+determined.
+
+## 2. Define activation menus
 
 The steps to create menus are a bit cumbersome and interrelated. Also, we are
 going to use decision tables and not switch statements. The best way to
 demonstrate this is via an example.
 
-### Menus creation
+### 2.1. Menus creation
 
 The main menu is created by the [main.py](main.py) file, that is the main
 ativation code for the entire *bread-board* **folder** that contains all the example
@@ -49,13 +56,8 @@ The following are the steps you must follow.
       _amenu = _menu.BreadboardSubMenus()
    ```
 
-## 1. Overview
 
-The bread_board folder contains experimental code that does not fit in current
-project organization. We'll keep the examples here until a final location is
-determined.
-
-## 2. ChatGPT
+## 3. ChatGPT
 
 The examples in the **gpt** folder use
 [ChatGPT](https://openai.com/blog/chatgpt), a powerful AI language model, to
@@ -77,6 +79,6 @@ aspect of using ChatGPT to build Python automations and apps.
 This is the perfect class for anyone who wants to learn how to generate Python
 code using *ChatGPT* and bring their ideas to life.
 
-## 3. Miscellanea
+## 4. Miscellanea
 
 The examples in the misc folder do not fit in any organization yet.

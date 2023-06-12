@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>code.bread_board.main API documentation</title>
+<meta name="description" content="Module main.py" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>code.bread_board.main</code></h1>
+</header>
+<section id="section-intro">
+<p>Module main.py</p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">&#34;&#34;&#34; 
+Module main.py
+
+&#34;&#34;&#34;
+
+# Import the menu classes from the  
+# menu_utilities package.
+import sys
+sys.path.append(&#39;./code/packages&#39;) 
+import menu_utilities as _menu  
+
+# Import the ConsoleMenu class.
+import sys
+sys.path.append(&#39;./code/packages/menu_utilities&#39;)
+from menu_utilities import ConsoleMenu
+
+class GroupMenu(ConsoleMenu):
+
+    &#34;&#34;&#34; 
+    The `GroupMenu` class allows the user to select a group of examples to execute. It initializes the instance of the class by defining a list of menu items. It also instantiates an instance of the `ConsoleMenu` class called group_menu.
+
+    Remarks
+    -------
+    The `group_selection_menu` method of the `GroupMenu` class displays a menu to the user with the options specified in the `self.menu_items` list. It waits for the user to make a selection and then calls the corresponding menu based on the selection. For example, if the user selects 1, it will instantiate an instance of the `_menu.list_menu` class called `_lmenu` and then call the `list_selection_menu` method on `_lmenu`.
+
+    The if __name__ == &#39;__main__&#39;: block at the bottom of the code instantiates an instance of the `GroupMenu` class called `_gmenu` and then calls the group_selection_menu method on _gmenu. This will display the group selection menu to the user and allow them to choose a group of examples to execute.
+    
+    Use
+    ---    
+    In a terminal window enter: python [user path]./bread_board/main.py
+  
+    &#34;&#34;&#34;
+
+    def __init__(self):
+        &#34;&#34;&#34; Initializes the `menu_items` attribute with the group menu items. Then it initiliazes the `group_menu` attribute with a `ConsoleMenu` instance. &#34;&#34;&#34;
+
+        # Define the entries of the group menu. 
+        self.menu_items = [&#34;Data Analysis&#34;, &#34;Misc Operations&#34;, &#34;File Operations&#34;, &#34;Quit&#34;]
+      
+        # Initialize menu name and options through the parent class.  
+        super().__init__(&#34;Breadboard Group Menu&#34;, self.menu_items)
+
+
+       # Instantiate the sub menus class. 
+        _amenu = _menu.BreadboardSubMenus()
+        &#34;&#34;&#34; Sub menu class instance. &#34;&#34;&#34;
+
+        # Define the sub menu decision table.
+        self.sub_menu = {
+            1:  lambda: _amenu.gpt_selection_menu(1),
+            2:  lambda: _amenu.gpt_selection_menu(2),
+            3:  lambda: _amenu.gpt_selection_menu(3)
+        }
+        &#34;&#34;&#34; Sub menu selection decision table. &#34;&#34;&#34;
+
+    def group_selection_menu(self):
+        &#34;&#34;&#34;
+        Display the group menuand and start an endless loop.  Wait for the
+        user&#39;s input and display the submenu based on the user&#39;s selection.  End
+        the loop based on the user&#39;s request. 
+        &#34;&#34;&#34;
+
+        while True:
+
+        # Display the menu.
+            self.display_menu()
+
+            # Get the user&#39;s choice.
+            choice = self.get_user_choice()
+
+            if choice == len(self.menu_items):
+                break        
+            else:
+                # Display the selected sub menu. 
+                self.sub_menu[choice]()
+            
+
+if __name__ == &#39;__main__&#39;:
+    # Instantiate the class.
+    _gmenu = GroupMenu()
+    # Allow the user to select a sample group .
+    _gmenu.group_selection_menu()</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="code.bread_board.main.GroupMenu"><code class="flex name class">
+<span>class <span class="ident">GroupMenu</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>The <code><a title="code.bread_board.main.GroupMenu" href="#code.bread_board.main.GroupMenu">GroupMenu</a></code> class allows the user to select a group of examples to execute. It initializes the instance of the class by defining a list of menu items. It also instantiates an instance of the <code>ConsoleMenu</code> class called group_menu.</p>
+<h2 id="remarks">Remarks</h2>
+<p>The <code>group_selection_menu</code> method of the <code><a title="code.bread_board.main.GroupMenu" href="#code.bread_board.main.GroupMenu">GroupMenu</a></code> class displays a menu to the user with the options specified in the <code>self.menu_items</code> list. It waits for the user to make a selection and then calls the corresponding menu based on the selection. For example, if the user selects 1, it will instantiate an instance of the <code>_menu.list_menu</code> class called <code>_lmenu</code> and then call the <code>list_selection_menu</code> method on <code>_lmenu</code>.</p>
+<p>The if <strong>name</strong> == '<strong>main</strong>': block at the bottom of the code instantiates an instance of the <code><a title="code.bread_board.main.GroupMenu" href="#code.bread_board.main.GroupMenu">GroupMenu</a></code> class called <code>_gmenu</code> and then calls the group_selection_menu method on _gmenu. This will display the group selection menu to the user and allow them to choose a group of examples to execute.</p>
+<h2 id="use">Use</h2>
+<p>In a terminal window enter: python [user path]./bread_board/main.py</p>
+<p>Initializes the <code>menu_items</code> attribute with the group menu items. Then it initiliazes the <code>group_menu</code> attribute with a <code>ConsoleMenu</code> instance.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class GroupMenu(ConsoleMenu):
+
+    &#34;&#34;&#34; 
+    The `GroupMenu` class allows the user to select a group of examples to execute. It initializes the instance of the class by defining a list of menu items. It also instantiates an instance of the `ConsoleMenu` class called group_menu.
+
+    Remarks
+    -------
+    The `group_selection_menu` method of the `GroupMenu` class displays a menu to the user with the options specified in the `self.menu_items` list. It waits for the user to make a selection and then calls the corresponding menu based on the selection. For example, if the user selects 1, it will instantiate an instance of the `_menu.list_menu` class called `_lmenu` and then call the `list_selection_menu` method on `_lmenu`.
+
+    The if __name__ == &#39;__main__&#39;: block at the bottom of the code instantiates an instance of the `GroupMenu` class called `_gmenu` and then calls the group_selection_menu method on _gmenu. This will display the group selection menu to the user and allow them to choose a group of examples to execute.
+    
+    Use
+    ---    
+    In a terminal window enter: python [user path]./bread_board/main.py
+  
+    &#34;&#34;&#34;
+
+    def __init__(self):
+        &#34;&#34;&#34; Initializes the `menu_items` attribute with the group menu items. Then it initiliazes the `group_menu` attribute with a `ConsoleMenu` instance. &#34;&#34;&#34;
+
+        # Define the entries of the group menu. 
+        self.menu_items = [&#34;Data Analysis&#34;, &#34;Misc Operations&#34;, &#34;File Operations&#34;, &#34;Quit&#34;]
+      
+        # Initialize menu name and options through the parent class.  
+        super().__init__(&#34;Breadboard Group Menu&#34;, self.menu_items)
+
+
+       # Instantiate the sub menus class. 
+        _amenu = _menu.BreadboardSubMenus()
+        &#34;&#34;&#34; Sub menu class instance. &#34;&#34;&#34;
+
+        # Define the sub menu decision table.
+        self.sub_menu = {
+            1:  lambda: _amenu.gpt_selection_menu(1),
+            2:  lambda: _amenu.gpt_selection_menu(2),
+            3:  lambda: _amenu.gpt_selection_menu(3)
+        }
+        &#34;&#34;&#34; Sub menu selection decision table. &#34;&#34;&#34;
+
+    def group_selection_menu(self):
+        &#34;&#34;&#34;
+        Display the group menuand and start an endless loop.  Wait for the
+        user&#39;s input and display the submenu based on the user&#39;s selection.  End
+        the loop based on the user&#39;s request. 
+        &#34;&#34;&#34;
+
+        while True:
+
+        # Display the menu.
+            self.display_menu()
+
+            # Get the user&#39;s choice.
+            choice = self.get_user_choice()
+
+            if choice == len(self.menu_items):
+                break        
+            else:
+                # Display the selected sub menu. 
+                self.sub_menu[choice]()</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>menu_utilities.console_menu.ConsoleMenu</li>
+</ul>
+<h3>Instance variables</h3>
+<dl>
+<dt id="code.bread_board.main.GroupMenu.sub_menu"><code class="name">var <span class="ident">sub_menu</span></code></dt>
+<dd>
+<div class="desc"><p>Sub menu selection decision table.</p></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="code.bread_board.main.GroupMenu.group_selection_menu"><code class="name flex">
+<span>def <span class="ident">group_selection_menu</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Display the group menuand and start an endless loop.
+Wait for the
+user's input and display the submenu based on the user's selection.
+End
+the loop based on the user's request.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def group_selection_menu(self):
+    &#34;&#34;&#34;
+    Display the group menuand and start an endless loop.  Wait for the
+    user&#39;s input and display the submenu based on the user&#39;s selection.  End
+    the loop based on the user&#39;s request. 
+    &#34;&#34;&#34;
+
+    while True:
+
+    # Display the menu.
+        self.display_menu()
+
+        # Get the user&#39;s choice.
+        choice = self.get_user_choice()
+
+        if choice == len(self.menu_items):
+            break        
+        else:
+            # Display the selected sub menu. 
+            self.sub_menu[choice]()</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="code.bread_board" href="index.html">code.bread_board</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="code.bread_board.main.GroupMenu" href="#code.bread_board.main.GroupMenu">GroupMenu</a></code></h4>
+<ul class="">
+<li><code><a title="code.bread_board.main.GroupMenu.group_selection_menu" href="#code.bread_board.main.GroupMenu.group_selection_menu">group_selection_menu</a></code></li>
+<li><code><a title="code.bread_board.main.GroupMenu.sub_menu" href="#code.bread_board.main.GroupMenu.sub_menu">sub_menu</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
