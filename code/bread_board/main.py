@@ -47,9 +47,9 @@ class GroupMenu(ConsoleMenu):
 
         # Define the sub menu decision table.
         self.sub_menu = {
-            1:  lambda: _amenu.gpt_selection_menu(1),
-            2:  lambda: _amenu.gpt_selection_menu(2),
-            3:  lambda: _amenu.gpt_selection_menu(3)
+            1:  lambda: _amenu.breadboard_selection_menu(1),
+            2:  lambda: _amenu.breadboard_selection_menu(2),
+            3:  lambda: _amenu.breadboard_selection_menu(3)
         }
         """ Sub menu selection decision table. """
 

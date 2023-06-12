@@ -29,14 +29,69 @@ last update: 03/14/23
 <h1 id="bread-board"><img alt="python-icon" src="../../media/icons/python-icon.svg"> Bread board</h1>
 <ul>
 <li><a href="#1-overview">1. Overview</a></li>
-<li><a href="#2-chatgpt">2. ChatGPT</a></li>
-<li><a href="#3-miscellanea">3. Miscellanea</a></li>
+<li><a href="#2-define-activation-menus">2. Define activation menus</a></li>
+<li><a href="#21-group-menu">2.1. Group menu</a></li>
+<li><a href="#22-submenus">2.2. Submenus</a></li>
+<li><a href="#3-chatgpt">3. ChatGPT</a></li>
+<li><a href="#4-miscellanea">4. Miscellanea</a></li>
 </ul>
 <h2 id="1-overview">1. Overview</h2>
 <p>The bread_board folder contains experimental code that does not fit in current
 project organization. We'll keep the examples here until a final location is
-determined. </p>
-<h2 id="2-chatgpt">2. ChatGPT</h2>
+determined.</p>
+<h2 id="2-define-activation-menus">2. Define activation menus</h2>
+<p>The steps to create menus are a bit cumbersome and interrelated. Also, we are
+going to use decision tables and not switch statements. The best way to
+demonstrate this is via an example. We are using as example the <strong>bread_board
+group</strong> in the <em>bread_board folder</em>.
+</p>
+<h3 id="21-group-menu">2.1. Group menu</h3>
+<p>The main menu is created by the <a href="main.py">main.py</a> file, that is the main
+ativation code for the entire <em>bread-board</em> <strong>folder</strong> that contains all the
+example code for this area.</p>
+<p>The following are the steps you must follow.</p>
+<ol>
+<li>Define the entries of the group menu.</li>
+</ol>
+<p><code>python
+self.menu_items = ["Data Analysis", "Misc Operations", "File Operations", "Quit"]</code></p>
+<ol>
+<li>Initialize menu name and options through the <code>ConsoleMenu</code> parent class</li>
+</ol>
+<p><code>python
+super().__init__("Breadboard Group Menu", self.menu_items)</code></p>
+<p>This generates the followng menu:</p>
+<p>*<strong> Breadboard Group Menu </strong>*<br>
+1.Data Analysis
+2.Misc Operations<br>
+3.File Operations
+4.Quit<br>
+Enter allowed selection number; 4 to quit:</p>
+<ol>
+<li>Instantiate the sub menus class.</li>
+</ol>
+<p><code>python
+_amenu = _menu.BreadboardSubMenus()</code></p>
+<ol>
+<li>Define the sub menus decision table</li>
+</ol>
+<p><code>python
+self.sub_menu = {
+1:
+lambda: _amenu.breadboard_selection_menu(1),
+2:
+lambda: _amenu.breadboard_selection_menu(2),
+3:
+lambda: _amenu.breadboard_selection_menu(3)
+}</code></p>
+<h3 id="22-submenus">2.2. Submenus</h3>
+<p>After the creation of the group menu, we can start creating submenus.
+Each
+submenu is activated by selecting one of the entries displayed in the group menu
+described before. This is where the rubber hits the road. The group menus is
+connected to the submenus whose entries in turn are connected toe the functions
+(samples) to run. The key is the <code>class BreadboardSubMenus(ConsoleMenu)</code>.</p>
+<h2 id="3-chatgpt">3. ChatGPT</h2>
 <p>The examples in the <strong>gpt</strong> folder use
 <a href="https://openai.com/blog/chatgpt">ChatGPT</a>, a powerful AI language model, to
 generate Python code without any prior experience in programming. The examples
@@ -47,18 +102,20 @@ to use the class.
 </p>
 <p>The class
 is divided into five sections, each of which focuses on a different
-aspect of using ChatGPT to build Python automations and apps. </p>
+aspect of using ChatGPT to build Python automations and apps.</p>
 <ol>
 <li>In the first section, you'll learn how to sign up for ChatGPT and install the
-required Python tools to execute the generated code. </li>
+required Python tools to execute the generated code.</li>
 <li>In the following sections, you'll dive into using ChatGPT to generate Python
 scripts that automate things, analyze and visualize data, and build web apps
 and desktop GUI apps.</li>
 </ol>
 <p>This is the perfect class for anyone who wants to learn how to generate Python
-code using <em>ChatGPT</em> and bring their ideas to life. </p>
-<h2 id="3-miscellanea">3. Miscellanea</h2>
-<p>The examples in the misc folder do not fit in any organization yet.</p>
+code using <em>ChatGPT</em> and bring their ideas to life.</p>
+<h2 id="4-miscellanea">4. Miscellanea</h2>
+<p>The examples in the misc folder do not fit in any organization yet.
+folder do
+not fit in any organization yet.</p>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -103,8 +160,13 @@ code using <em>ChatGPT</em> and bring their ideas to life. </p>
 <li><a href="#last-update-031423">last update: 03/14/23</a></li>
 <li><a href="#bread-board">Bread board</a><ul>
 <li><a href="#1-overview">1. Overview</a></li>
-<li><a href="#2-chatgpt">2. ChatGPT</a></li>
-<li><a href="#3-miscellanea">3. Miscellanea</a></li>
+<li><a href="#2-define-activation-menus">2. Define activation menus</a><ul>
+<li><a href="#21-group-menu">2.1. Group menu</a></li>
+<li><a href="#22-submenus">2.2. Submenus</a></li>
+</ul>
+</li>
+<li><a href="#3-chatgpt">3. ChatGPT</a></li>
+<li><a href="#4-miscellanea">4. Miscellanea</a></li>
 </ul>
 </li>
 </ul>
