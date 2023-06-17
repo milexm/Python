@@ -66,7 +66,8 @@ class GroupMenu(ConsoleMenu):
         # Define the entries of the group menu. 
         self.menu_items = [&#34;Data Analysis&#34;, &#34;Misc Operations&#34;, &#34;File Operations&#34;, &#34;Quit&#34;]
       
-        # Initialize menu name and options through the parent class.  
+        # Initialize menu name and menu options via the `ConsoleMenu` 
+        # parent class.  
         super().__init__(&#34;Breadboard Group Menu&#34;, self.menu_items)
 
 
@@ -74,7 +75,7 @@ class GroupMenu(ConsoleMenu):
         _amenu = _menu.BreadboardSubMenus()
         &#34;&#34;&#34; Sub menu class instance. &#34;&#34;&#34;
 
-        # Define the sub menu decision table.
+        # Define the decision table to select the submenus. 
         self.sub_menu = {
             1:  lambda: _amenu.breadboard_selection_menu(1),
             2:  lambda: _amenu.breadboard_selection_menu(2),
@@ -85,8 +86,8 @@ class GroupMenu(ConsoleMenu):
     def group_selection_menu(self):
         &#34;&#34;&#34;
         Display the group menuand and start an endless loop.  Wait for the
-        user&#39;s input and display the submenu based on the user&#39;s selection.  End
-        the loop based on the user&#39;s request. 
+        user&#39;s input and display the submenu based on the user&#39;s selection.  
+        End the loop based on the user&#39;s `Quit` request. 
         &#34;&#34;&#34;
 
         while True:
@@ -98,6 +99,7 @@ class GroupMenu(ConsoleMenu):
             choice = self.get_user_choice()
 
             if choice == len(self.menu_items):
+                # User selected `Quit`. 
                 break        
             else:
                 # Display the selected sub menu. 
@@ -158,7 +160,8 @@ if __name__ == &#39;__main__&#39;:
         # Define the entries of the group menu. 
         self.menu_items = [&#34;Data Analysis&#34;, &#34;Misc Operations&#34;, &#34;File Operations&#34;, &#34;Quit&#34;]
       
-        # Initialize menu name and options through the parent class.  
+        # Initialize menu name and menu options via the `ConsoleMenu` 
+        # parent class.  
         super().__init__(&#34;Breadboard Group Menu&#34;, self.menu_items)
 
 
@@ -166,7 +169,7 @@ if __name__ == &#39;__main__&#39;:
         _amenu = _menu.BreadboardSubMenus()
         &#34;&#34;&#34; Sub menu class instance. &#34;&#34;&#34;
 
-        # Define the sub menu decision table.
+        # Define the decision table to select the submenus. 
         self.sub_menu = {
             1:  lambda: _amenu.breadboard_selection_menu(1),
             2:  lambda: _amenu.breadboard_selection_menu(2),
@@ -177,8 +180,8 @@ if __name__ == &#39;__main__&#39;:
     def group_selection_menu(self):
         &#34;&#34;&#34;
         Display the group menuand and start an endless loop.  Wait for the
-        user&#39;s input and display the submenu based on the user&#39;s selection.  End
-        the loop based on the user&#39;s request. 
+        user&#39;s input and display the submenu based on the user&#39;s selection.  
+        End the loop based on the user&#39;s `Quit` request. 
         &#34;&#34;&#34;
 
         while True:
@@ -190,6 +193,7 @@ if __name__ == &#39;__main__&#39;:
             choice = self.get_user_choice()
 
             if choice == len(self.menu_items):
+                # User selected `Quit`. 
                 break        
             else:
                 # Display the selected sub menu. 
@@ -214,9 +218,8 @@ if __name__ == &#39;__main__&#39;:
 <dd>
 <div class="desc"><p>Display the group menuand and start an endless loop.
 Wait for the
-user's input and display the submenu based on the user's selection.
-End
-the loop based on the user's request.</p></div>
+user's input and display the submenu based on the user's selection.<br>
+End the loop based on the user's <code>Quit</code> request.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -224,8 +227,8 @@ the loop based on the user's request.</p></div>
 <pre><code class="python">def group_selection_menu(self):
     &#34;&#34;&#34;
     Display the group menuand and start an endless loop.  Wait for the
-    user&#39;s input and display the submenu based on the user&#39;s selection.  End
-    the loop based on the user&#39;s request. 
+    user&#39;s input and display the submenu based on the user&#39;s selection.  
+    End the loop based on the user&#39;s `Quit` request. 
     &#34;&#34;&#34;
 
     while True:
@@ -237,6 +240,7 @@ the loop based on the user's request.</p></div>
         choice = self.get_user_choice()
 
         if choice == len(self.menu_items):
+            # User selected `Quit`. 
             break        
         else:
             # Display the selected sub menu. 

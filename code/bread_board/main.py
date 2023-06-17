@@ -37,7 +37,8 @@ class GroupMenu(ConsoleMenu):
         # Define the entries of the group menu. 
         self.menu_items = ["Data Analysis", "Misc Operations", "File Operations", "Quit"]
       
-        # Initialize menu name and options through the parent class.  
+        # Initialize menu name and menu options via the `ConsoleMenu` 
+        # parent class.  
         super().__init__("Breadboard Group Menu", self.menu_items)
 
 
@@ -45,7 +46,7 @@ class GroupMenu(ConsoleMenu):
         _amenu = _menu.BreadboardSubMenus()
         """ Sub menu class instance. """
 
-        # Define the sub menu decision table.
+        # Define the decision table to select the submenus. 
         self.sub_menu = {
             1:  lambda: _amenu.breadboard_selection_menu(1),
             2:  lambda: _amenu.breadboard_selection_menu(2),
@@ -56,8 +57,8 @@ class GroupMenu(ConsoleMenu):
     def group_selection_menu(self):
         """
         Display the group menuand and start an endless loop.  Wait for the
-        user's input and display the submenu based on the user's selection.  End
-        the loop based on the user's request. 
+        user's input and display the submenu based on the user's selection.  
+        End the loop based on the user's `Quit` request. 
         """
 
         while True:
@@ -69,6 +70,7 @@ class GroupMenu(ConsoleMenu):
             choice = self.get_user_choice()
 
             if choice == len(self.menu_items):
+                # User selected `Quit`. 
                 break        
             else:
                 # Display the selected sub menu. 

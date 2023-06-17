@@ -1,5 +1,5 @@
 ---
-last update: 03/14/23
+last update: 06/16/23
 ---
 
 # ![python-icon](../../media/icons/python-icon.svg) Bread board
@@ -10,45 +10,6 @@ last update: 03/14/23
   - [2.2. Submenus](#22-submenus)
 - [3. ChatGPT](#3-chatgpt)
 - [4. Miscellanea](#4-miscellanea)
-
-## Define activation menus
-
-The steps to create menus are a bit cumbersome and interrelated. Also, we are
-going to use decision tables and not switch statements. The best way to
-demonstrate this is via an example.
-
-### Menus creation
-
-The main menu is created by the [main.py](main.py) file, that is the main
-ativation code for the entire *bread-board* **folder** that contains all the example
-code for this area.
-
-The following are the steps you must follow.
-
-1. Define the entries of the group menu.
-
-   ```python
-      self.menu_items = ["Data Analysis", "Misc Operations", "File Operations", "Quit"]
-   ```
-
-1. Initialize menu name and options through the `ConsoleMenu` parent class
-
-   ```python
-      super().__init__("Breadboard Group Menu", self.menu_items)
-   ```
-
-   This generates the followng menu:
-
-   \*** Breadboard Group Menu ***  
-   1.Data Analysis    2.Misc Operations  
-   3.File Operations  4.Quit  
-   Enter allowed selection number; 4 to quit: 
-
-1. Instantiate the sub menus class.
-
-   ```python
-      _amenu = _menu.BreadboardSubMenus()
-   ```
 
 ## 1. Overview
 
@@ -66,45 +27,51 @@ group** in the *bread_board folder*.
 ### 2.1. Group menu 
 
 The main menu is created by the [main.py](main.py) file, that is the main
-ativation code for the entire *bread-board* **folder** that contains all the
+activation code for the *bread-board* **folder** that contains all the
 example code for this area.
 
 The following are the steps you must follow.
 
 1. Define the entries of the group menu.
 
-   ```python
-      self.menu_items = ["Data Analysis", "Misc Operations", "File Operations", "Quit"]
-   ```
+      ``` python
+      
+         self.menu_items = ["Data Analysis", "Misc Operations", 
+         "File Operations", "Quit"]
+      
+      ```
 
-1. Initialize menu name and options through the `ConsoleMenu` parent class
+1. Initialize group menu name and options through the `ConsoleMenu` parent class
 
-   ```python
-      super().__init__("Breadboard Group Menu", self.menu_items)
-   ```
+      ``` python
 
-   This generates the followng menu:
+         super().__init__("Breadboard Group Menu", self.menu_items)
+      
+      ```
 
-   \*** Breadboard Group Menu ***  
-   1.Data Analysis    2.Misc Operations  
-   3.File Operations  4.Quit  
-   Enter allowed selection number; 4 to quit:
+      This generates the followng menu:
+
+      ![bread board group menu](../../media/samples/bread_board_group_menu.png)
 
 1. Instantiate the sub menus class.
 
-   ```python
-      _amenu = _menu.BreadboardSubMenus()
-   ```
+      ``` python
+      
+         _amenu = _menu.BreadboardSubMenus()
+      
+      ```
 
 1. Define the sub menus decision table
 
-   ```python
-   self.sub_menu = {
-      1:  lambda: _amenu.breadboard_selection_menu(1),
-      2:  lambda: _amenu.breadboard_selection_menu(2),
-      3:  lambda: _amenu.breadboard_selection_menu(3)
-   }
-   ```
+      ``` python
+      
+         self.sub_menu = {
+            1:  lambda: _amenu.breadboard_selection_menu(1),
+            2:  lambda: _amenu.breadboard_selection_menu(2),
+            3:  lambda: _amenu.breadboard_selection_menu(3)
+         }
+      
+      ```
 
 ### 2.2. Submenus 
 
