@@ -35,6 +35,37 @@ last update: 03/14/23
 <li><a href="#3-chatgpt">3. ChatGPT</a></li>
 <li><a href="#4-miscellanea">4. Miscellanea</a></li>
 </ul>
+<h2 id="define-activation-menus">Define activation menus</h2>
+<p>The steps to create menus are a bit cumbersome and interrelated. Also, we are
+going to use decision tables and not switch statements. The best way to
+demonstrate this is via an example.</p>
+<h3 id="menus-creation">Menus creation</h3>
+<p>The main menu is created by the <a href="main.py">main.py</a> file, that is the main
+ativation code for the entire <em>bread-board</em> <strong>folder</strong> that contains all the example
+code for this area.</p>
+<p>The following are the steps you must follow.</p>
+<ol>
+<li>Define the entries of the group menu.</li>
+</ol>
+<p><code>python
+self.menu_items = ["Data Analysis", "Misc Operations", "File Operations", "Quit"]</code></p>
+<ol>
+<li>Initialize menu name and options through the <code>ConsoleMenu</code> parent class</li>
+</ol>
+<p><code>python
+super().__init__("Breadboard Group Menu", self.menu_items)</code></p>
+<p>This generates the followng menu:</p>
+<p>*<strong> Breadboard Group Menu </strong>*<br>
+1.Data Analysis
+2.Misc Operations<br>
+3.File Operations
+4.Quit<br>
+Enter allowed selection number; 4 to quit: </p>
+<ol>
+<li>Instantiate the sub menus class.</li>
+</ol>
+<p><code>python
+_amenu = _menu.BreadboardSubMenus()</code></p>
 <h2 id="1-overview">1. Overview</h2>
 <p>The bread_board folder contains experimental code that does not fit in current
 project organization. We'll keep the examples here until a final location is
@@ -114,8 +145,7 @@ and desktop GUI apps.</li>
 code using <em>ChatGPT</em> and bring their ideas to life.</p>
 <h2 id="4-miscellanea">4. Miscellanea</h2>
 <p>The examples in the misc folder do not fit in any organization yet.
-folder do
-not fit in any organization yet.</p>
+folder do not fit in any organization yet.</p>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -159,6 +189,10 @@ not fit in any organization yet.</p>
 <ul>
 <li><a href="#last-update-031423">last update: 03/14/23</a></li>
 <li><a href="#bread-board">Bread board</a><ul>
+<li><a href="#define-activation-menus">Define activation menus</a><ul>
+<li><a href="#menus-creation">Menus creation</a></li>
+</ul>
+</li>
 <li><a href="#1-overview">1. Overview</a></li>
 <li><a href="#2-define-activation-menus">2. Define activation menus</a><ul>
 <li><a href="#21-group-menu">2.1. Group menu</a></li>
