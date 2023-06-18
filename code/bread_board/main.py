@@ -17,7 +17,7 @@ from menu_utilities import ConsoleMenu
 class GroupMenu(ConsoleMenu):
 
     """ 
-    The `GroupMenu` class allows the user to select a group of examples to execute. It initializes the instance of the class by defining a list of menu items. It also instantiates an instance of the `ConsoleMenu` class called group_menu.
+    The `GroupMenu` class allows the user to select a group of examples to execute. It initializes the instance of the class by defining a list of menu items. It also instantiates and initialiazes an instance of the `ConsoleMenu` class.
 
     Remarks
     -------
@@ -32,7 +32,7 @@ class GroupMenu(ConsoleMenu):
     """
 
     def __init__(self):
-        """ Initializes the `menu_items` attribute with the group menu items. Then it initiliazes the `group_menu` attribute with a `ConsoleMenu` instance. """
+        """ Initializes the `menu_items` attribute with the group menu items. Then it initializes the group menu name and menu options via the `ConsoleMenu` parent class.  """
 
         # Define the entries of the group menu. 
         self.menu_items = ["Data Analysis", "Misc Operations", "File Operations", "Quit"]
@@ -63,7 +63,7 @@ class GroupMenu(ConsoleMenu):
 
         while True:
 
-        # Display the menu.
+            # Display the menu.
             self.display_menu()
 
             # Get the user's choice.

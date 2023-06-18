@@ -7,9 +7,13 @@ last update: 06/16/23
 - [1. Overview](#1-overview)
 - [2. Define activation menus](#2-define-activation-menus)
   - [2.1. Group menu](#21-group-menu)
+    - [__init__(self)](#initself)
+    - [group\_selection\_menu(self)](#group_selection_menuself)
+    - [2.1.1. About lambda](#211-about-lambda)
   - [2.2. Submenus](#22-submenus)
 - [3. ChatGPT](#3-chatgpt)
 - [4. Miscellanea](#4-miscellanea)
+
 
 ## 1. Overview
 
@@ -21,16 +25,16 @@ determined.
 
 The steps to create menus are a bit cumbersome and interrelated. Also, we are
 going to use decision tables and not switch statements. The best way to
-demonstrate this is via an example. We are using as example the **bread_board
+demonstrate this is via an example by using the **bread_board
 group** in the *bread_board folder*.  
 
 ### 2.1. Group menu 
 
 The main menu is created by the [main.py](main.py) file, that is the main
 activation code for the *bread-board* **folder** that contains all the
-example code for this area.
+example code for this area. Next we highlight the main steps. 
 
-The following are the steps you must follow.
+#### __init__(self)
 
 1. Define the entries of the group menu.
 
@@ -53,7 +57,8 @@ The following are the steps you must follow.
 
       ![bread board group menu](../../media/samples/bread_board_group_menu.png)
 
-1. Instantiate the sub menus class.
+1. Instantiate the `BreadboardSubMenus` class.  It contains the submenus and the
+logic to allow the user to select to desired sample.  
 
       ``` python
       
@@ -61,7 +66,7 @@ The following are the steps you must follow.
       
       ```
 
-1. Define the sub menus decision table
+1. Define the sub menus decision table or dictionary.
 
       ``` python
       
@@ -73,6 +78,34 @@ The following are the steps you must follow.
       
       ```
 
+   The previous `sub_menu` is a dictionary of key, value pairs.  The key is an
+   integer (from 1 to 3), the value is a `lambda` function which calls the
+   `breadboard_selection_menu` menthod in the `BreadboardSubMenus` class and
+   passes to it an integer (from 1 to 3) selected by the user and shown in this
+   call `self.sub_menu[choice]()`. 
+
+#### group_selection_menu(self)
+
+1. Display the group menu by calling `display_menu()` method in the
+   `ConsoleMenu` parent class. 
+1. Loop to get the user's choice by calling `get_user_choice()` method in the
+   `ConsoleMenu`.
+1. If the user select `Quit` terminate the loop, otherwise display the submenus
+   selected by the user.
+  
+           
+#### 2.1.1. About lambda
+
+In Python, `lambda` is a keyword that is used to define small, anonymous
+functions. The `lambda function can take any number of arguments, but can only
+have one expression.  
+
+Notice the syntax `self.sub_menu[choice]()` with parenthesis `()`, allows the
+`lambda` function evaluation, that is the call to `breadboard_selection_menu`
+menthod, only when the dictionary entry is selected by the user and not at the
+time the dictionary is created.
+
+
 ### 2.2. Submenus 
 
 After the creation of the group menu, we can start creating submenus.  Each
@@ -80,6 +113,9 @@ submenu is activated by selecting one of the entries displayed in the group menu
 described before. This is where the rubber hits the road. The group menus is
 connected to the submenus whose entries in turn are connected toe the functions
 (samples) to run. The key is the `class BreadboardSubMenus(ConsoleMenu)`.
+Next we highlight the main steps. 
+
+
 
 
 ## 3. ChatGPT

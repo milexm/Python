@@ -162,3 +162,5 @@ cython_debug/
 # draw.io
 .bkp
 .dtmp
+*.dtmp
+*.dtmp
