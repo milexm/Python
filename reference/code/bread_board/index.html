@@ -30,7 +30,12 @@ last update: 06/16/23
 <ul>
 <li><a href="#1-overview">1. Overview</a></li>
 <li><a href="#2-define-activation-menus">2. Define activation menus</a></li>
-<li><a href="#21-group-menu">2.1. Group menu</a></li>
+<li><a href="#21-group-menu">2.1. Group menu</a><ul>
+<li><a href="#initself"><strong>init</strong>(self)</a></li>
+<li><a href="#group_selection_menuself">group_selection_menu(self)</a></li>
+<li><a href="#211-about-lambda">2.1.1. About lambda</a></li>
+</ul>
+</li>
 <li><a href="#22-submenus">2.2. Submenus</a></li>
 <li><a href="#3-chatgpt">3. ChatGPT</a></li>
 <li><a href="#4-miscellanea">4. Miscellanea</a></li>
@@ -42,14 +47,14 @@ determined.</p>
 <h2 id="2-define-activation-menus">2. Define activation menus</h2>
 <p>The steps to create menus are a bit cumbersome and interrelated. Also, we are
 going to use decision tables and not switch statements. The best way to
-demonstrate this is via an example. We are using as example the <strong>bread_board
+demonstrate this is via an example by using the <strong>bread_board
 group</strong> in the <em>bread_board folder</em>.
 </p>
 <h3 id="21-group-menu">2.1. Group menu</h3>
 <p>The main menu is created by the <a href="main.py">main.py</a> file, that is the main
 activation code for the <em>bread-board</em> <strong>folder</strong> that contains all the
-example code for this area.</p>
-<p>The following are the steps you must follow.</p>
+example code for this area. Next we highlight the main steps. </p>
+<h4 id="initself"><strong>init</strong>(self)</h4>
 <ol>
 <li>
 <p>Define the entries of the group menu.</p>
@@ -69,14 +74,17 @@ example code for this area.</p>
 <p><img alt="bread board group menu" src="../../media/samples/bread_board_group_menu.png"></p>
 </li>
 <li>
-<p>Instantiate the sub menus class.</p>
+<p>Instantiate the <code>BreadboardSubMenus</code> class.
+It contains the submenus and the
+logic to allow the user to select to desired sample.
+</p>
 <p>``` python</p>
 <pre><code> _amenu = _menu.BreadboardSubMenus()
 </code></pre>
 <p>```</p>
 </li>
 <li>
-<p>Define the sub menus decision table</p>
+<p>Define the sub menus decision table or dictionary.</p>
 <p>``` python</p>
 <pre><code> self.sub_menu = {
     1:  lambda: _amenu.breadboard_selection_menu(1),
@@ -87,13 +95,38 @@ example code for this area.</p>
 <p>```</p>
 </li>
 </ol>
+<p>The previous <code>sub_menu</code> is a dictionary of key, value pairs.
+The key is an
+integer (from 1 to 3), the value is a <code>lambda</code> function which calls the
+<code>breadboard_selection_menu</code> menthod in the <code>BreadboardSubMenus</code> class and
+passes to it an integer (from 1 to 3) selected by the user and shown in this
+call <code>self.sub_menu[choice]()</code>. </p>
+<h4 id="group_selection_menuself">group_selection_menu(self)</h4>
+<ol>
+<li>Display the group menu by calling <code>display_menu()</code> method in the
+<code>ConsoleMenu</code> parent class. </li>
+<li>Loop to get the user's choice by calling <code>get_user_choice()</code> method in the
+<code>ConsoleMenu</code>.</li>
+<li>If the user select <code>Quit</code> terminate the loop, otherwise display the submenus
+selected by the user.</li>
+</ol>
+<h4 id="211-about-lambda">2.1.1. About lambda</h4>
+<p>In Python, <code>lambda</code> is a keyword that is used to define small, anonymous
+functions. The `lambda function can take any number of arguments, but can only
+have one expression.
+</p>
+<p>Notice the syntax <code>self.sub_menu[choice]()</code> with parenthesis <code>()</code>, allows the
+<code>lambda</code> function evaluation, that is the call to <code>breadboard_selection_menu</code>
+menthod, only when the dictionary entry is selected by the user and not at the
+time the dictionary is created.</p>
 <h3 id="22-submenus">2.2. Submenus</h3>
 <p>After the creation of the group menu, we can start creating submenus.
 Each
 submenu is activated by selecting one of the entries displayed in the group menu
 described before. This is where the rubber hits the road. The group menus is
 connected to the submenus whose entries in turn are connected toe the functions
-(samples) to run. The key is the <code>class BreadboardSubMenus(ConsoleMenu)</code>.</p>
+(samples) to run. The key is the <code>class BreadboardSubMenus(ConsoleMenu)</code>.
+Next we highlight the main steps. </p>
 <h2 id="3-chatgpt">3. ChatGPT</h2>
 <p>The examples in the <strong>gpt</strong> folder use
 <a href="https://openai.com/blog/chatgpt">ChatGPT</a>, a powerful AI language model, to
@@ -163,7 +196,12 @@ folder do not fit in any organization yet.</p>
 <li><a href="#bread-board">Bread board</a><ul>
 <li><a href="#1-overview">1. Overview</a></li>
 <li><a href="#2-define-activation-menus">2. Define activation menus</a><ul>
-<li><a href="#21-group-menu">2.1. Group menu</a></li>
+<li><a href="#21-group-menu">2.1. Group menu</a><ul>
+<li><a href="#initself">init(self)</a></li>
+<li><a href="#group_selection_menuself">group_selection_menu(self)</a></li>
+<li><a href="#211-about-lambda">2.1.1. About lambda</a></li>
+</ul>
+</li>
 <li><a href="#22-submenus">2.2. Submenus</a></li>
 </ul>
 </li>

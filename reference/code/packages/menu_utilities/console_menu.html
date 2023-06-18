@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
 <title>code.packages.menu_utilities.console_menu API documentation</title>
-<meta name="description" content="Module name: console_menu.py" />
+<meta name="description" content="Module console_menu.py" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -22,13 +22,13 @@
 <h1 class="title">Module <code>code.packages.menu_utilities.console_menu</code></h1>
 </header>
 <section id="section-intro">
-<p>Module name: console_menu.py</p>
+<p>Module console_menu.py</p>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">&#34;&#34;&#34; 
-Module name: console_menu.py
+Module console_menu.py
 
 &#34;&#34;&#34;
 import numpy as np
@@ -57,6 +57,8 @@ class ConsoleMenu:
         ----------
         name: 
             The name of the menu to display. 
+        options: 
+            List of strings representing the menu elements.
 
         &#34;&#34;&#34;
         self.menu_name = name
@@ -77,65 +79,9 @@ class ConsoleMenu:
 
         return num
 
-    def display_menu(self, options:list):
-        &#34;&#34;&#34; 
-        Display the menu of options the user can choose from. 
-        
-        Parameters
-        ----------
-        options: 
-            List of strings representing the menu elements. 
-
-        &#34;&#34;&#34;
-        # Display menu name. 
-        print(f&#34;\n*** {self.menu_name} ***&#34;) 
-
-        # Display the menu options.
-        for i in range(len(options)):
-            # Display 2 menu items on the same line 
-            if ((i+1)%2!=0):
-                # Calculate the blank space to add to the right of a menu
-                # item for allignment. 
-                right_padding = &#34; &#34; * (16 - len(options[i]))
-
-                # Display 3 menu items on the same line 
-                print(&#34;{:d}.{:s}&#34;.format(i+1, options[i] + right_padding), 
-                    end=&#39; &#39;)
-            else:
-                print(&#34;{:d}.{:s}&#34;.format(i+1, options[i]))
-                
-
-    def get_user_choice(self, options:list):
-        &#34;&#34;&#34; 
-        Prompt the user to input a number from the allowed choices. 
-        Get the choice made by the user.
-        
-        Parameters
-        ----------
-        options: 
-            List of strings representing the menu elements. 
-
-        Returns
-        -------
-        choice: int 
-            The number indicating the user&#39;s choice. 
-
-        &#34;&#34;&#34;
-        # Get a valid menu choice
-        choice = 0
-        while not(np.any(choice == np.arange(len(options))+1)):
-            choice = self.input_number(&#34;\nEnter allowed selection number; &#34; + str(len(options)) +  &#34; to quit: &#34;)
-        return choice
-
-
     def display_menu(self):
         &#34;&#34;&#34; 
         Display the menu of options the user can choose from. 
-        
-        Parameters
-        ----------
-        options: 
-            List of strings representing the menu elements. 
 
         &#34;&#34;&#34;
         # Display menu name. 
@@ -160,11 +106,6 @@ class ConsoleMenu:
         &#34;&#34;&#34; 
         Prompt the user to input a number from the allowed choices. 
         Get the choice made by the user.
-        
-        Parameters
-        ----------
-        options: 
-            List of strings representing the menu elements. 
 
         Returns
         -------
@@ -175,7 +116,7 @@ class ConsoleMenu:
         # Get a valid menu choice
         choice = 0
         while not(np.any(choice == np.arange(len(self.menu_options))+1)):
-            choice = self.input_number(&#34;\nMake allowed selection number; &#34; + str(len(self.menu_options)) +  &#34; to quit: &#34;)
+            choice = self.input_number(&#34;\nEnter allowed selection number; &#34; + str(len(self.menu_options)) +  &#34; to quit: &#34;)
         return choice</code></pre>
 </details>
 </section>
@@ -208,6 +149,8 @@ class ConsoleMenu:
 <dl>
 <dt><strong><code>name</code></strong></dt>
 <dd>The name of the menu to display.</dd>
+<dt><strong><code>options</code></strong></dt>
+<dd>List of strings representing the menu elements.</dd>
 </dl></div>
 <details class="source">
 <summary>
@@ -237,6 +180,8 @@ class ConsoleMenu:
         ----------
         name: 
             The name of the menu to display. 
+        options: 
+            List of strings representing the menu elements.
 
         &#34;&#34;&#34;
         self.menu_name = name
@@ -257,65 +202,9 @@ class ConsoleMenu:
 
         return num
 
-    def display_menu(self, options:list):
-        &#34;&#34;&#34; 
-        Display the menu of options the user can choose from. 
-        
-        Parameters
-        ----------
-        options: 
-            List of strings representing the menu elements. 
-
-        &#34;&#34;&#34;
-        # Display menu name. 
-        print(f&#34;\n*** {self.menu_name} ***&#34;) 
-
-        # Display the menu options.
-        for i in range(len(options)):
-            # Display 2 menu items on the same line 
-            if ((i+1)%2!=0):
-                # Calculate the blank space to add to the right of a menu
-                # item for allignment. 
-                right_padding = &#34; &#34; * (16 - len(options[i]))
-
-                # Display 3 menu items on the same line 
-                print(&#34;{:d}.{:s}&#34;.format(i+1, options[i] + right_padding), 
-                    end=&#39; &#39;)
-            else:
-                print(&#34;{:d}.{:s}&#34;.format(i+1, options[i]))
-                
-
-    def get_user_choice(self, options:list):
-        &#34;&#34;&#34; 
-        Prompt the user to input a number from the allowed choices. 
-        Get the choice made by the user.
-        
-        Parameters
-        ----------
-        options: 
-            List of strings representing the menu elements. 
-
-        Returns
-        -------
-        choice: int 
-            The number indicating the user&#39;s choice. 
-
-        &#34;&#34;&#34;
-        # Get a valid menu choice
-        choice = 0
-        while not(np.any(choice == np.arange(len(options))+1)):
-            choice = self.input_number(&#34;\nEnter allowed selection number; &#34; + str(len(options)) +  &#34; to quit: &#34;)
-        return choice
-
-
     def display_menu(self):
         &#34;&#34;&#34; 
         Display the menu of options the user can choose from. 
-        
-        Parameters
-        ----------
-        options: 
-            List of strings representing the menu elements. 
 
         &#34;&#34;&#34;
         # Display menu name. 
@@ -340,11 +229,6 @@ class ConsoleMenu:
         &#34;&#34;&#34; 
         Prompt the user to input a number from the allowed choices. 
         Get the choice made by the user.
-        
-        Parameters
-        ----------
-        options: 
-            List of strings representing the menu elements. 
 
         Returns
         -------
@@ -355,7 +239,7 @@ class ConsoleMenu:
         # Get a valid menu choice
         choice = 0
         while not(np.any(choice == np.arange(len(self.menu_options))+1)):
-            choice = self.input_number(&#34;\nMake allowed selection number; &#34; + str(len(self.menu_options)) +  &#34; to quit: &#34;)
+            choice = self.input_number(&#34;\nEnter allowed selection number; &#34; + str(len(self.menu_options)) +  &#34; to quit: &#34;)
         return choice</code></pre>
 </details>
 <h3>Methods</h3>
@@ -364,12 +248,7 @@ class ConsoleMenu:
 <span>def <span class="ident">display_menu</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Display the menu of options the user can choose from. </p>
-<h2 id="parameters">Parameters</h2>
-<dl>
-<dt><strong><code>options</code></strong></dt>
-<dd>List of strings representing the menu elements.</dd>
-</dl></div>
+<div class="desc"><p>Display the menu of options the user can choose from.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -377,11 +256,6 @@ class ConsoleMenu:
 <pre><code class="python">def display_menu(self):
     &#34;&#34;&#34; 
     Display the menu of options the user can choose from. 
-    
-    Parameters
-    ----------
-    options: 
-        List of strings representing the menu elements. 
 
     &#34;&#34;&#34;
     # Display menu name. 
@@ -408,11 +282,6 @@ class ConsoleMenu:
 <dd>
 <div class="desc"><p>Prompt the user to input a number from the allowed choices.
 Get the choice made by the user.</p>
-<h2 id="parameters">Parameters</h2>
-<dl>
-<dt><strong><code>options</code></strong></dt>
-<dd>List of strings representing the menu elements.</dd>
-</dl>
 <h2 id="returns">Returns</h2>
 <dl>
 <dt><strong><code>choice</code></strong> :&ensp;<code>int </code></dt>
@@ -426,11 +295,6 @@ Get the choice made by the user.</p>
     &#34;&#34;&#34; 
     Prompt the user to input a number from the allowed choices. 
     Get the choice made by the user.
-    
-    Parameters
-    ----------
-    options: 
-        List of strings representing the menu elements. 
 
     Returns
     -------
@@ -441,7 +305,7 @@ Get the choice made by the user.</p>
     # Get a valid menu choice
     choice = 0
     while not(np.any(choice == np.arange(len(self.menu_options))+1)):
-        choice = self.input_number(&#34;\nMake allowed selection number; &#34; + str(len(self.menu_options)) +  &#34; to quit: &#34;)
+        choice = self.input_number(&#34;\nEnter allowed selection number; &#34; + str(len(self.menu_options)) +  &#34; to quit: &#34;)
     return choice</code></pre>
 </details>
 </dd>
