@@ -155,6 +155,17 @@ self.temp_hist_menu_items = ["Bulk add xsl column", "Bulk create files",
 self.misc_menu_items = ["Fibonacci", "Plot", "Numbers", "Quit"]</code></p>
 </li>
 <li>
+<p>Group of all the sample menus.
+The order must match the order of the <code>self.menu_items</code> list in <code>main.py</code>. </p>
+<p><code>python
+self.sub_menus = [
+[], # Leave it empty to match dictionary keys.
+self.temp_menu_items,
+self.misc_menu_items,
+self.temp_hist_menu_items,</code>
+</p>
+</li>
+<li>
 <p>Define the instance for each sample class. </p>
 </li>
 <li>
@@ -196,24 +207,15 @@ self.data_analysis_samples_instance.plot_annual_temp_histogram],
     }
 </code></pre>
 <p>```</p>
-<pre><code>    # The order must match the order of the &lt;code&gt;self.menu\_items&lt;/code&gt; 
-    # list in &lt;code&gt;main.py&lt;/code&gt;.  
-    self.sub_menus = [
-        [], # Leave it empty to match dictionary keys.
-        self.temp_menu_items,
-        self.misc_menu_items,
-        self.temp_hist_menu_items,
-
-    ]
-    """ Group of all the sample menus. """
-
-    self.sample_groups = {
-        1: ["Data Analysis Samples", self.data_analysis_samples],
-        2: ["Misc Samples", self.misc_samples],
-        3: ["File Samples", self.temp_hist_menu_items],
-    }
-    """ Group of all the samples. """
-</code></pre>
+<ol>
+<li>Group of all the samples</li>
+</ol>
+<p><code>python
+self.sample_groups = {
+1: ["Data Analysis Samples", self.data_analysis_samples],
+2: ["Misc Samples", self.misc_samples],
+3: ["File Samples", self.temp_hist_menu_items],
+}</code></p>
 <h2 id="3-chatgpt">3. ChatGPT</h2>
 <p>The examples in the <strong>gpt</strong> folder use
 <a href="https://openai.com/blog/chatgpt">ChatGPT</a>, a powerful AI language model, to

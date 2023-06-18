@@ -141,6 +141,17 @@ This function initializes the class `BreadboardSubMenus` instance.
          self.misc_menu_items = ["Fibonacci", "Plot", "Numbers", "Quit"]
       ```
 
+1. Group of all the sample menus. 
+   The order must match the order of the `self.menu_items` list in `main.py`. 
+
+      ``` python
+        self.sub_menus = [
+            [], # Leave it empty to match dictionary keys.
+            self.temp_menu_items,
+            self.misc_menu_items,
+            self.temp_hist_menu_items,
+      ```      
+
 1. Define the instance for each sample class. 
 
    1. `DataAnalysisSamples` instance
@@ -177,23 +188,15 @@ This function initializes the class `BreadboardSubMenus` instance.
         }
    ```
 
-        # The order must match the order of the `self.menu_items` 
-        # list in `main.py`.  
-        self.sub_menus = [
-            [], # Leave it empty to match dictionary keys.
-            self.temp_menu_items,
-            self.misc_menu_items,
-            self.temp_hist_menu_items,
-            
-        ]
-        """ Group of all the sample menus. """
-    
+1. Group of all the samples
+
+   ``` python
         self.sample_groups = {
             1: ["Data Analysis Samples", self.data_analysis_samples],
             2: ["Misc Samples", self.misc_samples],
             3: ["File Samples", self.temp_hist_menu_items],
         }
-        """ Group of all the samples. """
+   ```
 
 
 ## 3. ChatGPT
