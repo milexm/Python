@@ -7,11 +7,12 @@ last update: 06/16/23
 - [1. Overview](#1-overview)
 - [2. Define activation menus](#2-define-activation-menus)
   - [2.1. Group menu](#21-group-menu)
-    - [__init__(self)](#initself)
-    - [group\_selection\_menu(self)](#group_selection_menuself)
-    - [2.1.1. About lambda](#211-about-lambda)
+    - [2.1.1. \_\_init\_\_(self)](#211-__init__self)
+    - [2.1.2. group\_selection\_menu(self)](#212-group_selection_menuself)
+    - [2.1.3. About lambda](#213-about-lambda)
   - [2.2. Submenus](#22-submenus)
-    - [__init__(self).](#initself-1)
+    - [2.2.1. \_\_init\_\_(self)](#221-__init__self)
+    - [2.2.2. breadboard\_selection\_menu(self, sub\_menu)](#222-breadboard_selection_menuself-sub_menu)
 - [3. ChatGPT](#3-chatgpt)
 - [4. Miscellanea](#4-miscellanea)
 
@@ -35,7 +36,7 @@ The main menu is created by the [main.py](main.py) file, that is the main
 activation code for the *bread-board* **folder** that contains all the
 example code for this area. Next we highlight the main steps. 
 
-#### __init__(self)
+#### 2.1.1. \_\_init\_\_(self) 
 
 1. Define the entries of the group menu.
 
@@ -85,7 +86,7 @@ logic to allow the user to select to desired sample.
    passes to it an integer (from 1 to 3) selected by the user and shown in this
    call `self.sub_menu[choice]()`. 
 
-#### group_selection_menu(self)
+#### 2.1.2. group_selection_menu(self)
 
 1. Display the group menu by calling `display_menu()` method in the
    `ConsoleMenu` parent class. 
@@ -94,7 +95,7 @@ logic to allow the user to select to desired sample.
 1. If the user select `Quit` terminate the loop, otherwise display the submenus
    selected by the user.
   
-#### 2.1.1. About lambda
+#### 2.1.3. About lambda
 
 In Python, `lambda` is a keyword that is used to define small, anonymous
 functions. The `lambda function can take any number of arguments, but can only
@@ -115,7 +116,7 @@ connected to the submenus whose entries in turn are connected toe the functions
 (samples) to run. The key is the `class BreadboardSubMenus(ConsoleMenu)`.
 Next we highlight the main steps. 
 
-#### __init__(self). 
+#### 2.2.1. \_\_init\_\_(self) 
 
 This function initializes the class `BreadboardSubMenus` instance.
 
@@ -151,7 +152,7 @@ This function initializes the class `BreadboardSubMenus` instance.
             self.temp_menu_items,
             self.misc_menu_items,
             self.temp_hist_menu_items,
-
+        ]
       ```
 
 1. Define the instance for each sample class. 
@@ -207,6 +208,7 @@ This function initializes the class `BreadboardSubMenus` instance.
 
    ```
 
+#### 2.2.2. breadboard_selection_menu(self, sub_menu)
 
 ## 3. ChatGPT
 

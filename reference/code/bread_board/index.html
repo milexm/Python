@@ -31,13 +31,14 @@ last update: 06/16/23
 <li><a href="#1-overview">1. Overview</a></li>
 <li><a href="#2-define-activation-menus">2. Define activation menus</a></li>
 <li><a href="#21-group-menu">2.1. Group menu</a><ul>
-<li><a href="#initself"><strong>init</strong>(self)</a></li>
-<li><a href="#group_selection_menuself">group_selection_menu(self)</a></li>
-<li><a href="#211-about-lambda">2.1.1. About lambda</a></li>
+<li><a href="#211-__init__self">2.1.1. __init__(self)</a></li>
+<li><a href="#212-group_selection_menuself">2.1.2. group_selection_menu(self)</a></li>
+<li><a href="#213-about-lambda">2.1.3. About lambda</a></li>
 </ul>
 </li>
 <li><a href="#22-submenus">2.2. Submenus</a><ul>
-<li><a href="#initself-1"><strong>init</strong>(self).</a></li>
+<li><a href="#221-__init__self">2.2.1. __init__(self)</a></li>
+<li><a href="#222-breadboard_selection_menuself-sub_menu">2.2.2. breadboard_selection_menu(self, sub_menu)</a></li>
 </ul>
 </li>
 <li><a href="#3-chatgpt">3. ChatGPT</a></li>
@@ -57,7 +58,7 @@ group</strong> in the <em>bread_board folder</em>.
 <p>The main menu is created by the <a href="main.py">main.py</a> file, that is the main
 activation code for the <em>bread-board</em> <strong>folder</strong> that contains all the
 example code for this area. Next we highlight the main steps. </p>
-<h4 id="initself"><strong>init</strong>(self)</h4>
+<h4 id="211-__init__self">2.1.1. __init__(self)</h4>
 <ol>
 <li>
 <p>Define the entries of the group menu.</p>
@@ -104,7 +105,7 @@ integer (from 1 to 3), the value is a <code>lambda</code> function which calls t
 <code>breadboard_selection_menu</code> menthod in the <code>BreadboardSubMenus</code> class and
 passes to it an integer (from 1 to 3) selected by the user and shown in this
 call <code>self.sub_menu[choice]()</code>. </p>
-<h4 id="group_selection_menuself">group_selection_menu(self)</h4>
+<h4 id="212-group_selection_menuself">2.1.2. group_selection_menu(self)</h4>
 <ol>
 <li>Display the group menu by calling <code>display_menu()</code> method in the
 <code>ConsoleMenu</code> parent class. </li>
@@ -113,7 +114,7 @@ call <code>self.sub_menu[choice]()</code>. </p>
 <li>If the user select <code>Quit</code> terminate the loop, otherwise display the submenus
 selected by the user.</li>
 </ol>
-<h4 id="211-about-lambda">2.1.1. About lambda</h4>
+<h4 id="213-about-lambda">2.1.3. About lambda</h4>
 <p>In Python, <code>lambda</code> is a keyword that is used to define small, anonymous
 functions. The `lambda function can take any number of arguments, but can only
 have one expression.
@@ -130,7 +131,7 @@ described before. This is where the rubber hits the road. The group menus is
 connected to the submenus whose entries in turn are connected toe the functions
 (samples) to run. The key is the <code>class BreadboardSubMenus(ConsoleMenu)</code>.
 Next we highlight the main steps. </p>
-<h4 id="initself_1"><strong>init</strong>(self).</h4>
+<h4 id="221-__init__self">2.2.1. __init__(self)</h4>
 <p>This function initializes the class <code>BreadboardSubMenus</code> instance.</p>
 <ol>
 <li>
@@ -163,6 +164,7 @@ The order must match the order of the <code>self.menu_items</code> list in <code
     self.temp_menu_items,
     self.misc_menu_items,
     self.temp_hist_menu_items,
+]
 </code></pre>
 <p>```</p>
 </li>
@@ -220,6 +222,7 @@ call, when needed. </p>
     }
 </code></pre>
 <p>```</p>
+<h4 id="222-breadboard_selection_menuself-sub_menu">2.2.2. breadboard_selection_menu(self, sub_menu)</h4>
 <h2 id="3-chatgpt">3. ChatGPT</h2>
 <p>The examples in the <strong>gpt</strong> folder use
 <a href="https://openai.com/blog/chatgpt">ChatGPT</a>, a powerful AI language model, to
@@ -290,13 +293,14 @@ folder do not fit in any organization yet.</p>
 <li><a href="#1-overview">1. Overview</a></li>
 <li><a href="#2-define-activation-menus">2. Define activation menus</a><ul>
 <li><a href="#21-group-menu">2.1. Group menu</a><ul>
-<li><a href="#initself">init(self)</a></li>
-<li><a href="#group_selection_menuself">group_selection_menu(self)</a></li>
-<li><a href="#211-about-lambda">2.1.1. About lambda</a></li>
+<li><a href="#211-__init__self">2.1.1. __init__(self)</a></li>
+<li><a href="#212-group_selection_menuself">2.1.2. group_selection_menu(self)</a></li>
+<li><a href="#213-about-lambda">2.1.3. About lambda</a></li>
 </ul>
 </li>
 <li><a href="#22-submenus">2.2. Submenus</a><ul>
-<li><a href="#initself_1">init(self).</a></li>
+<li><a href="#221-__init__self">2.2.1. __init__(self)</a></li>
+<li><a href="#222-breadboard_selection_menuself-sub_menu">2.2.2. breadboard_selection_menu(self, sub_menu)</a></li>
 </ul>
 </li>
 </ul>
