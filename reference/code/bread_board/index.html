@@ -183,8 +183,6 @@ self.misc_samples_instance = MiscellaneaSamples()</code>
 <li>
 <p>Define the decision table for each sample group.
 </p>
-</li>
-</ol>
 <p>Each table (dictionary) entry contains a key, value pair.
 The key is an
 integer, the value is the name of the sample and the method to call.
@@ -200,15 +198,17 @@ self.data_analysis_samples_instance.plot_annual_temp],
 Plot annual temperature histogram </em></strong>",
 self.data_analysis_samples_instance.plot_annual_temp_histogram],
 }</p>
-<pre><code>    self.misc_samples = {
-        1: ["\n***  Calculate Fibonacci ***", lambda: self.misc_samples_instance.fiboTriangle(5)],
-        2: ["\n***  Plotting ***", self.misc_samples_instance.plotting],
-        3: ["\n***  Number Types ***", self.misc_samples_instance.getNumberTypes],
-    }
+<pre><code> self.misc_samples = {
+       1: ["\n***  Calculate Fibonacci ***", lambda: self.misc_samples_instance.fiboTriangle(5)],
+       2: ["\n***  Plotting ***", self.misc_samples_instance.plotting],
+       3: ["\n***  Number Types ***", self.misc_samples_instance.getNumberTypes],
+ }
 </code></pre>
 <p>```</p>
-<ol>
-<li>Group of all the samples</li>
+</li>
+<li>
+<p>Group of all the samples</p>
+</li>
 </ol>
 <p><code>python
 self.sample_groups = {

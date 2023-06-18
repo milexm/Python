@@ -168,25 +168,25 @@ This function initializes the class `BreadboardSubMenus` instance.
 
 1. Define the decision table for each sample group.  
 
-   Each table (dictionary) entry contains a key, value pair.  The key is an
-   integer, the value is the name of the sample and the method to call.  Note
-   the use of the `lambda' function needed to pass parameters to the function to
-   call, when needed. 
+      Each table (dictionary) entry contains a key, value pair.  The key is an
+      integer, the value is the name of the sample and the method to call.  Note
+      the use of the `lambda' function needed to pass parameters to the function to
+      call, when needed. 
 
-   ``` python
-        self.data_analysis_samples = {
-            1: ["\n***  Plot annual temperature ***", 
-            self.data_analysis_samples_instance.plot_annual_temp],
-            2: ["\n***  Plot annual temperature histogram ***", 
-            self.data_analysis_samples_instance.plot_annual_temp_histogram],
-        }
+      ``` python
+         self.data_analysis_samples = {
+               1: ["\n***  Plot annual temperature ***", 
+               self.data_analysis_samples_instance.plot_annual_temp],
+               2: ["\n***  Plot annual temperature histogram ***", 
+               self.data_analysis_samples_instance.plot_annual_temp_histogram],
+         }
 
-        self.misc_samples = {
-            1: ["\n***  Calculate Fibonacci ***", lambda: self.misc_samples_instance.fiboTriangle(5)],
-            2: ["\n***  Plotting ***", self.misc_samples_instance.plotting],
-            3: ["\n***  Number Types ***", self.misc_samples_instance.getNumberTypes],
-        }
-   ```
+         self.misc_samples = {
+               1: ["\n***  Calculate Fibonacci ***", lambda: self.misc_samples_instance.fiboTriangle(5)],
+               2: ["\n***  Plotting ***", self.misc_samples_instance.plotting],
+               3: ["\n***  Number Types ***", self.misc_samples_instance.getNumberTypes],
+         }
+      ```
 
 1. Group of all the samples
 
