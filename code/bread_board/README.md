@@ -145,12 +145,14 @@ This function initializes the class `BreadboardSubMenus` instance.
    The order must match the order of the `self.menu_items` list in `main.py`. 
 
       ``` python
+
         self.sub_menus = [
             [], # Leave it empty to match dictionary keys.
             self.temp_menu_items,
             self.misc_menu_items,
             self.temp_hist_menu_items,
-      ```      
+
+      ```
 
 1. Define the instance for each sample class. 
 
@@ -174,28 +176,35 @@ This function initializes the class `BreadboardSubMenus` instance.
       call, when needed. 
 
       ``` python
+
          self.data_analysis_samples = {
                1: ["\n***  Plot annual temperature ***", 
                self.data_analysis_samples_instance.plot_annual_temp],
                2: ["\n***  Plot annual temperature histogram ***", 
                self.data_analysis_samples_instance.plot_annual_temp_histogram],
          }
+      ```
+
+      ``` python
 
          self.misc_samples = {
                1: ["\n***  Calculate Fibonacci ***", lambda: self.misc_samples_instance.fiboTriangle(5)],
                2: ["\n***  Plotting ***", self.misc_samples_instance.plotting],
                3: ["\n***  Number Types ***", self.misc_samples_instance.getNumberTypes],
          }
+
       ```
 
-1. Group of all the samples
+1. Group of all the sample submenus. 
 
    ``` python
+
         self.sample_groups = {
             1: ["Data Analysis Samples", self.data_analysis_samples],
             2: ["Misc Samples", self.misc_samples],
             3: ["File Samples", self.temp_hist_menu_items],
         }
+
    ```
 
 

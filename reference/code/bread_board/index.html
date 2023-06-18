@@ -157,13 +157,14 @@ self.misc_menu_items = ["Fibonacci", "Plot", "Numbers", "Quit"]</code></p>
 <li>
 <p>Group of all the sample menus.
 The order must match the order of the <code>self.menu_items</code> list in <code>main.py</code>. </p>
-<p><code>python
-self.sub_menus = [
-[], # Leave it empty to match dictionary keys.
-self.temp_menu_items,
-self.misc_menu_items,
-self.temp_hist_menu_items,</code>
-</p>
+<p>``` python</p>
+<pre><code>self.sub_menus = [
+    [], # Leave it empty to match dictionary keys.
+    self.temp_menu_items,
+    self.misc_menu_items,
+    self.temp_hist_menu_items,
+</code></pre>
+<p>```</p>
 </li>
 <li>
 <p>Define the instance for each sample class. </p>
@@ -189,15 +190,16 @@ integer, the value is the name of the sample and the method to call.
 Note
 the use of the `lambda' function needed to pass parameters to the function to
 call, when needed. </p>
-<p>``` python
-self.data_analysis_samples = {
-1: ["\n<strong><em>
-Plot annual temperature </em></strong>",
-self.data_analysis_samples_instance.plot_annual_temp],
-2: ["\n<strong><em>
-Plot annual temperature histogram </em></strong>",
-self.data_analysis_samples_instance.plot_annual_temp_histogram],
-}</p>
+<p>``` python</p>
+<pre><code> self.data_analysis_samples = {
+       1: ["\n***  Plot annual temperature ***", 
+       self.data_analysis_samples_instance.plot_annual_temp],
+       2: ["\n***  Plot annual temperature histogram ***", 
+       self.data_analysis_samples_instance.plot_annual_temp_histogram],
+ }
+</code></pre>
+<p>```</p>
+<p>``` python</p>
 <pre><code> self.misc_samples = {
        1: ["\n***  Calculate Fibonacci ***", lambda: self.misc_samples_instance.fiboTriangle(5)],
        2: ["\n***  Plotting ***", self.misc_samples_instance.plotting],
@@ -207,15 +209,17 @@ self.data_analysis_samples_instance.plot_annual_temp_histogram],
 <p>```</p>
 </li>
 <li>
-<p>Group of all the samples</p>
+<p>Group of all the sample submenus. </p>
 </li>
 </ol>
-<p><code>python
-self.sample_groups = {
-1: ["Data Analysis Samples", self.data_analysis_samples],
-2: ["Misc Samples", self.misc_samples],
-3: ["File Samples", self.temp_hist_menu_items],
-}</code></p>
+<p>``` python</p>
+<pre><code>    self.sample_groups = {
+        1: ["Data Analysis Samples", self.data_analysis_samples],
+        2: ["Misc Samples", self.misc_samples],
+        3: ["File Samples", self.temp_hist_menu_items],
+    }
+</code></pre>
+<p>```</p>
 <h2 id="3-chatgpt">3. ChatGPT</h2>
 <p>The examples in the <strong>gpt</strong> folder use
 <a href="https://openai.com/blog/chatgpt">ChatGPT</a>, a powerful AI language model, to
