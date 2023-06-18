@@ -25,7 +25,7 @@ class BreadboardSubMenus(ConsoleMenu):
 
 
     def __init__(self):
-        ''' Initialize the class `GptSubMenu` instance. '''
+        ''' Initialize the class `BreadboardSubMenus` instance. '''
 
         # Define the menu entries for each sample group. 
 

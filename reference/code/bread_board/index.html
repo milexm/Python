@@ -36,7 +36,10 @@ last update: 06/16/23
 <li><a href="#211-about-lambda">2.1.1. About lambda</a></li>
 </ul>
 </li>
-<li><a href="#22-submenus">2.2. Submenus</a></li>
+<li><a href="#22-submenus">2.2. Submenus</a><ul>
+<li><a href="#initself-1"><strong>init</strong>(self).</a></li>
+</ul>
+</li>
 <li><a href="#3-chatgpt">3. ChatGPT</a></li>
 <li><a href="#4-miscellanea">4. Miscellanea</a></li>
 </ul>
@@ -127,6 +130,90 @@ described before. This is where the rubber hits the road. The group menus is
 connected to the submenus whose entries in turn are connected toe the functions
 (samples) to run. The key is the <code>class BreadboardSubMenus(ConsoleMenu)</code>.
 Next we highlight the main steps. </p>
+<h4 id="initself_1"><strong>init</strong>(self).</h4>
+<p>This function initializes the class <code>BreadboardSubMenus</code> instance.</p>
+<ol>
+<li>
+<p>Define the menu entries for each sample group. </p>
+</li>
+<li>
+<p>Temperature menu items</p>
+<p><code>python
+self.temp_menu_items = ["Plot annual temp", "Plot annual temp histogram",
+"Quit"]</code>
+</p>
+</li>
+<li>
+<p>File operations menu items</p>
+<p><code>python
+self.temp_hist_menu_items = ["Bulk add xsl column", "Bulk create files",
+"Bulk nerge files", "Bulk merge xls files", "Quit"]</code></p>
+</li>
+<li>
+<p>Misc menu items</p>
+<p><code>python
+self.misc_menu_items = ["Fibonacci", "Plot", "Numbers", "Quit"]</code></p>
+</li>
+<li>
+<p>Define the instance for each sample class. </p>
+</li>
+<li>
+<p><code>DataAnalysisSamples</code> instance</p>
+<p><code>python
+self.data_analysis_samples_instance = DataAnalysisSamples()</code>
+</p>
+</li>
+<li>
+<p><code>MiscellaneaSamples</code> instance</p>
+<p><code>python
+self.misc_samples_instance = MiscellaneaSamples()</code>
+</p>
+</li>
+<li>
+<p>Define the decision table for each sample group.
+</p>
+</li>
+</ol>
+<p>Each table (dictionary) entry contains a key, value pair.
+The key is an
+integer, the value is the name of the sample and the method to call.
+Note
+the use of the `lambda' function needed to pass parameters to the function to
+call, when needed. </p>
+<p>``` python
+self.data_analysis_samples = {
+1: ["\n<strong><em>
+Plot annual temperature </em></strong>",
+self.data_analysis_samples_instance.plot_annual_temp],
+2: ["\n<strong><em>
+Plot annual temperature histogram </em></strong>",
+self.data_analysis_samples_instance.plot_annual_temp_histogram],
+}</p>
+<pre><code>    self.misc_samples = {
+        1: ["\n***  Calculate Fibonacci ***", lambda: self.misc_samples_instance.fiboTriangle(5)],
+        2: ["\n***  Plotting ***", self.misc_samples_instance.plotting],
+        3: ["\n***  Number Types ***", self.misc_samples_instance.getNumberTypes],
+    }
+</code></pre>
+<p>```</p>
+<pre><code>    # The order must match the order of the &lt;code&gt;self.menu\_items&lt;/code&gt; 
+    # list in &lt;code&gt;main.py&lt;/code&gt;.  
+    self.sub_menus = [
+        [], # Leave it empty to match dictionary keys.
+        self.temp_menu_items,
+        self.misc_menu_items,
+        self.temp_hist_menu_items,
+
+    ]
+    """ Group of all the sample menus. """
+
+    self.sample_groups = {
+        1: ["Data Analysis Samples", self.data_analysis_samples],
+        2: ["Misc Samples", self.misc_samples],
+        3: ["File Samples", self.temp_hist_menu_items],
+    }
+    """ Group of all the samples. """
+</code></pre>
 <h2 id="3-chatgpt">3. ChatGPT</h2>
 <p>The examples in the <strong>gpt</strong> folder use
 <a href="https://openai.com/blog/chatgpt">ChatGPT</a>, a powerful AI language model, to
@@ -202,7 +289,10 @@ folder do not fit in any organization yet.</p>
 <li><a href="#211-about-lambda">2.1.1. About lambda</a></li>
 </ul>
 </li>
-<li><a href="#22-submenus">2.2. Submenus</a></li>
+<li><a href="#22-submenus">2.2. Submenus</a><ul>
+<li><a href="#initself_1">init(self).</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#3-chatgpt">3. ChatGPT</a></li>

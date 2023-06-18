@@ -11,6 +11,7 @@ last update: 06/16/23
     - [group\_selection\_menu(self)](#group_selection_menuself)
     - [2.1.1. About lambda](#211-about-lambda)
   - [2.2. Submenus](#22-submenus)
+    - [__init__(self).](#initself-1)
 - [3. ChatGPT](#3-chatgpt)
 - [4. Miscellanea](#4-miscellanea)
 
@@ -93,7 +94,6 @@ logic to allow the user to select to desired sample.
 1. If the user select `Quit` terminate the loop, otherwise display the submenus
    selected by the user.
   
-           
 #### 2.1.1. About lambda
 
 In Python, `lambda` is a keyword that is used to define small, anonymous
@@ -115,7 +115,85 @@ connected to the submenus whose entries in turn are connected toe the functions
 (samples) to run. The key is the `class BreadboardSubMenus(ConsoleMenu)`.
 Next we highlight the main steps. 
 
+#### __init__(self). 
 
+This function initializes the class `BreadboardSubMenus` instance.
+
+1. Define the menu entries for each sample group. 
+
+   1. Temperature menu items
+
+      ``` python
+         self.temp_menu_items = ["Plot annual temp", "Plot annual temp histogram", 
+         "Quit"]
+      ```  
+
+   1. File operations menu items
+
+      ``` python
+        self.temp_hist_menu_items = ["Bulk add xsl column", "Bulk create files", 
+        "Bulk nerge files", "Bulk merge xls files", "Quit"]
+      ```
+
+   1. Misc menu items
+
+      ``` python
+         self.misc_menu_items = ["Fibonacci", "Plot", "Numbers", "Quit"]
+      ```
+
+1. Define the instance for each sample class. 
+
+   1. `DataAnalysisSamples` instance
+
+      ``` python
+         self.data_analysis_samples_instance = DataAnalysisSamples()
+      ```  
+
+   1. `MiscellaneaSamples` instance
+
+      ```python
+        self.misc_samples_instance = MiscellaneaSamples()
+      ```  
+
+1. Define the decision table for each sample group.  
+
+   Each table (dictionary) entry contains a key, value pair.  The key is an
+   integer, the value is the name of the sample and the method to call.  Note
+   the use of the `lambda' function needed to pass parameters to the function to
+   call, when needed. 
+
+   ``` python
+        self.data_analysis_samples = {
+            1: ["\n***  Plot annual temperature ***", 
+            self.data_analysis_samples_instance.plot_annual_temp],
+            2: ["\n***  Plot annual temperature histogram ***", 
+            self.data_analysis_samples_instance.plot_annual_temp_histogram],
+        }
+
+        self.misc_samples = {
+            1: ["\n***  Calculate Fibonacci ***", lambda: self.misc_samples_instance.fiboTriangle(5)],
+            2: ["\n***  Plotting ***", self.misc_samples_instance.plotting],
+            3: ["\n***  Number Types ***", self.misc_samples_instance.getNumberTypes],
+        }
+   ```
+
+        # The order must match the order of the `self.menu_items` 
+        # list in `main.py`.  
+        self.sub_menus = [
+            [], # Leave it empty to match dictionary keys.
+            self.temp_menu_items,
+            self.misc_menu_items,
+            self.temp_hist_menu_items,
+            
+        ]
+        """ Group of all the sample menus. """
+    
+        self.sample_groups = {
+            1: ["Data Analysis Samples", self.data_analysis_samples],
+            2: ["Misc Samples", self.misc_samples],
+            3: ["File Samples", self.temp_hist_menu_items],
+        }
+        """ Group of all the samples. """
 
 
 ## 3. ChatGPT
