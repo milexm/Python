@@ -48,7 +48,12 @@ menu and submenus to select and execute code sample from a terminal windows.
 </p>
 <blockquote>
 <p>[!NOTE] You can use the example as a template for the creation od your own
-menus and submenus.</p>
+menus and submenus performing the following steps:</p>
+<ol>
+<li>The <code>menus_creation</code> folder name with the name of the folder containin the
+code examples.
+</li>
+</ol>
 </blockquote>
 <h2 id="2-define-activation-menus">2. Define activation menus</h2>
 <p>The steps to create menus are a bit cumbersome and interrelated. Also, we are
@@ -58,22 +63,21 @@ group</strong> in the <em>bread_board folder</em>.
 </p>
 <h3 id="21-group-menu">2.1. Group menu</h3>
 <p>The main menu is created by the <a href="main.py">main.py</a> file, that is the main
-activation code for the <em>bread-board</em> <strong>folder</strong> that contains all the
-example code for this area. Next we highlight the main steps. </p>
+activation code for the <code>menus_creation</code> <strong>folder</strong> that contains all the
+examples for this area. Below, we highlight the main steps. </p>
 <h4 id="211-__init__self">2.1.1. __init__(self)</h4>
 <ol>
 <li>
 <p>Define the entries of the group menu.</p>
 <p>``` python</p>
-<pre><code> self.menu_items = ["Data Analysis", "Misc Operations", 
- "File Operations", "Quit"]
+<pre><code> self.menu_items = ["Numbers", "Plotting", "Quit"]
 </code></pre>
 <p>```</p>
 </li>
 <li>
 <p>Initialize group menu name and options through the <code>ConsoleMenu</code> parent class</p>
 <p>``` python</p>
-<pre><code> super().__init__("Breadboard Group Menu", self.menu_items)
+<pre><code> super().__init__("Menu Creation Group Menu", self.menu_items)
 </code></pre>
 <p>```</p>
 <p>This generates the followng menu:</p>
@@ -241,6 +245,21 @@ introduce users to your project.
 </details>
 </section>
 <section>
+<h2 class="section-title" id="header-submodules">Sub-modules</h2>
+<dl>
+<dt><code class="name"><a title="code.menus_creation.main" href="main.html">code.menus_creation.main</a></code></dt>
+<dd>
+<div class="desc"><p>Module main.py</p></div>
+</dd>
+<dt><code class="name"><a title="code.menus_creation.my_numbers" href="my_numbers.html">code.menus_creation.my_numbers</a></code></dt>
+<dd>
+<div class="desc"><p>numbers.py</p></div>
+</dd>
+<dt><code class="name"><a title="code.menus_creation.my_plot" href="my_plot.html">code.menus_creation.my_plot</a></code></dt>
+<dd>
+<div class="desc"><p>plot.py</p></div>
+</dd>
+</dl>
 </section>
 <section>
 </section>
@@ -278,6 +297,13 @@ introduce users to your project.
 <li><h3>Super-module</h3>
 <ul>
 <li><code><a title="code" href="../index.html">code</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-submodules">Sub-modules</a></h3>
+<ul>
+<li><code><a title="code.menus_creation.main" href="main.html">code.menus_creation.main</a></code></li>
+<li><code><a title="code.menus_creation.my_numbers" href="my_numbers.html">code.menus_creation.my_numbers</a></code></li>
+<li><code><a title="code.menus_creation.my_plot" href="my_plot.html">code.menus_creation.my_plot</a></code></li>
 </ul>
 </li>
 </ul>

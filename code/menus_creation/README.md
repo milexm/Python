@@ -19,7 +19,11 @@ last update: 07/03/23
 The `menus_creation` folder contains a complete example on how to create console
 menu and submenus to select and execute code sample from a terminal windows.  
 > [!NOTE] You can use the example as a template for the creation od your own
-> menus and submenus.
+> menus and submenus performing the following steps:
+
+> 1. The `menus_creation` folder name with the name of the folder containin the
+>    code examples.
+> 
 
 ## 2. Define activation menus
 
@@ -31,8 +35,8 @@ group** in the *bread_board folder*.
 ### 2.1. Group menu 
 
 The main menu is created by the [main.py](main.py) file, that is the main
-activation code for the *bread-board* **folder** that contains all the
-example code for this area. Next we highlight the main steps. 
+activation code for the `menus_creation` **folder** that contains all the
+examples for this area. Below, we highlight the main steps. 
 
 #### 2.1.1. \_\_init\_\_(self) 
 
@@ -40,8 +44,7 @@ example code for this area. Next we highlight the main steps.
 
       ``` python
       
-         self.menu_items = ["Data Analysis", "Misc Operations", 
-         "File Operations", "Quit"]
+         self.menu_items = ["Numbers", "Plotting", "Quit"]
       
       ```
 
@@ -49,7 +52,7 @@ example code for this area. Next we highlight the main steps.
 
       ``` python
 
-         super().__init__("Breadboard Group Menu", self.menu_items)
+         super().__init__("Menu Creation Group Menu", self.menu_items)
       
       ```
 

@@ -8,6 +8,7 @@
         "./code/apps",
         "./code/packages/console_menu_utilities",
         "./code/bread_board/gpt/data_analysis",
-        "./code/bread_board/misc"
+        "./code/bread_board/misc",
+        "./code/menus_creation"
     ]
 }
