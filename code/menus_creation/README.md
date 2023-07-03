@@ -2,7 +2,7 @@
 last update: 07/03/23
 ---
 
-# ![python-icon](../../media/icons/python-icon.svg) Bread board
+# ![python-icon](../../media/icons/python-icon.svg) Console menus creation 
 
 - [1. Overview](#1-overview)
 - [2. Define activation menus](#2-define-activation-menus)
