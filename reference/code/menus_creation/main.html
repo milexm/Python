@@ -46,13 +46,24 @@ from menu_utilities import ConsoleMenu
 class GroupMenu(ConsoleMenu):
 
     &#34;&#34;&#34; 
-    The `GroupMenu` class allows the user to select a group of examples to execute. It initializes the instance of the class by defining a list of menu items. It also instantiates and initialiazes an instance of the `ConsoleMenu` class.
+    The `GroupMenu` class allows the user to select a group of examples to
+    execute. It initializes the instance of the class by defining a list of menu
+    items. It also instantiates and initialiazes an instance of the
+    `ConsoleMenu` class.
 
     Remarks
     -------
-    The `group_selection_menu` method of the `GroupMenu` class displays a menu to the user with the options specified in the `self.menu_items` list. It waits for the user to make a selection and then calls the corresponding menu based on the selection. For example, if the user selects 1, it will instantiate an instance of the `_menu.list_menu` class called `_lmenu` and then call the `list_selection_menu` method on `_lmenu`.
+    The `group_selection_menu` method of the `GroupMenu` class displays a menu
+    to the user with the options specified in the `self.menu_items` list. It
+    waits for the user to make a selection and then calls the corresponding menu
+    based on the selection. For example, if the user selects 1, it will
+    instantiate an instance of the `_menu.list_menu` class called `_lmenu` and
+    then call the `list_selection_menu` method on `_lmenu`.
 
-    The if __name__ == &#39;__main__&#39;: block at the bottom of the code instantiates an instance of the `GroupMenu` class called `_gmenu` and then calls the group_selection_menu method on _gmenu. This will display the group selection menu to the user and allow them to choose a group of examples to execute.
+    The if __name__ == &#39;__main__&#39;: block at the bottom of the code instantiates
+    an instance of the `GroupMenu` class called `_gmenu` and then calls the
+    group_selection_menu method on _gmenu. This will display the group selection
+    menu to the user and allow them to choose a group of examples to execute.
     
     Use
     ---    
@@ -61,7 +72,9 @@ class GroupMenu(ConsoleMenu):
     &#34;&#34;&#34;
 
     def __init__(self):
-        &#34;&#34;&#34; Initializes the `menu_items` attribute with the group menu entries. Then it initializes the group menu name and menu entries via the `ConsoleMenu` parent class.  &#34;&#34;&#34;
+        &#34;&#34;&#34; Initializes the `menu_items` attribute with the group menu entries.
+        Then it initializes the group menu name and menu entries via the
+        `ConsoleMenu` parent class.  &#34;&#34;&#34;
 
         # Define the entries of the group menu. 
         self.menu_items = [&#34;Numbers&#34;, &#34;Plotting&#34;, &#34;Quit&#34;]
@@ -125,13 +138,26 @@ if __name__ == &#39;__main__&#39;:
 <span>class <span class="ident">GroupMenu</span></span>
 </code></dt>
 <dd>
-<div class="desc"><p>The <code><a title="code.menus_creation.main.GroupMenu" href="#code.menus_creation.main.GroupMenu">GroupMenu</a></code> class allows the user to select a group of examples to execute. It initializes the instance of the class by defining a list of menu items. It also instantiates and initialiazes an instance of the <code>ConsoleMenu</code> class.</p>
+<div class="desc"><p>The <code><a title="code.menus_creation.main.GroupMenu" href="#code.menus_creation.main.GroupMenu">GroupMenu</a></code> class allows the user to select a group of examples to
+execute. It initializes the instance of the class by defining a list of menu
+items. It also instantiates and initialiazes an instance of the
+<code>ConsoleMenu</code> class.</p>
 <h2 id="remarks">Remarks</h2>
-<p>The <code>group_selection_menu</code> method of the <code><a title="code.menus_creation.main.GroupMenu" href="#code.menus_creation.main.GroupMenu">GroupMenu</a></code> class displays a menu to the user with the options specified in the <code>self.menu_items</code> list. It waits for the user to make a selection and then calls the corresponding menu based on the selection. For example, if the user selects 1, it will instantiate an instance of the <code>_menu.list_menu</code> class called <code>_lmenu</code> and then call the <code>list_selection_menu</code> method on <code>_lmenu</code>.</p>
-<p>The if <strong>name</strong> == '<strong>main</strong>': block at the bottom of the code instantiates an instance of the <code><a title="code.menus_creation.main.GroupMenu" href="#code.menus_creation.main.GroupMenu">GroupMenu</a></code> class called <code>_gmenu</code> and then calls the group_selection_menu method on _gmenu. This will display the group selection menu to the user and allow them to choose a group of examples to execute.</p>
+<p>The <code>group_selection_menu</code> method of the <code><a title="code.menus_creation.main.GroupMenu" href="#code.menus_creation.main.GroupMenu">GroupMenu</a></code> class displays a menu
+to the user with the options specified in the <code>self.menu_items</code> list. It
+waits for the user to make a selection and then calls the corresponding menu
+based on the selection. For example, if the user selects 1, it will
+instantiate an instance of the <code>_menu.list_menu</code> class called <code>_lmenu</code> and
+then call the <code>list_selection_menu</code> method on <code>_lmenu</code>.</p>
+<p>The if <strong>name</strong> == '<strong>main</strong>': block at the bottom of the code instantiates
+an instance of the <code><a title="code.menus_creation.main.GroupMenu" href="#code.menus_creation.main.GroupMenu">GroupMenu</a></code> class called <code>_gmenu</code> and then calls the
+group_selection_menu method on _gmenu. This will display the group selection
+menu to the user and allow them to choose a group of examples to execute.</p>
 <h2 id="use">Use</h2>
 <p>In a terminal window enter: python [user path]./bread_board/main.py</p>
-<p>Initializes the <code>menu_items</code> attribute with the group menu entries. Then it initializes the group menu name and menu entries via the <code>ConsoleMenu</code> parent class.</p></div>
+<p>Initializes the <code>menu_items</code> attribute with the group menu entries.
+Then it initializes the group menu name and menu entries via the
+<code>ConsoleMenu</code> parent class.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -139,13 +165,24 @@ if __name__ == &#39;__main__&#39;:
 <pre><code class="python">class GroupMenu(ConsoleMenu):
 
     &#34;&#34;&#34; 
-    The `GroupMenu` class allows the user to select a group of examples to execute. It initializes the instance of the class by defining a list of menu items. It also instantiates and initialiazes an instance of the `ConsoleMenu` class.
+    The `GroupMenu` class allows the user to select a group of examples to
+    execute. It initializes the instance of the class by defining a list of menu
+    items. It also instantiates and initialiazes an instance of the
+    `ConsoleMenu` class.
 
     Remarks
     -------
-    The `group_selection_menu` method of the `GroupMenu` class displays a menu to the user with the options specified in the `self.menu_items` list. It waits for the user to make a selection and then calls the corresponding menu based on the selection. For example, if the user selects 1, it will instantiate an instance of the `_menu.list_menu` class called `_lmenu` and then call the `list_selection_menu` method on `_lmenu`.
+    The `group_selection_menu` method of the `GroupMenu` class displays a menu
+    to the user with the options specified in the `self.menu_items` list. It
+    waits for the user to make a selection and then calls the corresponding menu
+    based on the selection. For example, if the user selects 1, it will
+    instantiate an instance of the `_menu.list_menu` class called `_lmenu` and
+    then call the `list_selection_menu` method on `_lmenu`.
 
-    The if __name__ == &#39;__main__&#39;: block at the bottom of the code instantiates an instance of the `GroupMenu` class called `_gmenu` and then calls the group_selection_menu method on _gmenu. This will display the group selection menu to the user and allow them to choose a group of examples to execute.
+    The if __name__ == &#39;__main__&#39;: block at the bottom of the code instantiates
+    an instance of the `GroupMenu` class called `_gmenu` and then calls the
+    group_selection_menu method on _gmenu. This will display the group selection
+    menu to the user and allow them to choose a group of examples to execute.
     
     Use
     ---    
@@ -154,7 +191,9 @@ if __name__ == &#39;__main__&#39;:
     &#34;&#34;&#34;
 
     def __init__(self):
-        &#34;&#34;&#34; Initializes the `menu_items` attribute with the group menu entries. Then it initializes the group menu name and menu entries via the `ConsoleMenu` parent class.  &#34;&#34;&#34;
+        &#34;&#34;&#34; Initializes the `menu_items` attribute with the group menu entries.
+        Then it initializes the group menu name and menu entries via the
+        `ConsoleMenu` parent class.  &#34;&#34;&#34;
 
         # Define the entries of the group menu. 
         self.menu_items = [&#34;Numbers&#34;, &#34;Plotting&#34;, &#34;Quit&#34;]
