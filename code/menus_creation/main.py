@@ -3,16 +3,15 @@ Module main.py
 
 """
 
-# Import the menu submenus from the menu_utilities package. 
-# Specifically, import menuscreation_submenus module. 
-import sys
-sys.path.append('./code/packages') 
-import menu_utilities as _menu  
-
-# Import the ConsoleMenu class.
+# Import the `ConsoleMenu` class.
 import sys
 sys.path.append('./code/packages/menu_utilities')
-from menu_utilities import ConsoleMenu
+from console_menu import ConsoleMenu
+
+# Import the menu `SubMenus` class. 
+import sys
+sys.path.append('./code/menus_creation') 
+from submenus import SubMenus 
 
 class GroupMenu(ConsoleMenu):
 
@@ -56,13 +55,15 @@ class GroupMenu(ConsoleMenu):
 
 
        # Instantiate the sub menus class. 
-        _amenu = _menu.MenusCreationSubMenu()
+        _submenus = SubMenus()
         """ Sub menu class instance. """
 
         # Define the decision table to select the submenus. 
+        # The order must match the order of the `self.sub_menus` 
+        # list in `code/menus_creation/menuscreation_submenus.py`.  
         self.sub_menu = {
-            1:  lambda: _amenu.menus_creation_selection_menu(1),
-            2:  lambda: _amenu.menus_creation_selection_menu(2),
+            1:  lambda: _submenus.group_selection_submenu(1),
+            2:  lambda: _submenus.group_selection_submenu(2),
         }
         """ Sub menu selection decision table. """
 

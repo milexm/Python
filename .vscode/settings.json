@@ -9,6 +9,9 @@
         "./code/packages/console_menu_utilities",
         "./code/bread_board/gpt/data_analysis",
         "./code/bread_board/misc",
-        "./code/menus_creation"
+        "./code/menus_creation",
+        "./code/packages/menu_utilities",
+        "./code/menus_creation/number_play",
+        "./code/menus_creation/plotting_away"
     ]
 }
