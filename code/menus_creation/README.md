@@ -16,14 +16,22 @@ last update: 07/03/23
 
 ## 1. Overview
 
-The `menus_creation` folder contains a complete example on how to create console
+The `menus_creation` folder contains a complete example on how to create a console
 menu and submenus to select and execute code sample from a terminal windows.  
 > [!NOTE] You can use the example as a template for the creation od your own
-> menus and submenus performing the following steps:
+> menus and submenus. Below are the steps you cna follow.
 
-> 1. The `menus_creation` folder name with the name of the folder containin the
->    code examples.
-> 
+The `menus_creation` is the main folder that contains the code to create the
+main menus along with the samples to run. Specifically:
+
+ 1. The `main.py` allows for the creation of the main menu. This menu allows the
+    user to select any of several group submenus.
+ 2. The `number_play` is the folder that contains number related samples.
+ 3. The `plotting_away` is folder that contains plotting related samples.  
+ 4. The  `submenus.py`  contains the class `SubMenus` that creates the various
+    group menus (submenus).  The class instance method `group_selection_submenu`
+    displays a menu of available samples, for the user's selected group, and
+    allows the user to select a sample to execute from that group.
 
 ## 2. Define activation menus
 

@@ -20,11 +20,10 @@ from console_menu import ConsoleMenu
 
 class SubMenus(ConsoleMenu):
     """ 
-    The class `MenusCreationSubMenu` submenus for the `menus_creation` sample
-    group selected by the user in [main.py](./code/apps/main.py).  The class has
-    an instance method `menus_creation_selection_menu` that displays a menu of
-    available samples, for the group, that allows the user to select a sample to
-    execute.
+    The class `SubMenus` creates the various group menus (submenus).  The class
+    instance method `group_selection_submenu` displays a menu of available
+    samples, for the user's selected group, and allows the user to select a
+    sample to execute from that group.
     """
 
 
