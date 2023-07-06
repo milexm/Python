@@ -42,9 +42,9 @@ class GroupMenu(ConsoleMenu):
     """
 
     def __init__(self):
-        """ Initializes the `menu_choices` attribute with the main menu
-        choices. Then it initializes the main menu name and menu choices via the
-        `ConsoleMenu` parent class.  """
+        """ Initialize the `menu_choices` attribute with the main menu
+        choices. Initialize the main menu name and menu choices via the
+        `ConsoleMenu` parent class. Define the decision table to select the submenus. """
 
         # Define the choices of the mzin menu. Every choice
         # represents a group of samplea. 

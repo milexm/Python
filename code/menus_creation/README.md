@@ -5,14 +5,14 @@ last update: 07/03/23
 # ![python-icon](../../media/icons/python-icon.svg) Console menus creation 
 
 - [1. Overview](#1-overview)
-- [2. Define main menu](#2-define-main-menu)
+- [2. Main menu](#2-main-menu)
   - [2.1. Group menu](#21-group-menu)
     - [2.1.1. \_\_init\_\_(self)](#211-__init__self)
     - [2.1.2. group\_selection\_menu(self)](#212-group_selection_menuself)
     - [2.1.3. About lambda](#213-about-lambda)
   - [2.2. Submenus](#22-submenus)
     - [2.2.1. \_\_init\_\_(self)](#221-__init__self)
-    - [2.2.2. breadboard\_selection\_menu(self, sub\_menu)](#222-breadboard_selection_menuself-sub_menu)
+    - [2.2.2. group\_selection\_submenu(self, sub\_menu)](#222-group_selection_submenuself-sub_menu)
 
 ## 1. Overview
 
@@ -33,7 +33,7 @@ main menus along with the samples to run. Specifically:
     displays a menu of available samples, for the user's selected group, and
     allows the user to select a sample to execute from that group.
 
-## 2. Define main menu
+## 2. Main menu
 
 The steps to create menus are a bit cumbersome and interrelated. Also, we are
 going to use decision tables and not switch statements. The best way to
@@ -55,7 +55,7 @@ examples for this area. Below, we highlight the main steps.
         self.menu_choices = ["Numbers", "Plotting", "Quit"]
       ```
 
-1. Initialize group menu name and options through the `ConsoleMenu` parent class
+1. Initialize menu name and choices through the `ConsoleMenu` parent class
 
       ``` python
 
@@ -117,104 +117,101 @@ time the dictionary is created.
 
 ### 2.2. Submenus 
 
-After the creation of the group menu, we can start creating submenus.  Each
+After the creation of the main menu, we can start creating submenus.  Each
 submenu is activated by selecting one of the entries displayed in the group menu
-described before. This is where the rubber hits the road. The group menus is
+described before. This is where the rubber hits the road. The main menu is
 connected to the submenus whose entries in turn are connected toe the functions
-(samples) to run. The key is the `class BreadboardSubMenus(ConsoleMenu)`.
+(samples) to run. The key is the `class SubMenus(ConsoleMenu)`.
 Next we highlight the main steps. 
 
 #### 2.2.1. \_\_init\_\_(self) 
 
-This function initializes the class `BreadboardSubMenus` instance.
+This function initializes the class `SubMenus` instance.
 
 1. Define the menu entries for each sample group. 
 
-   1. Temperature menu items
+   1. Choices for the Numbers group menu
 
       ``` python
-         self.temp_menu_items = ["Plot annual temp", "Plot annual temp histogram", 
-         "Quit"]
+            self.number_menu_choices = ["Fibonacci", "Numbers", "Quit"]
       ```  
 
-   1. File operations menu items
+   1. Choices for the Plot group menu
 
       ``` python
-        self.temp_hist_menu_items = ["Bulk add xsl column", "Bulk create files", 
-        "Bulk nerge files", "Bulk merge xls files", "Quit"]
+            self.plot_menu_choices = ["Plot", "Quit"]
       ```
 
-   1. Misc menu items
+2. Group all the sample menus. 
+   The order must match the order of the `self.menu_items` list in
+   `code/menus_creation/main.py`.  
 
       ``` python
-         self.misc_menu_items = ["Fibonacci", "Plot", "Numbers", "Quit"]
-      ```
-
-1. Group of all the sample menus. 
-   The order must match the order of the `self.menu_items` list in `main.py`. 
-
-      ``` python
-
-        self.sub_menus = [
-            [], # Leave it empty to match dictionary keys.
-            self.temp_menu_items,
-            self.misc_menu_items,
-            self.temp_hist_menu_items,
+         self.sub_menus = [
+               [], # Leave it empty to match dictionary keys.
+                  # This is because the start key is 1 in the related
+                  # selection table (dictionary) `sub_menu` defined 
+                  # in main.py.   
+               self.number_menu_choices, # Value associated with key 1 
+               self.plot_menu_choices    # Value associated with key 2 
         ]
+        
       ```
 
-1. Define the instance for each sample class. 
+3. Instanciate each sample class. 
 
-   1. `DataAnalysisSamples` instance
+   1. `NumberSamples` instance
 
       ``` python
-         self.data_analysis_samples_instance = DataAnalysisSamples()
+            self.number_samples_instance = NumberSamples()
       ```  
 
-   1. `MiscellaneaSamples` instance
+   2. `PlotSamples` instance
 
       ```python
-        self.misc_samples_instance = MiscellaneaSamples()
+           self.plot_samples_instance = PlotSamples()
       ```  
 
-1. Define the decision table for each sample group.  
+4. Define the decision table for each sample group.  
 
       Each table (dictionary) entry contains a key, value pair.  The key is an
-      integer, the value is the name of the sample and the method to call.  Note
+      integer, the value is the sample instance and the method to call.  Note
       the use of the `lambda' function needed to pass parameters to the function to
       call, when needed. 
 
-      ``` python
-
-         self.data_analysis_samples = {
-               1: ["\n***  Plot annual temperature ***", 
-               self.data_analysis_samples_instance.plot_annual_temp],
-               2: ["\n***  Plot annual temperature histogram ***", 
-               self.data_analysis_samples_instance.plot_annual_temp_histogram],
-         }
-      ```
+      1. `Numbers` selection decision table
 
       ``` python
 
-         self.misc_samples = {
-               1: ["\n***  Calculate Fibonacci ***", lambda: self.misc_samples_instance.fiboTriangle(5)],
-               2: ["\n***  Plotting ***", self.misc_samples_instance.plotting],
-               3: ["\n***  Number Types ***", self.misc_samples_instance.getNumberTypes],
-         }
+           self.number_samples = {
+            1: ["\n***  Calculate Fibonacci ***", lambda: self.number_samples_instance.fiboTriangle(5)],
+            2: ["\n***  Get number types ***", self.number_samples_instance.getNumberTypes],
+        }
+        
+      ```
+
+      1. `Plot` selection decision table
+
+      ``` python
+
+          self.plot_samples = {
+            1: ["\n***  Plotting ***", self.plot_samples_instance.plotting],
+        }
 
       ```
 
-1. Group of all the sample submenus. 
+5. Group of all the sample decision tables
 
    ``` python
 
-        self.sample_groups = {
-            1: ["Data Analysis Samples", self.data_analysis_samples],
-            2: ["Misc Samples", self.misc_samples],
-            3: ["File Samples", self.temp_hist_menu_items],
+       self.sample_groups = {
+            1: ["Numbers Samples", self.number_samples],
+            2: ["Plot Samples", self.plot_samples]
         }
 
    ```
 
-#### 2.2.2. breadboard_selection_menu(self, sub_menu)
+#### 2.2.2. group_selection_submenu(self, sub_menu)
 
+Displays menu and process user's input.  Calls the proper sample method based on
+the user's selection.

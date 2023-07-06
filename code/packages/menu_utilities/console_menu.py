@@ -21,19 +21,19 @@ class ConsoleMenu:
 
     """
 
-    def __init__(self, name:str, menu:list):
+    def __init__(self, menu_name:str, menu_choices:list):
         """ Iitialize the class instance.
         
         Parameters
         ----------
-        name: 
+        menu_name: 
             The name of the menu to display. 
-        options: 
-            List of strings representing the menu elements.
+        menu_choices: 
+            List of strings representing the menu choices.
 
         """
-        self.menu_name = name
-        self.menu_options = menu
+        self.menu_name = menu_name
+        self.menu_options = menu_choices
    
     def input_number(self, prompt):
         """ 

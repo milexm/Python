@@ -28,9 +28,11 @@ class SubMenus(ConsoleMenu):
 
 
     def __init__(self):
-        ''' Initialize the class `AppsSubMenu` instance. '''
-
-        # Define the menu choices for each sample group. 
+        ''' Initialize menu choices for each sample group and group them in the
+            `sub_menus` list attribute. Instanciate each sample class. 
+            Define the decision table for each sample group.  
+            Group all the samples decision table. 
+        '''
 
         self.number_menu_choices = ["Fibonacci", "Numbers", "Quit"]
         """ Choices for the Numbers group menu"""
@@ -42,12 +44,15 @@ class SubMenus(ConsoleMenu):
         # list in `code/menus_creation/main.py`.  
         self.sub_menus = [
             [], # Leave it empty to match dictionary keys.
-            self.number_menu_choices,
-            self.plot_menu_choices,
+                # This is because the start key is 1 in the related
+                # selection table (dictionary) `sub_menu` defined 
+                # in main.py.   
+            self.number_menu_choices, # Value associated with key 1 
+            self.plot_menu_choices    # Value associated with key 2 
         ]
         """ Group of all the sample menus. """
 
-        # Define the instance for each sample class. 
+        # Instanciate each sample class. 
 
         self.number_samples_instance = NumberSamples()
         """ `NumberSamples` instance. """
@@ -81,8 +86,7 @@ class SubMenus(ConsoleMenu):
 
     def group_selection_submenu(self, sub_menu):
         """
-            Display menu and process user's input.  Call the proper method based
-            on the user's selection.
+            Display menu and process user's input.  Call the proper sample method based on the user's selection.
         """
 
         " Get the name of the selected sample group. First element in the list."
