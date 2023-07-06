@@ -1,5 +1,5 @@
 ---
-last update: 07/03/23
+last update: 07/06/23
 ---
 
 # ![python-icon](../../media/icons/python-icon.svg) Console menus creation 
@@ -213,44 +213,51 @@ This function initializes the class `SubMenus` instance.
 
 #### 2.2.2. group_selection_submenu(self, sub_menu)
 
-1. Get the name of the sub menu selected by the user. 
+1. Get the name of the sub menu selected by the user.
 
    ``` python
-      selected_menu_name = self.sample_groups[sub_menu][0]
+
+         selected_menu_name = self.sample_groups[sub_menu][0]
    ```
 
-1. Get the selected sub menu. 
+2. Get the selected sub menu. 
 
    ``` python
-      selected_sub_menu_items = self.sub_menus[sub_menu]
+
+         selected_sub_menu_items = self.sub_menus[sub_menu]
    ```
 
-1. Initialize selected menu name and items through `ConsoleMenu` parent class.  
+3. Initialize selected menu name and items through `ConsoleMenu` parent class.  
 
    ``` python
-      super().__init__(selected_menu_name, selected_sub_menu_items)
+
+         super().__init__(selected_menu_name, selected_sub_menu_items)
    ```
 
-1. Display the menu.
+4. Display the menu.
 
    ``` python
+
          self.display_menu()
    ```
 
-1. Get the user's choice.
+5. Get the user's choice.
 
    ``` python
+
          choice = self.get_user_choice()
    ```
 
-1. Get the selected list
-
-   ``` python 
-      _current_selection = self.sample_groups[sub_menu][1] 
-   ```
-
-1. Call the selectd sample function.
+6. Get the selected list
 
    ``` python
-      _current_selection[int(choice)][1]()
+
+         _current_selection = self.sample_groups[sub_menu][1] 
+   ```
+
+7. Call the selectd sample function.
+
+   ``` python
+
+         _current_selection[int(choice)][1]()
    ```

@@ -6,7 +6,7 @@
 <meta name="generator" content="pdoc 0.10.0" />
 <title>code.menus_creation API documentation</title>
 <meta name="description" content="---
-last update: 07/03/23
+last update: 07/06/23
 --- …" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
@@ -25,7 +25,7 @@ last update: 07/03/23
 </header>
 <section id="section-intro">
 <hr>
-<h2 id="last-update-070323">last update: 07/03/23</h2>
+<h2 id="last-update-070623">last update: 07/06/23</h2>
 <h1 id="console-menus-creation"><img alt="python-icon" src="../../media/icons/python-icon.svg"> Console menus creation</h1>
 <ul>
 <li><a href="#1-overview">1. Overview</a></li>
@@ -241,41 +241,55 @@ call, when needed. </p>
 <p>```</p>
 <h4 id="222-group_selection_submenuself-sub_menu">2.2.2. group_selection_submenu(self, sub_menu)</h4>
 <ol>
-<li>Get the name of the sub menu selected by the user. </li>
+<li>Get the name of the sub menu selected by the user.</li>
 </ol>
-<p><code>python
-selected_menu_name = self.sample_groups[sub_menu][0]</code></p>
+<p>``` python</p>
+<pre><code>     selected_menu_name = self.sample_groups[sub_menu][0]
+</code></pre>
+<p>```</p>
 <ol>
 <li>Get the selected sub menu. </li>
 </ol>
-<p><code>python
-selected_sub_menu_items = self.sub_menus[sub_menu]</code></p>
+<p>``` python</p>
+<pre><code>     selected_sub_menu_items = self.sub_menus[sub_menu]
+</code></pre>
+<p>```</p>
 <ol>
 <li>Initialize selected menu name and items through <code>ConsoleMenu</code> parent class.
 </li>
 </ol>
-<p><code>python
-super().__init__(selected_menu_name, selected_sub_menu_items)</code></p>
+<p>``` python</p>
+<pre><code>     super().__init__(selected_menu_name, selected_sub_menu_items)
+</code></pre>
+<p>```</p>
 <ol>
 <li>Display the menu.</li>
 </ol>
-<p><code>python
-self.display_menu()</code></p>
+<p>``` python</p>
+<pre><code>     self.display_menu()
+</code></pre>
+<p>```</p>
 <ol>
 <li>Get the user's choice.</li>
 </ol>
-<p><code>python
-choice = self.get_user_choice()</code></p>
+<p>``` python</p>
+<pre><code>     choice = self.get_user_choice()
+</code></pre>
+<p>```</p>
 <ol>
 <li>Get the selected list</li>
 </ol>
-<p><code>python
-_current_selection = self.sample_groups[sub_menu][1]</code></p>
+<p>``` python</p>
+<pre><code>     _current_selection = self.sample_groups[sub_menu][1]
+</code></pre>
+<p>```</p>
 <ol>
 <li>Call the selectd sample function.</li>
 </ol>
-<p><code>python
-_current_selection[int(choice)][1]()</code></p>
+<p>``` python</p>
+<pre><code>     _current_selection[int(choice)][1]()
+</code></pre>
+<p>```</p>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -323,7 +337,7 @@ introduce users to your project.
 <h1>Index</h1>
 <div class="toc">
 <ul>
-<li><a href="#last-update-070323">last update: 07/03/23</a></li>
+<li><a href="#last-update-070623">last update: 07/06/23</a></li>
 <li><a href="#console-menus-creation">Console menus creation</a><ul>
 <li><a href="#1-overview">1. Overview</a></li>
 <li><a href="#2-main-menu">2. Main menu</a><ul>
