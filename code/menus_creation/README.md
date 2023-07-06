@@ -220,7 +220,7 @@ This function initializes the class `SubMenus` instance.
          selected_menu_name = self.sample_groups[sub_menu][0]
    ```
 
-2. Get the selected sub menu. 
+2. Get the selected sub menu.
 
    ``` python
 
