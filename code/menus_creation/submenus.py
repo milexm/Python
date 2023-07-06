@@ -30,20 +30,20 @@ class SubMenus(ConsoleMenu):
     def __init__(self):
         ''' Initialize the class `AppsSubMenu` instance. '''
 
-        # Define the menu entries for each sample group. 
+        # Define the menu choices for each sample group. 
 
-        self.number_menu_items = ["Fibonacci", "Numbers", "Quit"]
-        """ Menu for the Numbers group"""
+        self.number_menu_choices = ["Fibonacci", "Numbers", "Quit"]
+        """ Choices for the Numbers group menu"""
         
-        self.plot_menu_items = ["Plot", "Quit"]
-        """ Menu for the Plot group."""
+        self.plot_menu_choices = ["Plot", "Quit"]
+        """ Choices for the Plot group menu"""
 
         # The order must match the order of the `self.menu_items` 
         # list in `code/menus_creation/main.py`.  
         self.sub_menus = [
             [], # Leave it empty to match dictionary keys.
-            self.number_menu_items,
-            self.plot_menu_items,
+            self.number_menu_choices,
+            self.plot_menu_choices,
         ]
         """ Group of all the sample menus. """
 
@@ -65,16 +65,19 @@ class SubMenus(ConsoleMenu):
             1: ["\n***  Calculate Fibonacci ***", lambda: self.number_samples_instance.fiboTriangle(5)],
             2: ["\n***  Get number types ***", self.number_samples_instance.getNumberTypes],
         }
+        """ Sub menu Numbers selection decision table. """
 
         self.plot_samples = {
             1: ["\n***  Plotting ***", self.plot_samples_instance.plotting],
         }
+        """ Sub menu Plotting selection decision table. """
+
     
         self.sample_groups = {
             1: ["Numbers Samples", self.number_samples],
             2: ["Plot Samples", self.plot_samples]
         }
-        """ Group of all the samples. """
+        """ Groups of all the samples decision table. """
 
     def group_selection_submenu(self, sub_menu):
         """

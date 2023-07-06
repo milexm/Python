@@ -5,7 +5,7 @@ last update: 07/03/23
 # ![python-icon](../../media/icons/python-icon.svg) Console menus creation 
 
 - [1. Overview](#1-overview)
-- [2. Define activation menus](#2-define-activation-menus)
+- [2. Define main menu](#2-define-main-menu)
   - [2.1. Group menu](#21-group-menu)
     - [2.1.1. \_\_init\_\_(self)](#211-__init__self)
     - [2.1.2. group\_selection\_menu(self)](#212-group_selection_menuself)
@@ -33,40 +33,39 @@ main menus along with the samples to run. Specifically:
     displays a menu of available samples, for the user's selected group, and
     allows the user to select a sample to execute from that group.
 
-## 2. Define activation menus
+## 2. Define main menu
 
 The steps to create menus are a bit cumbersome and interrelated. Also, we are
 going to use decision tables and not switch statements. The best way to
-demonstrate this is via an example by using the **bread_board
-group** in the *bread_board folder*.  
+demonstrate this is via an example by using the **Menus Creation Group Menu** in
+the `menus_creation` folder.  
 
 ### 2.1. Group menu 
 
 The main menu is created by the [main.py](main.py) file, that is the main
 activation code for the `menus_creation` **folder** that contains all the
-examples for this area. Below, we highlight the main steps. 
+examples for this area. Below, we highlight the main steps.
 
 #### 2.1.1. \_\_init\_\_(self) 
 
-1. Define the entries of the group menu.
+1. Define the choices of the main menu. Every choice represents a group of
+   samplea.
 
       ``` python
-      
-         self.menu_items = ["Numbers", "Plotting", "Quit"]
-      
+        self.menu_choices = ["Numbers", "Plotting", "Quit"]
       ```
 
 1. Initialize group menu name and options through the `ConsoleMenu` parent class
 
       ``` python
 
-         super().__init__("Menu Creation Group Menu", self.menu_items)
+         super().__init__("Main Menu", self.menu_choices)
       
       ```
 
       This generates the followng menu:
 
-      ![bread board group menu](../../media/samples/bread_board_group_menu.png)
+      ![menus creaton main menu](../../media/samples/menus_creation_main_menu.png)
 
 1. Instantiate the `BreadboardSubMenus` class.  It contains the submenus and the
 logic to allow the user to select to desired sample.  

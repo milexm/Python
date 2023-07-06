@@ -18,13 +18,13 @@ class GroupMenu(ConsoleMenu):
     """ 
     The `GroupMenu` class allows the user to select a group of examples to
     execute. It initializes the instance of the class by defining a list of menu
-    items. It also instantiates and initialiazes an instance of the
+    choices. It also instantiates and initialiazes an instance of the
     `ConsoleMenu` class.
 
     Remarks
     -------
     The `group_selection_menu` method of the `GroupMenu` class displays a menu
-    to the user with the options specified in the `self.menu_items` list. It
+    to the user with the options specified in the `self.menu_choices` list. It
     waits for the user to make a selection and then calls the corresponding menu
     based on the selection. For example, if the user selects 1, it will
     instantiate an instance of the `_menu.list_menu` class called `_lmenu` and
@@ -37,21 +37,23 @@ class GroupMenu(ConsoleMenu):
     
     Use
     ---    
-    In a terminal window enter: python [user path]./bread_board/main.py
+    In a terminal window enter: `python [user path]/menus_creation/main.py`
   
     """
 
     def __init__(self):
-        """ Initializes the `menu_items` attribute with the group menu entries.
-        Then it initializes the group menu name and menu entries via the
+        """ Initializes the `menu_choices` attribute with the main menu
+        choices. Then it initializes the main menu name and menu choices via the
         `ConsoleMenu` parent class.  """
 
-        # Define the entries of the group menu. 
-        self.menu_items = ["Numbers", "Plotting", "Quit"]
-      
-        # Initialize menu name and the menu entries via 
+        # Define the choices of the mzin menu. Every choice
+        # represents a group of samplea. 
+        self.menu_choices = ["Numbers", "Plotting", "Quit"]
+        """ Choices for the Main Group menu"""
+    
+        # Initialize menu name and the menu choices via 
         # the `ConsoleMenu` parent class.  
-        super().__init__("Menus Creation Group Menu", self.menu_items)
+        super().__init__("Main Menu", self.menu_choices)
 
 
        # Instantiate the sub menus class. 
@@ -60,10 +62,10 @@ class GroupMenu(ConsoleMenu):
 
         # Define the decision table to select the submenus. 
         # The order must match the order of the `self.sub_menus` 
-        # list in `code/menus_creation/menuscreation_submenus.py`.  
+        # list in `code/menus_creation/submenus.py`.  
         self.sub_menu = {
-            1:  lambda: _submenus.group_selection_submenu(1),
-            2:  lambda: _submenus.group_selection_submenu(2),
+            1:  lambda: _submenus.group_selection_submenu(1), # Numbers
+            2:  lambda: _submenus.group_selection_submenu(2), # Plotting 
         }
         """ Sub menu selection decision table. """
 
@@ -82,7 +84,7 @@ class GroupMenu(ConsoleMenu):
             # Get the user's choice.
             choice = self.get_user_choice()
 
-            if choice == len(self.menu_items):
+            if choice == len(self.menu_choices):
                 # User selected `Quit`. 
                 break        
             else:
