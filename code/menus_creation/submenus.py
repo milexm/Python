@@ -89,13 +89,13 @@ class SubMenus(ConsoleMenu):
             Display menu and process user's input.  Call the proper sample method based on the user's selection.
         """
 
-        " Get the name of the selected sample group. First element in the list."
+        " Get the name of the sub menu selected by the user. First element in the list."
         selected_menu_name = self.sample_groups[sub_menu][0]
 
-        " Get the selected submenu. Second element in the list. "
+        " Get the selected sub menu."
         selected_sub_menu_items = self.sub_menus[sub_menu]
 
-        # Initialize selected menu name and items through the parent class.  
+        # Initialize selected menu name and items through the `ConsoleMenu` parent class.  
         super().__init__(selected_menu_name, selected_sub_menu_items)
 
         while True:

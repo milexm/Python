@@ -240,9 +240,42 @@ call, when needed. </p>
 </code></pre>
 <p>```</p>
 <h4 id="222-group_selection_submenuself-sub_menu">2.2.2. group_selection_submenu(self, sub_menu)</h4>
-<p>Displays menu and process user's input.
-Calls the proper sample method based on
-the user's selection.</p>
+<ol>
+<li>Get the name of the sub menu selected by the user. </li>
+</ol>
+<p><code>python
+selected_menu_name = self.sample_groups[sub_menu][0]</code></p>
+<ol>
+<li>Get the selected sub menu. </li>
+</ol>
+<p><code>python
+selected_sub_menu_items = self.sub_menus[sub_menu]</code></p>
+<ol>
+<li>Initialize selected menu name and items through <code>ConsoleMenu</code> parent class.
+</li>
+</ol>
+<p><code>python
+super().__init__(selected_menu_name, selected_sub_menu_items)</code></p>
+<ol>
+<li>Display the menu.</li>
+</ol>
+<p><code>python
+self.display_menu()</code></p>
+<ol>
+<li>Get the user's choice.</li>
+</ol>
+<p><code>python
+choice = self.get_user_choice()</code></p>
+<ol>
+<li>Get the selected list</li>
+</ol>
+<p><code>python
+_current_selection = self.sample_groups[sub_menu][1]</code></p>
+<ol>
+<li>Call the selectd sample function.</li>
+</ol>
+<p><code>python
+_current_selection[int(choice)][1]()</code></p>
 <details class="source">
 <summary>
 <span>Expand source code</span>
