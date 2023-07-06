@@ -73,7 +73,7 @@ class GroupMenu(ConsoleMenu):
         """
         Display the group menu and and start an endless loop.  Wait for the
         user's input and display the submenu based on the user's selection.  
-        End the loop when the user's `Quit` request. 
+        End the loop when the user enters the`Quit` request. 
         """
 
         while True:

@@ -67,8 +67,8 @@ examples for this area. Below, we highlight the main steps.
 
       ![menus creaton main menu](../../media/samples/menus_creation_main_menu.png)
 
-1. Instantiate the `BreadboardSubMenus` class.  It contains the submenus and the
-logic to allow the user to select to desired sample.  
+1. Instantiate the `SubMenus` class.  It contains the submenus and the
+logic to allow the user to select the desired sample.  
 
       ``` python
       
@@ -76,22 +76,22 @@ logic to allow the user to select to desired sample.
       
       ```
 
-1. Define the sub menus decision table or dictionary.
+1. Define the decision table to select the submenus.  The order must match the
+order of the `self.sub_menus`  list in `code/menus_creation/submenus.py`.  
 
       ``` python
       
-         self.sub_menu = {
-            1:  lambda: _amenu.breadboard_selection_menu(1),
-            2:  lambda: _amenu.breadboard_selection_menu(2),
-            3:  lambda: _amenu.breadboard_selection_menu(3)
-         }
+          self.sub_menu = {
+            1:  lambda: _submenus.group_selection_submenu(1), # Numbers
+            2:  lambda: _submenus.group_selection_submenu(2), # Plotting 
+        }
       
       ```
 
    The previous `sub_menu` is a dictionary of key, value pairs.  The key is an
-   integer (from 1 to 3), the value is a `lambda` function which calls the
-   `breadboard_selection_menu` menthod in the `BreadboardSubMenus` class and
-   passes to it an integer (from 1 to 3) selected by the user and shown in this
+   integer (from 1 to 2), the value is a `lambda` function which calls the
+   `group_selection_menu` menthod in the `SubMenus` class and
+   passes to it an integer (from 1 to 2) selected by the user and shown in this
    call `self.sub_menu[choice]()`. 
 
 #### 2.1.2. group_selection_menu(self)
@@ -100,7 +100,7 @@ logic to allow the user to select to desired sample.
    `ConsoleMenu` parent class. 
 1. Loop to get the user's choice by calling `get_user_choice()` method in the
    `ConsoleMenu`.
-1. If the user select `Quit` terminate the loop, otherwise display the submenus
+1. If the user select `Quit` terminate the loop, otherwise display the submenu
    selected by the user.
   
 #### 2.1.3. About lambda
@@ -110,7 +110,7 @@ functions. The `lambda function can take any number of arguments, but can only
 have one expression.  
 
 Notice the syntax `self.sub_menu[choice]()` with parenthesis `()`, allows the
-`lambda` function evaluation, that is the call to `breadboard_selection_menu`
+`lambda` function evaluation, that is the call to `group_selection_menu`
 menthod, only when the dictionary entry is selected by the user and not at the
 time the dictionary is created.
 
