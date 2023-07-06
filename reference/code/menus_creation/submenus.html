@@ -49,35 +49,39 @@ from console_menu import ConsoleMenu
 
 class SubMenus(ConsoleMenu):
     &#34;&#34;&#34; 
-    The class `MenusCreationSubMenu` submenus for the `menus_creation` sample
-    group selected by the user in [main.py](./code/apps/main.py).  The class has
-    an instance method `menus_creation_selection_menu` that displays a menu of
-    available samples, for the group, that allows the user to select a sample to
-    execute.
+    The class `SubMenus` creates the various group menus (submenus).  The class
+    instance method `group_selection_submenu` displays a menu of available
+    samples, for the user&#39;s selected group, and allows the user to select a
+    sample to execute from that group.
     &#34;&#34;&#34;
 
 
     def __init__(self):
-        &#39;&#39;&#39; Initialize the class `AppsSubMenu` instance. &#39;&#39;&#39;
+        &#39;&#39;&#39; Initialize menu choices for each sample group and group them in the
+            `sub_menus` list attribute. Instanciate each sample class. 
+            Define the decision table for each sample group.  
+            Group all the samples decision table. 
+        &#39;&#39;&#39;
 
-        # Define the menu entries for each sample group. 
-
-        self.number_menu_items = [&#34;Fibonacci&#34;, &#34;Numbers&#34;, &#34;Quit&#34;]
-        &#34;&#34;&#34; Menu for the Numbers group&#34;&#34;&#34;
+        self.number_menu_choices = [&#34;Fibonacci&#34;, &#34;Numbers&#34;, &#34;Quit&#34;]
+        &#34;&#34;&#34; Choices for the Numbers group menu&#34;&#34;&#34;
         
-        self.plot_menu_items = [&#34;Plot&#34;, &#34;Quit&#34;]
-        &#34;&#34;&#34; Menu for the Plot group.&#34;&#34;&#34;
+        self.plot_menu_choices = [&#34;Plot&#34;, &#34;Quit&#34;]
+        &#34;&#34;&#34; Choices for the Plot group menu&#34;&#34;&#34;
 
         # The order must match the order of the `self.menu_items` 
         # list in `code/menus_creation/main.py`.  
         self.sub_menus = [
             [], # Leave it empty to match dictionary keys.
-            self.number_menu_items,
-            self.plot_menu_items,
+                # This is because the start key is 1 in the related
+                # selection table (dictionary) `sub_menu` defined 
+                # in main.py.   
+            self.number_menu_choices, # Value associated with key 1 
+            self.plot_menu_choices    # Value associated with key 2 
         ]
         &#34;&#34;&#34; Group of all the sample menus. &#34;&#34;&#34;
 
-        # Define the instance for each sample class. 
+        # Instanciate each sample class. 
 
         self.number_samples_instance = NumberSamples()
         &#34;&#34;&#34; `NumberSamples` instance. &#34;&#34;&#34;
@@ -95,21 +99,23 @@ class SubMenus(ConsoleMenu):
             1: [&#34;\n***  Calculate Fibonacci ***&#34;, lambda: self.number_samples_instance.fiboTriangle(5)],
             2: [&#34;\n***  Get number types ***&#34;, self.number_samples_instance.getNumberTypes],
         }
+        &#34;&#34;&#34; Sub menu Numbers selection decision table. &#34;&#34;&#34;
 
         self.plot_samples = {
             1: [&#34;\n***  Plotting ***&#34;, self.plot_samples_instance.plotting],
         }
+        &#34;&#34;&#34; Sub menu Plotting selection decision table. &#34;&#34;&#34;
+
     
         self.sample_groups = {
             1: [&#34;Numbers Samples&#34;, self.number_samples],
             2: [&#34;Plot Samples&#34;, self.plot_samples]
         }
-        &#34;&#34;&#34; Group of all the samples. &#34;&#34;&#34;
+        &#34;&#34;&#34; Groups of all the samples decision table. &#34;&#34;&#34;
 
     def group_selection_submenu(self, sub_menu):
         &#34;&#34;&#34;
-            Display menu and process user&#39;s input.  Call the proper method based
-            on the user&#39;s selection.
+            Display menu and process user&#39;s input.  Call the proper sample method based on the user&#39;s selection.
         &#34;&#34;&#34;
 
         &#34; Get the name of the selected sample group. First element in the list.&#34;
@@ -154,48 +160,54 @@ class SubMenus(ConsoleMenu):
 <span>class <span class="ident">SubMenus</span></span>
 </code></dt>
 <dd>
-<div class="desc"><p>The class <code>MenusCreationSubMenu</code> submenus for the <code>menus_creation</code> sample
-group selected by the user in <a href="./code/apps/main.py">main.py</a>.
-The class has
-an instance method <code>menus_creation_selection_menu</code> that displays a menu of
-available samples, for the group, that allows the user to select a sample to
-execute.</p>
-<p>Initialize the class <code>AppsSubMenu</code> instance.</p></div>
+<div class="desc"><p>The class <code><a title="code.menus_creation.submenus.SubMenus" href="#code.menus_creation.submenus.SubMenus">SubMenus</a></code> creates the various group menus (submenus).
+The class
+instance method <code>group_selection_submenu</code> displays a menu of available
+samples, for the user's selected group, and allows the user to select a
+sample to execute from that group.</p>
+<p>Initialize menu choices for each sample group and group them in the
+<code>sub_menus</code> list attribute. Instanciate each sample class.
+Define the decision table for each sample group.<br>
+Group all the samples decision table.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">class SubMenus(ConsoleMenu):
     &#34;&#34;&#34; 
-    The class `MenusCreationSubMenu` submenus for the `menus_creation` sample
-    group selected by the user in [main.py](./code/apps/main.py).  The class has
-    an instance method `menus_creation_selection_menu` that displays a menu of
-    available samples, for the group, that allows the user to select a sample to
-    execute.
+    The class `SubMenus` creates the various group menus (submenus).  The class
+    instance method `group_selection_submenu` displays a menu of available
+    samples, for the user&#39;s selected group, and allows the user to select a
+    sample to execute from that group.
     &#34;&#34;&#34;
 
 
     def __init__(self):
-        &#39;&#39;&#39; Initialize the class `AppsSubMenu` instance. &#39;&#39;&#39;
+        &#39;&#39;&#39; Initialize menu choices for each sample group and group them in the
+            `sub_menus` list attribute. Instanciate each sample class. 
+            Define the decision table for each sample group.  
+            Group all the samples decision table. 
+        &#39;&#39;&#39;
 
-        # Define the menu entries for each sample group. 
-
-        self.number_menu_items = [&#34;Fibonacci&#34;, &#34;Numbers&#34;, &#34;Quit&#34;]
-        &#34;&#34;&#34; Menu for the Numbers group&#34;&#34;&#34;
+        self.number_menu_choices = [&#34;Fibonacci&#34;, &#34;Numbers&#34;, &#34;Quit&#34;]
+        &#34;&#34;&#34; Choices for the Numbers group menu&#34;&#34;&#34;
         
-        self.plot_menu_items = [&#34;Plot&#34;, &#34;Quit&#34;]
-        &#34;&#34;&#34; Menu for the Plot group.&#34;&#34;&#34;
+        self.plot_menu_choices = [&#34;Plot&#34;, &#34;Quit&#34;]
+        &#34;&#34;&#34; Choices for the Plot group menu&#34;&#34;&#34;
 
         # The order must match the order of the `self.menu_items` 
         # list in `code/menus_creation/main.py`.  
         self.sub_menus = [
             [], # Leave it empty to match dictionary keys.
-            self.number_menu_items,
-            self.plot_menu_items,
+                # This is because the start key is 1 in the related
+                # selection table (dictionary) `sub_menu` defined 
+                # in main.py.   
+            self.number_menu_choices, # Value associated with key 1 
+            self.plot_menu_choices    # Value associated with key 2 
         ]
         &#34;&#34;&#34; Group of all the sample menus. &#34;&#34;&#34;
 
-        # Define the instance for each sample class. 
+        # Instanciate each sample class. 
 
         self.number_samples_instance = NumberSamples()
         &#34;&#34;&#34; `NumberSamples` instance. &#34;&#34;&#34;
@@ -213,21 +225,23 @@ execute.</p>
             1: [&#34;\n***  Calculate Fibonacci ***&#34;, lambda: self.number_samples_instance.fiboTriangle(5)],
             2: [&#34;\n***  Get number types ***&#34;, self.number_samples_instance.getNumberTypes],
         }
+        &#34;&#34;&#34; Sub menu Numbers selection decision table. &#34;&#34;&#34;
 
         self.plot_samples = {
             1: [&#34;\n***  Plotting ***&#34;, self.plot_samples_instance.plotting],
         }
+        &#34;&#34;&#34; Sub menu Plotting selection decision table. &#34;&#34;&#34;
+
     
         self.sample_groups = {
             1: [&#34;Numbers Samples&#34;, self.number_samples],
             2: [&#34;Plot Samples&#34;, self.plot_samples]
         }
-        &#34;&#34;&#34; Group of all the samples. &#34;&#34;&#34;
+        &#34;&#34;&#34; Groups of all the samples decision table. &#34;&#34;&#34;
 
     def group_selection_submenu(self, sub_menu):
         &#34;&#34;&#34;
-            Display menu and process user&#39;s input.  Call the proper method based
-            on the user&#39;s selection.
+            Display menu and process user&#39;s input.  Call the proper sample method based on the user&#39;s selection.
         &#34;&#34;&#34;
 
         &#34; Get the name of the selected sample group. First element in the list.&#34;
@@ -264,17 +278,25 @@ execute.</p>
 </ul>
 <h3>Instance variables</h3>
 <dl>
-<dt id="code.menus_creation.submenus.SubMenus.number_menu_items"><code class="name">var <span class="ident">number_menu_items</span></code></dt>
+<dt id="code.menus_creation.submenus.SubMenus.number_menu_choices"><code class="name">var <span class="ident">number_menu_choices</span></code></dt>
 <dd>
-<div class="desc"><p>Menu for the Numbers group</p></div>
+<div class="desc"><p>Choices for the Numbers group menu</p></div>
+</dd>
+<dt id="code.menus_creation.submenus.SubMenus.number_samples"><code class="name">var <span class="ident">number_samples</span></code></dt>
+<dd>
+<div class="desc"><p>Sub menu Numbers selection decision table.</p></div>
 </dd>
 <dt id="code.menus_creation.submenus.SubMenus.number_samples_instance"><code class="name">var <span class="ident">number_samples_instance</span></code></dt>
 <dd>
 <div class="desc"><p><code>NumberSamples</code> instance.</p></div>
 </dd>
-<dt id="code.menus_creation.submenus.SubMenus.plot_menu_items"><code class="name">var <span class="ident">plot_menu_items</span></code></dt>
+<dt id="code.menus_creation.submenus.SubMenus.plot_menu_choices"><code class="name">var <span class="ident">plot_menu_choices</span></code></dt>
 <dd>
-<div class="desc"><p>Menu for the Plot group.</p></div>
+<div class="desc"><p>Choices for the Plot group menu</p></div>
+</dd>
+<dt id="code.menus_creation.submenus.SubMenus.plot_samples"><code class="name">var <span class="ident">plot_samples</span></code></dt>
+<dd>
+<div class="desc"><p>Sub menu Plotting selection decision table.</p></div>
 </dd>
 <dt id="code.menus_creation.submenus.SubMenus.plot_samples_instance"><code class="name">var <span class="ident">plot_samples_instance</span></code></dt>
 <dd>
@@ -282,7 +304,7 @@ execute.</p>
 </dd>
 <dt id="code.menus_creation.submenus.SubMenus.sample_groups"><code class="name">var <span class="ident">sample_groups</span></code></dt>
 <dd>
-<div class="desc"><p>Group of all the samples.</p></div>
+<div class="desc"><p>Groups of all the samples decision table.</p></div>
 </dd>
 <dt id="code.menus_creation.submenus.SubMenus.sub_menus"><code class="name">var <span class="ident">sub_menus</span></code></dt>
 <dd>
@@ -296,16 +318,14 @@ execute.</p>
 </code></dt>
 <dd>
 <div class="desc"><p>Display menu and process user's input.
-Call the proper method based
-on the user's selection.</p></div>
+Call the proper sample method based on the user's selection.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def group_selection_submenu(self, sub_menu):
     &#34;&#34;&#34;
-        Display menu and process user&#39;s input.  Call the proper method based
-        on the user&#39;s selection.
+        Display menu and process user&#39;s input.  Call the proper sample method based on the user&#39;s selection.
     &#34;&#34;&#34;
 
     &#34; Get the name of the selected sample group. First element in the list.&#34;
@@ -359,9 +379,11 @@ on the user's selection.</p></div>
 <h4><code><a title="code.menus_creation.submenus.SubMenus" href="#code.menus_creation.submenus.SubMenus">SubMenus</a></code></h4>
 <ul class="">
 <li><code><a title="code.menus_creation.submenus.SubMenus.group_selection_submenu" href="#code.menus_creation.submenus.SubMenus.group_selection_submenu">group_selection_submenu</a></code></li>
-<li><code><a title="code.menus_creation.submenus.SubMenus.number_menu_items" href="#code.menus_creation.submenus.SubMenus.number_menu_items">number_menu_items</a></code></li>
+<li><code><a title="code.menus_creation.submenus.SubMenus.number_menu_choices" href="#code.menus_creation.submenus.SubMenus.number_menu_choices">number_menu_choices</a></code></li>
+<li><code><a title="code.menus_creation.submenus.SubMenus.number_samples" href="#code.menus_creation.submenus.SubMenus.number_samples">number_samples</a></code></li>
 <li><code><a title="code.menus_creation.submenus.SubMenus.number_samples_instance" href="#code.menus_creation.submenus.SubMenus.number_samples_instance">number_samples_instance</a></code></li>
-<li><code><a title="code.menus_creation.submenus.SubMenus.plot_menu_items" href="#code.menus_creation.submenus.SubMenus.plot_menu_items">plot_menu_items</a></code></li>
+<li><code><a title="code.menus_creation.submenus.SubMenus.plot_menu_choices" href="#code.menus_creation.submenus.SubMenus.plot_menu_choices">plot_menu_choices</a></code></li>
+<li><code><a title="code.menus_creation.submenus.SubMenus.plot_samples" href="#code.menus_creation.submenus.SubMenus.plot_samples">plot_samples</a></code></li>
 <li><code><a title="code.menus_creation.submenus.SubMenus.plot_samples_instance" href="#code.menus_creation.submenus.SubMenus.plot_samples_instance">plot_samples_instance</a></code></li>
 <li><code><a title="code.menus_creation.submenus.SubMenus.sample_groups" href="#code.menus_creation.submenus.SubMenus.sample_groups">sample_groups</a></code></li>
 <li><code><a title="code.menus_creation.submenus.SubMenus.sub_menus" href="#code.menus_creation.submenus.SubMenus.sub_menus">sub_menus</a></code></li>

@@ -47,13 +47,13 @@ class GroupMenu(ConsoleMenu):
     &#34;&#34;&#34; 
     The `GroupMenu` class allows the user to select a group of examples to
     execute. It initializes the instance of the class by defining a list of menu
-    items. It also instantiates and initialiazes an instance of the
+    choices. It also instantiates and initialiazes an instance of the
     `ConsoleMenu` class.
 
     Remarks
     -------
     The `group_selection_menu` method of the `GroupMenu` class displays a menu
-    to the user with the options specified in the `self.menu_items` list. It
+    to the user with the options specified in the `self.menu_choices` list. It
     waits for the user to make a selection and then calls the corresponding menu
     based on the selection. For example, if the user selects 1, it will
     instantiate an instance of the `_menu.list_menu` class called `_lmenu` and
@@ -66,21 +66,23 @@ class GroupMenu(ConsoleMenu):
     
     Use
     ---    
-    In a terminal window enter: python [user path]./bread_board/main.py
+    In a terminal window enter: `python [user path]/menus_creation/main.py`
   
     &#34;&#34;&#34;
 
     def __init__(self):
-        &#34;&#34;&#34; Initializes the `menu_items` attribute with the group menu entries.
-        Then it initializes the group menu name and menu entries via the
-        `ConsoleMenu` parent class.  &#34;&#34;&#34;
+        &#34;&#34;&#34; Initialize the `menu_choices` attribute with the main menu
+        choices. Initialize the main menu name and menu choices via the
+        `ConsoleMenu` parent class. Define the decision table to select the submenus. &#34;&#34;&#34;
 
-        # Define the entries of the group menu. 
-        self.menu_items = [&#34;Numbers&#34;, &#34;Plotting&#34;, &#34;Quit&#34;]
-      
-        # Initialize menu name and the menu entries via 
+        # Define the choices of the mzin menu. Every choice
+        # represents a group of samplea. 
+        self.menu_choices = [&#34;Numbers&#34;, &#34;Plotting&#34;, &#34;Quit&#34;]
+        &#34;&#34;&#34; Choices for the Main Group menu&#34;&#34;&#34;
+    
+        # Initialize menu name and the menu choices via 
         # the `ConsoleMenu` parent class.  
-        super().__init__(&#34;Menus Creation Group Menu&#34;, self.menu_items)
+        super().__init__(&#34;Main Menu&#34;, self.menu_choices)
 
 
        # Instantiate the sub menus class. 
@@ -89,10 +91,10 @@ class GroupMenu(ConsoleMenu):
 
         # Define the decision table to select the submenus. 
         # The order must match the order of the `self.sub_menus` 
-        # list in `code/menus_creation/menuscreation_submenus.py`.  
+        # list in `code/menus_creation/submenus.py`.  
         self.sub_menu = {
-            1:  lambda: _submenus.group_selection_submenu(1),
-            2:  lambda: _submenus.group_selection_submenu(2),
+            1:  lambda: _submenus.group_selection_submenu(1), # Numbers
+            2:  lambda: _submenus.group_selection_submenu(2), # Plotting 
         }
         &#34;&#34;&#34; Sub menu selection decision table. &#34;&#34;&#34;
 
@@ -100,7 +102,7 @@ class GroupMenu(ConsoleMenu):
         &#34;&#34;&#34;
         Display the group menu and and start an endless loop.  Wait for the
         user&#39;s input and display the submenu based on the user&#39;s selection.  
-        End the loop when the user&#39;s `Quit` request. 
+        End the loop when the user enters the`Quit` request. 
         &#34;&#34;&#34;
 
         while True:
@@ -111,7 +113,7 @@ class GroupMenu(ConsoleMenu):
             # Get the user&#39;s choice.
             choice = self.get_user_choice()
 
-            if choice == len(self.menu_items):
+            if choice == len(self.menu_choices):
                 # User selected `Quit`. 
                 break        
             else:
@@ -141,11 +143,11 @@ if __name__ == &#39;__main__&#39;:
 <dd>
 <div class="desc"><p>The <code><a title="code.menus_creation.main.GroupMenu" href="#code.menus_creation.main.GroupMenu">GroupMenu</a></code> class allows the user to select a group of examples to
 execute. It initializes the instance of the class by defining a list of menu
-items. It also instantiates and initialiazes an instance of the
+choices. It also instantiates and initialiazes an instance of the
 <code>ConsoleMenu</code> class.</p>
 <h2 id="remarks">Remarks</h2>
 <p>The <code>group_selection_menu</code> method of the <code><a title="code.menus_creation.main.GroupMenu" href="#code.menus_creation.main.GroupMenu">GroupMenu</a></code> class displays a menu
-to the user with the options specified in the <code>self.menu_items</code> list. It
+to the user with the options specified in the <code>self.menu_choices</code> list. It
 waits for the user to make a selection and then calls the corresponding menu
 based on the selection. For example, if the user selects 1, it will
 instantiate an instance of the <code>_menu.list_menu</code> class called <code>_lmenu</code> and
@@ -155,10 +157,10 @@ an instance of the <code><a title="code.menus_creation.main.GroupMenu" href="#co
 group_selection_menu method on _gmenu. This will display the group selection
 menu to the user and allow them to choose a group of examples to execute.</p>
 <h2 id="use">Use</h2>
-<p>In a terminal window enter: python [user path]./bread_board/main.py</p>
-<p>Initializes the <code>menu_items</code> attribute with the group menu entries.
-Then it initializes the group menu name and menu entries via the
-<code>ConsoleMenu</code> parent class.</p></div>
+<p>In a terminal window enter: <code>python [user path]/menus_creation/main.py</code></p>
+<p>Initialize the <code>menu_choices</code> attribute with the main menu
+choices. Initialize the main menu name and menu choices via the
+<code>ConsoleMenu</code> parent class. Define the decision table to select the submenus.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -168,13 +170,13 @@ Then it initializes the group menu name and menu entries via the
     &#34;&#34;&#34; 
     The `GroupMenu` class allows the user to select a group of examples to
     execute. It initializes the instance of the class by defining a list of menu
-    items. It also instantiates and initialiazes an instance of the
+    choices. It also instantiates and initialiazes an instance of the
     `ConsoleMenu` class.
 
     Remarks
     -------
     The `group_selection_menu` method of the `GroupMenu` class displays a menu
-    to the user with the options specified in the `self.menu_items` list. It
+    to the user with the options specified in the `self.menu_choices` list. It
     waits for the user to make a selection and then calls the corresponding menu
     based on the selection. For example, if the user selects 1, it will
     instantiate an instance of the `_menu.list_menu` class called `_lmenu` and
@@ -187,21 +189,23 @@ Then it initializes the group menu name and menu entries via the
     
     Use
     ---    
-    In a terminal window enter: python [user path]./bread_board/main.py
+    In a terminal window enter: `python [user path]/menus_creation/main.py`
   
     &#34;&#34;&#34;
 
     def __init__(self):
-        &#34;&#34;&#34; Initializes the `menu_items` attribute with the group menu entries.
-        Then it initializes the group menu name and menu entries via the
-        `ConsoleMenu` parent class.  &#34;&#34;&#34;
+        &#34;&#34;&#34; Initialize the `menu_choices` attribute with the main menu
+        choices. Initialize the main menu name and menu choices via the
+        `ConsoleMenu` parent class. Define the decision table to select the submenus. &#34;&#34;&#34;
 
-        # Define the entries of the group menu. 
-        self.menu_items = [&#34;Numbers&#34;, &#34;Plotting&#34;, &#34;Quit&#34;]
-      
-        # Initialize menu name and the menu entries via 
+        # Define the choices of the mzin menu. Every choice
+        # represents a group of samplea. 
+        self.menu_choices = [&#34;Numbers&#34;, &#34;Plotting&#34;, &#34;Quit&#34;]
+        &#34;&#34;&#34; Choices for the Main Group menu&#34;&#34;&#34;
+    
+        # Initialize menu name and the menu choices via 
         # the `ConsoleMenu` parent class.  
-        super().__init__(&#34;Menus Creation Group Menu&#34;, self.menu_items)
+        super().__init__(&#34;Main Menu&#34;, self.menu_choices)
 
 
        # Instantiate the sub menus class. 
@@ -210,10 +214,10 @@ Then it initializes the group menu name and menu entries via the
 
         # Define the decision table to select the submenus. 
         # The order must match the order of the `self.sub_menus` 
-        # list in `code/menus_creation/menuscreation_submenus.py`.  
+        # list in `code/menus_creation/submenus.py`.  
         self.sub_menu = {
-            1:  lambda: _submenus.group_selection_submenu(1),
-            2:  lambda: _submenus.group_selection_submenu(2),
+            1:  lambda: _submenus.group_selection_submenu(1), # Numbers
+            2:  lambda: _submenus.group_selection_submenu(2), # Plotting 
         }
         &#34;&#34;&#34; Sub menu selection decision table. &#34;&#34;&#34;
 
@@ -221,7 +225,7 @@ Then it initializes the group menu name and menu entries via the
         &#34;&#34;&#34;
         Display the group menu and and start an endless loop.  Wait for the
         user&#39;s input and display the submenu based on the user&#39;s selection.  
-        End the loop when the user&#39;s `Quit` request. 
+        End the loop when the user enters the`Quit` request. 
         &#34;&#34;&#34;
 
         while True:
@@ -232,7 +236,7 @@ Then it initializes the group menu name and menu entries via the
             # Get the user&#39;s choice.
             choice = self.get_user_choice()
 
-            if choice == len(self.menu_items):
+            if choice == len(self.menu_choices):
                 # User selected `Quit`. 
                 break        
             else:
@@ -245,6 +249,10 @@ Then it initializes the group menu name and menu entries via the
 </ul>
 <h3>Instance variables</h3>
 <dl>
+<dt id="code.menus_creation.main.GroupMenu.menu_choices"><code class="name">var <span class="ident">menu_choices</span></code></dt>
+<dd>
+<div class="desc"><p>Choices for the Main Group menu</p></div>
+</dd>
 <dt id="code.menus_creation.main.GroupMenu.sub_menu"><code class="name">var <span class="ident">sub_menu</span></code></dt>
 <dd>
 <div class="desc"><p>Sub menu selection decision table.</p></div>
@@ -259,7 +267,7 @@ Then it initializes the group menu name and menu entries via the
 <div class="desc"><p>Display the group menu and and start an endless loop.
 Wait for the
 user's input and display the submenu based on the user's selection.<br>
-End the loop when the user's <code>Quit</code> request.</p></div>
+End the loop when the user enters the<code>Quit</code> request.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -268,7 +276,7 @@ End the loop when the user's <code>Quit</code> request.</p></div>
     &#34;&#34;&#34;
     Display the group menu and and start an endless loop.  Wait for the
     user&#39;s input and display the submenu based on the user&#39;s selection.  
-    End the loop when the user&#39;s `Quit` request. 
+    End the loop when the user enters the`Quit` request. 
     &#34;&#34;&#34;
 
     while True:
@@ -279,7 +287,7 @@ End the loop when the user's <code>Quit</code> request.</p></div>
         # Get the user&#39;s choice.
         choice = self.get_user_choice()
 
-        if choice == len(self.menu_items):
+        if choice == len(self.menu_choices):
             # User selected `Quit`. 
             break        
         else:
@@ -309,6 +317,7 @@ End the loop when the user's <code>Quit</code> request.</p></div>
 <h4><code><a title="code.menus_creation.main.GroupMenu" href="#code.menus_creation.main.GroupMenu">GroupMenu</a></code></h4>
 <ul class="">
 <li><code><a title="code.menus_creation.main.GroupMenu.group_selection_menu" href="#code.menus_creation.main.GroupMenu.group_selection_menu">group_selection_menu</a></code></li>
+<li><code><a title="code.menus_creation.main.GroupMenu.menu_choices" href="#code.menus_creation.main.GroupMenu.menu_choices">menu_choices</a></code></li>
 <li><code><a title="code.menus_creation.main.GroupMenu.sub_menu" href="#code.menus_creation.main.GroupMenu.sub_menu">sub_menu</a></code></li>
 </ul>
 </li>
