@@ -1,67 +1,75 @@
 ---
-last update: 07/03/23
+last update: 07/06/23
 ---
 
 # ![python-icon](../../media/icons/python-icon.svg) Console menus creation 
 
 - [1. Overview](#1-overview)
-- [2. Define activation menus](#2-define-activation-menus)
-  - [2.1. Group menu](#21-group-menu)
+- [2. Main menu](#2-main-menu)
+  - [2.1.  MainMenu class](#21--mainmenu-class)
     - [2.1.1. \_\_init\_\_(self)](#211-__init__self)
     - [2.1.2. group\_selection\_menu(self)](#212-group_selection_menuself)
     - [2.1.3. About lambda](#213-about-lambda)
-  - [2.2. Submenus](#22-submenus)
+  - [2.2. SubMenus class](#22-submenus-class)
     - [2.2.1. \_\_init\_\_(self)](#221-__init__self)
-    - [2.2.2. breadboard\_selection\_menu(self, sub\_menu)](#222-breadboard_selection_menuself-sub_menu)
+    - [2.2.2. group\_selection\_submenu(self, sub\_menu)](#222-group_selection_submenuself-sub_menu)
 
 ## 1. Overview
 
-The `menus_creation` folder contains a complete example on how to create console
+The `menus_creation` folder contains a complete example on how to create a console
 menu and submenus to select and execute code sample from a terminal windows.  
 > [!NOTE] You can use the example as a template for the creation od your own
-> menus and submenus performing the following steps:
+> menus and submenus. Below are the steps you cna follow.
 
-> 1. The `menus_creation` folder name with the name of the folder containin the
->    code examples.
-> 
+The `menus_creation` is the main folder that contains the code to create the
+main menus along with the samples to run. Specifically:
 
-## 2. Define activation menus
+ 1. The `main.py` allows for the creation of the main menu. This menu allows the
+    user to select any of several group submenus.
+ 2. The `number_play` is the folder that contains number related samples.
+ 3. The `plotting_away` is folder that contains plotting related samples.  
+ 4. The  `submenus.py`  contains the class `SubMenus` that creates the various
+    group menus (submenus).  The class instance method `group_selection_submenu`
+    displays a menu of available samples, for the user's selected group, and
+    allows the user to select a sample to execute from that group.
+
+## 2. Main menu
 
 The steps to create menus are a bit cumbersome and interrelated. Also, we are
 going to use decision tables and not switch statements. The best way to
-demonstrate this is via an example by using the **bread_board
-group** in the *bread_board folder*.  
+demonstrate this is via an example by using the **Main Menu** in
+the `menus_creation` folder.  
 
-### 2.1. Group menu 
+### 2.1.  MainMenu class
 
-The main menu is created by the [main.py](main.py) file, that is the main
-activation code for the `menus_creation` **folder** that contains all the
-examples for this area. Below, we highlight the main steps. 
+The main menu is created by the [mainmenu.py](mainmenu.py) file.  This is done
+in the `class MainMenu(ConsoleMenu)` where the main activation code is for the
+`menus_creation` **folder** which contains all the examples for this area.
+Below, we highlight the main steps.
 
 #### 2.1.1. \_\_init\_\_(self) 
 
-1. Define the entries of the group menu.
+1. Define the choices of the main menu. Every choice represents a group of
+   samplea.
 
       ``` python
-      
-         self.menu_items = ["Numbers", "Plotting", "Quit"]
-      
+        self.menu_choices = ["Numbers", "Plotting", "Quit"]
       ```
 
-1. Initialize group menu name and options through the `ConsoleMenu` parent class
+1. Initialize menu name and choices through the `ConsoleMenu` parent class
 
       ``` python
 
-         super().__init__("Menu Creation Group Menu", self.menu_items)
+         super().__init__("Main Menu", self.menu_choices)
       
       ```
 
       This generates the followng menu:
 
-      ![bread board group menu](../../media/samples/bread_board_group_menu.png)
+      ![menus creaton main menu](../../media/samples/menus_creation_main_menu.png)
 
-1. Instantiate the `BreadboardSubMenus` class.  It contains the submenus and the
-logic to allow the user to select to desired sample.  
+1. Instantiate the `SubMenus` class.  It contains the submenus and the
+logic to allow the user to select the desired sample.  
 
       ``` python
       
@@ -69,22 +77,22 @@ logic to allow the user to select to desired sample.
       
       ```
 
-1. Define the sub menus decision table or dictionary.
+1. Define the decision table to select the submenus.  The order must match the
+order of the `self.sub_menus`  list in `code/menus_creation/submenus.py`.  
 
       ``` python
       
-         self.sub_menu = {
-            1:  lambda: _amenu.breadboard_selection_menu(1),
-            2:  lambda: _amenu.breadboard_selection_menu(2),
-            3:  lambda: _amenu.breadboard_selection_menu(3)
-         }
+          self.sub_menu = {
+            1:  lambda: _submenus.group_selection_submenu(1), # Numbers
+            2:  lambda: _submenus.group_selection_submenu(2), # Plotting 
+        }
       
       ```
 
    The previous `sub_menu` is a dictionary of key, value pairs.  The key is an
-   integer (from 1 to 3), the value is a `lambda` function which calls the
-   `breadboard_selection_menu` menthod in the `BreadboardSubMenus` class and
-   passes to it an integer (from 1 to 3) selected by the user and shown in this
+   integer (from 1 to 2), the value is a `lambda` function which calls the
+   `group_selection_menu` menthod in the `SubMenus` class and
+   passes to it an integer (from 1 to 2) selected by the user and shown in this
    call `self.sub_menu[choice]()`. 
 
 #### 2.1.2. group_selection_menu(self)
@@ -93,7 +101,7 @@ logic to allow the user to select to desired sample.
    `ConsoleMenu` parent class. 
 1. Loop to get the user's choice by calling `get_user_choice()` method in the
    `ConsoleMenu`.
-1. If the user select `Quit` terminate the loop, otherwise display the submenus
+1. If the user select `Quit` terminate the loop, otherwise display the submenu
    selected by the user.
   
 #### 2.1.3. About lambda
@@ -103,111 +111,154 @@ functions. The `lambda function can take any number of arguments, but can only
 have one expression.  
 
 Notice the syntax `self.sub_menu[choice]()` with parenthesis `()`, allows the
-`lambda` function evaluation, that is the call to `breadboard_selection_menu`
+`lambda` function evaluation, that is the call to `group_selection_menu`
 menthod, only when the dictionary entry is selected by the user and not at the
 time the dictionary is created.
 
 
-### 2.2. Submenus 
+### 2.2. SubMenus class 
 
-After the creation of the group menu, we can start creating submenus.  Each
+After the creation of the main menu, we can start creating submenus.  Each
 submenu is activated by selecting one of the entries displayed in the group menu
-described before. This is where the rubber hits the road. The group menus is
+described before. This is where the rubber hits the road. The main menu is
 connected to the submenus whose entries in turn are connected toe the functions
-(samples) to run. The key is the `class BreadboardSubMenus(ConsoleMenu)`.
+(samples) to run. This is done in the `class SubMenus(ConsoleMenu)`.
 Next we highlight the main steps. 
 
 #### 2.2.1. \_\_init\_\_(self) 
 
-This function initializes the class `BreadboardSubMenus` instance.
+This function initializes the class `SubMenus` instance.
 
 1. Define the menu entries for each sample group. 
 
-   1. Temperature menu items
+   1. Choices for the Numbers group menu
 
       ``` python
-         self.temp_menu_items = ["Plot annual temp", "Plot annual temp histogram", 
-         "Quit"]
+            self.number_menu_choices = ["Fibonacci", "Numbers", "Quit"]
       ```  
 
-   1. File operations menu items
+   1. Choices for the Plot group menu
 
       ``` python
-        self.temp_hist_menu_items = ["Bulk add xsl column", "Bulk create files", 
-        "Bulk nerge files", "Bulk merge xls files", "Quit"]
+            self.plot_menu_choices = ["Plot", "Quit"]
       ```
 
-   1. Misc menu items
+2. Group all the sample menus. 
+   The order must match the order of the `self.menu_items` list in
+   `code/menus_creation/main.py`.  
 
       ``` python
-         self.misc_menu_items = ["Fibonacci", "Plot", "Numbers", "Quit"]
-      ```
-
-1. Group of all the sample menus. 
-   The order must match the order of the `self.menu_items` list in `main.py`. 
-
-      ``` python
-
-        self.sub_menus = [
-            [], # Leave it empty to match dictionary keys.
-            self.temp_menu_items,
-            self.misc_menu_items,
-            self.temp_hist_menu_items,
+         self.sub_menus = [
+               [], # Leave it empty to match dictionary keys.
+                  # This is because the start key is 1 in the related
+                  # selection table (dictionary) `sub_menu` defined 
+                  # in main.py.   
+               self.number_menu_choices, # Value associated with key 1 
+               self.plot_menu_choices    # Value associated with key 2 
         ]
+        
       ```
 
-1. Define the instance for each sample class. 
+3. Instanciate each sample class. 
 
-   1. `DataAnalysisSamples` instance
+   1. `NumberSamples` instance
 
       ``` python
-         self.data_analysis_samples_instance = DataAnalysisSamples()
+            self.number_samples_instance = NumberSamples()
       ```  
 
-   1. `MiscellaneaSamples` instance
+   2. `PlotSamples` instance
 
       ```python
-        self.misc_samples_instance = MiscellaneaSamples()
+           self.plot_samples_instance = PlotSamples()
       ```  
 
-1. Define the decision table for each sample group.  
+4. Define the decision table for each sample group.  
 
       Each table (dictionary) entry contains a key, value pair.  The key is an
-      integer, the value is the name of the sample and the method to call.  Note
+      integer, the value is the sample instance and the method to call.  Note
       the use of the `lambda' function needed to pass parameters to the function to
       call, when needed. 
 
-      ``` python
-
-         self.data_analysis_samples = {
-               1: ["\n***  Plot annual temperature ***", 
-               self.data_analysis_samples_instance.plot_annual_temp],
-               2: ["\n***  Plot annual temperature histogram ***", 
-               self.data_analysis_samples_instance.plot_annual_temp_histogram],
-         }
-      ```
+      1. `Numbers` selection decision table
 
       ``` python
 
-         self.misc_samples = {
-               1: ["\n***  Calculate Fibonacci ***", lambda: self.misc_samples_instance.fiboTriangle(5)],
-               2: ["\n***  Plotting ***", self.misc_samples_instance.plotting],
-               3: ["\n***  Number Types ***", self.misc_samples_instance.getNumberTypes],
-         }
+           self.number_samples = {
+            1: ["\n***  Calculate Fibonacci ***", lambda: self.number_samples_instance.fiboTriangle(5)],
+            2: ["\n***  Get number types ***", self.number_samples_instance.getNumberTypes],
+        }
+        
+      ```
+
+      1. `Plot` selection decision table
+
+      ``` python
+
+          self.plot_samples = {
+            1: ["\n***  Plotting ***", self.plot_samples_instance.plotting],
+        }
 
       ```
 
-1. Group of all the sample submenus. 
+5. Group of all the sample decision tables
 
    ``` python
 
-        self.sample_groups = {
-            1: ["Data Analysis Samples", self.data_analysis_samples],
-            2: ["Misc Samples", self.misc_samples],
-            3: ["File Samples", self.temp_hist_menu_items],
+       self.sample_groups = {
+            1: ["Numbers Samples", self.number_samples],
+            2: ["Plot Samples", self.plot_samples]
         }
 
    ```
 
-#### 2.2.2. breadboard_selection_menu(self, sub_menu)
+#### 2.2.2. group_selection_submenu(self, sub_menu)
 
+1. Get the name of the sub menu selected by the user.
+
+   ``` python
+
+         selected_menu_name = self.sample_groups[sub_menu][0]
+   ```
+
+2. Get the selected sub menu.
+
+   ``` python
+
+         selected_sub_menu_items = self.sub_menus[sub_menu]
+   ```
+
+3. Initialize selected menu name and items through `ConsoleMenu` parent class.  
+
+   ``` python
+
+         super().__init__(selected_menu_name, selected_sub_menu_items)
+   ```
+
+4. Display the menu.
+
+   ``` python
+
+         self.display_menu()
+   ```
+
+5. Get the user's choice.
+
+   ``` python
+
+         choice = self.get_user_choice()
+   ```
+
+6. Get the selected list
+
+   ``` python
+
+         _current_selection = self.sample_groups[sub_menu][1] 
+   ```
+
+7. Call the selectd sample function.
+
+   ``` python
+
+         _current_selection[int(choice)][1]()
+   ```

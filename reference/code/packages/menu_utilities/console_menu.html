@@ -50,19 +50,19 @@ class ConsoleMenu:
 
     &#34;&#34;&#34;
 
-    def __init__(self, name:str, menu:list):
+    def __init__(self, menu_name:str, menu_choices:list):
         &#34;&#34;&#34; Iitialize the class instance.
         
         Parameters
         ----------
-        name: 
+        menu_name: 
             The name of the menu to display. 
-        options: 
-            List of strings representing the menu elements.
+        menu_choices: 
+            List of strings representing the menu choices.
 
         &#34;&#34;&#34;
-        self.menu_name = name
-        self.menu_options = menu
+        self.menu_name = menu_name
+        self.menu_options = menu_choices
    
     def input_number(self, prompt):
         &#34;&#34;&#34; 
@@ -131,7 +131,7 @@ class ConsoleMenu:
 <dl>
 <dt id="code.packages.menu_utilities.console_menu.ConsoleMenu"><code class="flex name class">
 <span>class <span class="ident">ConsoleMenu</span></span>
-<span>(</span><span>name: str, menu: list)</span>
+<span>(</span><span>menu_name: str, menu_choices: list)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Defines a menu class </p>
@@ -147,10 +147,10 @@ class ConsoleMenu:
 <p>Iitialize the class instance.</p>
 <h2 id="parameters">Parameters</h2>
 <dl>
-<dt><strong><code>name</code></strong></dt>
+<dt><strong><code>menu_name</code></strong></dt>
 <dd>The name of the menu to display.</dd>
-<dt><strong><code>options</code></strong></dt>
-<dd>List of strings representing the menu elements.</dd>
+<dt><strong><code>menu_choices</code></strong></dt>
+<dd>List of strings representing the menu choices.</dd>
 </dl></div>
 <details class="source">
 <summary>
@@ -173,19 +173,19 @@ class ConsoleMenu:
 
     &#34;&#34;&#34;
 
-    def __init__(self, name:str, menu:list):
+    def __init__(self, menu_name:str, menu_choices:list):
         &#34;&#34;&#34; Iitialize the class instance.
         
         Parameters
         ----------
-        name: 
+        menu_name: 
             The name of the menu to display. 
-        options: 
-            List of strings representing the menu elements.
+        menu_choices: 
+            List of strings representing the menu choices.
 
         &#34;&#34;&#34;
-        self.menu_name = name
-        self.menu_options = menu
+        self.menu_name = menu_name
+        self.menu_options = menu_choices
    
     def input_number(self, prompt):
         &#34;&#34;&#34; 

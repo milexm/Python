@@ -6,7 +6,7 @@
 <meta name="generator" content="pdoc 0.10.0" />
 <title>code.menus_creation API documentation</title>
 <meta name="description" content="---
-last update: 07/03/23
+last update: 07/06/23
 --- …" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
@@ -25,68 +25,82 @@ last update: 07/03/23
 </header>
 <section id="section-intro">
 <hr>
-<h2 id="last-update-070323">last update: 07/03/23</h2>
+<h2 id="last-update-070623">last update: 07/06/23</h2>
 <h1 id="console-menus-creation"><img alt="python-icon" src="../../media/icons/python-icon.svg"> Console menus creation</h1>
 <ul>
 <li><a href="#1-overview">1. Overview</a></li>
-<li><a href="#2-define-activation-menus">2. Define activation menus</a></li>
-<li><a href="#21-group-menu">2.1. Group menu</a><ul>
+<li><a href="#2-main-menu">2. Main menu</a></li>
+<li><a href="#21--mainmenu-class">2.1.
+MainMenu class</a><ul>
 <li><a href="#211-__init__self">2.1.1. __init__(self)</a></li>
 <li><a href="#212-group_selection_menuself">2.1.2. group_selection_menu(self)</a></li>
 <li><a href="#213-about-lambda">2.1.3. About lambda</a></li>
 </ul>
 </li>
-<li><a href="#22-submenus">2.2. Submenus</a><ul>
+<li><a href="#22-submenus-class">2.2. SubMenus class</a><ul>
 <li><a href="#221-__init__self">2.2.1. __init__(self)</a></li>
-<li><a href="#222-breadboard_selection_menuself-sub_menu">2.2.2. breadboard_selection_menu(self, sub_menu)</a></li>
+<li><a href="#222-group_selection_submenuself-sub_menu">2.2.2. group_selection_submenu(self, sub_menu)</a></li>
 </ul>
 </li>
 </ul>
 <h2 id="1-overview">1. Overview</h2>
-<p>The <code>menus_creation</code> folder contains a complete example on how to create console
+<p>The <code>menus_creation</code> folder contains a complete example on how to create a console
 menu and submenus to select and execute code sample from a terminal windows.
 </p>
 <blockquote>
 <p>[!NOTE] You can use the example as a template for the creation od your own
-menus and submenus performing the following steps:</p>
-<ol>
-<li>The <code>menus_creation</code> folder name with the name of the folder containin the
-code examples.
-</li>
-</ol>
+menus and submenus. Below are the steps you cna follow.</p>
 </blockquote>
-<h2 id="2-define-activation-menus">2. Define activation menus</h2>
+<p>The <code>menus_creation</code> is the main folder that contains the code to create the
+main menus along with the samples to run. Specifically:</p>
+<ol>
+<li>The <code>main.py</code> allows for the creation of the main menu. This menu allows the
+user to select any of several group submenus.</li>
+<li>The <code><a title="code.menus_creation.number_play" href="number_play/index.html">code.menus_creation.number_play</a></code> is the folder that contains number related samples.</li>
+<li>The <code><a title="code.menus_creation.plotting_away" href="plotting_away/index.html">code.menus_creation.plotting_away</a></code> is folder that contains plotting related samples.
+</li>
+<li>The
+<code>submenus.py</code>
+contains the class <code>SubMenus</code> that creates the various
+group menus (submenus).
+The class instance method <code>group_selection_submenu</code>
+displays a menu of available samples, for the user's selected group, and
+allows the user to select a sample to execute from that group.</li>
+</ol>
+<h2 id="2-main-menu">2. Main menu</h2>
 <p>The steps to create menus are a bit cumbersome and interrelated. Also, we are
 going to use decision tables and not switch statements. The best way to
-demonstrate this is via an example by using the <strong>bread_board
-group</strong> in the <em>bread_board folder</em>.
+demonstrate this is via an example by using the <strong>Main Menu</strong> in
+the <code>menus_creation</code> folder.
 </p>
-<h3 id="21-group-menu">2.1. Group menu</h3>
-<p>The main menu is created by the <a href="main.py">main.py</a> file, that is the main
-activation code for the <code>menus_creation</code> <strong>folder</strong> that contains all the
-examples for this area. Below, we highlight the main steps. </p>
+<h3 id="21-mainmenu-class">2.1.
+MainMenu class</h3>
+<p>The main menu is created by the <a href="mainmenu.py">mainmenu.py</a> file.
+This is done
+in the <code>class MainMenu(ConsoleMenu)</code> where the main activation code is for the
+<code>menus_creation</code> <strong>folder</strong> which contains all the examples for this area.
+Below, we highlight the main steps.</p>
 <h4 id="211-__init__self">2.1.1. __init__(self)</h4>
 <ol>
 <li>
-<p>Define the entries of the group menu.</p>
-<p>``` python</p>
-<pre><code> self.menu_items = ["Numbers", "Plotting", "Quit"]
-</code></pre>
-<p>```</p>
+<p>Define the choices of the main menu. Every choice represents a group of
+samplea.</p>
+<p><code>python
+self.menu_choices = ["Numbers", "Plotting", "Quit"]</code></p>
 </li>
 <li>
-<p>Initialize group menu name and options through the <code>ConsoleMenu</code> parent class</p>
+<p>Initialize menu name and choices through the <code>ConsoleMenu</code> parent class</p>
 <p>``` python</p>
-<pre><code> super().__init__("Menu Creation Group Menu", self.menu_items)
+<pre><code> super().__init__("Main Menu", self.menu_choices)
 </code></pre>
 <p>```</p>
 <p>This generates the followng menu:</p>
-<p><img alt="bread board group menu" src="../../media/samples/bread_board_group_menu.png"></p>
+<p><img alt="menus creaton main menu" src="../../media/samples/menus_creation_main_menu.png"></p>
 </li>
 <li>
-<p>Instantiate the <code>BreadboardSubMenus</code> class.
+<p>Instantiate the <code>SubMenus</code> class.
 It contains the submenus and the
-logic to allow the user to select to desired sample.
+logic to allow the user to select the desired sample.
 </p>
 <p>``` python</p>
 <pre><code> _amenu = _menu.BreadboardSubMenus()
@@ -94,22 +108,25 @@ logic to allow the user to select to desired sample.
 <p>```</p>
 </li>
 <li>
-<p>Define the sub menus decision table or dictionary.</p>
+<p>Define the decision table to select the submenus.
+The order must match the
+order of the <code>self.sub_menus</code>
+list in <code>code/menus_creation/submenus.py</code>.
+</p>
 <p>``` python</p>
-<pre><code> self.sub_menu = {
-    1:  lambda: _amenu.breadboard_selection_menu(1),
-    2:  lambda: _amenu.breadboard_selection_menu(2),
-    3:  lambda: _amenu.breadboard_selection_menu(3)
- }
+<pre><code>  self.sub_menu = {
+    1:  lambda: _submenus.group_selection_submenu(1), # Numbers
+    2:  lambda: _submenus.group_selection_submenu(2), # Plotting 
+}
 </code></pre>
 <p>```</p>
 </li>
 </ol>
 <p>The previous <code>sub_menu</code> is a dictionary of key, value pairs.
 The key is an
-integer (from 1 to 3), the value is a <code>lambda</code> function which calls the
-<code>breadboard_selection_menu</code> menthod in the <code>BreadboardSubMenus</code> class and
-passes to it an integer (from 1 to 3) selected by the user and shown in this
+integer (from 1 to 2), the value is a <code>lambda</code> function which calls the
+<code>group_selection_menu</code> menthod in the <code>SubMenus</code> class and
+passes to it an integer (from 1 to 2) selected by the user and shown in this
 call <code>self.sub_menu[choice]()</code>. </p>
 <h4 id="212-group_selection_menuself">2.1.2. group_selection_menu(self)</h4>
 <ol>
@@ -117,7 +134,7 @@ call <code>self.sub_menu[choice]()</code>. </p>
 <code>ConsoleMenu</code> parent class. </li>
 <li>Loop to get the user's choice by calling <code>get_user_choice()</code> method in the
 <code>ConsoleMenu</code>.</li>
-<li>If the user select <code>Quit</code> terminate the loop, otherwise display the submenus
+<li>If the user select <code>Quit</code> terminate the loop, otherwise display the submenu
 selected by the user.</li>
 </ol>
 <h4 id="213-about-lambda">2.1.3. About lambda</h4>
@@ -126,67 +143,64 @@ functions. The `lambda function can take any number of arguments, but can only
 have one expression.
 </p>
 <p>Notice the syntax <code>self.sub_menu[choice]()</code> with parenthesis <code>()</code>, allows the
-<code>lambda</code> function evaluation, that is the call to <code>breadboard_selection_menu</code>
+<code>lambda</code> function evaluation, that is the call to <code>group_selection_menu</code>
 menthod, only when the dictionary entry is selected by the user and not at the
 time the dictionary is created.</p>
-<h3 id="22-submenus">2.2. Submenus</h3>
-<p>After the creation of the group menu, we can start creating submenus.
+<h3 id="22-submenus-class">2.2. SubMenus class</h3>
+<p>After the creation of the main menu, we can start creating submenus.
 Each
 submenu is activated by selecting one of the entries displayed in the group menu
-described before. This is where the rubber hits the road. The group menus is
+described before. This is where the rubber hits the road. The main menu is
 connected to the submenus whose entries in turn are connected toe the functions
-(samples) to run. The key is the <code>class BreadboardSubMenus(ConsoleMenu)</code>.
+(samples) to run. This is done in the <code>class SubMenus(ConsoleMenu)</code>.
 Next we highlight the main steps. </p>
 <h4 id="221-__init__self">2.2.1. __init__(self)</h4>
-<p>This function initializes the class <code>BreadboardSubMenus</code> instance.</p>
+<p>This function initializes the class <code>SubMenus</code> instance.</p>
 <ol>
 <li>
 <p>Define the menu entries for each sample group. </p>
 </li>
 <li>
-<p>Temperature menu items</p>
+<p>Choices for the Numbers group menu</p>
 <p><code>python
-self.temp_menu_items = ["Plot annual temp", "Plot annual temp histogram",
-"Quit"]</code>
+self.number_menu_choices = ["Fibonacci", "Numbers", "Quit"]</code>
 </p>
 </li>
 <li>
-<p>File operations menu items</p>
+<p>Choices for the Plot group menu</p>
 <p><code>python
-self.temp_hist_menu_items = ["Bulk add xsl column", "Bulk create files",
-"Bulk nerge files", "Bulk merge xls files", "Quit"]</code></p>
+self.plot_menu_choices = ["Plot", "Quit"]</code></p>
 </li>
 <li>
-<p>Misc menu items</p>
-<p><code>python
-self.misc_menu_items = ["Fibonacci", "Plot", "Numbers", "Quit"]</code></p>
-</li>
-<li>
-<p>Group of all the sample menus.
-The order must match the order of the <code>self.menu_items</code> list in <code>main.py</code>. </p>
-<p>``` python</p>
-<pre><code>self.sub_menus = [
-    [], # Leave it empty to match dictionary keys.
-    self.temp_menu_items,
-    self.misc_menu_items,
-    self.temp_hist_menu_items,
-]
-</code></pre>
+<p>Group all the sample menus.
+The order must match the order of the <code>self.menu_items</code> list in
+<code>code/menus_creation/main.py</code>.
+</p>
+<p>``` python
+self.sub_menus = [
+[], # Leave it empty to match dictionary keys.
+# This is because the start key is 1 in the related
+# selection table (dictionary) <code>sub_menu</code> defined
+# in main.py. <br>
+self.number_menu_choices, # Value associated with key 1
+self.plot_menu_choices
+# Value associated with key 2
+]</p>
 <p>```</p>
 </li>
 <li>
-<p>Define the instance for each sample class. </p>
+<p>Instanciate each sample class. </p>
 </li>
 <li>
-<p><code>DataAnalysisSamples</code> instance</p>
+<p><code>NumberSamples</code> instance</p>
 <p><code>python
-self.data_analysis_samples_instance = DataAnalysisSamples()</code>
+self.number_samples_instance = NumberSamples()</code>
 </p>
 </li>
 <li>
-<p><code>MiscellaneaSamples</code> instance</p>
+<p><code>PlotSamples</code> instance</p>
 <p><code>python
-self.misc_samples_instance = MiscellaneaSamples()</code>
+self.plot_samples_instance = PlotSamples()</code>
 </p>
 </li>
 <li>
@@ -194,41 +208,92 @@ self.misc_samples_instance = MiscellaneaSamples()</code>
 </p>
 <p>Each table (dictionary) entry contains a key, value pair.
 The key is an
-integer, the value is the name of the sample and the method to call.
+integer, the value is the sample instance and the method to call.
 Note
 the use of the `lambda' function needed to pass parameters to the function to
 call, when needed. </p>
+<ol>
+<li><code>Numbers</code> selection decision table</li>
+</ol>
 <p>``` python</p>
-<pre><code> self.data_analysis_samples = {
-       1: ["\n***  Plot annual temperature ***", 
-       self.data_analysis_samples_instance.plot_annual_temp],
-       2: ["\n***  Plot annual temperature histogram ***", 
-       self.data_analysis_samples_instance.plot_annual_temp_histogram],
- }
+<pre><code>   self.number_samples = {
+    1: ["\n***  Calculate Fibonacci ***", lambda: self.number_samples_instance.fiboTriangle(5)],
+    2: ["\n***  Get number types ***", self.number_samples_instance.getNumberTypes],
+}
 </code></pre>
 <p>```</p>
+<ol>
+<li><code>Plot</code> selection decision table</li>
+</ol>
 <p>``` python</p>
-<pre><code> self.misc_samples = {
-       1: ["\n***  Calculate Fibonacci ***", lambda: self.misc_samples_instance.fiboTriangle(5)],
-       2: ["\n***  Plotting ***", self.misc_samples_instance.plotting],
-       3: ["\n***  Number Types ***", self.misc_samples_instance.getNumberTypes],
- }
+<pre><code>  self.plot_samples = {
+    1: ["\n***  Plotting ***", self.plot_samples_instance.plotting],
+}
 </code></pre>
 <p>```</p>
 </li>
 <li>
-<p>Group of all the sample submenus. </p>
+<p>Group of all the sample decision tables</p>
 </li>
 </ol>
 <p>``` python</p>
-<pre><code>    self.sample_groups = {
-        1: ["Data Analysis Samples", self.data_analysis_samples],
-        2: ["Misc Samples", self.misc_samples],
-        3: ["File Samples", self.temp_hist_menu_items],
+<pre><code>   self.sample_groups = {
+        1: ["Numbers Samples", self.number_samples],
+        2: ["Plot Samples", self.plot_samples]
     }
 </code></pre>
 <p>```</p>
-<h4 id="222-breadboard_selection_menuself-sub_menu">2.2.2. breadboard_selection_menu(self, sub_menu)</h4>
+<h4 id="222-group_selection_submenuself-sub_menu">2.2.2. group_selection_submenu(self, sub_menu)</h4>
+<ol>
+<li>Get the name of the sub menu selected by the user.</li>
+</ol>
+<p>``` python</p>
+<pre><code>     selected_menu_name = self.sample_groups[sub_menu][0]
+</code></pre>
+<p>```</p>
+<ol>
+<li>Get the selected sub menu.</li>
+</ol>
+<p>``` python</p>
+<pre><code>     selected_sub_menu_items = self.sub_menus[sub_menu]
+</code></pre>
+<p>```</p>
+<ol>
+<li>Initialize selected menu name and items through <code>ConsoleMenu</code> parent class.
+</li>
+</ol>
+<p>``` python</p>
+<pre><code>     super().__init__(selected_menu_name, selected_sub_menu_items)
+</code></pre>
+<p>```</p>
+<ol>
+<li>Display the menu.</li>
+</ol>
+<p>``` python</p>
+<pre><code>     self.display_menu()
+</code></pre>
+<p>```</p>
+<ol>
+<li>Get the user's choice.</li>
+</ol>
+<p>``` python</p>
+<pre><code>     choice = self.get_user_choice()
+</code></pre>
+<p>```</p>
+<ol>
+<li>Get the selected list</li>
+</ol>
+<p>``` python</p>
+<pre><code>     _current_selection = self.sample_groups[sub_menu][1]
+</code></pre>
+<p>```</p>
+<ol>
+<li>Call the selectd sample function.</li>
+</ol>
+<p>``` python</p>
+<pre><code>     _current_selection[int(choice)][1]()
+</code></pre>
+<p>```</p>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -249,7 +314,11 @@ introduce users to your project.
 <dl>
 <dt><code class="name"><a title="code.menus_creation.main" href="main.html">code.menus_creation.main</a></code></dt>
 <dd>
-<div class="desc"><p>Module main.py</p></div>
+<div class="desc"><p>Module main.py …</p></div>
+</dd>
+<dt><code class="name"><a title="code.menus_creation.mainmenu" href="mainmenu.html">code.menus_creation.mainmenu</a></code></dt>
+<dd>
+<div class="desc"><p>Module mainmenu.py</p></div>
 </dd>
 <dt><code class="name"><a title="code.menus_creation.number_play" href="number_play/index.html">code.menus_creation.number_play</a></code></dt>
 <dd>
@@ -276,19 +345,20 @@ introduce users to your project.
 <h1>Index</h1>
 <div class="toc">
 <ul>
-<li><a href="#last-update-070323">last update: 07/03/23</a></li>
+<li><a href="#last-update-070623">last update: 07/06/23</a></li>
 <li><a href="#console-menus-creation">Console menus creation</a><ul>
 <li><a href="#1-overview">1. Overview</a></li>
-<li><a href="#2-define-activation-menus">2. Define activation menus</a><ul>
-<li><a href="#21-group-menu">2.1. Group menu</a><ul>
+<li><a href="#2-main-menu">2. Main menu</a><ul>
+<li><a href="#21-mainmenu-class">2.1.
+MainMenu class</a><ul>
 <li><a href="#211-__init__self">2.1.1. __init__(self)</a></li>
 <li><a href="#212-group_selection_menuself">2.1.2. group_selection_menu(self)</a></li>
 <li><a href="#213-about-lambda">2.1.3. About lambda</a></li>
 </ul>
 </li>
-<li><a href="#22-submenus">2.2. Submenus</a><ul>
+<li><a href="#22-submenus-class">2.2. SubMenus class</a><ul>
 <li><a href="#221-__init__self">2.2.1. __init__(self)</a></li>
-<li><a href="#222-breadboard_selection_menuself-sub_menu">2.2.2. breadboard_selection_menu(self, sub_menu)</a></li>
+<li><a href="#222-group_selection_submenuself-sub_menu">2.2.2. group_selection_submenu(self, sub_menu)</a></li>
 </ul>
 </li>
 </ul>
@@ -306,6 +376,7 @@ introduce users to your project.
 <li><h3><a href="#header-submodules">Sub-modules</a></h3>
 <ul>
 <li><code><a title="code.menus_creation.main" href="main.html">code.menus_creation.main</a></code></li>
+<li><code><a title="code.menus_creation.mainmenu" href="mainmenu.html">code.menus_creation.mainmenu</a></code></li>
 <li><code><a title="code.menus_creation.number_play" href="number_play/index.html">code.menus_creation.number_play</a></code></li>
 <li><code><a title="code.menus_creation.plotting_away" href="plotting_away/index.html">code.menus_creation.plotting_away</a></code></li>
 <li><code><a title="code.menus_creation.submenus" href="submenus.html">code.menus_creation.submenus</a></code></li>
