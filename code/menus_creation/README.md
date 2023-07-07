@@ -6,11 +6,11 @@ last update: 07/06/23
 
 - [1. Overview](#1-overview)
 - [2. Main menu](#2-main-menu)
-  - [2.1. Group menu](#21-group-menu)
+  - [2.1.  MainMenu class](#21--mainmenu-class)
     - [2.1.1. \_\_init\_\_(self)](#211-__init__self)
     - [2.1.2. group\_selection\_menu(self)](#212-group_selection_menuself)
     - [2.1.3. About lambda](#213-about-lambda)
-  - [2.2. Submenus](#22-submenus)
+  - [2.2. SubMenus class](#22-submenus-class)
     - [2.2.1. \_\_init\_\_(self)](#221-__init__self)
     - [2.2.2. group\_selection\_submenu(self, sub\_menu)](#222-group_selection_submenuself-sub_menu)
 
@@ -37,14 +37,15 @@ main menus along with the samples to run. Specifically:
 
 The steps to create menus are a bit cumbersome and interrelated. Also, we are
 going to use decision tables and not switch statements. The best way to
-demonstrate this is via an example by using the **Menus Creation Group Menu** in
+demonstrate this is via an example by using the **Main Menu** in
 the `menus_creation` folder.  
 
-### 2.1. Group menu 
+### 2.1.  MainMenu class
 
-The main menu is created by the [main.py](main.py) file, that is the main
-activation code for the `menus_creation` **folder** that contains all the
-examples for this area. Below, we highlight the main steps.
+The main menu is created by the [mainmenu.py](mainmenu.py) file.  This is done
+in the `class MainMenu(ConsoleMenu)` where the main activation code is for the
+`menus_creation` **folder** which contains all the examples for this area.
+Below, we highlight the main steps.
 
 #### 2.1.1. \_\_init\_\_(self) 
 
@@ -115,13 +116,13 @@ menthod, only when the dictionary entry is selected by the user and not at the
 time the dictionary is created.
 
 
-### 2.2. Submenus 
+### 2.2. SubMenus class 
 
 After the creation of the main menu, we can start creating submenus.  Each
 submenu is activated by selecting one of the entries displayed in the group menu
 described before. This is where the rubber hits the road. The main menu is
 connected to the submenus whose entries in turn are connected toe the functions
-(samples) to run. The key is the `class SubMenus(ConsoleMenu)`.
+(samples) to run. This is done in the `class SubMenus(ConsoleMenu)`.
 Next we highlight the main steps. 
 
 #### 2.2.1. \_\_init\_\_(self) 

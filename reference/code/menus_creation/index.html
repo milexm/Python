@@ -30,13 +30,14 @@ last update: 07/06/23
 <ul>
 <li><a href="#1-overview">1. Overview</a></li>
 <li><a href="#2-main-menu">2. Main menu</a></li>
-<li><a href="#21-group-menu">2.1. Group menu</a><ul>
+<li><a href="#21--mainmenu-class">2.1.
+MainMenu class</a><ul>
 <li><a href="#211-__init__self">2.1.1. __init__(self)</a></li>
 <li><a href="#212-group_selection_menuself">2.1.2. group_selection_menu(self)</a></li>
 <li><a href="#213-about-lambda">2.1.3. About lambda</a></li>
 </ul>
 </li>
-<li><a href="#22-submenus">2.2. Submenus</a><ul>
+<li><a href="#22-submenus-class">2.2. SubMenus class</a><ul>
 <li><a href="#221-__init__self">2.2.1. __init__(self)</a></li>
 <li><a href="#222-group_selection_submenuself-sub_menu">2.2.2. group_selection_submenu(self, sub_menu)</a></li>
 </ul>
@@ -69,13 +70,16 @@ allows the user to select a sample to execute from that group.</li>
 <h2 id="2-main-menu">2. Main menu</h2>
 <p>The steps to create menus are a bit cumbersome and interrelated. Also, we are
 going to use decision tables and not switch statements. The best way to
-demonstrate this is via an example by using the <strong>Menus Creation Group Menu</strong> in
+demonstrate this is via an example by using the <strong>Main Menu</strong> in
 the <code>menus_creation</code> folder.
 </p>
-<h3 id="21-group-menu">2.1. Group menu</h3>
-<p>The main menu is created by the <a href="main.py">main.py</a> file, that is the main
-activation code for the <code>menus_creation</code> <strong>folder</strong> that contains all the
-examples for this area. Below, we highlight the main steps.</p>
+<h3 id="21-mainmenu-class">2.1.
+MainMenu class</h3>
+<p>The main menu is created by the <a href="mainmenu.py">mainmenu.py</a> file.
+This is done
+in the <code>class MainMenu(ConsoleMenu)</code> where the main activation code is for the
+<code>menus_creation</code> <strong>folder</strong> which contains all the examples for this area.
+Below, we highlight the main steps.</p>
 <h4 id="211-__init__self">2.1.1. __init__(self)</h4>
 <ol>
 <li>
@@ -142,13 +146,13 @@ have one expression.
 <code>lambda</code> function evaluation, that is the call to <code>group_selection_menu</code>
 menthod, only when the dictionary entry is selected by the user and not at the
 time the dictionary is created.</p>
-<h3 id="22-submenus">2.2. Submenus</h3>
+<h3 id="22-submenus-class">2.2. SubMenus class</h3>
 <p>After the creation of the main menu, we can start creating submenus.
 Each
 submenu is activated by selecting one of the entries displayed in the group menu
 described before. This is where the rubber hits the road. The main menu is
 connected to the submenus whose entries in turn are connected toe the functions
-(samples) to run. The key is the <code>class SubMenus(ConsoleMenu)</code>.
+(samples) to run. This is done in the <code>class SubMenus(ConsoleMenu)</code>.
 Next we highlight the main steps. </p>
 <h4 id="221-__init__self">2.2.1. __init__(self)</h4>
 <p>This function initializes the class <code>SubMenus</code> instance.</p>
@@ -310,7 +314,11 @@ introduce users to your project.
 <dl>
 <dt><code class="name"><a title="code.menus_creation.main" href="main.html">code.menus_creation.main</a></code></dt>
 <dd>
-<div class="desc"><p>Module main.py</p></div>
+<div class="desc"><p>Module main.py …</p></div>
+</dd>
+<dt><code class="name"><a title="code.menus_creation.mainmenu" href="mainmenu.html">code.menus_creation.mainmenu</a></code></dt>
+<dd>
+<div class="desc"><p>Module mainmenu.py</p></div>
 </dd>
 <dt><code class="name"><a title="code.menus_creation.number_play" href="number_play/index.html">code.menus_creation.number_play</a></code></dt>
 <dd>
@@ -341,13 +349,14 @@ introduce users to your project.
 <li><a href="#console-menus-creation">Console menus creation</a><ul>
 <li><a href="#1-overview">1. Overview</a></li>
 <li><a href="#2-main-menu">2. Main menu</a><ul>
-<li><a href="#21-group-menu">2.1. Group menu</a><ul>
+<li><a href="#21-mainmenu-class">2.1.
+MainMenu class</a><ul>
 <li><a href="#211-__init__self">2.1.1. __init__(self)</a></li>
 <li><a href="#212-group_selection_menuself">2.1.2. group_selection_menu(self)</a></li>
 <li><a href="#213-about-lambda">2.1.3. About lambda</a></li>
 </ul>
 </li>
-<li><a href="#22-submenus">2.2. Submenus</a><ul>
+<li><a href="#22-submenus-class">2.2. SubMenus class</a><ul>
 <li><a href="#221-__init__self">2.2.1. __init__(self)</a></li>
 <li><a href="#222-group_selection_submenuself-sub_menu">2.2.2. group_selection_submenu(self, sub_menu)</a></li>
 </ul>
@@ -367,6 +376,7 @@ introduce users to your project.
 <li><h3><a href="#header-submodules">Sub-modules</a></h3>
 <ul>
 <li><code><a title="code.menus_creation.main" href="main.html">code.menus_creation.main</a></code></li>
+<li><code><a title="code.menus_creation.mainmenu" href="mainmenu.html">code.menus_creation.mainmenu</a></code></li>
 <li><code><a title="code.menus_creation.number_play" href="number_play/index.html">code.menus_creation.number_play</a></code></li>
 <li><code><a title="code.menus_creation.plotting_away" href="plotting_away/index.html">code.menus_creation.plotting_away</a></code></li>
 <li><code><a title="code.menus_creation.submenus" href="submenus.html">code.menus_creation.submenus</a></code></li>
