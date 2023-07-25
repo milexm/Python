@@ -1,0 +1,23 @@
+digraph G {
+    node [shape=box, style="rounded, filled", fillcolor="#ffffff"]
+
+    subgraph cluster_init {
+        label="__init__"
+        init [label="__init__\nInitialize menu_choices"]
+        super [label="super()\nInitialize parent class"]
+        submenus [label="Create SubMenus instance"]
+        decision_table [label="Define decision table"]
+        sub_menu1 [label="lambda: _submenus.group_selection_submenu(1)"]
+        sub_menu2 [label="lambda: _submenus.group_selection_submenu(2)"]
+
+        init -> super
+        init -> submenus
+        init -> decision_table
+        decision_table -> sub_menu1
+        decision_table -> sub_menu2
+    }
+
+    init -> decision_table [label="Define menu_choices"]
+    init -> sub_menu1 [label="1: Numbers"]
+    init -> sub_menu2 [label="2: Plotting"]
+}

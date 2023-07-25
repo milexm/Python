@@ -1,0 +1,60 @@
+digraph G {
+    node [shape=record, style="filled", fillcolor="#ffffff"]
+
+   SubMenus [
+    label=<
+        <table border="0" cellborder="1" cellspacing="0">
+            <tr><td>SubMenus</td></tr>
+            <tr><td>+ number_menu_choices : List&lt;String&gt;</td></tr>
+            <tr><td>+ plot_menu_choices : List&lt;String&gt;</td></tr>
+            <tr><td>+ sub_menus : List&lt;List&lt;String&gt;&gt;</td></tr>
+            <tr><td>+ number_samples_instance : NumberSamples</td></tr>
+            <tr><td>+ plot_samples_instance : PlotSamples</td></tr>
+            <tr><td>+ number_samples : Dict&lt;Int, List&lt;Union&lt;String, Lambda&gt;&gt;&gt;</td></tr>
+            <tr><td>+ plot_samples : Dict&lt;Int, List&lt;Union&lt;String, Lambda&gt;&gt;&gt;</td></tr>
+            <tr><td>+ sample_groups : Dict&lt;Int, List&lt;Union&lt;String, Dict&lt;Int, List&lt;Union&lt;String, Lambda&gt;&gt;&gt;&gt;&gt;</td></tr>
+            <tr><td>+ __init__() : void</td></tr>
+            <tr><td>+ group_selection_submenu(sub_menu: int) : void</td></tr>
+        </table>
+    >
+  ];
+
+
+
+  ConsoleMenu [
+    label=<
+        <table border="0" cellborder="1" cellspacing="0">
+            <tr><td>ConsoleMenu</td></tr>
+            <tr><td>input_number(prompt) : float</td></tr>
+            <tr><td>display_menu() : void</td></tr>
+            <tr><td>get_user_choice() : int</td></tr>
+            <tr><td>+ __init__(menu_name: str, menu_choices: list) : void</td></tr>
+        </table>
+    >
+  ];
+
+  NumberSamples [
+    label=<
+        <table border="0" cellborder="1" cellspacing="0">
+            <tr><td>NumberSamples</td></tr>
+            <tr><td>fiboTriangle(n: int) : None</td></tr>
+            <tr><td>getNumberTypes() : None</td></tr>
+            <tr><td>+ __init__() : void</td></tr>
+        </table>
+    >
+  ];
+
+  PlotSamples [
+    label=<
+        <table border="0" cellborder="1" cellspacing="0">
+            <tr><td>PlotSamples</td></tr>
+            <tr><td>plotting() : None</td></tr>
+            <tr><td>+ __init__() : void</td></tr>
+        </table>
+    >
+  ];
+
+  SubMenus -> ConsoleMenu [label="inherits"];
+  SubMenus -> NumberSamples [label="contains"];
+  SubMenus -> PlotSamples [label="contains"];
+}

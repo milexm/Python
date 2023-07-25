@@ -1,0 +1,8 @@
+digraph ConsoleMenu {
+  node [shape=record];
+
+  ConsoleMenu [label="{ConsoleMenu|+ menu_name : str\l+ menu_options : list\l|+ input_number(prompt: str) : float\l+ display_menu() : void\l+ get_user_choice() : int\l}"];
+  numpy [label="numpy", shape=box, style=filled, fillcolor="#8dd3c7"];
+
+  ConsoleMenu -> numpy [arrowhead="onormal", label="uses"];
+}

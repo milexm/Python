@@ -1,0 +1,33 @@
+digraph G {
+    node [shape=box, style="rounded, filled", fillcolor="#ffffff"]
+
+    subgraph cluster_init {
+        label="__init__"
+        number_menu_choices [label="Number Menu Choices"]
+        plot_menu_choices [label="Plot Menu Choices"]
+        sub_menus [label="Sub Menus"]
+        number_samples_instance [label="NumberSamples Instance"]
+        plot_samples_instance [label="PlotSamples Instance"]
+        number_samples [label="Number Samples"]
+        plot_samples [label="Plot Samples"]
+        sample_groups [label="Sample Groups"]
+
+        number_menu_choices -> sub_menus
+        plot_menu_choices -> sub_menus
+        sub_menus -> number_samples_instance
+        sub_menus -> plot_samples_instance
+        number_samples_instance -> number_samples
+        plot_samples_instance -> plot_samples
+        number_samples -> sample_groups
+        plot_samples -> sample_groups
+    }
+
+    init -> number_menu_choices [label="Define number_menu_choices"]
+    init -> plot_menu_choices [label="Define plot_menu_choices"]
+    init -> sub_menus [label="Define sub_menus"]
+    init -> number_samples_instance [label="Instantiate NumberSamples"]
+    init -> plot_samples_instance [label="Instantiate PlotSamples"]
+    init -> number_samples [label="Define number_samples"]
+    init -> plot_samples [label="Define plot_samples"]
+    init -> sample_groups [label="Define sample_groups"]
+}

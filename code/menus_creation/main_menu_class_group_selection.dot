@@ -1,0 +1,18 @@
+digraph G {
+    node [shape=box, style="rounded, filled", fillcolor="#ffffff"]
+
+    subgraph cluster_group_selection_menu {
+        label="group_selection_menu"
+        display_menu [label="display_menu"]
+        get_user_choice [label="get_user_choice"]
+        condition [label="Choice == Quit?"]
+        sub_menu [label="self.sub_menu[choice]()"]
+        break [label="break"]
+    }
+
+    group_selection_menu -> display_menu
+    group_selection_menu -> get_user_choice
+    group_selection_menu -> condition
+    group_selection_menu -> sub_menu
+    condition -> break [label="True"]
+}

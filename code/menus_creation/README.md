@@ -45,9 +45,43 @@ the `menus_creation` folder.
 The main menu is created by the [mainmenu.py](mainmenu.py) file.  This is done
 in the `class MainMenu(ConsoleMenu)` where the main activation code is for the
 `menus_creation` **folder** which contains all the examples for this area.
-Below, we highlight the main steps.
 
-#### 2.1.1. \_\_init\_\_(self) 
+The following figure shows the `MainMenu` class context diagram. 
+
+![MainClass context](../../media/samples/main_menu_class.png)
+
+The `MainMenu` is a specialized class for creating and interacting with menus in
+the console. It utilizes the functionalities provided by the `ConsoleMenu` class
+and collaborates with the `SubMenus`, `NumberSamples`, and `PlotSamples` classes
+to offer a comprehensive console menu system with different sample groups.
+
+- **Attributes**
+  
+  - `menu_choices`. A list of strings representing the menu choices for
+the main menu.  
+
+- **Methods** 
+
+  - `group_selection_menu()`. A method that displays the group menu and starts an endless loop. 
+   It waits for the user's input and displays the submenu based on the user's selection. 
+   The loop ends when the user enters the quit request.  
+  - `__init__()`. The constructor that initializes the `menu_choices` attribute with 
+   the main menu choices. It also initializes the main menu name and menu choices via 
+   the `ConsoleMenu` parent class. Additionally, it defines the decision table to select the submenus.  
+   The `MainMenu` class inherits from the `ConsoleMenu` class, which provides other methods like `input_number`,
+   `display_menu`, and `get_user_choice`.
+
+Finally, the `MainMenu` class contains an instance of the `SubMenus` class, which provides
+the `group_selection_submenu` method. The `SubMenus` class, in turn, inherits from
+the `ConsoleMenu` class and contains instances of the `NumberSamples` and
+`PlotSamples` classes, which provide specific functionalities like calculating
+Fibonacci, getting number types, and plotting.
+
+Below, we highlight the class main functionality.
+
+#### 2.1.1. \_\_init\_\_(self)
+
+![init](../../media/samples/main_menu_class_init.png)
 
 1. Define the choices of the main menu. Every choice represents a group of
    samplea.
@@ -56,7 +90,7 @@ Below, we highlight the main steps.
         self.menu_choices = ["Numbers", "Plotting", "Quit"]
       ```
 
-1. Initialize menu name and choices through the `ConsoleMenu` parent class
+2. Initialize menu name and choices through the `ConsoleMenu` parent class
 
       ``` python
 
@@ -68,7 +102,7 @@ Below, we highlight the main steps.
 
       ![menus creaton main menu](../../media/samples/menus_creation_main_menu.png)
 
-1. Instantiate the `SubMenus` class.  It contains the submenus and the
+3. Instantiate the `SubMenus` class.  It contains the submenus and the
 logic to allow the user to select the desired sample.  
 
       ``` python
@@ -97,6 +131,8 @@ order of the `self.sub_menus`  list in `code/menus_creation/submenus.py`.
 
 #### 2.1.2. group_selection_menu(self)
 
+![group selection](../../media/samples/main_menu_class_group_selection.png)
+
 1. Display the group menu by calling `display_menu()` method in the
    `ConsoleMenu` parent class. 
 1. Loop to get the user's choice by calling `get_user_choice()` method in the
@@ -121,13 +157,58 @@ time the dictionary is created.
 After the creation of the main menu, we can start creating submenus.  Each
 submenu is activated by selecting one of the entries displayed in the group menu
 described before. This is where the rubber hits the road. The main menu is
-connected to the submenus whose entries in turn are connected toe the functions
+connected to the submenus whose entries in turn are connected to the functions
 (samples) to run. This is done in the `class SubMenus(ConsoleMenu)`.
-Next we highlight the main steps. 
+
+
+The following figure shows the `SubMenus` class context diagram. 
+
+![SubMenus context](../../media/samples/sub_menus_class.png)
+
+The `SubMenus` class inherits from the `ConsoleMenu` class, which provides other
+methods like `input_number`, `display_menu`, and `get_user_choice`. It collaborates
+with the `NumberSamples` and `PlotSamples` classes to offer specific functionalities
+for the "Numbers" and "Plotting" group of samples.
+
+- **Attributes**
+  
+  - `number_menu_choices`. A list of strings representing the menu choices for the
+"Numbers" group menu.  
+  - `plot_menu_choices`. A list of strings representing the menu choices for the
+"Plotting" group menu.  
+  - `sub_menus`. A list containing two lists, which represent the group of all
+sample menus. The first list is left empty to match dictionary keys, and the
+second list contains the `number_menu_choices` and `plot_menu_choices`.  
+  - `number_samples_instance`. An instance of the `NumberSamples` class, which
+provides specific functionalities for the "Numbers" group of samples.  
+  - `plot_samples_instance`. An instance of the PlotSamples class, which provides
+specific functionalities for the "Plotting" group of samples.  
+  - `number_samples`. A dictionary containing the decision table for the "Numbers"
+group of samples. Each entry contains the name of the sample and the method to
+call. The method is represented as a `lambda` function to pass parameters to the
+function when needed.  
+  - `plot_samples`. A dictionary containing the decision table for the "Plotting"
+group of samples. Each entry contains the name of the sample and the method to
+call.  
+  - `sample_groups`. A dictionary containing all the sample groups' decision
+tables. Each entry represents a sample group and contains the group's name and
+its respective decision table.
+
+- **Methods**
+  
+  - `group_selection_submenu(sub_menu)`. A method that displays a menu of
+available samples for the user's selected group and allows the user to select a
+sample to execute from that group. It processes the user's input and calls the
+proper sample method based on the user's selection.  
+  - `__init__()`. The constructor that initializes the menu choices for each
+sample group, instantiates each sample class (NumberSamples and PlotSamples),
+and defines the decision tables for each sample group. It groups all the
+samples' decision tables together.
+
 
 #### 2.2.1. \_\_init\_\_(self) 
 
-This function initializes the class `SubMenus` instance.
+![SubMenus init](../../media/samples/sub_menus_class_init.png)
 
 1. Define the menu entries for each sample group. 
 
@@ -159,7 +240,7 @@ This function initializes the class `SubMenus` instance.
         
       ```
 
-3. Instanciate each sample class. 
+3. Instantiate each sample class. 
 
    1. `NumberSamples` instance
 
@@ -213,6 +294,8 @@ This function initializes the class `SubMenus` instance.
    ```
 
 #### 2.2.2. group_selection_submenu(self, sub_menu)
+
+![SubMenus selection](../../media/samples/sub_menus_class_selection.png)
 
 1. Get the name of the sub menu selected by the user.
 

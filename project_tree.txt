@@ -1,0 +1,76 @@
+Folder PATH listing for volume Windows
+Volume serial number is 0A85-4ED7
+C:.
+├───.vscode
+├───code
+│   ├───apps
+│   │   └───__pycache__
+│   ├───bread_board
+│   │   ├───files
+│   │   ├───gpt
+│   │   │   ├───data_analysis
+│   │   │   │   └───__pycache__
+│   │   │   ├───file_ops
+│   │   │   │   └───__pycache__
+│   │   │   └───__pycache__
+│   │   ├───misc
+│   │   │   └───__pycache__
+│   │   ├───xlsfiles
+│   │   └───__pycache__
+│   ├───builtin_types
+│   │   └───__pycache__
+│   ├───docstring
+│   │   └───__pycache__
+│   ├───files
+│   ├───language_constructs
+│   │   ├───modules
+│   │   │   └───__pycache__
+│   │   ├───name_main_idiom
+│   │   │   └───__pycache__
+│   │   └───__pycache__
+│   ├───menus_creation
+│   │   ├───number_play
+│   │   │   └───__pycache__
+│   │   ├───plotting_away
+│   │   │   └───__pycache__
+│   │   └───__pycache__
+│   ├───packages
+│   │   ├───menu_utilities
+│   │   │   └───__pycache__
+│   │   └───__pycache__
+│   └───__pycache__
+├───documentation
+│   └───getting-started
+├───media
+│   ├───envs
+│   ├───general
+│   ├───icons
+│   └───samples
+├───reference
+│   ├───code
+│   │   ├───apps
+│   │   ├───bread_board
+│   │   │   ├───gpt
+│   │   │   │   ├───data_analysis
+│   │   │   │   └───file_ops
+│   │   │   └───misc
+│   │   ├───builtin_types
+│   │   ├───docstring
+│   │   ├───language_constructs
+│   │   │   ├───modules
+│   │   │   ├───name_main_idiom
+│   │   │   └───package_init
+│   │   ├───language_types
+│   │   ├───menus_creation
+│   │   │   ├───number_play
+│   │   │   └───plotting_away
+│   │   ├───oldpackages
+│   │   │   ├───mymath
+│   │   │   ├───mytypes
+│   │   │   └───utilities
+│   │   └───packages
+│   │       └───menu_utilities
+│   └───media
+│       ├───icons
+│       └───samples
+└───support

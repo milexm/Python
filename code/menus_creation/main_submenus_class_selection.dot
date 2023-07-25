@@ -1,0 +1,28 @@
+digraph G {
+    node [shape=box, style="rounded, filled", fillcolor="#ffffff"]
+
+    subgraph cluster_group_selection_submenu {
+        label="group_selection_submenu"
+        get_selected_menu_name [label="Get selected_menu_name"]
+        get_selected_sub_menu_items [label="Get selected_sub_menu_items"]
+        super_init [label="super().__init__()"]
+        display_menu [label="Display menu"]
+        get_user_choice [label="Get user's choice"]
+        condition [label="Choice == Quit?"]
+        print_sample_results [label="Print Sample Results"]
+        get_current_selection [label="Get current_selection"]
+        call_sample_function [label="Call sample function"]
+        break [label="break"]
+    }
+
+    group_selection_submenu -> get_selected_menu_name
+    group_selection_submenu -> get_selected_sub_menu_items
+    group_selection_submenu -> super_init
+    group_selection_submenu -> display_menu
+    group_selection_submenu -> get_user_choice
+    group_selection_submenu -> condition
+    group_selection_submenu -> print_sample_results
+    group_selection_submenu -> get_current_selection
+    group_selection_submenu -> call_sample_function
+    condition -> break [label="True"]
+}
