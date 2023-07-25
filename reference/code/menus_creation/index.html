@@ -78,9 +78,45 @@ MainMenu class</h3>
 <p>The main menu is created by the <a href="mainmenu.py">mainmenu.py</a> file.
 This is done
 in the <code>class MainMenu(ConsoleMenu)</code> where the main activation code is for the
-<code>menus_creation</code> <strong>folder</strong> which contains all the examples for this area.
-Below, we highlight the main steps.</p>
+<code>menus_creation</code> <strong>folder</strong> which contains all the examples for this area.</p>
+<p>The following figure shows the <code>MainMenu</code> class context diagram. </p>
+<p><img alt="MainClass context" src="../../media/samples/main_menu_class.png"></p>
+<p>The <code>MainMenu</code> is a specialized class for creating and interacting with menus in
+the console. It utilizes the functionalities provided by the <code>ConsoleMenu</code> class
+and collaborates with the <code>SubMenus</code>, <code>NumberSamples</code>, and <code>PlotSamples</code> classes
+to offer a comprehensive console menu system with different sample groups.</p>
+<ul>
+<li>
+<p><strong>Attributes</strong></p>
+</li>
+<li>
+<p><code>menu_choices</code>. A list of strings representing the menu choices for
+the main menu.
+</p>
+</li>
+<li>
+<p><strong>Methods</strong> </p>
+</li>
+<li>
+<p><code>group_selection_menu()</code>. A method that displays the group menu and starts an endless loop.
+It waits for the user's input and displays the submenu based on the user's selection.
+The loop ends when the user enters the quit request.
+</p>
+</li>
+<li><code>__init__()</code>. The constructor that initializes the <code>menu_choices</code> attribute with
+the main menu choices. It also initializes the main menu name and menu choices via
+the <code>ConsoleMenu</code> parent class. Additionally, it defines the decision table to select the submenus.<br>
+The <code>MainMenu</code> class inherits from the <code>ConsoleMenu</code> class, which provides other methods like <code>input_number</code>,
+<code>display_menu</code>, and <code>get_user_choice</code>.</li>
+</ul>
+<p>Finally, the <code>MainMenu</code> class contains an instance of the <code>SubMenus</code> class, which provides
+the <code>group_selection_submenu</code> method. The <code>SubMenus</code> class, in turn, inherits from
+the <code>ConsoleMenu</code> class and contains instances of the <code>NumberSamples</code> and
+<code>PlotSamples</code> classes, which provide specific functionalities like calculating
+Fibonacci, getting number types, and plotting.</p>
+<p>Below, we highlight the class main functionality.</p>
 <h4 id="211-__init__self">2.1.1. __init__(self)</h4>
+<p><img alt="init" src="../../media/samples/main_menu_class_init.png"></p>
 <ol>
 <li>
 <p>Define the choices of the main menu. Every choice represents a group of
@@ -129,6 +165,7 @@ integer (from 1 to 2), the value is a <code>lambda</code> function which calls t
 passes to it an integer (from 1 to 2) selected by the user and shown in this
 call <code>self.sub_menu[choice]()</code>. </p>
 <h4 id="212-group_selection_menuself">2.1.2. group_selection_menu(self)</h4>
+<p><img alt="group selection" src="../../media/samples/main_menu_class_group_selection.png"></p>
 <ol>
 <li>Display the group menu by calling <code>display_menu()</code> method in the
 <code>ConsoleMenu</code> parent class. </li>
@@ -151,11 +188,67 @@ time the dictionary is created.</p>
 Each
 submenu is activated by selecting one of the entries displayed in the group menu
 described before. This is where the rubber hits the road. The main menu is
-connected to the submenus whose entries in turn are connected toe the functions
-(samples) to run. This is done in the <code>class SubMenus(ConsoleMenu)</code>.
-Next we highlight the main steps. </p>
+connected to the submenus whose entries in turn are connected to the functions
+(samples) to run. This is done in the <code>class SubMenus(ConsoleMenu)</code>.</p>
+<p>The following figure shows the <code>SubMenus</code> class context diagram. </p>
+<p><img alt="SubMenus context" src="../../media/samples/sub_menus_class.png"></p>
+<p>The <code>SubMenus</code> class inherits from the <code>ConsoleMenu</code> class, which provides other
+methods like <code>input_number</code>, <code>display_menu</code>, and <code>get_user_choice</code>. It collaborates
+with the <code>NumberSamples</code> and <code>PlotSamples</code> classes to offer specific functionalities
+for the "Numbers" and "Plotting" group of samples.</p>
+<ul>
+<li>
+<p><strong>Attributes</strong></p>
+</li>
+<li>
+<p><code>number_menu_choices</code>. A list of strings representing the menu choices for the
+"Numbers" group menu.
+</p>
+</li>
+<li><code>plot_menu_choices</code>. A list of strings representing the menu choices for the
+"Plotting" group menu.
+</li>
+<li><code>sub_menus</code>. A list containing two lists, which represent the group of all
+sample menus. The first list is left empty to match dictionary keys, and the
+second list contains the <code>number_menu_choices</code> and <code>plot_menu_choices</code>.
+</li>
+<li><code>number_samples_instance</code>. An instance of the <code>NumberSamples</code> class, which
+provides specific functionalities for the "Numbers" group of samples.
+</li>
+<li><code>plot_samples_instance</code>. An instance of the PlotSamples class, which provides
+specific functionalities for the "Plotting" group of samples.
+</li>
+<li><code>number_samples</code>. A dictionary containing the decision table for the "Numbers"
+group of samples. Each entry contains the name of the sample and the method to
+call. The method is represented as a <code>lambda</code> function to pass parameters to the
+function when needed.
+</li>
+<li><code>plot_samples</code>. A dictionary containing the decision table for the "Plotting"
+group of samples. Each entry contains the name of the sample and the method to
+call.
+</li>
+<li>
+<p><code>sample_groups</code>. A dictionary containing all the sample groups' decision
+tables. Each entry represents a sample group and contains the group's name and
+its respective decision table.</p>
+</li>
+<li>
+<p><strong>Methods</strong></p>
+</li>
+<li>
+<p><code>group_selection_submenu(sub_menu)</code>. A method that displays a menu of
+available samples for the user's selected group and allows the user to select a
+sample to execute from that group. It processes the user's input and calls the
+proper sample method based on the user's selection.
+</p>
+</li>
+<li><code>__init__()</code>. The constructor that initializes the menu choices for each
+sample group, instantiates each sample class (NumberSamples and PlotSamples),
+and defines the decision tables for each sample group. It groups all the
+samples' decision tables together.</li>
+</ul>
 <h4 id="221-__init__self">2.2.1. __init__(self)</h4>
-<p>This function initializes the class <code>SubMenus</code> instance.</p>
+<p><img alt="SubMenus init" src="../../media/samples/sub_menus_class_init.png"></p>
 <ol>
 <li>
 <p>Define the menu entries for each sample group. </p>
@@ -189,7 +282,7 @@ self.plot_menu_choices
 <p>```</p>
 </li>
 <li>
-<p>Instanciate each sample class. </p>
+<p>Instantiate each sample class. </p>
 </li>
 <li>
 <p><code>NumberSamples</code> instance</p>
@@ -244,6 +337,7 @@ call, when needed. </p>
 </code></pre>
 <p>```</p>
 <h4 id="222-group_selection_submenuself-sub_menu">2.2.2. group_selection_submenu(self, sub_menu)</h4>
+<p><img alt="SubMenus selection" src="../../media/samples/sub_menus_class_selection.png"></p>
 <ol>
 <li>Get the name of the sub menu selected by the user.</li>
 </ol>
@@ -312,19 +406,7 @@ introduce users to your project.
 <section>
 <h2 class="section-title" id="header-submodules">Sub-modules</h2>
 <dl>
-<dt><code class="name"><a title="code.menus_creation.flowchart" href="flowchart.html">code.menus_creation.flowchart</a></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
 <dt><code class="name"><a title="code.menus_creation.main" href="main.html">code.menus_creation.main</a></code></dt>
-<dd>
-<div class="desc"><p>Module main.py …</p></div>
-</dd>
-<dt><code class="name"><a title="code.menus_creation.mainmenu" href="mainmenu.html">code.menus_creation.mainmenu</a></code></dt>
-<dd>
-<div class="desc"><p>Module mainmenu.py</p></div>
-</dd>
-<dt><code class="name"><a title="code.menus_creation.mainold" href="mainold.html">code.menus_creation.mainold</a></code></dt>
 <dd>
 <div class="desc"><p>Module main.py …</p></div>
 </dd>
@@ -335,10 +417,6 @@ introduce users to your project.
 <dt><code class="name"><a title="code.menus_creation.plotting_away" href="plotting_away/index.html">code.menus_creation.plotting_away</a></code></dt>
 <dd>
 <div class="desc"></div>
-</dd>
-<dt><code class="name"><a title="code.menus_creation.submenus" href="submenus.html">code.menus_creation.submenus</a></code></dt>
-<dd>
-<div class="desc"><p>Module menuscreation_submenus.py</p></div>
 </dd>
 </dl>
 </section>
@@ -383,13 +461,9 @@ MainMenu class</a><ul>
 </li>
 <li><h3><a href="#header-submodules">Sub-modules</a></h3>
 <ul>
-<li><code><a title="code.menus_creation.flowchart" href="flowchart.html">code.menus_creation.flowchart</a></code></li>
 <li><code><a title="code.menus_creation.main" href="main.html">code.menus_creation.main</a></code></li>
-<li><code><a title="code.menus_creation.mainmenu" href="mainmenu.html">code.menus_creation.mainmenu</a></code></li>
-<li><code><a title="code.menus_creation.mainold" href="mainold.html">code.menus_creation.mainold</a></code></li>
 <li><code><a title="code.menus_creation.number_play" href="number_play/index.html">code.menus_creation.number_play</a></code></li>
 <li><code><a title="code.menus_creation.plotting_away" href="plotting_away/index.html">code.menus_creation.plotting_away</a></code></li>
-<li><code><a title="code.menus_creation.submenus" href="submenus.html">code.menus_creation.submenus</a></code></li>
 </ul>
 </li>
 </ul>
