@@ -48,7 +48,7 @@ in the `class MainMenu(ConsoleMenu)` where the main activation code is for the
 
 The following figure shows the `MainMenu` class context diagram. 
 
-![MainClass context](../../media/samples/main_menu_class.png)
+![MainClass context](../../media/samples/diagrams/main_menu_class.png)
 
 The `MainMenu` is a specialized class for creating and interacting with menus in
 the console. It utilizes the functionalities provided by the `ConsoleMenu` class
@@ -81,7 +81,7 @@ Below, we highlight the class main functionality.
 
 #### 2.1.1. \_\_init\_\_(self)
 
-![init](../../media/samples/main_menu_class_init.png)
+![init](../../media/samples/diagrams/main_menu_class_init.png)
 
 1. Define the choices of the main menu. Every choice represents a group of
    samplea.
@@ -100,7 +100,7 @@ Below, we highlight the class main functionality.
 
       This generates the followng menu:
 
-      ![menus creaton main menu](../../media/samples/menus_creation_main_menu.png)
+      ![menus creaton main menu](../../media/samples/diagrams/menus_creation_main_menu.png)
 
 3. Instantiate the `SubMenus` class.  It contains the submenus and the
 logic to allow the user to select the desired sample.  
@@ -131,7 +131,7 @@ order of the `self.sub_menus`  list in `code/menus_creation/submenus.py`.
 
 #### 2.1.2. group_selection_menu(self)
 
-![group selection](../../media/samples/main_menu_class_group_selection.png)
+![group selection](../../media/samples/diagrams/main_menu_class_group_selection.png)
 
 1. Display the group menu by calling `display_menu()` method in the
    `ConsoleMenu` parent class. 
@@ -163,7 +163,7 @@ connected to the submenus whose entries in turn are connected to the functions
 
 The following figure shows the `SubMenus` class context diagram. 
 
-![SubMenus context](../../media/samples/sub_menus_class.png)
+![SubMenus context](../../media/samples/diagrams/sub_menus_class.png)
 
 The `SubMenus` class inherits from the `ConsoleMenu` class, which provides other
 methods like `input_number`, `display_menu`, and `get_user_choice`. It collaborates
@@ -208,7 +208,7 @@ samples' decision tables together.
 
 #### 2.2.1. \_\_init\_\_(self) 
 
-![SubMenus init](../../media/samples/sub_menus_class_init.png)
+![SubMenus init](../../media/samples/diagrams/sub_menus_class_init.png)
 
 1. Define the menu entries for each sample group. 
 
@@ -295,7 +295,7 @@ samples' decision tables together.
 
 #### 2.2.2. group_selection_submenu(self, sub_menu)
 
-![SubMenus selection](../../media/samples/sub_menus_class_selection.png)
+![SubMenus selection](../../media/samples/diagrams/sub_menus_class_selection.png)
 
 1. Get the name of the sub menu selected by the user.
 
