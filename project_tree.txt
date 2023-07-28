@@ -46,6 +46,7 @@ C:.
 │   ├───general
 │   ├───icons
 │   └───samples
+│       └───diagrams
 ├───reference
 │   ├───code
 │   │   ├───apps
