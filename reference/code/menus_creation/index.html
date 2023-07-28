@@ -80,7 +80,7 @@ This is done
 in the <code>class MainMenu(ConsoleMenu)</code> where the main activation code is for the
 <code>menus_creation</code> <strong>folder</strong> which contains all the examples for this area.</p>
 <p>The following figure shows the <code>MainMenu</code> class context diagram. </p>
-<p><img alt="MainClass context" src="../../media/samples/main_menu_class.png"></p>
+<p><img alt="MainClass context" src="../../media/samples/diagrams/main_menu_class.png"></p>
 <p>The <code>MainMenu</code> is a specialized class for creating and interacting with menus in
 the console. It utilizes the functionalities provided by the <code>ConsoleMenu</code> class
 and collaborates with the <code>SubMenus</code>, <code>NumberSamples</code>, and <code>PlotSamples</code> classes
@@ -116,7 +116,7 @@ the <code>ConsoleMenu</code> class and contains instances of the <code>NumberSam
 Fibonacci, getting number types, and plotting.</p>
 <p>Below, we highlight the class main functionality.</p>
 <h4 id="211-__init__self">2.1.1. __init__(self)</h4>
-<p><img alt="init" src="../../media/samples/main_menu_class_init.png"></p>
+<p><img alt="init" src="../../media/samples/diagrams/main_menu_class_init.png"></p>
 <ol>
 <li>
 <p>Define the choices of the main menu. Every choice represents a group of
@@ -131,7 +131,7 @@ self.menu_choices = ["Numbers", "Plotting", "Quit"]</code></p>
 </code></pre>
 <p>```</p>
 <p>This generates the followng menu:</p>
-<p><img alt="menus creaton main menu" src="../../media/samples/menus_creation_main_menu.png"></p>
+<p><img alt="menus creaton main menu" src="../../media/samples/diagrams/menus_creation_main_menu.png"></p>
 </li>
 <li>
 <p>Instantiate the <code>SubMenus</code> class.
@@ -165,7 +165,7 @@ integer (from 1 to 2), the value is a <code>lambda</code> function which calls t
 passes to it an integer (from 1 to 2) selected by the user and shown in this
 call <code>self.sub_menu[choice]()</code>. </p>
 <h4 id="212-group_selection_menuself">2.1.2. group_selection_menu(self)</h4>
-<p><img alt="group selection" src="../../media/samples/main_menu_class_group_selection.png"></p>
+<p><img alt="group selection" src="../../media/samples/diagrams/main_menu_class_group_selection.png"></p>
 <ol>
 <li>Display the group menu by calling <code>display_menu()</code> method in the
 <code>ConsoleMenu</code> parent class. </li>
@@ -191,7 +191,7 @@ described before. This is where the rubber hits the road. The main menu is
 connected to the submenus whose entries in turn are connected to the functions
 (samples) to run. This is done in the <code>class SubMenus(ConsoleMenu)</code>.</p>
 <p>The following figure shows the <code>SubMenus</code> class context diagram. </p>
-<p><img alt="SubMenus context" src="../../media/samples/sub_menus_class.png"></p>
+<p><img alt="SubMenus context" src="../../media/samples/diagrams/sub_menus_class.png"></p>
 <p>The <code>SubMenus</code> class inherits from the <code>ConsoleMenu</code> class, which provides other
 methods like <code>input_number</code>, <code>display_menu</code>, and <code>get_user_choice</code>. It collaborates
 with the <code>NumberSamples</code> and <code>PlotSamples</code> classes to offer specific functionalities
@@ -248,7 +248,7 @@ and defines the decision tables for each sample group. It groups all the
 samples' decision tables together.</li>
 </ul>
 <h4 id="221-__init__self">2.2.1. __init__(self)</h4>
-<p><img alt="SubMenus init" src="../../media/samples/sub_menus_class_init.png"></p>
+<p><img alt="SubMenus init" src="../../media/samples/diagrams/sub_menus_class_init.png"></p>
 <ol>
 <li>
 <p>Define the menu entries for each sample group. </p>
@@ -337,7 +337,7 @@ call, when needed. </p>
 </code></pre>
 <p>```</p>
 <h4 id="222-group_selection_submenuself-sub_menu">2.2.2. group_selection_submenu(self, sub_menu)</h4>
-<p><img alt="SubMenus selection" src="../../media/samples/sub_menus_class_selection.png"></p>
+<p><img alt="SubMenus selection" src="../../media/samples/diagrams/sub_menus_class_selection.png"></p>
 <ol>
 <li>Get the name of the sub menu selected by the user.</li>
 </ol>
