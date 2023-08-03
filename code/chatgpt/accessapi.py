@@ -34,7 +34,12 @@ def simple_question():
         temperature = 0
     )
 
+    # Print the entire response (Json file).
     print(output)
+
+    # Print only the text we are interested in.
+    text = output['choices'][0]['text']
+    print(text)
 
 
 if __name__ == '__main__':
