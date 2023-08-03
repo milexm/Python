@@ -16,15 +16,19 @@ def simple_question():
      """
 
 
-    secret_key = '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'
+    secret_key = '<your secree key>'
     openai.api_key = secret_key
 
     # Simple prompt or question to ask. 
     my_prompt = 'Tell me a short ad for a homme security company'
 
+    # This model version is deprecated. Migrate before January 4, 2024 to avoid
+    # disruption of service. Learn more
+    # https://platform.openai.com/docs/deprecations
+    davinci_model = 'text-davinci-003'
 
     output = openai.Completion.create(
-        model = 'text-davinci-003',
+        model = davinci_model,
         prompt = my_prompt,
         max_tokens = 200,
         temperature = 0
