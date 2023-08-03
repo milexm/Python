@@ -16,7 +16,7 @@ def simple_question():
      """
 
 
-    secret_key = '<your secree key>'
+    secret_key = '<your secret key>'
     openai.api_key = secret_key
 
     # Simple prompt or question to ask. 
