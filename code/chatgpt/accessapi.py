@@ -3,6 +3,8 @@ Module accessapi.py
 """
 
 import openai
+import os
+
 
 def simple_question():
     """
@@ -14,10 +16,9 @@ def simple_question():
         determine if the infrastructure is in place to communicate
         with ChatGPT via the OpenAI API.  
      """
-
-
-    secret_key = '<your secret key>'
-    openai.api_key = secret_key
+    # Assign your private OpenAI API key 
+    # for authenntication. 
+    openai.api_key = os.environ['OpenAI_API_Key']
 
     # Simple prompt or question to ask. 
     my_prompt = 'Tell me a short ad for a homme security company'
