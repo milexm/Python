@@ -36,11 +36,12 @@ def simple_question():
     )
 
     # Print the entire response (Json file).
-    print(output)
+    # print(output)
 
     # Print only the text we are interested in.
     text = output['choices'][0]['text']
-    print(text)
+    print(f'\nChatGPT says: {text} \n') 
+
 
 
 if __name__ == '__main__':
